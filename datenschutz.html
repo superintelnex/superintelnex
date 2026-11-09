@@ -22,11 +22,13 @@
   a:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
   .site{min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;isolation:isolate}
   header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-inline:var(--edge);height:82px;border-bottom:1px solid var(--line)}
-  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;font-weight:600;font-size:19px;letter-spacing:0;white-space:nowrap}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;font-weight:600;font-size:19px;letter-spacing:0;white-space:nowrap;position:relative}
+  .brand::before{content:"";position:absolute;inset:-17px}
   .brand span{position:relative;top:-.5px}
   .brand-mark{width:40px;height:40px;flex:none;display:block;transform:translateY(-.5px)}
   nav{display:flex;gap:clamp(13px,3vw,42px);align-items:center}
-  nav a{color:var(--muted);font-size:13px;text-decoration:none;white-space:nowrap}
+  nav a{color:var(--muted);font-size:13px;text-decoration:none;white-space:nowrap;position:relative}
+  nav a::before{content:"";position:absolute;inset:-17px}
   nav a:hover,nav a[aria-current]{color:var(--ink)}
   nav a[aria-current]::after{content:"";display:block;width:100%;height:1px;background:var(--ink);transform:translateY(8px)}
   .languages{display:flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:99px}
@@ -46,6 +48,8 @@
   .details{max-width:640px;display:grid;margin:30px auto 0;border-top:1px solid var(--line)}
   .mail-link{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--muted);display:inline-flex;align-items:center;justify-content:center;position:relative;transition:color .2s,border-color .2s}
   .mail-link:hover{color:var(--ink);border-color:#ffffff66}
+  .risk-link{color:var(--ink);text-decoration:underline;text-underline-offset:4px;position:relative}
+  .risk-link::before{content:"";position:absolute;inset:-14px}
   .details div{display:grid;grid-template-columns:1fr;gap:5px;padding:14px 0;border-bottom:1px solid var(--line);justify-items:center;text-align:center}
   .details dt{color:var(--ink);font-size:13px;font-weight:600;line-height:1.5;text-align:center}
   .details dd{margin:0;text-align:center}
@@ -121,7 +125,7 @@
 
       <h2 data-de="Risikohinweis">Risk notice</h2>
       <p data-de="Die Website enthält Projektstatus-Angaben zu einem Token-Projekt. Diese stellen keine Anlageberatung und kein Erwerbsangebot dar. Die genannten Devnet-Testtoken sind reiner Testwert: kein echtes Geld, keine Anlage, kein Verkauf.">This website contains project status information about a token project. This is not investment advice and not an offer to sell. The devnet test tokens mentioned are pure test value: no real money, no investment, no sale.</p>
-      <p style="margin-top:14px"><a href="impressum.html" data-de="Vollständiger Risikohinweis: Impressum">Full risk notice: imprint</a></p>
+      <p style="margin-top:14px"><a class="risk-link" href="impressum.html" data-de="Vollständiger Risikohinweis: Impressum">Full risk notice: imprint</a></p>
 
       <h2 data-de="Änderungen dieser Erklärung">Changes to this statement</h2>
       <p data-de="Wir passen diese Datenschutzerklärung an, wenn sich technische Umsetzungen oder gesetzliche Vorgaben ändern. Der aktuelle Stand ist stets dieser Seite zu entnehmen.">We update this privacy statement when technical implementations or legal requirements change. The current version is always available on this page.</p>
