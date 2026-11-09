@@ -9,15 +9,21 @@
 // Fuer Devnet muss die Admin-Wallet vorab ueber einen Faucet mit
 // Test-SOL finanziert werden (siehe token/docs/DEVNET-RUNBOOK.md).
 import {
-  SystemProgram, Transaction, LAMPORTS_PER_SOL,
+  SystemProgram, Transaction, LAMPORTS_PER_SOL, Keypair,
 } from "npm:@solana/web3.js@1.98.4";
 import * as token from "npm:@solana/spl-token@0.4.15";
 import { createCreateMetadataAccountV3Instruction } from "npm:@metaplex-foundation/mpl-token-metadata@2.5.2";
-import { loadConfig, conn, getWallet, sendTx, journal, metadataPda, networkLabel, confirmSignature } from "./lib/common.ts";
+import { loadConfig, conn, getWallet, sendTx, journal, metadataPda, networkLabel, confirmSignature, requireMainnetOk } from "./lib/common.ts";
 
 const cfg = loadConfig();
 const c = conn();
 const label = networkLabel();
+
+// Hauptnetzlautschutz: Mainnet-Lauef (Mint-Erstellung) ist eine
+// irreversiblere Aktion — erfordert SIN_MAINNET_OK=1 (siehe RUNBOOK).
+// Die Wallet-Vorbereitung (main.json + recipient.json muessen
+// vorhanden sein) muss vor diesem Punkt erfuellt sein.
+requireMainnetOk("create-mint (Mint-Erstellung auf Mainnet)");
 
 // 1) Waehlen oder wiederverwenden der einweg Test-Wallet
 const admin = await getWallet("main");
@@ -27,7 +33,11 @@ const bal = await c.getBalance(admin.publicKey);
 console.log("[" + label + "] Admin-Test-Wallet:", admin.publicKey.toBase58(), "SOL:", bal / LAMPORTS_PER_SOL);
 if (label !== "LOCALNET-TEST") {
   if (bal < 0.5 * LAMPORTS_PER_SOL) {
-    console.log("Zu wenig Test-SOL. Bitte Wallet ueber einen Faucet finanzieren (DEVNET-RUNBOOK.md).");
+    if (label === "MAINNET-LAUNCH") {
+      console.log("Zu wenig SOL auf der Admin-Wallet. Fuer den On-Chain-Launch (Mint + Metadaten + ATA + Fees, ca. 0,030 SOL + Puffer; Budget in token/docs/MAINNET-CHECKLISTE.md) zuerst ca. 0,1 SOL auf die Admin-Wallet transferieren.");
+    } else {
+      console.log("Zu wenig Test-SOL. Bitte Wallet ueber einen Faucet finanzieren (DEVNET-RUNBOOK.md).");
+    }
     Deno.exit(1);
   }
 } else {
@@ -41,7 +51,13 @@ const resDir = new URL("../result/", import.meta.url);
 try {
   if (Deno.statSync(new URL("MINT-ADDRESS.txt", resDir)).isFile) {
     console.log("result/MINT-ADDRESS.txt existiert bereits:");
-    console.log(Deno.readTextFileSync(new URL("MINT-ADDRESS.txt", resDir)));
+    const prevRaw = Deno.readTextFileSync(new URL("MINT-ADDRESS.txt", resDir));
+    console.log(prevRaw);
+    const prev = JSON.parse(prevRaw);
+    if ((prev.netz ?? "") !== label) {
+      console.log("HINWEIS: Das Protokoll gehoert zu einem ANDEREN Netz ('" + (prev.netz ?? "?") + "').");
+      console.log("Vor einem Mainnet-Lauf das alte Protokoll verschieben (z. B. MINT-ADDRESS.txt.devnet).");
+    }
     if (Deno.env.get("SIN_FORCE") !== "1") {
       console.log("ABBRUCH: Fuer Neu-Anlage SIN_FORCE=1 setzen und das alte Protokoll verschieben.");
       Deno.exit(1);
@@ -51,9 +67,17 @@ try {
   // kein Ergebnis-Protokoll, weiter
 }
 
-// 3) Mint-Key-Paar erzeugen (wird in token/wallets/mint.json abgelegt,
-//    gitignoriert — EINWEG-Test-Artifact, nicht das Tresor-Wallet)
-const mint = await getWallet("mint", { regenerate: true });
+// 3) Mint-Key-Paar: auf Testnetzen EINWEG regeneriert (token/wallets/mint.json,
+//    gitignoriert); im MAINNET muessen die Wallets vorab vom Betreiber
+//    angelegt sein (token/wallets/main.json + mint.json) — Regeneration ist
+//    dort untersagt (getWallet wirft), und es wird die EXISTIERENDE
+//    mint.json verwendet (siehe MAINNET-LAUNCH-RUNBOOK.md).
+let mint: Keypair;
+if (label === "MAINNET-LAUNCH") {
+  mint = await getWallet("mint"); // existiert muessen; wirft sonst mit Hinweis
+} else {
+  mint = await getWallet("mint", { regenerate: true });
+}
 const ata = await token.getAssociatedTokenAddress(mint.publicKey, admin.publicKey);
 
 // 4) Mietpreis des Mint-Accounts ermitteln (ATA wird in derselben Transaktion
