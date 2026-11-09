@@ -9,11 +9,12 @@
 // Es ist kein Distributions- oder Verkaufs-Skript.
 import { PublicKey, Transaction } from "npm:@solana/web3.js@1.98.4";
 import * as token from "npm:@solana/spl-token@0.4.15";
-import { loadConfig, conn, getWallet, sendTx, journal, networkLabel } from "./lib/common.ts";
+import { loadConfig, conn, getWallet, sendTx, journal, networkLabel, requireMainnetOk } from "./lib/common.ts";
 
 const cfg = loadConfig();
 const c = conn();
 const label = networkLabel();
+requireMainnetOk("mint-initial");
 
 const resDir = new URL("../result/", import.meta.url);
 const out = JSON.parse(Deno.readTextFileSync(new URL("MINT-ADDRESS.txt", resDir)));

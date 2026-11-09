@@ -6,11 +6,12 @@
 // (archiviert) und koennen keine Transaktionen mehr signiert werden.
 import { PublicKey, Transaction } from "npm:@solana/web3.js@1.98.4";
 import * as token from "npm:@solana/spl-token@0.4.15";
-import { loadConfig, conn, getWallet, sendTx, journal, networkLabel } from "./lib/common.ts";
+import { loadConfig, conn, getWallet, sendTx, journal, networkLabel, requireMainnetOk } from "./lib/common.ts";
 
 const cfg = loadConfig();
 const c = conn();
 const label = networkLabel();
+requireMainnetOk("transfer-to-holder");
 
 const out = JSON.parse(Deno.readTextFileSync(new URL("../result/MINT-ADDRESS.txt", import.meta.url)));
 if ((out.netz ?? "") !== label) {

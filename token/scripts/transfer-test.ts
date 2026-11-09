@@ -5,11 +5,12 @@
 // Erwartet token/result/MINT-ADDRESS.txt.
 import { PublicKey, Transaction, LAMPORTS_PER_SOL } from "npm:@solana/web3.js@1.98.4";
 import * as token from "npm:@solana/spl-token@0.4.15";
-import { loadConfig, conn, getWallet, sendTx, journal, networkLabel, confirmSignature } from "./lib/common.ts";
+import { loadConfig, conn, getWallet, sendTx, journal, networkLabel, confirmSignature, requireMainnetOk } from "./lib/common.ts";
 
 const cfg = loadConfig();
 const c = conn();
 const label = networkLabel();
+requireMainnetOk("transfer-test");
 
 const out = JSON.parse(Deno.readTextFileSync(new URL("../result/MINT-ADDRESS.txt", import.meta.url)));
 if ((out.netz ?? "") !== label) {
