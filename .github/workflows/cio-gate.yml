@@ -32,7 +32,7 @@ jobs:
             echo '```'
             git ls-tree -r --name-only HEAD
             echo '```'
-            for f in index.html 404.html impressum.html datenschutz.html og-image.png superintelnex-sn-anthrazit.svg; do
+            for f in index.html 404.html impressum.html datenschutz.html og-image.png superintelnex-sn-anthrazit.svg superintelnex-sn-tab.svg; do
               [ -f "$f" ] && echo "OK   $f" || echo "MISS $f"
             done
             for f in robots.txt sitemap.xml manifest.webmanifest; do

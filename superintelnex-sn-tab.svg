@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254" role="img" aria-labelledby="title desc">
+  <title id="title">SuperIntelNex intertwined SN symbol — white mark on dark tile (tab favicon)</title>
+  <desc id="desc">White intertwined SN ribbon mark on a near-black rounded tile, matching the start-page brand mark.</desc>
+  <rect width="1254" height="1254" rx="220" fill="#0A0A0A"/>
+  <g transform="translate(125 125)" fill="#FFFFFF">
+    <g transform="scale(0.8)" fill="#FFFFFF">
+      <path d="M222 685L454 817L318 878Q284 894 263 881C232 864 217 842 217 811V690Q217 681 222 685Z"/>
+      <path d="M740 707L941 905L664 1061C638 1077 611 1079 586 1065L479 1006Q474 1003 480 1001L732 885Q740 881 740 873Z"/>
+      <path d="M615 368L880 534L883 345L796 292C778 282 762 285 744 297Z"/>
+      <path d="M449 721L609 606L620 612L542 678L621 745L605 753L540 780Z"/>
+      <path d="M598 220C622 205 648 204 674 219L795 291C777 283 762 286 744 298L364 507Q357 511 364 515L552 614L608 607L449 722L263 622C233 605 215 580 215 548V494C215 460 233 432 264 412Z"/>
+      <path d="M263 881C282 891 297 887 318 878L605 753Q620 747 632 737L699 679L740 717V766C724 792 705 823 686 844Q678 853 663 862L459 983Q449 990 438 983Z"/>
+      <path d="M559 428C670 499 779 583 880 681V349Q879 340 886 345L990 408C1016 424 1029 448 1029 479V811C1029 842 1015 866 989 881L941 906L620 613Q612 605 607 609L552 650V432Q552 423 559 428Z"/>
+    </g>
+  </g>
+</svg>
