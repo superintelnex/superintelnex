@@ -138,6 +138,14 @@
     .arrow{width:34px;height:34px}
   }
   @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+  .sin-platforms{margin-top:clamp(14px,2.5vh,26px);font:13px/1.4 var(--mono);color:var(--ink)}
+  .sin-platforms h2{font:inherit;font-weight:700;margin:0 0 7px;letter-spacing:normal}
+  .sin-providers{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+  .sin-providers li{display:grid;gap:2px;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:5px 8px}
+  .sin-providers a{color:inherit;display:inline-flex;align-items:center;gap:5px;min-height:24px}
+  .sin-providers small,.sin-platforms p{color:var(--muted);font-size:11px}
+  .sin-platforms p{margin:6px 0 0}
 </style>
 </head>
 <body>
@@ -176,6 +184,15 @@
           <button class="pill primary" type="button" data-go="1"><span data-de="Vision entdecken">Explore the vision</span> <span class="pill-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M10 4H6M10 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
           <button class="pill secondary" type="button" data-go="2" data-de="Projektstatus">Project status</button>
         </div>
+        <aside class="sin-platforms" id="sin-platforms" aria-labelledby="sin-platforms-title">
+          <h2 id="sin-platforms-title" data-de="SIN auf Solana Mainnet">SIN on Solana Mainnet</h2>
+          <ul class="sin-providers">
+            <li><a href="https://explorer.solana.com/address/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span aria-hidden="true">↗</span> Solana Explorer</a><small data-de="Mint bestätigt">Mint confirmed</small></li>
+            <li><a href="https://jup.ag/tokens/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span aria-hidden="true">↗</span> Jupiter</a><small data-de="Token sichtbar · kein Swap verfügbar">Token visible · swap unavailable</small></li>
+            <li><span><span aria-hidden="true">◷</span> Raydium</span><small data-de="In Vorbereitung · kein Pool bestätigt">In preparation · no pool confirmed</small></li>
+          </ul>
+          <p data-de="Weitere Listings sind derzeit nicht bestätigt.">Further listings are currently unconfirmed.</p>
+        </aside>
       </section>
       <section class="scene" id="vision" aria-labelledby="title-2" hidden>
         <p class="eyebrow" data-de="02 / Die Vision">02 / The vision</p>
@@ -194,7 +211,7 @@
         <h2 id="title-3" data-de="Im Aufbau.">In development.</h2>
         <dl class="details">
           <div><dt data-de="Devnet-Prototyp">Devnet prototype</dt><dd data-de="Test-Token (SIN) auf Solana Devnet, erstellt am 09.11.2026 — 100 Mrd. Stück, 5 Dezimalstellen. Reiner Testwert: kein echtes Geld, keine Anlage, kein Verkauf.">Test token (SIN) on Solana Devnet, created 09 Nov 2026 — 100B pieces, 5 decimals. Test value only: no real money, no investment, no sale.</dd></div>
-          <div><dt data-de="Mainnet">Mainnet</dt><dd data-de="Noch nicht veröffentlicht. Geplante Verteilung: 81/10/5/4 (Community / Liquidität / Gründer / Marketing). Prüfung von Rechtslage und Emissionsverfahren läuft derzeit.">Not yet launched. Planned allocation: 81/10/5/4 (community / liquidity / founder / marketing). Legal and issuance review currently in progress.</dd></div>
+          <div><dt data-de="Mainnet">Mainnet</dt><dd data-de="SIN wurde auf Solana Mainnet erstellt. Die Handelbarkeit ist noch nicht bestätigt.">SIN has been minted on Solana Mainnet. Trading availability is not yet confirmed.</dd></div>
           <div><dt data-de="Projektangaben">Project details</dt><dd data-de="Partnerschaften, Audits und Teamangaben sind (noch) nicht bestätigt. Offizielle Kanäle: X @superintelnex und Discord (Links unten).">Partnerships, audits, and team details are not yet confirmed. Official channels: X @superintelnex and Discord (links below).</dd></div>
         </dl>
         <div class="actions">
