@@ -240,7 +240,8 @@
     'wormhole', 'eye', 'mobius', 'comet', 'crystal', 'butterfly',
     'jellyfish', 'aurora', 'hourglass', 'binary', 'supernova',
     'candlesticks', 'orderbook', 'depth-chart', 'volume-profile', 'bollinger',
-    'triangle', 'double-bottom', 'fibonacci-fan', 'trade-ticker', 'portfolio-rings'
+    'triangle', 'double-bottom', 'fibonacci-fan', 'trade-ticker', 'portfolio-rings',
+    'padlock', 'gull-flock', 'whale', 'origami-crane', 'satellite'
   ];
   let active = 0, running = !preference.matches, frame = 0, time = 0, last = null;
   let shapeQueue = [];
@@ -270,6 +271,33 @@
   ];
   const fanRatios = [0,.236,.382,.50,.618,.786,1];
   const portfolioCuts = [0,.18,.51,.78,1];
+  const lockOutline = [
+    [-.62,.08],[-.60,.01],[-.55,-.03],[.55,-.03],[.60,.01],[.62,.08],
+    [.62,.57],[.60,.64],[.55,.68],[-.55,.68],[-.60,.64],[-.62,.57],[-.62,.08]
+  ];
+  const whaleOutline = [
+    [-.74,.06],[-.57,.00],[-.38,-.13],[-.13,-.25],[.10,-.31],[.27,-.31],
+    [.35,-.35],[.49,-.37],[.77,-.36],[1.00,-.31],[1.16,-.22],[1.22,-.10],
+    [1.21,.06],[1.14,.20],[.97,.31],[.72,.39],[.46,.44],[.17,.42],[-.10,.35],
+    [-.34,.25],[-.54,.16],[-.74,.12],[-.74,.06]
+  ];
+  const whaleFlukes = [
+    [-.71,.06],[-.89,-.01],[-1.01,-.18],[-1.13,-.26],[-1.23,-.23],[-1.19,-.11],
+    [-1.09,.00],[-1.00,.08],[-1.13,.16],[-1.22,.28],[-1.12,.30],
+    [-.98,.23],[-.86,.15],[-.72,.12]
+  ];
+  const whaleFin = [[.28,.26],[.21,.45],[.03,.62],[-.22,.72],[-.37,.70],[-.19,.53],[-.06,.34],[.28,.26]];
+  const whaleMouth = [[.16,.15],[.36,.19],[.60,.17],[.83,.13],[1.02,.08],[1.19,.02]];
+  const craneVertices = [
+    [-.19,.02,.10],[.24,.16,.18],[-.02,.40,-.05],[-1.10,-.42,-.09],[-.53,-.04,.31],
+    [.45,-.83,-.23],[.41,-.22,.01],[-1.00,.45,-.12],[-.59,.20,.05],
+    [.55,-.58,-.01],[.72,-.65,.02],[.99,-.56,.04],[.68,-.53,.08]
+  ];
+  // Each triangle is a folded panel. The first four panels form the two wings.
+  const craneFaces = [
+    [0,3,4],[0,4,2],[0,5,6],[0,6,1],[0,1,2],[0,2,8],[2,7,8],
+    [1,9,12],[1,12,2],[9,10,12],[10,11,12]
+  ];
   function tracePoint(path, progress) {
     const position = progress * (path.length - 1);
     const segment = Math.floor(position);
@@ -707,11 +735,118 @@
     const portfolioRings = [Math.cos(sectorAngle) * ringRadius,
       Math.sin(sectorAngle) * ringRadius, (e - .5) * .055];
 
+    // The shackle wraps behind the face. Leave an actual gap for the keyhole.
+    const lockLane = i % 12;
+    let padlock;
+    if (lockLane < 4) {
+      const shacklePath = c * 2.90;
+      const shackleRadius = .38 + (d - .5) * .081;
+      const arch = Math.min(Math.PI, Math.max(0, (shacklePath - .38) / 2.14 * Math.PI));
+      const stem = Math.max(0, .38 - shacklePath, shacklePath - 2.52);
+      padlock = [-shackleRadius * Math.cos(arch), -.38 - shackleRadius * Math.sin(arch) + stem,
+        (e - .5) * .13 - .045];
+    } else if (lockLane < 7) {
+      const [rimX, rimY] = tracePoint(lockOutline, c);
+      padlock = [rimX + noise, rimY + (e - .5) * .027, (d - .5) * .13];
+    } else if (lockLane < 10) {
+      const faceX = (c - .5) * 1.17, faceY = .02 + .62 * d;
+      const inKeyhole = Math.hypot(faceX, faceY - .27) < .091
+        || (Math.abs(faceX) < .036 + (faceY - .31) * .17 && faceY > .31 && faceY < .47);
+      padlock = inKeyhole ? [(e < .5 ? -1 : 1) * .098, faceY, .025]
+        : [faceX, faceY, .025 + .045 * e];
+    } else if (lockLane === 10) {
+      padlock = i % 24 === 10
+        ? [Math.cos(a) * .094, .27 + Math.sin(a) * .094, .075]
+        : [(i % 5 < 2 ? -1 : 1) * (.035 + .026 * c), .33 + .14 * c, .075];
+    } else {
+      padlock = [(d - .5) * .11, c, .11 + (e - .5) * .13];
+    }
+
+    // Each gull shares an articulated wing shape, at a different scale and phase.
+    const gull = Math.floor(i / 10) % 19;
+    const gullRow = Math.floor(gull / 5), gullColumn = gull % 5;
+    const gullX = -.96 + .43 * gullColumn + .097 * (gullRow % 2);
+    const gullY = -.50 + gullRow * .33 - .19 * gullX + .075 * Math.sin(gull * 2.7);
+    const gullSize = .075 + .087 * ((gull * 7) % 13) / 12 + (gullRow === 2 ? .035 : 0);
+    const gullWingSide = lane % 2 === 0 ? -1 : 1;
+    const gullWingY = -.43 * Math.sin(c * Math.PI * .84) + .29 * c * c;
+    const wingFeathers = lane > 5 ? .18 * c * ((i % 7) / 6) : 0;
+    const gullFlock = lane < 8
+      ? [gullX + gullWingSide * c * gullSize, gullY + (gullWingY + wingFeathers) * gullSize,
+        (d - .5) * .045]
+      : [gullX + (d - .5) * gullSize * .19, gullY + (c - .28) * gullSize * .42, .01];
+
+    // A broadside whale, with a forked tail, flipper, jaw and baleen throat grooves.
+    const whaleLane = i % 20;
+    let whale;
+    if (whaleLane < 8) {
+      const [edgeX, edgeY] = tracePoint(whaleOutline, c);
+      whale = [edgeX + noise, edgeY + (e - .5) * .023, chartZ];
+    } else if (whaleLane < 11) {
+      const [tailX, tailY] = tracePoint(whaleFlukes, c);
+      whale = [tailX + noise, tailY + (e - .5) * .032, (e - .5) * .095];
+    } else if (whaleLane < 13) {
+      const [finX, finY] = tracePoint(whaleFin, c);
+      whale = [finX + noise, finY + (e - .5) * .039, .13 + chartZ];
+    } else if (whaleLane === 13) {
+      const [jawX, jawY] = tracePoint(whaleMouth, c);
+      whale = [jawX + noise, jawY + (e - .5) * .024, .09];
+    } else if (whaleLane === 14) {
+      const groove = Math.floor(i / 20) % 6;
+      whale = [.29 + .74 * c, .24 + groove * .023 + .082 * Math.sin(c * Math.PI) - .05 * c, .075 + chartZ];
+    } else if (whaleLane < 18) {
+      const crossSection = Math.sqrt(1 - (2 * c - 1) ** 2);
+      whale = [-.58 + c * 1.73, .058 + Math.sin(a) * .31 * crossSection * Math.sqrt(d),
+        Math.cos(a) * .19 * crossSection];
+    } else if (whaleLane === 18) {
+      const eyeRadius = .028 * Math.sqrt(c);
+      whale = [.92 + Math.cos(a) * eyeRadius, -.029 + Math.sin(a) * eyeRadius, .14];
+    } else {
+      whale = [.66 + (d - .5) * .24, c, chartZ];
+    }
+
+    // Sample the folds and faces separately so thin creases stay visible.
+    const cranePanel = Math.floor(i / 10) % craneFaces.length;
+    const paperFace = craneFaces[cranePanel];
+    const paperA = craneVertices[paperFace[lane < 6 ? lane % 3 : 0]];
+    const paperB = craneVertices[paperFace[lane < 6 ? (lane + 1) % 3 : 1]];
+    const paperC = craneVertices[paperFace[2]];
+    const paperAcross = lane < 6 ? c : Math.sqrt(c) * (1 - d);
+    const paperDepth = lane < 6 ? 0 : Math.sqrt(c) * d;
+    const origamiCrane = paperA.map((coord, axis) => coord
+      + (paperB[axis] - coord) * paperAcross + (paperC[axis] - coord) * paperDepth);
+
+    // Solar cell frames, riveted chassis, two antenna braces and a radio wave.
+    const satelliteSide = Math.floor(i / 10) % 2 === 0 ? -1 : 1;
+    let satellite;
+    if (lane < 5) {
+      const cell = Math.floor(i / 20) % 8;
+      const column = cell % 4, row = Math.floor(cell / 4);
+      const cellX = .40 + column * .172, cellY = -.23 + row * .22;
+      const panelX = cellX + (lane < 2 ? lane * .161 + noise : c * .161);
+      const panelY = cellY + (lane < 2 ? c * .209 : lane < 4 ? (lane - 2) * .209 + noise : d * .209);
+      satellite = [satelliteSide * panelX, panelY, (e - .5) * .047];
+    } else if (lane < 7) {
+      const hullAngle = (Math.floor(a / tau * 12) + .20 * d) * tau / 12;
+      const radius = lane === 5 ? .238 : .238 * Math.sqrt(d);
+      satellite = [Math.cos(hullAngle) * radius, lane === 5 ? -.29 + .68 * c : (i % 3 === 0 ? -.29 : .39),
+        Math.sin(hullAngle) * radius];
+    } else if (lane === 7) {
+      satellite = [satelliteSide * (.20 + c * .205), noise + (i % 3 - 1) * .047, chartZ];
+    } else if (lane === 8) {
+      const dishX = (c - .5) * .58;
+      satellite = i % 3 === 0 ? [noise + .14 * c, -.27 - .36 * c, chartZ]
+        : [dishX + .14, -.62 + .14 * (1 - (2 * c - 1) ** 2) + noise, chartZ];
+    } else {
+      satellite = [.14 + Math.cos(a) * .64, c, Math.sin(a) * .09];
+    }
+
     return {
       shapes:[galaxy, star, dna, network, token, wave, nebula, sphere, vortex, knot,
         circuit, ekg, constellation, orbit, wormhole, eye, mobius, comet, crystal, butterfly,
         jellyfish, aurora, hourglass, binary, supernova, candlesticks, orderbook, depthChart,
-        volumeProfile, bollinger, triangle, doubleBottom, fibonacciFan, tradeTicker, portfolioRings],
+        volumeProfile, bollinger, triangle, doubleBottom, fibonacciFan, tradeTicker, portfolioRings,
+        padlock, gullFlock, whale, origamiCrane, satellite],
       size:e, phase:b, scatter
     };
   });
@@ -805,6 +940,15 @@
       const tilt = (ring - 1) * .48 + .17 * Math.sin(time * .46 + ring);
       return [Math.sin(spin), Math.cos(spin), Math.sin(tilt), Math.cos(tilt)];
     });
+    const latch = .5 - .5 * Math.cos(time * 1.08);
+    const latchSin = Math.sin(latch * .83), latchCos = Math.cos(latch * .83);
+    const lockFloat = .068 * Math.sin(time * .96);
+    const flockDrift = .072 * Math.sin(time * .62);
+    const whaleWave = time * 1.60;
+    const whaleWidth = Math.min(1, width * (width <= 560 ? .46 : .37) / (scale * 1.25));
+    const craneLift = .19 * Math.sin(time * 1.25);
+    const satelliteTilt = .42 * Math.sin(time * .74);
+    const satelliteSin = Math.sin(satelliteTilt), satelliteCos = Math.cos(satelliteTilt);
     const pullScaleSquared = clamp(width * .15, 90, 165) ** 2;
     for (let i = 0; i < skyCount; i++) {
       const star = sky[i];
@@ -1079,6 +1223,84 @@
         y = ringX * tiltSin + ringY * tiltCos;
         z += .21 * ringY;
         detailLight = .12 - sector * .085 + .12 * Math.sin(time * 1.45 + sector * 1.55);
+      } else if (mode === 'padlock') {
+        const lane = i % 12;
+        if (lane < 4) {
+          const hingeX = x + .38;
+          x = hingeX * latchCos - z * latchSin - .38;
+          z = hingeX * latchSin + z * latchCos;
+          y -= hingeX * latch * .32;
+          detailLight = .13 + .13 * Math.sin(y * 13 - time * 1.6);
+        } else if (lane === 11) {
+          const rise = (y + time * .39) % 1;
+          x = x * (.5 + rise) + .09 * rise * Math.sin(rise * 5 + p.phase);
+          y = .26 - rise * (.59 + latch * .34);
+          detailSize = latch * Math.min(1, rise * 8, (1 - rise) * 8);
+          detailLight = .23;
+        } else {
+          detailLight = lane < 7 ? .20 : lane === 10 ? .24 : -.28;
+          detailLight += .08 * Math.sin(x * 10 - time * 1.7);
+        }
+        y += lockFloat;
+      } else if (mode === 'gull-flock') {
+        const gull = Math.floor(i / 10) % 19;
+        const row = Math.floor(gull / 5);
+        const centerX = -.96 + .43 * (gull % 5) + .097 * (row % 2);
+        const wing = x - centerX;
+        const wave = time * 1.95 - gull * .38;
+        y += Math.abs(wing) * .45 * Math.sin(wave) + .047 * Math.sin(time * .86 - gull * .28);
+        x += flockDrift - .10 * wing * Math.cos(wave);
+        detailLight = i % 10 < 6 ? .14 : -.16;
+        detailLight += .10 * Math.sin(wave + p.phase);
+      } else if (mode === 'whale') {
+        const lane = i % 20;
+        if (lane === 19) {
+          const rise = (y + time * .42) % 1;
+          const spout = .55 + .45 * Math.cos(time * 1.35);
+          x = .66 + (x - .66) * (rise * 3 + .14) + .12 * rise ** 2;
+          y = -.36 - rise * .64 * spout;
+          detailSize = spout * Math.min(1, rise * 10, (1 - rise) * 5);
+          detailLight = .21 - .22 * rise;
+        } else {
+          const tail = clamp((-.52 - x) / .72, 0, 1);
+          y += tail * tail * .21 * Math.sin(whaleWave);
+          z += tail * .15 * Math.cos(whaleWave);
+          if (lane === 11 || lane === 12) {
+            y += (y - .26) * .16 * Math.sin(whaleWave - 1.2);
+            x += (y - .26) * .17 * Math.cos(whaleWave - 1.2);
+          }
+          detailLight = lane < 11 ? .17 : lane < 15 ? -.01 : lane === 18 ? .40 : -.26;
+        }
+        y += .058 * Math.sin(time * .95);
+        x *= whaleWidth;
+      } else if (mode === 'origami-crane') {
+        const lane = i % 10;
+        const panel = Math.floor(i / 10) % craneFaces.length;
+        if (panel < 4) {
+          const span = Math.hypot(x + .19, y - .02);
+          y -= span * craneLift;
+          z += span * (panel < 2 ? craneLift : -craneLift);
+        }
+        const foldGlow = .13 * Math.sin(x * 8 + y * 5 - time * 2.15);
+        detailLight = lane < 6 ? .23 + foldGlow : -.17 + (panel % 3) * .055 + foldGlow;
+      } else if (mode === 'satellite') {
+        const lane = i % 10;
+        if (lane === 9) {
+          const signal = (time * .28 + (Math.floor(i / 10) % 3) / 3) % 1;
+          const arc = .18 + .74 * signal;
+          const arcX = x - .14;
+          x = .14 + arcX * arc;
+          y = -.62 - signal * .40 + arcX * arcX * .41 * arc + (v[1] - .5) * .026;
+          detailSize = Math.min(1, signal * 9, (1 - signal) * 6);
+          detailLight = .10 - .25 * signal;
+        } else {
+          detailLight = lane < 4 ? .16 : lane === 4 ? -.22 : .08;
+          detailLight += .12 * Math.sin(time * 1.8 - Math.abs(x) * 6);
+        }
+        const rotatedX = x * satelliteCos - z * satelliteSin;
+        z = x * satelliteSin + z * satelliteCos;
+        x = rotatedX;
+        y += x * .17 * Math.sin(time * .55) + .055 * Math.sin(time * .88);
       }
       const xx = x * yc - z * ys;
       z = x * ys + z * yc; x = xx;
