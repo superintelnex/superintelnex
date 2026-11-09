@@ -71,6 +71,11 @@
   .pill::before{content:"";position:absolute;inset:-5px}
   .pill-arrow{display:inline-flex}
   .pill-arrow svg{display:block}
+  .channels{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+  .channel{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);color:var(--muted);text-decoration:none;transition:color .2s,border-color .2s}
+  .channel:hover{color:var(--ink);border-color:#ffffff66}
+  .channel::before{content:"";position:absolute;inset:-4px}
+  .channel svg{display:block}
   .primary{color:var(--ink);background:var(--bg);border-color:#ffffff66}
   .primary:hover{border-color:var(--ink)}
   .secondary{background:var(--bg);border-color:var(--line);color:var(--ink)}
@@ -175,7 +180,10 @@
         <div class="actions">
           <button class="pill primary" type="button" data-go="1"><span data-de="Vision entdecken">Explore the vision</span> <span class="pill-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M10 4H6M10 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
           <button class="pill secondary" type="button" data-go="2" data-de="Projektstatus">Project status</button>
-        </div>
+          <div class="channels" aria-label="Social channels" data-de-label="Social-Kanäle">
+            <a class="channel" href="https://x.com/superintelnex" target="_blank" rel="noopener" aria-label="SuperIntelNex on X" data-de-label="SuperIntelNex bei X"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.197L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.47l8.59-9.832L0 1.154h7.594l5.263 6.912zM17.627 20.643h2.04L6.49 3.328H4.3z"/></svg></a>
+            <a class="channel" href="https://discord.gg/5QVBqHSWXn" target="_blank" rel="noopener" aria-label="SuperIntelNex on Discord" data-de-label="SuperIntelNex bei Discord"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.74 19.74 0 0 0-4.81-1.55.07.07 0 0 0-.08.04c-.21.37-.44.86-.61 1.25-1.85-.28-3.69-.28-5.54 0-.17-.4-.4-.88-.62-1.25a.08.08 0 0 0-.08-.04c-1.69.31-3.36.88-4.81 1.55a.07.07 0 0 0-.03.03C.53 9.35-.12 14.19.14 18.93c0 .02.01.04.03.05.85.63 1.75 1.15 2.68 1.55a.07.07 0 0 0 .08-.02c.21-.31.4-.64.56-.97a.07.07 0 0 0-.04-.1c-.65-.25-1.26-.55-1.86-.9a.07.07 0 0 1-.01-.12c.16-.12.32-.24.47-.37a.07.07 0 0 1 .08-.01c1.98 1.11 4.08 1.69 6.28 1.69 2.19 0 4.29-.58 6.27-1.69a.07.07 0 0 1 .08.01c.15.13.31.25.47.37a.07.07 0 0 1-.01.12c-.6.35-1.21.65-1.86.9a.07.07 0 0 0-.04.1c.17.33.35.66.56.97a.07.07 0 0 0 .08.03c.93-.4 1.83-.93 2.68-1.56a.08.08 0 0 0 .03-.05c.26-4.74-.39-9.58-2.99-14.53a.06.06 0 0 0-.02-.03zM8.02 16.04c-1.04 0-1.9-1.02-1.9-2.28 0-1.26.85-2.29 1.9-2.29 1.05 0 1.91 1.03 1.9 2.29 0 1.26-.85 2.28-1.9 2.28zm7.97 0c-1.05 0-1.9-1.02-1.9-2.28 0-1.26.85-2.29 1.9-2.29 1.05 0 1.9 1.03 1.9 2.29 0 1.26-.85 2.28-1.9 2.28z"/></svg></a>
+          </div>
       </section>
       <section class="scene" id="vision" aria-labelledby="title-2" hidden>
         <p class="eyebrow" data-de="02 / Die Vision">02 / The vision</p>
