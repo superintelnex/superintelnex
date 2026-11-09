@@ -12,7 +12,6 @@ on:
       - 'datenschutz.html'
       - 'kontakt.html'
       - 'whitepaper.html'
-      - 'vendor/three.min.js'
       - 'token/assets/superintelnex-logo-512.png'
       - 'og-image.png'
       - 'apple-touch-icon.png'
@@ -21,7 +20,6 @@ on:
       - 'robots.txt'
       - 'sitemap.xml'
       - 'manifest.webmanifest'
-      - 'superintelnex-sn-anthrazit.svg'
       - 'superintelnex-sn-tab.svg'
       - 'CNAME'
   workflow_dispatch:
@@ -53,11 +51,11 @@ jobs:
           TMP="$(mktemp -d)"
           SOURCE_SHA="$(git rev-parse --short=7 HEAD)"
           for f in index.html 404.html impressum.html datenschutz.html \
-                   kontakt.html whitepaper.html vendor/three.min.js \
+                   kontakt.html whitepaper.html \
                    token/assets/superintelnex-logo-512.png \
                    og-image.png apple-touch-icon.png icon-192.png icon-512.png \
                    robots.txt sitemap.xml manifest.webmanifest \
-                   superintelnex-sn-anthrazit.svg superintelnex-sn-tab.svg CNAME; do
+                   superintelnex-sn-tab.svg CNAME; do
             mkdir -p "$TMP/$(dirname "$f")"
             [ -f "$f" ] && cp "$f" "$TMP/$f" || { echo "FEHLT auf main: $f"; exit 1; }
           done
