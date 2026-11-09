@@ -9,7 +9,7 @@ gelten erst nach erneuter Bestaetigung (siehe config/token.json
 ## 0) Sicherheit — hart, nicht diskutierbar
 
 - **Mainnet-Wallets werden NICHT auto-generiert.**
-  `getWallet()` wirft im Mainnet, wenn `main.json` / `recipient.json`
+  `getWallet()` wirft im Mainnet, wenn `main.json` / `mint.json` / `recipient.json`
   fehlen (`MAINNET-LAUNCH`-Label). Der Devnet-Lauf hat das anders
   gemacht (einweg-Test-Wallets) — das ist am Mainnet absichtlich
   unmoeglich: sonst minten wir an eine anonyme Adresse.
@@ -27,7 +27,8 @@ gelten erst nach erneuter Bestaetigung (siehe config/token.json
 
 | Datei | Inhalt | Wer |
 |---|---|---|
-| `token/wallets/main.json` | **Emissions-Admin** (signiert Mint + Emission + ATA-Payer). Am besten Hardware-Wallet oder frischer Key auf getrennter Maschine. | Betreiber legt an |
+| `token/wallets/main.json` | **Emissions-Admin** (signiert Mint + Emission + ATA-Payer; traegt die mint/freeze-Vollmacht bis zur Entziehung in Schritt 2.5). Am besten Hardware-Wallet oder frischer Key auf getrennter Maschine. | Betreiber legt an |
+| `token/wallets/mint.json` | **Mint-Keypaar** — der Mint-Account-Pubkey (nur der Mint-Account selbst; `create-mint.ts` laedt die Datei im Mainnet, Erzeugen ist dort untersagt). | Betreiber legt an (fresches Key-Paar) |
 | `token/wallets/recipient.json` | **Eigene Haendler-Adresse** des Betreibers (Phantom/Solflare-Wallet; nur der oeffentliche Pubkey wird zum ATA-Owner; der Key liegt lokal, gitignoriert). | Betreiber kopiert seine Wallet-Keys dorthin (NIEMALS in ein fremdes Feld) |
 | `emission-<anteil>.json` x4 | Die vier Emissions-Owner (community / liquidity / founder / marketing). Fuer "liquidity" die Wallet, die spaeter den DEX-Pool finanziert. | Betreiber legt an (Hardware-empfohlen) |
 

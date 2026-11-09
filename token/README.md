@@ -24,6 +24,7 @@ und keine Anlageempfehlung.
 | `scripts/lib/distribution.ts` | Reine Emissions-Planung (exakte Anteil-Berechnung ohne Gleitkomma-Reste) + Instruktionen pro Anteil |
 | `scripts/transfer-test.ts` | ATA anlegen + Checked-Transfer 1.234 an Test-Wallet |
 | `scripts/transfer-to-holder.ts` | SIN-Menge von Admin-ATA an die Empfaenger-Wallet uebertragen (SIN_TRANSFER_SIN) |
+| `scripts/fund-holder.ts` | Test-SOL von Admin-Wallet an eine Ziel-Adresse (NUR localnet/devnet; im Mainnet Abbruch) |
 | `scripts/bind-to-wallet.ts` | SIN an eine FREI GEWAHLTE Wallet-Adresse (ATA-Owner) binden — Default Dry-Run, sendet erst mit `--send`; Mainnet verlangt `SIN_MAINNET_OK=1`. Nimmt nur den oeffentlichen Pubkey |
 | `scripts/revoke-authorities.ts` | Mint-/Freeze-Vollmacht entziehen (einweg) + Admin-Wallet sperren |
 | `scripts/verify.ts` | Decimals, Supply, Vollmachten, On-Chain-Metadaten gegen Konfig pruefen |
