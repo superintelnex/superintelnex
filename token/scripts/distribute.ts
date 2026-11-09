@@ -109,7 +109,9 @@ const plans = buildPlan({
 
 // 5) Finanzierung der Admin-Wallet (Payer: ATA-Rent x4 + Fees + Metadaten-Rent).
 const admin = await getWallet("main");
-const perTx = 2 * LAMPORTS_PER_SOL; // ATA-Rent ~0.002 + Fees
+// ATA-Rent (~0.0015 SOL) + Signatur-Fees (~0.0001 SOL) mit Puffer — pro
+// Anteil eine ATA-Idempotent-Anlage + ein MintTo.
+const perTx = 500000;
 const need = label === "LOCALNET-TEST"
   ? plans.length * perTx + LAMPORTS_PER_SOL
   : Math.max(0.15 * LAMPORTS_PER_SOL, plans.length * perTx);
