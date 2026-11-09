@@ -18,6 +18,7 @@ export interface TokenConfig {
     supplyPolicy: string;
     distribution: Record<string, number>;
   };
+  dex?: Record<string, unknown>;
   authorities: Record<string, unknown>;
   metadata: Record<string, unknown>;
 }

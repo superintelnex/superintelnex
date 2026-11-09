@@ -23,10 +23,14 @@ und keine Anlageempfehlung.
 | `scripts/distribute.ts` | Vierstufige Emission (81/10/5/4) auf 4 separate Emissions-ATAs (SPL-Standard, keine Emissions-Programme; Vesting bleibt Planpunkt) |
 | `scripts/lib/distribution.ts` | Reine Emissions-Planung (exakte Anteil-Berechnung ohne Gleitkomma-Reste) + Instruktionen pro Anteil |
 | `scripts/transfer-test.ts` | ATA anlegen + Checked-Transfer 1.234 an Test-Wallet |
+| `scripts/transfer-to-holder.ts` | SIN-Menge von Admin-ATA an die Empfaenger-Wallet uebertragen (SIN_TRANSFER_SIN) |
+| `scripts/bind-to-wallet.ts` | SIN an eine FREI GEWAHLTE Wallet-Adresse (ATA-Owner) binden — Default Dry-Run, sendet erst mit `--send`; Mainnet verlangt `SIN_MAINNET_OK=1`. Nimmt nur den oeffentlichen Pubkey |
 | `scripts/revoke-authorities.ts` | Mint-/Freeze-Vollmacht entziehen (einweg) + Admin-Wallet sperren |
 | `scripts/verify.ts` | Decimals, Supply, Vollmachten, On-Chain-Metadaten gegen Konfig pruefen |
 | `scripts/devnet-prefund.ts` | Devnet-Vorbereitung OHNE Transaktion: zeigt einweg-Admin-Pubkey + Test-SOL-Saldo, exakte Laufbefehle (nur Leseabfrage, kein Signieren) |
 | `scripts/prepare-for-review.ts` | Lokaler Pruefdurchlauf (Burn/Freeze/Thaw/Transfer) fuer Wallet-Inspektion |
+| `scripts/create-raydium-pool.ts` | Raydium-CLMM-Pool-PLANNER, DRY-RUN (sendet nichts): Bestaetigung der Mint + Pool-PDA-Rechnung + Account-/Kostenplan. Ein eigentlicher CLMM-Launch ist hier bewusst NICHT implementiert (SIN_DEX_SEND fehlt) |
+| `scripts/lib/raydium-clmm.ts` | Raydium-CLMM-PDA-Mathematik + Account-/Kosten-Planung. Die Seeds und Endianheit sind 1:1 mit dem offiziellen Raydium-SDK uebereinstimmend (6 PDA × 2 Netze byte-genau verifiziert, 09.11.2026). Reine Logik, kein RPC |
 | `tests/config.test.ts` | Offline: Konfiguration ist gueltig und konsistent |
 | `tests/distribute.test.ts` | Offline: Emissions-Planung (exakte Anteile, unguelle Verteilungen abgelehnt) + optin Localnet: vierstufige Emission gegen Test-Validator |
 | `tests/integration.test.ts` | Optin: Kompletter Token-Lebenszyklus gegen lokalen Test-Validator |
@@ -34,6 +38,9 @@ und keine Anlageempfehlung.
 | `metadata/` | Off-Chain-Metadaten-JSON + (siehe `docs/METADATEN-SPEICHERUNG.md`) |
 | `assets/` | Logo-PNGs (800 px, 512 px) fuer die Metadaten |
 | `docs/FRAGENLISTE.md` | Kurze Fragenliste mit begruendeten Vorschlaegen (Kuerzel, Menge, Dezimalstellen, Policy, Verteilung, Vollmachten, URI, Devnet-Start) — Vorschlaege, nicht Endentscheid |
+| `docs/DEVNET-TESTTOKEN-BERICHT.md` | Ergebnis-Protokoll des Devnet-Laufs (09.11.2026): Mint, Signaturen, Explorer-Links, Sicherheitslage |
+| `docs/MAINNET-LAUNCH-RUNBOOK.md` | Launch-Runbook fuer Mainnet: Wallet-Vorbereitung (Mainnet-Keys werden NICHT auto-erzeugt), Sinfolge, Vorab-Checkliste, Labeln |
+| `docs/EXCHANGE-HOSTING.md` | DEX- vs. CEX-Listing: Raydium-Pool-Setup (was wir vorbereitet haben) + CEX-Antragsprozess (was DRETT-Prozess ist und kein Code) |
 | `docs/` | Runbook, Vollmachts-Doku, Test-Doku, Mainnet-Checkliste |
 | `wallets/` | EINWEG-Test-Wallets (base58-JSON) — **gitignoriert**, niemals Tresor |
 | `result/` | Ergebnis-Protokoll (Mint-Adresse, Signaturen) — **gitignoriert** |

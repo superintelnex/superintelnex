@@ -10,20 +10,38 @@
 // VORAUSSETZUNG: config/token.json authorities.revokeMintAuthority /
 // revokeFreezeAuthority = true. Ist eine Einstellung false, springt das
 // Skript ueber die betreffende Vollmacht (und sperrt die Wallet NICHT).
-import { PublicKey, Transaction } from "npm:@solana/web3.js@1.98.4";
+import { PublicKey, Transaction, Keypair } from "npm:@solana/web3.js@1.98.4";
 import * as token from "npm:@solana/spl-token@0.4.15";
-import { loadConfig, conn, getWallet, sendTx, journal, networkLabel } from "./lib/common.ts";
+import { loadConfig, conn, getWallet, sendTx, journal, networkLabel, requireMainnetOk } from "./lib/common.ts";
 
 const cfg = loadConfig();
 const c = conn();
 const label = networkLabel();
+
+// Hauptnetzlautschutz: die Vollmacht-Entziehung ist EINWEG — auf
+// Mainnet erfordert das eine bewusste Bestaetigung.
+requireMainnetOk("revoke-authorities (einwegige Vollmacht-Entziehung)");
 
 const out = JSON.parse(Deno.readTextFileSync(new URL("../result/MINT-ADDRESS.txt", import.meta.url)));
 if ((out.netz ?? "") !== label) {
   console.log("WARNUNG: MINT-ADDRESS.txt gehoert zu Netz '" + (out.netz ?? "?") + "', Lauf erfolgt auf " + label + ".");
 }
 const mint = new PublicKey(out.mint);
-const admin = await getWallet("main");
+// Hauptnetzlautschutz (Wallet-Sperre unten): im Mainnet sperrt das Skript
+// NUR die EIGENE Mainnet-Wallet — nur wenn deren Pubkey exakt der
+// hinterlegte mintAuthority ist (sonst wuerde ein verfuegbares File
+// versehentlich archiviert). Im Testlauf bleibt das alte Verhalten.
+const expectMintAuthority = out.mintAuthority;
+let admin: Keypair;
+if (label === "MAINNET-LAUNCH") {
+  admin = await getWallet("main");
+  if (expectMintAuthority && admin.publicKey.toBase58() !== expectMintAuthority) {
+    console.log("ABBRUCH: token/wallets/main.json (" + admin.publicKey.toBase58() + ") ist NICHT der hinterlegte mintAuthority (" + expectMintAuthority + ").");
+    Deno.exit(1);
+  }
+} else {
+  admin = await getWallet("main");
+}
 const auths = cfg.authorities as { revokeMintAuthority?: boolean; revokeFreezeAuthority?: boolean };
 
 const before = await token.getMint(c, mint);
