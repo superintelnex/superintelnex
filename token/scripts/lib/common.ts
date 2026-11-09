@@ -31,7 +31,7 @@ export function loadConfig(): TokenConfig {
 
 // ---------- Netzwerk / RPC ----------
 
-// Netzwerk waehlbar per Umgebungsvariable SIN_NETWORK (localnet | devnet).
+// Netzwerk waehlbar per Umgebungsvariable SIN_NETWORK (localnet | devnet | mainnet).
 // RPC explizit ueberreitsehen per SIN_RPC.
 export function rpcUrl(): string {
   const explicit = Deno.env.get("SIN_RPC");
@@ -50,7 +50,23 @@ export function networkLabel(): string {
   const net = Deno.env.get("SIN_NETWORK") ?? cfg.networks.default;
   if (net === "localnet") return "LOCALNET-TEST";
   if (net === "devnet") return "DEVNET-TESTTOKEN";
+  if (net === "mainnet") return "MAINNET-LAUNCH";
   return net.toUpperCase();
+}
+
+// Hauptnetzlautschutz: MAINNET-LÄUFE ERFORDERN EIN SICHERES
+// SIN_MAINNET_OK=1 (bewusste Bestätigung des Betreibers). Alle anderen
+// Netze bleiben unbeschrankt.
+export function requireMainnetOk(context: string) {
+  if (networkLabel() !== "MAINNET-LAUNCH") return;
+  if (Deno.env.get("SIN_MAINNET_OK") !== "1") {
+    console.error(
+      "ABBRUCH: MAINNET-LAUNCH-Lauef erfordert SIN_MAINNET_OK=1 " +
+      "(bewusste Bestaetigung). Kontext: " + context + ". " +
+      "siehe token/docs/MAINNET-LAUNCH-RUNBOOK.md.",
+    );
+    Deno.exit(1);
+  }
 }
 
 export function conn(): Connection {
@@ -59,17 +75,26 @@ export function conn(): Connection {
   return new Connection(rpcUrl(), "confirmed");
 }
 
-// ---------- Zufaellige Test-Wallets (nur fuer localnet/devnet-Tests) ----------
+// ---------- Waehler ----------
 
-// Wallets liegen als JSON (base58-Seed-Array) unter token/wallets/
-// und sind per .gitignore ausgeschlossen. Es handelt sich NIE um das
-// Haupt- oder Tresor-Wallet des Betreibers.
+// EINWEG-Test-Waehler fuer localnet/devnet (token/wallets/, gitignoriert).
+// Im Mainnet sind die Waehler NICHT auto-generiert, sondern von dem
+// Betreiber selbst anlegt (mit seinen eigenen Adressen; Admin =
+// Emissions-Admin, Recipient = eigene Haendler-Adresse). Das ist der
+// wichtige Unterschied zum Testlauf: mainnet-Waehler werden nicht
+// erzeugt, sondern erwartet — sonst mintet der Betreibers sein eigenes
+// Mainnet-Token an eine anonyme Testadresse.
 export async function getWallet(name: string, opts: { regenerate?: boolean } = {}): Promise<Keypair> {
+  const label = networkLabel();
+  const isMainnet = label === "MAINNET-LAUNCH";
   const dir = new URL("../../wallets/", import.meta.url);
   try { await Deno.stat(dir); } catch { await Deno.mkdir(dir, { recursive: true }); }
   const f = new URL(name + ".json", dir);
   const keypath = f.pathname;
   if (opts.regenerate) {
+    if (isMainnet) {
+      throw new Error("Regenerierte Waehler sind im Mainnet untersagt: '" + name + "'.");
+    }
     const kp = Keypair.generate();
     // 64-Byte-Array als JSON-Liste serialisieren (Uint8Array waere sonst
     // als Objekt mit Numerix-Indexen serialisiert)
@@ -85,11 +110,42 @@ export async function getWallet(name: string, opts: { regenerate?: boolean } = {
     existing = false;
   }
   if (existing) {
-    return Keypair.fromSecretKey(new Uint8Array(JSON.parse(Deno.readTextFileSync(keypath))));
+    const kp = Keypair.fromSecretKey(new Uint8Array(JSON.parse(Deno.readTextFileSync(keypath))));
+    return kp;
   }
+  if (isMainnet) {
+    throw new Error(
+      "Mainnet-Waehler '" + name + "' fehlt (" + keypath + "). Bitte eigene Waehler-Dateien anlegen " +
+      "(siehe token/docs/MAINNET-LAUNCH-RUNBOOK.md, Abschnitt Waehler-Vorbereitung).",
+    );
+  }
+  // localnet/devnet: wie bisher, auto-generierte EINWEG-Test-Waehler
   const kp = Keypair.generate();
   Deno.writeTextFileSync(keypath, JSON.stringify(Array.from(kp.secretKey)));
   console.log("  (Wallet '" + name + "' erzeugt: " + kp.publicKey.toBase58() + ")");
+  return kp;
+}
+
+// Empfaenger der Verteilung: im Testnetz die einmalig generierte
+// Test-Admin-Waehler; im Mainnet die eigene Haendler-Waehler des
+// Betreibers (token/wallets/recipient.json, lokal, gitignoriert).
+export function holderWallet(): Keypair {
+  const label = networkLabel();
+  const name = label === "MAINNET-LAUNCH" ? "recipient" : "test-admin";
+  try {
+    return getWalletSync(name);
+  } catch (e) {
+    throw new Error(
+      "Haendler-Waehler '" + name + "' fehlt: " + (e instanceof Error ? e.message : String(e)) +
+      " (im Mainnet: eigene Haendler-Adresse unter token/wallets/ anlegen, siehe RUNBOOK).",
+    );
+  }
+}
+
+function getWalletSync(name: string): Keypair {
+  const dir = new URL("../../wallets/", import.meta.url);
+  const keypath = new URL(name + ".json", dir).pathname;
+  const kp = Keypair.fromSecretKey(new Uint8Array(JSON.parse(Deno.readTextFileSync(keypath))));
   return kp;
 }
 

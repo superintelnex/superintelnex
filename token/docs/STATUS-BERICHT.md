@@ -9,9 +9,8 @@ Der Bericht trennt strikt vier Kategorien:
 1. **Vorbereiteter Code** — steht, ist nachvollziehbar, aber noch nicht
    auf Devnet ausgeführt.
 2. **Tatsächlich ausgeführte Tests** — mit Zeitstempeln und Ergebnissen.
-3. **Tatsächlich auf Devnet erstellter Token** — **Nein, noch nicht.**
-   (Nur LOCALNET-TEST und ein früherer lokaler Emissionslauf existieren,
-   siehe unten.)
+3. **Tatsächlich auf Devnet erstellter Token** — **Ja** (DEVNET-TESTTOKEN,
+   09.11.2026; Details in Sektion 3 + `DEVNET-TESTTOKEN-BERICHT.md`).
 4. **Noch offene Arbeiten** — Entscheidungen + ein manueller Schritt.
 
 ---
@@ -138,10 +137,18 @@ Erledigt (Devnet, 09.11.2026):
 
 Für Mainnet (offen, erst nach erneuter Bestätigung):
 
-1. Falls die Q5-Verteilung final wird: Emissions-Skript für 4
-   Verteilungsadressen (Community/Gründer/Dev/Liquidität) — aktuell ist
-   das bewusst nicht implementiert (`mint-initial.ts` mintet die
-   Gesamtmenge an die einweg-Admin-ATA).
+1. Vierstufiges Emissions-Skript **implementiert** (09.11.2026):
+   `token/scripts/distribute.ts` + `token/scripts/lib/distribution.ts`
+   (exakte Anteile ohne Gleitkomma-Reste, 4 separate Emissions-ATAs,
+   SPL-Standard ohne eigene Programme; offline- + Localnet-Tests in
+   `token/tests/distribute.test.ts`, 10/10 ok). Öffnen bleibt:
+   - Ausführen auf Mainnet (Reihenfolge + neue Emissions-Tresore,
+     `MAINNET-CHECKLISTE.md`).
+   - Emissions-Adressen: `config.token.distributionTargets` oder
+     `SIN_DISTRIBUTION_TARGETS` (community/founder/marketing); die
+     liquidity-Adresse kommt aus `token/wallets/recipient.json`.
+   - Vesting (founder 5 % / marketing 4 %) als Folgeschritt nach der
+     Emission — im Skript bewusst NICHT enthalten.
 2. Metadaten-URI aktuell On-Chain fixiert auf die Raw-URL der
    Feature-Branche (`isMutable: false` → für diesen Mint dauerhaft). Für
    Mainnet: IPFS/Arweave (content-addressed) + Config-Update +
