@@ -19,13 +19,16 @@ und keine Anlageempfehlung.
 | `config/token.json` | Zentrale Konfiguration (Netz, Token-Parameter, Vollmachten, Metadaten) — alles mit Status `NOT-FINAL` |
 | `scripts/lib/common.ts` | Gemeinsame Bausteine: Konfig, RPC, Wallets, Signatur-Protokoll, Metadaten-PDA |
 | `scripts/create-mint.ts` | Mint + ATA + Metaplex-Metadaten anlegen (ein Transaktion) |
-| `scripts/mint-initial.ts` | Gesamtmenge emittieren (verteilte Emission: GEPLANT, nach Bestaetigung) |
+| `scripts/mint-initial.ts` | Gesamtmenge emittieren (an eine Admin-ATA — einweg-Testlauf) |
+| `scripts/distribute.ts` | Vierstufige Emission (81/10/5/4) auf 4 separate Emissions-ATAs (SPL-Standard, keine Emissions-Programme; Vesting bleibt Planpunkt) |
+| `scripts/lib/distribution.ts` | Reine Emissions-Planung (exakte Anteil-Berechnung ohne Gleitkomma-Reste) + Instruktionen pro Anteil |
 | `scripts/transfer-test.ts` | ATA anlegen + Checked-Transfer 1.234 an Test-Wallet |
 | `scripts/revoke-authorities.ts` | Mint-/Freeze-Vollmacht entziehen (einweg) + Admin-Wallet sperren |
 | `scripts/verify.ts` | Decimals, Supply, Vollmachten, On-Chain-Metadaten gegen Konfig pruefen |
 | `scripts/devnet-prefund.ts` | Devnet-Vorbereitung OHNE Transaktion: zeigt einweg-Admin-Pubkey + Test-SOL-Saldo, exakte Laufbefehle (nur Leseabfrage, kein Signieren) |
 | `scripts/prepare-for-review.ts` | Lokaler Pruefdurchlauf (Burn/Freeze/Thaw/Transfer) fuer Wallet-Inspektion |
 | `tests/config.test.ts` | Offline: Konfiguration ist gueltig und konsistent |
+| `tests/distribute.test.ts` | Offline: Emissions-Planung (exakte Anteile, unguelle Verteilungen abgelehnt) + optin Localnet: vierstufige Emission gegen Test-Validator |
 | `tests/integration.test.ts` | Optin: Kompletter Token-Lebenszyklus gegen lokalen Test-Validator |
 | `tests/authorities.test.ts` | Optin: Vollmachten-Entzug (Mint/Freeze) — danach werden Emission/Freeze On-Chain abgelehnt |
 | `metadata/` | Off-Chain-Metadaten-JSON + (siehe `docs/METADATEN-SPEICHERUNG.md`) |
@@ -65,7 +68,8 @@ cd SuperIntelNex
 deno test --allow-read --allow-env token/tests/config.test.ts   # offline
 deno test --allow-all  token/tests/                             # localnet (integration + authorities)
 deno run --allow-all token/scripts/create-mint.ts           # Mint + Metadaten
-deno run --allow-all token/scripts/mint-initial.ts         # Emission
+deno run --allow-all token/scripts/distribute.ts            # Vierstufige Emission (81/10/5/4)
+# alternativ (einweg-Testlauf): deno run --allow-all token/scripts/mint-initial.ts  # Gesamtmenge an 1 ATA
 deno run --allow-all token/scripts/transfer-test.ts        # 1.234 transferieren
 deno run --allow-all token/scripts/verify.ts               # Abgleich
 deno run --allow-all token/scripts/revoke-authorities.ts   # Vollmachten weg (einweg!)

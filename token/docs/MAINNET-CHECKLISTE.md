@@ -21,10 +21,14 @@ Launch". Keine Einzelpost ist vorab erledigt; alles hier ist
 
 ## 2. Technische Vorbereitungen
 
-- [ ] Distributions-Skript: `mint-initial.ts` emittiert aktuell die
-      Gesamtmenge an eine Admin-ATA; ein vierstufiges Emissions-
-      Skript (pro Anteil ein Emissionskonto) ist **GEPLANT** und
-      erst nach Verteilungsbestätigung zu implementieren.
+- [x] Distributions-Skript: **implementiert** — `distribute.ts`
+      emittiert die Gesamtmenge exakt nach `config.token.distribution`
+      (81/10/5/4) auf vier separate Emissions-ATAs (SPL-Standard,
+      keine Emissions-Programme). Planungslogik in
+      `lib/distribution.ts` (exakt, ohne Gleitkomma-Reste),
+      offline- + Localnet-Tests in `tests/distribute.test.ts`
+      (10/10 ok inkl. E2E). Die **Ausfuhrung** auf Mainnet bleibt
+      offen (Reihenfolge unten + neue Emissions-Tresore):
 - [ ] Off-Chain-Metadaten auf dem gewählten permanenten Speicher
       (IPFS/Arweave) hochladen, `uri` in `config/token.json`
       aktualisieren und vor dem Mainnet-Mint testen
