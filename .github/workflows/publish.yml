@@ -17,6 +17,8 @@ on:
       - 'sitemap.xml'
       - 'manifest.webmanifest'
       - 'superintelnex-sn-anthrazit.svg'
+      - 'whitepaper.html'
+      - 'vendor/three.min.js'
       - 'CNAME'
   workflow_dispatch:
 
@@ -41,9 +43,11 @@ jobs:
           for f in index.html 404.html impressum.html datenschutz.html \
                    og-image.png apple-touch-icon.png icon-192.png icon-512.png \
                    robots.txt sitemap.xml manifest.webmanifest \
-                   superintelnex-sn-anthrazit.svg CNAME; do
+                   superintelnex-sn-anthrazit.svg whitepaper.html CNAME; do
             [ -f "$f" ] && cp "$f" "$TMP/" || { echo "FEHLT auf main: $f"; exit 1; }
           done
+          mkdir -p "$TMP/vendor"
+          cp "vendor/three.min.js" "$TMP/vendor/" || { echo "FEHLT auf main: vendor/three.min.js"; exit 1; }
           git config user.name  "SuperIntelNex CI"
           git config user.email "superintelnex@gmail.com"
           # gh-pages vom Remote holen — der lokale Stand (via main-Checkout) ist
