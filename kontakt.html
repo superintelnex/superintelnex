@@ -46,6 +46,14 @@
   input,textarea{width:100%;border:1px solid var(--line);background:#0A0A0A;color:var(--ink);padding:12px 14px;font:15px var(--serif);min-height:46px;border-radius:0}
   textarea{resize:vertical;min-height:118px}
   input::placeholder,textarea::placeholder{color:var(--muted)}
+  .topics{display:grid;gap:8px}
+  .topic{display:flex;align-items:center;gap:12px;border:1px solid var(--line);padding:12px 14px;cursor:pointer;position:relative}
+  .topic::before{content:"";position:absolute;inset:-6px;z-index:-1}
+  .topic:hover{border-color:#ffffff66}
+  .topic input{width:18px;height:18px;flex:none;accent-color:var(--ink);margin:0;cursor:pointer}
+  .topic-name{font-size:15px;font-weight:600}
+  .topic-desc{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+  .topic:has(input:checked){border-color:var(--ink)}
   .submit{min-height:48px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);font:600 14px var(--serif);letter-spacing:.02em;padding:12px;cursor:pointer;transition:background .2s,color .2s}
   .submit:hover{background:transparent;color:var(--ink)}
   .submit:disabled{opacity:.4;cursor:default}
@@ -96,11 +104,20 @@
     <div class="content">
       <p class="eyebrow" data-de="Kontakt">Contact</p>
       <h1 data-de="Kontakt">Contact</h1>
-      <p class="lede" data-de="Anfrage senden: Name, E-Mail und Grund. Die Nachricht öffnet Ihr E-Mail-Programm — es werden keine Daten an Server übertragen und nichts protokolliert.">Send a message: name, email, and reason. Your email app opens with the message ready to send — no data is transmitted to any server and nothing is logged.</p>
+      <p class="lede" data-de="Anfrage senden: Name, E-Mail, Betreff (Allgemein, Termin oder konkreter Grund) und Nachricht. Die Nachricht öffnet Ihr E-Mail-Programm — es werden keine Daten an Server übertragen und nichts protokolliert.">Send a message: your name, email, subject (general, appointment, or a specific reason), and a note. Your email app opens with the message ready to send — no data is transmitted to any server and nothing is logged.</p>
       <form id="contact-form" novalidate>
         <label for="f-name"><span class="label" data-de="Ihr Name">Your name</span> <span class="req" aria-hidden="true">*</span><input id="f-name" name="name" type="text" autocomplete="name" required data-de-ph="Ihr Name" placeholder="Your name"></label>
         <label for="f-email"><span class="label" data-de="Ihre E-Mail">Your email</span> <span class="req" aria-hidden="true">*</span><input id="f-email" name="email" type="email" autocomplete="email" required data-de-ph="ihre@adresse.com" placeholder="you@example.com"></label>
-        <label for="f-topic"><span class="label" data-de="Grund">Reason</span> <span class="req" aria-hidden="true">*</span><textarea id="f-topic" name="topic" required data-de-ph="Worum geht es?" placeholder="What is this about?"></textarea></label>
+        <div role="radiogroup" aria-labelledby="lg-topic">
+          <span id="lg-topic" class="label" data-de="Betreff">Subject</span>
+          <div class="topics">
+            <label class="topic"><input type="radio" name="subject" value="allgemein" checked><span class="topic-name" data-de="Allgemein">General</span><span class="topic-desc" data-de="Allgemeine Anfrage oder Rückmeldung">General inquiry or feedback</span></label>
+            <label class="topic"><input type="radio" name="subject" value="termin"><span class="topic-name" data-de="Termin">Appointment</span><span class="topic-desc" data-de="Terminanfrage: Call, Vorstellungs- oder Abnahmetermin">Request a call, demo, or review appointment</span></label>
+            <label class="topic"><input type="radio" name="subject" value="grund"><span class="topic-name" data-de="Grund">Specific reason</span><span class="topic-desc" data-de="Konkreter Grund: Partnerschaft, Feedback, Medien, Support">Partnership, feedback, media, or support</span></label>
+          </div>
+        </div>
+        <label id="f-date-wrap" for="f-date" hidden><span class="label" data-de="Gewünschter Termin (optional)">Preferred date (optional)</span><input id="f-date" name="date" type="date"></label>
+        <label for="f-topic"><span class="label" data-de="Nachricht">Message</span> <span class="req" aria-hidden="true">*</span><textarea id="f-topic" name="topic" required data-de-ph="Worum geht es?" placeholder="What is this about?"></textarea></label>
         <button type="submit" class="submit" data-de="Nachricht vorbereiten">Prepare message</button>
       </form>
       <p class="note" data-de="Hinweis: Über diese Seite werden keine personenbezogenen Daten erhoben oder gespeichert — die Nachricht wird ausschließlich lokal in Ihrem E-Mail-Programm aufbereitet.">Note: No personal data is collected or stored through this page — the message is prepared exclusively in your own email app.</p>
@@ -144,6 +161,18 @@
   const TO_B64 = 'c3VwZXJpbnRlbG5leEBnbWFpbC5jb20=';
   const form = document.getElementById('contact-form');
   const done = document.querySelector('.done');
+  const dateWrap = document.getElementById('f-date-wrap');
+  const subjectLabels = {
+    allgemein: { de: 'Allgemein', en: 'General' },
+    termin: { de: 'Termin', en: 'Appointment' },
+    grund: { de: 'Konkreter Grund', en: 'Specific reason' }
+  };
+  function syncDateField() {
+    const isAppointment = form.querySelector('input[name="subject"]:checked').value === 'termin';
+    dateWrap.hidden = !isAppointment;
+  }
+  form.addEventListener('change', syncDateField);
+  syncDateField();
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
@@ -151,13 +180,23 @@
     const name = String(data.get('name') || '').trim();
     const email = String(data.get('email') || '').trim();
     const topic = String(data.get('topic') || '').trim();
+    const subjectKey = String(data.get('subject') || 'allgemein');
+    const date = String(data.get('date') || '').trim();
     const lang = language === 'de' ? 'DE' : 'EN';
-    const subject = lang === 'DE' ? 'Kontaktanfrage — SuperIntelNex' : 'Contact inquiry — SuperIntelNex';
-    const body = ['Name: ' + name, 'E-Mail: ' + email, '', topic, '', 'Via superintelnex.com/kontakt.html'].join('\n');
+    const langKey = language === 'de' ? 'de' : 'en';
+    const subjectName = (subjectLabels[subjectKey] || subjectLabels.allgemein)[langKey];
+    const subject = lang === 'DE'
+      ? 'Kontaktanfrage — ' + subjectName + ' — SuperIntelNex'
+      : 'Contact inquiry — ' + subjectName + ' — SuperIntelNex';
+    const lines = ['Name: ' + name, 'E-Mail: ' + email,
+      lang === 'DE' ? 'Betreff: ' + subjectName : 'Subject: ' + subjectName];
+    if (subjectKey === 'termin' && date) lines.push(lang === 'DE' ? 'Gewünschter Termin: ' + date : 'Preferred date: ' + date);
+    lines.push('', topic, '', 'Via superintelnex.com/kontakt.html');
     const target = atob(TO_B64);
-    window.location.href = 'mailto:' + target + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = 'mailto:' + target + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
     done.classList.add('show');
     form.reset();
+    syncDateField();
     done.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 })();
