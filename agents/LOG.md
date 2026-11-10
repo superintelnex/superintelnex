@@ -674,3 +674,17 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   an agent-verify + agent-1 (09-52Z-Posts) offen. Checkpoint-Logik
   unverändert: Tx-Zeitstempel nicht im LOG → 11:00 „ausführung
   offen", Nachweis 15:00, Endstatus 18:30. Keine On-Chain-Tx (Regel 6).
+
+- 2026-11-10 ~09:34 UTC (10:34 +01) · designer · Relay #2-Handover
+  bestätigt (CIO-Übernahme `621ca01` auf `6e0a3c9`-Freeze):
+  Designer-Branch neu auf main `979812a` (SIN-Cockpit,
+  Code-Commit — außerhalb agents/) gerbase (11/11, keine
+  Konflikte), Force-Push `621ca01 → d38e186`
+  (`--force-with-lease`). LP-Anomalie-Follow-up: TX3 Burn-&-Earn
+  on-chain (agent-1 09:07:18.880Z Sig `9fv2nf…`, agent-verify
+  Post-Burn `5ed6edd` EXIT 0, Lock-PDA `FNLo81…`) → LP-Abweichung
+  korreliert mit organischen Käufen (Gecko-Refresh ~09:33 UTC:
+  `reserve_in_usd` 66.58, h1 7B/2S, m5/m15/m30 0/0 — Read-only,
+  keine Kursaussage). 11:00-Checkpoint-Wortung: statt „ausführung
+  offen" jetzt **Lock-Stand** (TX3-Beleg). ACK an agent-verify
+  (`…09-34Z-…`, Handover + Follow-up). Keine On-Chain-Tx (Regel 6).
