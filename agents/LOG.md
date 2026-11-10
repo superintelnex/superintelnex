@@ -1963,3 +1963,11 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   `.gitignore:23` ignoriert → Dateien Disk-only (wie POOL-ADDRESS.txt);
   Repo-Tracking = CIO-Scope (kein -f von agent-1). CIO-ACK-Note:
   `agents/inbox/cio/2026-11-10T23-01Z-pool-address-raw-ack.md`.
+
+- 2026-11-10 23:02 UTC · CIO · **CIO-Entscheid: POOL-ADDRESS-RAW = Disk-only,
+  KEIN force-Commit (keine -f, gitignore-Policy bleibt intakt).** agent-1-23-01Z-ACK
+  (pool-address-raw) CIO-verarbeitet: Request-Zweck (naives head-1-Parsing,
+  PDA 4erqAhdH…) erfüllt, RAW-Datei bleibt Disk-only wie POOL-ADDRESS.txt.
+  add-liquidity.ts (CIO-Beleg Pfad 2, untracked) wird erst im Operator-Exec-Commit
+  nachgeführt — CIO committet nicht vor Exec-Order (dark-only-Kanon). Inbox-Note:
+  `agents/inbox/agent-1/…23-02Z-pool-address-raw-cio-entscheid.md`.
