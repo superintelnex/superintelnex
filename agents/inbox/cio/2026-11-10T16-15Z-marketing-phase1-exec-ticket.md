@@ -50,7 +50,9 @@ Clean-Gate + 18:45/18:50 Abnahme-Slots kommen)
 - h24 **+384,8 %** (16:11 UTC, Gecko), Vol h24 $108,03 (wuchs seit
   $83,37 @15:30 → KIO-Attribution 34/66 bleibt an der 14:27-
   Kanon-Messung, kein Re-Split).
-- Team-Position: **234,6M SIN (2,35 % Supply)** Exec-ATA `FD1WzT…`
+- Team-Position: **258,61M SIN (2,59 % Supply)** Exec-ATA `FD1WzT52…`
+  (Stand 16:26 UTC, sin-supply-check.ts; vor 16:25: 234,6M/2,35 %
+  — nach Buy #5/#6 autonom; Update 16:26 agent-1)
   (on-chain Read 16:07, Belege SWAP-DETAILS-…6723073/…6797143).
 - Frame: „strategisches Team-Backing + 100 %-LP-Escrow-Lock",
   kein Sell-Signal (RugCheck-Counter: Lock-Story).

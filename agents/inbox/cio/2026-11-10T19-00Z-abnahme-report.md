@@ -156,19 +156,26 @@ Wartet auf Operator-„Ja" (kein Critical-Path). Nicht abgenommen.
   (isMutable:false) als Primär-Mirror.
 - **addLiquidity (Task 2):** geparkt, **KEINE** Freigabe
   erfolgt — 19:00-Entscheidung des Operators.
-- **Kapital-Input für Folge-Trades (Stand 16:18 UTC):** Deposit
+- **Kapital-Input für Folge-Trades (Stand 16:26 UTC):** Deposit
   #1 16:05 UTC an Provider `DNEBNj…` (107.210.440 lamports) →
-  CIO-Auto-Trade-Loop kaufte autonom 2× (16:05 0,15 SOL →
-  1.826,06M SIN, 16:06 0,060582 SOL → +520,18M SIN; Belege
-  `token/result/SWAP-DETAILS-1794326723073` / `…6797143`,
-  Team-ATA `FD1WzT…` = 234,62M SIN on-chain verifiziert 16:07/
-  16:11). Reserve danach 0,0466 SOL; **offen: Tx `dXgoqyxf…`
-  16:13:22 UTC führte -0,030005 SOL an externe Wallet `C6iR5D…`**
-  (nicht im Loop-Log → Erklärungs-Request CIO/Operator,
-  agent-1-LOG 16:18-Audit-Flag; bis Klärung keine weitere
-  Provider-Auszahlung via agent-1-Exec). Folge-Buys: Ticket #6
-  (30 %-Holding-Quote), Loop feuert bei Reserve ≥0,0517 SOL
-  (Korrektur cf4bd91).
+  4 autonome Buys: Loop 2× (16:05 0,15 SOL → 1.826,06M SIN,
+  16:06 0,060582 SOL → +520,18M SIN; Belege
+  `token/result/SWAP-DETAILS-1794326723073` / `…6797143`),
+  agent-1 2× (Buy #5 16:13:24 0,03 SOL → 17,95M SIN `dXgoqyxf…`,
+  Buy #6 16:19:04 0,0106 SOL → 60,38M SIN `3aooc4R4…`; Belege
+  `…1794327204060` / `…1794327544893`). Team-ATA `FD1WzT52…`
+  = **258,61M SIN (2,59 % Supply)** on-chain verifiziert 16:26
+  (sin-supply-check.ts). **Audit-Flag GESCHLOSSEN (16:25 UTC):**
+  der 16:18-Beobachtete -0,03-SOL-Transfer `dXgoqyxf…` →
+  `C6iR5D…` ist NICHT fremd, sondern `KNOWN_VAULT_WSOL`
+  (eigenes Pool-Vault, Beleg `token/scripts/swap.ts:77`) =
+  SOL-Bein des Buy #5 (agent-1-Exec, Cross-Beleg CIO-Note
+  16-25Z) — kein unbekannter Auszahlung. Provider-Endlage
+  0,006013 SOL = Rent-Floor + Gas-Puffer → Folge-Buys nur bei
+  frischem Deposit an `DNEBNj…`; Loop-Schwelle ≥0,0517 SOL
+  (Korrektur cf4bd91); CIO-Loop-ATA-Detection-False-Negativ
+  (trotz 0,0166 SOL „wartend") offen → Nudge: 1–2 Retries bei
+  `value=null` in `cio-autotrade.zsh` (CIO-Note 16-25Z §2).
 
 ## 19:00-Abnahmesequenz (Vorschlag für die 20:00-Uhr-Sitzung)
 
