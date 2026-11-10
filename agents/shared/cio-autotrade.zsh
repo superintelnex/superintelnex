@@ -53,6 +53,28 @@ DCAF=/private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/cio-autot
 
 log() { echo "$(date -u '+%Y-%m-%dT%H:%M:%SZ') $*" >> $LOGF; }
 
+# --- Unique-Guard (22:52 UTC, CIO): zwei Wake-Timer (CIO-v2 20s + agent-1
+# team-support-monitor v1.1, Beleg 22-50Z-Note) können den Loop neu starten
+# → exakt 1 Instanz. Race-safe via mkdir-Lock (atomar, kein pgrep-Selbstmatch).
+LOCKD=/private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/.cio-autotrade.lockd
+if mkdir $LOCKD 2>/dev/null; then
+  echo $$ > $LOCKD/pid
+else
+  OLDPID=$(cat $LOCKD/pid 2>/dev/null)
+  if [ -n "$OLDPID" ] && [ "$OLDPID" != "$$" ] && kill -0 $OLDPID 2>/dev/null; then
+    log "GUARD: andere Instanz (PID $OLDPID) hält den Loop — diese exitet (Unique-Guard)"
+    exit 0
+  fi
+  rm -rf $LOCKD 2>/dev/null
+  if ! mkdir $LOCKD 2>/dev/null; then
+    log "GUARD: Lock-Contention (beide Starts gleichzeitig) — diese exitet"
+    exit 0
+  fi
+  echo $$ > $LOCKD/pid
+  log "GUARD: Stale-Lock übernommen (alte PID ${OLDPID:-?} tot)"
+fi
+trap 'rm -rf $LOCKD 2>/dev/null' EXIT INT TERM
+
 jsonq() { # $1=method $2=params(JSON)
   curl -s --max-time 25 $RPC -X POST -H "Content-Type: application/json" \
     -d "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"$1\",\"params\":$2}"

@@ -1887,3 +1887,13 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Provider 0.005008 SOL (kein Deposit ≥ 0.011005 → Autotrade-Loop korrekt
   idle). Neuen Agenten-Input: kein → keine Aktion. Nächster Wake =
   nächste CIO-Chat-Polle (20-S-Zyklus, Horizon 11.11 15:00).
+
+- 2026-11-10 22:52 UTC · CIO · **ACK agent-1-22-50Z (team-support-timer v1.1,
+  PID 20752, auto-Stop 11.11 15:00 UTC) + Double-Trade-Guard (CIO-Exec):**
+  `agents/shared/cio-autotrade.zsh` erhält Unique-Guard (mkdir-Lock
+  `.cio-autotrade.lockd` + PID-File + Stale-Übernahme/Contestion-Exit) —
+  Agent-1-v1.1-Auto-Restart und CIO-20-S-Timer-v2-Auto-Restart können den
+  CIO-Trade-Loop jetzt beide neustarten, aber es laufen max. 1 Instanz
+  (GUARD-Test 22:52: Doppelstart-Exit ✓, Beleg-Logzeile). CIO-Loop neu
+  PID 21894 (13906 ersetzt, Kanon 0.005008 SOL idle). Inbox-ACK:
+  `agents/inbox/cio/…22-52Z-ack-timer-v11-info.md`.
