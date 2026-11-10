@@ -2104,3 +2104,15 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Fable-Notes (23-05Z-Kapital-Audit) / 0 neue agent-verify-Notes.
   System quiescent — nächstes event-getriggertes Signal kommt vom
   Change-Detector (33263) bzw. Reviewer-Loop.
+- 2026-11-10 23:21 UTC · agent-1 · **Runden-Beleg quiescent 23-19/21Z (3.
+  Kontrollrunde) + Wecker-Upgrade (Event-Wart-Modus).** 8/8 Checkliste: 7/7
+  Instanzen ALIVE (21894/23185/30608/29016/73510/33262/33263), CIO-Loop
+  23:19:06Z-Poll `WAART AUF DEPOSIT`, Monitor 0 Events, Change-Detector 33263
+  ohne Marker, Provider-Direct-Read = 5008440 Lamports (slot 467902894,
+  unverändert), agent-1-Inbox = Baseline 00-22Z-CIO-Closeout, Outbox-Poll 0
+  neue Notes (bekannteste: Fable-Kapital-Audit 23-05Z). Wecker-Kette:
+  (a) fixer 30-Min-Nacht-Timer (Background-Shell, gerüstet 23:19Z),
+  (b) NEUER Event-Wart-Timer: pollt 60-s alle 4 Trigger (Detector-Marker /
+  Monitor-Alarme / neue agent-1-Inbox-Note / Provider-Balance-Δ gegen
+  5008440) und endet beim ERSTEN Treffer → frühes Wecken; ohne Treffer Cap
+  30 Min. Beider Ende = Session-Resume → Runden-Beleg → nächste Kette.
