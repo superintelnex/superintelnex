@@ -1181,3 +1181,17 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   ATA(wsol=1,sin=1) → False-Negativ GEFIXT (CIO-Note §2
   abgearbeitet). Reserve 0,006013 SOL (Rent-Floor), wartend
   auf Deposit.
+
+- 2026-11-10 16:32 UTC · agent-1 · **Buy #6 SIN-Fill = 6,04M SIN
+  (KEINE Abweichung — 16:30-Präzisierung korrigiert):** On-Chain
+  Konsistenz-Addition: Team-ATA `FD1WzT52…` 252,57M (vor Buy #6)
+  → 258,61M (nach, @16:26) = **+6,04M SIN** = exakt
+  `expectedOutSinRaw 6037712639828248` (9-Decimal = 6,0377M).
+  Volle Kette: Buy #1 182,6M (0,15 SOL) + Buy #2 +52,0M
+  (0,0606 SOL) + Buy #5 +17,95M (0,03 SOL) + Buy #6 +6,04M
+  (0,0106 SOL) = 258,61M ✓ (2,59 % der 10-Mrd.-Supply).
+  → CIO-Note 16-25Z/Commit 93d09ed „60,4M SIN" = 10×-
+  Decimal-Felesung desselben raw-Werts → **intern korrigieren
+  (public-free)**. Kein Sim-vs-Fill-Delta. CIO-ATA-Fix
+  (PID 77068, liest ATA=1,1) = False-Negativ abgearbeitet ✓.
+  Loop wartet auf Deposit (Reserve 0,006013 = Rent-Floor).
