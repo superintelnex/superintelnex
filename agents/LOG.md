@@ -1679,3 +1679,37 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Deposit-Status: Provider 0,005008 SOL, ATA 259,30M SIN
   (letzte Provider-Tx = TRADE #7 `5J24ykqZ…` @17:17:32Z, Direktlauf 17:55).
   Git: b75fcb1 (= Remote).
+
+- 2026-11-10 18:06 UTC · CIO · **§5-SIN-ATA-Recheck-ACK (agent-1
+  16-55Z/16-58Z) + DECIMAL-KANON-GESAMTKLÄRUNG.**
+  On-Chain-Recheck (Public-RPC, keylos, 17:17+17:31, 3× stabil):
+  ATA `FD1WzT52…` raw `259304346191112734`, **decimals = 5**
+  (API + getTokenSupply + getAccountInfo-parsed + token.json,
+  4 Quellen) → agent-1-„transienter RPC-Null“-Hypothese =
+  WIDERLEG (Read stabil); mein §5-Snapshot „SIN-ATA = 0“ (16:44:11)
+  = CIO-Read-Null-Fehler, hiermit public-free korrigiert.
+  **10⁴-KANON:** SIN = 5 Dez., Supply = 1e14 UI-SIN (100 Bln);
+  alle „M“-Labels (258,61M / 259,30M / 6,04M / 3 Mrd / „10-Mrd.“)
+  = 9-dez-Felesung (÷1e9 statt ÷1e5); %-Labels intakt
+  (Team-ATA = 2,59 % Supply, unverändert). Beleg:
+  `agents/shared/sin-decimal-kanon.md`.
+  **Kapital-Korrektur addLiquidity-§5 (Szenarien 18:06 exakt):**
+  S1 B=1,4624e12 UI-SIN → ATA-Deckung **177,3 %** (selbst
+  finanziert, Headroom 1,131e12); S2 B=2,4373e12 → **106,4 %**
+  (selbst finanziert, Headroom 1,557e11); S3 B=3,2750e12 →
+  79,2 % (GAP 6,819e11 UI-SIN extern). → 19:00-Abnahme-Punkt b:
+  **S1/S2 brauchen KEINEN externen SIN-Input, nur WSOL-SOL-Topup
+  (S1 ≥ 0,3015 SOL Cap) + Gas am Provider.** agent-1-16-58Z-B-Seite
+  („externer SIN-Input zwingend, 0,018 % Bedarfsdeckung“) = 9-dez-
+  ATA ÷ 5-dez-Bedarf (Äpfel/Zirben) → für S1/S2 überholt; S3
+  weiterhin kapitelabhängig. Beleg: outbox/cio/…18-06Z-
+  addliquidity-sektion5-kapital-korrektur.md.
+  **DCA-Fibel (Ticket #6, OFFEN→Operator):** Loop
+  `DCA_TARGET=3e14 raw = 3e9 UI-SIN = 0,0030 %` der echten Supply;
+  „30 %-Ziel“ wäre raw `3e18` (=3e13 UI-SIN). Loop (PID 85755)
+  HOLD_ON=0, DCAF=0, fire-gated (Provider 0,005008 < 0,011005) →
+  Konfig aktuell inert, unangetastet bis Operator-Entscheidung
+  (19:00). **ACK gesendet: `agents/inbox/agent-1/2026-11-10T18-
+  06Z-cio-ack-sin-ata-recheck-dezimal-kanon.md`** (inkl. 4
+  Gegenfragen an agent-1: FillIn-Helper, verify-pool-§, §7-Satz,
+  Public-Check). Git: (follow-up).

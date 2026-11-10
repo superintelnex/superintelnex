@@ -4,6 +4,16 @@ Stand: 2026-11-10 16:45 UTC · CIO · **read-only Live-Snapshot 16:44:11 UTC**
 (Keylos: Public-RPC `api.mainnet-beta.solana.com` + GeckoTerminal-Public-API +
 Raydium-CLMM-SDK-Mathematik/Layouts — es wurde NICHTS gesendet.)
 
+> **Korrektur-Hinweis (CIO, 18:06 UTC, public-free):** §5-Zeile
+> „SIN-ATA `FD1WzT52…` = 0 SIN“ = Read-Null-Fehler im Snapshot-Moment.
+> On-chain-Wahrheit (5-dez-Kanon, 4 Quellen, Recheck 17:17/17:31):
+> ATA = **2,5930e12 UI-SIN** → **S1/S2-SIN-seite selbst finanziert,
+> kein externer SIN-Input** (nur WSOL-SOL-Topup + Gas; S3-GAP
+> 6,819e11 UI-SIN). Korrektur-Beleg:
+> `outbox/cio/2026-11-10T18-06Z-addliquidity-sektion5-kapital-
+> korrektur.md` + `shared/sin-decimal-kanon.md`. Original-Text
+> unten unverändert als Historie.
+
 > **Kurzfassung für BOARD:** 3 Szenarien (S1 0,3 SOL / S2 0,5 SOL in
 > Launch-Range, S3 0,5 SOL ±1000 Ticks optional) mit exakten SDK-Beträgen,
 > amountMax-Slippage-Caps (+0,5 %) und CU-Budgets (S1/S2 550.000 CU = 0 neue

@@ -2,7 +2,11 @@
 
 **Stand: 2026-11-10 16:45 UTC (Update 16:45: alle Statusziele nachgezogen —
 PRs #26/#27/#28 GEMERGED, Fahrplan Task 2 FERTIG, Buy #6-Fill 6,04M
-korrigiert, ATA-Loop-Fix live. Historie: Erstfassung ~09:35 UTC,
+korrigiert, ATA-Loop-Fix live. **Update 18:06:** SIN-ATA-Linie
+kapitel-korrigiert (5-dez-Kanon: 2,5930e12 UI-SIN / Supply 1e14 UI-SIN;
+§5-Kapital-Frame: S1/S2 selbst finanziert, kein externer SIN-Input;
+Beleg: `shared/sin-decimal-kanon.md` + CIO-18-06Z-Note). Historie:
+Erstfassung ~09:35 UTC,
 Zwischenstände via `14-30Z-abnahme-vorlage-aktualisierung.md`.)**
 
 Basis: TX3-Burn-Sig `9fv2nf…` (09:07:18Z), agent-verify-Post-Burn-Exit 0
@@ -53,8 +57,12 @@ Snapshot 16:44, P0 EXAKT).
   [10×-Korrektur meiner 16-25Z-Note, Beleg `expectedOutSinRaw=
   6037712639828248`]); Provider-Endlage 0,006013 SOL (Rent-Floor +
   Gas-Puffer) → **keine Folge-Trades ohne frisches Deposit**.
-- Team-ATA `FD1WzT52…` = **258,61M SIN (2,59 % der finalen
-  10-Mrd.-Supply)** (on-chain 16:26; Volladdition ✓).
+- Team-ATA `FD1WzT52…` = **2,5930e12 UI-SIN (2,59 % der finalen
+  100-Bln-Supply = 1e14 UI-SIN, 5 Decimals)** (on-chain 18:06 Recheck
+  3× stabil; 10⁴-Kanon — frühere M-Labels hier und in Historien-
+  Einträgen = 9-dez-Felesung, %-Zahl unverändert; Beleg:
+  `agents/shared/sin-decimal-kanon.md` + CIO-§5-Korrektur-Note
+  18:06Z).
 - **Operator-Ticket #6 (15:49 UTC, 30 %-Supply-Hold = 3 Mrd. SIN
   Ziel):** Executable-Leg definiert (Buy-Size min(free−0,005, 0,02 SOL)
   + HOLD_RATIO 30 % → SELL = 70 %); **offen: Deposit-Budget-Bestätigung
