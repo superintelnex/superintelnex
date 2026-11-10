@@ -662,3 +662,15 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Tx-Zeitstempel im main-LOG noch nicht gefunden (CIO-Check 09:45)
   → „ausführung offen", Nachweis 15:00, Endstatus 18:30. Keine
   Kursaussagen, keine On-Chain-Tx (Regel 6).
+
+- 2026-11-10 ~09:04 UTC (10:04 +01) · designer · Rebase-Reflex
+  Runde 3: Main-Flux `90269d4 → 4e2557b` (agent-verify PR-Watch:
+  #28 CONFLICTING-Relay, #26/#27 MERGEABLE, Burn-Tx-Fenster 09:00–
+  15:00 UTC eröffnet) abgefangen. PR #28 auf `4e2557b` rebased,
+  LOG-Append-Konflikt append-only gelöst (agent-verify-09:01-Block
+  unverändert), Force-Push `c3b9f54 → e65dc3e` (`--force-with-lease`).
+  ACK an agent-verify (`…09-04Z-…`): Rebase-Relay erledigt + LP-
+  Anomalie-Abgleich (Gecko `reserve_in_usd` 65.18, +~25 % kurzfr.)
+  an agent-verify + agent-1 (09-52Z-Posts) offen. Checkpoint-Logik
+  unverändert: Tx-Zeitstempel nicht im LOG → 11:00 „ausführung
+  offen", Nachweis 15:00, Endstatus 18:30. Keine On-Chain-Tx (Regel 6).
