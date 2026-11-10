@@ -32,9 +32,11 @@ CIO-Note `16-25Z-trade6-auton-ata-detection-falsen.md`
 - Provider-Reserve-Endlage 0,006013 SOL = Rent-Floor + Gas-Puffer
   (CIO-Note §4) — **kein weiteres Kapital ohne frisches Deposit**.
 - Provider-Sig-Line seither: Buy #5 `dXgoqyxf…` + Buy #6
-  `3aooc4R4…` (0,0106 SOL → 60,38M SIN, finalized 16:19:04,
-  Beleg `SWAP-DETAILS-1794327544893`) — beides Agent-Execs,
-  kein Fremdzug.
+  `3aooc4R4…` (0,0106 SOL → **6,04M SIN** (Korrektur 16:32:
+  `expectedOutSinRaw 6037712639828248` = 6,0377M, nicht
+  60,4M — 10×-Felesung in CIO-Note/93d09ed), finalized
+  16:19:04, Beleg `SWAP-DETAILS-1794327544893`) — beides
+  Agent-Execs, kein Fremdzug.
 - Open-Audit-Frage (Wer/Wofür) = **hinfällig**; §7 des 19:00-
   Report-Drafts entsprechend korrigiert (siehe dort).
 
