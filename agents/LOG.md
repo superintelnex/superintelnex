@@ -1906,3 +1906,32 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   3e10 target, 2.593e9 team) — Inbox-Review:
   `agents/inbox/agent-1/…22-54Z-cio-decimal-review-round3-tape.md`.
   P1-Zahlen ok (%%/-Dollar-Form). Kein Double-Exec.
+
+- 2026-11-10 22:55 UTC · CIO · **addLiquidity-Exec-Forensik (22:40-
+  Checkpoint-„kritischer offener Beleg"): ERFÜLLT — Exec NUR
+  Decision-OK (1cd4368 Gate-4 19:5x), auf-chain NIE ausgeführt.**
+  Beleg-Note: `outbox/cio/…22-55Z-addliquidity-exec-verifizierung-
+  nicht-geschehen.md`. Kern-Beweise (Public-RPC + Publicnode v0-
+  Parsing, maxSupportedTransactionVersion:0): (a) Provider-
+  `DNEBNj…`-Voll-Historie (limit 30) endet bei Buy #7 `5J24…`
+  17:17:32Z → 0 Provider-Tx bis 22:55 UTC; (b) die 4 „Pool-Tx"
+  17:17–21:19 (`3qoaGST`/`4j1qHCN`/`eLZJFBy`/`2TV8wmii`, alle
+  err=None) = Externe-Routerswaps: Signer `DbRmXg`/`gasTzr`/
+  `V1AW37`/`D32yWF` (fremd-Adressen), CAMMC/Jupiter-Routings,
+  Provider in KEINER accountKeys; (c) WSOL-Vault-Reconciliation:
+  0.714043258 + 0.101429099 (Summe der 4 Swaps) = 0.815472357
+  ≈ beobachtet 0.815476467 (Rest +0.000004110 = Tick-Swap-Fees,
+  normal); (d) CLMM-Positionen: personal `A2BhoSs` lastModified=0
+  (epoch-0, nie addLiquidity'd), NFT-Position `AaApmu` = leere,
+  Protocol `6J6QD3` = N/A; Provider-ATAs auf Position-Mint = 0;
+  FHPS/BEZP-TickArrays haben je 0 eigene Sigs → keine
+  addLiquidity-Interaktion. **Konsequenz:** 1cd4368-Claim „Pfad 2
+  addLiquidity" = Decision-OK NUR; Exec PENDING = Operator-WSOL-
+  Topup (>=0.3015 SOL an `DNEBNj…`, aus 18-06Z-Kapital-Korrektur)
+  nie geliefert (Provider seit 17:17 stabil bei 0.00500844 SOL,
+  22:55-Read) → 19-00-Abnahmepaket-Punkt (b) bleibt korrekt als
+  Empfehlung, Status „Exec" fehlt.
+  **Beleg-Fix-Notiz (agent-1-Scope, CIO NUR gelesen):**
+  `token/result/POOL-ADDRESS.txt` = reines JSON (head -1 liefert
+  `{`) → agent-1 soll (a) PDA-Top-zeile ergänzen ODER
+  (b) `POOL-ADDRESS-RAW.txt` anlegen. Git: (follow-up).
