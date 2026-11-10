@@ -497,3 +497,77 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   20s/60s/10min-Watch aktiv (PIDs 27824/27825/29016), Watch:
   RugCheck-Cache alterniert noch (67/YES vs None/NO) — 09:33-Hand-Run
   flag=NO bleibt der bestätigte Flip, Full-Rescore erwartet.
+
+- 2026-11-10 13:45 UTC · agent-1 · **Buy #4 (Operator-finanzierter
+  Follow-on): 0,0098 SOL → SIN ausgeführt + on-chain belegt:**
+  Provider-Topup `4mAUn56D…` (main.json → Provider, 13,980,000
+  Lamports; Main-Key bleibt bei 894,081 — über Rent-Floor) →
+  Buy `4XgHs278…` (13:47 UTC, CU 49.844, Slippage-Guard
+  1000 bps): in 0,0098 SOL → out 10.667.486.391,913809
+  SIN-raw (10,667M SIN). SIN-ATA vor/nach: 228.486.175,98M →
+  239.153.662,37M raw. Provider vor/nach: ~0,0235 → ~0,0051 SOL.
+  Journal `clmm.swapWSOLToSIN` + SWAP-DETAILS-1794318434459.txt
+  automatisch vom Skript geschrieben. Tick-Verlauf (Buy-Druck
+  sichtbar): 214001 → 209603 → 208253 → 207930.
+
+- 2026-11-10 14:07 UTC · agent-1 · **SIN-FULL-EXIT (Sell-Sweep)
+  ausgeführt + on-chain verifiziert:** Sell-Sig `5sJxepBc…`
+  (14:07 UTC, CU 44.609, Slippage-Guard 1000 bps): komplette
+  SIN-ATA sweep 239.153.662,37M raw → 0. WSOL-Erlös 160,194M
+  lamports (0,160194 SOL); WSOL-ATA danach closed (unwrapped).
+  Provider vor/nach: 0,005066 → 0,166759 SOL (+0,161693,
+  Slippage-Min 144,174M NICHT bindend). On-chain-Verifikation:
+  SIN-ATA `FD1WzT…` = 0, WSOL-ATA closed (nicht mehr vorhanden),
+  Sig finalized, Slot 467748340, err=null. Journal
+  `clmm.swapSINToWSOL` + SWAP-DETAILS-1794319650059.txt.
+  Neue Sell-Logik in `token/scripts/swap-sin-to-sol.ts`: statische
+  ownerInfo-Mapping (tokenAccountA=WSOL-ATA, tokenAccountB=SIN-ATA),
+  RPC-Sim-Quote-Fallback (SDK-Local-Sim wirft im Sell-Direction
+  `data.tickNext <= data.tick` — bekannter Edge-Case), CU
+  44.609.
+
+- 2026-11-10 14:08 UTC · agent-1 · **Sweep an Revolut-Adresse
+  ausgeführt + on-chain verifiziert:** Sig `4rD1bogX…`
+  (14:08 UTC, CU 300, Fee 5.000 Lamports): Provider
+  166.758.873 lamports → **900.880 lamports** (Rent-Floor +
+  10.000 Gas-Puffer = 900.880 — Adresse weiter nutzbar).
+  Revolut-Adresse `F9Sj9a…D`: 86.759.720 → **252.612.713
+  lamports (0,252613 SOL)**. Sell-Erlös ~0,16 SOL vs
+  Position-Kosten ~0,148 SOL → kleiner Nettogewinn. Tick
+  kletterte zwischen Quote-Runs: 208171 → 208340 (Recovery).
+  Provider-Final: 900.880 lamports (Rent-Floor exakt, Gas-
+  Puffer 10.000), Main-Key 894.081 lamports (unverändert).
+  Journal `clmm.solTransferOut` + TRANSFER-DETAILS-1794319725957.txt.
+  On-chain-Prüfung (14:09 UTC): SIN-ATA 0, WSOL-ATA nicht
+  vorhanden (closed), Provider 0,00090088 SOL, Revolut-Adresse
+  0,252612713 SOL. SIG finalized, Slot 467748690.
+
+- 2026-11-10 14:12 UTC · agent-1 · **LOG-Backfill + Doku-Korrektur
+  (append-only-Nachtrag, keine alten Einträge geändert):**
+  (1) Backfill Buy #3 + Team-Topup (10:48/10:49 UTC): Topup
+  `289bqBhX…` (10:48:50 UTC, 50.000.000 Lamports, Main-Key
+  `9kT5Ew…` → Provider) + Buy #3 `2jV736Nk…` (10:49:07 UTC,
+  0,05 SOL → 811.130.013,18M SIN-raw = 811,13M SIN, CU 50.076,
+  Slippage-Guard 1000 bps, Journal `clmm.swapWSOLToSIN`
+  10:49:07Z). Beide vom Team parallel gefahren, Doku-Lücke aus
+  HANDOVER (11:55) hiermit geschlossen. (2) Buy-#2-
+  Dezimal-Display-Bug-Korrektur: LOG-Eintrag 10:44 + Outbox
+  zeigten „3.745.895.490,32 SIN" (÷10^4 statt ÷10^5) — korrekt:
+  374.589.549,03 SIN (3,7459M). RAW-Werte (Journal
+  `expectedOutSinRaw 37458954903166636`) waren immer korrekt,
+  Fehler nur in der Display-Textzeile. (3) Stale-Doku-Fix:
+  `token/scripts/transfer-sol-out.ts` Header-Kommentar +
+  Journal-Feld `sinKeptInPool` (2,285M SIN) waren nach dem
+  Full-Exit 14:07 UTC veraltet → Kopfkommentar korrigiert
+  (SIN-ATA = 0 seit Sell-Sig `5sJxepBc…`); Journal-Payload-
+  Fix folgt im selben Commit (skriptseitig).
+
+- 2026-11-10 14:12 UTC · agent-1 · **KIO-Vol-Spike-Offene-Punkt
+  (Abnahme 19:00 UTC): Gecko-24h-Vol-Prüfung** — Schätzung
+  +50–70 USD 24h-Vol aus CIO-Ticket war durch Buy-Größen
+  (~1,10 USD aggregiert) NICHT erklärbar. Am Vormittag
+  (vor 19:00): GeckoTerminal 24h-Vol-Field für Pool
+  `4erqAhdH…` prüfen (read-only, Public-API). Falls
+  Vol-Field <~70 USD: KIO-Modell-Schätzung korrigieren
+  (Order-Größe ≠ Vol-Spike, Indexer-Lag möglich). Ergebnis
+  folgt als Abnahme-Punkt 4 im Report.

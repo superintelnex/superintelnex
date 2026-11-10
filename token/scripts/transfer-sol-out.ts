@@ -1,8 +1,9 @@
 // SOL-TRANSFER-ZURUECK: Provider (DNEBNj…) → Ziel-Adresse (Operator).
 //
-// Zweck: Rest-SOL aus dem Trading-Budget (~0.0075 SOL nach 3 Buys +
-// Fees) zurueck an den Operator. SIN bleibt im Pool (2.28M im
-// Provider-ATA FD1WzT…) — Bestehen-Beleg des Burn-&-Earn-Spiels.
+// Zweck: Rest-SOL aus dem Trading-Budget zurueck an den Operator.
+// Stand 14:08 UTC: SIN-Position wurde vollstaendig verausschiedet
+// (Sell-Sig 5sJxepBc…, SIN-ATA FD1WzT… = 0) — es gibt KEINEN
+// SIN-Rest mehr; der Transfer bewegt nur freie SOL-Lamports.
 //
 // Mechanik (bewaehrtes Transfer-Pattern aus distribute.ts TX4, siehe
 // Journal "distribute-*"): 1x SystemProgram.transfer + CUL-Instruction.
@@ -39,10 +40,12 @@
 import {
   Keypair, PublicKey, Transaction, ComputeBudgetProgram, SystemProgram,
 } from "npm:@solana/web3.js@1.98.4";
+import * as spl from "npm:@solana/spl-token@0.4.15";
 import { conn, networkLabel, requireMainnetOk, sendTx, journal } from "./lib/common.ts";
 
 const LAMPORTS_PER_SOL = 1_000_000_000;
 const PROVIDER = new PublicKey("DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo");
+const SIN_MINT = new PublicKey("A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z");
 
 // Projekt-/Team-Adressen: Ziel darf KEINE davon sein (Rueckkanal-Loops,
 // Fat-Finger-Schutz). Adressen sind Oeffentlich (Repo/On-chain), keine Secrets.
@@ -92,6 +95,11 @@ const providerKp = loadProviderKp();
 if (providerKp && providerKp.publicKey.toBase58() !== PROVIDER.toBase58())
   fail("recipient.json Pubkey != PROVIDER-Adresse.");
 const before = await c.getBalance(PROVIDER);
+// Live-Read: SIN-Saldo im Provider-ATA (nach Vollausstieg 14:07 UTC = 0;
+// kein harter Wert mehr — historischer Stand war 2.285M SIN-raw).
+const sinAta = spl.getAssociatedTokenAddressSync(SIN_MINT, PROVIDER);
+const sinAtaInfo = await c.getAccountInfo(sinAta);
+const sinRaw = sinAtaInfo ? Buffer.from(sinAtaInfo.data).readBigUInt64LE(64).toString() : "0";
 const feeLamports = 5_000;
 const reserve = 890_880; // Rent-Exempt-Minimum einer nativen SOL-Adresse
                         // (0.000890880 SOL). Darunter wuerde der Provider
@@ -121,7 +129,8 @@ console.log("Nach   : " + targetPk.toBase58() + " (Saldo " + (targetBal / LAMPOR
 console.log("Betrag : " + (lamports / LAMPORTS_PER_SOL).toFixed(6) + " SOL (" + lamports + " Lamports)");
 console.log("Fee    : " + feeLamports + " Lamports | Provider-Reserve danach: " +
   (before - lamports - feeLamports) + " Lamports");
-console.log("SIN    : bleibt im Provider-ATA FD1WzT… (Pool-Bestehen-Beleg, unveraendert)");
+console.log("SIN-ATA  : " + sinRaw + " raw im Provider-ATA " + sinAta.toBase58().slice(0, 6) +
+  "… (live-Read; seit Vollausstieg 14:07 UTC = 0)");
 
 // 4) Tx-Bau
 const tx = new Transaction().add(
@@ -176,7 +185,8 @@ journal("clmm.solTransferOut", {
     providerAfter: String(after),
     targetBefore: String(targetBal),
     targetAfter: String(targetAfter),
-    sinKeptInPool: "228486175979000000 SIN-raw im Provider-ATA (unveraendert)",
+    sinKeptInPool: sinRaw + " SIN-raw im Provider-ATA (live-Read; Stand: " +
+      (sinRaw === "0" ? "vollstaendig verausschiedet, ATA leer" : "vorhanden — PRUEFEN") + ")",
   },
 });
 // TRANSFER-DETAILS-<ts>.txt (konsistent mit SWAP-DETAILS-Namen)
@@ -201,4 +211,5 @@ try {
 
 console.log("\n=== SOL-ZURUECKGABE ERFOLGREICH ===");
 console.log((lamports / LAMPORTS_PER_SOL) + " SOL an " + targetPk.toBase58() +
-  " (Sig " + sig.slice(0, 16) + "…). SIN verbleibt im Pool.");
+  " (Sig " + sig.slice(0, 16) + "…). SIN-ATA danach: " + sinRaw +
+  " raw (live-Read, unveraendert vom Transfer — bewegt nur native SOL).");
