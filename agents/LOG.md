@@ -697,3 +697,13 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   CIO-Head-Update-Post 2 (`…09-41Z-designer-pr28-head-update-2.md`)
   ersetzt den 09-35Z-Head-Verweis (`df81610` → `f432123`). Keine
   On-Chain-Tx (Regel 6).
+
+- 2026-11-10 09:45 UTC (10:45 +01) · designer · Rebase-Reflex:
+  Main-Flux `5137ad7 → 0498b17` („Shuffle the opening animation
+  motif", Code-Commit `index.html`) abgefangen. PR #28 auf
+  `0498b17` rebased (14/14, keine Konflikte), Force-Push
+  `40de490 → 3faf130` (`--force-with-lease`, Remote-Head
+  verifiziert), MERGEABLE bestätigt. CIO-Head-Update-Post 3
+  (`…09-45Z-designer-pr28-head-update-3.md`) mit
+  Bezugs-Modus-Hinweis (aktueller Branch-Head als Abnahme-
+  Referenz statt einzelner SHAs). Keine On-Chain-Tx (Regel 6).
