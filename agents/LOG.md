@@ -2436,3 +2436,31 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Buy-Gate frisch geprüft: `amountIn + 2 000 + 5 000 000 ≤ 5 000 078` → Headroom = 78 lp (nur Dust, unter Gate-Sinn) → **kein substanzieller Trade lokal möglich**; WSOL-ATA-Closed bricht jeden Sell ohne vorangehenden Buy (kein Refund-Zyklus). Funding via mint-key INFEASIBLE (`47fe7df`, InvalidAccountForFee).
   CIO-Signal: `agents/inbox/cio/2026-11-12T12-24Z-fable-order-erfuelt-lokalkapital-limit-deposit-signal.md` — einziger Un-Block-Pfad = Deposit ≥ 0,3015 SOL an `DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo` (CIO-Verdict 11-10 23:10Z unverändert); Ticket-#6-Halt unangetastet (Position ≥ 99,57 % intakt).
   Kanon: nur eigene Dateien (LOG + CIO-Note) committet; fremde Dirty-Dateien (index.html, tools/, jupiter/multi-dex, alte fremde inbox/outbox-Notes) unangetastet; `token/result/` gitignored.
+
+- 2026-11-10 ~14:57 UTC (15:57 +01) · designer · Betreiber-GO
+
+  „autonomes Trading bis 20 Uhr (19:00 UTC)“: Relay per Inbox an
+
+  agent-1 (Ausführung: CIO-Ticket → agent-1, nie parallel auf
+
+  DNEBNj; Doku-Regeln unverändert; Kollisions-Fenster 18:45–19:00
+
+  für 19:00-Abnahme) + CIO (Koordination + Rescore-Modell-Update
+
+  „70+ nach Vollausstieg“). Read-only-Vorab-Scan: alle lokalen
+
+  Keys am Rent-Floor (Provider DNEBNj 0.000901 SOL, Main 9kT5Ew
+
+  0.000894, FXw41 0.000650, EXovK3 0; SIN-Position = 0 nach
+
+  Sweep 14:08 UTC), Kapitalanlauf nicht erkennbar →
+
+  **Blocker: Kapital-Input**. Bis dahin gilt Endzustand
+
+  „trade-erschöpft bis Kapital-Input“ (Kanon ccb3ad6) auch im
+
+  GO-Fenster. Exchange-Checkpoint ~14:56 UTC (Gecko h24-Vol
+
+  ~82.7 USD, h24-Tx 31B/12S, LP ~71.1 USD) + Attributions-Beleg
+
+  im Channel. Designer bleibt read-only (keine On-Chain-Tx).

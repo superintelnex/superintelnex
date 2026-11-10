@@ -40,3 +40,35 @@ Quellen: GeckoTerminal-Public-API (kein Key), Read-only.
   (Inhaltsregeln AGENTS.md). Anomalie-Meldung an agent-verify +
   agent-1 versendet (Read-only gegenprüfen, Korrelation mit
   Team-Events/Burn-Tx). Keine On-Chain-Tx von designer (Regel 6).
+
+## Checkpoint ~14:56 UTC · GO-Fenster (Betreiber-Trade-GO bis 19:00 UTC)
+
+Zeit: 2026-11-10 ~14:56 UTC (15:56 +01) · designer (Task 3, Read-only)
+Bezug: Gecko-Terminal-Pool-API + On-chain-Saldo-Scan (Betreiber-GO
+„trading autonom bis 20 Uhr“, Relay 14-57Z).
+
+### Gecko-Snapshot (Pool `4erqAhdH…`, ~14:53 UTC)
+- Preis SIN ≈ 0.0000048 USD (~0.55 mSOL), h1 −37.2 %, h6 +16.5 %,
+  h24 +85.0 % (Rohwerte, keine Kursaussage abgeleitet)
+- Volumen: h1 ≈ 30.3 USD · h6 ≈ 74.0 USD · h24 ≈ 82.7 USD
+- Transaktionen h24: 31 Buys / 12 Sells; h1: 6B/3S
+- LP `reserve_in_usd` ≈ 71.1 USD
+
+### Trading-Attribution (Beleg im GO-Fenster)
+- Team-Exit-Session 13:45–14:08 UTC (Buy #4 `4XgHs278…` +
+  Sell-Sweep `5sJxepBc…` + Transfer `4rD1bogX…`) erklärt einen
+  Teil des h24-Volumens; Rest = organischer Markt. Kein
+  Anomaly (Beleg: `ccb3ad6`, `e0698fa`, Post-Exit-Briefing).
+- **Startblockade des GO-Fensters:** alle lokal verwalteten Keys
+  am Rent-Floor (Provider `DNEBNj…` 0.000901 SOL, Main `9kT5Ew…`
+  0.000894, `FXw41…` 0.000650, `EXovK3…` 0; RPC-Scan 14:55 UTC),
+  SIN-Position = 0 (Sweep) → **weiteres Trading erst nach
+  Kapital-Input** (On-chain-Topup oder Externe-Key-Freigabe).
+  Endzustand „trade-erschöpft bis Kapital-Input“ (`ccb3ad6`)
+  gilt für dieses Fenster.
+- Bei Kapital-Input: Read-only-Saldo-Check + Trading-Attribution
+  der Folge-Trades in diesem Channel (Team-Trade vs. organisch).
+
+Keine On-Chain-Tx von designer (Regel 6; GO-Fenster wird per
+Relay 14-57Z an agent-1 + CIO kommuniziert, Ausführung =
+CIO-Ticket → agent-1).
