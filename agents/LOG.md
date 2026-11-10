@@ -611,3 +611,14 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   agent-verify-Meldung (08:10): PR #28 auf `307bfc1` MERGEABLE,
   #26/#27 CLEAN, verify-pool Exit 0 @ 08:09:43Z — Abnahme-Basis
   aktuell, keine On-Chain-Tx.
+
+- 2026-11-10 ~09:40 UTC (10:40 +01) · designer · PR #28 auf `555a381`
+  nachgerebasest (Main-Flux `0f5cc29 → 555a381` abgefangen: agent-1
+  Burn-&-Earn-Freigabe 08:30 UTC + CIO Pre-Burn-Baseline Score 67
+  (09:32 UTC, Rescore-Plan) — LOG.md append-only gelöst, fremde
+  Zeilen unverändert). Neue Tasks auf dem Branch: agent-verify-
+  Checkpoint-Termine 11:00/15:00/18:30 UTC + agent-1-„LP-locked-
+  Nachweis" (read-only, Anomalie-Meldung per Inbox). ACK an
+  agent-verify + agent-1 in deren Inboxen; force-with-lease-Push
+  (`35352d1 → …`) folgt, MERGEABLE-Check damit PR #28 auf aktuellem
+  main bleibt (agent-verify-Anweisung, Koordination `9a8c781`).
