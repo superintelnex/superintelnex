@@ -256,8 +256,13 @@
   const shapeIntervalMs = 7000;
   const shapeTransitionSeconds = 3.6;
   const shapeOrder = [
-    'galaxy', 'star', 'dna', 'network', 'token', 'wave',
-    'orbit', 'supernova', 'candlesticks', 'whale'
+    'galaxy', 'star', 'dna', 'network', 'token', 'wave', 'nebula', 'sphere',
+    'vortex', 'knot', 'circuit', 'ekg', 'constellation', 'orbit',
+    'wormhole', 'eye', 'mobius', 'comet', 'crystal', 'butterfly',
+    'jellyfish', 'aurora', 'hourglass', 'binary', 'supernova',
+    'candlesticks', 'orderbook', 'depth-chart', 'volume-profile', 'bollinger',
+    'triangle', 'double-bottom', 'fibonacci-fan', 'trade-ticker', 'portfolio-rings',
+    'padlock', 'gull-flock', 'whale', 'origami-crane', 'satellite'
   ];
   let active = 0, running = !preference.matches, frame = 0, time = 0, last = null;
   let shapeQueue = [];
@@ -277,6 +282,20 @@
     [-.12,.02,-.21,.16], [.04,.19,-.04,.28], [.18,-.05,-.14,.27], [-.03,-.29,-.39,.08],
     [-.27,-.46,-.57,-.15], [-.44,-.32,-.54,-.22], [-.34,-.56,-.68,-.25]
   ];
+  const orderSteps = [0,.20,.34,.44,.63,.76,1];
+  const depthLevels = [.02,.10,.21,.29,.43,.53,.67,.73,.84];
+  const volumeBars = [.23,.35,.53,.74,1.04,1.42,1.82,1.55,1.22,.91,.67,.49,.29,.20];
+  const doubleBottomPath = [
+    [-1.04,-.47],[-.91,-.29],[-.80,-.34],[-.69,.02],[-.53,.40],[-.42,.52],
+    [-.32,.43],[-.24,.19],[-.10,-.10],[.00,-.23],[.10,-.10],[.22,.19],
+    [.33,.44],[.44,.53],[.55,.42],[.63,.16],[.76,-.19],[.86,-.16],[1.04,-.54]
+  ];
+  const fanRatios = [0,.236,.382,.50,.618,.786,1];
+  const portfolioCuts = [0,.18,.51,.78,1];
+  const lockOutline = [
+    [-.62,.08],[-.60,.01],[-.55,-.03],[.55,-.03],[.60,.01],[.62,.08],
+    [.62,.57],[.60,.64],[.55,.68],[-.55,.68],[-.60,.64],[-.62,.57],[-.62,.08]
+  ];
   const whaleOutline = [
     [-.74,.06],[-.57,.00],[-.38,-.13],[-.13,-.25],[.10,-.31],[.27,-.31],
     [.35,-.35],[.49,-.37],[.77,-.36],[1.00,-.31],[1.16,-.22],[1.22,-.10],
@@ -290,6 +309,16 @@
   ];
   const whaleFin = [[.28,.26],[.21,.45],[.03,.62],[-.22,.72],[-.37,.70],[-.19,.53],[-.06,.34],[.28,.26]];
   const whaleMouth = [[.16,.15],[.36,.19],[.60,.17],[.83,.13],[1.02,.08],[1.19,.02]];
+  const craneVertices = [
+    [-.19,.02,.10],[.24,.16,.18],[-.02,.40,-.05],[-1.10,-.42,-.09],[-.53,-.04,.31],
+    [.45,-.83,-.23],[.41,-.22,.01],[-1.00,.45,-.12],[-.59,.20,.05],
+    [.55,-.58,-.01],[.72,-.65,.02],[.99,-.56,.04],[.68,-.53,.08]
+  ];
+  // Each triangle is a folded panel. The first four panels form the two wings.
+  const craneFaces = [
+    [0,3,4],[0,4,2],[0,5,6],[0,6,1],[0,1,2],[0,2,8],[2,7,8],
+    [1,9,12],[1,12,2],[9,10,12],[10,11,12]
+  ];
   function tracePoint(path, progress) {
     const position = progress * (path.length - 1);
     const segment = Math.floor(position);
@@ -297,11 +326,37 @@
     const start = path[segment], end = path[segment + 1];
     return [start[0] + (end[0] - start[0]) * fraction, start[1] + (end[1] - start[1]) * fraction];
   }
+  function bandCenter(x) {
+    return .19 * Math.sin(x * 5.7) - x * .21 + .052 * Math.sin(x * 13);
+  }
   const starCorners = Array.from({length:10}, (_, index) => {
     const angle = index * tau / 10 - Math.PI / 2;
     const radius = index % 2 === 0 ? 1 : .43;
     return [radius * Math.cos(angle), radius * Math.sin(angle)];
   });
+  // Constellation: 12 anchor stars, connected by faint traces.
+  const constNodes = [
+    [-1.08,.62],[-.52,.82],[.12,.70],[.64,.92],[1.05,.48],[.42,.08],
+    [-.06,.12],[-.66,-.12],[.86,-.38],[.02,-.58],[-.98,-.62],[.30,-.92]
+  ];
+  const constLinks = [
+    [0,1],[1,2],[1,6],[2,3],[2,5],[3,4],[4,8],[5,8],[5,9],[6,7],[6,9],[9,10],[9,11]
+  ];
+  // Torus knot (2,3) parameters.
+  const knotP = 2, knotQ = 3, knotRadius = .72;
+  const crystalRing = Array.from({length:6}, (_, i) => {
+    const angle = i * tau / 6 + Math.PI / 6;
+    return [Math.cos(angle), Math.sin(angle)];
+  });
+  // One ECG beat spans ekgPeriod units of x: P wave, Q dip, R spike, T wave.
+  const ekgPeriod = 1.3;
+  function ekgY(x) {
+    const p = ((x % ekgPeriod) + ekgPeriod) % ekgPeriod;
+    return .10 * Math.exp(-((p - .35) ** 2) / .008)
+         - .12 * Math.exp(-((p - .68) ** 2) / .004)
+         + .62 * Math.exp(-((p - .76) ** 2) / .0028)
+         + .16 * Math.exp(-((p - 1.02) ** 2) / .018);
+  }
   const networkNodes = [
     [-1.15,-.16,.16], [-.86,-.59,-.20], [-.59,.14,-.09], [-.93,.56,.19],
     [-.35,.64,-.04], [-.36,-.32,.33], [-.12,-.70,-.13], [.02,.05,.25],
@@ -345,133 +400,581 @@
   const points = [];
   let sky = [];
   let particlesReady = false;
-  function createParticle(i) {
+  function createParticle() {
     const a = random() * tau, b = random() * tau, c = random(), d = random(), e = random();
-    const scatter = c > .93, spread = scatter ? 1.12 + d * 1.4 : Math.sqrt(d);
-    const sector = Math.floor(i / 4) % starCorners.length;
-    const [starX, starY] = starCorners[sector];
-    const [nextX, nextY] = starCorners[(sector + 1) % starCorners.length];
-    const starRadius = i % 4 === 0 ? .985 + d * .018 : Math.sqrt(c);
-    const star = [
-      (starX + (nextX - starX) * e) * starRadius,
-      (starY + (nextY - starY) * e) * starRadius,
-      Math.sin(b) * .025
-    ];
-    const x = (a / tau - .5) * 2.38;
-    const wave = [x, .31 * Math.sin(x * 2.9) + Math.cos(b) * spread * .15, Math.sin(b) * spread * .31 + .14 * Math.sin(x * 4)];
-    const isRung = i % 5 === 0 || i % 5 === 1;
-    const dnaY = isRung ? (i % 23 / 22 - .5) * 2 : (a / tau - .5) * 2.10;
-    const turn = dnaY * 5.2;
-    const strand = isRung ? 2 * d - 1 : i % 2 === 0 ? -1 : 1;
-    const thickness = (isRung ? .011 : .045) * spread;
-    const dna = [
-      .43 * strand * Math.cos(turn) + Math.cos(b) * thickness,
-      dnaY + (e - .5) * thickness * 2,
-      .43 * strand * Math.sin(turn) + Math.sin(b) * thickness
-    ];
-    const edge = networkEdges[i % networkEdges.length];
-    const startNode = networkNodes[i % 4 === 0 ? Math.floor(i / 4) % networkNodes.length : edge[0]];
-    const endNode = i % 4 === 0 ? startNode : networkNodes[edge[1]];
-    const networkSpread = (startNode === endNode ? .075 : .021) * spread;
-    const network = [
-      startNode[0] + (endNode[0] - startNode[0]) * c + Math.cos(b) * networkSpread,
-      startNode[1] + (endNode[1] - startNode[1]) * c + Math.sin(b) * networkSpread,
-      startNode[2] + (endNode[2] - startNode[2]) * c + (e - .5) * networkSpread
-    ];
-    const rimRadius = (i % 5 === 0 ? .87 : .92) + (d - .5) * .024;
-    const token = [rimRadius * Math.cos(a), rimRadius * Math.sin(a), (e - .5) * .10];
-    if (i % 5 > 1 && tokenCells.length) {
-      const [col, row] = tokenCells[Math.floor(c * tokenCells.length)];
-      token[0] = ((col + d) / tokenMaskSize - .5) * 1.84;
-      token[1] = ((row + e) / tokenMaskSize - .512) * 1.84;
-      token[2] = .078 + Math.sin(b) * .018;
-    }
-    const galaxyRadius = 1.38 * Math.pow(c, 1.42);
-    const armAngle = i % 3 * tau / 3 + 4.7 * galaxyRadius;
-    const armWidth = .19 + galaxyRadius * .20;
-    const galaxyAngle = i % 7 === 0 ? a : armAngle + (d - .5) * 2 * armWidth;
-    const galaxyDepth = Math.sin(b) * (.02 + .18 * Math.exp(-galaxyRadius * 4)) * spread;
-    const galaxy = [galaxyRadius * Math.cos(galaxyAngle), galaxyRadius * Math.sin(galaxyAngle), galaxyDepth];
-    // Orbit: small core planet with three tilted rings.
-    let orbitPos;
-    if (i % 5 < 2) {
-      const cr = .34 + .14 * d;
-      const cLat = 2 * c - 1;
-      const cEq = cr * Math.sqrt(1 - cLat * cLat);
-      orbitPos = [cEq * Math.cos(a), cr * cLat * .9, cEq * Math.sin(a) * .9];
-    } else {
-      const ringR = .72 + ((i - 1) % 3) * .22 + (d - .5) * .03;
-      const rr = ringR * Math.cos(a);
-      const rz = ringR * Math.sin(a);
-      orbitPos = [rr, rz * .44 + (e - .5) * .03, rz];
-    }
-    const orbit = orbitPos;
-    // Supernova: a stellar core, braided shock fronts and faint radial ejecta.
-    const burstLane = i % 12;
-    const rayAngle = (i % 73) * tau / 73 + (d - .5) * .12;
-    const burstAngle = burstLane < 7 ? a : rayAngle;
-    const burstRadius = burstLane < 2 ? .19 * Math.sqrt(c)
-      : burstLane < 7 ? .56 + (burstLane - 2) * .105 + (d - .5) * .045 : .27 + .77 * c;
-    const corrugation = 1 + .08 * Math.sin(burstAngle * 11 + c * 6);
-    const supernova = [Math.cos(burstAngle) * burstRadius * corrugation,
-      Math.sin(burstAngle) * burstRadius * corrugation * .78,
-      Math.sin(b) * burstRadius * .35];
+    return {a, b, c, d, e, scatter:c > .93, size:e, phase:b};
+  }
 
+  function createMotifPoint(i, mode, {a,b,c,d,e,scatter}) {
+    const spread = scatter ? 1.12 + d * 1.4 : Math.sqrt(d);
     const lane = i % 10;
     const noise = (d - .5) * .022;
     const chartZ = (e - .5) * .045;
-
-    // Candlesticks: hollow and filled bodies, fine wicks, and volume at the baseline.
-    const candleIndex = Math.floor(i / 10) % candleBars.length;
-    const candleX = -.99 + candleIndex * .198;
-    const [open, close, high, low] = candleBars[candleIndex];
-    const top = Math.min(open, close), bottom = Math.max(open, close);
-    const bodyX = lane < 2 ? (lane === 0 ? -.057 : .057) + noise : (d - .5) * .114;
-    let candlesticks;
-    if (lane < 6) {
-      const bodyY = lane === 2 ? top + noise : lane === 3 ? bottom + noise : top + (bottom - top) * c;
-      const hollowDepth = lane >= 4 && close > open ? -.20 : chartZ;
-      candlesticks = [candleX + bodyX, bodyY, hollowDepth];
-    } else if (lane < 8) {
-      const wickY = lane === 6 ? high + (top - high) * c : bottom + (low - bottom) * c;
-      candlesticks = [candleX + noise, wickY, chartZ];
-    } else {
-      candlesticks = [candleX + (d - .5) * .108, .73 - c * (.085 + 1.1 * Math.abs(close - open)), chartZ];
+    switch (mode) {
+      case 'star': {
+        const sector = Math.floor(i / 4) % starCorners.length;
+        const [starX, starY] = starCorners[sector];
+        const [nextX, nextY] = starCorners[(sector + 1) % starCorners.length];
+        const starRadius = i % 4 === 0 ? .985 + d * .018 : Math.sqrt(c);
+        const star = [
+          (starX + (nextX - starX) * e) * starRadius,
+          (starY + (nextY - starY) * e) * starRadius,
+          Math.sin(b) * .025
+        ];
+        return star;
+      }
+      case 'wave': {
+        const x = (a / tau - .5) * 2.38;
+        const wave = [x, .31 * Math.sin(x * 2.9) + Math.cos(b) * spread * .15, Math.sin(b) * spread * .31 + .14 * Math.sin(x * 4)];
+        return wave;
+      }
+      case 'dna': {
+        const isRung = i % 5 === 0 || i % 5 === 1;
+        const dnaY = isRung ? (i % 23 / 22 - .5) * 2 : (a / tau - .5) * 2.10;
+        const turn = dnaY * 5.2;
+        const strand = isRung ? 2 * d - 1 : i % 2 === 0 ? -1 : 1;
+        const thickness = (isRung ? .011 : .045) * spread;
+        const dna = [
+          .43 * strand * Math.cos(turn) + Math.cos(b) * thickness,
+          dnaY + (e - .5) * thickness * 2,
+          .43 * strand * Math.sin(turn) + Math.sin(b) * thickness
+        ];
+        return dna;
+      }
+      case 'network': {
+        const edge = networkEdges[i % networkEdges.length];
+        const startNode = networkNodes[i % 4 === 0 ? Math.floor(i / 4) % networkNodes.length : edge[0]];
+        const endNode = i % 4 === 0 ? startNode : networkNodes[edge[1]];
+        const networkSpread = (startNode === endNode ? .075 : .021) * spread;
+        const network = [
+          startNode[0] + (endNode[0] - startNode[0]) * c + Math.cos(b) * networkSpread,
+          startNode[1] + (endNode[1] - startNode[1]) * c + Math.sin(b) * networkSpread,
+          startNode[2] + (endNode[2] - startNode[2]) * c + (e - .5) * networkSpread
+        ];
+        return network;
+      }
+      case 'token': {
+        const rimRadius = (i % 5 === 0 ? .87 : .92) + (d - .5) * .024;
+        const token = [rimRadius * Math.cos(a), rimRadius * Math.sin(a), (e - .5) * .10];
+        if (i % 5 > 1 && tokenCells.length) {
+          const [col, row] = tokenCells[Math.floor(c * tokenCells.length)];
+          token[0] = ((col + d) / tokenMaskSize - .5) * 1.84;
+          token[1] = ((row + e) / tokenMaskSize - .512) * 1.84;
+          token[2] = .078 + Math.sin(b) * .018;
+        }
+        return token;
+      }
+      case 'galaxy': {
+        const galaxyRadius = 1.38 * Math.pow(c, 1.42);
+        const armAngle = i % 3 * tau / 3 + 4.7 * galaxyRadius;
+        const armWidth = .19 + galaxyRadius * .20;
+        const galaxyAngle = i % 7 === 0 ? a : armAngle + (d - .5) * 2 * armWidth;
+        const galaxyDepth = Math.sin(b) * (.02 + .18 * Math.exp(-galaxyRadius * 4)) * spread;
+        const galaxy = [galaxyRadius * Math.cos(galaxyAngle), galaxyRadius * Math.sin(galaxyAngle), galaxyDepth];
+        return galaxy;
+      }
+      case 'nebula': {
+        const nebulaX = (c - .5) * 2.48;
+        const cloudWidth = .11 + .33 * Math.pow(Math.cos(nebulaX * 2.7 + .6), 2);
+        const nebulaY = .38 * Math.sin(nebulaX * 2.6) + Math.cos(b) * cloudWidth * spread;
+        const nebula = [nebulaX, nebulaY, Math.sin(b) * cloudWidth * spread];
+        return nebula;
+      }
+      case 'sphere': {
+        const latitude = 2 * c - 1;
+        const sphereRadius = .78 + .16 * d;
+        const equator = sphereRadius * Math.sqrt(1 - latitude * latitude);
+        const sphere = [equator * Math.cos(a), sphereRadius * latitude, equator * Math.sin(a)];
+        return sphere;
+      }
+      case 'vortex': {
+        // Vortex: steep funnel spiral, differential rotation per frame.
+        const vortexDepth = e;
+        const vortexRadius = .10 + 1.2 * Math.pow(vortexDepth, .85);
+        const vortexTheta = vortexDepth * 7.5 + (i % 3) * (tau / 3) + (d - .5) * .5;
+        const vortex = [
+          vortexRadius * Math.cos(vortexTheta),
+          .95 - vortexDepth * 1.9 + (d - .5) * .12,
+          vortexRadius * Math.sin(vortexTheta) * .5
+        ];
+        return vortex;
+      }
+      case 'knot': {
+        // Torus knot (2,3).
+        const knotT = (i / total) * tau + (d - .5) * .12;
+        const knotRim = knotRadius + .30 * Math.cos(3 * knotT);
+        const knot = [
+          knotRim * Math.cos(knotP * knotT) * .95 + Math.cos(b) * .045 * spread,
+          .30 * Math.sin(knotQ * knotT) + (e - .5) * .1,
+          knotRim * Math.sin(knotP * knotT) * .62
+        ];
+        return knot;
+      }
+      case 'circuit': {
+        // Circuit: Manhattan traces with brighter junctions.
+        const cLane = i % 8;
+        const cH = cLane < 4;
+        const cOffset = ((cLane % 4) - 1.5) * .62;
+        const cAlong = c * 2.6 - 1.3;
+        const cJunction = i % 16 === 0;
+        const circuit = cH
+          ? [cJunction ? cOffset : cAlong, cJunction ? cAlong : cOffset, cJunction ? .22 : (cLane - 2) * .045]
+          : [cJunction ? cOffset : cAlong, cJunction ? cAlong : cOffset, cJunction ? .22 : (cLane - 6) * .045];
+        return circuit;
+      }
+      case 'ekg': {
+        // ECG: scrolling heart-signal trace.
+        const ekgX = (c - .5) * 2.6;
+        const ekg = [ekgX, ekgY(ekgX) + (d - .5) * .05 * spread, (e - .5) * .05];
+        return ekg;
+      }
+      case 'constellation': {
+        // Constellation: bright anchor stars linked by faint traces.
+        const isConstNode = i % 14 === 0;
+        let constPos;
+        if (isConstNode) {
+          const cv = constNodes[(i / 14 | 0) % constNodes.length];
+          constPos = [cv[0] + Math.cos(b) * .012, cv[1] + Math.sin(b) * .012, .3];
+        } else {
+          const link = constLinks[i % constLinks.length];
+          const tA = constNodes[link[0]], tB = constNodes[link[1]];
+          constPos = [
+            tA[0] + (tB[0] - tA[0]) * c + Math.cos(b) * .014 * spread,
+            tA[1] + (tB[1] - tA[1]) * c + Math.sin(b) * .014 * spread,
+            .06
+          ];
+        }
+        const constellation = constPos;
+        return constellation;
+      }
+      case 'orbit': {
+        // Orbit: small core planet with three tilted rings.
+        let orbitPos;
+        if (i % 5 < 2) {
+          const cr = .34 + .14 * d;
+          const cLat = 2 * c - 1;
+          const cEq = cr * Math.sqrt(1 - cLat * cLat);
+          orbitPos = [cEq * Math.cos(a), cr * cLat * .9, cEq * Math.sin(a) * .9];
+        } else {
+          const ringR = knotRadius + ((i - 1) % 3) * .22 + (d - .5) * .03;
+          const rr = ringR * Math.cos(a);
+          const rz = ringR * Math.sin(a);
+          orbitPos = [rr, rz * .44 + (e - .5) * .03, rz];
+        }
+        const orbit = orbitPos;
+        return orbit;
+      }
+      case 'wormhole': {
+        // Wurmloch: feine Gewinde und Ringe auf zwei zur Mitte verengten Trichtern.
+        const ring = i % 4 === 0;
+        const tunnelLane = ring ? Math.floor(i / 4) : i;
+        const tunnelDepth = ring ? (tunnelLane % 11 + .45 * c) / 11 : c;
+        const tunnelAngle = ring ? a : (i % 9) * tau / 9 + 4.6 * tunnelDepth + (d - .5) * .25;
+        const tunnelRadius = .10 + .53 * tunnelDepth ** 1.68 + (e - .5) * .025;
+        const tunnelSide = tunnelLane % 2 === 0 ? -1 : 1;
+        const wormhole = [tunnelSide * 1.1 * tunnelDepth,
+          Math.cos(tunnelAngle) * tunnelRadius, Math.sin(tunnelAngle) * tunnelRadius];
+        return wormhole;
+      }
+      case 'eye': {
+        // KI-Auge: doppelte Lidlinie, unterbrochener Irisrand und radiale Fasern.
+        let eye;
+        if (i % 5 < 2) {
+          const lid = (i % 5 === 0 ? -1 : 1) * .53 * Math.sin(Math.PI * c) ** .84;
+          const rim = i % 13 < 3 ? 1.13 : 1;
+          eye = [(2 * c - 1) * 1.20, lid * rim + (d - .5) * .042, .10 + (e - .5) * .09];
+        } else {
+          const irisRadius = i % 7 === 0 ? .402 + (d - .5) * .026 : .137 + .254 * c;
+          const irisAngle = i % 7 === 0 ? a : (i % 53) * tau / 53 + (d - .5) * .047 + irisRadius * 1.5;
+          eye = [Math.cos(irisAngle) * irisRadius, Math.sin(irisAngle) * irisRadius,
+            .13 + .25 * (1 - irisRadius) + (e - .5) * .045];
+        }
+        return eye;
+      }
+      case 'mobius': {
+        // Möbiusband: gestreifte Fläche mit durchgehenden, einmal verdrehten Kanten.
+        const band = i % 5;
+        const across = band < 2 ? (band === 0 ? -.31 : .31) + (d - .5) * .018
+          : ((i % 9) - 4) * .069 + (d - .5) * .038;
+        const bandRadius = .79 + across * Math.cos(a * .5);
+        const mobius = [Math.cos(a) * bandRadius, Math.sin(a) * bandRadius, across * Math.sin(a * .5)];
+        return mobius;
+      }
+      case 'comet': {
+        // Komet: kompakter Kopf, schmale Fäden und ein aufgefächerter Staubschweif.
+        let comet;
+        if (i % 5 === 0) {
+          const head = .21 * c ** .73;
+          comet = [.66 + Math.cos(a) * head, -.17 + Math.sin(a) * head, Math.sin(b) * head * .8];
+        } else {
+          const tailWidth = .023 + .34 * c ** 1.36;
+          const filament = i % 3 === 0 ? (i % 7 - 3) / 3 + (d - .5) * .18 : Math.sin(b) * Math.sqrt(d);
+          comet = [.66 - 1.94 * c, -.17 + .49 * c * c + filament * tailWidth,
+            Math.cos(b) * tailWidth * .56];
+        }
+        return comet;
+      }
+      case 'crystal': {
+        // Kristall: sechs Facetten, scharfe Längskanten und zwei kleine Splitter.
+        const face = Math.floor(a * 6 / tau);
+        const faceStart = crystalRing[face], faceEnd = crystalRing[(face + 1) % 6];
+        const faceWidth = i % 5 < 2 ? .021 * d : d;
+        const crystalY = i % 11 === 0 ? (i % 2 ? -.51 : .51) : 2.06 * (c - .5);
+        const facetRadius = .57 * Math.min(1, (1.04 - Math.abs(crystalY)) / .53);
+        const shard = i % 10;
+        const shardScale = shard < 2 ? .33 : 1;
+        const shardX = shard === 0 ? -.90 : shard === 1 ? .82 : 0;
+        const crystal = [
+          shardX + shardScale * facetRadius * (faceStart[0] + faceWidth * (faceEnd[0] - faceStart[0])),
+          crystalY * shardScale + (shard === 0 ? .26 : shard === 1 ? -.23 : 0),
+          shardScale * facetRadius * (faceStart[1] + faceWidth * (faceEnd[1] - faceStart[1]))
+        ];
+        return crystal;
+      }
+      case 'butterfly': {
+        // Schmetterlingsnebel: asymmetrische Flügelpaare, Staubadern und heller Kern.
+        let butterfly;
+        if (i % 9 === 0) {
+          butterfly = [Math.cos(b) * .072 * Math.sqrt(d), (c - .5) * .62, Math.sin(b) * .088];
+        } else {
+          const upper = i % 4 < 2;
+          const wingSide = i % 2 ? -1 : 1;
+          const wingWidth = Math.sin(Math.PI * c) ** .79;
+          const vein = i % 3 === 0 ? ((i % 7) / 3 - 1) + (d - .5) * .07 : 2 * d - 1;
+          const wingY = upper ? -.08 - .64 * c : .14 + .36 * c;
+          butterfly = [wingSide * (.06 + (upper ? 1.14 : .84) * c),
+            wingY + vein * wingWidth * (upper ? .34 : .32),
+            Math.sin(b) * (.035 + .17 * wingWidth) * Math.sqrt(e)];
+        }
+        return butterfly;
+      }
+      case 'jellyfish': {
+        // Jellyfish: radial ribs on the bell, inner mantle and staggered tentacles.
+        let jellyfish;
+        if (i % 10 < 6) {
+          const rim = i % 7 === 0;
+          const arch = rim ? 1.57 - .07 * c : Math.asin(Math.sqrt(c));
+          const rib = i % 4 === 0 ? (i % 29) * tau / 29 + (d - .5) * .06 : a;
+          const bellRadius = (.69 + (e - .5) * .045) * Math.sin(arch);
+          jellyfish = [Math.cos(rib) * bellRadius, -.24 - .53 * Math.cos(arch),
+            Math.sin(rib) * bellRadius * .71];
+        } else {
+          const lane = i % 11 / 10 - .5;
+          const length = .61 + .54 * (1 - 1.6 * Math.abs(lane)) + .09 * Math.sin(lane * 18);
+          jellyfish = [lane * (1.19 - .09 * c) + Math.sin(b) * .016,
+            -.22 + c * length, (d - .5) * .09 + .13 * Math.cos(lane * tau)];
+        }
+        return jellyfish;
+      }
+      case 'aurora': {
+        // Aurora: three folded curtains with luminous edges and vertical striations.
+        const curtain = i % 3;
+        const pleat = i % 5 < 2 ? (Math.floor(c * 88) + .22 * e) / 88 : c;
+        const curtainX = (pleat - .5) * 2.28;
+        const curtainHeight = i % 9 < 3 ? .12 * d : .79 * d ** 1.7;
+        const aurora = [curtainX, .24 + curtain * .16 + .20 * Math.sin(curtainX * 3 + curtain)
+          - curtainHeight, .24 * (curtain - 1) + .26 * Math.sin(curtainX * 3.9 + curtain) + (e - .5) * .06];
+        return aurora;
+      }
+      case 'hourglass': {
+        // Hourglass: two glass chambers, circular lips, piles and the falling stream.
+        const glassLane = i % 10;
+        let hourglass;
+        if (glassLane < 6) {
+          const glassY = glassLane === 0 ? (i % 20 === 0 ? -.88 : .88) + (d - .5) * .023 : (2 * c - 1) * .88;
+          const glassRadius = .087 + .54 * Math.sin(Math.abs(glassY) / .88 * Math.PI / 2) ** 1.7;
+          hourglass = [Math.cos(a) * glassRadius, glassY, Math.sin(a) * glassRadius * .66];
+        } else if (glassLane < 9) {
+          const sandRadius = .52 * Math.sqrt(c);
+          hourglass = [Math.cos(a) * sandRadius, 0, Math.sin(a) * sandRadius * .66];
+        } else {
+          hourglass = [(e - .5) * .048, c, (d - .5) * .046];
+        }
+        return hourglass;
+      }
+      case 'binary': {
+        // Binary system: unequal stellar cores, a bridge and diffuse outer arcs.
+        const binaryLane = i % 10;
+        let binary;
+        if (binaryLane < 5) {
+          const primary = binaryLane < 3;
+          const starRadius = (primary ? .28 : .21) * c ** .65;
+          binary = [(primary ? -.61 : .61) + Math.cos(a) * starRadius, Math.sin(a) * starRadius,
+            Math.sin(b) * starRadius * .82];
+        } else if (binaryLane < 8) {
+          const bridge = (c - .5) * 1.19;
+          binary = [bridge, .18 * Math.sin(bridge * 5.25) + (d - .5) * .11,
+            .15 * Math.cos(bridge * 4.5) + (e - .5) * .10];
+        } else {
+          const orbitRadius = .88 + .27 * d;
+          binary = [Math.cos(a) * orbitRadius, Math.sin(a) * orbitRadius * .47,
+            Math.sin(a) * orbitRadius * .53 + (e - .5) * .075];
+        }
+        return binary;
+      }
+      case 'supernova': {
+        // Supernova: a stellar core, braided shock fronts and faint radial ejecta.
+        const burstLane = i % 12;
+        const rayAngle = (i % 73) * tau / 73 + (d - .5) * .12;
+        const burstAngle = burstLane < 7 ? a : rayAngle;
+        const burstRadius = burstLane < 2 ? .19 * Math.sqrt(c)
+          : burstLane < 7 ? .56 + (burstLane - 2) * .105 + (d - .5) * .045 : .27 + .77 * c;
+        const corrugation = 1 + .08 * Math.sin(burstAngle * 11 + c * 6);
+        const supernova = [Math.cos(burstAngle) * burstRadius * corrugation,
+          Math.sin(burstAngle) * burstRadius * corrugation * .78,
+          Math.sin(b) * burstRadius * .35];
+        return supernova;
+      }
+      case 'candlesticks': {
+        // Candlesticks: hollow and filled bodies, fine wicks, and volume at the baseline.
+        const candleIndex = Math.floor(i / 10) % candleBars.length;
+        const candleX = -.99 + candleIndex * .198;
+        const [open, close, high, low] = candleBars[candleIndex];
+        const top = Math.min(open, close), bottom = Math.max(open, close);
+        const bodyX = lane < 2 ? (lane === 0 ? -.057 : .057) + noise : (d - .5) * .114;
+        let candlesticks;
+        if (lane < 6) {
+          const bodyY = lane === 2 ? top + noise : lane === 3 ? bottom + noise : top + (bottom - top) * c;
+          const hollowDepth = lane >= 4 && close > open ? -.20 : chartZ;
+          candlesticks = [candleX + bodyX, bodyY, hollowDepth];
+        } else if (lane < 8) {
+          const wickY = lane === 6 ? high + (top - high) * c : bottom + (low - bottom) * c;
+          candlesticks = [candleX + noise, wickY, chartZ];
+        } else {
+          candlesticks = [candleX + (d - .5) * .108, .73 - c * (.085 + 1.1 * Math.abs(close - open)), chartZ];
+        }
+        return candlesticks;
+      }
+      case 'orderbook': {
+        // Order book: interlocking stairs and resting orders flowing toward the gap.
+        const orderSide = Math.floor(i / 10) % 2 === 0 ? -1 : 1;
+        const orderLevel = Math.floor(i / 20) % 6;
+        const orderY = -.54 + orderLevel * .202;
+        const orderInner = .14 + orderSteps[orderLevel] * .88;
+        const orderOuter = .14 + orderSteps[orderLevel + 1] * .88;
+        const orderX = lane < 4 ? orderInner + c * (orderOuter - orderInner) : orderOuter;
+        const orderbook = lane < 8
+          ? [orderSide * (orderX + noise), orderSide * (orderY + (lane < 4 ? 0 : c * .202)) + noise, chartZ]
+          : lane === 9 && orderLevel === 2
+            ? [Math.cos(a) * .11 * c, Math.sin(a) * .11 * c, chartZ]
+            : [orderSide * (.18 + c * .86), orderSide * orderY + noise, chartZ];
+        return orderbook;
+      }
+      case 'depth-chart': {
+        // Market depth: the bids and asks build two filled terraces around the spread.
+        const depthSide = Math.floor(i / 10) % 2 === 0 ? -1 : 1;
+        const depthLevel = Math.floor(i / 20) % depthLevels.length;
+        const depthX = .095 + depthLevel * .108;
+        const depthY = .58 - depthLevels[depthLevel] * (depthSide < 0 ? 1.22 : 1.36);
+        const nextDepthY = .58 - depthLevels[Math.min(depthLevel + 1, depthLevels.length - 1)]
+          * (depthSide < 0 ? 1.22 : 1.36);
+        const depthSampleX = depthX + (lane === 3 ? .108 : c * .108);
+        const depthSampleY = lane < 3 ? depthY : lane === 3 ? depthY + (nextDepthY - depthY) * c
+          : depthY + (.61 - depthY) * c;
+        const depthChart = [depthSide * (depthSampleX + noise), depthSampleY + noise, chartZ];
+        return depthChart;
+      }
+      case 'volume-profile': {
+        // Volume profile: a bright point-of-control row and thinner outer rows.
+        const volumeIndex = Math.floor(i / 10) % volumeBars.length;
+        const volumeLength = volumeBars[volumeIndex];
+        const volumeY = -.64 + volumeIndex * .097;
+        const volumeProfile = lane === 0
+          ? [-.91 + noise, (c - .5) * 1.48, chartZ]
+          : [-.91 + (lane === 1 ? volumeLength + noise : c * volumeLength),
+            volumeY + (lane === 2 ? -.025 + noise : lane === 3 ? .025 + noise : (d - .5) * .061), chartZ];
+        return volumeProfile;
+      }
+      case 'bollinger': {
+        // Bollinger bands: the middle average meanders between two breathing bands.
+        const bandX = (c - .5) * 2.10;
+        const bandMid = bandCenter(bandX);
+        const bandwidth = .20 + .105 * (1 + Math.sin(bandX * 3 - .65));
+        const bandOffset = lane < 3 ? -bandwidth : lane < 6 ? bandwidth : lane < 8 ? 0 : (d - .5) * 2 * bandwidth;
+        const bollinger = [bandX, bandMid + bandOffset + noise, chartZ];
+        return bollinger;
+      }
+      case 'triangle': {
+        // Triangle: two converging trend lines, a bouncing price, and breakout dust.
+        const triangleX = -1.03 + c * 1.93;
+        const triangleHeight = .58 - c * .55;
+        const bounce = 2 / Math.PI * Math.asin(Math.sin(c * tau * 2.45 + .36));
+        const triangle = lane < 8
+          ? [triangleX, (lane < 2 ? -triangleHeight : lane < 4 ? triangleHeight : triangleHeight * bounce)
+            - .08 * c + noise, chartZ]
+          : [.65 + c * .42 + noise, -.09 - c * .32 + (d - .5) * .17 * c, chartZ];
+        return triangle;
+      }
+      case 'double-bottom': {
+        // Double bottom: two highlighted lows and a dotted neckline.
+        const [bottomX, bottomY] = tracePoint(doubleBottomPath, c);
+        const lowX = lane % 2 === 0 ? -.42 : .44;
+        const lowY = lane % 2 === 0 ? .52 : .53;
+        const doubleBottom = lane < 7 ? [bottomX + noise, bottomY + (e - .5) * .033, chartZ]
+          : lane === 7 ? [((Math.floor(c * 23) + d * .53) / 23 - .5) * 1.54, -.23 + noise, chartZ]
+          : [lowX + Math.cos(a) * (.048 + .083 * c), lowY + Math.sin(a) * (.048 + .083 * c), chartZ];
+        return doubleBottom;
+      }
+      case 'fibonacci-fan': {
+        // Fibonacci fan: seven rays from one pivot with dotted measuring arcs.
+        const fanIndex = Math.floor(i / 10) % fanRatios.length;
+        const fanX = c * 1.95;
+        const fanSlope = .54 - 1.27 * fanRatios[fanIndex];
+        const guideRadius = .47 + (i % 3) * .39;
+        const guideAngle = -.62 + (Math.floor(c * 22) + d * .45) / 22 * 1.12;
+        const fibonacciFan = lane < 8 ? [-.94 + fanX, .21 + fanSlope * fanX * .60 + noise, chartZ]
+          : [-.94 + Math.cos(guideAngle) * guideRadius, .21 + Math.sin(guideAngle) * guideRadius, chartZ];
+        return fibonacciFan;
+      }
+      case 'trade-ticker': {
+        // Ticker: staggered trade packets with individual cores and short wakes.
+        const tickerRow = Math.floor(i / 10) % 4;
+        const tickerPacket = Math.floor(i / 40) % 6;
+        const tickerSize = .022 + .035 * ((tickerPacket * 3 + tickerRow * 5) % 7) / 6;
+        const tickerCenter = -.97 + tickerPacket * .39 + tickerRow * .064;
+        const tradeTicker = lane < 8
+          ? [tickerCenter + Math.cos(a) * tickerSize * c + (lane < 5 ? 0 : c * .15),
+            (tickerRow - 1.5) * .28 + Math.sin(a) * tickerSize * Math.sqrt(c), chartZ]
+          : [(c - .5) * 2.08, (tickerRow - 1.5) * .28 + noise * .42, chartZ];
+        return tradeTicker;
+      }
+      case 'portfolio-rings': {
+        // Portfolio: three ring planes with gaps between their weighted segments.
+        const portfolioRing = Math.floor(i / 10) % 3;
+        const portfolioSector = Math.floor(i / 30) % 4;
+        const sectorStart = portfolioCuts[portfolioSector], sectorEnd = portfolioCuts[portfolioSector + 1];
+        const sectorAngle = (sectorStart + .012 + c * (sectorEnd - sectorStart - .024)) * tau;
+        const ringRadius = .46 + portfolioRing * .22 + (d - .5) * (lane < 3 ? .032 : .095);
+        const portfolioRings = [Math.cos(sectorAngle) * ringRadius,
+          Math.sin(sectorAngle) * ringRadius, (e - .5) * .055];
+        return portfolioRings;
+      }
+      case 'padlock': {
+        // The shackle wraps behind the face. Leave an actual gap for the keyhole.
+        const lockLane = i % 12;
+        let padlock;
+        if (lockLane < 4) {
+          const shacklePath = c * 2.90;
+          const shackleRadius = .38 + (d - .5) * .081;
+          const arch = Math.min(Math.PI, Math.max(0, (shacklePath - .38) / 2.14 * Math.PI));
+          const stem = Math.max(0, .38 - shacklePath, shacklePath - 2.52);
+          padlock = [-shackleRadius * Math.cos(arch), -.38 - shackleRadius * Math.sin(arch) + stem,
+            (e - .5) * .13 - .045];
+        } else if (lockLane < 7) {
+          const [rimX, rimY] = tracePoint(lockOutline, c);
+          padlock = [rimX + noise, rimY + (e - .5) * .027, (d - .5) * .13];
+        } else if (lockLane < 10) {
+          const faceX = (c - .5) * 1.17, faceY = .02 + .62 * d;
+          const inKeyhole = Math.hypot(faceX, faceY - .27) < .091
+            || (Math.abs(faceX) < .036 + (faceY - .31) * .17 && faceY > .31 && faceY < .47);
+          padlock = inKeyhole ? [(e < .5 ? -1 : 1) * .098, faceY, .025]
+            : [faceX, faceY, .025 + .045 * e];
+        } else if (lockLane === 10) {
+          padlock = i % 24 === 10
+            ? [Math.cos(a) * .094, .27 + Math.sin(a) * .094, .075]
+            : [(i % 5 < 2 ? -1 : 1) * (.035 + .026 * c), .33 + .14 * c, .075];
+        } else {
+          padlock = [(d - .5) * .11, c, .11 + (e - .5) * .13];
+        }
+        return padlock;
+      }
+      case 'gull-flock': {
+        // Each gull shares an articulated wing shape, at a different scale and phase.
+        const gull = Math.floor(i / 10) % 19;
+        const gullRow = Math.floor(gull / 5), gullColumn = gull % 5;
+        const gullX = -.96 + .43 * gullColumn + .097 * (gullRow % 2);
+        const gullY = -.50 + gullRow * .33 - .19 * gullX + .075 * Math.sin(gull * 2.7);
+        const gullSize = .075 + .087 * ((gull * 7) % 13) / 12 + (gullRow === 2 ? .035 : 0);
+        const gullWingSide = lane % 2 === 0 ? -1 : 1;
+        const gullWingY = -.43 * Math.sin(c * Math.PI * .84) + .29 * c * c;
+        const wingFeathers = lane > 5 ? .18 * c * ((i % 7) / 6) : 0;
+        const gullFlock = lane < 8
+          ? [gullX + gullWingSide * c * gullSize, gullY + (gullWingY + wingFeathers) * gullSize,
+            (d - .5) * .045]
+          : [gullX + (d - .5) * gullSize * .19, gullY + (c - .28) * gullSize * .42, .01];
+        return gullFlock;
+      }
+      case 'whale': {
+        // A broadside whale, with a forked tail, flipper, jaw and baleen throat grooves.
+        const whaleLane = i % 20;
+        let whale;
+        if (whaleLane < 8) {
+          const [edgeX, edgeY] = tracePoint(whaleOutline, c);
+          whale = [edgeX + noise, edgeY + (e - .5) * .023, chartZ];
+        } else if (whaleLane < 11) {
+          const [tailX, tailY] = tracePoint(whaleFlukes, c);
+          whale = [tailX + noise, tailY + (e - .5) * .032, (e - .5) * .095];
+        } else if (whaleLane < 13) {
+          const [finX, finY] = tracePoint(whaleFin, c);
+          whale = [finX + noise, finY + (e - .5) * .039, .13 + chartZ];
+        } else if (whaleLane === 13) {
+          const [jawX, jawY] = tracePoint(whaleMouth, c);
+          whale = [jawX + noise, jawY + (e - .5) * .024, .09];
+        } else if (whaleLane === 14) {
+          const groove = Math.floor(i / 20) % 6;
+          whale = [.29 + .74 * c, .24 + groove * .023 + .082 * Math.sin(c * Math.PI) - .05 * c, .075 + chartZ];
+        } else if (whaleLane < 18) {
+          const crossSection = Math.sqrt(1 - (2 * c - 1) ** 2);
+          whale = [-.58 + c * 1.73, .058 + Math.sin(a) * .31 * crossSection * Math.sqrt(d),
+            Math.cos(a) * .19 * crossSection];
+        } else if (whaleLane === 18) {
+          const eyeRadius = .028 * Math.sqrt(c);
+          whale = [.92 + Math.cos(a) * eyeRadius, -.029 + Math.sin(a) * eyeRadius, .14];
+        } else {
+          whale = [.66 + (d - .5) * .24, c, chartZ];
+        }
+        return whale;
+      }
+      case 'origami-crane': {
+        // Sample the folds and faces separately so thin creases stay visible.
+        const cranePanel = Math.floor(i / 10) % craneFaces.length;
+        const paperFace = craneFaces[cranePanel];
+        const paperA = craneVertices[paperFace[lane < 6 ? lane % 3 : 0]];
+        const paperB = craneVertices[paperFace[lane < 6 ? (lane + 1) % 3 : 1]];
+        const paperC = craneVertices[paperFace[2]];
+        const paperAcross = lane < 6 ? c : Math.sqrt(c) * (1 - d);
+        const paperDepth = lane < 6 ? 0 : Math.sqrt(c) * d;
+        const origamiCrane = paperA.map((coord, axis) => coord
+          + (paperB[axis] - coord) * paperAcross + (paperC[axis] - coord) * paperDepth);
+        return origamiCrane;
+      }
+      case 'satellite': {
+        // Solar cell frames, riveted chassis, two antenna braces and a radio wave.
+        const satelliteSide = Math.floor(i / 10) % 2 === 0 ? -1 : 1;
+        let satellite;
+        if (lane < 5) {
+          const cell = Math.floor(i / 20) % 8;
+          const column = cell % 4, row = Math.floor(cell / 4);
+          const cellX = .40 + column * .172, cellY = -.23 + row * .22;
+          const panelX = cellX + (lane < 2 ? lane * .161 + noise : c * .161);
+          const panelY = cellY + (lane < 2 ? c * .209 : lane < 4 ? (lane - 2) * .209 + noise : d * .209);
+          satellite = [satelliteSide * panelX, panelY, (e - .5) * .047];
+        } else if (lane < 7) {
+          const hullAngle = (Math.floor(a / tau * 12) + .20 * d) * tau / 12;
+          const radius = lane === 5 ? .238 : .238 * Math.sqrt(d);
+          satellite = [Math.cos(hullAngle) * radius, lane === 5 ? -.29 + .68 * c : (i % 3 === 0 ? -.29 : .39),
+            Math.sin(hullAngle) * radius];
+        } else if (lane === 7) {
+          satellite = [satelliteSide * (.20 + c * .205), noise + (i % 3 - 1) * .047, chartZ];
+        } else if (lane === 8) {
+          const dishX = (c - .5) * .58;
+          satellite = i % 3 === 0 ? [noise + .14 * c, -.27 - .36 * c, chartZ]
+            : [dishX + .14, -.62 + .14 * (1 - (2 * c - 1) ** 2) + noise, chartZ];
+        } else {
+          satellite = [.14 + Math.cos(a) * .64, c, Math.sin(a) * .09];
+        }
+        return satellite;
+      }
     }
+  }
 
-    // A broadside whale, with a forked tail, flipper, jaw and baleen throat grooves.
-    const whaleLane = i % 20;
-    let whale;
-    if (whaleLane < 8) {
-      const [edgeX, edgeY] = tracePoint(whaleOutline, c);
-      whale = [edgeX + noise, edgeY + (e - .5) * .023, chartZ];
-    } else if (whaleLane < 11) {
-      const [tailX, tailY] = tracePoint(whaleFlukes, c);
-      whale = [tailX + noise, tailY + (e - .5) * .032, (e - .5) * .095];
-    } else if (whaleLane < 13) {
-      const [finX, finY] = tracePoint(whaleFin, c);
-      whale = [finX + noise, finY + (e - .5) * .039, .13 + chartZ];
-    } else if (whaleLane === 13) {
-      const [jawX, jawY] = tracePoint(whaleMouth, c);
-      whale = [jawX + noise, jawY + (e - .5) * .024, .09];
-    } else if (whaleLane === 14) {
-      const groove = Math.floor(i / 20) % 6;
-      whale = [.29 + .74 * c, .24 + groove * .023 + .082 * Math.sin(c * Math.PI) - .05 * c, .075 + chartZ];
-    } else if (whaleLane < 18) {
-      const crossSection = Math.sqrt(1 - (2 * c - 1) ** 2);
-      whale = [-.58 + c * 1.73, .058 + Math.sin(a) * .31 * crossSection * Math.sqrt(d),
-        Math.cos(a) * .19 * crossSection];
-    } else if (whaleLane === 18) {
-      const eyeRadius = .028 * Math.sqrt(c);
-      whale = [.92 + Math.cos(a) * eyeRadius, -.029 + Math.sin(a) * eyeRadius, .14];
-    } else {
-      whale = [.66 + (d - .5) * .24, c, chartZ];
-    }
-
-    return {
-      shapes:[galaxy, star, dna, network, token, wave, orbit, supernova, candlesticks, whale],
-      size:e, phase:b, scatter
-    };
+  // Keep the same particles across all motifs, but build only the geometry we need.
+  const motifPoints = new Array(shapeOrder.length);
+  function prepareMotif(index) {
+    if (motifPoints[index]) return;
+    const mode = shapeOrder[index];
+    if (mode === 'token') buildTokenMask();
+    motifPoints[index] = points.map((particle, i) => createMotifPoint(i, mode, particle));
   }
   function createSkyStar() {
     const x = random(), y = random(), brightness = random();
@@ -528,17 +1031,50 @@
     for (const path of paths) path.length = 0;
     const t = morph * morph * (3 - 2 * morph);
     const spin = time * .16;
-    const mode = shapeOrder[shape];
+    const mode = shapeOrder[shape], positions = motifPoints[shape];
     const xAngle = .70, zAngle = -.39;
     const sx = Math.sin(xAngle), ax = Math.cos(xAngle), sz = Math.sin(zAngle), az = Math.cos(zAngle);
     const sway = mode === 'star' ? 0 : Math.sin(time * .38) * .19;
     const ys = Math.sin(sway), yc = Math.cos(sway);
+    const turnAngle = mode === 'mobius' ? time * .32 : time * .46;
+    const turnSin = Math.sin(turnAngle), turnCos = Math.cos(turnAngle);
+    const blink = 1 - .82 * Math.max(0, Math.cos(time * .78)) ** 26;
+    const flap = .34 * Math.sin(time * 1.42);
+    const jellyPulse = Math.sin(time * 1.75);
+    const jellyDrift = .055 * Math.sin(time * .9);
+    const binaryAngle = time * .69;
+    const binarySin = Math.sin(binaryAngle), binaryCos = Math.cos(binaryAngle);
+    const glassTime = time * .16;
+    const glassTurn = Math.floor(glassTime);
+    const glassCycle = glassTime % 1;
+    const glassDrain = Math.min(1, glassCycle / .76);
+    const glassFlip = clamp((glassCycle - .77) / .23, 0, 1);
+    const glassAngle = Math.PI * (glassTurn + glassFlip * glassFlip * (3 - 2 * glassFlip));
+    const glassSin = Math.sin(glassAngle), glassCos = Math.cos(glassAngle);
+    const glassDirection = glassTurn % 2 ? -1 : 1;
     const shock = (time * .24) % 1;
     const shockExpansion = .45 + .72 * shock ** .6;
     const shockFade = Math.min(1, shock * 9, (1 - shock) * 8);
+    const chartSweep = -1.12 + (time * .23 % 1) * 2.24;
     const candleGrowth = .45 + .55 * (.5 - .5 * Math.cos(time * 1.05));
+    const bandBreath = 1 + .23 * Math.sin(time * 1.04);
+    const bookFlow = time * .19 % 1;
+    const bookMatch = Math.max(0, Math.sin(time * 1.75)) ** 6;
+    const tickerShift = time * .31 % 2.18;
+    const ringRotations = mode === 'portfolio-rings' && [.31, -.24, .17].map((speed, ring) => {
+      const spin = time * speed;
+      const tilt = (ring - 1) * .48 + .17 * Math.sin(time * .46 + ring);
+      return [Math.sin(spin), Math.cos(spin), Math.sin(tilt), Math.cos(tilt)];
+    });
+    const latch = .5 - .5 * Math.cos(time * 1.08);
+    const latchSin = Math.sin(latch * .83), latchCos = Math.cos(latch * .83);
+    const lockFloat = .068 * Math.sin(time * .96);
+    const flockDrift = .072 * Math.sin(time * .62);
     const whaleWave = time * 1.60;
     const whaleWidth = Math.min(1, width * (width <= 560 ? .46 : .37) / (scale * 1.25));
+    const craneLift = .19 * Math.sin(time * 1.25);
+    const satelliteTilt = .42 * Math.sin(time * .74);
+    const satelliteSin = Math.sin(satelliteTilt), satelliteCos = Math.cos(satelliteTilt);
     const pullScaleSquared = clamp(width * .15, 90, 165) ** 2;
     for (let i = 0; i < skyCount; i++) {
       const star = sky[i];
@@ -546,7 +1082,7 @@
       addStar(star.x * width, star.y * height, star.size, star.light + twinkle, star.phase, pullScaleSquared);
     }
     for (let i = 0; i < count; i++) {
-      const p = points[i], v = p.shapes[shape], j = i * 3;
+      const p = points[i], v = positions[i], j = i * 3;
       let x = v[0], y = v[1], z = v[2];
       let detailLight = 0;
       let detailSize = 1;
@@ -556,7 +1092,7 @@
         const w = x * Math.sin(angle) + y * Math.cos(angle);
         const q = w * ax - z * sx;
         z = w * sx + z * ax; x = u * az - q * sz; y = u * sz + q * az;
-      } else if (mode === 'wave') {
+      } else if (mode === 'wave' || mode === 'nebula') {
         y += .16 * Math.sin(x * 3.8 - time * 1.1 + z * 1.8);
         z += .09 * Math.sin(x * 4 + time * .7);
         x += .09 * Math.sin(p.phase + time * .5);
@@ -575,6 +1111,35 @@
         const horizontal = x * Math.cos(lean) - z * Math.sin(lean);
         z = x * Math.sin(lean) + z * Math.cos(lean);
         x = horizontal;
+      } else if (mode === 'vortex') {
+        // differential rotation: deep particles spin faster (funnel shear)
+        const depth = clamp((.95 - y) / 1.9, 0, 1);
+        const cz = Math.cos(time * (.35 + .45 * depth));
+        const sz = Math.sin(time * (.35 + .45 * depth));
+        const nx = x * cz + z * sz;
+        z = -x * sz + z * cz;
+        x = nx;
+      } else if (mode === 'knot') {
+        // slow tumble around x and z
+        const t1 = time * .3;
+        const u = x * Math.cos(t1) - z * Math.sin(t1);
+        z = x * Math.sin(t1) + z * Math.cos(t1); x = u;
+        const t2 = time * .19;
+        const v = x * Math.cos(t2) - y * Math.sin(t2);
+        y = x * Math.sin(t2) + y * Math.cos(t2); x = v;
+      } else if (mode === 'circuit') {
+        // light pulse travels along the traces
+        const pulse = ((time * .55 + p.phase * .16) % 1) * 2.6 - 1.3;
+        const boost = Math.exp(-((x - pulse) ** 2) / .05) * .30;
+        z += boost * .35;
+        const v2 = y + boost * .12; y = v2;
+      } else if (mode === 'ekg') {
+        x -= time * .42 % 2.6;
+        x = ((x + 1.3) % 2.6 + 2.6) % 2.6 - 1.3;
+      } else if (mode === 'constellation') {
+        // anchor stars twinkle gently, traces shimmer
+        x *= 1 + .012 * Math.sin(p.phase + time * .4);
+        y *= 1 + .012 * Math.cos(p.phase * 1.3 + time * .4);
       } else if (mode === 'orbit') {
         // planet spin + rings precess
         const u2 = x * Math.cos(time * .25) - z * Math.sin(time * .25);
@@ -582,6 +1147,101 @@
         x = u2;
         const wobble = .10 * Math.sin(time * .4);
         y += z * wobble * .3;
+      } else if (mode === 'wormhole') {
+        const tunnelY = y * turnCos - z * turnSin;
+        z = y * turnSin + z * turnCos;
+        y = tunnelY + x * .20;
+        detailLight = .16 * Math.sin(Math.abs(x) * 23 + time * 2.8)
+          + (i % 4 === 0 ? .10 : -.06);
+        x += z * .40;
+      } else if (mode === 'eye') {
+        y *= blink;
+        const scan = .37 * Math.sin(time * 1.3);
+        detailLight = i % 5 < 2 ? .13
+          : .14 * Math.exp(-((x - scan) ** 2) / .026) - .04;
+      } else if (mode === 'mobius' || mode === 'crystal') {
+        const originalX = x;
+        x = x * turnCos - z * turnSin;
+        z = originalX * turnSin + z * turnCos;
+        if (mode === 'mobius') {
+          y = .86 * y + .38 * z;
+          detailLight = (i % 5 < 2 ? .19 : -.16) + .09 * Math.sin(p.phase + time * 1.8);
+        } else {
+          detailLight = (i % 5 < 2 || i % 11 === 0 ? .22 : -.23)
+            + .13 * Math.sin(y * 12 - time * 2.6);
+        }
+      } else if (mode === 'comet') {
+        const tail = clamp((.66 - x) / 1.94, 0, 1);
+        x += .15 * Math.sin(time * .62);
+        y += .08 * Math.cos(time * .62) + .11 * tail * Math.sin(time * 1.5 - tail * 5);
+        detailLight = (i % 5 === 0 ? .30 : .06 - .40 * tail)
+          + .09 * Math.sin(tail * 15 + time * 3.6);
+      } else if (mode === 'butterfly') {
+        z += Math.abs(x) * flap;
+        x *= Math.cos(flap);
+        detailLight = i % 9 === 0 ? .23
+          : (i % 3 === 0 ? .04 : -.16) + .09 * Math.sin(Math.abs(x) * 15 - time * 2);
+      } else if (mode === 'jellyfish') {
+        if (i % 10 < 6) {
+          x *= 1 + .075 * jellyPulse;
+          z *= 1 + .075 * jellyPulse;
+          y = (y + .24) * (1 - .10 * jellyPulse) - .24;
+          detailLight = (i % 7 === 0 ? .22 : -.05) + .10 * Math.sin(y * 17 + time * 1.75);
+        } else {
+          const length = y + .22;
+          const ripple = y * 8 - time * 1.7 + (i % 11) * .14;
+          x += length * (.17 * Math.sin(ripple) + .04 * Math.sin(ripple * 1.8));
+          z += length * .11 * Math.cos(ripple);
+          detailLight = (i % 13 === 0 ? .24 : -.02) + .13 * Math.sin(ripple * 2);
+          detailSize = .85;
+        }
+        y += jellyDrift;
+      } else if (mode === 'aurora') {
+        const ripple = x * 4 - time * 1.2 + (i % 3) * .9;
+        y += .10 * Math.sin(ripple);
+        z += .16 * Math.cos(ripple);
+        detailLight = (i % 9 < 3 ? .21 : -.14) + .19 * Math.sin(ripple + y * 6);
+      } else if (mode === 'hourglass') {
+        const lane = i % 10;
+        if (lane < 6) {
+          detailLight = (lane === 0 ? .20 : -.16) + .11 * Math.sin(y * 8 + z * 5);
+        } else if (lane < 9) {
+          const upper = i % 2 === 0;
+          const amount = upper ? 1 - glassDrain : glassDrain;
+          const pile = .34 * amount * (1 - Math.hypot(x, z) / .54) * (.35 + .65 * p.size);
+          y = (upper ? -1 : 1) * (.81 - pile) * glassDirection;
+          const spread = Math.sqrt(amount);
+          x *= spread;
+          z *= spread;
+          detailSize = Math.min(1, amount * 4);
+          detailLight = .12;
+        } else {
+          const grain = (v[1] + time * .70) % 1;
+          y = (grain * 1.15 - .55) * glassDirection;
+          x *= 1 + grain ** 3 * 2;
+          detailSize = Math.min(1, glassDrain * 8, (1 - glassDrain) * 8);
+          detailLight = .24;
+        }
+        y += z * .12;
+        const glassX = x * glassCos - y * glassSin;
+        y = x * glassSin + y * glassCos;
+        x = glassX;
+      } else if (mode === 'binary') {
+        const lane = i % 10;
+        if (lane < 5) {
+          detailLight = .23 + .12 * Math.sin(time * 2.4 + (lane < 3 ? 0 : Math.PI));
+        } else if (lane < 8) {
+          const pulse = x * 8 - time * 2.6;
+          y += .065 * Math.sin(pulse);
+          detailLight = -.07 + .23 * Math.sin(pulse);
+        } else {
+          detailLight = -.24 + .10 * Math.sin(p.phase - time * 1.8);
+        }
+        const orbitX = x * binaryCos - y * binarySin;
+        const orbitY = x * binarySin + y * binaryCos;
+        x = orbitX;
+        y = orbitY * .81 + z * .31;
+        z = z * .81 - orbitY * .31;
       } else if (mode === 'supernova') {
         const lane = i % 12;
         if (lane < 2) {
@@ -609,6 +1269,115 @@
             y = .73 + (y - .73) * candleGrowth;
           }
         }
+      } else if (mode === 'orderbook') {
+        const lane = i % 10;
+        const side = Math.sign(x);
+        const breathe = 1 + .065 * Math.sin(time * .95 + side * 1.7);
+        if (lane === 9 && Math.abs(x) < .14) {
+          x *= .50 + bookMatch;
+          y *= .50 + bookMatch;
+          detailSize = .30 + .70 * bookMatch;
+          detailLight = -.22 + .54 * bookMatch;
+        } else if (lane >= 8) {
+          const progress = ((Math.abs(x) - .18) / .86 + 1 - bookFlow) % 1;
+          x = side * (.15 + progress * .88);
+          detailSize = Math.min(1, progress * 7, (1 - progress) * 7);
+          detailLight = -.21 + .25 * (1 - progress);
+        } else {
+          x = side * (.13 + (Math.abs(x) - .13) * breathe);
+          detailLight = .07 + .15 * Math.sin(y * 6 - time * 2);
+        }
+      } else if (mode === 'depth-chart') {
+        const lane = i % 10;
+        y = .61 + (y - .61) * (1 + .075 * Math.sin(time * .96 + Math.sign(x) + Math.abs(x) * 3));
+        detailLight = lane < 4 ? .17 : -.27;
+        detailLight += .13 * Math.sin(Math.abs(x) * 12 - time * 2);
+      } else if (mode === 'volume-profile') {
+        const lane = i % 10;
+        const row = Math.floor(i / 10) % volumeBars.length;
+        x = -.91 + (x + .91) * (1 + .06 * Math.sin(time * 1.12 + row * .55));
+        detailLight = lane === 0 ? -.20 : row === 6 ? .31 + .11 * Math.sin(time * 1.7)
+          : lane < 4 ? .02 : -.15;
+      } else if (mode === 'bollinger') {
+        const lane = i % 10;
+        const center = bandCenter(x);
+        y = center + (y - center) * bandBreath + .046 * Math.sin(x * 4 - time * 1.2);
+        const shine = Math.max(0, 1 - 4 * Math.abs(x - chartSweep));
+        detailLight = (lane < 6 ? .13 : lane < 8 ? .19 : -.34) + .16 * shine;
+      } else if (mode === 'triangle') {
+        const lane = i % 10;
+        if (lane >= 8) {
+          const progress = clamp((x - .65) / .42, 0, 1);
+          y += .05 * progress * Math.sin(time * 1.5 - progress * 6);
+          detailLight = -.22 + .24 * Math.max(0, Math.cos(time * 1.9 - progress * 4));
+        } else {
+          y += .034 * (1 - x) * Math.sin(time * .9 + x * 2);
+          detailLight = lane < 4 ? .07 : .16 + .21 * Math.max(0, 1 - 5 * Math.abs(x - chartSweep));
+        }
+      } else if (mode === 'double-bottom') {
+        const lane = i % 10;
+        if (lane >= 8) {
+          const lowX = lane === 8 ? -.42 : .44, lowY = lane === 8 ? .52 : .53;
+          const pulse = Math.sin(time * 1.7 - (lane - 8) * 1.2);
+          x = lowX + (x - lowX) * (1 + .18 * pulse);
+          y = lowY + (y - lowY) * (1 + .18 * pulse);
+          detailLight = -.17 + .14 * pulse;
+        } else {
+          detailLight = lane === 7 ? -.21 : .17 + .21 * Math.max(0, 1 - 4 * Math.abs(x - chartSweep));
+        }
+      } else if (mode === 'fibonacci-fan') {
+        const travel = x + .94;
+        y = .21 + (y - .21) * (1 + .19 * Math.sin(time * 1.1));
+        const shine = .16 * Math.max(0, Math.sin(travel * 8 - time * 2.5)) ** 3;
+        detailLight = i % 10 < 8 ? .01 + shine : -.22 + shine;
+      } else if (mode === 'trade-ticker') {
+        const lane = i % 10;
+        if (lane < 8) {
+          x = ((x - tickerShift + 3.27) % 2.18) - 1.09;
+          detailSize = Math.min(1, (1.09 - Math.abs(x)) * 7);
+          detailLight = lane < 5 ? .19 + .16 * Math.sin(p.phase + time * 2) : -.19;
+        } else {
+          detailLight = -.38;
+        }
+      } else if (mode === 'portfolio-rings') {
+        const ring = Math.floor(i / 10) % 3;
+        const sector = Math.floor(i / 30) % 4;
+        const [spinSin, spinCos, tiltSin, tiltCos] = ringRotations[ring];
+        const ringX = x * spinCos - y * spinSin;
+        const ringY = (x * spinSin + y * spinCos) * (.62 + ring * .10);
+        x = ringX * tiltCos - ringY * tiltSin;
+        y = ringX * tiltSin + ringY * tiltCos;
+        z += .21 * ringY;
+        detailLight = .12 - sector * .085 + .12 * Math.sin(time * 1.45 + sector * 1.55);
+      } else if (mode === 'padlock') {
+        const lane = i % 12;
+        if (lane < 4) {
+          const hingeX = x + .38;
+          x = hingeX * latchCos - z * latchSin - .38;
+          z = hingeX * latchSin + z * latchCos;
+          y -= hingeX * latch * .32;
+          detailLight = .13 + .13 * Math.sin(y * 13 - time * 1.6);
+        } else if (lane === 11) {
+          const rise = (y + time * .39) % 1;
+          x = x * (.5 + rise) + .09 * rise * Math.sin(rise * 5 + p.phase);
+          y = .26 - rise * (.59 + latch * .34);
+          detailSize = latch * Math.min(1, rise * 8, (1 - rise) * 8);
+          detailLight = .23;
+        } else {
+          detailLight = lane < 7 ? .20 : lane === 10 ? .24 : -.28;
+          detailLight += .08 * Math.sin(x * 10 - time * 1.7);
+        }
+        y += lockFloat;
+      } else if (mode === 'gull-flock') {
+        const gull = Math.floor(i / 10) % 19;
+        const row = Math.floor(gull / 5);
+        const centerX = -.96 + .43 * (gull % 5) + .097 * (row % 2);
+        const wing = x - centerX;
+        const wave = time * 1.95 - gull * .38;
+        y += Math.abs(wing) * .45 * Math.sin(wave) + .047 * Math.sin(time * .86 - gull * .28);
+        x += flockDrift - .10 * wing * Math.cos(wave);
+        detailLight = i % 10 < 6 ? .14 : -.16;
+        detailLight += .10 * Math.sin(wave + p.phase);
       } else if (mode === 'whale') {
         const lane = i % 20;
         if (lane === 19) {
@@ -630,6 +1399,34 @@
         }
         y += .058 * Math.sin(time * .95);
         x *= whaleWidth;
+      } else if (mode === 'origami-crane') {
+        const lane = i % 10;
+        const panel = Math.floor(i / 10) % craneFaces.length;
+        if (panel < 4) {
+          const span = Math.hypot(x + .19, y - .02);
+          y -= span * craneLift;
+          z += span * (panel < 2 ? craneLift : -craneLift);
+        }
+        const foldGlow = .13 * Math.sin(x * 8 + y * 5 - time * 2.15);
+        detailLight = lane < 6 ? .23 + foldGlow : -.17 + (panel % 3) * .055 + foldGlow;
+      } else if (mode === 'satellite') {
+        const lane = i % 10;
+        if (lane === 9) {
+          const signal = (time * .28 + (Math.floor(i / 10) % 3) / 3) % 1;
+          const arc = .18 + .74 * signal;
+          const arcX = x - .14;
+          x = .14 + arcX * arc;
+          y = -.62 - signal * .40 + arcX * arcX * .41 * arc + (v[1] - .5) * .026;
+          detailSize = Math.min(1, signal * 9, (1 - signal) * 6);
+          detailLight = .10 - .25 * signal;
+        } else {
+          detailLight = lane < 4 ? .16 : lane === 4 ? -.22 : .08;
+          detailLight += .12 * Math.sin(time * 1.8 - Math.abs(x) * 6);
+        }
+        const rotatedX = x * satelliteCos - z * satelliteSin;
+        z = x * satelliteSin + z * satelliteCos;
+        x = rotatedX;
+        y += x * .17 * Math.sin(time * .55) + .055 * Math.sin(time * .88);
       }
       const xx = x * yc - z * ys;
       z = x * ys + z * yc; x = xx;
@@ -694,12 +1491,13 @@
   function selectShape(index, instant = false) {
     shapeAgeMs = 0;
     if (index !== shape) {
+      if (particlesReady) prepareMotif(index);
       from = instant ? null : coords.slice();
       morph = instant ? 1 : 0;
       shape = index;
     }
   }
-  function nextShape(current = -1) {
+  function nextShape(current = -1, consume = true) {
     if (shapeQueue.length === 1 && shapeQueue[0] === current) shapeQueue.pop();
     if (!shapeQueue.length) {
       shapeQueue = shapeOrder.map((_, index) => index);
@@ -712,7 +1510,7 @@
     if (shapeQueue[lastIndex] === current) {
       [shapeQueue[0], shapeQueue[lastIndex]] = [shapeQueue[lastIndex], shapeQueue[0]];
     }
-    return shapeQueue.pop();
+    return consume ? shapeQueue.pop() : shapeQueue[lastIndex];
   }
   function animate(now) {
     frame = 0;
@@ -723,6 +1521,8 @@
     morph = Math.min(1, morph + dt / shapeTransitionSeconds);
     if (shapeAgeMs >= shapeIntervalMs) {
       selectShape(nextShape(shape));
+    } else if (shapeAgeMs >= shapeIntervalMs - 1000) {
+      prepareMotif(nextShape(shape, false));
     }
     const follow = 1 - Math.exp(-dt * 20);
     pointer.x += (pointer.targetX - pointer.x) * follow;
@@ -799,7 +1599,7 @@
   function prepareParticles() {
     const deadline = performance.now() + 6;
     do {
-      points.push(createParticle(points.length));
+      points.push(createParticle());
     } while (points.length < total && performance.now() < deadline);
 
     if (points.length < total) {
@@ -808,6 +1608,7 @@
     }
 
     sky = Array.from({length:1350}, createSkyStar);
+    prepareMotif(shape);
     particlesReady = true;
     size();
     new ResizeObserver(size).observe(canvas);
@@ -815,10 +1616,7 @@
   }
 
   // Let the browser paint the page before preparing the decorative canvas.
-  if (ctx) requestAnimationFrame(() => requestAnimationFrame(() => {
-    buildTokenMask();
-    prepareParticles();
-  }));
+  if (ctx) requestAnimationFrame(() => requestAnimationFrame(prepareParticles));
 })();
 </script>
 </body>
