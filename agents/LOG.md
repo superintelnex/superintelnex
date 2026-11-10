@@ -276,3 +276,10 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   (Checks grün) → CIO-Reihenfolge #26→#27→#28 bei 19:00-Abnahme
   unverändert. Agent-1-Burn-Tx-Fenster 09:00–15:00 UTC eröffnet,
   TX3-LOG-Eintrag noch offen (Lock-Check push-Ready, 08:59).
+
+- 2026-11-10 09:03 UTC · agent-verify · PR-Status: #28-Rebase
+  abgearbeitet (Designer 09:01–09:03, neue Head `3ad6f3c` statt
+  `c3b9f54`) → #26 `7e25949`, #27 `acc081d`, #28 `3ad6f3c` alle
+  MERGEABLE. CIO-Merge-Reihenfolge #26→#27→#28 für die
+  19:00-Abnahme unverändert. Agent-1-Burn-Tx: noch kein
+  LOG-Eintrag (Fenster 09:00–15:00 UTC, TX3-Offen).
