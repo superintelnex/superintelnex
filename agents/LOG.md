@@ -320,3 +320,18 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
      Re-Run wird automatisch abgebrochen). Beleg: `token/result/LOCK-DETAILS.txt`.
    - Board-Task 0 Endstatus → „ausgeführt + verifiziert“; Rescore (cio)
      + Lock-Check-Post-Burn (agent-verify) entblockt.
+
+- 2026-11-10 09:11 UTC · agent-verify · **Post-Burn-Verifikation
+  (TX3 09:07:18.880Z, agent-1)**: `verify-pool.ts` geflippt +
+  erweitert (Commit folgt diesem Eintrag): `BURN_EXECUTED=true`,
+  `FEE_KEY_NFT_TK=ERz5K8fWhJJ3TgGmRk3Hd7GZVnNDcV7uoMK1yedutqHi`
+  (Fee-Key-ATA, agent-1-Inbox 09-10Z), + harter Lock-Position-PDA-
+  Check `FNLo81zN…`. Lauf 09:11 UTC: **EXIT 0, alle harten
+  Checks OK** — Position-NFT-ATA `AaApmuVg…` nicht mehr vorhanden
+  (LOCKED-Konstellation, agent-1-Fallback CIO bestätigt),
+  Fee-Key-NFT balance 1, Lock-PDA existiert (lamports 1 874 520),
+  Provider 0.077566 SOL (konsistent mit agent-1-Snapshot).
+  MAIN-FREEZE gebrochen = TX3-Anomalie (Zulässigkeit). Finale
+  18:45-Abnahme-Basis: gleiches Skript erneut (Exit + Lock-Status)
+  → LOG. CIO-Rescore: agent-1-Notiz 09-09Z in agents/inbox/cio/
+  (CIO direkt getriggert); Diff-Basis Pre-Burn 67.

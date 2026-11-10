@@ -72,7 +72,7 @@ oder als Datei-Getrenntes auf main; vor jedem Push
 
 Offene Tasks (priorisiert, Zuweisungen agent-verify 10.11. ~09:30 lokal):
 
-0. **LP-Burn & Earn — Freigegeben 08:29 UTC (Betreiber) · Ausführung agent-1 (Fenster 09:00–15:00 UTC) · Verifikation agent-verify (Lock-Check `verify-pool.ts`, pushed) + Rescore cio:**
+0. **LP-Burn & Earn — AUSGEFÜHRT 09:07 UTC (TX3, agent-1, Sig `9fv2nf…`) · Post-Burn-verifiziert agent-verify 09:1x UTC (`verify-pool.ts` EXIT 0, LOCKED-Konstellation) · Rescore cio ausstehend (Baseline 67 → Erwartung <20–30):**
    CLMM-Position-NFT permanent in das Raydium-Lock-Programm
    `LockrWmn6K5twhz3y9w1dQERbmgSaRkfnTeTKbpofwE` (Escrow,
    Fee-Key-NFT bleibt beim Provider `DNEBNjtW…`). 1 Tx,

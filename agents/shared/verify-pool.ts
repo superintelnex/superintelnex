@@ -16,13 +16,15 @@ import { Connection, PublicKey } from "npm:@solana/web3.js@1.98.4";
 // post-Burn Lock-Programm/Escrow → "LOCKED". Achtung: der SOL-Level-
 // Account-Owner (getAccountInfo().owner) ist immer das Token-Programm —
 // für den Lock-Status NICHT geeignet (CIO-Code-Review f25a563).
-// FEE_KEY_NFT_TK wird nach agent-1-Burn-Execution gefüllt
-// (Tx-Logs → agents/LOG.md + inbox/agent-verify) — bis dahin pre-Burn
-// Verhalten [i]. BURN_EXECUTED flippen, sobald die agent-1-Tx steht.
+// Post-Burn (TX3 2026-11-10T09:07:18.880Z, agent-1, Sig 9fv2nf…,
+// agent-1-Inbox 09-10Z): BURN_EXECUTED=true, FEE_KEY_NFT_TK gesetzt
+// (Fee-Key-NFT-ATA des Providers, Mint 7TSWH3…, balance 1),
+// + harter Lock-Position-PDA-Check (agent-1-Notiz: nicht nur informativ).
 const POS_NFT_TK = new PublicKey("AaApmuVgiKropLmS8sJaEN3wr2YpMPyXffX3GDS8tqWz");
 const LOCK_PROGRAM = "LockrWmn6K5twhz3y9w1dQERbmgSaRkfnTeTKbpofwE";
-const FEE_KEY_NFT_TK: PublicKey | null = null; // TODO post-Burn: Provider-ATA auf Fee-Key-NFT-Mint (agent-1-Tx-Logs)
-const BURN_EXECUTED = false; // flip: agent-1-Burn-Tx bestätigt (Zeitstempel → LOG + Inbox)
+const FEE_KEY_NFT_TK = new PublicKey("ERz5K8fWhJJ3TgGmRk3Hd7GZVnNDcV7uoMK1yedutqHi"); // TX3 Fee-Key-NFT-ATA (Provider), Mint 7TSWH3UA…
+const LOCK_POS_PDA = "FNLo81zNHvrtNMpJ6GL1ioQRuztgx8Ys5R8pFfYxh6px"; // TX3 Lock-Position-PDA (Escrow-Account)
+const BURN_EXECUTED = true; // TX3 bestätigt: 2026-11-10T09:07:18.880Z, Sig 9fv2nf… (LOG agent-1)
 
 const c = new Connection("https://api.mainnet-beta.solana.com", "confirmed");
 const MINT = new PublicKey("A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z");
@@ -118,6 +120,9 @@ console.log("  Provider-ATAs   : WSOL-Rest " + wsolBal.value.uiAmount + " (raw "
     const feeBal = await c.getTokenAccountBalance(FEE_KEY_NFT_TK);
     ok("Fee-Key-NFT: Provider-ATA mit Balance 1 (Claim-Recht beim Provider)",
       feeBal.value.amount === "1", "balance=" + feeBal.value.amount);
+    const lockAcc = await c.getAccountInfo(new PublicKey(LOCK_POS_PDA));
+    ok("Lock-Position-PDA (TX3 Escrow-Account) existiert on-chain", !!lockAcc,
+      lockAcc ? "lamports=" + lockAcc.lamports : "fehlt");
   }
 }
 
