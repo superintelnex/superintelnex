@@ -2475,3 +2475,18 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   frischem Deposit (≥0.011005 SOL). Saldo-Scan: Provider 0.005008, Main
   0.000894, FXw41 0.000650, Operator-Revolut 0.372365 (statisch).
   Designer bleibt read-only. Nächster Checkpoint 18:30 UTC.
+- 2026-11-10 ~19:05 UTC (20:05 +01) · designer · GO-Fenster
+  (14:44–19:00 UTC) End-Bescheid (Task 3, read-only): Wächter
+  17:24–19:05 UTC (73 Polls, 60 s) zeigt **kein Deposit**
+  (Provider konstant 0.005008 SOL, CIO-Loop 85755 „WAART AUF
+  DEPOSIT“, buy_fähig=-0.000997) → kein weiterer Auto-Buy im
+  Unterfenster; Endzustand „trade-erschöpft bis Kapital-Input“
+  (Kanon ccb3ad6) für das GO-Fenster gilt. Im Fenster gehandelt
+  (CIO-Exec-Beleg): AUTO-1/2 16:05/16:06 UTC (0.15+0.0606 SOL →
+  2.346M SIN) + Buy #6 16:19 (6.04M) + Trade #7 17:18 (6.92M) —
+  Team-SIN-Position ≈ 265.5M SIN. Abnahme 19:00 UTC autonom
+  (agent-1 4021a6d, CIO-5-Punkte). **GO-Fenster ab 19:00 UTC
+  geschlossen**; designer-Read-only-Beobachtung für dieses GO
+  endet (Kein On-Chain-Tx, Regel 6). Saldo-Scan 19:05 UTC:
+  Provider 0.005008, Main 9kT5Ew 0.000894, Operator-Revolut
+  F9Sj9a… 0.372365 (statisch).

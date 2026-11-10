@@ -118,3 +118,43 @@ Bezug: Gecko-Terminal-Pool-API + CIO-Loop-Log + On-chain-Saldo-Scan.
 
 Keine On-Chain-Tx von designer (Regel 6). Nächster designer-Checkpoint:
 18:30 UTC (Kollisions-Fenster 18:45–19:00 für Abnahme, dann GO-Schluss).
+
+## Fenster-Ende ~19:05 UTC · GO-Ablauf (Trade-GO bis 19:00 UTC, hart)
+
+Zeit: 2026-11-10 ~19:05 UTC (20:05 +01) · designer (Task 3, Read-only)
+Bezug: designer-Read-only-Watcher-Log (PID 87308, 60-s-Poll
+17:24:31–19:05:06, 73 Polls) + CIO-Autotrade-Log + Saldo-Scan 19:05 UTC.
+
+### Ergebnis GO-Fenster (14:44–19:00 UTC, Operator-GO „trade autonom bis
+20 Uhr“)
+- **Handel fand im Fenster statt (CIO-Exec, Beleg im Team-LOG):**
+  Deposit #1 16:05 UTC → AUTO-1 `5y6eNMok…` (0.15 SOL → 1.826M SIN,
+  CU 63.233) + AUTO-2 `62J7GgKx…` (0.060582 SOL → 520M SIN, CU 49.616)
+  + Buy #6 `3aooc4R4…` 16:19 UTC + **Trade #7** `5J24ykqZ…`
+  17:18 UTC (0.001 SOL → 6.92M SIN, CIO-DCA). Team-SIN-Position
+  ≈ 265.5M SIN (Beleg 16:26 UTC: Exec-ATA `FD1WzT52…` 258.61M nach
+  #5/#6 + 6.92M #7).
+- **Kein Deposit 17:24–19:05 UTC (Watcher-Beleg):** alle 73
+  60-s-Polls `provider=0.005008 SOL · buy_fähig=-0.000997 — WAART
+  AUF DEPOSIT`. CIO-Autotrade-Loop (PID 85755, 60-s-Poll, CAP 0.15,
+  MIN-Buy 0.005) feuerte in diesem Unterfenster keine weiteren
+  Trades (Trigger-Schwelle ≥0.011005 SOL nie erreicht).
+- **Endzustand GO-Fenster (19:05 UTC, RPC-Saldo-Scan):**
+  Provider `DNEBNj…` = 0.005008 SOL · Main `9kT5Ew…` = 0.000894 SOL ·
+  Operator-Revolut `F9Sj9a…` = 0.372365 SOL (statisch).
+  → **„trade-erschöpft bis Kapital-Input"** im GO-Fenster bestätigt
+  (Kanon `ccb3ad6`); Abnahme lief 19:00 UTC (agent-1 `4021a6d`,
+  CIO-5-Punkt-Checkliste, autonom).
+- **Ab 19:00 UTC: GO-Fenster geschlossen** (Betreiber-Abnahme hat
+  Vorrang; keine weiteren Trades dieses GOs).
+
+### Trading-Attribution (Beleg-Neutral, GO-Fenster 14:44–19:00 UTC)
+- h1/h6/h24-Volumen-Sprünge im Watcher-Fenster = Team-Exec-Events
+  (4 Buys, Belege oben) + organischer Zufluss (Buyer h24: 24,
+  Seller h24: 15; kein Anomaly). Kein Kapitalfluss in den
+  Team-Key im Fenster (Provider-Saldo konstant 0.005008 SOL).
+- Ab 19:05 UTC: kein On-Chain-Event; CIO-Loop läuft weiter (Team-
+  Territorium), designer-Beobachtung für dieses GO endet hier.
+
+Keine On-Chain-Tx von designer (Regel 6; GO-Relay 14-57Z →
+Ausführung = CIO-Loop/agent-1, nie parallel).
