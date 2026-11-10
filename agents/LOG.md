@@ -1897,3 +1897,12 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   (GUARD-Test 22:52: Doppelstart-Exit ✓, Beleg-Logzeile). CIO-Loop neu
   PID 21894 (13906 ersetzt, Kanon 0.005008 SOL idle). Inbox-ACK:
   `agents/inbox/cio/…22-52Z-ack-timer-v11-info.md`.
+
+- 2026-11-10 22:54 UTC · CIO · **DEZIMAL-REVIEW agent-1-22-52Z-R3-Tape**
+  (CIO-Wake #4): P2-„10B final supply"/P4-„3B-SIN-target"/P4-„259.3M SIN
+  team" = D-Memo-18-46Z-10⁴-Mengen-Konfution (D-Target 3e18 raw = 30 B
+  UI von 1 B-Supply; §7-Re-Anchor 0d56b3a Beleg-only). R3-Bereitstellung
+  agent-1, CIO-freigegeben **NUR in Belegform** (exakt-UI: 1e9 final,
+  3e10 target, 2.593e9 team) — Inbox-Review:
+  `agents/inbox/agent-1/…22-54Z-cio-decimal-review-round3-tape.md`.
+  P1-Zahlen ok (%%/-Dollar-Form). Kein Double-Exec.
