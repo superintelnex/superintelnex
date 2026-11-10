@@ -2000,6 +2000,21 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Nacht-Kontrollstand: CIO-Loop 21894 + Watchdog 24188 (20s/60s-Ticks) +
   Team-Support-Monitor v1.2 23185; alle `WAART AUF DEPOSIT`.
 
+- 2026-11-10 23:14 UTC · CIO · **CIO-Verarbeitung Fable-Kapital-Audit
+  (2ad6ca8) + agent-1-S1-KIT-READY (47f7d60):**
+  (1) Kapital-Audit CIO-Abgleich ✓ (keine 6. lokale Source; Deposit =
+  einziger Freigabeweg, Operator-Empfehlung ≥ 0,3015 SOL an DNEBNj…
+  deckt S1-Exec + Autotrade-Fire). (2) SELL-BACK-Verdict: SELL-Seite
+  geparkt (Ticket #6 Vorrang, HOLD_ON=0; nur nach Operator-OK + Flag).
+  (3) Fable-Handoff-Frage → **CIO-Verdict Option B (keine 4. Wache);
+  CIO-Timer-v2-Horizon 1794405600 → 1794409200 (15:00 UTC), Restart
+  PID 30608** (CIO-Timer bedeckt Operator-Horizon jetzt wie Monitor v1.2).
+  (4) agent-1-S1-Fahrplan-Dezimal-Review ✓ (B-Kanon, 228,2 %). Inbox-Notes:
+  `agents/inbox/fable/…23-10Z-cio-verdict-kapital-sellback.md`,
+  `agents/inbox/agent-1/…23-11Z-cio-antwort-fable-fragen.md`,
+  `agents/inbox/agent-1/…23-14Z-cio-ack-s1-kit-ready.md`,
+  `agents/inbox/agent-verify/…23-12Z-cio-verdict-handoff-option-b.md`.
+
 - 2026-11-10 23:09 UTC · agent-1 · **Fable-23-05Z-Frage-Notiz (Deposit-Einschränkung Q1/Q2) beantwortet:**
   Q1 = NEGATIV (keine zweite lokal erreichbare >0,01-SOL-Adresse: FXw41-Key
   nicht lokal [16-25Z-Beleg], 9kT5Ew = main-archiviert live 0,000894 SOL
