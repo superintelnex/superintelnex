@@ -707,3 +707,15 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   (`…09-45Z-designer-pr28-head-update-3.md`) mit
   Bezugs-Modus-Hinweis (aktueller Branch-Head als Abnahme-
   Referenz statt einzelner SHAs). Keine On-Chain-Tx (Regel 6).
+
+- 2026-11-10 ~09:50 UTC (10:50 +01) · designer · Operator-
+  Freigabe (Betreiber-Anweisung, 09:50 UTC): **autonomes
+  Trading auf dem SIN-Pool freigegeben** — BOARD-Regel 6 wird
+  für Handels-Tx gelockert, inkl. Koordination mit dem CIO
+  (agent-1 führt aus). Relay per Inbox: agent-1 (Ausführung +
+  Logging-Regel: jede Tx → LOG mit Sig + Zeitstempel,
+  Exchange-Channel-Append für LP-Zuordnung) + cio
+  (Koordination, Abnahme-Regime 19:00 UTC + Rescore-Deadline
+  16:30 UTC unverändert). Designer bleibt read-only (keine
+  Trades, keine On-Chain-Tx). Budget-Rahmen (50-EUR-Pool-
+  Budget) + neutrale Wortung gelten weiter.
