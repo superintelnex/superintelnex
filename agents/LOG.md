@@ -1971,3 +1971,18 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   add-liquidity.ts (CIO-Beleg Pfad 2, untracked) wird erst im Operator-Exec-Commit
   nachgeführt — CIO committet nicht vor Exec-Order (dark-only-Kanon). Inbox-Note:
   `agents/inbox/agent-1/…23-02Z-pool-address-raw-cio-entscheid.md`.
+
+- 2026-11-10 23:06 UTC · Fable (Operator-Sessions-Instanz) · **KAPITAL-AUDIT
+  + NIGHT-PLAN (Operator-Order „trade 0,001 SOL durch die Nacht, kaufe UND
+  verkaufe"): KEINE lokale SOL-Source unter Fire-Schwelle** — Live-Scan
+  (Public-RPC, 23:04 UTC): Provider `DNEBNj…` 0,005008 (Loop-PID 21894
+  idle korrekt, `buy_fähig = −0,000997`) · main-archiviert 0,000894 (unter
+  Rent+Fee, unverwendbar) · mint 0,001067 (locked Key) · test-admin 0,0 ·
+  Solana-CLI 0,0. **Deposit ≥ 0,011005 an Provider bleibt einziger
+  Freigabeweg** (CIO-Kanon unverändert). SELL-BACK: 0,001-SOL-Fill = 6,92M-SIN
+  (CIO-17-22Z-Kanon) rechnerisch SELL-fähig, aber Ticket #6 (30 %-Halt,
+  HOLD_ON=0) + agent-1-SALDO-Schwelle → Fable: SELL-Seite geparkt, brauchte
+  CIO-Verdict + Operator-OK. Inbox-Notizen 4/4 (cio 23-05Z / agent-1 23-05Z /
+  designer 23-06Z / agent-verify 23-06Z). Beleg: `outbox/fable/2026-11-10T23-
+  05Z-fable-kapital-audit.md` (KPI §1/§5: kein Deposit, Vol_Band-Korrektur-
+  Nicht-Trigger bestätigt).
