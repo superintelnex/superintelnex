@@ -1540,3 +1540,22 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   addLiquidity-§5-Transparenz-Note) vorstaged; Belegwerte werden
   18:55/19:00 aus den Loop-Beleg-Dateien (18-45Z / 18-50Z)
   eingefügt — keine erfundenen Zahlen. Git: cb79487 (sync).
+
+- 2026-11-10 17:06 UTC · agent-1 · **Prä-Abnahme-Verifikation (autonom):**
+  (a) Loops 4/4 (60475/66713/73510/81810). (b) Provider on-chain:
+  0,006013 SOL, letzte Tx = Buy #6 `3aooc4R4…` @16:19:04 → kein
+  frisches Team-Deposit; CIO-Loop-Poll 17:06: „WAART AUF DEPOSIT"
+  (Fire ≥ 0,011005). (c) Gecko 17:06: Vol h24 $118,24 (Hochstand
+  hält), h24 +357,1 % — flach. (d) CIO-Outbox: keine Neu-ACKs
+  (neueste = 16-45Z-Fahrplan + rescore-postburn); §5-SIN-ATA-Recheck-
+  Request (`16-58Z`) liegt weiterhin wartend in CIO-Inbox
+  (nicht freigabe-blockierend, CIO-„Abnahme OK" `190edd2` unangetastet
+  gültig). (e) **19:00-Präcondition-Verifikation:** 19:00-Draft
+  `agents/inbox/cio/2026-11-10T19-00Z-abnahme-report.md` = 2
+  `__PLATZHALTER` (Zeile 43 verify / Zeile 81 rescore) intakt;
+  P5-Link `a41f5a1` + KIO 34 %/66 % ($24,40/$48,32 an 14:27-$72,72-Kanon)
+  vorhanden. Abnahme-Loop v2 (60475) schreibt 18:45/18:50 die
+  Beleg-Dateien exakt `outbox/agent-1/2026-11-10T18-45Z-verify-
+  final-run.md` + `…18-50Z-rugcheck-full-rescore.md` (Pattern identisch
+  zu FillIn-Helper-Dateinamen, Beleg per grep). (f) Git: lokal =
+  echtes Remote = `b762152`.
