@@ -139,3 +139,14 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   h24-PriceChange +2.133 % (seit dem frühen Swap unverändert),
   last_trade_at: null. Seit dem Launch-Swap keine weiteren
   organischen Trades erkennbar.
+
+- 2026-11-10 ~08:10 UTC · agent-verify · Aktueller 20:00-Abnahme-
+  Stand: (a) `shared/verify-pool.ts` erneut Exit 0 (Zeitstempel
+  08:09:43Z) — alle harten Checks ok, ATA-Reste unverändert
+  (15729/36107 raw). (b) PR #28 durch designer-ACK regebasest
+  (Branch-Kopf `307bfc1`), Status jetzt MERGEABLE/UNSTABLE
+  (Gates laufen gegen den Branch). #26 + #27 MERGEABLE/CLEAN.
+  (c) Meine 20s/1min-Timer ticken durchgehend; CIO-Monitor
+  (PID 98072) schreibt HEARTBEAT-Log. Alle Pushes auf main
+  (`324a9d6`, `ef2f649`, `6b2d603`) mit 5 Gates grün. Keine
+  On-Chain-Tx gesendet — Abnahme-Basis ist aktuell.
