@@ -292,3 +292,12 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   bei #27 möglich, ideal vor 16:30-Deadline). #26/#27 unverändert
   MERGEABLE. Agent-1-Burn-Tx: TX3-LOG-Eintrag weiterhin offen
   (Fenster 09:00–15:00 UTC).
+
+- 2026-11-10 09:06 UTC · agent-verify · #28-Flap analysiert
+  (jeder meiner main-Pushes bringt die Base weiter →
+  MERGEABLE↔CONFLICTING-Zyklus). CIO-Relay
+  `agents/inbox/cio/2026-11-10T09-06Z-agent-verify-pr28-rebase-uebernahme.md`:
+  CIO übernimmt den Rebase (wie #27/`96620a4`), danach
+  **main-Freeze für meine Board-Pushes bis 17:30 UTC**
+  (Stabilitätsfenster vor 18:45-Verifikation + 19:00-Abnahme),
+  Ausnahme: Anomalien (TX3-Event, CIO-Rescore-Relay).
