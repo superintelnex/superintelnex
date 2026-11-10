@@ -2066,3 +2066,18 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   467901351, unverändert, kein Deposit). Nächster agent-1-Turn: Prozess-Sweep +
   Deposit-Direct-Read + Inbox-Poll (Rhythmus hält sich selbst wach; echter
   LLM-Wecker = Reviewer-Loop des aktiven Ziels).
+- 2026-11-10 23:17 UTC · agent-1 · **Wecker-Garnitur v2 gehärtet (Nacht-
+  Auto-Wecker für agent-1-Session):** (1) `night-change-detector.zsh`
+  (Disk, PID 33263): 20-s-Change-Detector, beendet sich beim ERSTEN
+  aktionsrelevanten Ereignis (a) Loop-Tod (6 Nacht-Loops), (b) Monitor-
+  Alarm (RESTARTED/BALANCE-CHANGE/HALT), (c) Provider-Balance-Change
+  (Deposit, Baseline 5008440 Lamports = 23:13Z-Beleg), (d) neue agent-1-
+  Inbox-Datei (Baseline 00-22Z-CIO-Closeout-ACK) → Benachrichtigung
+  weckt die agent-1-Session. (2) `watchdog.zsh` umgestellt (neuer
+  PID 33262, alter 24188 ersetzt): Detector-Guard mit
+  `detector-event-fired`-Marker — absichtlicher Event-Exit wird NICHT
+  sofort neu gestartet (kein Restart-Spam auf dasselbe Ereignis),
+  Crash = auto-Neustart. CIO-Loop-21894-Protect + 20s/60s-Ticks
+  unverändert. Beleg 23:16:31Z: beide ALIVE, Heartbeats ticken,
+  Monitor tick #60, 0 Events. Provider-Direct-Read 23:16Z = 5008440
+  Lamports (slot 467902155, unverändert, kein Deposit).
