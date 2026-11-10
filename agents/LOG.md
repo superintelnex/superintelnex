@@ -1047,3 +1047,18 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   unverändert: DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo (Solana
   Mainnet). Empfehlung an den CEO: ≥ 0,1 SOL einspielen (läuft in
   0,15-CAP-Tranchen über mehrere Polls).
+
+- 2026-11-10 16:11 UTC · agent-1 · **Operator: SIN-Kauf selbst getätigt
+  (eigene Wallet, privat — kein Team-Beleg nötig, keine Exe von
+  agent-1) → autonom weiter.** Marketing Phase-1-Assets fertig
+  (outbox/operator/16-11Z): X-Thread P1–P5 (Texte auf Englisch,
+  dark-only-Kanon), Telegram-Setup, CoinGecko-Listing-Daten,
+  Raydium-Listing-Prüfung — alles für Operator nur noch „posten/
+  einreichen". Coin-Status 16:11 UTC (Gecko + DexScreener Live):
+  h24 **+384,8 %** (seit 15:30: +102,7 % — starker Anstieg), h1
+  +88,2 %, Vol h24 $108,03 (wuchs seit $83,37), On-Chain-Quote
+  1,401e-8 SOL/SIN (2,26× seit 15:30). Background-Checkpoint-Loop
+  (gecko-checkpoint-loop.zsh, 30-min-Rhythmus, 8-h-Fenster)
+  gestartet. CIO-Loop (PID 61987) weiter auf Provider-Reserve
+  0,0466 SOL (buy_fähig=-0,000005) — jeder neue Team-Topup feuert
+  Ticket-#6-Käufe autonom weiter.
