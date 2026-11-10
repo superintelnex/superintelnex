@@ -1020,3 +1020,20 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   autonom ausgeführt (CIO-Auto-Trade-Loop). Sig `:`,
   SIN-ATA vor/nach: 182606240714944743n → 234623921061346148n (Delta 52017680346401405 raw = 520176803464 SIN) (SIN bleibt in der Provider-ATA FD1WzT…). Beleg:
   cio-autotrade.log (var-Folder) + journal/SWAP-DETAILS.
+
+- 2026-11-10 16:10 UTC · agent-1 · **Marketing-Kampagne-Plan (Operator-
+  Auftrag 16:08 "baue eine Marketing-Kampagne"):** Outbox operator/
+  16-10Z-marketing-kampagne-plan.md — Phase 1 (0 $): DexScreener
+  (verifiziert: SIN/SOL gelistet, Vol24h $100,86, Vol-Wachstum),
+  X-Thread 5-Poster, Telegram-Gruppen-Setup, Landing-Raydium-Link
+  (CIO-Commit ddf03a8 ok), CoinGecko-Listing-Antrag; Phase 2 (~50–100 $):
+  DEXTools-Boost NACH CoinGecko, Raydium-Listing-Formular; Phase 3:
+  Airdrop (nur ≥200 Telegram, max 1 % Supply), Performance-Boni an
+  externes Community-Team (SIN-zahlbar, Cash-Payroll erst ab
+  USDC-SWAP-Kanal). Team-Back-Framing: 234,6M SIN (2,35 % Supply)
+  = "strategisches Backing + Lock", kein Sell-Signal. Social-Keys
+  = Operator; agent-1 liefert Belege/Assets. Finanzierungs-Answer:
+  jetzt = kostenlose Kanäle + Performance-Boni; Gehälter = erst
+  ab Revolut-SIN→USDC-Fluss. Deposit-Poller: 16:05 DEPOSIT-DETECTED
+  (107.210.440 lamports), CIO-Loop kaufte autonom 2× (16:05 0,15 SOL,
+  16:06 0,060582 SOL) = 234,6M SIN, Reserve 0,0466 SOL.
