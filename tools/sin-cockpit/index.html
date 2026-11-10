@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIN Cockpit — SuperIntelNex</title>
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --bg:#0b0e14; --panel:#12161f; --panel2:#171c28; --line:#232a3a;
+  --txt:#dbe2ee; --dim:#8b95a8; --acc:#39d3a8; --warn:#f5b73f; --red:#ff5f6d;
+  --mono:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:20px 28px 14px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;align-items:baseline}
+header h1{font-size:19px;margin:0;letter-spacing:.4px}
+header .sub{color:var(--dim);font-size:13px}
+main{padding:20px 28px 60px;max-width:1180px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.card h3{margin:0 0 4px;font-size:14px}
+.card .sub{color:var(--dim);font-size:12px;margin:0 0 10px}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-top:1px dashed var(--line);font-size:13.5px}
+.kv:first-of-type{border-top:0}
+.kv .k{color:var(--dim)}
+.mono{font-family:var(--mono);font-size:12.5px;word-break:break-all}
+.big{font-size:22px;font-family:var(--mono);color:var(--acc)}
+.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;border:1px solid var(--line);color:var(--dim)}
+.badge.ok{color:var(--acc);border-color:var(--acc)}
+.badge.warn{color:var(--warn);border-color:var(--warn)}
+.badge.err{color:var(--red);border-color:var(--red)}
+button{background:var(--panel2);border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:8px 14px;cursor:pointer;font-size:13.5px}
+button:hover{border-color:var(--acc);color:var(--acc)}
+button.primary{background:var(--acc);border-color:var(--acc);color:#04231b;font-weight:600}
+button.primary:hover{filter:brightness(1.1)}
+input,select{background:var(--panel2);border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:8px 10px;font-size:13.5px;width:100%}
+input.mono{font-family:var(--mono);font-size:12px}
+label{display:block;color:var(--dim);font-size:12px;margin:10px 0 4px}
+.tabs{display:flex;gap:8px;margin:18px 0 14px}
+.tabs button.on{background:var(--acc);color:#04231b;border-color:var(--acc);font-weight:600}
+.tabpage{display:none}.tabpage.on{display:block}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{color:var(--dim);text-align:left;font-weight:600;padding:6px 8px;border-bottom:1px solid var(--line);font-size:12px}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:middle}
+td .mono{font-size:11.5px}
+.go-banner{background:#1c1013;border:1px solid var(--red);color:#ffd7db;border-radius:12px;padding:14px 16px;font-size:13.5px;margin:14px 0}
+.go-banner b{color:var(--red)}
+.muted{color:var(--dim);font-size:12.5px}
+.row-add{margin-top:10px}
+.chip{font-family:var(--mono);font-size:11.5px;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:3px 7px;display:inline-block;margin:2px 4px 2px 0}
+#statusline{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}
+#manifest-pre{white-space:pre-wrap;font-family:var(--mono);font-size:11.5px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;max-height:280px;overflow:auto}
+.footer-note{margin-top:26px;color:var(--dim);font-size:12px;border-top:1px solid var(--line);padding-top:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>SuperIntelNex · SIN Cockpit</h1>
+  <span class="sub">Lokal &amp; read-only · Key-Material bleibt in <span class="mono">token/wallets/</span> (gitignored) · Verteilungen nur via Manifest + Operator-GO</span>
+</header>
+<main>
+  <div class="tabs">
+    <button data-tab="bestaende" class="on">Bestände (live)</button>
+    <button data-tab="verteilen">Verteilen / Zuordnen</button>
+    <button data-tab="wallets">Wallet-Key-Mapping</button>
+  </div>
+
+  <!-- ===================== BESTÄNDE ===================== -->
+  <section id="tab-bestaende" class="tabpage on">
+    <div id="statusline">
+      <span class="badge" id="rpcstate">RPC: –</span>
+      <span class="muted" id="uptodaten">noch nicht geladen</span>
+      <button id="btn-refresh" class="primary">Aktualisieren</button>
+      <button id="btn-auto">Auto-Refresh 60s: aus</button>
+      <input id="rpc-in" placeholder="RPC-Override (z. B. eigener Node), leer = Standard" style="max-width:340px">
+    </div>
+    <div class="grid" id="acc-grid"></div>
+  </section>
+
+  <!-- ===================== VERTEILEN ===================== -->
+  <section id="tab-verteilen" class="tabpage">
+    <div class="go-banner">
+      <b>Teamregel 6:</b> Jeder on-chain Transfer (SIN oder SOL) ist eine Transaktion und geht <b>nur mit deinem expliziten GO</b>.
+      Diese App signiert <b>nie</b>. Workflow: Plan hier aufbauen → Manifest erzeugen → CIO legt es als Notiz in
+      <span class="mono">agents/inbox/agent-1/</span> → agent-1 führt nach deinem GO aus (lokale Keys).
+      Neue Empfänger-ATA braucht ca. <b>0.0203 SOL</b> Rent-Exempt + Gebühren → bei neuen Adressen ca. 0.05 SOL mit einplanen.
+    </div>
+    <div class="card">
+      <h3>Quell-Wallet (Sendezahlung)</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+        <select id="plan-src" style="max-width:420px"></select>
+        <span class="muted" id="src-bal">Quelle-Balance: –</span>
+      </div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h3>Empfänger / Zuordnung</h3>
+      <p class="muted" style="margin:6px 0 0">„Label“ = Zuordnung (z. B. <i>Influencer A</i>, <i>Kommunity-Swap-Fonds</i>, <i>Vesting-Entsperre</i>). SIN-Menge ist Dezimal (Mint: 5 Nachkommastellen).</p>
+      <div style="overflow-x:auto">
+      <table>
+        <thead><tr>
+          <th style="width:26%">Label / Zuordnung</th>
+          <th style="width:34%">Empfänger-Adresse (base58, 32 B)</th>
+          <th>SIN</th>
+          <th>SOL (optional)</th>
+          <th style="width:44px"></th>
+        </tr></thead>
+        <tbody id="plan-rows"></tbody>
+      </table>
+      </div>
+      <div class="row-add">
+        <button id="btn-row">+ Empfänger</button>
+        <button id="btn-validate" style="margin-left:8px">Plan prüfen</button>
+        <button id="btn-manifest" class="primary" style="margin-left:8px">Manifest erzeugen</button>
+        <button id="btn-copy" style="margin-left:8px">Manifest kopieren</button>
+      </div>
+      <div id="plan-errors" style="margin-top:10px"></div>
+      <label>Letztes Manifest</label>
+      <pre id="manifest-pre" hidden></pre>
+    </div>
+  </section>
+
+  <!-- ===================== KEY-MAPPING ===================== -->
+  <section id="tab-wallets" class="tabpage">
+    <div class="card">
+      <h3>Lokale Key-Dateien → öffentliche Adressen</h3>
+      <p class="muted" style="margin:6px 0 10px">Nur die öffentlich ableitbaren Adressen (letzte 32 Byte). Private Keys werden weder angezeigt noch verlassen <span class="mono">token/wallets/</span> (gitignored, CI-Secret-Scan C7).</p>
+      <table>
+        <thead><tr><th>Datei</th><th>Öffentliche Adresse</th><th>Rolle</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">token/wallets/main.json.archiviert</td><td class="mono">9kT5EwF71njCXYdkexqBCKRG88oxatoHx12FaPvYXws7</td><td>Launch-Admin (archiviert)</td></tr>
+          <tr><td class="mono">token/wallets/mint.json</td><td class="mono">A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z</td><td>Mint-Keypair (= Mint-Adresse); Mint-/Freeze-Autorität entzogen</td></tr>
+          <tr><td class="mono">token/wallets/recipient.json</td><td class="mono">DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo</td><td>LP-Provider (CLMM-Position)</td></tr>
+          <tr><td class="mono">token/wallets/test-admin.json</td><td class="mono">EXovK3i1zxgEdxawSX6BmSZrBTV3a1tuPZ6oaMfyPpyd</td><td>Admin (Test)</td></tr>
+        </tbody>
+      </table>
+      <label>zusätzliche öffentliche Adresse prüfen (zeigt deren SIN-ATA + SOL-Saldo)</label>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <input id="probe-addr" class="mono" placeholder="base58-Adresse (32 B)" style="flex:1;min-width:280px">
+        <button id="btn-probe">Prüfen</button>
+      </div>
+      <div id="probe-out" style="margin-top:10px"></div>
+    </div>
+  </section>
+
+  <div class="footer-note">
+    <b class="mono" style="color:var(--dim)">SIN</b> = SuperIntelNex (Solana Mainnet) · Mint <span class="mono">A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z</span> · 5 Dezimalstellen · feste Supply.
+    Live-Daten: öffentliche Solana-RPC (read-only). Dieses Cockpit ist ein reines Frontend: keine Signaturen, keine Keys, keine Writes.
+  </div>
+</main>
+
+<script>
+"use strict";
+/* ============ Konstanten (nur öffentliche Daten) ============ */
+const MINT = "A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z";
+const RPCS = [
+  "https://api.mainnet-beta.solana.com",
+  "https://solana-rpc.publicnode.com",
+];
+const ACCOUNTS = [
+  {id:"fxw41",   name:"FXw41 · Emissions-Wallet", sub:"community 81 % + founder 5 % + marketing 4 % (= 90 % der Supply)",
+   owner:"FXw41HCwrYKGYXx4x76N5oGDkcs5Jp9KBuZfgaCi32mL", ata:"C4pr3GCk85dwBysH4p1fzruT6RzFseoW4ryPeEjufBkC", sol:true},
+  {id:"lp",      name:"CLMM-Pool-VAULT SIN", sub:"Raydium CLMM 4erqAhdH… (SIN/WSOL) · 10 % Liquidity · Position-NFT AaApmuV… (Provider DNEBNj…)",
+   ata:"4vzkSWFXXC7wbdPcAVtiJPiAtgQuwmDibZSSw4EkN4os", sol:false, vault:true},
+  {id:"provider",name:"LP-Provider DNEBNj…", sub:"Halter der CLMM-Position (Key: token/wallets/recipient.json)",
+   owner:"DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo", sol:true},
+  {id:"maina",   name:"9kT5Ew · main.json.archiviert", sub:"Launch-Admin (archiviert)",
+   owner:"9kT5EwF71njCXYdkexqBCKRG88oxatoHx12FaPvYXws7", sol:true},
+  {id:"tadmin",  name:"EXovK3 · test-admin.json", sub:"Admin (Test)",
+   owner:"EXovK3i1zxgEdxawSX6BmSZrBTV3a1tuPZ6oaMfyPpyd", sol:true},
+];
+
+/* ============ Basis-Utilities ============ */
+const $ = (s) => document.querySelector(s);
+const B58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+function b58decode(s){
+  if (typeof s !== "string" || s.length < 32 || s.length > 44) return null;
+  let n = 0n;
+  for (const c of s){
+    const i = B58.indexOf(c);
+    if (i < 0) return null;
+    n = n * 58n + BigInt(i);
+  }
+  const b = [];
+  while (n > 0n){ b.push(Number(n & 255n)); n >>= 8n; }
+  b.reverse();
+  for (const c of s){ if (c === "1") b.unshift(0); else break; }
+  return b.length === 32 ? b : null;
+}
+function shorten(a){ return a ? (a.slice(0,4)+"…"+a.slice(-4)) : "–"; }
+function fmt(raw, dec){ return (Number(raw)/10**dec).toLocaleString("de-DE",{maximumFractionDigits:5}); }
+function esc(s){ const d=document.createElement("i"); d.textContent=s; return d.innerHTML; }
+
+/* ============ RPC ============ */
+async function rpc(method, params){
+  const list = [ $("#rpc-in").value.trim() ].filter(Boolean).concat(RPCS);
+  let lastErr = null;
+  for (const url of list){
+    try {
+      const r = await fetch(url, {method:"POST", headers:{"content-type":"application/json"},
+        body: JSON.stringify({jsonrpc:"2.0", id:1, method, params})});
+      const j = await r.json();
+      if (j.error) throw new Error(j.error.message || "RPC-Fehler");
+      $("#rpcstate").textContent = "RPC: " + url.replace("https://","");
+      $("#rpcstate").className = "badge ok";
+      return j.result;
+    } catch (e){ lastErr = e; }
+  }
+  $("#rpcstate").textContent = "RPC: alle Endpunkte fehlgeschlagen";
+  $("#rpcstate").className = "badge err";
+  throw lastErr || new Error("RPC nicht erreichbar");
+}
+
+/* ============ Bestände ============ */
+let lastBalances = {};   // { fxw41: {sinRaw, solLam, mint:..}, ... }
+
+function buildCards(){
+  const g = $("#acc-grid");
+  const c0 = document.createElement("div");
+  c0.className = "card"; c0.id = "card-mint";
+  c0.innerHTML = "<h3>SIN-Mint (Mainnet)</h3><div class='sub'>Supply &amp; Authorities</div><div class='muted'>lädt …</div>";
+  g.appendChild(c0);
+  for (const a of ACCOUNTS){
+    const c = document.createElement("div");
+    c.className = "card"; c.id = "card-"+a.id;
+    c.innerHTML = "<h3>"+esc(a.name)+"</h3><div class='sub'>"+esc(a.sub)+"</div><div class='muted'>lädt …</div>";
+    g.appendChild(c);
+  }
+}
+
+async function refreshAll(){
+  const t0 = new Date().toLocaleTimeString("de-DE");
+  try {
+    const mint = await rpc("getAccountInfo", [MINT, {encoding:"jsonParsed"}]);
+    const mi = mint?.value?.data?.parsed?.info;
+    $("#card-mint").querySelector("div:last-child").outerHTML = mi ? `
+      <div class="kv"><span class="k">Supply</span><b class="mono" style="color:var(--acc)">${fmt(mi.supply, mi.decimals)} SIN</b></div>
+      <div class="kv"><span class="k">Dezimalstellen</span><span class="mono">${mi.decimals}</span></div>
+      <div class="kv"><span class="k">Mint-Autorität</span><span>${mi.mintAuthority ? "<span class='badge warn'>AKTIV</span>" : "<span class='badge ok'>entzogen</span>"}</span></div>
+      <div class="kv"><span class="k">Freeze-Autorität</span><span>${mi.freezeAuthority ? "<span class='badge warn'>AKTIV</span>" : "<span class='badge ok'>entzogen</span>"}</span></div>
+    ` : "<div class='badge err'>kein Mint-Datum</div>";
+
+    await Promise.all(ACCOUNTS.map(async (a) => {
+      const box = $("#card-"+a.id);
+      let sinRaw = null, ataAddr = null, state = "n/a";
+      const target = a.ata || (await findAta(a.owner));
+      if (target){
+        ataAddr = a.ata || target;
+        const acc = await rpc("getAccountInfo", [ataAddr, {encoding:"jsonParsed"}]);
+        const info = acc?.value?.data?.parsed?.info;
+        if (info && info.mint === MINT){ sinRaw = info.amount; state = "init"; }
+      }
+      let solLam = null;
+      if (a.sol){
+        const owner = a.owner || "–";
+        if (a.owner){
+          solLam = await rpc("getBalance", [a.owner]);
+        }
+      }
+      const bal = {sinRaw, solLam, mintSupply: mi ? mi.supply : null, mintDec: mi ? mi.decimals : 5};
+      lastBalances[a.id] = bal;
+      const dec = bal.mintDec ?? 5;
+      box.querySelector("div:last-child").outerHTML = `
+        <div class="kv"><span class="k">SIN (ATA)</span><span class="big">${sinRaw!=null ? fmt(sinRaw,dec) : "0"} <span style="font-size:12px;color:var(--dim)">SIN</span></span></div>
+        <div class="kv"><span class="k">ATA</span><span class="mono">${shorten(ataAddr)}</span></div>
+        ${a.sol ? `<div class="kv"><span class="k">SOL-Saldo</span><span class="mono">${solLam!=null ? (solLam/1e9).toFixed(4)+" SOL" : "–"}</span></div>` : ""}
+        <div class="kv"><span class="k">Status</span><span class="badge ${state==="init"?"ok":"warn"}">${state==="init"?"initialisiert":"ATA fehlt"}</span></div>`;
+      lastBalances.__at = t0;
+    }));
+    $("#uptodaten").textContent = "Stand: " + t0 + " (read-only)";
+  } catch(e){
+    $("#uptodaten").textContent = "Fehler: " + e.message;
+  }
+}
+
+async function findAta(owner){
+  // ATA nicht vorgegeben: erste SIN-Token-Konto-Nummer des Owners vom RPC (read-only)
+  const res = await rpc("getParsedTokenAccountsByOwner", [owner, {mint: MINT}]);
+  return res?.value?.[0]?.pubkey || null;
+}
+
+$("#btn-refresh").addEventListener("click", refreshAll);
+let autoTimer = null;
+$("#btn-auto").addEventListener("click", () => {
+  if (autoTimer){ clearInterval(autoTimer); autoTimer = null; $("#btn-auto").textContent = "Auto-Refresh 60s: aus"; return; }
+  autoTimer = setInterval(refreshAll, 60000);
+  $("#btn-auto").textContent = "Auto-Refresh 60s: an";
+});
+$("#rpc-in").addEventListener("change", refreshAll);
+
+/* ============ Tabs ============ */
+document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".tabs button").forEach(x => x.classList.remove("on"));
+  document.querySelectorAll(".tabpage").forEach(x => x.classList.remove("on"));
+  b.classList.add("on");
+  $("#tab-"+b.dataset.tab).classList.add("on");
+}));
+
+/* ============ Verteilen-Plan ============ */
+let plan = JSON.parse(localStorage.getItem("sinCockpitPlan") || "null") || {src:"fxw41", rows:[]};
+function savePlan(){ localStorage.setItem("sinCockpitPlan", JSON.stringify(plan)); }
+
+function renderPlan(){
+  const sel = $("#plan-src");
+  sel.innerHTML = ACCOUNTS.filter(a=>a.owner).map(a => `<option value="${a.id}">${esc(a.name)} (${shorten(a.owner)})</option>`).join("");
+  sel.value = plan.src || "fxw41";
+  sel.onchange = () => { plan.src = sel.value; savePlan(); refreshSrcBal(); };
+  const tb = $("#plan-rows"); tb.innerHTML = "";
+  plan.rows.forEach((r, i) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><input value="${esc(r.label||"")}" data-i="${i}" data-f="label" placeholder="z. B. Influencer A"></td>
+      <td><input class="mono" value="${esc(r.addr||"")}" data-i="${i}" data-f="addr" placeholder="base58…"></td>
+      <td><input class="mono" value="${esc(r.sin||"")}" data-i="${i}" data-f="sin" placeholder="SIN (5 Nachkommast.)"></td>
+      <td><input class="mono" value="${esc(r.sol||"")}" data-i="${i}" data-f="sol" placeholder="SOL (optional)"></td>
+      <td><button data-del="${i}" title="Zeile entfernen" style="padding:4px 10px">×</button></td>`;
+    tb.appendChild(tr);
+  });
+  tb.querySelectorAll("input").forEach(inp => inp.addEventListener("change", () => {
+    const i = +inp.dataset.i, f = inp.dataset.f;
+    plan.rows[i][f] = inp.value.trim(); savePlan(); refreshSrcBal();
+  }));
+  tb.querySelectorAll("[data-del]").forEach(b => b.addEventListener("click", () => {
+    plan.rows.splice(+b.dataset.del, 1); savePlan(); renderPlan();
+  }));
+  refreshSrcBal();
+}
+$("#btn-row").addEventListener("click", () => { plan.rows.push({label:"",addr:"",sin:"",sol:""}); savePlan(); renderPlan(); });
+
+function refreshSrcBal(){
+  const b = lastBalances[plan.src];
+  const src = ACCOUNTS.find(a => a.id === plan.src);
+  $("#src-bal").textContent = b?.sinRaw != null
+    ? "Quelle-Balance: " + fmt(b.sinRaw, b.mintDec ?? 5) + " SIN · " + shorten(src?.owner)
+    : "Quelle-Balance: – (klicke oben „Aktualisieren“)";
+}
+
+function validatePlan(){
+  const out = [];
+  const bal = lastBalances[plan.src];
+  let totSin = 0n, totSol = 0;
+  const seen = new Set();
+  plan.rows.forEach((r, i) => {
+    const id = i + 1;
+    const bytes = b58decode(r.addr);
+    if (!bytes) out.push(`#${id}: Adresse ungültig (base58, muss 32 Bytes ergeben): „${esc(r.addr||"leer")}“`);
+    else if (seen.has(r.addr)) out.push(`#${id}: Empfänger-Duplikat ${shorten(r.addr)} — Betrags zusammenfassen oder bewusst doppelt? (Duplikat erlaubt, nur Hinweis)`);
+    seen.add(r.addr);
+    const sinNum = Number(r.sin || 0);
+    if (!Number.isFinite(sinNum) || sinNum < 0) out.push(`#${id}: SIN-Betrag ungültig („${esc(r.sin||"")}“)`);
+    else totSin += BigInt(Math.round(sinNum * 1e5));
+    const solNum = Number(r.sol || 0);
+    if (!Number.isFinite(solNum) || solNum < 0) out.push(`#${id}: SOL-Betrag ungültig („${esc(r.sol||"")}“)`);
+    else totSol += solNum;
+  });
+  if (bal?.sinRaw != null && totSin > BigInt(bal.sinRaw))
+    out.push(`Σ SIN (${fmt(totSin,5)}) übersteigt die Quelle-Balance (${fmt(bal.sinRaw, bal.mintDec ?? 5)}).`);
+  const empty = plan.rows.length === 0;
+  const el = $("#plan-errors");
+  el.innerHTML = empty
+    ? "<span class='badge err'>Plan leer</span> — mindestens eine Empfänger-Zeile hinzufügen."
+    : out.length
+      ? out.map(m => `<div style="color:var(--warn);font-size:12.5px;margin:3px 0">⚠ ${m}</div>`).join("")
+      : `<span class='badge ok'>Plan valid</span> <span class='muted'>Σ = ${fmt(totSin,5)} SIN${totSol?` + ${totSol.toFixed(4)} SOL`:""} — bereit für Manifest.</span>`;
+  return out.length === 0 && !empty;
+}
+$("#btn-validate").addEventListener("click", validatePlan);
+
+function buildManifest(){
+  const src = ACCOUNTS.find(a => a.id === plan.src);
+  let totSin = 0n;
+  const transfers = plan.rows.map((r, i) => ({
+    zeile: i + 1,
+    label: r.label || null,
+    empfaenger: r.addr,
+    sinRaw: String(BigInt(Math.round(Number(r.sin || 0) * 1e5))),
+    sol: r.sol ? Number(r.sol) : null,
+  }));
+  transfers.forEach(t => { totSin += BigInt(t.sinRaw || 0); });
+  return {
+    format: "sin-cockpit-manifest/v1",
+    status: "ENTWURF — benötigt explizites Operator-GO (BOARD.md Regel 6)",
+    erzeugt: new Date().toISOString(),
+    netz: "mainnet-beta",
+    mint: MINT,
+    quelle: {label: src?.name, owner: src?.owner, ata: src?.ata},
+    transferS: transfers,
+    total: {sinRaw: String(totSin), sin: Number(totSin) / 1e5, sol: transfers.reduce((s,t) => s + (t.sol || 0), 0)},
+    ausfuehrung: "agent-1 (lokale Keys) nach GO → LOG.md TX-Eintrag + Rescore-Kette (RugCheck)",
+  };
+}
+let lastManifest = null;
+$("#btn-manifest").addEventListener("click", () => {
+  if (!validatePlan()) return;
+  lastManifest = JSON.stringify(buildManifest(), null, 2);
+  const pre = $("#manifest-pre"); pre.hidden = false; pre.textContent = lastManifest;
+  const blob = new Blob([lastManifest], {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "sin-transfer-manifest-" + new Date().toISOString().slice(0,19).replace(/[:T]/g,"") + ".json";
+  a.click(); URL.revokeObjectURL(a.href);
+});
+$("#btn-copy").addEventListener("click", async () => {
+  if (!lastManifest) return;
+  await navigator.clipboard.writeText(lastManifest);
+  $("#btn-copy").textContent = "kopiert ✓";
+  setTimeout(() => $("#btn-copy").textContent = "Manifest kopieren", 1500);
+});
+
+/* ============ Adress-Probe ============ */
+$("#btn-probe").addEventListener("click", async () => {
+  const el = $("#probe-addr").value.trim();
+  const out = $("#probe-out");
+  const b = b58decode(el);
+  if (!b){ out.innerHTML = `<span class='badge err'>ungültige Adresse</span>`; return; }
+  out.innerHTML = "<div class='muted'>lädt …</div>";
+  try {
+    const [bal, toks] = await Promise.all([
+      rpc("getBalance", [el]),
+      rpc("getParsedTokenAccountsByOwner", [el, {mint: MINT}]),
+    ]);
+    const rows = (toks?.value || []).map(t => {
+      const info = t.account.data.parsed.info;
+      return `<div class='kv'><span class='k'>SIN-ATA</span><span class='mono'>${shorten(t.pubkey)}</span></div>
+              <div class='kv'><span class='k'>SIN-Balance</span><span class='big' style='font-size:16px'>${fmt(info.amount, info.decimals)} SIN</span></div>`;
+    }).join("");
+    out.innerHTML = `
+      <div class='kv'><span class='k'>Adresse</span><span class='mono'>${esc(el)}</span></div>
+      <div class='kv'><span class='k'>SOL-Saldo</span><span class='mono'>${(bal/1e9).toFixed(4)} SOL</span></div>
+      ${rows || "<div class='kv'><span class='k'>SIN-ATA</span><span class='badge warn'>keine SIN-Token-Konten</span></div>"}
+      <div class='muted' style='margin-top:6px'>Neue ATA: ca. 0.0203 SOL Rent-Exempt nötig (bei Verteilung mitbuchen).</div>`;
+  } catch(e){ out.innerHTML = `<span class='badge err'>Fehler:</span> <span class='muted'>${esc(e.message)}</span>`; }
+});
+
+buildCards();
+renderPlan();
+refreshAll();
+</script>
+</body>
+</html>
