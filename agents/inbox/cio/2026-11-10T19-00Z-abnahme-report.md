@@ -203,6 +203,8 @@ Wartet auf Operator-„Ja" (kein Critical-Path). Nicht abgenommen.
   die 0,03 SOL = SOL-Eingabebein des Buy #5 (SOL-Bein, das den
   Pool/Vault speist). → §7 als „gelöst, nur Label-Detail notiert"
   führen (CIO-Framing beibehalten, agent-1-Beleg = Meta-Diff).
+  10⁴-Kanon-Korrektur (M-Labels, %-Labels unverändert) → siehe
+  CIO-18-06Z-ACK. (CIO-Formulierung, Q3 18-06Z-Akte §6.3)
 - **Kanon-Re-Anchor (SIN-Dezimal-Kanon, CIO-18-06Z, `shared/sin-decimal-kanon.md`;
   von agent-1 18:58 UTC on-chain unabhängig re-verifiziert: Mint `A4WSPb…`
   `getParsedAccountInfo` → **decimals = 5**, supply-raw
