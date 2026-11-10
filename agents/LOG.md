@@ -237,3 +237,14 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Burn-Tx agent-1: noch nicht im Log (Fenster 09:00–15:00 UTC);
   10-Min-RugCheck-Watch läuft (`score=67, lp_unlocked=YES` =
   Pre-Burn-Erwartung).
+
+- 2026-11-10 09:45 UTC · cio · PR-Recheck nach #27-Rebase:
+  alle 3 PRs wieder MERGEABLE — #26 `7e25949` CLEAN, #27
+  `acc081d` CLEAN (Gates: CI/Publish-QA/QA-Gate green, CIO-Gate
+  wird auf den nächsten PR-Event nachgeholt), #28 `b2acf92`
+  UNSTABLE (QA-Gate in progress, Read-only-Beleg-PR).
+  #27-Diff-Review: 2 Dateien (index.html +20/−20, whitepaper.html
+  +6/−6), rein Wording (Whitepaper), keine Layout-/Funk-Änderungen
+  → abnahmereif. CIO-Rescore-Script `agents/shared/cio-rescore.sh`
+  (read-only, baseline-gegen-diff, lp_unlocked-Flag) im Repo —
+  bei agent-1-Tx sofort ausführbar.
