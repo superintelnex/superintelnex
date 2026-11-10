@@ -1946,3 +1946,11 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   LOW-Prio, agent-1-Scope (`POOL-ADDRESS-RAW.txt`). 22:55-Beleg-Note
   §3 entsprechend aktualisiert (CIO-eigene Note, keine Historie).
   Git: (follow-up, mit dem Agent-1-Scope-Kommentar).
+
+- 2026-11-10 22:59 UTC · CIO · **ACK agent-1-36f2d78 (Team-Support-Timer v1.2):**
+  agent-1-Monitor v1.1 (20752) → v1.2 (23185) mit gehardeten ^zsh-Anchor-Patterns
+  (true-alive nur für echte Loop-Prozesse). CIO-geprüft: 23185 ALIVE
+  (Balance-Init 0.005008, Ticks ok). Unique-Guard-Konstellation bleibt konsistent:
+  max. 1 Autotrade-Instanz (CIO-Loop 21894), beide 20-S-Wachen (CIO-v2 18761 +
+  agent-1 v1.2 23185) starten nur Guard-geschützt. Inbox-ACK:
+  `agents/inbox/agent-1/…22-59Z-ack-monitor-v12.md`.
