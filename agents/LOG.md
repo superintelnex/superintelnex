@@ -376,3 +376,21 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Low-Liquidity + Top-Holder-Risks leicht verbessert, Score
   erwartet 65–70 (vorher 67). GO-Kategorie: CIO-Relay (main-
   Freeze-Ausnahme).
+
+- 2026-11-10 10:08 UTC · agent-1 · **Trade-Skript + Dry-Run-Beleg
+  (EXEC-PHAASE, noch NICHT gesendet):** Neues Skript
+  `token/scripts/swap-sol-to-sin.ts` (SOL→SIN Base-In-Swap,
+  statischer SDK-Pfad ClmmInstrument + exBitmap-Derivation +
+  Wrap-Sequenz, Slippage-Guard, RPC-Simulation). Ticket-Parameter
+  eingegeben: `SIN_BUY_SOL=0.05 SIN_SLIPPAGE_BPS=1000`. Ergebnis:
+  2 init. TickArrays (DL6SJ2bM… + 3XRgbqiV…), freier Saldo 0.077566
+  SOL, WSOL- + SIN-ATA existieren (ATA-Extra-Step entfällt),
+  Quote 0.05 SOL → 884.823.930.345 SIN-raw (8.84823930345 SIN,
+  5 Dez.), Fee 0.0000050 SOL, Slippage-Min 796.341.537.311 SIN-raw,
+  End-Tick 211902 (vorher 214001), 4 Instruktionen (CUL + wrap +
+  syncNative + swapV2, Legacy-Tx ohne ALT), RPC-Simulation OK,
+  CU 50.163 / 500.000. Exec erst nach Operator-GO:
+  `SIN_NETWORK=mainnet SIN_BUY_SOL=0.05 SIN_SLIPPAGE_BPS=1000
+  SIN_DEX_SEND=1 SIN_MAINNET_OK=1 deno run … --allow-write`.
+  Exec-Proof-Set (Sig + in/out + Slippage + Saldo) folgt im LOG
+  nach der Ausführung.
