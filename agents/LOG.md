@@ -77,3 +77,13 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Tx-Statuses TX1/TX2 via Public-RPC erneut `null` (Cache-Rotation) —
   Beleg bleibt Provider-Signatur-Historie: TX2 `3AU3rf…` finalized,
   Slot 467633557, err=null.
+
+- 2026-11-10 ~08:50 UTC · agent-1 · `designer`-Agent integriert (Branch
+  `agenten/designer-exchange-observation`, Kopf `656bd6e`, auf unserem
+  `fe3214d` gebaut): Task 3 Exchange-Beobachtung read-only via
+  GeckoTerminal-Public-API, eigener Kanal `agents/exchange-observations.md`
+  (LP ≈ 52 USD, 24h-Metriken noch leer — Pool frisch). Inbox/Outbox
+  `designer/` angelegt, BOARD-Tabelle + Team-Übersicht aktualisiert.
+  Hinweis an designer (nicht-ändernd): Zeitstempel „09:48 UTC“ im
+  Beobachtungs-Eintrag versetzt (Commit = 07:47 UTC) — für Folgerunden
+  bitte UTC+Local-Klammer im Format „HH:MM UTC (HH:MM +01)“.

@@ -47,6 +47,7 @@ Gemeinsames Ziel: der SIN-Meme-Coin (Solana Mainnet).
 |---|---|---|
 | agent-1 (dieser) | Koordination, Read-only-Verifikation, LP-Nachsorge (z. B. addLiquidity-Plan, keine Ausführung ohne Freigabe) | aktiv |
 | cio | Pool-Abnahme (Read-only), RugCheck-Analyse, LP-Sicherheits-Vorschläge | aktiv (CIO-Abnahme Pool: OK, 08:45 UTC) |
+| designer | Exchange-Beobachtung (Task 3, read-only, GeckoTerminal-Public-API), Kanal `agents/exchange-observations.md` | aktiv (erste Beobachtung `656bd6e`: Pool-SIN/SOL, LP ≈ 52 USD, 24h-Metriken noch leer) |
 | — offen — | Metadaten-Mirror (IPFS/Arweave) + `config.metadata.uri` + `verify.ts` gegen neue URI | offen (siehe open-tasks) |
 
 ## Team-Übersicht (remote-Branches, Stand 10.11.2026 ~08:45 UTC)
@@ -59,6 +60,7 @@ Merge/Freigabe entscheidet der Betreiber.** Status-Eintrag dazu in LOG.md.
 |---|---|---|
 | `origin/agenten/meme-coin-wording` | `58de40e` | site+whitepaper: Wording-Update „Meme-Coin & Whitepaper“ statt Community-Token |
 | `origin/agenten/mainnet-status-sync` | `7e25949` | token-doku: MAINNET-LAUNCH-BERICHT + Status-Sync (force-upgradedet) |
+| `origin/agenten/designer-exchange-observation` | `656bd6e` | Exchange-Beobachtung (Task 3, read-only, GeckoTerminal), Kanal `agents/exchange-observations.md` |
 | `origin/agenten/pubclean`, `qa-yaml`, `a11y-hitareas`, `logowhite`, `tabtitle`, `whitepaper-qa`, `ci` | — | ältere/laufende Agenten-Arbeiten (Website/Docs/CI) |
 | `main` (dieser Kontext) | `c03bd66` | Pool-LIVE-Commits + `agents/`-Koordinationsordner |
 
