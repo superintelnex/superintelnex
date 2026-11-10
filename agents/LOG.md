@@ -1726,3 +1726,29 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Git-Placeholder des 18:06-Eintrags: **`ea81634` (= remote-head)**.
   Inbox/cio leer seit 17:22 → Antworten auf die 4 18-06Z-
   Gegenfragen stehen aus (erwartet vor/durch die 18:45-Slots).
+
+- 2026-11-10 18:43 UTC · agent-1 · **Operator-Entscheidung DCA-Ziel
+  (Chat 18:3x–18:43 UTC):** Operator: „reserviere die 30 %, wenn ich
+  Geld habe will ich das kaufen". **Kanon-Zahl: 30 % des Fix-Supply
+  = 3.000.000.000 SIN (3 Mrd)** (Operator-Formulierung „30 Mrd" =
+  300 % des Supply = unmöglich → 30 % = 3 Mrd, Korrektur im Chat
+  offengelegt). Mechanik: (a) bereits im CIO-Loop-Config (16-45Z-Ticket-#6:
+  DCA 3,0 Mrd., `HOLD_ON=0` Buy-only, 0,15-SOL-CAP, Fire ab
+  free ≥ 0,011005 SOL) als Ziel konfiguriert — operative
+  „Reservierung" = fortlaufende Buy-Tranchen bei frischen
+  SOL-Deposits des Operators an `DNEBNj…`, kumuliert gegen
+  3-Mrd.-Ziel, danach Stop-Logik. (b) Aktueller Bestand:
+  259,30M SIN (259.304.346.191.112.734 raw, 2,593 % Supply, Direktlauf
+  18:41) — Fehlbetrag bis Ziel: **~2,74Mrd.** = DCA-Laufzeit je nach
+  Deposit-Rhythmus (Quote ~1,5e-9 SOL/SIN → grob 4 SOL ≈ 2,7 Mrd
+  bei Pool-Anspruch, real via Tranchen + Impact; 15-Sek.-POLL).
+  (c) Operator-Import: Provider-Key `DNEBNj…` (via
+  `token/wallets/recipient.json`) in Wallet-App erfolgreich
+  importiert (18:3x UTC, Screenshot-Dialog „Privaten Schlüssel
+  importieren" → JSON-Datei) — On-Chain-Status: keine
+  Operator-Transfers eingegangen (letzte Provider-Tx bleibt TRADE #7
+  `5J24ykqZ…` @17:17:32Z, Provider 0,005008 SOL). (d) CIO-Inbox-Memo
+  `18-43Z-operator-dca-ziel-3-mrd-hold.md` (intern, public-free):
+  Ziel + Reserve-ATA-Option nach Erreichen + keine Sell-Leg-
+  Freigabe. Keine Exec durch agent-1 (nur read-only + Protokoll);
+  CIO-Loop = einziger Signer-Kanal.
