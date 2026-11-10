@@ -12,11 +12,11 @@
 
 | Objekt | Adresse | Zustand |
 |---|---|---|
-| **Provider** (recipient.json, lokaler Key) | `DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo` | **0,00601344 SOL** (Rent-Floor + Gas-Puffer – Endzustand Vollausstieg) |
+| **Provider** (recipient.json, lokaler Key) | `DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo` | **0,00601344 SOL** (Rent-Floor + Gas-Puffer – Endzustand Vollausstieg) · **Update nach Buy #7 (17:18): 0,005008 SOL** |
 | **Pool** (CLMM, mintA=WSOL, mintB=SIN, tickSpacing 10, fee 0,01 %) | `4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM` | aktiv, h1 12 Buys / 2 Sells (Gecko) |
 | **SIN-Mint** (1e14 fixiert, Authorities revociert) | `A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z` | final |
 | WSOL-ATA (Provider) | `4eA5jcJVqH1Q1mQ2GVmCtEgFZZHYBLga2gGMEUKUy8k7` | existiert (Dry-Run-Beleg 16:12/16:21 UTC) |
-| SIN-ATA (Provider) | `FD1WzT526vwyBbuq7p6RN6PizStW8sEoZaGrm5u7xqSW` | existiert, **Bestand 258,61M raw SIN** (nach #5+#6) |
+| SIN-ATA (Provider) | `FD1WzT526vwyBbuq7p6RN6PizStW8sEoZaGrm5u7xqSW` | existiert, **Bestand 259,30M raw SIN** (nach #5+#6+#7) |
 | LP-Position-NFT | `5pa8Wtza…` | 100 % im Raydium-Lock-PDA `FNLo81…` (1.874.520 lamports) |
 | Fee-Key-NFT | — | Provider-ATA Balance 1 = Claim-Recht intakt |
 
@@ -35,6 +35,7 @@ Beleg: `token/result/SWAP-DETAILS-*.txt` (9 Dateien) + `EXECUTED-TRANSACTIONS.js
 | CIO-Loop Buy B | 16:06 | `62J7GgKx4mVDxfu18uHAqqg3DaP3fBetvn1hU4hGwEA8AagYDWrefajpBu2bDuymCYdQVRvrz5hdqbCFtw62AW2T` | 0,060582 SOL → 520,18M SIN | `c505711` |
 | **5 (agent-1)** | 16:13 | `dXgoqyxfV5zLsnvCNHn3a2FocqsXPBgg5eq2S6iZ34aprrsLnDWC1VewJHNDhsSxMXqD4dVs7CghVH2amVwxrYh` | 0,03 SOL → 179,51M SIN | `5222f85` (outbox-Beleg) |
 | **6 (agent-1)** | 16:22 | `3aooc4R4hu79Y2hFgC7Zew2pNGHjemYhqLQJw81Qwwkwh8eoiu2mtAaNVzAo8fQuXdaCjYcfaVDVRqvQf7tCfG58` | 0,0106 SOL → 60,38M SIN | `93d09ed` (CIO-Inbox-Note) |
+| **7 (agent-1, Kleinbetrags-Order)** | 17:18 | `5J24ykqZbCJFbqdBdPMn41PTvgLrJMBqyEzbWNGDkTAJDyY2oEB7KzW9Ji62bmtoWu3r43QyHRw7mpnrpT9Ldht8` | 0,001 SOL → 6,92M SIN | SWAP-DETAILS-1794331053545 + CIO-Note |
 
 ## 3. Auto-Trade-Regime (CEO-GO 14:47 UTC + Operator-Ziel „trade autonom weiter")
 
@@ -50,6 +51,10 @@ Beleg: `token/result/SWAP-DETAILS-*.txt` (9 Dateien) + `EXECUTED-TRANSACTIONS.js
   `test-admin EXovK3…` = 0 lamports, `FXw41`-Key **nicht lokal** (nur in Doku-Notizen).
   → **Operator-Deposit an `DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo`** (0,03–0,15 SOL)
   löst im nächsten 60-s-Poll den autonomen Buy.
+- **Kleinbetrags-Regime aktiv (Operator-Order 17:17 UTC „trade mit klein beträgen"):**
+  Buy #7 (0,001 SOL) ausgeführt; Script-Reserve 0,005 SOL hart → **Max-Buy = Saldo −
+  0,005** (jetzt ≈ 0,000008 SOL = untätig, Deposit-gated). Kleine Tranchen = 0,001–0,001013 SOL
+  so lange Kapital reicht.
 
 ## 4. Laufende Loops (ps, 16:51 UTC – alle am Leben)
 
