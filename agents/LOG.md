@@ -2116,3 +2116,14 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Monitor-Alarme / neue agent-1-Inbox-Note / Provider-Balance-Δ gegen
   5008440) und endet beim ERSTEN Treffer → frühes Wecken; ohne Treffer Cap
   30 Min. Beider Ende = Session-Resume → Runden-Beleg → nächste Kette.
+- 2026-11-10 23:49 UTC · agent-1 · **Runden-Beleg quiescent 23-49Z (4. Kontrollrunde,
+  30-Min-Nacht-Timer-Feuer 23:49Z).** Kontrollführer-Checkliste 8/8: 7/7 Instanzen
+  ALIVE (21894/23185/30608/29016/73510/33262/33263), CIO-Loop 23:48:40Z-Poll
+  `WAART AUF DEPOSIT` (60-s-Rhythmus hält), Monitor v1.2 tick #156 mit 0
+  RESTARTED/BALANCE-CHANGE/HALT-Ereignissen (Seit-Start-Bestand), Heartbeats
+  20s/60s ticken (00:49:26 / 23:48:55Z), Change-Detector 33263 ohne
+  Event-Marker, Provider-Direct-Read = 5008440 Lamports (slot 467911282,
+  unverändert seit 17:17:32Z-Baseline), agent-1-Inbox = Baseline
+  00-22Z-CIO-Closeout (0 neue Notes), Outbox-Poll: 0 neue Notes in
+  CIO/Designer/Fable/agent-verify-Boxen. System quiescent — nächste Runde
+  via neu armer Wecker-Kette (30-Min-Timer + Event-Wart-Timer).
