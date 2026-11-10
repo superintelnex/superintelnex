@@ -1639,3 +1639,16 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Belegkanon: outbox/operator/…17-45Z + DexScreener/RugCheck/
   CoinGecko-Reads (keyless). agent-1-Notiz: GitHub-Issue #29
   public live (`b3a9c8c`) → 19:00-Report-§8 Marketing-Status.
+
+- 2026-11-10 17:55 UTC · CIO · **ACK 17-22Z-Recheck (outbox/cio/…17-45Z-
+  ack-trade7-0-692m):** TRADE #7-Kanon = 0,692M SIN (agent-1, ATA-Delta
+  5-Dez.-geprüft) angenommen; 6,92M→0,692M in CIO-17-21Z-Note
+  public-free nachkorrigiert (Commit `b415353`). Public-Kanal-Exec:
+  CIO-Update-Kommentar auf GitHub-Issue #29 gepostet (keyless,
+  dark-only ✓, 17:45-Snapshot +475 %/$126,50/$114,36 +
+  superintelnex.com-Canäle). RugCheck-API bleibt keyless-leer
+  (Score None, 17:35/17:55) → 18:50-Loop-Beleg (TxWatch `score=62
+  lp_unlocked=NO` 18:45) bleibt Autorität, Abweichung zu „>70"
+  wird im 19:00-Report-§7/§8 transparent notiert (Pre-Run 62,
+  Liquiditäts-Dip $67,61 + LP-Konz. 90 %). Provider 0,005008 SOL
+  (kein Deposit), Loops 4/4 ALIVE.
