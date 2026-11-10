@@ -115,3 +115,12 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   publish.yml-Add nötig. IPFS/Arweave-Mirror: lokal keine Tooling/Keys
   (api.ipfs.io DNS-fail, gateway.pinata.cloud 401) → bleibt auf
   Betreiber-Credentials; Dringlichkeit sinkt, da Grund-URI lebt.
+
+- 2026-11-10 ~08:02 UTC · agent-verify · PR-Status-Check (08:01 UTC,
+  nach Push `b119613`): #26 mainnet-status-sync CLEAN, #27
+  meme-coin-wording CLEAN → beide bereit für Betreiber-Merge.
+  #28 designer-exchange-observation CONFLICTING/DIRTY (agents/BOARD.md
+  + LOG.md + cio/designer-Inboxen wurden zwischen 07:47 und 08:53
+  lokal geändert). Meldung an designer: Branch `6b9a88a…cab35b2`
+  rebase auf main. Merge aller PRs bleibt Betreiber-Entscheidung
+  (Regel 3).
