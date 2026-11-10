@@ -48,7 +48,7 @@ Gemeinsames Ziel: der SIN-Meme-Coin (Solana Mainnet).
 | agent-verify (Koordination) | **Aufgaben-Verwaltung + Agenten-Koordination** (Betreiber-Entscheidung 10.11., ~09:24 lokal): Tasks hier vergeben/verfolgen, 20s/1min-Timer-Wache, Inbox-Drain je Tick, PR-Status-Watch #26/#27/#28, finale Abnahme-Basis vor 20:00 (frische `verify-pool.ts`-Ausführung + LOG-Eintrag) | aktiv |
 | agent-1 (dieser) | Read-only-Verifikation, LP-Nachsorge-Pläne (z. B. addLiquidity-Plan, keine Ausführung ohne Freigabe), `publish.yml`-Metadata-JSON-Entwurf als Team-Branch (kein main-Push, kein Merge) | aktiv |
 | cio | addLiquidity-Fahrplan (read-only: exakte Ticks/Beträge/CU) + 20:00-Abnahme-Checkliste (Pool-Burn-&-Entscheidungsvorlage für den Betreiber) | aktiv (CIO-Abnahme Pool: OK, 08:45 UTC) |
-| designer | Exchange-Beobachtung (Task 3, read-only, GeckoTerminal-Public-API), Kanal `agents/exchange-observations.md`; Checkpoints 11:00/15:00/19:30 UTC | aktiv (2. Checkpoint `b92344e`: LP $52.00, 24h noch leer) |
+| designer | Exchange-Beobachtung (Task 3, read-only, GeckoTerminal-Public-API), Kanal `agents/exchange-observations.md`; Checkpoints 11:00/15:00/18:30 UTC | aktiv (2. Checkpoint `b92344e`: LP $52.00, 24h noch leer) |
 
 Aufgaben-Status: Metadaten-Mirror (IPFS/Arweave) + `config.metadata.uri` + `verify.ts` gegen neue URI → offen, Priorität **niedrig** (on-chain-URI = raw.githubusercontent, 200 belegt 08:00 UTC; Zwischenzustand zulässig).
 
@@ -102,22 +102,23 @@ Offene Tasks (priorisiert, Zuweisungen agent-verify 10.11. ~09:30 lokal):
    Senden) gegen den 1-SOL-Basiswert anpassen.*
 3. **GeckoTerminal/Exchange-Status:** Pool-Link `index.html` ist live
    (Commit `e0dd913`). Volumen-Beobachtung: read-only, Eintrag in LOG.md.
-   *Zuständig: `designer` — Checkpoints 11:00 / 15:00 / 19:30 UTC
-   (letzer vor Abnahme), Kanal `agents/exchange-observations.md`.
+   *Zuständig: `designer` — Checkpoints 11:00 / 15:00 / 18:30 UTC
+   (letzer vor der 19:00-UTC-Abnahme), Kanal
+   `agents/exchange-observations.md`.
    Anomalie-Meldung (Kurs-/Liquiditäts-Sprung) sofort via Inbox.*
 4. **20:00-Abnahmepaket (neu, 10.11.):** Entscheidungsvorlage für den
    Betreiber: (a) Burn-&-Earn-Vorlage + Budget-Status, (b) addLiquidity-
    Fahrplan, (c) PR-Merge-Empfehlung #26/#27/#28, (d) publish.yml-
    Metadata-Add (Task 1), (e) finale `verify-pool.ts`-Ausführung.
-   *Zuständig: `cio` — 18:30 UTC Abnahme-Checkliste in `agents/BOARD.md`
+   *Zuständig: `cio` — 16:30 UTC Abnahme-Checkliste in `agents/BOARD.md`
    (Abschnitt „20:00-Abnahme") + Abnahme-Notiz in `agents/outbox/cio/`.
-   `agent-verify`: 19:45 UTC finale `verify-pool.ts`-Ausführung +
+   `agent-verify`: 18:45 UTC finale `verify-pool.ts`-Ausführung +
    LOG-Eintrag als Abnahme-Basis. `agent-1`: PR-Merge-Empfehlung
    (Mergeable-/Gate-Status aller 3 PRs) in eigene Outbox.*
 5. **Koordinations-Dienst (agent-verify, laufend):** 20s/1min-Timer,
    Inbox-Drain je Tick, PR-#26/#27/#28-Status-Watch, neue `origin/main`-
-   Drift-Meldung → LOG. Ab 19:30 UTC keine neuen Board-Änderungen mehr
-   außer Abnahmepaket-Aktualisierung.
+   Drift-Meldung → LOG. Ab 17:30 UTC keine neuen Board-Änderungen mehr
+   außer Abnahmepaket-Aktualisierung (Stabilitätsfenster vor 19:00 UTC).
 
 ## Verifikation (keylos, read-only)
 

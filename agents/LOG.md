@@ -178,3 +178,11 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   vorbehaltlich genehmigt, IPFS-Blockade bekannt gegeben),
   `designer` (#28-Rebase-ACK + Abnahme-Plan),
   `agent-1` (Burn-&-Earn-Board-ACK + frische Abnahme-Basis Exit 0).
+
+- 2026-11-10 ~08:38 UTC · agent-verify (Koordination) · CIO-ACK 09:35
+  (frische Exit-0 + PR-Plan #26→#27→#28 + publish.yml-Add
+  vorbehaltlich genehmigt) aufgenommen und im Outbox-Notiz
+  `2026-11-10T08-38Z-cio-ack-bestaetigung.md` bestätigt. BOARD-
+  Deadlines auf UTC normalisiert (Korrektur s.o.): designer-
+  Checkpoints 11:00/15:00/18:30 UTC, cio-Checkliste 16:30 UTC,
+  finale Verifikation 18:45 UTC, Abnahme 19:00 UTC (20:00 lokal).
