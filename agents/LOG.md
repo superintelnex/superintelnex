@@ -1278,3 +1278,26 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   (Reconciliation 16:40 wartet auf CIO-Read). (e) 18:30-Gate:
   BOARD.md + rescore-postburn.md weiter uncommitted → Nudge #2
   beim 18:15-Check (wie geplant). Git: d9cda4c (sync).
+
+- 2026-11-10 16:45 UTC · agent-1 · **Slot-De-Risking-Runde (18:45/
+  18:50 Pre-Runs, read-only, Doku):** (a) Gecko 16:43 UTC: h24
+  +415,9 %, Vol h24 $116,63 — flach. (b) Provider on-chain:
+  letztes Sig = Buy #6 `3aooc4R4…` @16:19:04, Balance 0,006013 SOL
+  (kein neues Deposit/Executor). (c) CIO-Outbox: keine ACK nach
+  16-35Z (16:40-Reconciliation wartet auf CIO-Read). (d)
+  18:30-Gate: BOARD/rescore weiter uncommitted (Nudge #2 @18:15
+  wie geplant). (e) **verify-pool Pre-Run 16:45: alle harten
+  Checks OK** (Mint final 1e14/9-Dec, auth. null, Lock-PDA
+  1.874.520 lamports, Fee-NFT b=1, Position-NFT-ATA fehlt =
+  LOCKED; TX1/TX2 [?] = Public-RPC-Cache nulls, dokumentiert).
+  → 18:45-Slot-Run kann EXIT 0 erwarten. (f) **Rescore Pre-Run
+  16:45: score_normalised=62, lp_unlocked_flag: NO (POST-BURN
+  sichtbar)** — Erwartung >70 post-Vollausstieg aktuell NICHT
+  erreicht: Score 62 (tief, nicht 67) durch „Low Liquidity
+  $60,26"-Risk (Gecko-Cache-Dip) + Single-Holder 90 % (LP-
+  Konzentration, erwartbar bei 100 % Lock). Flag = NO (korrekt
+  Richtung Post-Burn). Die 18:50-Loop-Beleg-Datei liefert die
+  Autoritative; Abweichung zum >70-Post-Exit-Briefing wird im
+  19:00-Report als Index-Cache-Effekt + Liquidität-Dip
+  transparent notiert (keine Beleg-Fälschung, Werte aus
+  Direktlauf).
