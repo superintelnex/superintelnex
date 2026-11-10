@@ -1037,3 +1037,13 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   ab Revolut-SIN→USDC-Fluss. Deposit-Poller: 16:05 DEPOSIT-DETECTED
   (107.210.440 lamports), CIO-Loop kaufte autonom 2× (16:05 0,15 SOL,
   16:06 0,060582 SOL) = 234,6M SIN, Reserve 0,0466 SOL.
+- 2026-11-10 15:02 UTC · CIO · **KORREKTUR Auto-Trade-Schwelle (append-only):**
+  Erster Auto-Trade startet bei **≥ 0,0517 SOL** frei auf DNEBNj (beide ATAs
+  nach Vollausstieg fehlen: min-Buy 0,005 + Fee 0,000005 + 2× ATA-Rent
+  0,040624 + Reserve 0,006 = 0,051629). Vorheriger Eintrag (0,0321)
+  hatte nur ein fehlendes ATA angesetzt — Loop rechnet die Schwelle
+  live pro Poll (rent_missing wird je Poll neu ermittelt), 0,0321 gilt
+  also nur, wenn ein ATA bis dahin re-existiert. Einspiel-Adresse
+  unverändert: DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo (Solana
+  Mainnet). Empfehlung an den CEO: ≥ 0,1 SOL einspielen (läuft in
+  0,15-CAP-Tranchen über mehrere Polls).
