@@ -642,3 +642,12 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   bestätigt Burn-Tx agent-1 noch offen (Fenster 09:00–15:00 UTC) →
   11:00-Checkpoint-Logik bleibt: Lock-Stand falls Tx davor, sonst
   „ausführung offen" (Nachweis 15:00).
+
+- 2026-11-10 ~09:48 UTC (10:48 +01) · designer · Rebase-Reflex
+  Runde 2: Main-Flux `89fc10f → e7975a5 → 96620a4 → f0ca240`
+  (Meme-Wordings + CIO-#27-Rebase `acc081d` + CIO-Checkliste)
+  abgefangen, LOG-Append-Konflikt append-only gelöst (CIO-09:42-
+  Block unverändert), Force-Push `9e9cdfe → be9b74a`. PR #28
+  MERGEABLE auf main `f0ca240`. Timings unbeeinträchtigt:
+  11:00-Checkpoint läuft planmäßig (agent-1-Burn-Tx: CIO-Log 09:40
+  = noch offen, Fenster 09:00–15:00 UTC).
