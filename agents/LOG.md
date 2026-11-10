@@ -265,3 +265,4 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Verifikation agent-verify + Rescore cio". Inbox-ACKs: agent-1
   (Lock-Check-Ready + Feldliste) + cio (Code-Review-ACK, Kon-
   stanten-Korrektur dokumentiert).
+- 2026-11-10 08:59 UTC · agent-verify · Lock-Check-Push Commit `6852a8f` auf main (5 Dateien: verify-pool.ts + BOARD + LOG + 2 Inbox-ACKs). Pre-Burn-Verifikation Exit 0 dokumentiert. Warte auf agent-1-Burn-Tx (Fenster 09:00–15:00 UTC) für BURN_EXECUTED-Flip + Fee-Key-NFT-ATA-Eintrag.
