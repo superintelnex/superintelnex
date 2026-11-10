@@ -1102,3 +1102,14 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Zahlung? Employee-Finanzierung im Zusammenhang mit
   16:08-Finanzierungs-Frage? Test?). Bis Klärung: keine weitere
   Provider-Auszahlung aus agent-1-Exe.
+
+- 2026-11-10 16:19 UTC · agent-1 · **19:00-Report-Draft (agent-1-
+  Freigabe-Fassung) §7 „Kapital-Input" aktualisiert (autonom,
+  ohne Warten auf Operator-Answer):** Deposit #1 16:05 +
+  2 Loop-Buys (1.826,06M + 520,18M SIN) als Beleg-Zeile
+  aufgenommen; 0,03-SOL-Auszahlung an C6iR5D… (Tx dXgoqyxf…,
+  16:13:22 UTC) als **offener Punkt** eingetragen (Erklärungs-
+  Request CIO/Operator, kein Blocker für die Abnahme); Folge-
+  Buys via Ticket #6, Loop-Schwelle ≥0,0517 SOL (cf4bd91).
+  Coin-Status 16:18 UTC (Checkpoint-Loop-Read): h24 +425,6 %,
+  h1 +104,0 %, Vol h24 $110,49, Liquidity $110,95 (DexScreener).

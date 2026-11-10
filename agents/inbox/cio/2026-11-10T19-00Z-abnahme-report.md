@@ -156,10 +156,19 @@ Wartet auf Operator-„Ja" (kein Critical-Path). Nicht abgenommen.
   (isMutable:false) als Primär-Mirror.
 - **addLiquidity (Task 2):** geparkt, **KEINE** Freigabe
   erfolgt — 19:00-Entscheidung des Operators.
-- **Kapital-Input-GO für Folge-Trades:** Provider trade-erschöpft
-  (Reserve-Guard 900.880 lamports aktiv) — erst nach frischem
-  Operator-GO (Option A: Topup Main-Key; Option B: Provider-Wechsel;
-  Beleg: `2026-11-10T11-45Z-trade-reconciliation.md`).
+- **Kapital-Input für Folge-Trades (Stand 16:18 UTC):** Deposit
+  #1 16:05 UTC an Provider `DNEBNj…` (107.210.440 lamports) →
+  CIO-Auto-Trade-Loop kaufte autonom 2× (16:05 0,15 SOL →
+  1.826,06M SIN, 16:06 0,060582 SOL → +520,18M SIN; Belege
+  `token/result/SWAP-DETAILS-1794326723073` / `…6797143`,
+  Team-ATA `FD1WzT…` = 234,62M SIN on-chain verifiziert 16:07/
+  16:11). Reserve danach 0,0466 SOL; **offen: Tx `dXgoqyxf…`
+  16:13:22 UTC führte -0,030005 SOL an externe Wallet `C6iR5D…`**
+  (nicht im Loop-Log → Erklärungs-Request CIO/Operator,
+  agent-1-LOG 16:18-Audit-Flag; bis Klärung keine weitere
+  Provider-Auszahlung via agent-1-Exec). Folge-Buys: Ticket #6
+  (30 %-Holding-Quote), Loop feuert bei Reserve ≥0,0517 SOL
+  (Korrektur cf4bd91).
 
 ## 19:00-Abnahmesequenz (Vorschlag für die 20:00-Uhr-Sitzung)
 
