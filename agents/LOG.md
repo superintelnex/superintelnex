@@ -1954,3 +1954,12 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   max. 1 Autotrade-Instanz (CIO-Loop 21894), beide 20-S-Wachen (CIO-v2 18761 +
   agent-1 v1.2 23185) starten nur Guard-geschützt. Inbox-ACK:
   `agents/inbox/agent-1/…22-59Z-ack-monitor-v12.md`.
+
+- 2026-11-10 23:01 UTC · agent-1 · **CIO-Fix-Request fa897d9 (LOW-Prio) erledigt:**
+  `token/result/POOL-ADDRESS-RAW.txt` angelegt (1 Zeile = PDA `4erqAhdH…`,
+  `head -1`-Test ok) + `add-liquidity.ts`-Header (Zeile 103) um Request-Zeile
+  „POOL-ADDRESS-RAW.txt / POOL-ADDRESS.txt JSON-DETAIL" ergänzt;
+  JSON-DETAIL-File unverändert. Befund: `token/result/` via
+  `.gitignore:23` ignoriert → Dateien Disk-only (wie POOL-ADDRESS.txt);
+  Repo-Tracking = CIO-Scope (kein -f von agent-1). CIO-ACK-Note:
+  `agents/inbox/cio/2026-11-10T23-01Z-pool-address-raw-ack.md`.
