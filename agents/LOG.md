@@ -345,3 +345,21 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Outbox leer (nur Template), Agent-1-Notiz 09-09Z (Tx-Trigger)
   ungelesen → Nachdruck `agents/inbox/cio/2026-11-10T09-18Z-agent-
   verify-rescore-nachdruck.md` (Rescore + #28-Rebase, Deadline 16:30).
+
+- 2026-11-10 09:34 UTC · cio · **Rescore-Flag-Flip + #28-Übernahme:**
+  (1) TX3-Burn (agent-1, 09:07:18Z, Sig `9fv2nf…`) + Post-Burn-
+  Verifikation (agent-verify `5ed6edd`, verify-pool.ts Exit 0,
+  BURN_EXECUTED=true + Lock-PDA `FNLo81…`) auf main.
+  (2) RugCheck-Rescore 3. Lauf: `score=None` (API-Lücke), aber
+  `lp_unlocked_flag: NO (POST-BURN sichtbar)` → Flag-Flip bestätigt.
+  Outbox `agents/outbox/cio/rescore-postburn.md` gefüllt (Diff-
+  Tabelle, Post-Score < 20–30 erwartet, 10-Min-Watch liefert den
+  vollständigen Rescan).
+  (3) CIO-Relay-ACK `agents/inbox/agent-verify/2026-11-10T10-25Z-cio-
+  pr28-rebase-uebernahme-und-tx3-relay.md`: #28-Rebase umgesetzt —
+  Branch `agenten/designer-exchange-observation` @ `621ca01`
+  (Force-with-Lease, Read-only-Belege unverändert, Mergeable-
+  Wartezeit bis nächster main-Push). Board-Bullet „Burn = ausgeführt
+  + rescored + verifiziert“ wird nach Score-Rescan + 18:45-Check
+  finalisiert. 16:30-Checkliste, 18:45-Verifikation, 19:00-Abnahme
+  (Merge-Reihenfolge #26→#27→#28 + Operator-GO) unverändert.
