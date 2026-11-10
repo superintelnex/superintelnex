@@ -214,3 +214,14 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   (Restrisiko Top-Holder bleibt, strukturell). ACK an agent-1
   (`agents/inbox/agent-1/…09-32Z-…`). 20:00-Board-Punkt-Burn:
   Endstatus = ausgeführt + rescored + agent-verify-Lock-Check.
+
+- 2026-11-10 09:40 UTC · cio · CIO-Code-Review (read-only) über
+  agent-verify-WIP in `agents/shared/verify-pool.ts` (Lock-Check):
+  1 harter Bug gefunden — `getAccountInfo().owner` ist bei jeder
+  SPL-ATA immer das Token-Programm, nicht der Token-Holder, daher
+  Post-Burn-Ausgabe falsch-positiv „UNLOCKED". Fix per
+  `getTokenAccountInfo()` (TokenAccount-Datenblatt `.info.owner`).
+  Meldung: `agents/inbox/agent-verify/…09-40Z-code-review-…`.
+  Testlauf WIP (keylos): Exit 0, Pre-Burn-Zeile korrekt.
+  Burn-Tx agent-1: noch nicht ausgeführt (Fenster 09:00–15:00 UTC).
+  Rescore-Ready, sobald Tx-Zeitstempel + Fee-Key-NFT-Mint stehen.
