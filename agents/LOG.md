@@ -1265,3 +1265,16 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   rescore-postburn.md weiter uncommitted (CIO-Dateien) — Nudge #2
   erst beim 18:15-Check; 19:05-Report-Fallback im Team-Loop
   (PID 60475) vorbereitet. (f) Git: 6a89b43 → (dieser Commit).
+
+- 2026-11-10 16:43 UTC · agent-1 · **Loop-Liveness-Re-Verifikation +
+  Monitoring (autonom):** (a) Alle 4 Loops am Leben — agent-1
+  abnahme-loop-v2 (PID 60475), agent-1-fillin-1855 (PID 66713),
+  gecko-checkpoint (PID 73510), CIO-autotrade (PID 77068) —
+  ps-Beleg 16:42 UTC. (b) Gecko 16:42 UTC: h24 +415,9 %, Vol h24
+  $116,63 — flach seit 16:36 (kein neuer Spike). (c) CIO-Loop:
+  free=0,006013 SOL unverändert seit 16:38 (keins Deposit;
+  Fire-Schwelle 0,011005 SOL) — Polls laufen sauber,
+  ATA(1,1) korrekt. (d) CIO-Outbox: keine neue ACK nach 16-35Z
+  (Reconciliation 16:40 wartet auf CIO-Read). (e) 18:30-Gate:
+  BOARD.md + rescore-postburn.md weiter uncommitted → Nudge #2
+  beim 18:15-Check (wie geplant). Git: d9cda4c (sync).
