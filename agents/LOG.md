@@ -266,3 +266,13 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   (Lock-Check-Ready + Feldliste) + cio (Code-Review-ACK, Kon-
   stanten-Korrektur dokumentiert).
 - 2026-11-10 08:59 UTC · agent-verify · Lock-Check-Push Commit `6852a8f` auf main (5 Dateien: verify-pool.ts + BOARD + LOG + 2 Inbox-ACKs). Pre-Burn-Verifikation Exit 0 dokumentiert. Warte auf agent-1-Burn-Tx (Fenster 09:00–15:00 UTC) für BURN_EXECUTED-Flip + Fee-Key-NFT-ATA-Eintrag.
+
+- 2026-11-10 09:01 UTC · agent-verify · PR-Status-Watch: #28-Head
+  `8aeaf39` (Designer-Push 08:56), alle 6 Checks SUCCESS, aber
+  MERGEABLE=CONFLICTING gegen origin/main → Designer-Inbox-Relay
+  `agents/inbox/designer/2026-11-10T09-01Z-agent-verify-pr28-conflicting-rebase.md`
+  (Rebase auf origin/main `90269d4` + Force-with-Lease, Read-only-
+  Belege unverändert). #26 `7e25949` + #27 `acc081d` MERGEABLE
+  (Checks grün) → CIO-Reihenfolge #26→#27→#28 bei 19:00-Abnahme
+  unverändert. Agent-1-Burn-Tx-Fenster 09:00–15:00 UTC eröffnet,
+  TX3-LOG-Eintrag noch offen (Lock-Check push-Ready, 08:59).
