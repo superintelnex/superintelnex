@@ -45,11 +45,12 @@ Gemeinsames Ziel: der SIN-Meme-Coin (Solana Mainnet).
 
 | ID | Aufgabe | Status |
 |---|---|---|
-| agent-1 (dieser) | Koordination, Read-only-Verifikation, LP-Nachsorge (z. B. addLiquidity-Plan, keine Ausführung ohne Freigabe) | aktiv |
-| cio | Pool-Abnahme (Read-only), RugCheck-Analyse, LP-Sicherheits-Vorschläge | aktiv (CIO-Abnahme Pool: OK, 08:45 UTC) |
-| designer | Exchange-Beobachtung (Task 3, read-only, GeckoTerminal-Public-API), Kanal `agents/exchange-observations.md` | aktiv (erste Beobachtung `656bd6e`: Pool-SIN/SOL, LP ≈ 52 USD, 24h-Metriken noch leer) |
-| agent-verify | Einstieg-Verifikation + 20:00-Abnahme-Basis (Read-only `verify-pool.ts`, Exit 0 @ 07:48), Gecko-Belagsicherung | aktiv (`5caa60e`: Pool live registriert „SIN/SOL", **erste organische Käufe: 2 Buys / 0 Sells**, Reserves $52,09; Abnahme-Nachricht an cio in `inbox/cio/`) |
-| — offen — | Metadaten-Mirror (IPFS/Arweave) + `config.metadata.uri` + `verify.ts` gegen neue URI | offen (siehe open-tasks) |
+| agent-verify (Koordination) | **Aufgaben-Verwaltung + Agenten-Koordination** (Betreiber-Entscheidung 10.11., ~09:24 lokal): Tasks hier vergeben/verfolgen, 20s/1min-Timer-Wache, Inbox-Drain je Tick, PR-Status-Watch #26/#27/#28, finale Abnahme-Basis vor 20:00 (frische `verify-pool.ts`-Ausführung + LOG-Eintrag) | aktiv |
+| agent-1 (dieser) | Read-only-Verifikation, LP-Nachsorge-Pläne (z. B. addLiquidity-Plan, keine Ausführung ohne Freigabe), `publish.yml`-Metadata-JSON-Entwurf als Team-Branch (kein main-Push, kein Merge) | aktiv |
+| cio | addLiquidity-Fahrplan (read-only: exakte Ticks/Beträge/CU) + 20:00-Abnahme-Checkliste (Pool-Burn-&-Entscheidungsvorlage für den Betreiber) | aktiv (CIO-Abnahme Pool: OK, 08:45 UTC) |
+| designer | Exchange-Beobachtung (Task 3, read-only, GeckoTerminal-Public-API), Kanal `agents/exchange-observations.md`; Checkpoints 11:00/15:00/19:30 UTC | aktiv (2. Checkpoint `b92344e`: LP $52.00, 24h noch leer) |
+
+Aufgaben-Status: Metadaten-Mirror (IPFS/Arweave) + `config.metadata.uri` + `verify.ts` gegen neue URI → offen, Priorität **niedrig** (on-chain-URI = raw.githubusercontent, 200 belegt 08:00 UTC; Zwischenzustand zulässig).
 
 ## Team-Übersicht (remote-Branches, Stand 10.11.2026 ~08:45 UTC)
 
@@ -69,26 +70,54 @@ Regel für neue Agenten: eigene Arbeit in `agenten/<name>`-Branch
 oder als Datei-Getrenntes auf main; vor jedem Push
 `git fetch origin && git rebase` (kein Force-Push auf main).
 
-Offene Tasks (priorisiert):
+Offene Tasks (priorisiert, Zuweisungen agent-verify 10.11. ~09:30 lokal):
 
 0. **LP-Burn & Earn (Vorschlag `cio`, wartet auf CEO-Freigabe):**
    CLMM-Position-NFT permanent brennen → RugCheck-Risiken „LP unlocked
    100 %“ + „wenige LP-Provider“ schließen (nur 1 Tx-Gebühr, Liquidity
    bleibt im Pool). Details: `agents/LOG.md` cio-Eintrag, Issues #26/#27.
    **Keine Ausführung ohne explizite Freigabe.**
+   *Zuständig: `cio` — bereitet exakten Burn-Fahrplan (1 Tx, CU-Bedarf)
+   + Betreiber-Entscheidungsvorlage für 20:00 vor. `agent-1`:
+   Test-Script-Anpassung `burn.ts` (ohne Senden) auf den 1-SOL-Wert.
+   `designer`: Beobachtung — nach Freigabe & Ausführung Checkpoint
+   „LP locked“-Nachweis im Kanal.*
 
-1. **Metadaten-Mirror (IPFS/Arweave):** stabile, content-addressed URI;
-   danach `token/config/token.json` `metadata.uri`/`image` aktualisieren
-   + `token/scripts/verify.ts` lokal gegen die neue URI laufen lassen.
-   (Dauerhafter Plan aus `token/docs/METADATEN-SPEICHERUNG.md`; aktuell
-   zeigt die URI auf GitHub-raw, HTTP 200 verifiziert — zulässiger
-   Zwischenzustand.)
-2. **LP-Nachsorge (Option, KEINE Ausführung ohne Freigabe):** SOL-Anker
-   per `addLiquidity` ausbauen (Position-NFT + Ticks bestehen; Pool-PDA
-   bleibt deterministisch unverändert). Dokumentiert in
+1. **Metadaten-Mirror (IPFS/Arweave) — Priorität NIEDRIG, blockiert:**
+   On-chain-URI = GitHub-raw (PDA-geprüft 08:00 UTC, HTTP 200) →
+   Zwischenzustand zulässig, kein On-Chain-Action nötig.
+   *Zuständig: `agent-1` — `publish.yml`-Metadata-JSON-Add
+   (Copy-Liste + paths) als Team-Branch `agenten/metadata-pipeline`
+   entwerfen + Testen, **kein main-Push, kein Merge** (Betreiber-
+   Entscheidung bei 20:00-Abnahme). `agent-verify`: koordiniert/verfolgt.
+   IPFS/Arweave-Upload selbst: erst nach Bereitstellung von
+   Credentials/Keys durch den Betreiber (lokal nicht vorhanden).*
+2. **LP-Nachsorge addLiquidity (Option, KEINE Ausführung ohne Freigabe):**
+   SOL-Anker per `addLiquidity` ausbauen (Position-NFT + Ticks bestehen;
+   Pool-PDA bleibt deterministisch unverändert). Dokumentiert in
    `token/config/token.json` `dex._liquidityNote`.
+   *Zuständig: `cio` — exakter Fahrplan (Ticks, Beträge, CU-Bedarf)
+   bis 18:00 UTC als `agents/outbox/cio/`-Note + Kurzfassung in
+   BOARD. `agent-1`: Test-Script `add-liquidity-test.ts` (ohne
+   Senden) gegen den 1-SOL-Basiswert anpassen.*
 3. **GeckoTerminal/Exchange-Status:** Pool-Link `index.html` ist live
    (Commit `e0dd913`). Volumen-Beobachtung: read-only, Eintrag in LOG.md.
+   *Zuständig: `designer` — Checkpoints 11:00 / 15:00 / 19:30 UTC
+   (letzer vor Abnahme), Kanal `agents/exchange-observations.md`.
+   Anomalie-Meldung (Kurs-/Liquiditäts-Sprung) sofort via Inbox.*
+4. **20:00-Abnahmepaket (neu, 10.11.):** Entscheidungsvorlage für den
+   Betreiber: (a) Burn-&-Earn-Vorlage + Budget-Status, (b) addLiquidity-
+   Fahrplan, (c) PR-Merge-Empfehlung #26/#27/#28, (d) publish.yml-
+   Metadata-Add (Task 1), (e) finale `verify-pool.ts`-Ausführung.
+   *Zuständig: `cio` — 18:30 UTC Abnahme-Checkliste in `agents/BOARD.md`
+   (Abschnitt „20:00-Abnahme") + Abnahme-Notiz in `agents/outbox/cio/`.
+   `agent-verify`: 19:45 UTC finale `verify-pool.ts`-Ausführung +
+   LOG-Eintrag als Abnahme-Basis. `agent-1`: PR-Merge-Empfehlung
+   (Mergeable-/Gate-Status aller 3 PRs) in eigene Outbox.*
+5. **Koordinations-Dienst (agent-verify, laufend):** 20s/1min-Timer,
+   Inbox-Drain je Tick, PR-#26/#27/#28-Status-Watch, neue `origin/main`-
+   Drift-Meldung → LOG. Ab 19:30 UTC keine neuen Board-Änderungen mehr
+   außer Abnahmepaket-Aktualisierung.
 
 ## Verifikation (keylos, read-only)
 

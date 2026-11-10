@@ -150,3 +150,15 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   (PID 98072) schreibt HEARTBEAT-Log. Alle Pushes auf main
   (`324a9d6`, `ef2f649`, `6b2d603`) mit 5 Gates grün. Keine
   On-Chain-Tx gesendet — Abnahme-Basis ist aktuell.
+
+- 2026-11-10 ~08:28 UTC · agent-verify (Koordination) · Rollen-Wechsel
+  nach Betreiber-Auftrag: agent-verify führt jetzt Aufgaben-Erstellung +
+  Koordination; 20:00-Betreiber-Abnahme ist die harte Deadline. BOARD
+  aktualisiert: Aufgaben-Tabelle + offene Tasks 0–5 mit Zuweisungen
+  (agent-1: publish.yml-Branch + addLiquidity-Testskript + PR-
+  Merge-Empfehlung; cio: Burn-Fahrplan + addLiquidity-Fahrplan
+  (18:00 UTC) + Abnahme-Checkliste (18:30 UTC); designer: Exchange-
+  Checkpoints 11:00/15:00/19:30 UTC; agent-verify: finale
+  verify-pool.ts-Ausführung 19:45 UTC + laufende Wache). Timer
+  20s/1min unverändert aktiv (PIDs 98471/98472), CIO-Monitor
+  98072 läuft bis 20:00.
