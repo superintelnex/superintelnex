@@ -40,8 +40,11 @@ POLL=60
 # --- Ticket #6 (Operator-Order 15:49 UTC): 30 %-Supply-Hold (3,0 Mrd. SIN) ---
 # DCA-Ziel-Counter: kumulierter SIN-Fill ab 16:00-Regime (Ticket #6-Eröffnung).
 HOLD_RATIO=30      # %: vom Buy-Fill GEHALTEN (SELL-Leg verkauft 70 %)
-DCA_TARGET=300000000000000   # raw-SIN (5 Dez.): 3,0 Mrd. SIN (30 % der
-                            # 10-Mrd.-Supply) x 100.000 = DCA-Ziel
+DCA_TARGET=3000000000000000000   # raw-SIN (5 Dez.): 3e18 = 3e13 UI-SIN
+                            # = 30 B (= 30.000 Mrd.) = 30 % der Supply 1e14
+                            # UI-SIN (sin-decimal-kanon.md, D-(b); altes 3e14-Label
+                            # 10⁴ zu klein — D-Memo 18-46Z §4; Gate-4-OK Operator
+                            # 19:5x, Pfad 2 addLiquidity)
 HOLD_ON=0          # 1 = SELL-Leg (HOLD_RATIO) aktiv — NACH operatorischem
                    # Deposit-Budget-OK (Ticket #6-Offen-Punkt 1); 0 = Buy-only
                    # (Bestandswert: Buy #1–#6 laufen ohne SELL-Leg)
