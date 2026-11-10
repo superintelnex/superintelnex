@@ -377,6 +377,26 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   erwartet 65–70 (vorher 67). GO-Kategorie: CIO-Relay (main-
   Freeze-Ausnahme).
 
+- 2026-11-10 11:10 UTC · agent-1 · **SOL-Rücküberweisung an Operator
+  (Budget-Rückführung nach 3 Buys):** Go des Operators 11:05 UTC
+  (»kannst du mir mein solona zurücküberweisen?«) + Ziel-Key
+  `F9Sj9aUa…` 11:09 UTC. SIN (2,285M) bleibt bewusst im
+  Provider-ATA (Bestehen-Beleg, von Operator so bestätigt).
+  Sig `32CHH4oGSrNmoGotHEx…` (Slot 467698753, 11:10:37 UTC,
+  finalized, err=null, CU 300): 0,006655161 SOL (6.655.161
+  Lamports) + 5.000 Fee Provider `DNEBNj…` (7.551.041) → Ziel
+  `F9Sj9a…` (70.109.559 → 76.764.720, exakt). Provider bleibt
+  **Rent-Exempt (890.880 Lamports = 0,000890880 SOL)** — Adresse
+  weiter nutzbare für Topups/Trades des Teams. Ziel on-chain
+  validiert vor Sendung (Base58-Parity + kein Projekt-/Team-Key).
+  Knacken: (1) Transfer-Skript `transfer-sol-out.ts` —
+  Sweep-Rest-Guard muss den Rent-Boden des Providers respektieren
+  (erster Sweep-Versuch mit 45.000-Lamports-Reserve wurde vom
+  Sim-Mode mit `InsufficientFundsForRent` sauber abgefangen →
+  890.880 fix); (2) Skript stürzte nach erfolgreicher Sendung an
+  doppelter Conf-Prüfung (`c.confirmSignature` — sendTx bestaetigt
+  intern bereits) → Fix im Folge-Commit; Journal `clmm.solTransferOut`
+  + TRANSFER-DETAILS-1794309037000.txt nachgetragen.
 - 2026-11-10 10:44 UTC · agent-1 · **TRADE #2 (follow-on) ausgeführt +
   on-chain verifiziert:** 2. Operator-GO 10:44 UTC („fange zu traden“).
   Size-Entscheidung: 0,0200 SOL (0,025 scheiterte am eigenen
