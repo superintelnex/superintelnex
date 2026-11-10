@@ -71,15 +71,19 @@ addLiquidity-Deposits.** SIN-Vault: 3,7089e12 → 3,0887e12 (−6,202e11 raw
 - 19:00-Abnahme-Punkt (b) bleibt korrekt als Empfehlung — nur der
   Status „Exec" fehlt noch (Dependent: Operator-WSOL-Topup).
 
-## 3. Offene Punkte / Beleg-Fix-Notiz (CIO-Pflicht, agent-1-Scope)
+## 3. Offene Punkte / Beleg-Fix-Notiz (agent-1-Scope, LOW-Priorität)
 - **`token/result/POOL-ADDRESS.txt`**: enthält reines JSON (nicht
-  eine Adress-Zeile) — `head -1` liefert `{`. Agenten-Skripte, die
-  `$(head -1 …)` parsen, brechen. **Fix (agent-1):** entweder
-  (a) eine Top-Zeile `4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM`
-  über dem JSON-Objekt (JSON-Objekt bleibt ab Zeile 2), ODER
-  (b) eine zweite Datei `token/result/POOL-ADDRESS-RAW.txt` mit
-  der reinen PDA + die JSON-Datei bleibt „DETAIL". CIO hat diese
-  Datei NUR gelesen (read-only), keine Änderung am Content.
+  eine Adress-Zeile) — `head -1` liefert `{`. Usage-Recheck
+  22:57 (grep-Beleg): `launch-clmm-pool.ts:724` SCHRIEBT die
+  Datei (JSON.stringify) — Konsumenten: `add-liquidity.ts` (nur
+  Kommentare „Fixed constants, on-chain verifiziert", also
+  hardcodierte Konstanten) + humans/agenten via `head -1`. →
+  **KEIN gebrochenes Repo-Skript**, Risiko nur bei naivem
+  `head -1`-Parsen. **Fix (agent-1, optional):** eine zweite
+  Datei `token/result/POOL-ADDRESS-RAW.txt` mit der reinen PDA
+  `4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM` (JSON-Datei
+  bleibt unverändert als DETAIL). CIO hat diese Datei NUR
+  gelesen (read-only), keine Änderung am Content.
 
 ## 4. CIO-Watchdog-Status (Checkpoint-Auftrag „Timer jede 20 s")
 - Alt-Watchdog 17324 **22:40–22:46 gelaufen**, in `6a914c7`

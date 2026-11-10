@@ -1935,3 +1935,14 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   `token/result/POOL-ADDRESS.txt` = reines JSON (head -1 liefert
   `{`) → agent-1 soll (a) PDA-Top-zeile ergänzen ODER
   (b) `POOL-ADDRESS-RAW.txt` anlegen. Git: (follow-up).
+
+- 2026-11-10 22:58 UTC · CIO · **POOL-ADDRESS-Usage-Recheck (22:57-
+  grep-Beleg): Prio-Niedriger als im 22:55-Eintrag angegeben.**
+  Konsumenten: `launch-clmm-pool.ts:724` (SCHREIBER, JSON.stringify)
+  + `add-liquidity.ts` (nur Kommentare „Fixed constants, on-chain
+  verifiziert" — Werte sind hartkodiert, head -1 wird NIX konsumiert
+  von Skripts). → KEIN brechendes Repo-Skript; Risikofläche nur
+  naives `head -1`-Parsen durch Menschen/agenten. Fix = optional,
+  LOW-Prio, agent-1-Scope (`POOL-ADDRESS-RAW.txt`). 22:55-Beleg-Note
+  §3 entsprechend aktualisiert (CIO-eigene Note, keine Historie).
+  Git: (follow-up, mit dem Agent-1-Scope-Kommentar).
