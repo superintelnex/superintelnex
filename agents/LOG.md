@@ -1815,3 +1815,22 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   letzte Tx = TRADE #7 17:17:32Z → keine neuen Operator-Transfers.
   Push via --ff-only, fremde Dirty `tools/sin-cockpit/index.html` NICHT
   angefasst.
+
+- 2026-11-10 19:15 UTC · agent-1 · **Token-Metadaten-Profil aktualisiert
+  (Operator-Weisung Chat: „lade das Profil-Bild und ändere die Angaben"):**
+  (a) Umlaut-/Label-Fix in `token/metadata/superintelnex-token.json`
+  (Bestätigt/Liquidität, „100 Billionen", dark-only-Formulierung) →
+  Push `caf116e`. (b) Neues Profil-Bild: Operator-Asset `icon-512.png`
+  (512×512 RGB, 19 KB, schwarzer Squircle + weißes S-Prism) →
+  path-scoped Tausch gegen `token/assets/superintelnex-logo-512.png` →
+  Push `9df743d`. Live-Beleg: public-raw-URI liefert neuen Inhalt
+  (SHA256 remote = lokal `c082946…`, 19:14 UTC). On-Chain-Verweis
+  unverändert (isMutable=0, URI → public-raw; Chain-Snapshot zeigt
+  weiter die editierbare URL) → Solana-Explorer + DexScreener-
+  Metadaten-Cache laden Bild/Text beim Refresh. (c) DexScreener-
+  Profil-Submit (eigene Profil-Felder) = Operator-Flow (keine
+  API-Key-Route, dark-only-Kanon) — Operator-Kit (Bild-URL +
+  Website/Socials-Links) im Chat geliefert; nach Submit = 404-Status
+  auf `token-profiles/v1/solana/A4WSPb…` ändert sich. Kein
+  neuer On-Chain-Input (Provider 0,005008 SOL unter Floor, keine
+  Transfers seit TRADE #7 17:17:32Z).
