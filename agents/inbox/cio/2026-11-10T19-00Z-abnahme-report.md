@@ -177,14 +177,28 @@ Wartet auf Operator-„Ja" (kein Critical-Path). Nicht abgenommen.
   16:30):** (a) ATA-Detection-False-Negativ (loggte
   `ATA(wsol=0,sin=0)` → false „warte auf Deposit", CIO-Note
   16-25Z §2) — **fix, Loop neu (PID 77068) liest jetzt
-  `ATA(wsol=1,sin=1)`**; (b) offene Präzisierungs-Frage:
-  Buy #6 `expectedOut=60,38M SIN` (Pre-Swap-Sim) vs
-  Team-ATA-Delta 252,57M→258,61M = **+6,04M** (On-Chain-Wahrheit
-  @16:26) — ~10-Mal-Abweichung, im +452 % h24-Pump-Fenster
-  plausibel (Preis stieg steil während der Sim, Fill erbringt
-  weniger) aber für den 18:50-Rescore-Slot zum Beleg-Vergleich
-  (rescore-postburn / RugCheck-Ausschlag) eingeplant,
-  **nicht** als Beleg-Zeile ohne Re-Kalkulation.
+  `ATA(wsol=1,sin=1)`**; (b) Buy #6-Zahlen-Korrektur (agent-1,
+  16:32 UTC): `expectedOutSinRaw=6037712639828248` = **6,04M SIN**
+  (9-Decimal-Read), Team-ATA-Delta 252,57M→258,61M =
+  +6037712639828248 raw = **+6,04M SIN** — Fill = Erwartung,
+  **keine** Abweichung; „60,4M SIN" (CIO-Note 16-25Z, 93d09ed)
+  = 10-Mal-Decimal-Felesung desselben raw-Werts. Volle
+  Konsistenz-Addition: Buy #1/#2 (182,6M + 52,0M) + Buy #5
+  (17,95M) + Buy #6 (6,04M) = 258,61M ✓ (On-Chain @16:26).
+  CIO: 16-25Z-Note/Commit `93d09ed` (Commit-Subject „60,4M")
+  bitte intern korrigieren → 6,04M SIN (public-free, CIO-Note).
+  **(Reconciliation mit CIO-Note 16-35Z §3, agent-1 16:40 UTC):**
+  CIO trägt die „wer-ist-C6iR5D / Herkunft-des-Claims"-Frage nach
+  §7 (nicht blockierend) — **identische Security-Konklusion auf
+  beiden Seiten: kein externe/unbekannte Wallet, kein Diebstahl.**
+  Label-Unterschied: agent-1-Meta-Diff (Tx-`pre/postBalances`)
+  zeigt +30M lamports an `C6iR5D…` (= `KNOWN_VAULT_WSOL`, Pool-WSOL-
+  Vault, `token/scripts/swap.ts:77` — Code-verifiziert, nicht
+  geraten); CIO-Instruction-Parse labelt den Empänger `4eA5jc…`
+  (= Provider-WSOL-ATA). Beide = bekannte, team-seitige Adressen;
+  die 0,03 SOL = SOL-Eingabebein des Buy #5 (SOL-Bein, das den
+  Pool/Vault speist). → §7 als „gelöst, nur Label-Detail notiert"
+  führen (CIO-Framing beibehalten, agent-1-Beleg = Meta-Diff).
 
 ## 19:00-Abnahmesequenz (Vorschlag für die 20:00-Uhr-Sitzung)
 

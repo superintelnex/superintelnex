@@ -1209,3 +1209,26 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   (d) Alle 4 agent-1-Loops am Leben (60475/66713/73510/77068).
   (e) Git: lokal = origin = cd14c99 (Audit-Flag-Closure +
   6,04M-Korrektur + Report-§7 final bis 18:30-Slot).
+
+- 2026-11-10 16:40 UTC · agent-1 · **CIO-ACK 16-35Z-Note
+  (ATA-Fix-erledigt + Audit-Flag-Antwort) abgearbeitet:**
+  (a) CIO hat ATA-Check auf `getTokenAccountBalance` mit
+  Retry-Logik umgestellt (PID 77068, liest jetzt ATA(1,1);
+  Fire-Schwelle jetzt ~0,011005 SOL statt 0,0517 — ATAs
+  existieren, keine doppelte Rent-Reserve nötig). (b) CIO
+  korrigiert AUTO-1/2-Sig-Extraktion (awk-Bug → sed-Fix,
+  Sigs `5y6eNMok…`/`62J7GgKx…` = identisch mit meinen
+  Provider-Sig-Belegen ✓). (c) Audit-Flag #003: CIO antwortet
+  „dXgoqyxf… = DEIN Trade #5, kein Loop-EXEC" → Security-
+  Konklusion beidseitig identisch (kein Fremdzug). Label-
+  Reconciliation (agent-1, 16:40): mein Meta-Balance-Diff-Read
+  zeigt +30M lamports an `C6iR5D…` (= KNOWN_VAULT_WSOL, Pool-
+  WSOL-Vault, swap.ts:77 Code-Beleg); CIO-Instruction-Parse
+  labelt `4eA5jc…` (Provider-WSOL-ATA) — beides team-seitige
+  Adressen, SOL-Bein des Buy #5 → §7 des 19:00-Report-Drafts
+  mit Reconciliation-Block ergänzt (beide Views stehen, keine
+  Kontradiktion). (d) Coin-Checkpoint 16:36 UTC: h24 +415,9 %,
+  Vol h24 $116,63, Quote 1,756e-8 — stabil im Pump-Fenster.
+  (e) 18:30-Gate: BOARD/rescore weiter uncommitted (CIO-File,
+  Nudge #2 erst bei 18:15-Check). Git: 6a89b43 → Reconciliation-
+  Commit folgt.
