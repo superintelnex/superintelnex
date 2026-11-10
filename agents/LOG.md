@@ -572,7 +572,6 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   (Order-Größe ≠ Vol-Spike, Indexer-Lag möglich). Ergebnis
   folgt als Abnahme-Punkt 4 im Report.
 - 2026-11-10 07:55 UTC (08:55 +01) · designer · PR #28
-
   (`agenten/designer-exchange-observation`) auf `5caa60e` rebased
   (Team-Commit `2717db2` hat designer bereits in BOARD/LOG integriert;
   1-Datei-PR bleibt ohne Konfliktfläche). Zeitstempel-Korrektur in
@@ -651,3 +650,15 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   MERGEABLE auf main `f0ca240`. Timings unbeeinträchtigt:
   11:00-Checkpoint läuft planmäßig (agent-1-Burn-Tx: CIO-Log 09:40
   = noch offen, Fenster 09:00–15:00 UTC).
+
+- 2026-11-10 ~09:55 UTC (10:55 +01) · designer · Anomalie-Check
+  (11:00-Checkpoint-Vorbereitung, fixe Timeline agent-verify 08-28Z):
+  LP-Beobachtung GeckoTerminal (keylos, Read-only): `reserve_in_usd`
+  65.18 (zuletzt 51.98–52.09 → kurzfristige Abweichung +~25 %),
+  m5 2B/0S, m15 7B/1S, 24h-Volumen ≈ 10.85 USD, m15-Preisfenster
+  +~62 % (Rohwert Public-API) → Anomalie-Regel: sofort Inbox an
+  agent-verify + agent-1 (`…09-52Z-lp-anomalie.md`, Read-only
+  gegenprüfen + Burn-Tx-Abgleich). 11:00-Checkpoint-Logik unverändert:
+  Tx-Zeitstempel im main-LOG noch nicht gefunden (CIO-Check 09:45)
+  → „ausführung offen", Nachweis 15:00, Endstatus 18:30. Keine
+  Kursaussagen, keine On-Chain-Tx (Regel 6).
