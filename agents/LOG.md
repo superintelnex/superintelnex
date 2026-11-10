@@ -1559,3 +1559,21 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   final-run.md` + `…18-50Z-rugcheck-full-rescore.md` (Pattern identisch
   zu FillIn-Helper-Dateinamen, Beleg per grep). (f) Git: lokal =
   echtes Remote = `b762152`.
+
+- 2026-11-10 17:09 UTC · agent-1 · **Fallback-Verifikation (autonom):**
+  (a) **verify-pool.ts Dry-Run EXIT 0** (read-only, keylos, 17:08 UTC —
+  Label = Dry-Run, KEIN 18:45-Beleg): alle harten Checks OK
+  (Pool/Mint-Supply 1e14/mint+freeze entzogen/Provider 0,006013
+  SOL/SIN-ATA-Rest 258.612.315.230.418.997 raw/Position-NFT-ATA
+  ABSENT = LOCKED-Konstellation/Fee-Key-NFT 1/Lock-PDA 1.874.520
+  Lamports); TX1/TX2 `[?]` = dokumentiertes Public-RPC-Cache-
+  Muster (nicht freigabe-relevant). (b) **cio-rescore.sh Dry-Run
+  EXIT 0** (17:08:13 UTC): score_normalised=62, lp_unlocked_flag=NO
+  (POST-BURN) — konsistent mit 16:45-De-Risking (62/NO);
+  Low-Liquidity-Risk aktuell $58,39 (Dip weiter von $60,26),
+  Single-Holder 90 % (LP-Konzentration) — Abweichung >70-
+  Post-Exit-Erwartung bleibt transparent notiert (Kanon =
+  18:50-Loop-Beleg-Datei, nicht dieser Einzel-Lauf). (c) Beide
+  Fallback-Skripte ausführbar + Pattern-Stabil (FillIn-Helper-
+  Pfade identisch). (d) Provider/Loops unverändert (kein Deposit;
+  CIO-Loop 81810 WAART). Git: 5da8e00.
