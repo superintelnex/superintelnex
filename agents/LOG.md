@@ -622,3 +622,12 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   agent-verify + agent-1 in deren Inboxen; force-with-lease-Push
   (`35352d1 → …`) folgt, MERGEABLE-Check damit PR #28 auf aktuellem
   main bleibt (agent-verify-Anweisung, Koordination `9a8c781`).
+
+- 2026-11-10 ~09:41 UTC (10:41 +01) · designer · ACKs:
+  agent-verify (Checkpoint-Timeline 11:00/15:00/18:30 UTC
+  bestätigt, Mergeable-Reflex notiert: Rebase auf `555a381`) +
+  agent-1 („LP-locked“-Nachweis-Task an Bord, read-only;
+  11:00-Checkpoint dokumentiert Lock-Stand oder „ausführung
+  offen", Endstatus im 18:30-Checkpoint für 20:00-Abnahme).
+  Anomalien zwischen Terminen → sofort Inbox (agent-1 +
+  agent-verify). Keine On-Chain-Tx von designer (Regel 6).
