@@ -376,11 +376,13 @@
     "M559 428C670 499 779 583 880 681V349Q879 340 886 345L990 408C1016 424 1029 448 1029 479V811C1029 842 1015 866 989 881L941 906L620 613Q612 605 607 609L552 650V432Q552 423 559 428Z"
   ];
   const tokenMaskSize = 144;
-  const tokenMask = document.createElement('canvas');
-  tokenMask.width = tokenMask.height = tokenMaskSize;
-  const tokenContext = tokenMask.getContext('2d');
   const tokenCells = [];
-  if (tokenContext && typeof Path2D === 'function') {
+  function buildTokenMask() {
+    if (typeof Path2D !== 'function') return;
+    const tokenMask = document.createElement('canvas');
+    tokenMask.width = tokenMask.height = tokenMaskSize;
+    const tokenContext = tokenMask.getContext('2d');
+    if (!tokenContext) return;
     const ratio = tokenMaskSize / 1254;
     tokenContext.scale(ratio, ratio);
     for (const path of tokenPaths) tokenContext.fill(new Path2D(path));
@@ -392,7 +394,10 @@
     }
   }
   // Each particle keeps its identity as the field morphs between shapes.
-  const points = Array.from({length: total}, (_, i) => {
+  const points = [];
+  let sky = [];
+  let particlesReady = false;
+  function createParticle(i) {
     const a = random() * tau, b = random() * tau, c = random(), d = random(), e = random();
     const scatter = c > .93, spread = scatter ? 1.12 + d * 1.4 : Math.sqrt(d);
     const sector = Math.floor(i / 4) % starCorners.length;
@@ -867,11 +872,11 @@
         padlock, gullFlock, whale, origamiCrane, satellite],
       size:e, phase:b, scatter
     };
-  });
-  const sky = Array.from({length:1350}, () => {
+  }
+  function createSkyStar() {
     const x = random(), y = random(), brightness = random();
     return {x, y, size:.53 + 1.2 * brightness ** 5, light:.08 + .55 * brightness ** 3, phase:random() * tau};
-  });
+  }
   const paths = Array.from({length:8}, () => []);
   const clamp = (x, lo, hi) => Math.min(hi, Math.max(lo, x));
 
@@ -918,7 +923,7 @@
   }
 
   function draw() {
-    if (!ctx || !width || !height) return;
+    if (!particlesReady || !width || !height) return;
     ctx.clearRect(0, 0, width, height);
     for (const path of paths) path.length = 0;
     const t = morph * morph * (3 - 2 * morph);
@@ -1364,10 +1369,14 @@
   function size() {
     if (!ctx) return;
     const r = canvas.getBoundingClientRect();
-    width = r.width; height = r.height;
     const dpr = Math.min(devicePixelRatio || 1, 2);
-    canvas.width = Math.round(width * dpr);
-    canvas.height = Math.round(height * dpr);
+    const pixelWidth = Math.round(r.width * dpr);
+    const pixelHeight = Math.round(r.height * dpr);
+    if (width === r.width && height === r.height
+        && canvas.width === pixelWidth && canvas.height === pixelHeight) return;
+    width = r.width; height = r.height;
+    canvas.width = pixelWidth;
+    canvas.height = pixelHeight;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     const narrow = width <= 560;
     count = narrow ? 4500 : width < 850 ? 5800 : total;
@@ -1421,12 +1430,12 @@
   function syncMotion() {
     if (frame) cancelAnimationFrame(frame);
     frame = 0; last = null;
-    if (running && ctx && !document.hidden) frame = requestAnimationFrame(animate);
+    if (running && particlesReady && !document.hidden) frame = requestAnimationFrame(animate);
     else if (!running) { morph = 1; pointer.strength = 0; draw(); }
   }
   function show(i, {writeHash = true, focus = null, initial = false} = {}) {
     if (!Number.isInteger(i) || i < 0 || i >= scenes.length) return;
-    selectShape(initial ? shape : i, initial || !running);
+    selectShape(initial ? shape : i, initial || !running || !particlesReady);
     if (i === active && !initial) { draw(); return; }
     active = i;
     scenes.forEach((scene, index) => {
@@ -1479,10 +1488,31 @@
   const releasePointer = () => {pointer.inside = false;};
   site.addEventListener('pointerleave', releasePointer);
   site.addEventListener('pointercancel', releasePointer);
-  new ResizeObserver(size).observe(canvas);
   show(sceneFromHash(), {initial:true, writeHash:false});
-  size();
-  syncMotion();
+
+  function prepareParticles() {
+    const deadline = performance.now() + 6;
+    do {
+      points.push(createParticle(points.length));
+    } while (points.length < total && performance.now() < deadline);
+
+    if (points.length < total) {
+      setTimeout(prepareParticles, 0);
+      return;
+    }
+
+    sky = Array.from({length:1350}, createSkyStar);
+    particlesReady = true;
+    size();
+    new ResizeObserver(size).observe(canvas);
+    if (running) syncMotion();
+  }
+
+  // Let the browser paint the page before preparing the decorative canvas.
+  if (ctx) requestAnimationFrame(() => requestAnimationFrame(() => {
+    buildTokenMask();
+    prepareParticles();
+  }));
 })();
 </script>
 </body>
