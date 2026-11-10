@@ -1,10 +1,11 @@
 # Fragenliste: Festlegungen für den SuperIntelNex-Token
 
-**Stand: BESTÄTIGT am 09.11.2026.** Der Betreiber hat die freie Auswahl
-übertragen und 100 Billion (10^14) Gesamtmenge vorgegeben. Die Werte
-stehen unter `"_status"` in `token/config/token.json` und gelten für den
-DEVNET-Testtoken — für Mainnet sind sie erst mit der erneuten
-Mainnet-Bestätigung final.
+**Stand: BESTÄTIGT am 09.11.2026, auf Mainnet ausgeführt (09.11.2026,
+22:07–23:38 UTC).** Der Betreiber hat die freie Auswahl übertragen und
+100 Billion (10^14) Gesamtmenge vorgegeben. Die Werte stehen unter
+`"_status"` in `token/config/token.json`. Der MAINNET-LAUNCH ist
+abgeschlossen: Mint `A4WSPbHP…`, Emission 81/10/5/4, beide Vollmachten
+entzogen + finalized (Protokoll: `MAINNET-LAUNCH-BERICHT.md`).
 
 > **Hinweis (technische Bindung):** 100 Billion = 10^14 passt mit den
 > üblichen 9 Dezimalstellen (SOL-Standard) **nicht** in die u64-Supply
@@ -41,18 +42,19 @@ Mainnet-Bestätigung final.
 | **Bestätigt** | **Feste Menge, keine weiteren Emissionen** (`FIXED-NO-FURTHER-ISSUANCE`) |
 | **Begründung** | Maximale Integrität für die Community; zusammen mit dem Entzug der Mint-Vollmacht (Q6) wird die Supply endgültig fixiert. |
 
-## Q5 — Verteilung (Community / Gründer / Entwicklung / Liquidität)
+## Q5 — Verteilung (Community / Liquidity / Gründer / Marketing)
 
 | | |
 |---|---|
-| **Bestätigt (Planwert)** | **55 % Community · 20 % Gründer · 15 % Entwicklung · 10 % Liquidität** |
-| **Hinweis** | Die On-Chain-Mehrfach-Emission (4 getrennte Emissionskonten) ist GEPLANT und erscheint erst nach Verteilungsbestätigung für den Mainnet-Launch. Aktuell mintet `mint-initial.ts` die Gesamtmenge an die einweg-Admin-ATA — **das ist ein bewusster Prototyp-Entscheid, keine Verkaufs- oder Distributionsumsetzung.** Sperrfristen (Vesting) für Gründer/Entwicklung: offen, siehe Q6-Anhang. |
+| **Bestätigt** | **81 % Community · 10 % Liquidität · 5 % Gründer · 4 % Marketing** (Bestätigung 09.11.2026, Commit `c5d48e1`; die frühere Planung 55 % Community / 20 % Gründer / 15 % Entwicklung / 10 % Liquidität ist überholt) |
+| **Status** | **Auf Mainnet ausgeführt am 09.11.2026 22:09 UTC** — `distribute.ts` emittierte die vier Anteile auf getrennte Emissions-ATAs (Signaturen + Saldo-Protokoll in `MAINNET-LAUNCH-BERICHT.md`). Vesting (Gründer 5 % / Marketing 4 %) als Folgeschritt nach der Emission: offen, siehe Q6-Anhang. |
 
 ## Q6 — Verwaltungsrechte (Mint-/Freeze-Vollmacht)
 
 | | |
 |---|---|
 | **Bestätigt** | **Beide Vollmachten nach Emission unwiderruflich entziehen** (`revokeMintAuthority: true`, `revokeFreezeAuthority: true`) |
+| **Status (Mainnet)** | **Am 09.11.2026 23:38 UTC ausgeführt + finalized** — On-Chain: `mintAuthority = (none)`, `freezeAuthority = (none)` (Slots 467504907 / 467504911). Signaturen + Beweis: `MAINNET-LAUNCH-BERICHT.md`. |
 | **Begründung** | Maximale Transparenz: im Explorer sichtbar `mintAuthority = (none)`, `freezeAuthority = (none)`. Kein verstecktes Recht zum Einziehen fremder Token (SPL hat ohnehin keine Blacklist-Logik; Freeze wäre die einzige Sperrmöglichkeit). |
 
 ### Mint & Freeze im Detail (Begründung für Q6)
@@ -81,17 +83,17 @@ Mainnet-Bestätigung final.
 | | |
 |---|---|
 | **Bestätigt (Devnet)** | GitHub Pages (`superintelnex.com/token/metadata/superintelnex-token.json`), **provisorisch** für den Testtoken |
-| **Begründung** | Laufend und nachvollziehbar; aber ein Repo-Besitzer kann GitHub Pages jederzeit deaktivieren, was die URI-Datei unerreichbar macht. |
-| **Für Mainnet (offen)** | Content-addressed Speicher (IPFS z. B. Pinata/Web3Storage, oder Arweave), damit die URI auf einen Hash zeigt und nicht auf eine manipulierbare Datei-URL |
+| **Bestätigt (Mainnet)** | **Raw-URL des `main`-Branch** (`https://raw.githubusercontent.com/superintelnex/superintelnex/main/token/metadata/superintelnex-token.json`, Commit `08e71fc`) — am 09.11.2026 on-chain fixiert per `isMutable: false` (PDA `3UVHFDS3WXofjanwA3U5ND255YfkALnvQ5wyyc5qrWPY`, HTTP 200 live) |
+| **Begründung** | Laufend und nachvollziehbar; die Mainnet-URI zeigt auf den `main`-Branch (stabile, versionierte Raw-URL). IPFS/Arweave-Pinning (content-addressed) bleibt **optional** für eine spätere Migration — `isMutable: false` macht die URI für diesen Mint unveränderlich. |
+| **Für Mainnet (offen)** | Content-addressed Speicher (IPFS z. B. Pinata/Web3Storage, oder Arweave) als Migrationsoption, falls die URI dauerhaft auf einen Hash zeigen soll |
 
 ## Q8 — Devnet-Erstellung (jetzt ausführen?)
 
 | | |
 |---|---|
-| **Status** | Code, Konfiguration, Tests (offline + localnet) und Doku stehen. Der **tatsächliche Devnet-Mint** fehlt noch. |
-| **Blocker** | Die einweg-Admin-Test-Wallet braucht **~0,5 Test-SOL**. Der öffentliche Devnet-Airdrop ist **abgeschaltet** (HTTP 410); die Web-Faucets erfordern CAPTCHA (wird in diesem Projekt nicht umgangen). |
-| **Zufuhr-Wege** | (A) Manuell im Browser: `faucet.solana.com` — nur den Pubkey der Test-Wallet eintragen (niemals Schlüssel-Prüf-Code in fremde Felder), ~0,5 Test-SOL anfordern · (B) RPC-Endpunkt mit aktiviertem Airdrop (z. B. QuickNode/Alchemy-Devnet-URL) als `SIN_RPC` übergeben · (C) ~0,1 Test-SOL von einer Ihrer Devnet-Tester-Wallets per `solana transfer` |
-| **Ihre Entscheidung** | ☐ Devnet-Lauf jetzt ausführen (nach Q1–Q7) / ☐ Q1–Q7 zuerst festlegen, Devnet-Lauf dann ausführen / ☐ Devnet-Lauf vertagen |
+| **Status** | **Devnet-Lauf am 09.11.2026 abgeschlossen** — Devnet-Mint `CyEcfZw2…` erstellt, 1 Mio. SIN an die Empfänger-Test-Wallet übertragen, Vollmachten entzogen (Protokoll: `DEVNET-TESTTOKEN-BERICHT.md`). |
+| **Mainnet-Launch** | **Am 09.11.2026 22:07–23:38 UTC abgeschlossen** — Mint `A4WSPbHP…` (10^19 @ 5 Dez.), Emission 81/10/5/4 zu 100 %, beide Vollmachten entzogen + finalized (Protokoll: `MAINNET-LAUNCH-BERICHT.md`). |
+| **Früher Blocker (Devnet, gelöst)** | Die einweg-Admin-Test-Wallet brauchte **~0,5 Test-SOL** (öffentlicher Devnet-Airdrop HTTP 410). Gelöst über `faucet.solana.com` mit einem älteren GitHub-Konto des Betreibers (Signatur im Devnet-Bericht). |
 
 ## Q9 — Verwaltung der Metadaten-Update-Vollmacht
 
@@ -105,5 +107,6 @@ Mainnet-Bestätigung final.
 **Keine Seed-Phrase oder private Schlüssel werden in diesem Projekt
 abgefragt. Alle Test-Wallets sind einweg-Test-Artefakte (`token/wallets/`,
 gitignoriert), niemals das Tresor-Wallet. Keine Kurs-, Profit- oder
-Rechtsaussagen; alle Werte sind final für den DEVNET-Testtoken, für
-Mainnet erst nach erneuter Bestätigung.**
+Rechtsaussagen. Alle Werte sind final für den DEVNET-Testtoken UND für
+den MAINNET-LAUNCH (09.11.2026, abgeschlossen — siehe
+`MAINNET-LAUNCH-BERICHT.md`).**
