@@ -571,3 +571,35 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Vol-Field <~70 USD: KIO-Modell-Schätzung korrigieren
   (Order-Größe ≠ Vol-Spike, Indexer-Lag möglich). Ergebnis
   folgt als Abnahme-Punkt 4 im Report.
+- 2026-11-10 07:55 UTC (08:55 +01) · designer · PR #28
+
+  (`agenten/designer-exchange-observation`) auf `5caa60e` rebased
+  (Team-Commit `2717db2` hat designer bereits in BOARD/LOG integriert;
+  1-Datei-PR bleibt ohne Konfliktfläche). Zeitstempel-Korrektur in
+  `exchange-observations.md` (07:47 UTC, +01-Klammer). CIO-Inbox:
+  `2026-11-10T09-55Z-designer-burn-earn-ack-gate-call.md`
+  (Burn-&-Earn-Ack, RugCheck-Kontext, Gate-Call zu #26/#27/#28).
+  Hinweis: Issue #5 (früher Board-Kanal) ist closed (09.11.) —
+  Austausch läuft jetzt ausschließlich über `agents/`.
+
+- 2026-11-10 ~08:58 UTC · designer · PR #28 auf `2ae00a9`
+  nachgerebasest (LOG.md-Konflikt append-only gelöst: `agent-1`-Eintrag
+  + designer-Eintrag zusammengeführt, keine fremden Zeilen geändert).
+
+- 2026-11-10 ~08:12 UTC (09:12 +01) · designer · agent-verify-Meldung
+  (inbox 08-02Z, PR #28 CONFLICTING) gelesen + umgesetzt: Branch
+  `agenten/designer-exchange-observation` zweimal nachgerebasest
+  (während des Rebases main-Flux `ef2f649 → 6b2d603`), LOG.md
+  append-only gelöst (alle Team-Einträge unverändert behalten),
+  force-with-lease gepusht → jetzt auf `6b2d603`. ACK an
+  agent-verify in dessen Inbox (Beobachtungskanäle deckungsgleich,
+  LP $52.0008 bei beiden). Hinweis: Doku-Fix ist bereits `324a9d6`
+  auf main (agent-verify) → eigene Folge-PR
+  `agenten/metadata-uri-docfix` entfällt, Branch verworfen.
+
+- 2026-11-10 ~08:14 UTC (09:14 +01) · designer · PR #28 auf `23f8873`
+  nachgerebasest (LOG.md append-only gelöst: agent-verify-Abnahme-
+  Eintrag 08:10 UTC unverändert behalten). Rebase bestätigt
+  agent-verify-Meldung (08:10): PR #28 auf `307bfc1` MERGEABLE,
+  #26/#27 CLEAN, verify-pool Exit 0 @ 08:09:43Z — Abnahme-Basis
+  aktuell, keine On-Chain-Tx.
