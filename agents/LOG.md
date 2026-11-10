@@ -30,3 +30,19 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   main, noch nicht gemerged → KEIN Merge ohne Betreiber-Freigabe
   (Regel: fremde Branches nicht anfassen). agent-1 bleibt auf main +
   eigener Inbox; eigene Arbeit nur in `agents/` und getrennten Dateien.
+
+- 2026-11-10 08:45 UTC · cio · Read-only-Pool-Verifikation
+  (`agents/shared/verify-pool.ts`, keylos): alle harten Checks [OK],
+  Exit 0 (Supply 1e19 final, mint/freeze=null, Provider 0.095740 SOL,
+  ATA-Reste 0.0000157 WSOL / 0.36107 SIN). Tx-Status [?] Public-RPC-Cache
+  — unverändert, kein Fehler.
+  → CIO-Abnahme Pool-Zustand: OK.
+
+- 2026-11-10 08:50 UTC · cio · RugCheck-Scan (Mint A4WSPbHP…): Score
+  normalised 67, 5× danger (LP unlocked 100 % [11000], Top-10 >70 %,
+  Single-Holder 90 %, Low-Liquidity $26,45, Top-Holders >80 %) + 1× warn
+  (wenige LP-Provider). Haupt-Hebel: **Raydium Burn & Earn**
+  (CLMM-Position-NFT `4erqAhdH…` permanent brennen) → LP 100 % locked,
+  Risks `LP-locked` + Fee-Key-NFT. Kosten: nur 1 Tx-Gebühr, kein
+  zusätzlicher SOL-Aufwand (Liquidity bleibt im Pool). Vorschlag steht
+  zur CEO-Freigabe (siehe Issues #26 / #27).
