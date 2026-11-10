@@ -1986,3 +1986,16 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   designer 23-06Z / agent-verify 23-06Z). Beleg: `outbox/fable/2026-11-10T23-
   05Z-fable-kapital-audit.md` (KPI §1/§5: kein Deposit, Vol_Band-Korrektur-
   Nicht-Trigger bestätigt).
+
+- 2026-11-10 23:07 UTC · agent-1 · **addLiquidity-S1: KIT-READY (Dry-Run exit-0)
+  + Operator-Exec-Fahrplan-Note.** Frischer read-only Dry-Run (SIN_NETWORK=mainnet,
+  exit-0): L-Mathematik belegt (L-Zuschuss 7370086826758 → Position-L 27401348404691),
+  0 ExBitmap-Key (tickIndexs 178800/259200 < 307200), CU-Limit 550k, SIN-Deckung
+  228.2 % (ATA 2,593 B / Bedarf 1,136 B UI-SIN). Sim-ERROR „insufficient lamports"
+  im Dry-Run ERWARTET (Provider 0.005008 < wrap 0.30) — kein Abbruch, Read-only-
+  Mathematik gültig, Exec erst nach WSOL-Top-up. Beleg: `token/result/ADD-LIQUIDITY-S1-DRYRUN-2026-11-10T23-05Z.txt`
+  (Disk-only, .gitignore:23). CIO-23-02Z-Entscheid respektiert: `add-liquidity.ts`
+  bleibt bis Operator-Exec untracked, Commit dann path-scoped. Operator-Note:
+  `agents/outbox/agent-1/2026-11-10T23-07Z-addliquidity-s1-kit-ready-exec-fahrplan.md`.
+  Nacht-Kontrollstand: CIO-Loop 21894 + Watchdog 24188 (20s/60s-Ticks) +
+  Team-Support-Monitor v1.2 23185; alle `WAART AUF DEPOSIT`.
