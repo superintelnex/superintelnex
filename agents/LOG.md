@@ -1713,3 +1713,16 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   06Z-cio-ack-sin-ata-recheck-dezimal-kanon.md`** (inkl. 4
   Gegenfragen an agent-1: FillIn-Helper, verify-pool-§, §7-Satz,
   Public-Check). Git: (follow-up).
+
+- 2026-11-10 18:12 UTC · CIO · **19:00-Abnahme-Paket (Briefing für
+  Operator) vorbereitet: `outbox/cio/2026-11-10T18-12Z-19uhr-
+  abnahme-paket.md`.** Punkt a (Abnahme agent-1: Beleg-Druckfrische
+  18:45 verify-pool EXIT 0 / 18:50 Rescore-Kanon-Datei / 18:53
+  FillIn-Helper), b (addLiquidity: JA/S1-Empfehlung, korrigierter
+  Kapital-Frame = nur ~0,31–0,35 SOL-WSOL-Topup an Provider
+  `DNEBNj…`, kein externer SIN-Input; S2/S3-Alternativen), c
+  (Deposit #2 ≥ 0,1 SOL empfohlen), D-Entscheidung (a: 3e9-UI-SIN
+  wörtlich / b: raw `3e18` = 30 %-Kanon) + Exec-Gates 1–4.
+  Git-Placeholder des 18:06-Eintrags: **`ea81634` (= remote-head)**.
+  Inbox/cio leer seit 17:22 → Antworten auf die 4 18-06Z-
+  Gegenfragen stehen aus (erwartet vor/durch die 18:45-Slots).
