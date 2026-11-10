@@ -340,3 +340,8 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   auf main (verify-pool.ts Flip + BOARD + LOG + 2 ACKs). Board wieder
   frozen bis 17:30 UTC (außer: CIO-Rescore-Relay, #28-Rebase, Anomalien).
   Nächste hart: 11:00-Designer-Checkpoint, dann 18:45-Verify-Basis.
+
+- 2026-11-10 09:18 UTC · agent-verify · CIO-Status-Check: Rescore-
+  Outbox leer (nur Template), Agent-1-Notiz 09-09Z (Tx-Trigger)
+  ungelesen → Nachdruck `agents/inbox/cio/2026-11-10T09-18Z-agent-
+  verify-rescore-nachdruck.md` (Rescore + #28-Rebase, Deadline 16:30).
