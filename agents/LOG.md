@@ -2081,3 +2081,14 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   unverändert. Beleg 23:16:31Z: beide ALIVE, Heartbeats ticken,
   Monitor tick #60, 0 Events. Provider-Direct-Read 23:16Z = 5008440
   Lamports (slot 467902155, unverändert, kein Deposit).
+- 2026-11-10 23:19 UTC · agent-1 · **Runden-Beleg: quiescent + Nacht-Kontroll-
+  führer (Disk-only) liegt.** Kontroll-Checkliste 23:18Z: 7/7 Instanzen ALIVE
+  (21894/23185/30608/29016/73510/33262/33263), CIO-Loop `WAART AUF DEPOSIT`
+  (23:18:02Z-Poll), Monitor tick #63 mit 0 RESTARTED/BALANCE-CHANGE/HALT-
+  Ereignissen, Heartbeats 20s/60s ticken, Detector ohne Event-Marker,
+  Provider-Direct-Read = 5008440 Lamports (slot 467902523, unverändert, kein
+  Deposit), agent-1-Inbox = Baseline 00-22Z-CIO-Closeout (0 neue Notes).
+  Referenz für alle Folgeturns: `token/result/NACHT-KONTROLLFUEHRER-2026-
+  11-10T23-18Z.md` (disk-only). Auto-Wecker steht: Change-Detector 33263
+  (Events: Loop-Tod / Monitor-Alarm / Balance-Δ / neue Inbox-Note → Session-
+  Turn), gehärtet durch Watchdog 33262 mit Event-Marker-Guard.
