@@ -1,18 +1,21 @@
 # Mainnet-Checkliste (token/)
 
-Stand: 10.11.2026 · **Mainnet-Start erfolgt** — Mint, Emission und
-Raydium-CLMM-Pool sind LIVE (siehe `MAINNET-LAUNCH-RUNBOOK.md` +
-`MORNING-HANDOVER-POOL.md`). Diese Liste bleibt die Vorlage für die
-Phase „öffentlicher Launch"; die erledigten Posten sind mit `[x]`
-markiert, die restlichen sind offene Arbeit.
+Stand: 10.11.2026 · **Mainnet-Launch + Revoke finalisiert, DEX-Pool LIVE** —
+Mint `A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z`
+(Emission 09.11.2026 22:07–23:38 UTC, Distribution 81/10/5/4 zu 100 %),
+beide Vollmachten entzogen + finalized, Raydium-CLMM-Pool (SIN/WSOL)
+LIVE (siehe `MAINNET-LAUNCH-BERICHT.md` + `MAINNET-LAUNCH-RUNBOOK.md`
++ `MORNING-HANDOVER-POOL.md`). Diese Liste dokumentiert die
+Vorbereitungs-Phase; erledigte Punkte sind abgehakt, offene
+Restarbeiten (Vesting, Rechts-/Audit-Themen) stehen unten.
 
 ## 1. Entscheidungen (Betreiber)
 
 - [x] **Ticker/Kürzel** festgelegt: `SIN` (Devnet-Bestätigung
-      09.11.2026; der Mainnet-Lauf 10.11.2026 bestätigt das
+      09.11.2026; der Mainnet-Lauf bestätigt das
       Kürzel — Mint on-chain `A4WSPb…`).
 - [x] **Gesamtmenge** fest: `100.000.000.000.000` = 10^14
-      (on-chain emittiert am 10.11.2026; frühere Vorschlagszahl
+      (on-chain emittiert; frühere Vorschlagszahl
       1.000.000.000 ist überholt).
 - [x] **Dezimalstellen** fest: `5` (on-chain fix per Mint; technisch
       gebunden an die Supply `10^14`, siehe
@@ -20,15 +23,20 @@ markiert, die restlichen sind offene Arbeit.
       nicht).
 - [x] **Verteilung** fest: 81/10/5/4 — community/liquidity/founder/
       marketing (on-chain ausgeführt, Signaturen in
-      `result/DISTRIBUTION.txt`).
-- [x] **Admin-Vollmachten: beide entzogen** (10.11.2026,
-      Journal `revoke-mint-authority` + `revoke-freeze-authority`):
+      `MAINNET-LAUNCH-BERICHT.md` + `result/DISTRIBUTION.txt`).
+- [x] **Admin-Vollmachten: beide entzogen** (09.11.2026 23:38 UTC,
+      finalized: Mint-`SetAuthority` Sig
+      `2w7dM443…PWKVJY` (Slot 467504907), Freeze-`SetAuthority` Sig
+      `2qn9jSPU…r5xVi1Wzt` (Slot 467504911), Journal
+      `revoke-mint-authority` + `revoke-freeze-authority`):
       `mintAuthority = (none)`, `freezeAuthority = (none)` —
       Supply final (siehe `AUTHORITIES.md`).
-- [ ] **Metadaten-URI**: aktuell GitHub-raw der main-Branche
-      (HTTP 200 verifiziert); die Entscheidung GitHub Pages
-      (provisorisch) gegen IPFS/Arweave (dauerhaft) bleibt offen
-      für den post-Launch-Plan (siehe `METADATEN-SPEICHERUNG.md`).
+- [x] **Metadaten-URI** entschieden: **Raw-URL des `main`-Branch**
+      (`https://raw.githubusercontent.com/superintelnex/superintelnex/main/token/metadata/superintelnex-token.json`,
+      Commit `08e71fc`) — im Launch on-chain fixiert
+      (`isMutable: false`, PDA `3UVHFDS3WXofjanwA3U5ND255YfkALnvQ5wyyc5qrWPY`,
+      HTTP 200 live). IPFS/Arweave-Pinning bleibt **optional** für
+      spätere Migration (siehe `METADATEN-SPEICHERUNG.md`).
 
 ## 2. Technische Vorbereitungen
 
@@ -57,34 +65,50 @@ markiert, die restlichen sind offene Arbeit.
         quote-seitige SOL-Anteil des ersten Pools.
 
 - [x] Distributions-Skript: **implementiert UND auf Mainnet
-      ausgefuehrt** (10.11.2026, Journal-Schritte `distribute*`,
-      Emissions-Transaktionen in `result/DISTRIBUTION.txt`) —
-      `distribute.ts` emittiert die Gesamtmenge exakt nach
-      `config.token.distribution` (81/10/5/4) auf vier separate
-      Emissions-ATAs (SPL-Standard, keine Emissions-Programme).
-      Planungslogik in `lib/distribution.ts` (exakt, ohne
-      Gleitkomma-Reste), offline- + Localnet-Tests in
-      `tests/distribute.test.ts` (10/10 ok inkl. E2E).
+      ausgeführt** (Emission 09.11.2026 22:09 UTC,
+      Journal-Schritte `distribute*`, Emissions-Transaktionen in
+      `result/DISTRIBUTION.txt`) — `distribute.ts` emittiert die
+      Gesamtmenge exakt nach `config.token.distribution` (81/10/5/4)
+      auf vier separate Emissions-ATAs (SPL-Standard, keine
+      Emissions-Programme). Planungslogik in `lib/distribution.ts`
+      (exakt, ohne Gleitkomma-Reste), offline- + Localnet-Tests in
+      `tests/distribute.test.ts` (10/10 ok inkl. E2E). Signaturen
+      (Emission) in `MAINNET-LAUNCH-BERICHT.md`: `75NFP9Cn…`
+      (community), `5KqN3KeF…` (liquidity), `CZgWrgG9…` (founder),
+      `2w64JnQJ…` (marketing).
+- [x] **Mainnet-Launch ausgeführt** (09.11.2026):
+      Mint `A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z`,
+      Metadaten on-chain fixiert, Emission 81/10/5/4 zu 100 %, beide
+      Vollmachten entzogen + finalized. Details:
+      `MAINNET-LAUNCH-BERICHT.md`.
 - [ ] Off-Chain-Metadaten auf dem gewählten permanenten Speicher
-      (IPFS/Arweave) hochladen, `uri` in `config/token.json`
-      aktualisieren und vor dem Mainnet-Mint testen
-      (`verify.ts` lokal gegen die neue URI).
-- [ ] Explorer-Verlinkung im Ergebnis-Protokoll auf
-      `?cluster=mainnet-beta` umstellen (aktuell: Devnet/Localnet).
-- [ ] Keine Test-Adressen, keine `DEVNET-TESTTOKEN`-Labels in
+      (IPFS/Arweave) hochladen — **optional**: die URI ist bereits
+      on-chain auf der Raw-URL des `main`-Branch fixiert
+      (`isMutable: false`). IPFS-Pinning nur bei gewünschter
+      Migration (siehe `METADATEN-SPEICHERUNG.md`).
+- [x] Explorer-Verlinkung im Ergebnis-Protokoll auf
+      `?cluster=mainnet-beta` umgestellt — `MAINNET-LAUNCH-BERICHT.md`
+      enthält alle Explorer-Links mit `?cluster=mainnet-beta`.
+- [x] Keine Test-Adressen, keine `DEVNET-TESTTOKEN`-Labels in
       öffentlichen Dokumenten — `result/` ist ohnehin gitignoriert.
+      MAINNET-LAUNCH-Bericht nutzt exklusive `mainnet-beta`-Links.
 
 ## 3. Sicherheit / Schlüsselschutz
 
-- [ ] **Keine einweg-Test-Wallet für Mainnet** — neue,
-      getrennte Haupt-Tresor-Wallets (z. B. Hardware-Wallet) für
-      Emission und (falls behalten) Freeze-Vollmacht.
-- [ ] Keys niemals in Repo, Logs, Screenshots oder Frontend.
-- [ ] Emissions-Skript gegen Mainnet: per `SIN_NETWORK=mainnet`
-      ausführen (das Skript liest das Netz aus der Umgebungsvariable,
-      NICHT aus `networks.default` — das bleibt bei `localnet`).
-- [ ] Vor dem Entzug: Bestätigung, dass alle Emissionen
-      abgeschlossen sind — danach ist die Supply endgültig fix.
+- [x] **Emissions-Admin-Key vor Mainnet getrennt** — frischer
+      `main.json`-Keypair (`9kT5EwF7…`) diente als Payer + Signierer
+      für den Launch (separat vom Devnet-Test-Admin `FoJ8tLty…`).
+- [x] Keys niemals in Repo, Logs, Screenshots oder Frontend —
+      `token/wallets/` + `token/result/` sind gitignoriert.
+- [x] Emissions-Skript gegen Mainnet per `SIN_NETWORK=mainnet`
+      + `SIN_MAINNET_OK=1` ausgeführt (`distribute.ts`,
+      `create-mint.ts`).
+- [x] Vor dem Entzug: Bestätigung, dass alle Emissionen
+      abgeschlossen sind — **ausgeführt** (Distribution 100 %,
+      Admin-ATA = 0, finalized Revoke-Sigs in `MAINNET-LAUNCH-BERICHT.md`).
+- [x] **Admin-Test-Wallet nach Entzug lokal gesperrt** —
+      `wallets/main.json` wurde in `wallets/main.json.archiviert`
+      verschoben; kein Minten/Freezen mehr möglich (on-chain irreversibel).
 
 ## 4. Rechtliches / Transparenz (nicht erledigt)
 
@@ -113,17 +137,33 @@ markiert, die restlichen sind offene Arbeit.
       `result/MINT-ADDRESS.txt`, `result/DISTRIBUTION.txt`,
       `result/EXECUTED-TRANSACTIONS.jsonl` (gitignoriert, lokal
       Nachweis; öffentliche Auszüge ohne Keys in
-      `MORNING-HANDOVER-POOL.md`).
-- [x] Explorer-Links zum Mint + zur Erzeugungs-Transaktion
-      verlinkbar (siehe Links-Block in MORNING-HANDOVER-POOL.md §5).
-- [x] Vollmachten entzogen (10.11.2026, Journal `revoke-mint-authority`
-      + `revoke-freeze-authority`, Signaturen protokolliert) —
-      beweisbarer Zustand `mintAuthority = (none)`, `freezeAuthority
-      = (none)`; Supply final.
+      `MAINNET-LAUNCH-BERICHT.md` + `MORNING-HANDOVER-POOL.md`).
+- [x] **Explorer-Links zum Mint + zu allen Erzeugungs-Transaktionen
+      veröffentlicht** — in `MAINNET-LAUNCH-BERICHT.md`,
+      `?cluster=mainnet-beta` (zusätzlich Links-Block in
+      `MORNING-HANDOVER-POOL.md` §5).
+- [x] **Signaturen beider `SetAuthority`-Transaktionen protokolliert**
+      (beweisbarer Zustand `mintAuthority = (none)` /
+      `freezeAuthority = (none)`, finalized, Slots 467504907 /
+      467504911, Journal `revoke-mint-authority` +
+      `revoke-freeze-authority`).
+
+## Nach dem Launch (offene Restarbeiten)
+
+- [x] **DEX-Pool (Raydium CLMM, SIN/WSOL): LIVE (10.11.2026)** —
+      Pool `4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM`,
+      TX1 `NNkrfq…` + TX2 `3AU3rf…` finalisiert, Liquidität
+      0,3 SOL (Budget 50 EUR eingehalten). Details:
+      `MORNING-HANDOVER-POOL.md` (Erfolgsbericht) +
+      `MAINNET-LAUNCH-RUNBOOK.md`.
+- [ ] **Vesting (founder 5 % / marketing 4 %)** als Folgeschritt
+      nach der Emission — im Emissions-Skript bewusst NICHT
+      enthalten.
 
 ## Was in diesem Prototyp NICHT enthalten ist
 
-- Kein Mainnet-Start, kein Sale, keine Liquidität, kein Realgeld.
+- Kein Sale (Mainnet-Token ist emittiert und auf 100 % verteilt;
+  der DEX-Pool mit Liquidität ist LIVE — `MORNING-HANDOVER-POOL.md`).
 - Keine Token-2022-Extensionen (Fee, Hook, Freeze-Beschränkung
   jenseits der Standard-SPL).
 - Keine versprochenen Listings, keine Partnerschaften, keine

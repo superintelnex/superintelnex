@@ -6,17 +6,18 @@ Metaplex-Token-Metadaten (`metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s`).
 **Standard-SPL-Token, kein eigenes Programm, keine Token-2022-Extensionen,
 keine versteckten Gebuehren, keine Sperr- oder Blacklist-Logik.**
 
-Wichtig: Alle Parameter in `config/token.json` (Kuerzel, Gesamtmenge,
-Verteilung, Vollmachten) sind **Vorschlaege, die der Betreiber noch nicht
-bestaetigt hat**. Sie sind als solche markiert und durfen nicht als
-Endentscheid kommuniziert werden. Es ist kein Mainnet-Start, kein Verkauf
-und keine Anlageempfehlung.
+Wichtig: Die Parameter in `config/token.json` (Kuerzel, Gesamtmenge,
+Verteilung, Vollmachten) sind **am 09.11.2026 vom Betreiber bestaetigt
+und am selben Tag auf Mainnet ausgefuehrt** (MAINNET-LAUNCH:
+Mint `A4WSPbHP…`, Emission 81/10/5/4, beide Vollmachten entzogen +
+finalized — siehe `docs/MAINNET-LAUNCH-BERICHT.md`). Supply ist
+on-chain final fix; es ist kein Verkauf und keine Anlageempfehlung.
 
 ## Layout
 
 | Pfad | Zweck |
 |---|---|
-| `config/token.json` | Zentrale Konfiguration (Netz, Token-Parameter, Vollmachten, Metadaten) — alles mit Status `NOT-FINAL` |
+| `config/token.json` | Zentrale Konfiguration (Netz, Token-Parameter, Vollmachten, Metadaten) — Werte **bestaetigt 09.11.2026 und auf Mainnet ausgefuehrt** (siehe `docs/MAINNET-LAUNCH-BERICHT.md`) |
 | `scripts/lib/common.ts` | Gemeinsame Bausteine: Konfig, RPC, Wallets, Signatur-Protokoll, Metadaten-PDA |
 | `scripts/create-mint.ts` | Mint + ATA + Metaplex-Metadaten anlegen (ein Transaktion) |
 | `scripts/mint-initial.ts` | Gesamtmenge emittieren (an eine Admin-ATA — einweg-Testlauf) |
@@ -39,8 +40,9 @@ und keine Anlageempfehlung.
 | `tests/authorities.test.ts` | Optin: Vollmachten-Entzug (Mint/Freeze) — danach werden Emission/Freeze On-Chain abgelehnt |
 | `metadata/` | Off-Chain-Metadaten-JSON + (siehe `docs/METADATEN-SPEICHERUNG.md`) |
 | `assets/` | Logo-PNGs (800 px, 512 px) fuer die Metadaten |
-| `docs/FRAGENLISTE.md` | Kurze Fragenliste mit begruendeten Vorschlaegen (Kuerzel, Menge, Dezimalstellen, Policy, Verteilung, Vollmachten, URI, Devnet-Start) — Vorschlaege, nicht Endentscheid |
+| `docs/FRAGENLISTE.md` | Kurze Fragenliste mit bestaetigten Werten (Kuerzel, Menge, Dezimalstellen, Policy, Verteilung, Vollmachten, URI, Devnet- und Mainnet-Start) — alle Parameter bestaetigt 09.11.2026 |
 | `docs/DEVNET-TESTTOKEN-BERICHT.md` | Ergebnis-Protokoll des Devnet-Laufs (09.11.2026): Mint, Signaturen, Explorer-Links, Sicherheitslage |
+| `docs/MAINNET-LAUNCH-BERICHT.md` | Ergebnis-Protokoll des MAINNET-LAUNCH (09.11.2026): Mint `A4WSPbHP…`, Emission 81/10/5/4 (4 Signaturen), beide Vollmachten entzogen + finalized (Slots 467504907 / 467504911), Distribution 100 % |
 | `docs/MAINNET-LAUNCH-RUNBOOK.md` | Launch-Runbook fuer Mainnet: Wallet-Vorbereitung (Mainnet-Keys werden NICHT auto-erzeugt), Sinfolge, Vorab-Checkliste, Labeln |
 | `docs/EXCHANGE-HOSTING.md` | DEX- vs. CEX-Listing: Raydium-Pool-Setup (was wir vorbereitet haben) + CEX-Antragsprozess (was DRETT-Prozess ist und kein Code) |
 | `docs/` | Runbook, Vollmachts-Doku, Test-Doku, Mainnet-Checkliste |
@@ -94,9 +96,11 @@ token/scripts/devnet-prefund.ts` (zeigt Pubkey + Saldo + exakte Befehlsfolge).
 
 - Nur Test-Wallets (`token/wallets/*.json`) — niemals das Haupt-Wallet.
 - `result/MINT-ADDRESS.txt` und `result/EXECUTED-TRANSACTIONS.jsonl`
-  dokumentieren **nur localnet-Laeufe als `LOCALNET-TEST`** und
-  Devnet-Laeufe als `DEVNET-TESTTOKEN`.
+  dokumentieren localnet-Laeufe als `LOCALNET-TEST`, Devnet-Laeufe
+  als `DEVNET-TESTTOKEN` und den Mainnet-Launch als `MAINNET-LAUNCH`
+  (aktuell: MAINNET-LAUNCH, Mint `A4WSPbHP…`).
 - Keine Keys, Logs oder Status-Dateien committen (`.gitignore` ist
   entsprechend vorseziert).
-- Keine Kurs-, Profit- oder Rechtsaussagen; alle offenen Parameter sind
-  im Konfigblock `"_status": "NOT-FINAL"` markiert.
+- Keine Kurs-, Profit- oder Rechtsaussagen. Die Parameter stehen in
+  `config/token.json` mit dem Bestaetigungs-Protokoll (09.11.2026,
+  Commit `c5d48e1`).

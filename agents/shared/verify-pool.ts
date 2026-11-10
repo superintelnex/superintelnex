@@ -81,10 +81,24 @@ ok("freezeAuthority entzogen", mintData?.freezeAuthority === null, String(mintDa
 // 4) Provider-Bestände (Saldo + ATA-Reste; Reste sind exakt aus Deposit-Arithmetik)
 const provBal = await c.getBalance(PROVIDER);
 ok("Provider-SOL > 0", provBal > 0, (provBal / 1e9).toFixed(6) + " SOL");
-const wsolBal = await c.getTokenAccountBalance(WSOL_ATA);
-const sinBal = await c.getTokenAccountBalance(SIN_ATA);
-console.log("  Provider-ATAs   : WSOL-Rest " + wsolBal.value.uiAmount + " (raw " + wsolBal.value.amount + ")"
-  + " | SIN-Rest " + sinBal.value.uiAmount + " (raw " + sinBal.value.amount + ")");
+// Vollausstieg 14:07 UTC (Sig 5sJxepBc…): WSOL-ATA wurde unwrapped +
+// closed → getTokenAccountBalance wirft "could not find account".
+// Geschlossene ATA = 0 Bestand = erwarteter Post-Exit-Zustand (OK).
+async function ataBalance(pk: PublicKey, label: string): Promise<{ amount: string; closed: boolean }> {
+  try {
+    const r = await c.getTokenAccountBalance(pk);
+    return { amount: r.value.amount, closed: false };
+  } catch {
+    return { amount: "0", closed: true };
+  }
+}
+const wsol = await ataBalance(WSOL_ATA, "WSOL");
+const sin = await ataBalance(SIN_ATA, "SIN");
+const fmt = (r: { amount: string; closed: boolean }) => r.closed
+  ? "0 (ATA geschlossen)"
+  : r.amount + " raw";
+console.log("  Provider-ATAs   : WSOL-Rest " + fmt(wsol)
+  + " | SIN-Rest " + fmt(sin));
 
 // 5) Lock-Check (Burn-&-Earn, Task 0) — Post-Burn hart, Pre-Burn informativ:
 //    (a) Position-NFT-ATA: Wallet-Level-Owner aus dem Token-Account-Datenblatt
