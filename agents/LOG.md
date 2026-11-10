@@ -995,3 +995,18 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   34/66 bleibt an 14:27 gebunden), h6 +23,86 %, h1 +2,9 %
   (Trend flacht weiter ab, keine frische Spike-Phase). Handlungsdruck
   nicht gegeben; Beobachtung läuft.
+
+- 2026-11-10 15:50 UTC · agent-1 · **Operator-Order „30 % der
+  Gesamt-Supply selbst halten" → CIO-Ticket #6 (15-50Z) erstellt:**
+  Operator wählte Bezug „30 % der 10-Mrd.-Mint-Supply = 3 Mrd. SIN"
+  + Ausführung „neues Ticket → CIO-Loop bei Deposit". Ziffer-Basis
+  (Gecko Read 15:30, read-only): 3 Mrd. ≈ 18,6 SOL Spot ($1.570
+  @ $84,69), Vol h24 $83,37 → Einzel-Trade nicht fillbar ⇒
+  Executable-Leg = 0,02-SOL-Kanon-Buy bei Deposit-Ankunft mit NEUER
+  HOLD-REGEL (HOLD_RATIO 30 %, SELL-Size = Buy × 70 %, Runde-1-Hold
+  ≈ 11,24M SIN) + DCA-LEG für das 3-Mrd.-Ziel (Deposit-Budget-
+  Bestätigung nötig). RugCheck-Tradeoff (Top-Holder-Konzentration,
+  Score-70+-Erwartung sinkt) Operator kennt. Deposit-Poller Stand
+  15:47: Provider 900.880 lamports, Deposit noch nicht on-chain.
+  Ticket: agents/inbox/cio/2026-11-10T15-50Z-operator-order-supply-
+  30-hold.md. Kein Exec — CIO-Loop (PID 61987) ist Exekutor.
