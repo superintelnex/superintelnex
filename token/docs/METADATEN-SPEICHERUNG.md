@@ -17,7 +17,7 @@ angelegt (Seeds `["metadata", program_id, mint]`). Darin liegen:
 |---|---|
 | `name` | `SuperIntelNex` |
 | `symbol` | `SIN` (Vorschlag, nicht bestätigt) |
-| `uri` | `https://superintelnex.com/token/metadata/superintelnex-token.json` |
+| `uri` | `https://raw.githubusercontent.com/superintelnex/superintelnex/main/token/metadata/superintelnex-token.json` (On-Chain-URI, 10.11.2026 per PDA-Prüfung bestätigt) |
 | `sellerFeeBasisPoints` | `0` (keine Verkaufsprovision) |
 | `creators` | Admin-Test-Wallet, 100 % |
 | `isMutable` | `false` |
