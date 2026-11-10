@@ -1767,3 +1767,36 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   -Bitte gem. 18-12Z-Exec-Gate-4, nach 19:00-OK + addLiquidity-
   Exec; HOLD_ON=0 / kein SELL-Leg unverändert). 19:00-Abnahme:
   18:45/18:50-Slots laufen (60475), FillIn 66713, Git b2c5e7f.
+
+- 2026-11-10 18:55 UTC · agent-1 · **18:45/18:50-Slots + FillIn
+  manuell abgewickelt (autonom, CIO-18-12Z-Fallback-Pfad):**
+  (a) **Beleg-Dateien:** `outbox/agent-1/…18-45Z-verify-final-run.md`
+  (ALLE Attempts 18:45–18:53 **EXIT 0**, harte Checks grün, Post-
+  Exit-Zustand exakt) + `…18-50Z-rugcheck-full-rescore.md`
+  (**Kanon = Score 62 / lp_unlocked_flag=NO**, Low-Liq-Dip $68,47,
+  90 %-Single-Holder-LP-Konzentration) existierten uncommitted
+  (Loop-Commits 18:49–18:53 durch fremde Dirty `tools/sin-cockpit/
+  index.html` geblockt — Team-Datei, nicht übersteuerbar) →
+  manuell von agent-1 committet + gepusht (Idempotenz: Loop-
+  Beleg-Overwrite inkrementell, Werte stabil).
+  (b) **FillIn-Helper (PID 66713) 18:53:** Werte-Extraktion korrekt
+  (EXIT 0 @ 18:53 / Score 62 flag NO), Perl-Ersatz-Syntax-Error
+  (Quote-Bug) → **manuelle 18:54-Ersetzung beider `__PLATZHALTER`
+  im 19:00-Draft** (`inbox/cio/…19-00Z-abnahme-report.md`),
+  `grep -c __PLATZHALTER` = 0 verifiziert.
+  (c) **§7-Deviation-Block im 19:00-Report ergänzt** (CIO-17-21Z-
+  Standardauflage): Rescore 62 vs >70 (Ursachen belegt), Loop-
+  Commit-Block, FillIn-Fehler, **Kanon-Re-Anchor sin-decimal-
+  kanon.md (18:06): SIN = 5 Dez., Supply 1e14 UI-SIN = 100 B;
+  TRADE #7 = +6,92e9 UI-SIN (CIO-17-21Z „6,92M" korrekt, mein
+  17-22Z „0,692M" = 10⁴-Felesung überholt); Team-ATA = 2,593e12
+  UI-SIN (2,593 % Supply unverändert).**
+  (d) **D-Label-Korrektur:** `DCA_TARGET 3e18 raw = 3e13 UI-SIN =
+  30 B (= 30,000 Mrd) = 30 % Supply` — mein 18-46Z-Titel „30 Mrd"
+  = selbst 10³-Label-Fehler (3e13 ≠ 3e10); Operator-Frame „30T"
+  (30 B) = Intention, „30 mrd" (0,03 %) widersprüchlich →
+  Klärungs-ACK ausstehend, D=(b) 3e18-Config-Target unverändert.
+  (e) On-Chain: Provider 0,005008 SOL, ATA 2593043461911.12734
+  UI-SIN unverändert (keine Operator-Transfers). Git: Push 18:55.
+
+- 2026-11-10 19:05 UTC UTC · agent-1 · **Abnahme-Report 19:00 UTC produziert** (Operator-14-24-Autonomie): alle 5 CIO-Checklisten-Punkte abgearbeitet (Punkte 0–4 erledigt/abgeschlossen, Punkt 5 offen auf Operator-Entscheid). Report: inbox/cio 19-00Z-abnahme-report-5-punkte.md.

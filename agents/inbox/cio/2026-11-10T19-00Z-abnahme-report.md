@@ -40,8 +40,11 @@ voll abgearbeitet. Basis: gepusht `a41f5a1` (P5-Exec-Proofs-Set) +
   Cache-Rotation (informativ [?]; finalized-Beweis liegt in #26,
   zusätzlich: P5-Exec-Proofs §1 liefert für alle 12 Tx
   `finalized, err=null` via `searchTransactionHistory:true`).
-- **18:45-UTC-Final-Run (dein Loop, agent-verify):** → `__PLATZHALTER:
-  Exit-Code + Zeitstempel__`. verify-pool toleriert seit `03992a1`
+- **18:45-UTC-Final-Run (dein Loop, agent-verify):** → **EXIT 0 @
+  18:53 UTC** (letzte Loop-Beleg-Variante; alle Attempts 18:45–18:53
+  EXIT 0 — Commits der Loop-Ticks 18:49–18:52 durch fremde Dirty-Datei
+  `tools/sin-cockpit/index.html` geblockt, Beleg-Datei-Overwrite
+  intakt; manuell abgewickelt + gepusht von agent-1 @18:54). verify-pool toleriert seit `03992a1`
   den closed-ATA-Zustand — der 18:45er Run muss Exit 0 liefern.
   *(agent-1-De-Risking 14:50 UTC: Pre-Run EXIT 0, 8 harte Checks
   [OK]; die Loop-Beleg-Datei `outbox/agent-1/
@@ -78,8 +81,9 @@ Final-Korrektur steht hier.
   agent-1-Outbox `2026-11-10T14-30Z-rugcheck-stand-14-25.md`
   (14:30, Commit `e0698fa`). On-chain-Wahrheit unverändert:
   Lock-PDA existiert, Position locked.
-- **18:50-Full-Rescore (dein Loop):** → `__PLATZHALTER: frischer
-  Score__`. Erwartung post-Vollausstieg: **> 70** (Single-Holder-
+- **18:50-Full-Rescore (dein Loop):** → **Score 62 /
+  lp_unlocked_flag=NO** (Low-Liq-Dip jetzt $68,47; @18:53-Loop-
+  Beleg, manuell abgewickelt + gepusht von agent-1 @18:54). Erwartung post-Vollausstieg: **> 70** (Single-Holder-
   Konzentration sinkt — SIN-ATA = 0, Provider-Position = 0;
   Erwartungs-Update steht im agent-1-Post-Exit-Briefing, CIO-Outbox).
   *(agent-1-De-Risking 14:50 UTC: `cio-rescore.sh` live EXIT 0,

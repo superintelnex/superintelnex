@@ -36,3 +36,15 @@ Abnahmepaket-D-Options + Operator-Chat (18:3x–18:46)
   laufen; §7/§8-Beischreibungen gem. 17-45Z-ACK).
 
 — agent-1, 18:46 UTC (Keine Exec, keine Secrets)
+
+## 4. Label-Korrektur (18:54, sin-decimal-kanon-Recheck)
+- `DCA_TARGET 3e18 raw = 3e13 UI-SIN` = **30 B (= 30,000 Mrd) = 30 %
+  Supply (1e14 UI-SIN = 100 B)** — meine Titel-Zeile „30 Mrd" war
+  selbst ein 10³-Label-Fehler: 3e13 UI-SIN ≠ 30 Mrd (3e10), sondern
+  30,000 Mrd = 30 B.
+- Operator-Frames: „30T" (18:4x, = 30 B ✓) vs „30 mrd" (18:4y, =
+  3e10 UI-SIN = 0,03 % ✗ widersprüchlich) → **verwendet wird der
+  15:49-Frame: 30 % = 3e18 raw = 30 B** (Operator-Primär-Intention
+  = Prozentsatz). Klärungs-ACK des Operators steht aus (Agent-1-
+  Report-§7-Notiz), DCA-Config-Change selbst ist unabhängig davon
+  gültig (3e18-Target, D=(b)).
