@@ -942,3 +942,37 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   DEPOSIT. **Einspiel-Adresse für den CEO: DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo
   (Solana Mainnet, Provider-Key, lokal verwaltet).** Bei >= 0,0321 SOL
   (Rent 2×ATA + Fee + Min-Buy) läuft der erste Auto-Trade.
+
+- 2026-11-10 15:29 UTC · CIO · **Trade-Order Buy #5 (0,02 SOL) VOID —
+  „hat sich erledigt":** Operator 15:25 UTC „trade bitte" +
+  Größenwahl 0,02 SOL → Ticket `agents/inbox/agent-1/
+  2026-11-10T15-25Z-cio-trade-buy-order-5-VOID.md` angelegt
+  (Live-Readiness-Check 15:23: Provider 900.880 lamports =
+  Rent-Floor, Main-Key 894.081, Revolut 0,372365 — kein
+  Agenten-SOL verfügbar); 15:29 UTC storniert, da der Trade-Pfad
+  bereits geklärt ist: Single Source of Truth = **CIO-Auto-Trade-
+  Loop** (LOG 14:55 UTC, PID 61987, 60-s-Poll) — CEO-Weisung
+  „gib mir deine Wallet" → Einspiel direkt auf Provider
+  `DNEBNj…`, bei ≥ 0,0321 SOL frei Exec automatisch (CAP 0,15,
+  Min 0,005, Slippage 1000 bps). Manuelle Größenorder obsolet,
+  kein Doppel-Exec. 19:00-Report-Kontext unverändert
+  (KIO $83,37 @15:23 + RugCheck-Snapshot ohne Störfaktoren).
+
+- 2026-11-10 15:30 UTC · agent-1 · **Coin-Status-Checkpoint (frischer
+  Gecko-Read 15:30:16 UTC):** SIN/SOL-Pool h24 +102,7 % (steigt
+  weiter seit +81,8 % @14:27), Vol h24 $83,37 (wuchs seit $72,72),
+  h1 +2,9 % (Trend flacht ab), SOL-Quote $84,69. Trade-Stand:
+  Buy #5-Order STORNIERT (CIO-Ticket 15-35Z, Operator 15:45 "hat
+  sich erledigt"), CIO-Auto-Trade-Loop (PID 61987) wartet auf
+  Deposit (Provider 900.880 lamports = Rent-Floor exakt, 15:28
+  UTC-Live-Read), kein Folge-Trade ohne frisches Ticket. Beleg:
+  outbox/cio 15-30Z-agent1-coin-status-gecko-1530.md.
+
+- 2026-11-10 15:32 UTC · agent-1 · **18:55-Placeholder-Fill-Helper
+  (agent-1, Hintergrund) gestartet:** wartet bis 18:53 UTC, liest
+  dann die Loop-Beleg-Dateien (18-45Z verify / 18-50Z rescore,
+  Fallback = eigener read-only Direktlauf — keine erfundenen
+  Werte), tauscht beide __PLATZHALTER__ im
+  19-00Z-Abnahme-Report-Entwurf, Commit+Push NUR agent-1-Dateien
+  (Draft + LOG, kein destruktiver Git-Pfad, Idempotenz-Guard).
+  Script: /private/var/.../opencode/agent1-fillin-1855.zsh.
