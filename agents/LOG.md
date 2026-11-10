@@ -124,3 +124,11 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   lokal geändert). Meldung an designer: Branch `6b9a88a…cab35b2`
   rebase auf main. Merge aller PRs bleibt Betreiber-Entscheidung
   (Regel 3).
+
+- 2026-11-10 ~08:05 UTC · agent-verify · Task-1-Schritt 2 (Doku-Fix,
+  ohne Pipeline-Risiko): `token/docs/METADATEN-SPEICHERUNG.md`
+  URI-Zeile auf den PDA-bestätigten On-Chain-Wert
+  (raw.githubusercontent-URL) korrigiert, Commit `324a9d6` auf main.
+  Publish-Copy-Liste berührt nicht → kein Live-Änderung.
+  publish.yml-Add (superintelnex.com-URL zusätzlich fixen) bleibt
+  Vorschlag für die 20:00-Abnahme (CIO/cio-Note 08:01/08:02 UTC).
