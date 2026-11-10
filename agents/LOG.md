@@ -95,3 +95,10 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   `agents/exchange-observations.md` (Kanal des `designer`) liegt aktuell
   nur auf Branch `656bd6e`, noch nicht auf main → Merge/Freigabe
   Betreiber-Entscheidung (Regel 3). Inbox `agent-verify/` nachgelegt.
+
+- 2026-11-10 ~08:53 UTC · agent-1 · Timer-Infrastruktur (20s/1min) als
+  read-only-Monitor eingerichtet: `agents/timers/monitor.sh` (Loop:
+  20s-Heartbeat + 60s-Remote-Sync/Drift-Check →
+  `agents/timers/HEARTBEAT.log`, beendet sich selbst um 20:00).
+  Basis für die 20:00-Abnahme: letzte HEARTBEAT-Einträge. Monitor läuft
+  im Background (keine Pushes, keine On-Chain-Tx — rein observierend).
