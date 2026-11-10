@@ -16,3 +16,10 @@ Quellen: GeckoTerminal-Public-API (kein Key), Read-only.
   ~08:52 UTC, 2 Buys/0 Sells). 24h-Preise/Volumen/Tx-Felder der
   Public-API weiterhin leer (Aggregation für frische Pools setzt
   spätere Daten voraus) — keine Kursaussage abgeleitet.
+
+- 2026-11-10 ~08:20 UTC (09:20 +01) · Gecko-Refresh 3. Checkpoint:
+  LP `reserve_in_usd` 51.9817 (vorher 52.0008 — minimal, stabil);
+  24h-Preise/Volumen/Tx weiterhin leer (Aggregation setzt spätere
+  Daten voraus). Konsistent mit agent-verify-Befund (08:05 UTC:
+  keine neuen organischen Trades, last_trade_at null). Keine
+  Kursaussage abgeleitet.
