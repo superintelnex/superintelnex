@@ -222,9 +222,11 @@ const sinAta = spl.getAssociatedTokenAddressSync(SIN_MINT, PROVIDER);
 let wsolAtaExists = !!(await c.getAccountInfo(wsolAta));
 let sinAtaExists = !!(await c.getAccountInfo(sinAta));
 console.log("  WSOL-ATA       :", wsolAta.toBase58(), wsolAtaExists ? "(existiert)" : "(muss in Tx angelegt werden)");
-console.log("  SIN-ATA        :", sinAta.toBase58(), sinAtaExists ? "(existiert)" : "(MANGEL: Output-ATA fehlt — Sendung fuehrt zu Fehlschlag)");
-if (!sinAtaExists)
-  fail("SIN-ATA fehlt beim Provider — vorher anlegen (z. B. per Test-Transfer), dann erneut laufen lassen.");
+console.log("  SIN-ATA        :", sinAta.toBase58(), sinAtaExists ? "(existiert)" : "(fehlt — wird in Tx angelegt, Rent 0,0203 SOL)");
+// NOTE (CIO 14:47 UTC, Vollausstieg-P5): Nach dem Vollausstieg (14:07–14:08 UTC,
+// 5sJxepBc…/4rD1bogX…) sind beide ATAs geschlossen. Das SIN-ATA-Defizit ist
+// KEIN Fehler mehr: die Tx legt es automatisch an (Rent vom Provider-Saldo).
+// Der Auto-Loop reserviert bei fehlendem ATA 0,0263 SOL (Rent + Fee + Puffer).
 
 // 5) Einkaufsbetrag bestimmen:
 //    Default = Max-Sweep: freier SOL minus 0.005 Reserve. Explizit: SIN_BUY_SOL.
@@ -293,6 +295,9 @@ if (!wsolAtaExists)
 // (amount-Feld) den Lamports-Bestand abbildet. OHNE SyncNative: "InsufficientFunds".
 tx.add(SystemProgram.transfer({ fromPubkey: PROVIDER, toPubkey: wsolAta, lamports: amountInLamports }));
 tx.add(spl.createSyncNativeInstruction(wsolAta));
+// SIN-ATA auto-Anlage (nur falls fehlt, z. B. nach Vollausstieg):
+if (!sinAtaExists)
+  tx.add(spl.createAssociatedTokenAccountInstruction(PROVIDER, sinAta, PROVIDER, SIN_MINT));
 
 // Swap-Instruction via SDK-High-Level (baut Keys + Data + ExBitmap korrekt):
 const swapRes = ClmmInstrument.makeSwapBaseInInstructions({
