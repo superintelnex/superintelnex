@@ -66,3 +66,21 @@ Stand: **TRADE-ORDER #1 ABGESCHLOSSEN.** Folge-Actions der CIO-Order
 (RugCheck-Rescore + Korrelations-Checkpoint Designer) können starten.
 Ein weiterer Buy ist mit demselben Skript wiederholbar
 (provider-Saldo jetzt 0,027561 SOL) — nur mit neuem Operator-GO.
+
+## Nachtrag 10:44 UTC · Trade #2 (follow-on, 2. Operator-GO)
+
+- Size 0,0200 SOL (0,025 am eigenen Reserve-Guard gescheitert:
+  0,025+0,005 > 0,027561 freier Saldo — Guard hat korrekt gebissen).
+- Sig `47xCoU1SoDP1zjhdgW1TFCoQr39GPQJVSGhTZH2VXxHeZgasETYJkEqGSjgXczFKPyk2w4NU6oVzLp1m52tw5Eqm`
+  (Slot 467691464, confirmed, err=null, CU 49.544, Fee 5.000 Lamports)
+- in 0,020000 SOL → out 374.589.549.031.666.360 SIN-raw
+  = 3.745.895.490,31666360 SIN (0,00% Slippage vs. Exec-Quote,
+  Guard nicht bindend)
+- Provider 0,027561 → 0,007556 SOL (Reserve ~0,0076 SOL verblieben)
+- Pool tick 213951 → 213087 (prognostiziert), Liquidity invariant
+- **Doku-Vollschand:** Journal-Zeile + `SWAP-DETAILS-1794307477982.txt`
+  automatisch vom fixierten Skript geschrieben — BN/String-Fix
+  (Commit 606e964) in Produktion belegt.
+- Auswirkung Korrelation-Hinweis (oben): 24h-Vol wächst jetzt auf
+  ~16 USD (vor 4,51 + ~8,5 + ~3,4 USD); Spike-Schaetzung +50–70 USD
+  bleibt deutlich ueberpraechter KIO-Pruefpunkt, nicht belegt.

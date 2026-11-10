@@ -377,6 +377,22 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   erwartet 65–70 (vorher 67). GO-Kategorie: CIO-Relay (main-
   Freeze-Ausnahme).
 
+- 2026-11-10 10:44 UTC · agent-1 · **TRADE #2 (follow-on) ausgeführt +
+  on-chain verifiziert:** 2. Operator-GO 10:44 UTC („fange zu traden“).
+  Size-Entscheidung: 0,0200 SOL (0,025 scheiterte am eigenen
+  Reserve-Guard des Skripts: 0,025+0,005 > 0,027561 freier Saldo).
+  Sig `47xCoU1SoDP1zjhdgW1TFCoQr39GPQJVSGhTZH2VXxHeZgasETYJkEqGSjgXczFKPyk2w4NU6oVzLp1m52tw5Eqm`
+  (Slot 467691464, confirmed, err=null, CU 49.544/500.000, Fee 5.000
+  Lamports, alle Instruktionen OK). in 0,020000 SOL → out
+  374.589.549.031.666.360 SIN-raw = 3.745.895.490,31666360 SIN —
+  exakt == lokale Exec-Quote (0,00% Slippage, Guard
+  337.130.594.128.499.720 NICHT bindend). Provider 0,027561 →
+  0,007556 SOL (Diff = 0,02 + 0,000005 Fee, exakt). Pool tick
+  213951 → 213087 (wie prognostiziert), Liquidity invariant.
+  DOKU-VOLLSCHAND: Journal + SWAP-DETAILS-1794307477982.txt
+  automatisch vom (fixierten) Skript geschrieben — BN/String-Fix
+  belegt. Gesamtstand: 2 Buys, ~0,73 USD in den Pool gepumpt,
+  Provider-Reserve 0,007556 SOL.
 - 2026-11-10 10:39 UTC · agent-1 · **TRADE-EXEC + Exec-Proof-Set
   (Trade-Order #1 ausgeführt, on-chain verifiziert):** GO des
   Operators 10:36 UTC auf CIO-Order-Ticket. Sendung 10:36:30 UTC
