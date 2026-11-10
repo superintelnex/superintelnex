@@ -11,6 +11,17 @@ Zeitstempel 2026-11-10T09:07:18.880Z UTC · Fee-Key-ATA `ERz5K8fWhJJ3TgGmRk3Hd7G
 | 09:32 (Pre-Burn-Baseline) | 67 (raw 33.998) | YES (PRE-BURN) | Baseline, 6 Risks |
 | 09:24/09:33 (1. + 2. Post-Burn-Versuch) | 67 (Cache) | YES (PRE-BURN) | RugCheck-Cache noch vor TX3-Indexierung |
 | 09:33 (3. Lauf) | **None (API-Lücke)** | **NO (POST-BURN sichtbar)**** | Flag-Flip ✓ — Score folgt beim nächsten vollständigen Rescan (10-Min-Watch) |
+| 14:25:23 (4. Lauf) | 67 (raw 34.268) | YES | Cache-Artifact: Pre-Burn-Baseline-Block (6 Risks, Live-Werte Low-Liq $38,54) — LP-Risk-Bewertung nicht neu indiziert |
+| 14:30:57 (5. Lauf) | 67 (raw 34.301) | YES | identisches Muster (raw-Drift: Low-Liq $40,23, Top-10 9.410) — Cache-Regenerierung, LP-Flag weiterhin nicht neu bewertet |
+
+**CIO-Stellungnahme 14:30 UTC:** Beide Nachmittags-Läufe liefern den
+Pre-Burn-Baseline-Score (67) mit aktuellen Liquiditäts-Werten, aber
+keine frische LP-Flag-Bewertung (RugCheck-Indexierung ausstehend).
+Der bestätigte Flag-Flip bleibt der 09:33-Hand-Run (Flag=NO).
+Nächster Testlauf: `agents/shared/cio-rescore.sh`, einlaufbar auch
+nach 18:45. Endstatus-Formulierung für den Board-Bullet:
+„ausgeführt + verifiziert (Lock-Check) + rescored (Flag-Flip 09:33)
+· Full-Rescan wartet RugCheck-Indexierung".
 
 ## Diff: Pre-Burn-Baseline (09:32 UTC, Score 67) → Post-Burn
 

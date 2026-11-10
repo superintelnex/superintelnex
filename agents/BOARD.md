@@ -47,7 +47,7 @@ Gemeinsames Ziel: der SIN-Meme-Coin (Solana Mainnet).
 |---|---|---|
 | agent-verify (Koordination) | **Aufgaben-Verwaltung + Agenten-Koordination** (Betreiber-Entscheidung 10.11., ~09:24 lokal): Tasks hier vergeben/verfolgen, 20s/1min-Timer-Wache, Inbox-Drain je Tick, PR-Status-Watch #26/#27/#28, finale Abnahme-Basis vor 20:00 (frische `verify-pool.ts`-Ausführung + LOG-Eintrag) | aktiv |
 | agent-1 (dieser) | Read-only-Verifikation, LP-Nachsorge-Pläne (z. B. addLiquidity-Plan, keine Ausführung ohne Freigabe), `publish.yml`-Metadata-JSON-Entwurf als Team-Branch (kein main-Push, kein Merge) | aktiv |
-| cio | addLiquidity-Fahrplan (read-only: exakte Ticks/Beträge/CU) + 20:00-Abnahme-Checkliste (Pool-Burn-&-Entscheidungsvorlage für den Betreiber) | aktiv (CIO-Abnahme Pool: OK, 08:45 UTC) |
+| cio | addLiquidity-Fahrplan (read-only: exakte Ticks/Beträge/CU) + 20:00-Abnahme-Checkliste (Pool-Burn-&-Entscheidungsvorlage für den Betreiber) | aktiv — **Fahrplan (Task 2) FERTIG 16:45 UTC**: `outbox/cio/2026-11-10T16-45Z-addliquidity-fahrplan-task2.md` (Live-Snapshot 16:44, P0 EXAKT; S1 0,3 SOL Launch-Range = L 8192205470112, Deposit B 146239705598446461 raw, CU 550.000 (0 neue Boundary-Arrays, PDA-Existenz-Check); S2 0,5 SOL gleiches Budget; S3 optional ±1000 Ticks = CU 710.000 (2 neue Arrays); Exec geparkt, wartet Operator-Freigabe 19:00-Punkt b) · KIO-Vol-Check bestätigt (+50–70 USD); follow-on-Trades koordiniert |
 | designer | Exchange-Beobachtung (Task 3, read-only, GeckoTerminal-Public-API), Kanal `agents/exchange-observations.md`; Checkpoints 11:00/15:00/18:30 UTC | aktiv (2. Checkpoint `b92344e`: LP $52.00, 24h noch leer) |
 
 Aufgaben-Status: Metadaten-Mirror (IPFS/Arweave) + `config.metadata.uri` + `verify.ts` gegen neue URI → offen, Priorität **niedrig** (on-chain-URI = raw.githubusercontent, 200 belegt 08:00 UTC; Zwischenzustand zulässig).
@@ -100,7 +100,12 @@ Offene Tasks (priorisiert, Zuweisungen agent-verify 10.11. ~09:30 lokal):
    `token/config/token.json` `dex._liquidityNote`.
    *Zuständig: `cio` — exakter Fahrplan (Ticks, Beträge, CU-Bedarf)
    bis 18:00 UTC als `agents/outbox/cio/`-Note + Kurzfassung in
-   BOARD. `agent-1`: Test-Script `add-liquidity-test.ts` (ohne
+       BOARD: **ERGEBNIS 16:45 UTC `outbox/cio/2026-11-10T16-45Z-addliquidity-
+    fahrplan-task2.md`** (S1 empfohlen: 0,3 SOL Launch-Range, L
+    8192205470112, Deposit B 146239705598446461 raw, amountMax-Caps
+    +0,5 %, CU 550.000 (0 neue Arrays) · S2 0,5 SOL 550.000 CU · S3
+    optional ±1000 Ticks 710.000 CU (2 neue Arrays) · P0-Kreuzcheck
+    EXAKT · Exec geparkt = 19:00-Abnahme-Punkt b). `agent-1`: Test-Script `add-liquidity-test.ts` (ohne
    Senden) gegen den 1-SOL-Basiswert anpassen.*
 3. **GeckoTerminal/Exchange-Status:** Pool-Link `index.html` ist live
    (Commit `e0dd913`). Volumen-Beobachtung: read-only, Eintrag in LOG.md.

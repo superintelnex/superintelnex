@@ -26,6 +26,7 @@
 REPO=/Users/haqmal/Desktop/Projekte/SuperIntelNex
 LOGF=/private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/cio-autotrade.log
 EXCF=/private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/cio-autotrade-exec-last.txt
+EXCFS=/private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/cio-autotrade-exec-sell-last.txt
 RPC=https://api.mainnet-beta.solana.com
 PROV=DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo
 WSOL_ATA=4eA5jcJVqH1Q1mQ2GVmCtEgFZZHYBLga2gGMEUKUy8k7
@@ -36,6 +37,16 @@ RES=6000000     # lamports Reserve 0,006 SOL
 MIN_BUY=5000000 # lamports Min-Buy 0,005 SOL
 CAP=150000000   # lamports CAP 0,15 SOL pro Trade
 POLL=60
+# --- Ticket #6 (Operator-Order 15:49 UTC): 30 %-Supply-Hold (3,0 Mrd. SIN) ---
+# DCA-Ziel-Counter: kumulierter SIN-Fill ab 16:00-Regime (Ticket #6-Eröffnung).
+HOLD_RATIO=30      # %: vom Buy-Fill GEHALTEN (SELL-Leg verkauft 70 %)
+DCA_TARGET=300000000000000   # raw-SIN (5 Dez.): 3,0 Mrd. SIN (30 % der
+                            # 10-Mrd.-Supply) x 100.000 = DCA-Ziel
+HOLD_ON=0          # 1 = SELL-Leg (HOLD_RATIO) aktiv — NACH operatorischem
+                   # Deposit-Budget-OK (Ticket #6-Offen-Punkt 1); 0 = Buy-only
+                   # (Bestandswert: Buy #1–#6 laufen ohne SELL-Leg)
+DCAF=/private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/cio-autotrade-dca-sin.txt
+[ -f "$DCAF" ] || echo 0 > "$DCAF"
 
 log() { echo "$(date -u '+%Y-%m-%dT%H:%M:%SZ') $*" >> $LOGF; }
 
@@ -120,6 +131,38 @@ print('wsol=%s,sin=%s' % (w,s))")
   out=$(grep 'SIN-ATA vor/nach' $EXCF | head -1)
   if [ $rc -eq 0 ] && [ -n "$sig" ]; then
     log "TRADE OK: sig=$sig, in=$buy_sol SOL, $out"
+    # --- Ticket #6 (Operator-Order 15:49): Holding-Regel + DCA-Ziel-Counter ---
+    # Buy-Fill-Raw (Delta) aus dem Beweismeld-Output; bei HOLD_ON=1 wird der
+    # (100-HOLD_RATIO)-Anteil sofort via bewaehrtem swap-sin-to-sol.ts (selbe
+    # Gates) veraeusst — kein eigener Tx-Bau. DCAF kumuliert den GEHALTENEN
+    # Anteil gegen das 3,0-Mrd.-SIN-Ziel.
+    delta=$(grep -o 'Delta [0-9]*' $EXCF | head -1 | awk '{print $2}')
+    hold_raw=""; sell_raw=""; sig_s=""
+    if [ -n "$delta" ]; then
+      if [ "$HOLD_ON" = "1" ]; then
+        sell_raw=$((delta * (100 - HOLD_RATIO) / 100))
+        hold_raw=$((delta - sell_raw))
+        if [ $sell_raw -gt 0 ]; then
+          SIN_NETWORK=mainnet SIN_SELL_RAW=$sell_raw SIN_SLIPPAGE_BPS=1000 SIN_DEX_SEND=1 SIN_MAINNET_OK=1 \
+            deno run --allow-read --allow-net --allow-env --allow-write \
+            token/scripts/swap-sin-to-sol.ts > $EXCFS 2>&1
+          rc_s=$?
+          sig_s=$(grep '^Signature' $EXCFS | head -1 | sed 's/^Signature *: *//')
+          if [ $rc_s -eq 0 ] && [ -n "$sig_s" ]; then
+            log "HOLD SELL OK: sig=$sig_s, sold $sell_raw raw SIN (HOLD ${HOLD_RATIO} %)"
+          else
+            log "HOLD SELL FAILED rc=$rc_s (SIN bleibt gehalten; Detail: $(tail -3 $EXCFS | tr '\n' ' '))"
+            hold_raw=$delta   # SELL ausgeblieben -> kompletter Fill gehalten
+          fi
+        fi
+      else
+        hold_raw=$delta      # HOLD_ON=0: Buy-only, 100 % des Fills gehalten
+      fi
+      dca=$(cat $DCAF 2>/dev/null || echo 0)
+      dca=$((dca + hold_raw))
+      echo $dca > $DCAF
+      log "DCA: +${hold_raw} raw gehalten -> kumuliert $dca / $DCA_TARGET raw SIN-Ziel"
+    fi
     # LOG.md-Append (append-only) + eigener, minimaler Commit (nur die
     # CIO-Auto-Trade-Beleg-Datei) — Konflikte mit agent-1-Loop: Retry.
     {
@@ -128,9 +171,11 @@ print('wsol=%s,sin=%s' % (w,s))")
       echo "  autonom ausgeführt (CIO-Auto-Trade-Loop). Sig \`$sig\`,"
       echo "  $out (SIN bleibt in der Provider-ATA ${SIN_ATA:0:6}…). Beleg:"
       echo "  cio-autotrade.log (var-Folder) + journal/SWAP-DETAILS."
+      [ -n "$sig_s" ] && \
+        echo "  SELL-Leg (Ticket #6, HOLD ${HOLD_RATIO} %): Sig \`$sig_s\`, $sell_raw raw SIN veraeusst."
     } >> $REPO/agents/LOG.md
     git add agents/LOG.md
-    git commit -q -m "CIO: Auto-Trade Buy $buy_sol SOL → SIG $sig (CEO-GO 14:47)" || true
+    git commit -q -m "CIO: Auto-Trade Buy $buy_sol SOL → SIG $sig (CEO-GO 14:47${sig_s:+, SELL $sig_s})" || true
     git fetch -q origin main
     git push -q origin main 2>/dev/null || log "push retry am nächsten Tick (agent-1-Loop-Konflikt, erwartet)"
   else
