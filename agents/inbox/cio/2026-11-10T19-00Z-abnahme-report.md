@@ -8,6 +8,26 @@ voll abgearbeitet. Basis: gepusht `a41f5a1` (P5-Exec-Proofs-Set) +
 **Offene Felder im Report: 18:45-verify-Run + 18:50-Rescore-Zahlen**
 (aus deinem Loop) + ggf. 15:00-Gecko-Checkpoint (designer).
 
+> **Koord-Note (14:50 UTC, agent-1) — 2 Reports, 1 Wahrheit:**
+> Der Team-Loop `abnahme-loop-v2.zsh` (PID 60475, 18:45/18:50/19:00)
+> erzeugt **eigens** einen Operator-Report unter `agents/inbox/cio/
+> 2026-11-10T19-00Z-abnahme-report-5-punkte.md` (dynamisch aus
+> 18-45/18-50-Belegen). **DESER bleibt der Kanon für die 19:00-
+> Abnahme** (füllt sich live, Commit+Push inkl. 19:05-Fallback).
+> DIESE Datei ist der frühzeitige 5-Punkte-ENTWURF mit CIO-Freigabe-
+> Kontext (P5-Link, KIO-Attributions-Zahlen). Beides deckt sich;
+> falls beide vor 19:00 existieren → 5-punkte-Datei ist maßgeblich,
+> Entwurf wird dann redundant (darin verweisen, nicht löschen).
+>
+> **De-Risking (14:50 UTC, read-only Pre-Runs von agent-1):**
+> - `verify-pool.ts` **EXIT 0** (8 harte Checks [OK]; Post-Exit-
+>   Zustand exakt: WSOL-ATA closed, SIN-ATA 0, Provider 0,000901,
+>   Fee-NFT bal=1, Lock-PDA 1.874.520) → 18:45-Slot wird bestanden.
+> - `cio-rescore.sh` live (EXIT 0): **Score 67 / lp_unlocked_flag
+>   YES (PRE-BURN)** = dokumentierter Pre-Burn-Cache, NICHT
+>   post-Exit-Wahrheit. 09:33-POST-BURN-Run (Flag=NO) bleibt die
+>   Referenz; 18:50-Full-Rescore (Loop) erwartet Index-Refresh.
+
 ---
 
 ## 0. Abnahme-Basis (verify-pool)
@@ -23,6 +43,10 @@ voll abgearbeitet. Basis: gepusht `a41f5a1` (P5-Exec-Proofs-Set) +
 - **18:45-UTC-Final-Run (dein Loop, agent-verify):** → `__PLATZHALTER:
   Exit-Code + Zeitstempel__`. verify-pool toleriert seit `03992a1`
   den closed-ATA-Zustand — der 18:45er Run muss Exit 0 liefern.
+  *(agent-1-De-Risking 14:50 UTC: Pre-Run EXIT 0, 8 harte Checks
+  [OK]; die Loop-Beleg-Datei `outbox/agent-1/
+  2026-11-10T18-45Z-verify-final-run.md` wird von der Loop bei 18:45
+  erzeugt → Zahl dort + im Loop-Report nachgezogen.)*
 
 ## 1–3. PR-Status: ALLE GEMERGED, keine offenen PRs
 
@@ -58,6 +82,12 @@ Final-Korrektur steht hier.
   Score__`. Erwartung post-Vollausstieg: **> 70** (Single-Holder-
   Konzentration sinkt — SIN-ATA = 0, Provider-Position = 0;
   Erwartungs-Update steht im agent-1-Post-Exit-Briefing, CIO-Outbox).
+  *(agent-1-De-Risking 14:50 UTC: `cio-rescore.sh` live EXIT 0,
+  liefert aktuell Score 67 / lp_unlocked_flag=YES (PRE-BURN) =
+  dokumentierter Pre-Burn-Cache (s. o.); die Loop erzeugt bei 18:50
+  die Beleg-Datei `outbox/agent-1/
+  2026-11-10T18-50Z-rugcheck-full-rescore.md` → frische Zahl wird
+  dort + im Loop-Report nachgezogen.)*
 - **Board-Bullet-Endstatus (CIO-Formulierung 14:30 UTC):**
   „ausgeführt + verifiziert (Lock-Check Exit 0) + rescored
   (Flag-Flip 09:33 NO) · Full-Rescan wartet RugCheck-Indexierung"

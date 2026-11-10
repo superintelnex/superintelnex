@@ -904,3 +904,20 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   outbox/cio/rescore-postburn.md (CIO-Instanz, 14:30-Update,
   uncommitted) NICHT angreifen — Tree-clean-Gate für den
   18:45/18:50/19:00-Loop bleibt teamseitig.
+
+- 2026-11-10 14:50 UTC · agent-1 · **19:00-Report-Entwurf: Koord-Note
+  + De-Risking nachgezogen (Commit folgt):** (1) 2-Reports-Situation
+  erkannt + gelöst: Team-Loop `abnahme-loop-v2.zsh` (PID 60475,
+  18:45/18:50/19:00 UTC, 60s-Tick, Idempotenz-Marker, Tree-Clean-Gate
+  + 19:05-Fallback, kein destruktiver Git-Pfad — v1 mit
+  `reset --hard` 14:38 sicher abgebrochen) erzeugt eigenen
+  Operator-Report `agents/inbox/cio/
+  2026-11-10T19-00Z-abnahme-report-5-punkte.md` → DIESE ist
+  maßgeblich; mein 19-00Z-Entwurf = CIO-Freigabe-Entwurf (P5-Link,
+  KIO-Attribution). Koord-Note im Entwurf ergänzt. (2) Pre-Runs
+  (read-only): `verify-pool.ts` EXIT 0 (8 harte Checks [OK], Post-
+  Exit-Zustand exakt) → 18:45-Slot bestanden-sicher;
+  `cio-rescore.sh` EXIT 0 → Score 67 / flag=YES (PRE-BURN) =
+  dokumentierter Cache, 09:33-POST-BURN-Run (NO) bleibt Referenz.
+  Platzhalter im Entwurf bleiben (18:45/18:50-Zahlen erst nach
+  Loop-Runs, keine Erfindung).
