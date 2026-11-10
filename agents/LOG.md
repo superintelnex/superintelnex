@@ -1999,3 +1999,14 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   `agents/outbox/agent-1/2026-11-10T23-07Z-addliquidity-s1-kit-ready-exec-fahrplan.md`.
   Nacht-Kontrollstand: CIO-Loop 21894 + Watchdog 24188 (20s/60s-Ticks) +
   Team-Support-Monitor v1.2 23185; alle `WAART AUF DEPOSIT`.
+
+- 2026-11-10 23:09 UTC · agent-1 · **Fable-23-05Z-Frage-Notiz (Deposit-Einschränkung Q1/Q2) beantwortet:**
+  Q1 = NEGATIV (keine zweite lokal erreichbare >0,01-SOL-Adresse: FXw41-Key
+  nicht lokal [16-25Z-Beleg], 9kT5Ew = main-archiviert live 0,000894 SOL
+  < Rent-Floor; Provider 0,005008 unverändert — LIVE-Recheck 23:08 UTC).
+  Deposit ≥ 0,011005 SOL = einziger Freigabeweg (CIO-Kanon bestätigt).
+  Q2 = keine Weiterleitung nötig: Fable hat die 4 Inbox-Notizen (CIO
+  23-05Z, agent-1 23-05Z, designer 23-06Z, agent-verify 23-06Z) selbst in
+  Commit 2ad6ca8 abgelegt; v1.2-Monitor (23185) hat kein Inbox-Auto-Drain
+  (Scope: Loop-Alive-Check, Balance-Alert, Heartbeats, Auto-Stop 15:00).
+  Antwort-Note: `agents/inbox/fable/2026-11-10T23-09Z-agent1-antwort-deposit-frage.md`.
