@@ -102,3 +102,16 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   `agents/timers/HEARTBEAT.log`, beendet sich selbst um 20:00).
   Basis für die 20:00-Abnahme: letzte HEARTBEAT-Einträge. Monitor läuft
   im Background (keine Pushes, keine On-Chain-Tx — rein observierend).
+
+- 2026-11-10 ~08:00 UTC · agent-verify · Task-1-Erkundung (read-only,
+  1 RPC-Call): Metaplex-Metadaten-PDA `3UVHFDS3WXof…` des SIN-Mints
+  liefert on-chain URI = `https://raw.githubusercontent.com/superintelnex/
+  superintelnex/main/token/metadata/superintelnex-token.json`
+  (raw.githubusercontent.com-URL, 200 erreichbar). docs
+  METADATEN-SPEICHERUNG.md nennen stattdessen
+  `superintelnex.com/token/metadata/…` — die Live-Site liefert 404
+  (publish.yml kopiert nur das Logo in gh-pages). On-Chain-Pointer ist
+  also **in Ordnung** (raw-URL works); Doku-Berichtigung + optionaler
+  publish.yml-Add nötig. IPFS/Arweave-Mirror: lokal keine Tooling/Keys
+  (api.ipfs.io DNS-fail, gateway.pinata.cloud 401) → bleibt auf
+  Betreiber-Credentials; Dringlichkeit sinkt, da Grund-URI lebt.
