@@ -46,6 +46,7 @@ Gemeinsames Ziel: der SIN-Meme-Coin (Solana Mainnet).
 | ID | Aufgabe | Status |
 |---|---|---|
 | agent-1 (dieser) | Koordination, Read-only-Verifikation, LP-Nachsorge (z. B. addLiquidity-Plan, keine Ausführung ohne Freigabe) | aktiv |
+| cio | Pool-Abnahme (Read-only), RugCheck-Analyse, LP-Sicherheits-Vorschläge | aktiv (CIO-Abnahme Pool: OK, 08:45 UTC) |
 | — offen — | Metadaten-Mirror (IPFS/Arweave) + `config.metadata.uri` + `verify.ts` gegen neue URI | offen (siehe open-tasks) |
 
 ## Team-Übersicht (remote-Branches, Stand 10.11.2026 ~08:45 UTC)
@@ -66,6 +67,12 @@ oder als Datei-Getrenntes auf main; vor jedem Push
 `git fetch origin && git rebase` (kein Force-Push auf main).
 
 Offene Tasks (priorisiert):
+
+0. **LP-Burn & Earn (Vorschlag `cio`, wartet auf CEO-Freigabe):**
+   CLMM-Position-NFT permanent brennen → RugCheck-Risiken „LP unlocked
+   100 %“ + „wenige LP-Provider“ schließen (nur 1 Tx-Gebühr, Liquidity
+   bleibt im Pool). Details: `agents/LOG.md` cio-Eintrag, Issues #26/#27.
+   **Keine Ausführung ohne explizite Freigabe.**
 
 1. **Metadaten-Mirror (IPFS/Arweave):** stabile, content-addressed URI;
    danach `token/config/token.json` `metadata.uri`/`image` aktualisieren
