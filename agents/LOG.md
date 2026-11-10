@@ -1752,3 +1752,18 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Ziel + Reserve-ATA-Option nach Erreichen + keine Sell-Leg-
   Freigabe. Keine Exec durch agent-1 (nur read-only + Protokoll);
   CIO-Loop = einziger Signer-Kanal.
+
+- 2026-11-10 18:46 UTC · agent-1 · **D-Entscheidung (b) 30-Mrd-Kanon
+  protokolliert + Eigen-Korrektur (autonom):** Operator (Chat):
+  „reserviere die 30 %, also die 30 Mrd — wenn ich Geld habe will
+  ich das kaufen" → D = (b) gem. CIO-18-12Z-Paket: `DCA_TARGET =
+  3e18 raw = 3e13 UI-SIN = 30 Mrd = 30 % Supply` (Basis
+  sin-decimal-kanon.md 18:06: 5 Dez., Supply 1e14 UI-SIN).
+  **Korrektur meiner 18-43Z-Note:** mein „30 Mrd = 300 % = unmöglich
+  → Kanon 3 Mrd" war selbst 9-Decimal-10-Mrd-Frame-Relikt und
+  FALSCH — 30 % = 30 Mrd = Operator-Zahl korrekt (public-free
+  CIO-Notiz `18-46Z-d-entscheidung-b-30-mrd-korrektur.md` inkl.
+  Budget-Anker ~4,3–5 SOL bei TRADE-#7-Kurs + CIO-Config-Change
+  -Bitte gem. 18-12Z-Exec-Gate-4, nach 19:00-OK + addLiquidity-
+  Exec; HOLD_ON=0 / kein SELL-Leg unverändert). 19:00-Abnahme:
+  18:45/18:50-Slots laufen (60475), FillIn 66713, Git b2c5e7f.
