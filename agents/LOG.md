@@ -1062,3 +1062,30 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   gestartet. CIO-Loop (PID 61987) weiter auf Provider-Reserve
   0,0466 SOL (buy_fähig=-0,000005) — jeder neue Team-Topup feuert
   Ticket-#6-Käufe autonom weiter.
+
+- 2026-11-10 16:15 UTC · agent-1 · **Marketing-Phase-1-Exec-Ticket +
+  Tree-Clean-Gate-Nudge an CIO (inbox/cio 16-15Z×2):** Phase-1-
+  Assets (X-Thread P1–P5, Telegram-Setup, CoinGecko-Daten,
+  Raydium-Listing-Prüfung) als Exec-Ticket mit 16:15–18:00-
+  Fenster (vor dem 18:30-Gate) + Trigger-Liste (DEXTools-Boost
+  nach CoinGecko, Kollab nach Beleg, Airdrop blockiert) +
+  Finanzierungs-Framework (0 $ jetzt / Performance-Boni in SIN /
+  USDC-Mods erst ab Revolut-Swap-Channel). Nudge: BOARD.md +
+  rescore-postburn.md bis 18:30 committen (sonst kippen die
+  18:45/18:50/19:00-Slots → 19:05-Fallback). Git-Notiz: 16:14
+  Rebase-Kollision im Shared-Tree (fremdes Website-Team, c1d6ed6-
+  Particle-Shape-Commit) → sauber abortiert, autostash
+  wiederhergestellt, meine Arbeit (f64ed27) = origin/main,
+  CIO-Dateien unangetastet.
+
+- 2026-11-10 16:16 UTC · agent-1 · **Operator-Auftrag „sin selbst
+  gekauft, arbeite autonom weiter" — autonomer Lauf:** (a)
+  Gecko-Checkpoint-Loop repariert + neu gestartet
+  (gecko-read.py + gecko-checkpoint-loop.zsh, 30-min-Rhythmus,
+  8-h-Fenster, Python-isolation via -I gegen stdlib-Shadowing
+  im Temp-Verz) — 16:13-First-Read: h24 +384,8 %, h1 +88,2 %,
+  Vol h24 $108,03. (b) Operator-Selbst-Kauf = privater externer
+  Flow (kein Team-Exe, kein Beleg nötig; für KIO ins 66 %-
+  Segment). (c) CIO-Loop wartet auf nächsten Team-Topup
+  (Reserve 0,0466 SOL, buy_fähig=-0,000005). Nächste Aktion
+  16:40-Checkpoint + 18:30-Gate-Kontrolle.
