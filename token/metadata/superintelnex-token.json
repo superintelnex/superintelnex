@@ -1,7 +1,7 @@
 {
   "name": "SuperIntelNex",
   "symbol": "SIN",
-  "description": "Community-Prototyp auf Solana Mainnet: KEINE Anlage, KEIN Verkauf, KEINE Kursprognose. Bestaetigte Parameter: SIN, 100.000.000.000.000 (100 Billion, 10^14) Gesamtmenge, 5 Nachkommastellen, feste Ausgabe ohne weitere Emissionen. Liquiditaet: Raydium-CLMM-Pool SIN/SOL (Mainnet, 10.11.2026 gestartet).",
+  "description": "Community-Prototyp auf Solana Mainnet: keine Anlage, kein Verkauf, keine Kursprognose. Bestätigte Parameter: Symbol SIN, 100.000.000.000.000 (100 Billionen, 10^14) Gesamtmenge, 5 Nachkommastellen, feste Ausgabe ohne weitere Emissionen. Liquidität: Raydium-CLMM-Pool SIN/SOL (Mainnet, 10.11.2026 gestartet).",
   "image": "https://raw.githubusercontent.com/superintelnex/superintelnex/main/token/assets/superintelnex-logo-512.png",
   "sellerFeeBasisPoints": 0,
   "properties": {
