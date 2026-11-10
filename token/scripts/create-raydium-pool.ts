@@ -1,5 +1,13 @@
 // Raydium-CLMM-Pool-Planer (DRY-RUN / PLANNER — sendet NICHTS).
 //
+// VERALTET (10.11.2026): Nur noch Referenz. Der echte CLMM-Launch
+// laeuft ueber `token/scripts/launch-clmm-pool.ts` (offizielle
+// Raydium-SDK v2). ACHTUNG: Die PDAs in diesem alten Skript nutzen
+// die SIN/WSOL-Reihenfolge; das CLMM-Programm erzwingt
+// mintA=WSOL < mintB=SIN (Byte-Order) — der effektive Pool-PDA ist
+// 4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM (siehe
+// launch-clmm-pool.ts + MAINNET-LAUNCH-RUNBOOK.md).
+//
 // Dieses Skript
 //   - prueft, ob der SIN-Mint auf dem gewaehlten Netz existiert (Mainnet:
 //     typischerweise NOCH NICHT — siehe MINT-ADDRESS.txt / Status-Bericht),

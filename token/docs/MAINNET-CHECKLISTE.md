@@ -31,20 +31,25 @@ Launch". Keine Einzelpost ist vorab erledigt; alles hier ist
       Rahmen passen:
       - On-Chain-Launch (Mint + Metadaten + 4x ATA + 4x Emissions-
         Transaktionen): ca. **0,030 SOL** (~2,30 EUR)
-      - Raydium-CLMM-Pool (Rent + Fees; siehe
-        `create-raydium-pool.ts`): ca. **0,010 SOL** (~0,77 EUR)
+      - Raydium-CLMM-Pool (Rent + Fees; live gemessen per
+        getMinimumBalanceForRentExemption, siehe
+        `launch-clmm-pool.ts`): ca. **0,266 SOL** (~20,50 EUR)
       - **Initial-Liquidität: 0,5 SOL** (~38,50 EUR) — die quote-seitige
         SOL-Liquidität im Pool (plus SIN-seitig emittierte Tokens);
         `config.dex.initialLiquiditySol` wird für das Budget von 5 auf
         0,5 SOL umgestellt (oder per `SIN_INITIAL_LIQ=0.5` bei
         Dry-Run-Läufen überschrieben)
-      - Puffer für Priority-Fees/Unerwartetes: ca. **0,11 SOL**
-        (~8,50 EUR)
-      - Summe: ~0,65 SOL ≈ **50 EUR** — kein darüberhinausgehendes
-        Budget vorgesehen. Der Wallet-Payer benötigt diese Summe
-        vorab als SALDO (zuzüglich der 0,5 SOL Liquidität, die im
-        Pool bindet, also insgesamt ~0,65 SOL im Payer-Konto).
-      - Keine Kurs-/Profit-Aussage: die 0,5 SOL Liquidität bedeutet
+      - Puffer für Priority-Fees/Unerwartetes: ca. **0,000110 SOL**
+        (live gemessen in launch-clmm-pool.ts)
+      - **Gesamtfazit (live gemessen, 10.11.2026): 0,765662 SOL
+        Pool-Bedarf** (0,265662 Rent + 0,5 Liquiditaet + 0,000110
+        Fees/Puffer). Provider (recipient.json) haelt 0,55 SOL →
+        **Top-up 0,215662 SOL ≈ 17 EUR** — fuehrt das Programm
+        insgesamt ~3 EUR ueber den 50-EUR-Kasten. Das ist die
+        einzige ausstehende Funding-Entscheidung (siehe
+        MAINNET-LAUNCH-RUNBOOK.md DEX-Details +
+        MORNING-HANDOVER-POOL.md).
+      - Keine Kurs-/Profit-Aussage: die 0,5 SOL Liquiditaet bedeutet
         KEINE Wertbindung an einem festen Kurs — sie ist der
         quote-seitige SOL-Anteil des ersten Pools.
 

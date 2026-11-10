@@ -20,20 +20,24 @@ ein Listing; alle behalten das Recht auf Delisting.**
 
 ## DEX-Pool (was wir vorbereitet haben)
 
-- `token/scripts/create-raydium-pool.ts` — Dry-Run-Planer (sendet
-  nichts): zeigt Pool-PDAs, Account-Plan und Kostengrenzen.
+- `token/scripts/launch-clmm-pool.ts` — CLMM-Pool-Launch ueber die
+  offizielle Raydium-SDK v2 (TX1 createPool + TX2 openPositionV2):
+  Default ist Dry-Run (read-only + Simulation); Send-Modus NUR mit
+  `SIN_DEX_SEND=1` + `SIN_MAINNET_OK=1` + Mainnet + Provider-Bestand
+  (siehe MAINNET-LAUNCH-RUNBOOK.md, DEX-Details).
+- `token/scripts/create-raydium-pool.ts` — frueherer Dry-Run-Planer
+  (veraltet; durch launch-clmm-pool.ts ersetzt, bleibt als Referenz).
 - `token/scripts/lib/raydium-clmm.ts` — PDA-Mathematik, byte-identisch
-  mit dem offiziellen Raydium-SDK (6 Adressen x 2 Netze verifiziert,
-  09.11.2026). **Alle PDA-Seed-Strings + Endianheit aus SDK-Quellcode.**
-- Echtes Pool-Setup laeuft über **raydium.io → "Launch Pool"**
-  (verifizierter Flow: createPool → openPositionFromLiquidity →
-  addLiquidity). Ein hand-kompilierter CLI-Launch ist bewusst
-  nicht implementiert (`SIN_DEX_SEND` fehlt absichtlich) — ein
-  fehlerhafter manueller Flow verbrennt SOL.
-- Voraussetzungen: Token-Mint existiert auf dem Netz, Liquiditäts-
-  Wallet hat Initial-Liquidität (SOL) + SIN, AmmConfig-Index 0/1/2
-  (Raydium-Standard; Index 0 ist der übliche Einstieg).
-- Nach dem Pool: Token ist ab sofort auf Raydium/Orca + via
+  mit dem offiziellen Raydium-SDK (8 Pool- + 7 Position-PDAs
+  gegeneinander verifiziert, 10.11.2026). Alle PDA-Seed-Strings +
+  Endianheit aus SDK-Quellcode.
+- **PDA-Ordnungs-Zwang des Programms:** mintA=WSOL, mintB=SIN
+  (Constraint `token_mint_0 < token_mint_1`); aktueller Pool-PDA
+  `4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM`.
+- Voraussetzungen: Token-Mint existiert auf dem Netz, Provider
+  (`recipient.json`) haelt Initial-Liquiditaet (SOL) + SIN-ATA,
+  AmmConfig-Index 0 (tickSpacing 10, 1 bps Trade-Fee).
+- Nach dem Pool: Token ist ab sofort auf Raydium + via
   Jupiter-Aggregator handelbar. Kein weiterer "Listing"-Schritt.
 
 ## CEX-Listing-Antrag (Falls der DEX-Volumen-Nachweis da ist)

@@ -30,7 +30,8 @@ und keine Anlageempfehlung.
 | `scripts/verify.ts` | Decimals, Supply, Vollmachten, On-Chain-Metadaten gegen Konfig pruefen |
 | `scripts/devnet-prefund.ts` | Devnet-Vorbereitung OHNE Transaktion: zeigt einweg-Admin-Pubkey + Test-SOL-Saldo, exakte Laufbefehle (nur Leseabfrage, kein Signieren) |
 | `scripts/prepare-for-review.ts` | Lokaler Pruefdurchlauf (Burn/Freeze/Thaw/Transfer) fuer Wallet-Inspektion |
-| `scripts/create-raydium-pool.ts` | Raydium-CLMM-Pool-PLANNER, DRY-RUN (sendet nichts): Bestaetigung der Mint + Pool-PDA-Rechnung + Account-/Kostenplan. Ein eigentlicher CLMM-Launch ist hier bewusst NICHT implementiert (SIN_DEX_SEND fehlt) |
+| `scripts/create-raydium-pool.ts` | VERALTET (nur Referenz): frueherer Raydium-CLMM-Pool-PLANNER, DRY-RUN. Ersetzt durch `launch-clmm-pool.ts` |
+| `scripts/launch-clmm-pool.ts` | Raydium-CLMM-Pool-Launch SIN/WSOL ueber die offizielle Raydium-SDK v2 (TX1 createPool + TX2 openPositionV2): Default DRY-RUN (Plan, PDA-Cross-Checks, TX1-Simulation, Rent-Plan); Send-Modus NUR mit `SIN_DEX_SEND=1` + `SIN_MAINNET_OK=1` + Mainnet + Provider-Bestand. Schreibt `result/POOL-ADDRESS.txt` |
 | `scripts/lib/raydium-clmm.ts` | Raydium-CLMM-PDA-Mathematik + Account-/Kosten-Planung. Die Seeds und Endianheit sind 1:1 mit dem offiziellen Raydium-SDK uebereinstimmend (6 PDA × 2 Netze byte-genau verifiziert, 09.11.2026). Reine Logik, kein RPC |
 | `tests/config.test.ts` | Offline: Konfiguration ist gueltig und konsistent |
 | `tests/distribute.test.ts` | Offline: Emissions-Planung (exakte Anteile, unguelle Verteilungen abgelehnt) + optin Localnet: vierstufige Emission gegen Test-Validator |
