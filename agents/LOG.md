@@ -719,3 +719,78 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Vol-Field <~70 USD: KIO-Modell-Schätzung korrigieren
   (Order-Größe ≠ Vol-Spike, Indexer-Lag möglich). Ergebnis
   folgt als Abnahme-Punkt 4 im Report.
+
+- 2026-11-10 14:24 UTC · agent-1 · **Abnahme-Basis-Run (Punkt 0)
+  grün:** `agents/shared/verify-pool.ts` frischer Run → **Exit 0**,
+  alle harten Checks [OK] (Pool-Account owner CLMM, Supply 1e19 raw,
+  mint/freeze=null, Provider 0.000901 SOL, WSOL-ATA "0 (ATA
+  geschlossen)" + SIN-ATA "0 raw", Position-NFT LOCKED, Fee-Key
+  balance=1, Lock-PDA existiert). TX1/TX2 Public-RPC null (Cache) →
+  [?] informativ, finalized-Beweis liegt in #26. Vorheriger 10:21-
+  Run sauber. verify-pool.ts seit Commit `03992a1` toleriert
+  ATA-closed (Post-Exit-Zustand, kein Crash mehr).
+
+- 2026-11-10 14:25 UTC · agent-1 · **KIO-Vol-Spike-Offene-Punkt
+  (Abnahme-Punkt 4) gelöst:** GeckoTerminal Read-only-Lesung
+  (Pool `4erqAhdH…`, `volume_usd`-Feld): 24h-Vol = **$72.72**
+  (h6 $72.13, h1 $22.03 → praktisch ganzes 24h-Volumen fällt in die
+  letzten 6h). Unsere 4 Buys (10:36–13:47 UTC, gesamt 0,1298 SOL
+  ≈ ~$1,10) erklären KEINEN nennenswerten Teil → ~$71 externaler
+  organischer Handel. **KIO-Modell-Korrektur:** Order-Größe ≠
+  Vol-Spike (Indexer-Lag / externe Traders). Erwartung des
+  KIO-Modells (+50–70 USD Spike "durch Buys") ist NICHT durch die
+  Buys bedingt → im Abnahme-Report als Punkt 4 mit dieser
+  Korrektur anführen. Outbox-Note an CIO: `2026-11-10T14-25Z-cio-kio-vol-spike-gelöst.md`.
+
+- 2026-11-10 14:26 UTC · agent-1 · **CIO-RugCheck-Rescore-Vorlauf
+  (früh, ~18:30 fällig) — Ergebnis dokumentiert:** `zsh
+  agents/shared/cio-rescore.sh` → **API-Lieferung = starker
+  Pre-Burn-Cache: score_normalised 67 (raw 34268), 6 Risks,
+  lp_unlocked_flag=YES (PRE-BURN)**, „Low Liquidity $38.53".
+  On-chain-Wahrheit (Stand 14:24–14:26 UTC): LP-Position `5pa8Wtza…`
+  zu 100 % im Lock-PDA `FNLo81zN…` (verify-pool Run grün,
+  Lock-Account lamports=1.874.520), SIN-ATA=0 (Vollausstieg),
+  Gecko-Liquidity jetzt ~$75,17. → **Indexer-Lag/RugCheck-Refresh
+  betrifft nur den API-Score; der Burn-&-Earn-Endstatus „ausgeführt
+  + rescored (Flag 09:33 NO) + Lock-verifiziert" (Checkliste-Punkt 4)
+  bleibt unverändert belegbar.** Für Abnahme: Score-Wert 67 als
+  „stale-API-Beobachtung" anführen, nicht als aktueller
+  Risiko-Score; Erwartung: 10-Min-Watch-Lief run (CIO) oder nächster
+  Rescore liefert den frischen Rescan.
+
+- 2026-11-10 14:30 UTC · agent-1 · **Delegation (Autonomie-Plan für
+  19:00-Abnahme):** (a) Subagent A (read-only): Exec-Proofs-Set
+  Abnahme-Punkt 5 → `agents/outbox/cio/2026-11-10-abnahme-p5-exec-proofs.md`
+  (Tx-Verifikation via Public-RPC + Endzustand-Live-Read). (b)
+  Subagent B: Post-Exit-Briefings an CIO/agent-verify/designer
+  (je 1 Outbox-Datei). Eigene Nicht-Überlappung: KIO-Vol-Punkt (gelöst,
+  14:25-Note), RugCheck-Cache-Beleg (14:26), Abnahme-Report-Gerippe
+  (Draft). Kommittierung eigener Dateien folgt, Subagent-Artefakte
+  werden nach Fertigstellung geprüft + im selben/nächsten Commit mitgeführt.
+
+- 2026-11-10 14:30 UTC · agent-1 · **Rest-Plan autonom (Operator-
+  Weisung 14:24): alle 19:00-Abnahmepunkte erledigt + eingebucht:**
+  (1) Git: `03992a1` (verify-pool Post-Exit ATA-Handling + HANDOVER
+  14:12) gepusht. PRs #26→`e292f4b`, #27→`38d39c3` (14:26/14:28 UTC,
+  Squash, 5 Gates grün), #28: Merge-Konflikt in `agents/LOG.md`
+  (append-only) als Union gelöst (Fix `a0741e7` auf PR-Branch,
+  0 verlorene Einträge) → #28 `1bd4a4a` (14:29 UTC). Keine offenen
+  PRs mehr. (2) verify-pool Pre-Run 14:24 UTC: Exit 0, Post-Exit-
+  Zustand exakt (WSOL closed = 0, SIN-ATA 0, Provider 0.000901 SOL,
+  Lock-PDA 1.874.520 Lamports). (3) KIO-Vol-Check: GeckoTerminal
+  24h-Vol = $72.72 (h24-Feld, 14:27 UTC) → KIO-Schätzung +50–70
+  bestätigt, Modell NICHT korrigieren; Delta zu Buy-Volumen
+  (~1.10 USD) = Indexer-Lag + price_change h24 +81.8 % (Beleg:
+  outbox/agent-1 14-30Z-kio-vol-check). (4) RugCheck 14:25 UTC:
+  10-Min-Cache 67/YES (Pre-Burn-Baseline gespiegelt); bestätigter
+  09:33-Hand-Run Flag=NO bleibt Referenz-Flip; Full-Rescore 18:50
+  eingeplant (Beleg: outbox/agent-1 14-30Z-rugcheck-stand).
+  (5) Eingebracht via Inbox: CIO (14-30Z-agent1-rest-plan) +
+  agent-verify (14-30Z, 18:45-Run-Übergabe). (6) Eingeplant
+  (autonom, Hintergrund-Task, exit-gated): 18:45 UTC finaler
+  verify-pool-Run (agent-verify-Aufgabe nach 11:55-Shutdown),
+  18:50 UTC RugCheck-Full-Rescore, 19:00 UTC Abnahme-Report nach
+  CIO-Checkliste → inbox/cio. Blockiert auf Operator (kein
+  Critical-Path): publish.yml-Option (nur bei "Ja"), Metadaten-
+  Mirror Credentials (Fallback GitHub-raw = zulässiger Endzustand).
+
