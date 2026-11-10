@@ -1,5 +1,12 @@
 # Status-Bericht: SuperIntelNex-Token (SPL, Solana)
 
+**Update 10.11.2026:** Der Mainnet-Start ist erfolgt — Mint,
+vierstufige Emission und der Raydium-CLMM-Pool (SIN/WSOL,
+`4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM`) sind LIVE und
+finalisiert, beide Vollmachten entzogen, Budget 50 EUR eingehalten
+(Summe ~0,461 SOL ≈ 35,5 EUR). Details: `MORNING-HANDOVER-POOL.md`
+(Erfolgsbericht) + `MAINNET-LAUNCH-RUNBOOK.md` (Stand 04/04).
+
 Stand: 09.11.2026 · Branch `feature/solana-devnet-token` (PR #13) ·
 Ort: `token/` im Repo (nicht `solana-token/` — das ist ein leerer
 Übersichtsordner mit `node_modules`).

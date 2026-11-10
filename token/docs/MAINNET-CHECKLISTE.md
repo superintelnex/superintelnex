@@ -1,66 +1,70 @@
 # Mainnet-Checkliste (token/)
 
-Stand: Testtoken lokal/Devnet erstellt, **kein Mainnet-Start
-erfolgt**. Diese Liste ist die Vorlage für die Phase „öffentlicher
-Launch". Keine Einzelpost ist vorab erledigt; alles hier ist
-**offene Arbeit**.
+Stand: 10.11.2026 · **Mainnet-Start erfolgt** — Mint, Emission und
+Raydium-CLMM-Pool sind LIVE (siehe `MAINNET-LAUNCH-RUNBOOK.md` +
+`MORNING-HANDOVER-POOL.md`). Diese Liste bleibt die Vorlage für die
+Phase „öffentlicher Launch"; die erledigten Posten sind mit `[x]`
+markiert, die restlichen sind offene Arbeit.
 
 ## 1. Entscheidungen (Betreiber)
 
-- [ ] **Ticker/Kürzel** final festlegen (Bestätigung 09.11.2026: `SIN`
-      für den Devnet-Testtoken; für Mainnet gilt erst nach erneuter
-      Bestätigung).
-- [ ] **Gesamtmenge** final festlegen (Devnet-Bestätigung 09.11.2026:
-      `100.000.000.000.000` = 10^14, fest, keine weiteren Emissionen;
-      die frühere Vorschlagszahl 1.000.000.000 ist überholt).
-- [ ] **Dezimalstellen** final festlegen (Devnet-Bestätigung 09.11.2026:
-      `5` — technisch gebunden an die Supply `10^14`, siehe
-      `config.token.decimalsNote`; frühere Vorschlagszahl 9 gilt nicht).
-- [ ] **Verteilung** final festlegen (Bestätigung 09.11.2026: 81/10/5/4 —
-      community/liquidity/founder/marketing), vor dem Mainnet-Mint.
-- [ ] **Admin-Vollmachten**: beide entziehen oder Freeze behalten?
-      (siehe `AUTHORITIES.md`).
-- [ ] **Metadaten-URI**: GitHub Pages (provisorisch) gegen
-      IPFS/Arweave (dauerhaft) entscheiden (siehe
-      `METADATEN-SPEICHERUNG.md`).
+- [x] **Ticker/Kürzel** festgelegt: `SIN` (Devnet-Bestätigung
+      09.11.2026; der Mainnet-Lauf 10.11.2026 bestätigt das
+      Kürzel — Mint on-chain `A4WSPb…`).
+- [x] **Gesamtmenge** fest: `100.000.000.000.000` = 10^14
+      (on-chain emittiert am 10.11.2026; frühere Vorschlagszahl
+      1.000.000.000 ist überholt).
+- [x] **Dezimalstellen** fest: `5` (on-chain fix per Mint; technisch
+      gebunden an die Supply `10^14`, siehe
+      `config.token.decimalsNote`; frühere Vorschlagszahl 9 gilt
+      nicht).
+- [x] **Verteilung** fest: 81/10/5/4 — community/liquidity/founder/
+      marketing (on-chain ausgeführt, Signaturen in
+      `result/DISTRIBUTION.txt`).
+- [x] **Admin-Vollmachten: beide entzogen** (10.11.2026,
+      Journal `revoke-mint-authority` + `revoke-freeze-authority`):
+      `mintAuthority = (none)`, `freezeAuthority = (none)` —
+      Supply final (siehe `AUTHORITIES.md`).
+- [ ] **Metadaten-URI**: aktuell GitHub-raw der main-Branche
+      (HTTP 200 verifiziert); die Entscheidung GitHub Pages
+      (provisorisch) gegen IPFS/Arweave (dauerhaft) bleibt offen
+      für den post-Launch-Plan (siehe `METADATEN-SPEICHERUNG.md`).
 
 ## 2. Technische Vorbereitungen
 
-- [ ] **Budget-Rahmen: 50 EUR** (SOL-Preis 77 EUR/SOL, Stand 09.11.2026
-      = ca. 0,65 SOL). Die gesamte On-Chain-Kostenkette muss in diesen
-      Rahmen passen:
+- [x] **Budget-Rahmen: 50 EUR — live eingehalten** (SOL-Preis
+      77 EUR/SOL, Stand 09.11.2026 = ca. 0,65 SOL). Die gesamte
+      On-Chain-Kostenkette ist am 10.11.2026 durchgelaufen und blieb
+      im Rahmen (Summe ca. 0,461 SOL ≈ 35,5 EUR, Details in
+      `MORNING-HANDOVER-POOL.md` §4):
       - On-Chain-Launch (Mint + Metadaten + 4x ATA + 4x Emissions-
-        Transaktionen): ca. **0,030 SOL** (~2,30 EUR)
-      - Raydium-CLMM-Pool (Rent + Fees; live gemessen per
-        getMinimumBalanceForRentExemption, siehe
-        `launch-clmm-pool.ts`): ca. **0,266 SOL** (~20,50 EUR)
-      - **Initial-Liquidität: 0,5 SOL** (~38,50 EUR) — die quote-seitige
-        SOL-Liquidität im Pool (plus SIN-seitig emittierte Tokens);
-        `config.dex.initialLiquiditySol` wird für das Budget von 5 auf
-        0,5 SOL umgestellt (oder per `SIN_INITIAL_LIQ=0.5` bei
-        Dry-Run-Läufen überschrieben)
-      - Puffer für Priority-Fees/Unerwartetes: ca. **0,000110 SOL**
+        Transaktionen): ca. **0,030 SOL** (~2,30 EUR) — erledigt
+      - Raydium-CLMM-Pool: **0,415457 SOL gesamt Bedarf** (live
+        gemessen per getMinimumBalanceForRentExemption, siehe
+        `launch-clmm-pool.ts`): 0,3 SOL Initial-Liquiditaet +
+        0,115457 SOL Rest-Rent + Fees-Puffer
+      - **Initial-Liquidität: 0,3 SOL** (~23,10 EUR) — die quote-seitige
+        SOL-Liquidität im Pool (plus SIN-seitig 10M Tokens, raw
+        `1e18`); `config.dex.initialLiquiditySol` = 0,3 (oder per
+        `SIN_INITIAL_LIQ` bei Dry-Run-Läufen überschrieben)
+      - Puffer für Priority-Fees/Unerwartetes: ca. **0,000105 SOL**
         (live gemessen in launch-clmm-pool.ts)
-      - **Gesamtfazit (live gemessen, 10.11.2026): 0,765662 SOL
-        Pool-Bedarf** (0,265662 Rent + 0,5 Liquiditaet + 0,000110
-        Fees/Puffer). Provider (recipient.json) haelt 0,55 SOL →
-        **Top-up 0,215662 SOL ≈ 17 EUR** — fuehrt das Programm
-        insgesamt ~3 EUR ueber den 50-EUR-Kasten. Das ist die
-        einzige ausstehende Funding-Entscheidung (siehe
-        MAINNET-LAUNCH-RUNBOOK.md DEX-Details +
-        MORNING-HANDOVER-POOL.md).
-      - Keine Kurs-/Profit-Aussage: die 0,5 SOL Liquiditaet bedeutet
+      - Provider (recipient.json) hielt 0,520944 SOL (inkl. 0,0158-SOL
+        Provider-Top-up, Journal-Schritt `clmm.providerTopup`) →
+        **kein weiterer Top-up nötig**, nichts lag über dem Kasten.
+      - Keine Kurs-/Profit-Aussage: die 0,3 SOL Liquiditaet bedeutet
         KEINE Wertbindung an einem festen Kurs — sie ist der
         quote-seitige SOL-Anteil des ersten Pools.
 
-- [x] Distributions-Skript: **implementiert** — `distribute.ts`
-      emittiert die Gesamtmenge exakt nach `config.token.distribution`
-      (81/10/5/4) auf vier separate Emissions-ATAs (SPL-Standard,
-      keine Emissions-Programme). Planungslogik in
-      `lib/distribution.ts` (exakt, ohne Gleitkomma-Reste),
-      offline- + Localnet-Tests in `tests/distribute.test.ts`
-      (10/10 ok inkl. E2E). Die **Ausfuhrung** auf Mainnet bleibt
-      offen (Reihenfolge unten + neue Emissions-Tresore):
+- [x] Distributions-Skript: **implementiert UND auf Mainnet
+      ausgefuehrt** (10.11.2026, Journal-Schritte `distribute*`,
+      Emissions-Transaktionen in `result/DISTRIBUTION.txt`) —
+      `distribute.ts` emittiert die Gesamtmenge exakt nach
+      `config.token.distribution` (81/10/5/4) auf vier separate
+      Emissions-ATAs (SPL-Standard, keine Emissions-Programme).
+      Planungslogik in `lib/distribution.ts` (exakt, ohne
+      Gleitkomma-Reste), offline- + Localnet-Tests in
+      `tests/distribute.test.ts` (10/10 ok inkl. E2E).
 - [ ] Off-Chain-Metadaten auf dem gewählten permanenten Speicher
       (IPFS/Arweave) hochladen, `uri` in `config/token.json`
       aktualisieren und vor dem Mainnet-Mint testen
@@ -103,14 +107,19 @@ Launch". Keine Einzelpost ist vorab erledigt; alles hier ist
 
 ## 6. Betrieb (nach Mainnet-Erstellung)
 
-- [ ] Mint-Adresse + Emissions-Signaturen im öffentlichen
-      Ergebnis-Protokoll dokumentieren (explizit
-      `MAINNET` gelabelt, nicht „DEVNET/TESTTOKEN").
-- [ ] Explorer-Links zum Mint + zur Erzeugungs-Transaktion
-      veröffentlichen.
-- [ ] Falls Vollmachten entzogen: Signaturen beider
-      `SetAuthority`-Transaktionen protokollieren (beweisbarer
-      Zustand `mintAuthority = (none)`).
+- [x] Mint-Adresse + Emissions-Signaturen im öffentlichen
+      Ergebnis-Protokoll dokumentiert (explizit `MAINNET-LAUNCH`
+      gelabelt, nicht „DEVNET/TESTTOKEN"):
+      `result/MINT-ADDRESS.txt`, `result/DISTRIBUTION.txt`,
+      `result/EXECUTED-TRANSACTIONS.jsonl` (gitignoriert, lokal
+      Nachweis; öffentliche Auszüge ohne Keys in
+      `MORNING-HANDOVER-POOL.md`).
+- [x] Explorer-Links zum Mint + zur Erzeugungs-Transaktion
+      verlinkbar (siehe Links-Block in MORNING-HANDOVER-POOL.md §5).
+- [x] Vollmachten entzogen (10.11.2026, Journal `revoke-mint-authority`
+      + `revoke-freeze-authority`, Signaturen protokolliert) —
+      beweisbarer Zustand `mintAuthority = (none)`, `freezeAuthority
+      = (none)`; Supply final.
 
 ## Was in diesem Prototyp NICHT enthalten ist
 

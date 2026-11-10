@@ -1,47 +1,83 @@
-# MORGEN-HANDOVER 10.11.2026 · 07:00 · Pool-Launch (eine Entscheidung)
+# MORGEN-HANDOVER 10.11.2026 · Pool-Launch — LIVE (Erfolgsbericht)
 
-Stand: alles Reversible ist erledigt (Dry-Run grün, Commit 77e6db9 pushed).
-Der eine offene Schritt ist der irreversible One-Shot: 2 Mainnet-Tx
-(TX1 createPool + TX2 openPosition, Raydium CLMM SIN/WSOL).
+Stand: **CLMM-Pool SIN/WSOL ist LIVE und finalisiert.** Beide
+Mainnet-Transaktionen bestätigt (err: null), On-Chain-Verifikation
+abgeschlossen, kein ausstehender Top-up. Die fruehere
+0,765662-SOL-Top-up-Entscheidung (0,5-SOL-Plan) ist obsolet —
+der Provider reichte aus.
 
-## 1) Die EINZIGE Entscheidung (Budget-Note)
+## 1) Was on-chain steht (finalisiert, verifiziert)
 
-Der CLMM-Pool braucht **0,765662 SOL** (live per getMinimumBalanceForRentExemption:
-Rent 0,265662 + 0,5 Liquidität + 0,000110 Fees/Puffer).
-Provider `recipient.json` (`DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo`)
-hält **0,55 SOL** → **Top-up 0,215662 SOL ≈ 17 EUR** (77 EUR/SOL).
-Das schiebt die Program-Gesamtkosten um **~3 EUR über den 50-EUR-Kasten**.
-Alternative: Senden erst mit weniger Liquidität (config dex.initialLiquiditySol
-reduzieren) — aber der 10%-Anteil (10M SIN) soll vollständig im Pool liegen;
-der 0,5 SOL/1e18-SIN-Kursanker ist im Runbook gesetzt.
+| Was | Wert |
+|---|---|
+| Pool-PDA (CLMM, A=WSOL, B=SIN) | `4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM` |
+| TX1 createPool | `NNkrfqxBnFpsfQToiMEiKpBWKi6RXnLYmcEnyK8dhHxPn3cZuqhQeuqHaeMLN6LnB2yeHDLDR6oPnKt3QJ3Zggr` (10.11. 02:56 UTC) |
+| TX2 openPositionV2 | `3AU3rfAFUjLAgDa3yZUgVzjAoD5PGL6Y47WZKxsrr8TSBpgLrQvBovRqj7zaGmzTF2VjqidMjM9y3oDxMYrLka1Z` (10.11. 07:18 UTC, Slot 467633557, err: null) |
+| Position-NFT-Mint | `5pa8Wtzaaqr5DB16VDvcjJ9SrTxLqEKmHGDhDaxstyUX` |
+| Liquidity (u128) | `20031261577933` |
+| sqrtPriceX64 | `1065023265662834340099552` (= P0, unveraendert) |
+| Ticks | 179280 … 259280 (start 219280, tickSpacing 10) |
+| Vault WSOL (A) | `299984271` raw = 0,299984271 SOL |
+| Vault SIN (B) | `999999999999963893` raw = 9.999.999,999963893 SIN |
+| Provider nach TX2 | 0,095740 SOL; WSOL-ATA-Rest `15729` raw; SIN-ATA-Rest `36107` raw |
 
-## 2) Aktion (eine Hand, ~2 Min)
+Die Provider-Reste bestaetigen die Depot-Arithmetik 1:1:
+WSOL 300000000 − 299984271 = 15729; SIN 1e18 − 999999999999963893 = 36107.
 
-1. Top-up: **0,215662 SOL** an `DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo`
-   (Phantom → Send → Adresse). Nicht der Main-Admin (9kT5Ew…), der
-   hält nur den 0,0807 SOL-Puffer.
-2. EINE Zeile ausführen (im Repo-Root):
+## 2) Keine offene Entscheidung mehr
 
-   SIN_NETWORK=mainnet SIN_DEX_SEND=1 SIN_MAINNET_OK=1 deno run --allow-read --allow-net --allow-env --allow-write token/scripts/launch-clmm-pool.ts
+- **Kein Top-up noetig:** Bedarf 0,415457 SOL (Rest-Rent + 0,3 SOL
+  Liquiditaet + Fees/Puffer 0,000105), Provider hielt 0,520944 SOL
+  (inkl. kleiner Provider-Top-up 0,0158 SOL, Journal-Schritt
+  `clmm.providerTopup`, 02:56 UTC). Die fruehere 0,215662-SOL-
+  Top-up-Note (galt fuer den 0,5-SOL-Plan) entfaellt damit.
+- **Revoke erledigt:** Mint- + Freeze-Vollmacht entzogen
+  (Journal `revoke-mint-authority` / `revoke-freeze-authority`,
+  09.11. 23:38 UTC) — Supply final, die LP-Position arbeitet
+  unabhaengig davon weiter (Position-NFT + Ticks + Vault).
+- **Idempotenz:** Journal-Eintrag `clmm.openPosition` +
+  `result/POOL-ADDRESS.txt` als Retry-Schutz; ein zweites
+  createPool ist ausgeschlossen (Pool-PDA existiert on-chain;
+  Resume-Modus `SIN_RESUME_TX2=1` fuehrt TX1 ueber).
 
-3. Verifikation: `cat token/result/POOL-ADDRESS.txt` (Pool
-   `4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM` + Position-NFT +
-   beide Signaturen) + Raydium-UI-Link aus der Datei.
+## 3) Root-Cause des Nacht-Bugs (kurz)
 
-Danach (optional, einweg): revoke-authorities.ts läuft NUR wenn Pool
-live — Reihenfolge im Runbook §2 Schritt 6.
+- Noch in der fruehen Nacht: PDA-Ordnung `token_mint_0 <
+  token_mint_1` (Byte-Order) → mintA=WSOL, mintB=SIN; Ticks +174170…
+  +254170 waren auf die falsche Mint-Reihenfolge gerechnet — korrekt
+  179280…259280. TX1 lief danach sauber (Sim 51.771 CU → live OK).
+- Heute Morgen: TX2-Feher „insufficient funds" (SPL-Token Custom 1) =
+  fehlende **`SyncNative`-Instruction** in der WSOL-Wrap-Sequenz. Die
+  in TX2 frisch angelegte WSOL-ATA (ATA-Create + System-Transfer)
+  hatte on-chain `Token-Amount = 0` — erst `SyncNative` (SPL-Standard:
+  create → transfer → **sync**) hebt die Lamports in den Token-Bestand.
+  Fix in `launch-clmm-pool.ts` (`buildTx2`), Sim danach sauber:
+  162.927 CU (Limit 1.000.000) bei der Send-Routine.
 
-Falls Top-up NICHT genehmigt: einfach nicht senden; nichts ist verloren
-(Mint + Emission sind live und final, Supply unveränderlich).
+## 4) Budget-Abgleich (50-EUR-Kasten, 77 EUR/SOL)
 
-## 3) Ehrliche Notes
+- Mint + Metadaten + 4x ATA + Emission: ca. 0,030 SOL (~2,30 EUR)
+- CLMM-Pool (Rent + 0,3 SOL Liquiditaet + Fees/Puffer): 0,415457 SOL
+  (~32,00 EUR)
+- Provider-Top-up: 0,0158 SOL (~1,20 EUR)
+- **Summe ca. 0,461 SOL ≈ 35,5 EUR — innerhalb des 50-EUR-Rahmens.**
 
-- **Kein Selbst-Wecker-Timer** (keine Self-Wake-Funktion in dieser
-  Umgebung). Deshalb: alle reversible Arbeit ist in der Nacht-Session
-  erledigt; der One-Shot wird NICHT autonom gesendet (irreversibel +
-  Budget-Überschreitung = deine Entscheidung).
-- Root-Cause-Fix dieser Nacht (kurz): CLMM-Programm erzwingt
-  `token_mint_0 < token_mint_1` (Byte-Order) → mintA=WSOL, mintB=SIN;
-  Ticks +174170…+254170; Pool-PDA `4erqAhdH…` (alt `8Buau2…` war für
-  die falsche Ordnung). TX1-Simulation vor dem Fix: ConstraintRaw 2003;
-  nach dem Fix: OK (51.771 CU).
+Keine Kurs-/Profit-Aussage: 0,3 SOL Liquiditaet = quote-seitiger
+SOL-Anteil des ersten Pools, keine Wertbindung.
+
+## 5) Links (vollstaendig in `result/POOL-ADDRESS.txt`)
+
+- Raydium-Pool: https://app.raydium.io/pools/4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM
+- TX1: https://explorer.solana.com/tx/NNkrfqxBnFpsfQToiMEiKpBWKi6RXnLYmcEnyK8dhHxPn3cZuqhQeuqHaeMLN6LnB2yeHDLDR6oPnKt3QJ3Zggr
+- TX2: https://explorer.solana.com/tx/3AU3rfAFUjLAgDa3yZUgVzjAoD5PGL6Y47WZKxsrr8TSBpgLrQvBovRqj7zaGmzTF2VjqidMjM9y3oDxMYrLka1Z
+
+## 6) Ehrliche Notes + offene Nebensache
+
+- Kein echtes Selbst-Aufwachen ueber den System-Schlaf (keine
+  Self-Wake-Funktion); die 20s/1min-Background-Timer liefen als
+  Proxy. Deshalb: On-Chain-Abschluss und dieser Bericht wurden in der
+  Session fertig (TX2 07:18 UTC, wenige Minuten nach der 07:00-Note).
+- Offene Nebensache (nicht kritisch, nicht blockierend):
+  Metadaten-URI zeigt auf die GitHub-raw-URL der main-Branche
+  (HTTP 200 verifiziert); der dauerhafte Spiegel (IPFS/Arweave) ist
+  der post-Launch-Plan, siehe `METADATEN-SPEICHERUNG.md`.

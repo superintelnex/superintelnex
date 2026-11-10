@@ -11,7 +11,7 @@
 //                  Payer (Provider) zahlt die Rent.
 //
 // TX 2 (Position): [WSOL-ATA anlegen, wenn fehlt] +
-//                  SystemProgram.wrapSol(0,5 SOL) +
+//                  SystemProgram.transfer (SOL in die WSOL-ATA wrapen) +
 //                  openPositionFromLiquidity (V2: Position-NFT-Mint + ATA +
 //                  Metaplex-Metadaten + PersonalPosition + 2x TickArray +
 //                  Liquiditaets-Depot). Signer: Provider +
@@ -85,6 +85,12 @@ const label = networkLabel();
 const sendMode = Deno.env.get("SIN_DEX_SEND") === "1";
 const dryRun = !sendMode;
 const netKey = Deno.env.get("SIN_NETWORK") ?? loadConfig().networks.default;
+// RESUME-TX2: TX1 (createPool) ist bereits on-chain (Signatur im Journal),
+// TX2 (openPosition) wurde NICHT gesendet (frueherer Crash). Der Modus
+// ueberspringt TX1 komplett und sendet nur TX2 — mit Rest-Rent-Check
+// (TX1-Rent ist on-chain bezahlt). Setzt Pool-Existenz + fehlenden
+// "clmm.openPosition"-Journal-Eintrag voraus (beides wird gepresst).
+const resumeTx2 = Deno.env.get("SIN_RESUME_TX2") === "1";
 
 if (sendMode) {
   requireMainnetOk("launch-clmm-pool (SEND)");
@@ -184,7 +190,16 @@ const poolExists = !!(await c.getAccountInfo(poolIdPda));
 console.log("\nPool-Existenz:");
 console.log("  PoolId-PDA       :", poolIdPda.toBase58());
 console.log("  existiert        :", poolExists ? "JA" : "NEIN");
-if (poolExists && sendMode) fail("Pool-PDA existiert bereits on-chain — One-Shot verbrannt, kein zweiter create moeglich (manuell pruefen).");
+if (resumeTx2) {
+  if (!poolExists)
+    fail("SIN_RESUME_TX2=1, aber der Pool-PDA existiert NICHT on-chain — nichts zu resuemen (TX1 fehlt); regulaeeren Start nutzen.");
+  const journalTxt = Deno.readTextFileSync(new URL("../result/EXECUTED-TRANSACTIONS.jsonl", import.meta.url).pathname, "utf8");
+  if (journalTxt.includes('"clmm.openPosition"'))
+    fail("Journal zeigt clmm.openPosition — TX2 ist bereits gesendet, kein Resume noetig.");
+  console.log("RESUME-TX2: TX1 ist on-chain — nur TX2 (Position) wird gebaut" + (sendMode ? " und gesendet." : " und simuliert (Dry-Run)."));
+} else if (poolExists && sendMode) {
+  fail("Pool-PDA existiert bereits on-chain — One-Shot verbrannt, kein zweiter create moeglich (manuell pruefen); bei fehlendem TX2: SIN_RESUME_TX2=1 nutzen.");
+}
 
 // ---------- Read-only: Provider-Bestaende ----------
 
@@ -244,13 +259,39 @@ const sqrtUpper = TickUtil.getSqrtPriceAtTick(tickUpper);
 // A = WSOL, B = SIN (PDA-Ordnung des Programms):
 const amountA = new BN(liqLamports);            // A: WSOL-kleinste Einheiten (lamports)
 const amountB = new BN(LIQ_SIN_RAW.toString()); // B: SIN-kleinste Einheiten
-const liquidity = LiquidityMathUtil.getLiquidityFromAmounts(sqrtCur, sqrtLower, sqrtUpper, amountA, amountB);
+// WICHTIG: L + exakte Depots am AKTUellen Pool-Preis (initialPriceX64 = P0,
+// NICHT dem Start-Tick-Preis) berechnen: P0 liegt ueber startTick (tick0 =
+// 219283 gerundet auf 219280). Bei Berechnung mit sqrtCur wuerde der SIN-
+// Transfer am P0 groesser als der exakt verfuegbare Bestand (1e18 raw) →
+// on-chain "insufficient funds" (im Dry-Run-Simulationslauf 10.11.2026
+// verifiziert). Bei P0: B = genau 1e18, A ≈ 2,9999e8 < 3e8 (kleiner
+// WSOL-Rest verbleibt harmlos in der Provider-ATA).
+const liquidity = LiquidityMathUtil.getLiquidityFromAmounts(sqrtPriceX64, sqrtLower, sqrtUpper, amountA, amountB);
 if (liquidity.lte(0)) fail("Berechnete Liquiditaet = 0 — Menge/Tick-Range pruefen.");
-const { amountSlippageA, amountSlippageB } = LiquidityMathUtil.getAmountsFromLiquidityWithSlippage(
-  sqrtCur, sqrtLower, sqrtUpper, liquidity, true, true, slippagePct / 100,
+const slippageAmts = LiquidityMathUtil.getAmountsFromLiquidityWithSlippage(
+  sqrtPriceX64, sqrtLower, sqrtUpper, liquidity, true, true, slippagePct / 100,
 );
-// Exakte erwartete Depots (ohne Slippage), fuer die Post-Send-Verifikation:
-const expectedDeposits = LiquidityMathUtil.getAmountsForLiquidity(sqrtCur, sqrtLower, sqrtUpper, liquidity, false);
+// Exakte erwartete Depots (ohne Slippage) am P0 — fuer die Post-Send-
+// Verifikation (B ≈ 9,99999999999963893e17 < 1e18 raw SIN, A ≈ 2,9999e8 < 3e8
+// lamports). roundUp=true (AUFRUNDUNG): das CLMM-Programm (open_position.rs:561
+// "PriceSlippageCheck") berechnet die echte Uberweisung selbst AUF (ceil) und
+// prueft danach exakt_Ueberweisung <= amountMax. Dry-Run 10.11.2026 reproduziert
+// den 1-Lamports-Feuer: Cap auf roundDOWN (299984270) → Right=299984271 → Custom
+// 6017 (PriceSlippageCheck). Cap auf roundUP (299984271) laesst exakt == max
+// durch — und der Preis-Drift innerhalb der ±40000-Tick-Range laesst L + die
+// exakten Betraege konstant (exakt liegt am P0, nicht am Drift-Endpunkt).
+const expectedDeposits = LiquidityMathUtil.getAmountsForLiquidity(sqrtPriceX64, sqrtLower, sqrtUpper, liquidity, true);
+// AMOUNTMAX-KAPPUNG (root-cause Fix): Ohne Kappung waeren amountMaxA/B die
+// +1%-Slippage-Betraege aus getAmountsFromLiquidityWithSlippage — GROSSER als
+// die transferierbaren Bestaende (A: 3e8 lamports per wrap, B: exakt 1e18 raw
+// SIN) → on-chain "insufficient funds" (Custom 1) bei genau der Token-
+// Transfer-Instruction. Kappung auf die EXAKTEN (roundUp) Betraege: max ==
+// exakt (Slippage-Puffer 0), das passt exakt an die verfuegbaren Bestaende.
+// (let/Neuberechnung aus dem Slippage-Ret, kein Re-Assign einer const-Destrukturierung.)
+const amountSlippageA = expectedDeposits.amountA.lt(slippageAmts.amountSlippageA)
+  ? expectedDeposits.amountA : slippageAmts.amountSlippageA;
+const amountSlippageB = expectedDeposits.amountB.lt(slippageAmts.amountSlippageB)
+  ? expectedDeposits.amountB : slippageAmts.amountSlippageB;
 
 const tickArrayLowerIdx = TickArrayUtil.getTickArrayStartIndex(tickLower, tickSpacing);
 const tickArrayUpperIdx = TickArrayUtil.getTickArrayStartIndex(tickUpper, tickSpacing);
@@ -441,6 +482,18 @@ const RENT_TABLE: [string, number, number][] = [
   ["ProtocolPosition (TX2, konservativ)", CLMM_ACCOUNT_LEN.protocolPosition, 1],
   ["WSOL-ATA Provider (TX2, falls neu)", 166, 1],
 ];
+
+// RESUME-TX2: TX1-Rent (Pool/Observation/ExBitmap/2 Default-TickArrays +
+// 2 Vaults) ist on-chain bezahlt — der Rest-Check rechnet nur die TX2-
+// Accounts an (worst-Case, konservativ): 2 Range-TickArrays + das
+// Position-NFT-/Position-Quartett + WSOL-ATA (falls neu).
+let restRentLamports = 0;
+if (resumeTx2) {
+  restRentLamports += (await c.getMinimumBalanceForRentExemption(CLMM_ACCOUNT_LEN.tickArray)) * 2;
+  for (const [, bytes, count] of RENT_TABLE.slice(5))
+    restRentLamports += (await c.getMinimumBalanceForRentExemption(bytes)) * count;
+}
+
 let rentLamports = 0;
 console.log("\nRent-Plan (on-chain getMinimumBalanceForDataSize):");
 for (const [name, bytes, count] of RENT_TABLE) {
@@ -449,11 +502,12 @@ for (const [name, bytes, count] of RENT_TABLE) {
   console.log("  " + name.padEnd(36) + ":", minBal, "lamports x" + count, "= " + (minBal * count / LAMPORTS_PER_SOL).toFixed(6), "SOL");
 }
 const prioLamports = priorityFeeMicros > 0
-  ? Math.ceil((priorityFeeMicros * (TX1_CU + TX2_CU)) / 1_000_000)
+  ? Math.ceil((priorityFeeMicros * (resumeTx2 ? TX2_CU : TX1_CU + TX2_CU)) / 1_000_000)
   : 0;
-const feesLamports = 2 * 5_000;
+const feesLamports = (resumeTx2 ? 1 : 2) * 5_000;
 const bufferLamports = 100_000;
-const requiredLamports = liqLamports + rentLamports + prioLamports + feesLamports + bufferLamports;
+// RESUME-TX2: TX1-Rent ist on-chain bezahlt — nur TX2-Rent (restRentLamports) anrechnen.
+const requiredLamports = liqLamports + (resumeTx2 ? restRentLamports : rentLamports) + prioLamports + feesLamports + bufferLamports;
 const gapLamports = requiredLamports - providerLamports;
 console.log("  Liquiditaet (wrap)     :", (liqLamports / LAMPORTS_PER_SOL).toFixed(6), "SOL");
 console.log("  Priority-Fees          :", (prioLamports / LAMPORTS_PER_SOL).toFixed(6), "SOL");
@@ -484,7 +538,15 @@ function buildTx2(): Transaction {
     tx.add(ComputeBudgetProgram.setComputeUnitPrice({ microLamports: priorityFeeMicros }));
   if (!wsolAtctExists)
     tx.add(spl.createAssociatedTokenAccountInstruction(PROVIDER, wsolAta, PROVIDER, WSOL_MINT));
-  tx.add(SystemProgram.wrapSol({ fromPubkey: PROVIDER, toPubkey: wsolAta, lamports: liqLamports }));
+  // WSOL-ATA fehlt => Wrap-Sequence: ATA anlegen + SOL hinein transfern.
+  // Die SOL-ATA ist ein Natives-Token-Account, bei dem der Transfer nicht
+  // automatisch den Token-Balance im amount-Feld setzt. Das SPL-Token-
+  // Fehler "InsufficientFunds" (Custom 1) trat im Simulationslauf auf,
+  // weil die Deposit-Transfer (WSOL→Vault) eine ATA mit amount=0 sah.
+  // Standard-SPL-Wrap-Sequenz (create→transfer→sync) löst das: die
+  // SyncNative-Instruction ruft den Token-Balance auf den Lamports-Bestand.
+  tx.add(SystemProgram.transfer({ fromPubkey: PROVIDER, toPubkey: wsolAta, lamports: liqLamports }));
+  tx.add(spl.createSyncNativeInstruction(wsolAta));
   tx.add(posRes.instructions[0]);
   tx.feePayer = PROVIDER;
   return tx;
@@ -492,7 +554,7 @@ function buildTx2(): Transaction {
 
 console.log("\nGebaut:");
 console.log("  TX1 (createPool)      : 1 ClmmCreatePool + ComputeBudget | Signer: Provider (Payer) | CU-Limit " + TX1_CU);
-console.log("  TX2 (openPosition)    : [" + (wsolAtctExists ? "" : "ATA-Create + ") + "wrapSol(0," + liqSol + ") + 1 openPositionV2] | Signer: Provider + NFT-Mint | CU-Limit " + TX2_CU);
+console.log("  TX2 (openPosition)    : [" + (wsolAtctExists ? "" : "ATA-Create + ") + "wrap-transfer(" + liqSol + " SOL) + 1 openPositionV2] | Signer: Provider + NFT-Mint | CU-Limit " + TX2_CU);
 
 // ---------- DRY-RUN: TX1-Simulation (lokal signiert, wird NICHT gesendet) ----------
 
@@ -503,7 +565,21 @@ async function simulateSigned(tx: Transaction, signers: Keypair[]) {
 }
 
 if (dryRun) {
-  if (providerKp) {
+  if (resumeTx2) {
+    console.log("\nTX1: uebergangen (RESUME — Pool ist on-chain, Signatur liegt im Journal).");
+    if (providerKp) {
+      console.log("TX2-Simulation (RPC, nichts wird gesendet):");
+      const sim = await simulateSigned(buildTx2(), [providerKp, nftMintKp]);
+      if (sim.value.err) {
+        if (sim.value.logs && sim.value.logs.length)
+          console.log("  Program-Logs:\n    " + sim.value.logs.join("\n    "));
+        fail("TX2-Simulation fehlgeschlagen: " + JSON.stringify(sim.value.err));
+      }
+      console.log("  OK — CU verbraucht:", String(sim.value.unitsConsumed ?? "?"), "(Limit " + TX2_CU + ")");
+    } else {
+      console.log("\nTX2-Simulation uebersprungen (recipient.json nicht lesbar im Dry-Run).");
+    }
+  } else if (providerKp) {
     console.log("\nTX1-Simulation (RPC, nichts wird gesendet):");
     const sim = await simulateSigned(buildTx1(), [providerKp]);
     if (sim.value.err) {
@@ -544,21 +620,30 @@ if (gapLamports > 0)
     "(SIN_NETWORK=mainnet SIN_DEX_SEND=1 SIN_MAINNET_OK=1).",
   );
 
-console.log("\nSIMULATION TX1:");
-const sim1 = await simulateSigned(buildTx1(), [providerKp as Keypair]);
-if (sim1.value.err) fail("TX1-Simulation fehlgeschlagen: " + JSON.stringify(sim1.value.err));
-console.log("  OK — CU:", String(sim1.value.unitsConsumed ?? "?"));
+// TX1: nur im regulären Flow senden — im RESUME-TX2 ist createPool
+// bereits on-chain; die Signatur stammt aus dem Journal.
+let sig1: string;
+if (!resumeTx2) {
+  console.log("\nSIMULATION TX1:");
+  const sim1 = await simulateSigned(buildTx1(), [providerKp as Keypair]);
+  if (sim1.value.err) fail("TX1-Simulation fehlgeschlagen: " + JSON.stringify(sim1.value.err));
+  console.log("  OK — CU:", String(sim1.value.unitsConsumed ?? "?"));
 
-console.log("\nSENDEN TX1 (createPool) …");
-const sig1 = await sendTx(c, buildTx1(), [providerKp as Keypair]);
-console.log("  TX1 Signature :", sig1.slice(0, 16) + "…  (https://explorer.solana.com/tx/" + sig1 + ")");
-journal("clmm.createPool", {
-  signature: sig1,
-  network: label,
-  details: { poolId: poolIdPda.toBase58(), tickLower, tickUpper, startTick, tickSpacing },
-});
-
-// Read-only-Verifikation vor TX2 (Pool + Vaults muessen jetzt existieren).
+  console.log("\nSENDEN TX1 (createPool) …");
+  sig1 = await sendTx(c, buildTx1(), [providerKp as Keypair]);
+  console.log("  TX1 Signature :", sig1.slice(0, 16) + "…  (https://explorer.solana.com/tx/" + sig1 + ")");
+  journal("clmm.createPool", {
+    signature: sig1,
+    network: label,
+    details: { poolId: poolIdPda.toBase58(), tickLower, tickUpper, startTick, tickSpacing },
+  });
+} else {
+  const journalTxt = Deno.readTextFileSync(new URL("../result/EXECUTED-TRANSACTIONS.jsonl", import.meta.url).pathname, "utf8");
+  const poolLine = journalTxt.split("\n").filter((l) => l.includes('"clmm.createPool"')).pop();
+  if (!poolLine) fail("RESUME: Journal ohne clmm.createPool-Eintrag — TX1-Signatur nicht bestimmbar.");
+  sig1 = (JSON.parse(poolLine) as { signature: string }).signature;
+  console.log("TX1 (createPool): uebergangen — Signatur aus Journal: " + sig1.slice(0, 16) + "…  (https://explorer.solana.com/tx/" + sig1 + ")");
+}
 const poolAfter = await c.getAccountInfo(poolIdPda);
 if (!poolAfter) fail("TX1 bestaetigt, aber Pool-PDA fehlt on-chain — manuell pruefen, KEIN auto-further (TX2 wuerde ebenfalls scheitern).");
 console.log("  Pool on-chain  :", poolIdPda.toBase58(), "(data " + poolAfter.data.length + " bytes)");
@@ -628,6 +713,7 @@ const out = {
   provider: PROVIDER.toBase58(),
   tx1CreatePool: sig1,
   tx2OpenPosition: sig2,
+  ...(resumeTx2 ? { resumedTx2: true } : {}),
   links: {
     explorerPool: "https://explorer.solana.com/address/" + poolIdPda.toBase58(),
     raydiumPool: "https://app.raydium.io/pools/" + poolIdPda.toBase58(),
@@ -638,4 +724,4 @@ const out = {
 Deno.writeTextFileSync(new URL("../result/POOL-ADDRESS.txt", import.meta.url), JSON.stringify(out, null, 2) + "\n");
 console.log("\nPOOL LIVE — Protokoll nach result/POOL-ADDRESS.txt geschrieben.");
 console.log("  Raydium-Pool-Seite:  https://app.raydium.io/pools/" + poolIdPda.toBase58());
-console.log("  Naechster Schritt (nach Bestaetigung): revoke-authorities.ts (EINWEG).");
+console.log("  Nachsorge: Revoke der Mint-Vollmachten ist bereits on-chain erledigt (Stand 10.11.2026) — nichts weiter einzuplanen.");
