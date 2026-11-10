@@ -2127,3 +2127,11 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   00-22Z-CIO-Closeout (0 neue Notes), Outbox-Poll: 0 neue Notes in
   CIO/Designer/Fable/agent-verify-Boxen. System quiescent — nächste Runde
   via neu armer Wecker-Kette (30-Min-Timer + Event-Wart-Timer).
+- 2026-11-10 23:54 UTC · agent-1 · **4b. Recheck quiescent (Event-Wart-Timer-Cap
+  23:53:59Z ohne Trigger):** 7/7 Instanzen ALIVE (21894/23185/30608/29016/73510/
+  33262/33263), CIO-Loop 23:54:02Z-Poll `WAART AUF DEPOSIT`, Monitor v1.2
+  tick #171 mit 0 Events, Heartbeats 00:54:06/23:53:59Z, Detector 33263 ohne
+  Marker, Provider-Direct-Read = 5008440 Lamports (slot 467912550, unverändert),
+  agent-1-Inbox = Baseline (0 neue Notes), Outbox-Poll: 0 neue Notes.
+  Wecker-Kette v3 gearmt: 30-Min-Fix-Timer + Event-Wart-Timer (4 Trigger,
+  60-s-Poll, 30-Min-Cap) laufen im Background — Ende weckt die Session.
