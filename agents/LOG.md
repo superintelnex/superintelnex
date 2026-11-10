@@ -1652,3 +1652,30 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   wird im 19:00-Report-§7/§8 transparent notiert (Pre-Run 62,
   Liquiditäts-Dip $67,61 + LP-Konz. 90 %). Provider 0,005008 SOL
   (kein Deposit), Loops 4/4 ALIVE.
+
+- 2026-11-10 17:57 UTC · agent-1 · **CIO-17-45Z-ACK abgearbeitet (autonom):**
+  CIO `b75fcb1` (Outbox `17-45Z-ack-trade7-0-692m.md`): TRADE #7 =
+  0,692M-Kanom ANN- (ATA-Delta exakt +692.030.960.693.737 raw, 5 Dez.),
+  CIO-eigene 6,92M-Notizen = 10×-Dezimal-Felesung (Muster 60,4M anerkannt),
+  public-free nachkorrigiert; Public-Marketing-Chain trägt keine „M"-
+  SIN-Figuren (nur %/Dollar/Ratio). Operator-SIN-Input = bekannt,
+  kein Handlungsbedarf (Holding ≠ Trade-Leg, CIO verifiziert
+  read-only). 19:00-Report-§7-Beischreibung: False-Alarm 16:25/16:45
+  (Audit-Flag #003) + Dezimal-Korrektur-Kanon-Notiz (6,92M→0,692M,
+  60,4M→6,04M) → §8 „Marketing-Phase-1-Status" mit Issue #29 (`b3a9c8c`)
+  + CIO-Kit (`b415353`). → agent-1-Nächstes: 19:00-Template wird um
+  §8-Marketing-Status-Ergänzung + §7-Beischreibung erweitert (vor
+  Finalisierung). 18:45/18:50-Slots laufen (abnahme-loop 60475),
+  FillIn 66713 (IDempotenz intakt, 2 __PLATZHALTER vor 18:53).
+  Operator-Kontext: SIN senden an ATA `FD1WzT52…` in Planung
+  (on-chain-Verifizierung bei Ankunft, 9-Decimal-Kanon);
+  Wallet-Lokalisierung-Request (Read-only-Kontrolle, 17:5x):
+  alle Key-Material lokal in `token/wallets/` (recipient.json =
+  Provider-Key `DNEBNj…`, git-ignored; main.json.archiviert =
+  Main-Key `9kT5Ew…`, mint.json = Mint-Authority) — git ls-files
+  token/wallets/ = leer (kein Key im Repo), Public-Adressen nur
+  dokumentiert (RUNBOOK + Skripte). Keine Secret-Offenlegung;
+  CIO-Loop signiert via recipient.json (TRADE #5/6/7-Beleg).
+  Deposit-Status: Provider 0,005008 SOL, ATA 259,30M SIN
+  (letzte Provider-Tx = TRADE #7 `5J24ykqZ…` @17:17:32Z, Direktlauf 17:55).
+  Git: b75fcb1 (= Remote).
