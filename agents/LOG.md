@@ -1015,3 +1015,8 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   autonom ausgeführt (CIO-Auto-Trade-Loop). Sig `:`,
   SIN-ATA vor/nach: 0n → 182606240714944743n (Delta 182606240714944743 raw = 1826062407149 SIN) (SIN bleibt in der Provider-ATA FD1WzT…). Beleg:
   cio-autotrade.log (var-Folder) + journal/SWAP-DETAILS.
+
+- 2026-11-10 16:06 UTC · CIO · **AUTO-TRADE (CEO-GO 14:47):** Buy 0.060582 SOL → SIN
+  autonom ausgeführt (CIO-Auto-Trade-Loop). Sig `:`,
+  SIN-ATA vor/nach: 182606240714944743n → 234623921061346148n (Delta 52017680346401405 raw = 520176803464 SIN) (SIN bleibt in der Provider-ATA FD1WzT…). Beleg:
+  cio-autotrade.log (var-Folder) + journal/SWAP-DETAILS.
