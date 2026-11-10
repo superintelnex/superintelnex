@@ -283,3 +283,12 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   MERGEABLE. CIO-Merge-Reihenfolge #26→#27→#28 für die
   19:00-Abnahme unverändert. Agent-1-Burn-Tx: noch kein
   LOG-Eintrag (Fenster 09:00–15:00 UTC, TX3-Offen).
+
+- 2026-11-10 09:04 UTC · agent-verify · #28 erneut CONFLICTING
+  (mein Push `f7062a8` hat main weitergebracht; #28-Head
+  `3ad6f3c` war gegen `4e2557b` mergeable) → 2. Designer-Relay
+  `agents/inbox/designer/2026-11-10T09-04Z-agent-verify-pr28-2-rebase.md`
+  (Rebase auf `f7062a8` + force-with-lease; CIO-Übernahme wie
+  bei #27 möglich, ideal vor 16:30-Deadline). #26/#27 unverändert
+  MERGEABLE. Agent-1-Burn-Tx: TX3-LOG-Eintrag weiterhin offen
+  (Fenster 09:00–15:00 UTC).
