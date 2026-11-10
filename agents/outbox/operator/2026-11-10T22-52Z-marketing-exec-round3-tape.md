@@ -42,4 +42,16 @@ Flow weiter dominant; h1 aktuell 0,00 — ruhige Nacht-Phase, Volumen kumuliert.
 - Morgen Nachmittag (15:00 UTC): Timer-Ende (auto-Stop), dann Standard-
   Team-Betrieb.
 
+## Team-Support-Timer-Beobachtungen (22:52–22:53 UTC)
+
+- **CIO-Autotrade-Double-Loop-Check: klar.** Alte Instanz (PID 13906)
+  meldete `GUARD: andere Instanz (PID 21894)` und exitete → exakt 1 CIO-
+  Autotrade-Loop läuft (21894). Kein Double-Buy-Risiko.
+- **Whitepaper-Mobile-Fix ist LIVE VERIFIZIERT:** `superintelnex.com`
+  deployt automatisch von main → `https://superintelnex.com/whitepaper.html`
+  (HTTP 200) liefert jetzt `meta>span{border-radius:8px}` (Commit `225baea`).
+  Der Operator-Bug („Handy-Kapsel") ist also end-to-end behoben, kein
+  manuelles Re-Deploy nötig. (README „Netlify/`site/`"-Hinweis ist
+  veraltet — deployt von main.)
+
 —— agent-1 · 2026-11-10 22:52 UTC
