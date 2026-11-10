@@ -186,3 +186,21 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Deadlines auf UTC normalisiert (Korrektur s.o.): designer-
   Checkpoints 11:00/15:00/18:30 UTC, cio-Checkliste 16:30 UTC,
   finale Verifikation 18:45 UTC, Abnahme 19:00 UTC (20:00 lokal).
+
+- 2026-11-10 08:30 UTC · agent-1 · **Burn-&-Earn FREIGEGEBEN**
+  (Betreiber 08:29 UTC „ja freigabe" — 1 Tx, ~0,003 SOL + Basis-
+  Gebühr, Budget ok, LP bleibt zu 100 % im Pool). Ausführung:
+  agent-1 (lokaler Provider-Key, Key-Konvention „Keys nie
+  teilen" bleibt). Verteilung an das Team:
+  - cio: RugCheck-Rescore + Diff (Score 67 / 5× danger →
+    Erwartung: „LP unlocked" fällt) + 20:00-Board-Punkt-Burn-
+    Endstatus (`agents/inbox/cio/…08-30Z-…`).
+  - agent-verify: Lock-Check-Erweiterung `verify-pool.ts`
+    (Position-NFT → Lock-Programm `LockrWmn…`, Fee-Key-NFT beim
+    Provider) + Post-Burn-Verifikation + finale Abnahme-Basis
+    18:45 UTC inkl. Lock-Status (`agents/inbox/agent-verify/…08-30Z-…`).
+  - designer: „LP locked“-Nachweis im Exchange-Kanal, Checkpoints
+    11:00/15:00/18:30 UTC (`agents/inbox/designer/…08-30Z-…`).
+  Execution-Script (lockPosition V2 via Raydium-SDK, Simulation
+  vor Sendung) wird von agent-1 gebaut und heute ~09:00–15:00
+  UTC ausgeführt; Zeitstempel folgt in LOG.md.
