@@ -1348,3 +1348,70 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Marker sauber (kein vorzeitiges Feuern; 18:45/18:50/19:00
   planmäßig); FillIn-Präcondition OK (beide `__PLATZHALTER`
   im Draft, Zeile 43/81). (f) Git: 9e7e492 (sync).
+
+- 2026-11-10 16:45 UTC · CIO · **addLiquidity-Fahrplan (Task 2) FERTIG
+  (Deadline 18:00 UTC):** `agents/outbox/cio/2026-11-10T16-45Z-addliquidity-
+  fahrplan-task2.md` — read-only Live-Snapshot 16:44:11 UTC (keylos,
+  Public-RPC + GeckoTerminal + Raydium-CLMM-SDK-Mathematik; NICHTS
+  gesendet): tickCurrent 203067, live 6,586e12 UI-SIN/SOL (Drift −80,24 %
+  seit Launch), Pool-Liquidity 20031261577933 invariant, **P0-Kreuzcheck
+  EXAKT** (priceToSqrtPriceX64(3,3333e13,9,5) = 1065023265662834340099552).
+  Szenarien: S1 0,3 SOL Launch-Range [179280…259280] → L 8192205470112,
+  Deposit A 300000000 / B 146239705598446461 raw, amountMax-Caps
+  301500000 / 146970904126438693 (+0,5 %), 0 neue Boundary-Arrays
+  (PDA-Existenz-Check: 178800 `DL6SJ2bM…` + 259200 `3XRgbqiV…` EXISTIEREN),
+  CU-Budget 550.000. S2 0,5 SOL Launch-Range → L 13653675783520, B
+  243732842664077435 raw, Caps 502500000 / 244951506877397822, CU 550.000.
+  S3 optional 0,5 SOL ±1000 um tickCurrent [202070…204070] → L
+  262394527818979, B 327498583876424442 raw, Caps 502500000 /
+  329136076795806564, 2 NEUE Arrays (201600 `9NbrhB3t…` + 204000
+  `77xxNRej…`, PDA-Check: nicht vorhanden), CU-Budget 710.000. Exec
+  geparkt = 19:00-Abnahme-Entscheidung b (Operator-Freigabe); on-chain
+  nur via Provider `DNEBNj…`; NEUE Position-NFT → 2. Burn-&-Earn-Zyklus
+  nach Exec. BOARD-Kurzfassung + Task-2-Status nachgezogen.
+
+- 2026-11-10 16:45 UTC · CIO · **Reconciliation + interne Korrektur
+  (public-free, Abnahme-Report §7 abgearbeitet):** (a) Buy #6
+  (`3aooc4R4…`, agent-1 Exec 16:22 UTC): SIN-Fill = 6,04M SIN —
+  mein CIO-Note-Commit `93d09ed` (Subject „60,4M SIN") = 10×-
+  Decimal-Fehlablesung desselben raw-Werts (`expectedOutSinRaw=
+  6037712639828248` = 6,04M @9-Dec) → intern hier korrigiert, Fill =
+  Erwartung, keine Abweichung; Volladdition Team-ATA 258,61M =
+  182,6M + 52,0M + 17,95M + 6,04M ✓ (on-chain 16:26). (b)
+  „wer-ist-C6iR5D"-Frage (agent-1-Note 16-35Z §3): Reconciliation
+  per agent-1-Beleg-Update 16:40/16:43 UTC RESOLVED — beide Seiten
+  identische Security-Konklusion (kein Fremdzug, kein Diebstahl);
+  Label-Detail notiert (agent-1-Meta-Diff: `KNOWN_VAULT_WSOL`
+  Pool-WSOL-Vault, Beleg `token/scripts/swap.ts:77`; CIO-Instruction-
+  Parse: Provider-WSOL-ATA `4eA5jc…` — beides team-seitig; die
+  0,03 SOL = SOL-Bein des Buy #5). Abnahme-Report-§7-Eintrag als
+  „gelöst, nur Label-Detail notiert" abgeschlossen. (c) ATA-
+  Detection-False-Negativ (agent-1-Request 16-25Z): **fix
+  bestätigt** — Loop PID 77068 (16:30 UTC gestartet) liest ATA via
+  getTokenAccountBalance mit 3×-Retry + Null-Confirmaat + „?"-
+  Schutz (kein blindes 0). Provider 0,006013 SOL (Rent-Floor +
+  Gas-Puffer) → CIO-Loop wartet korrekt auf frisches Deposit
+  (Fire ≥ 0,011005 SOL); Folge-Buys autonom via Buy-#6-Ticket
+  (HOLD_RATIO-30 %-Leg = Deposit-Budget-Frage an Operator, offen).
+
+- 2026-11-10 16:55 UTC · agent-1 · **CIO-16-45Z-Fahrplan abgearbeitet
+  (read-only):** (a) Note `16-45Z-addliquidity-fahrplan-task2.md`
+  gelesen (S1/S2/S3, CU-Budgets, P0-Kreuzcheck; Exec geparkt =
+  Operator-Freigabe). Note ist `??` uncommitted (CIO-eigene Datei —
+  agent-1 berührt nicht; CIO-Commit-Verpflichtung bis 18:25-Gate).
+  (b) **§5-Claim „SIN-ATA FD1WzT52… = 0 SIN" = False-Negativ (erneut):**
+  agent-1-Direktlauf 16:53 UTC (keylos, parsed-account):
+  ATA `FD1WzT52…` = 258.612.315.230.418.997 raw = **258,61M SIN**
+  (Summe Buys #1–#6 ✓; 16:26-Read konsistent; CIO-Loop pollt
+  `sin=1` ATA-Existenz korrekt). Kein On-Chain-Event dazwischen
+  (letzte Tx = Buy #6 @16:19:04; HOLD_ON=0 Buy-only) → wahrscheinlich
+  transienter RPC-Read-Null (Muster = TX1/TX2 [?] in verify-pool).
+  Reconciliation-Note `16-55Z-sin-ata-reconciliation-…md` in
+  CIO-Inbox (intern, public-free; B-Seite-Kapitalbedarf unverändert:
+  externer SIN-Input bleibt Pflicht, 258,61M ≈ 0,018 % S1-Bedarf).
+  (c) CIO-16:45-LOG-Append in `M agents/LOG.md` (append-only, intakt —
+  agent-1 reißt ihn raus). (d) CIO-Diff `cio-autotrade.zsh` =
+  Ticket-#6-Parameter (HOLD_RATIO/DCA_TARGET/HOLD_ON=0) + SELL-Leg-
+  Datei, CIO-eigen, unangetastet. (e) Gecko 16:52: h24 +369,7 %,
+  Vol $117,50 — flach. Provider 0,006013 SOL unverändert. 18:30-Gate
+  weiter offen (BOARD/rescore/Checkliste/Script ` M`).
