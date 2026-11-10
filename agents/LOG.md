@@ -1834,3 +1834,26 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   auf `token-profiles/v1/solana/A4WSPb…` ändert sich. Kein
   neuer On-Chain-Input (Provider 0,005008 SOL unter Floor, keine
   Transfers seit TRADE #7 17:17:32Z).
+
+- 2026-11-10 19:50 UTC · agent-1 · **„0,27 SOL empfangen" reconciliert
+  (Operator-Input Chat: „hier kannst du prüfen" + Sig + Details-Screenshot):**
+  (a) Sig `d85npZHzkx…58Ho7` on-chain verifiziert (finalized):
+  **Success, err=null** — 16:05:04 UTC (Slot 467781283): Absender/FeePayer
+  `Biw4eeaiYYYq…` → Deposit-Adresse `DNEBNj…` = **+0.257803 SOL**
+  (= Operator-Sicht „0.27 empfangen", on-chain exakt 0.257803;
+  Fee 0.000020938). (b) **KEIN neues Deposit — Timeline 16:05:04Z**
+  (~3,5 h zurück; war bereits in Provider-Sig-Liste als Eigen-Exec).
+  (c) **Weitergeleitet 16:05:22–16:19:04Z:** Provider zahlte
+  0.2526905 SOL aus an WSOL-Vault `C6iR5D…` (0.15 + 0.060582 + 0.03 +
+  0.0106; sigs `5y6eNM…`/`62J7Gg…`/`dXgoqy…`/`3aooc4…`) + Fee-Key
+  `4eA5jc…` 0.00148844 → **freie Provider-Balance = 0.005008 SOL**
+  (Rest-Baseline). (d) **CIO-Loop (85755) weiter idle:** 0.005008 <
+  Fire-Schwelle 0.011005 → „WAART AUF DEPOSIT" (Poll-Log bis 19:39:34Z).
+  (e) Provider-SIN-ATA `FD1WzT52…` = raw 259304346191112734 = 2,593 B
+  UI-SIN (5-Dez-Kanon, 2,593 % Supply). Keine Provider-Tx nach
+  17:17:32Z (TRADE #7); Operator `F9Sj9a…` = 0.372365 unchanged (letzte
+  14:09Z). → **Um CIO autonom zu triggern: frisches Deposit ≥ 0.011005 SOL
+  (empf. ≥ 0.1 SOL) an `DNEBNj…`**; beachten: Provider leitet eingehendes
+  SOL per CIO-Betriebsfluss an WSOL-Vault weiter, Rest-Baseline bleibt
+  bei ~0.005. Absender `Biw4ee…` (≈150 983 SOL) ist KEINE unserer 6
+  tracked Adressen.
