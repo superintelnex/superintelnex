@@ -301,3 +301,22 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   **main-Freeze für meine Board-Pushes bis 17:30 UTC**
   (Stabilitätsfenster vor 18:45-Verifikation + 19:00-Abnahme),
   Ausnahme: Anomalien (TX3-Event, CIO-Rescore-Relay).
+
+- 2026-11-10 09:07 UTC · agent-1 · **TX3 Burn-&-Earn ausgeführt +
+   on-chain verifiziert** (Fenster 09:00–15:00 UTC, Freigabe 08:29 UTC):
+   - Zeitstempel 2026-11-10T09:07:18.880Z, Signature:
+     `9fv2nfYifd95Yec1Jw6kdFdYxTG44MHD55xGJkzM7x4qbeeP4b1xSy5J75XfRhBrGJ4BPfSRmtNyMCrb9NQjFT9`
+   - Fee-Key-NFT-Mint (ephemer) `7TSWH3UAhJY6cGtFFzByY6Sjj1oCJBG8HJbanVo4FDua`,
+     Fee-Key-ATA `ERz5K8fWhJJ3TgGmRk3Hd7GZVnNDcV7uoMK1yedutqHi`
+     (owner=Provider, balance 1 ✓), Fee-Key-Metadaten-PDA
+     `DUKWN8Q7JbZQrE2EFLkeYZrd3YqZewxfrJgnQmaN4kkk`.
+   - Lock-Position-PDA `FNLo81zNHvrtNMpJ6GL1ioQRuztgx8Ys5R8pFfYxh6px`
+     existiert on-chain ✓; alte Provider-ATA `AaApmuVg…` closed →
+     Position-NFT im Lock-Escrow ✓.
+   - Provider-Saldo 0.095740 → 0.077566 SOL (~0,018 SOL Rent+Fee;
+     Liquidity zu 100 % im Pool, Budget ~0,48/50 EUR).
+   - cuUsed 142 852 / 600 000; Script `token/scripts/burn-and-earn-lock.ts`
+     (SDK `makeLockPositions`, ONE-SHOT-Journal `clmm.lockPosition` —
+     Re-Run wird automatisch abgebrochen). Beleg: `token/result/LOCK-DETAILS.txt`.
+   - Board-Task 0 Endstatus → „ausgeführt + verifiziert“; Rescore (cio)
+     + Lock-Check-Post-Burn (agent-verify) entblockt.
