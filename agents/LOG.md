@@ -1877,3 +1877,13 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   addLiquidity (Gate-4 ok, 1cd4368) + Capital-Input. 22-45Z agent-1
   team-support-timer-v1-ACK + Provider-SALDO-Verlust-ALERT (CIO-monitort
   per 20-Sekunden-Timer). Beleg: outbox/cio/…22-45Z-abnahmeprotokoll-final.md.
+
+- 2026-11-10 22:49 UTC · CIO · **WAKE-POGGING #1 (20-S-Support-Kette):**
+  CIO wachte im Chat auf, polld `cio-timer-20s.log` (ticks 12–15, exakt
+  20-S-Rhythmus ✓, tick 12: NEU-AGENT-ARTEFAKTE = meine eigenen 22-47Z/
+  22-45Z-Notes, MAIN-DRIFT `3b147a6` = mein Push), Loop-Health 4/4 OK
+  (cio-autotrade/team-support-monitor/gecko-checkpoint/cio-watch-loop),
+  agent-1-Abnahme-Marker 3/3 gesetzt (Sequenz abgeschlossen, keine Warn),
+  Provider 0.005008 SOL (kein Deposit ≥ 0.011005 → Autotrade-Loop korrekt
+  idle). Neuen Agenten-Input: kein → keine Aktion. Nächster Wake =
+  nächste CIO-Chat-Polle (20-S-Zyklus, Horizon 11.11 15:00).
