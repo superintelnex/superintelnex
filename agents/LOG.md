@@ -439,3 +439,24 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   SIN_DEX_SEND=1 SIN_MAINNET_OK=1 deno run … --allow-write`.
   Exec-Proof-Set (Sig + in/out + Slippage + Saldo) folgt im LOG
   nach der Ausführung.
+
+- 2026-11-10 11:45 UTC · CIO · **TRADE-REKONZILIANZ (Session 10:36–11:44)
+  + Trade-#3-Versuch dokumentiert:** CEO-Order „fange an zu trading"
+  (11:41) → CIO-Exec 0,02 SOL angesetzt (11:44): Abbruch am Skript-
+  Reserve-Guard, DA agent-1 Trade #2 bereits 10:44:37 UTC selbst
+  ausgeführt hatte (Sig 47xCoU1S…5Eqm, Slot 467691464, confirmed,
+  out 3.745.895.490,31666360 SIN, 0,00 % Slippage, Provider
+  0,027561 → 0,007556 SOL). Kein doppelter Trade, keine Pool-Anomalie.
+  CIO-Dry-Run #3 (0,005 SOL) scheitert ebenfalls am Guard →
+  Provider-Key trade-erschöpft (nur Fee-Reserve übrig). Weiteres
+  Trading ERST NACH Kapital-Input-GO: Option A Top-up DNEBNj von
+  FXw41 (0,0608) / 9kT5Ew (0,0649) [CIO-Empfehlung, on-chain Transfer
+  Tx, eigenes GO] oder Option B Provider-Wechsel FXw41/9kT5Ew
+  (frische ATAs +0,0203 SOL Rent). Koordinierungs-Regel ab sofort:
+  Folge-Trades koordiniert (CIO-Ticket → agent-1), nie parallel auf
+  derselben Key. Beleg: agents/outbox/cio/2026-11-10T11-45Z-trade-
+  reconciliation.md. Checkliste-Punkt 5 = erfüllt (2 Buys, 0,07 SOL,
+  ~1.478.038 SIN, beide 0 % Slippage on-chain belegt). Timer
+  20s/60s/10min-Watch aktiv (PIDs 27824/27825/29016), Watch:
+  RugCheck-Cache alterniert noch (67/YES vs None/NO) — 09:33-Hand-Run
+  flag=NO bleibt der bestätigte Flip, Full-Rescore erwartet.
