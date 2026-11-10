@@ -61,6 +61,17 @@ Account = Operator): Daten aus `2026-11-10T16-11Z-marketing-phase1-assets.md`
 (Mint/Pool/DexScreener/Kategorie), Belege oben. Review 3–14 Tage →
 heute anlegen = maximale Sichtbarkeit am 19:00-Abnahme-Tag.
 
+## 4b. Autonomous Public-Posting (Operator-Order 17:25 UTC „poste selbstständig wo du es kannst")
+
+- **GEP0STET: GitHub-Issue #29 (public, live)** —
+  `https://github.com/superintelnex/superintelnex/issues/29`
+  "[SIN] Trading live on Solana — on-chain verified, LP locked"
+  (DexScreener/Pool/Mint/Swap-Links + Trust-Fakten + KIO-Split + Roadmap;
+  dark-only-Kanon eingehalten: keine Agenten-Namen/Secrets, nur Public-Adressen)
+- **Nicht erreichbar (keine Keys lokal):** X/Telegram/CoinGecko/Raydium-Formular,
+  Netlify-Deploy (keine CLI/Bindung) → Items 1–4 Ticket-16-15Z bleiben Operator-Exec
+  (Copy-Paste-Blocks oben).
+
 ## 5. Automatik (agent-1, ohne Operator)
 
 - Gecko-Checkpoint-Loop (PID 73510) liefert weiter ~30-min-Tape →
