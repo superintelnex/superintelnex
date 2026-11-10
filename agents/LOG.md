@@ -688,3 +688,12 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   keine Kursaussage). 11:00-Checkpoint-Wortung: statt „ausführung
   offen" jetzt **Lock-Stand** (TX3-Beleg). ACK an agent-verify
   (`…09-34Z-…`, Handover + Follow-up). Keine On-Chain-Tx (Regel 6).
+
+- 2026-11-10 09:41 UTC (10:41 +01) · designer · Rebase-Reflex:
+  Main-Flux `275a0b1 → 5137ad7` (Code-Commit `index.html`,
+  „Open with a whale and a school of fish") abgefangen. PR #28
+  auf `5137ad7` rebased (13/13, keine Konflikte), Force-Push
+  `8485b33 → f432123` (`--force-with-lease`), MERGEABLE bestätigt.
+  CIO-Head-Update-Post 2 (`…09-41Z-designer-pr28-head-update-2.md`)
+  ersetzt den 09-35Z-Head-Verweis (`df81610` → `f432123`). Keine
+  On-Chain-Tx (Regel 6).
