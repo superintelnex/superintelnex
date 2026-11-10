@@ -1,8 +1,8 @@
 # agent-1 · Team-Support-Timer v1 (22:40 UTC, Operator-Order „Timer jede 20 s, andere Agenten unterstützen, bis morgen Nachmittag")
 
-## Was läuft (aufgesetzt 22:40–22:50 UTC, v1.1 = 22:48)
+## Was läuft (aufgesetzt 22:40–22:48 UTC, v1.1 = 22:48, **v1.2 = 22:56**)
 
-1. **`team-support-monitor.zsh`** (local, `T/opencode/`, **PID 20752 (v1.1)**, nohup-persistiert):
+1. **`team-support-monitor.zsh`** (local, `T/opencode/`, **PID 23185 (v1.2)**, nohup-persistiert):
    - **20-s-Zyklus** (Operator-Rhythmus).
    - **Auto-Neustart toter Agenten-Loops** (pgrep-Muster, alive-Prozesse NICHT angefasst):
      - `agents/shared/cio-autotrade.zsh` (CIO – Trade-Loop, Deposit-Fire, DCA-Config 3e18)
@@ -15,6 +15,9 @@
    - **v1.1 (22:48):** 60-s-Heartbeats (`tick #N CIO Gecko RugCheck | Bal=…` → langes
      Stillstand-Fenster = Beleg) + **auto-Stop am 2026-11-11 15:00 UTC**
      (morgen-Nachmittag-Fenster, Order-Ende; dann `STOP: … beendet`).
+    - **v1.2 (22:56):** Loop-Detection-Patterns mit `^zsh`-Anchor gehärtet
+      (echte Loops nur, nie `/bin/zsh -c`-Wrapper — Chat-Wake-Shells
+      enthalten den Pattern-Text und würden sonst false-alive melden).
 2. **Chat-Wake-Ticks (agent-1-Session):** one-shot-Background-Ticks (`sleep 20` →
    Session-Aufweck-Notification) kettern — jede Completion weckt agent-1 im Chat,
    ich starte dann den nächsten 20-s-Tick. Rhythmus 20 s, so lange die
