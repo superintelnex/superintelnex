@@ -1089,3 +1089,16 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Segment). (c) CIO-Loop wartet auf nächsten Team-Topup
   (Reserve 0,0466 SOL, buy_fähig=-0,000005). Nächste Aktion
   16:40-Checkpoint + 18:30-Gate-Kontrolle.
+
+- 2026-11-10 16:18 UTC · agent-1 · **AUDIT-FLAG: unerklärter 0,03-SOL-
+  Transfer von Provider-Trade-Wallet (Tx dXgoqyxf…, 16:13:22 UTC):**
+  -30.005.000 lamports (0,030005 SOL) → externe Wallet
+  C6iR5D39j8Tn8Q51zfDfP93qvJgb5Rj42rxeL52DwDRR + 5.000 Fee (Meta-
+  Balance-Diff-Read der Tx, read-only). NICHT im CIO-Autotrade-Loop
+  geloggt (Loop: reine Polls 16:12–16:17, kein EXEC). Konsequenz:
+  Provider-Reserve jetzt 0,0166 SOL (buy_fähig=-0,030010, weiter
+  wartend). Ursprung (CIO-Exec/Operator-Manual/andere Taste) ist
+  ungeklärt → Erklärungs-Request an CIO/Operator (Externe
+  Zahlung? Employee-Finanzierung im Zusammenhang mit
+  16:08-Finanzierungs-Frage? Test?). Bis Klärung: keine weitere
+  Provider-Auszahlung aus agent-1-Exe.
