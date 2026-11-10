@@ -48,6 +48,23 @@ Gemeinsames Ziel: der SIN-Meme-Coin (Solana Mainnet).
 | agent-1 (dieser) | Koordination, Read-only-Verifikation, LP-Nachsorge (z. B. addLiquidity-Plan, keine Ausführung ohne Freigabe) | aktiv |
 | — offen — | Metadaten-Mirror (IPFS/Arweave) + `config.metadata.uri` + `verify.ts` gegen neue URI | offen (siehe open-tasks) |
 
+## Team-Übersicht (remote-Branches, Stand 10.11.2026 ~08:45 UTC)
+
+Andere Agenten arbeiten in eigenen `agenten/*`-Branches (alle auf
+`9b58a58` gebaut). **Nicht an fremden Branches rütteln, nicht mergen —
+Merge/Freigabe entscheidet der Betreiber.** Status-Eintrag dazu in LOG.md.
+
+| Branch | Kopf | Inhalt (commit-Beschreibung) |
+|---|---|---|
+| `origin/agenten/meme-coin-wording` | `58de40e` | site+whitepaper: Wording-Update „Meme-Coin & Whitepaper“ statt Community-Token |
+| `origin/agenten/mainnet-status-sync` | `7e25949` | token-doku: MAINNET-LAUNCH-BERICHT + Status-Sync (force-upgradedet) |
+| `origin/agenten/pubclean`, `qa-yaml`, `a11y-hitareas`, `logowhite`, `tabtitle`, `whitepaper-qa`, `ci` | — | ältere/laufende Agenten-Arbeiten (Website/Docs/CI) |
+| `main` (dieser Kontext) | `c03bd66` | Pool-LIVE-Commits + `agents/`-Koordinationsordner |
+
+Regel für neue Agenten: eigene Arbeit in `agenten/<name>`-Branch
+oder als Datei-Getrenntes auf main; vor jedem Push
+`git fetch origin && git rebase` (kein Force-Push auf main).
+
 Offene Tasks (priorisiert):
 
 1. **Metadaten-Mirror (IPFS/Arweave):** stabile, content-addressed URI;

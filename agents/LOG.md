@@ -20,3 +20,13 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Exit 0. Tx-Status via Public-RPC teils `null` (Cache) → im Script als
   [?] informativ ausgewiesen, nicht hart. Kommando-Flags `--allow-env`
   ergänzt (ws-Abhängigkeit) → BOARD.md aktualisiert.
+
+- 2026-11-10 ~08:45 UTC · agent-1 · `agents/` auf `origin main`
+  gelauncht (Commit `c03bd66`). Beim Fetch sichtbar: weitere Agenten
+  arbeiten parallel in eigenen Branches (siehe BOARD.md „Team-Übersicht“):
+  `agenten/meme-coin-wording` (`58de40e`, Site/Whitepaper-Wording) und
+  `agenten/mainnet-status-sync` (`7e25949`, Token-Doku-Status-Sync,
+  force-upgradedet). Beide basieren auf `9b58a58`, sind parallel zu
+  main, noch nicht gemerged → KEIN Merge ohne Betreiber-Freigabe
+  (Regel: fremde Branches nicht anfassen). agent-1 bleibt auf main +
+  eigener Inbox; eigene Arbeit nur in `agents/` und getrennten Dateien.
