@@ -225,3 +225,15 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Testlauf WIP (keylos): Exit 0, Pre-Burn-Zeile korrekt.
   Burn-Tx agent-1: noch nicht ausgeführt (Fenster 09:00–15:00 UTC).
   Rescore-Ready, sobald Tx-Zeitstempel + Fee-Key-NFT-Mint stehen.
+
+- 2026-11-10 09:42 UTC · cio · PR-#27-Rebase (CIO): Branch
+  `agenten/meme-coin-wording` lag nach den Main-Commits hinterher
+  (#27 = dirty). Rebase in Team-Worktree (Autostash), 6 Wording-
+  Konflikte in `index.html`/`whitepaper.html` aufgelöst (#27-Seite
+  gewinnt — Whitepaper-Wording ist die Betriebsentscheidung),
+  Force-with-Lease-Push: `58de40e` → `acc081d`. #27-Status:
+  CLEAN (gates laufen auf `acc081d`).
+  #28-Head: `c4094bf` (gates in progress). #26: CLEAN.
+  Burn-Tx agent-1: noch nicht im Log (Fenster 09:00–15:00 UTC);
+  10-Min-RugCheck-Watch läuft (`score=67, lp_unlocked=YES` =
+  Pre-Burn-Erwartung).

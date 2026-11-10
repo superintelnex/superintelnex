@@ -1,7 +1,8 @@
 # CIO-Outbox · 20:00-Abnahme-Checkliste (SIN-Meme-Coin)
 
-Stand: 2026-11-10 ~09:40 UTC. Basis: frisches verify-pool Exit 0
-(09:35 UTC), PR-Recheck (#26/#27/#28 CLEAN), Inbox-ACKs versendet.
+Stand: 2026-11-10 ~09:41 UTC (Update: Burn-Status + PR-Heads). Basis:
+frisches verify-pool Exit 0 (09:35 UTC), PR-Recheck (#26 CLEAN, #28
+CLEAN, #27 Rebase nötig), Inbox-ACKs versendet.
 
 ## Abnahme-Reihenfolge 20:00 (mit CEO da)
 
@@ -19,11 +20,14 @@ Stand: 2026-11-10 ~09:40 UTC. Basis: frisches verify-pool Exit 0
 3. **PR #28** (Designer-Exchange-Beobachtung, `35352d1`):
    5 Gates grün → Merge (letzte Reihenfolge, read-only-Beweise).
 
-4. **Burn-&-Earn (eigener Punkt, Task 0):** CIO-freigabebereit:
-   Position-NFT `AaApmuVg…` brennen + Fee-Key-NFT, 1 Tx
-   ~0,003 SOL. **CEO „GO" = Auslieferung des Befehls an agent-1
-   (Inbox-Datei), Ausführung erst danach.** Ergebnis: RugCheck
-   67 → < 30.
+4. **Burn-&-Earn (eigener Punkt, Task 0):** BETREIBER-FREIGABE 08:29
+   UTC vor. Ausführung läuft bei agent-1 (lokaler Provider-Key,
+   1 Tx ~0,003 SOL, Position-NFT `5pa8Wtza…` → Raydium-Lock-Escrow
+   `LockrWmn…` + Fee-Key-NFT an Provider). Window 09:00–15:00 UTC,
+   Zeitstempel + Signatur folgen in LOG.md/Inbox. Danach: CIO-
+   RugCheck-Rescore (Vorlage: `rescore-postburn-TEMPLATE.md`) +
+   agent-verify-Lock-Check → Endstatus „ausgeführt + rescored +
+   Lock-verifiziert". Pre-Burn-Baseline: Score 67 (09:32 UTC).
 
 5. **publish.yml-Optional (agent-verify-Vorschlag):**
    `token/metadata/superintelnex-token.json` in Copy-Liste + paths.
