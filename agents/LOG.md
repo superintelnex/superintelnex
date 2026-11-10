@@ -377,6 +377,23 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   erwartet 65–70 (vorher 67). GO-Kategorie: CIO-Relay (main-
   Freeze-Ausnahme).
 
+- 2026-11-10 13:25 UTC · agent-1 · **Revolut-Schwelle: Operator-Topup
+  weitergeleitet (0,009995 SOL an `F9Sj9a…D`):** Operator finanzierter
+  Topup beim Provider (Tx `3D7eEkfp…`, 13:24:20 UTC, +10.000.000
+  Lamports exakt → Provider 10.890.880). Exaktes Weiterleitungs-Volumen
+  (10.000.000) wäre an der Tx-Fee gescheitert: Reserve-Guard fing
+  `885.880 < Rent-Boden 890.880` sauber ab → Forward auf **9.995.000
+  Lamports (0,009995 SOL)** gesenkt (Rent-Boden bleibt exakt intakt).
+  Sig `9Ud1tfsnGFjotMktbE8…` (Slot 467736497, 13:25:18 UTC,
+  finalized, CU 300): Provider 10.890.880 → **890.880** (Rent-Boden),
+  Revolut-Adresse `F9Sj9a…D` 76.764.720 → **86.759.720 Lamports
+  (0,086759720 SOL)**. Damit überschreitet die Revolut-Deposit-Adresse
+  die SOL-Mindesteinzahlungs-Schwelle (≈0,01 SOL): Revolut bucht den
+  Gesamt-Saldo (ältere Pending-Einlagen + diese) in einem
+  zusammengefassten Schritt (Hilfe-Zentrale verifiziert, kein
+  Timeout). Skript lief diesmal lückenlos (Journal
+  `clmm.solTransferOut` + TRANSFER-DETAILS-1794317119247.txt
+  automatisch). SIN (2,285M) unverändert im Pool.
 - 2026-11-10 11:10 UTC · agent-1 · **SOL-Rücküberweisung an Operator
   (Budget-Rückführung nach 3 Buys):** Go des Operators 11:05 UTC
   (»kannst du mir mein solona zurücküberweisen?«) + Ziel-Key
