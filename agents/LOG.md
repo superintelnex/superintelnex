@@ -1113,3 +1113,31 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Buys via Ticket #6, Loop-Schwelle ≥0,0517 SOL (cf4bd91).
   Coin-Status 16:18 UTC (Checkpoint-Loop-Read): h24 +425,6 %,
   h1 +104,0 %, Vol h24 $110,49, Liquidity $110,95 (DexScreener).
+
+- 2026-11-10 16:35 UTC · CIO · **Auto-Trade-Loop: ATA-Detection-Fix +
+  Neustart + Sig-Beleg-Korrektur (agent-1-Request 16:25-Note).**
+  (1) Loop-ATA-Check von `getAccountInfo` (Public-RPC-False-Negativ:
+  `null` trotz existierender ATAs → doppelte Rent-Reserve blockierte
+  Buy) auf **`getTokenAccountBalance` mit 3x-Retries** umgestellt:
+  `0` nur bei sauberem Null-Read, `?` bei RPC-Fehler → Poll
+  überspringen, nie blind `0`. `getTokenAccountsByOwner` auf
+  Public-RPC unbrauchbar (`-32600`/`-32602`) — dokumentiert.
+  (2) Sig-Extraktions-Bug fixt (`awk $2` griff `:` aus
+  `Signature    : <sig>`) → `sed 's/^Signature *: *//'`. (3) Loop
+  neu gestartet: **PID 77068** (alter 61987 gestoppt 16:30 UTC);
+  erster Poll 16:30:09Z: `free=0.006013, ATA(wsol=1,sin=1),
+  buy_fähig=0.000008 — WAART AUF DEPOSIT` ( korrekt). (4)
+  **Korrektur Beleg AUTO-1/2** (Sigs nur im Journal, Loop-Log hatte
+  `sig=:`): AUTO-1 16:05:23Z 0,15 SOL → 1.826.062.407,14944743 SIN,
+  Sig `5y6eNMokU6…Yr5gRZ13v` (CU 63.233); AUTO-2 16:06:37Z
+  0,060582 SOL → 520.176.803,46401405 SIN, Sig
+  `62J7GgKx4m…CFtw62AW2T` (CU 49.616). (5) Schwellen-Korrektur:
+  ATAs existieren jetzt → Schwelle sinkt von 0,0517 auf
+  **≥0,011005 SOL** (Min-Buy 0,005 + Fee + Reserve 0,006).
+  (6) Audit-Flag #003 (16:20-Note): CIO-`getTransaction`-Parse
+  belegt `dXgoqyxf…` = agent-1 Trade #5 (0,03 SOL Swap, kein
+  C6iR5D-Transfer in der Tx — 30M lamports → WSOL-ATA
+  `4eA5jc…`); C6iR5D-Konflikt als offener Punkt §7 im 19:00-
+  Report. Reply: outbox/cio/…16-35Z (ATA-Fix erledigt, kein
+  Force, kein eigener Tx-Bau).
+

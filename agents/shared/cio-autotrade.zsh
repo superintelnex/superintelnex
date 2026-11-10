@@ -59,23 +59,41 @@ except Exception:
     continue
   fi
 
-  wsol_ata=$(jsonq getAccountInfo "[\"$WSOL_ATA\",\"json\"]" | python3 -c "import json,sys
-try:
-  v=json.load(sys.stdin).get('result',{}).get('value')
-  print('1' if v else '0')
-except Exception:
-  print('?')")
-  sin_ata=$(jsonq getAccountInfo "[\"$SIN_ATA\",\"json\"]" | python3 -c "import json,sys
-try:
-  v=json.load(sys.stdin).get('result',{}).get('value')
-  print('1' if v else '0')
-except Exception:
-  print('?')")
-  if [ "$wsol_ata" = "?" ] || [ "$sin_ata" = "?" ]; then
-    log "poll: ATA-Check rate-limited (wsol=$wsol_ata sin=$sin_ata), Überspringen"
+  # ATA-Existenz via getTokenAccountBalance (authoritative; getAccountInfo
+  # lieferte Public-RPC-False-Negativs — agent-1-Request 16:25 UTC):
+  # 3x Retry je ATA, Null/fehler → 2x Confirmaat; '?' = nur bei RPC-Fehler
+  # (Poll überspringen), NIE blind '0' ohne sauberen Null-Read.
+  atas=$(python3 -c "
+import json,time,urllib.request
+RPC='https://api.mainnet-beta.solana.com'
+def check(ata):
+    clean_zero=False
+    for _ in range(3):
+        try:
+            req=urllib.request.Request(RPC,
+                data=json.dumps({'jsonrpc':'2.0','id':1,'method':'getTokenAccountBalance','params':[ata]}).encode(),
+                headers={'Content-Type':'application/json'})
+            d=json.loads(urllib.request.urlopen(req,timeout=25).read())
+            if 'error' in d:
+                clean_zero=False; time.sleep(3); continue
+            v=(d.get('result') or {}).get('value')
+            if v is not None:
+                return '1'
+            clean_zero=True; time.sleep(2)   # Null-Read: 1x Confirmaat gegen stale Cache
+        except Exception:
+            clean_zero=False; time.sleep(3)
+    return '0' if clean_zero else '?'
+w=check('$WSOL_ATA')
+time.sleep(2)
+s=check('$SIN_ATA')
+print('wsol=%s,sin=%s' % (w,s))")
+  if [ -z "$atas" ] || [[ "$atas" == *"?"* ]]; then
+    log "poll: ATA-Check Fehler/Rate-Limit ('$atas'), Poll überspringen (False-Negativ-Schutz)"
     sleep 45
     continue
   fi
+  wsol_ata=$(echo "$atas" | cut -d, -f1 | cut -d= -f2)
+  sin_ata=$(echo "$atas" | cut -d, -f2 | cut -d= -f2)
 
   rent_missing=0
   [ "$wsol_ata" = "0" ] && rent_missing=$((rent_missing + RENT))
@@ -98,7 +116,7 @@ except Exception:
     deno run --allow-read --allow-net --allow-env --allow-write \
     token/scripts/swap-sol-to-sin.ts > $EXCF 2>&1
   rc=$?
-  sig=$(grep '^Signature' $EXCF | awk '{print $2}')
+  sig=$(grep '^Signature' $EXCF | head -1 | sed 's/^Signature *: *//')
   out=$(grep 'SIN-ATA vor/nach' $EXCF | head -1)
   if [ $rc -eq 0 ] && [ -n "$sig" ]; then
     log "TRADE OK: sig=$sig, in=$buy_sol SOL, $out"
