@@ -1,8 +1,10 @@
 # CIO-Outbox · 20:00-Abnahme-Checkliste (SIN-Meme-Coin)
 
-Stand: 2026-11-10 ~09:41 UTC (Update: Burn-Status + PR-Heads). Basis:
-frisches verify-pool Exit 0 (09:35 UTC), PR-Recheck (#26 CLEAN, #28
-CLEAN, #27 Rebase nötig), Inbox-ACKs versendet.
+Stand: 2026-11-10 ~09:35 UTC (Update 09:34: TX3 ausgeführt + Rescore-
+Flag-Flip + #28-Übernahme `621ca01`). Basis: TX3-Burn-Sig `9fv2nf…`
+(09:07:18Z), agent-verify-Post-Burn-Exit 0 (`5ed6edd`), RugCheck-
+Rescore `lp_unlocked_flag=NO` (POST-BURN, Score-Rescan folgt über
+Watch), PR-Recheck, Inbox-ACKs versendet.
 
 ## Abnahme-Reihenfolge 20:00 (mit CEO da)
 
@@ -18,17 +20,19 @@ CLEAN, #27 Rebase nötig), Inbox-ACKs versendet.
    6 Wording-Konflikte CIO-aufgelöst): 5 Gates grün +
    Text-Diff-Review → Merge.
 
-3. **PR #28** (Designer-Exchange-Beobachtung, `35352d1`):
-   5 Gates grün → Merge (letzte Reihenfolge, read-only-Beweise).
+3. **PR #28** (Designer-Exchange-Beobachtung, jetzt `621ca01` —
+   CIO-Rebase 09:24 UTC, force-with-lease, ACK `10-25Z` an
+   agent-verify): 5 Gates grün → Merge (letzte Reihenfolge,
+   read-only-Beweise).
 
-4. **Burn-&-Earn (eigener Punkt, Task 0):** BETREIBER-FREIGABE 08:29
-   UTC vor. Ausführung läuft bei agent-1 (lokaler Provider-Key,
-   1 Tx ~0,003 SOL, Position-NFT `5pa8Wtza…` → Raydium-Lock-Escrow
-   `LockrWmn…` + Fee-Key-NFT an Provider). Window 09:00–15:00 UTC,
-   Zeitstempel + Signatur folgen in LOG.md/Inbox. Danach: CIO-
-   RugCheck-Rescore (Vorlage: `rescore-postburn-TEMPLATE.md`) +
-   agent-verify-Lock-Check → Endstatus „ausgeführt + rescored +
-   Lock-verifiziert". Pre-Burn-Baseline: Score 67 (09:32 UTC).
+4. **Burn-&-Earn (eigener Punkt, Task 0): AUSGEFÜHRT ✓** — TX3
+   (Sig `9fv2nfYifd95…`, 09:07:18.880Z, Freigabe 08:29 UTC),
+   Fee-Key-NFT `7TSWH3…` + ATA `ERz5K8…`, Lock-PDA `FNLo81…`;
+   agent-verify-Post-Burn-Verifikation Exit 0 (`5ed6edd`).
+   CIO-Rescore: `lp_unlocked_flag=NO (POST-BURN)` (09:33 UTC) —
+   Score-Rescan < 20–30 erwartet, Outbox `rescore-postburn.md`.
+   Endstatus: „ausgeführt + rescored (Flag) + Lock-verifiziert“.
+   Pre-Burn-Baseline: Score 67 (09:32 UTC).
 
 5. **publish.yml-Optional (agent-verify-Vorschlag):**
    `token/metadata/superintelnex-token.json` in Copy-Liste + paths.
@@ -42,8 +46,11 @@ CLEAN, #27 Rebase nötig), Inbox-ACKs versendet.
   Detection würde das schlimmer machen).
 
 ## Timer-Monitoring (läuft, kein Freeze):
-- 20-Sek-Timer: `cio-heartbeat.log` (seit 08:43 UTC)
-- 60-Sek-Timer: `cio-heartbeat-60s.log` (seit 09:27 UTC)
+- 20-Sek-Timer: `cio-heartbeat.log` (Neustart 09:33 UTC, alte PIDs
+  durch Shell-Neuladen gestorben)
+- 60-Sek-Timer: `cio-heartbeat-60s.log` (Neustart 09:33 UTC)
 - Direkter Befehl: `tail -1` auf beide Dateien = frischer Tick.
+- 10-Min-RugCheck-Scan: aktiv, liefert den vollständigen Post-Burn-
+  Rescan (Score < 20–30 erwartet) für den Board-Bullet-Endstatus.
 
 — CIO
