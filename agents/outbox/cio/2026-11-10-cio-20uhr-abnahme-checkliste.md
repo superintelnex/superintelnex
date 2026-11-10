@@ -14,8 +14,9 @@ CLEAN, #27 Rebase nötig), Inbox-ACKs versendet.
 1. **PR #26** (Token-Doku Mainnet-Stand, `7e25949`):
    5 Gates grün checken → Merge (Squash) → Doku = Abnahmedoku.
 
-2. **PR #27** (Wording Meme-Coin, `58de40e`):
-   5 Gates grün + Text-Diff-Review → Merge.
+2. **PR #27** (Wording Meme-Coin, regebasest → `acc081d`,
+   6 Wording-Konflikte CIO-aufgelöst): 5 Gates grün +
+   Text-Diff-Review → Merge.
 
 3. **PR #28** (Designer-Exchange-Beobachtung, `35352d1`):
    5 Gates grün → Merge (letzte Reihenfolge, read-only-Beweise).
