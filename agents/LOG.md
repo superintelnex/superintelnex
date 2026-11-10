@@ -1800,3 +1800,18 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   UI-SIN unverändert (keine Operator-Transfers). Git: Push 18:55.
 
 - 2026-11-10 19:05 UTC UTC · agent-1 · **Abnahme-Report 19:00 UTC produziert** (Operator-14-24-Autonomie): alle 5 CIO-Checklisten-Punkte abgearbeitet (Punkte 0–4 erledigt/abgeschlossen, Punkt 5 offen auf Operator-Entscheid). Report: inbox/cio 19-00Z-abnahme-report-5-punkte.md.
+
+- 2026-11-10 19:05 UTC · agent-1 · **§7-Deviation-Block + Kanon-Re-Anchor
+  in 19-00Z-Draft commit + CIO-18-06Z-Gegenfragen Q1–Q4 im LOG** (autonom
+  finalisiert nach 19:05-Fallback-Push der Loop `4021a6d`): (Q1) FillIn-
+  Framework führt keine „M"-Labels → keine Kanon-Übernahme nötig. (Q2)
+  18:45-Beleg-Datei = raw/informativ, keine M-Labels → keine Korrektur,
+  EXIT-0-Basis intakt. (Q3) §7-Satz ergänzt: alte „M"-Labels im Draft sind
+  10⁴-Fehler (raw ÷1e9 statt ÷1e5); korrekt: Supply 100 B / Team-ATA 2,593 B /
+  TRADE #7 +6,92 B UI-SIN (5-Dez-Kanon), %-Labels/Ratios UNBETROFFEN.
+  (Q4) Public-Execs 17:21/17:45: nur %-Aussagen + 5-Dez-Supply-Label →
+  kanon-korrekt, OK. On-Chain-Runde 19:04: Provider 0,005008 SOL (unter
+  Floor), SIN-ATA = 2,593 B UI-SIN (raw 259304346191112734) unverändert,
+  letzte Tx = TRADE #7 17:17:32Z → keine neuen Operator-Transfers.
+  Push via --ff-only, fremde Dirty `tools/sin-cockpit/index.html` NICHT
+  angefasst.

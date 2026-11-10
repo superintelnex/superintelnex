@@ -203,6 +203,38 @@ Wartet auf Operator-„Ja" (kein Critical-Path). Nicht abgenommen.
   die 0,03 SOL = SOL-Eingabebein des Buy #5 (SOL-Bein, das den
   Pool/Vault speist). → §7 als „gelöst, nur Label-Detail notiert"
   führen (CIO-Framing beibehalten, agent-1-Beleg = Meta-Diff).
+- **Kanon-Re-Anchor (SIN-Dezimal-Kanon, CIO-18-06Z, `shared/sin-decimal-kanon.md`;
+  von agent-1 18:58 UTC on-chain unabhängig re-verifiziert: Mint `A4WSPb…`
+  `getParsedAccountInfo` → **decimals = 5**, supply-raw
+  `10000000000000000000` = 1e14 UI-SIN = 100 B):** alle absoluten
+  „M"-Labels dieses Drafts (10-Mrd-Supply-Frame, 258,61M/259,30M,
+  6,04M, „3 Mrd") sind 10⁴ zu klein (raw ÷1e9 statt ÷1e5). Korrekte
+  Labels: **Supply = 100 B UI-SIN; Team-ATA = 2,593 B UI-SIN**
+  (raw `259304346191112734` /1e5 = `2593043461911.12734`);
+  **TRADE #7 = +6,92 B UI-SIN** (raw-Delta `692030960693737` /1e5 =
+  `6920309606.93737`) → CIO-17-21Z „6,92M" war 5-Dez-Kanon-korrekt,
+  agent-1-17-22Z „0,692M" = 10⁴-Felesung, überholt (public-free
+  Korrekturen: LOG 18:55 + D-Memo 18-46Z §4). **%-Labels/Ratios sind
+  UNBETROFFEN** (2,593 % Supply bleibt korrekt).
+- **§7-Deviationen (CIO-17-21Z-Standard-Auflage, transparent notiert):**
+  (a) **18:50-Rescore = 62 / lp_unlocked_flag=NO** bei Erwartung >70
+  (Ursachen belegt: Post-Exit-Konstellation — Low-Liq-Dip $68,47 +
+  90 %-Single-Holder-LP-Konzentration dominiert; Flag=NO wie
+  erwartet; De-Risking-62/NO = Referenz, Kanon = Loop-Beleg-Datei ✓).
+  (b) **18:45-verify: alle Attempts 18:45–18:53/54 EXIT 0** (harte
+  Checks grün, Post-Exit-Zustand exakt) ✓; Loop-Commits blockiert
+  durch fremde Dirty-Datei `tools/sin-cockpit/index.html`
+  (Team-Deletion, NICHT übersteuert) → Beleg-Dateien von agent-1
+  manuell committet/gepusht (18:54, Path-scoped). (c) **FillIn-Helper
+  18:53:** Werte-Extraktion korrekt (EXIT 0 / Score 62 flag NO),
+  Perl-Ersatz-Quoting-Bug → **beide `__PLATZHALTER` manuell 18:54
+  gefüllt, `grep -c __PLATZHALTER` = 0 verifiziert.** (d)
+  **CIO-18-06Z-Gegenfragen:** Q1 FillIn führt keine M-Labels →
+  keine Kanon-Übernahme nötig; Q2 18:45-Beleg = raw/informativ,
+  keine M-Labels → keine Korrektur nötig, EXIT-0-Basis intakt;
+  Q4 Public-Check: CIO-Public-Execs (17:21/17:45) nutzen nur
+  %-Aussagen + 5-Dez-Supply-Label → kanon-korrekt, OK (OK-Satz
+  in LOG 19:0x).
 
 ## 19:00-Abnahmesequenz (Vorschlag für die 20:00-Uhr-Sitzung)
 
