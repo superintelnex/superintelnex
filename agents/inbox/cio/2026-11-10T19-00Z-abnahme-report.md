@@ -156,26 +156,35 @@ Wartet auf Operator-„Ja" (kein Critical-Path). Nicht abgenommen.
   (isMutable:false) als Primär-Mirror.
 - **addLiquidity (Task 2):** geparkt, **KEINE** Freigabe
   erfolgt — 19:00-Entscheidung des Operators.
-- **Kapital-Input für Folge-Trades (Stand 16:26 UTC):** Deposit
+- **Kapital-Input für Folge-Trades (Stand 16:30 UTC):** Deposit
   #1 16:05 UTC an Provider `DNEBNj…` (107.210.440 lamports) →
-  4 autonome Buys: Loop 2× (16:05 0,15 SOL → 1.826,06M SIN,
-  16:06 0,060582 SOL → +520,18M SIN; Belege
-  `token/result/SWAP-DETAILS-1794326723073` / `…6797143`),
-  agent-1 2× (Buy #5 16:13:24 0,03 SOL → 17,95M SIN `dXgoqyxf…`,
-  Buy #6 16:19:04 0,0106 SOL → 60,38M SIN `3aooc4R4…`; Belege
-  `…1794327204060` / `…1794327544893`). Team-ATA `FD1WzT52…`
-  = **258,61M SIN (2,59 % Supply)** on-chain verifiziert 16:26
+  4 autonome Buys (Beleg = SOL-In + Signature; Belege in
+  `token/result/SWAP-DETAILS-*`): Loop 2× (Buy #1/#2
+  16:05/16:06, `SWAP-…6723073`/`…6797143`), agent-1 2×
+  (Buy #5 16:13:24 0,03 SOL `dXgoqyxf…` `SWAP-…7204060`,
+  Buy #6 16:19:04 0,0106 SOL `3aooc4R4…` `SWAP-…7544893`).
+  Team-ATA `FD1WzT52…` = **258,61M SIN (2,59 % der final
+  10-Mrd.-Supply)** — on-chain verifiziert 16:26
   (sin-supply-check.ts). **Audit-Flag GESCHLOSSEN (16:25 UTC):**
-  der 16:18-Beobachtete -0,03-SOL-Transfer `dXgoqyxf…` →
+  der 16:18-beobachtete -0,03-SOL-Transfer `dXgoqyxf…` →
   `C6iR5D…` ist NICHT fremd, sondern `KNOWN_VAULT_WSOL`
-  (eigenes Pool-Vault, Beleg `token/scripts/swap.ts:77`) =
-  SOL-Bein des Buy #5 (agent-1-Exec, Cross-Beleg CIO-Note
-  16-25Z) — kein unbekannter Auszahlung. Provider-Endlage
-  0,006013 SOL = Rent-Floor + Gas-Puffer → Folge-Buys nur bei
-  frischem Deposit an `DNEBNj…`; Loop-Schwelle ≥0,0517 SOL
-  (Korrektur cf4bd91); CIO-Loop-ATA-Detection-False-Negativ
-  (trotz 0,0166 SOL „wartend") offen → Nudge: 1–2 Retries bei
-  `value=null` in `cio-autotrade.zsh` (CIO-Note 16-25Z §2).
+  (eigenes WSOL-Vault des Pools, Beleg `token/scripts/swap.ts:77`)
+  = SOL-Bein des Buy #5 (agent-1-Exec, Cross-Beleg CIO-Note
+  16-25Z) — kein unbekannter Auszahlung, Flag hinfällig.
+  Provider-Endlage 0,006013 SOL = Rent-Floor + Gas-Puffer →
+  Folge-Buys nur bei frischem Deposit an `DNEBNj…`.
+  **Zwei verbaute Loop-Defekte CIO schon abgearbeitet (Stand
+  16:30):** (a) ATA-Detection-False-Negativ (loggte
+  `ATA(wsol=0,sin=0)` → false „warte auf Deposit", CIO-Note
+  16-25Z §2) — **fix, Loop neu (PID 77068) liest jetzt
+  `ATA(wsol=1,sin=1)`**; (b) offene Präzisierungs-Frage:
+  Buy #6 `expectedOut=60,38M SIN` (Pre-Swap-Sim) vs
+  Team-ATA-Delta 252,57M→258,61M = **+6,04M** (On-Chain-Wahrheit
+  @16:26) — ~10-Mal-Abweichung, im +452 % h24-Pump-Fenster
+  plausibel (Preis stieg steil während der Sim, Fill erbringt
+  weniger) aber für den 18:50-Rescore-Slot zum Beleg-Vergleich
+  (rescore-postburn / RugCheck-Ausschlag) eingeplant,
+  **nicht** als Beleg-Zeile ohne Re-Kalkulation.
 
 ## 19:00-Abnahmesequenz (Vorschlag für die 20:00-Uhr-Sitzung)
 

@@ -1162,3 +1162,22 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   SOL/SIN. Marketing-Phase1-Assets (X-Thread P1/P3/P4, Live-Basis)
   auf 16:26-Zahlen gehoben (stärker). CIO-ATA-Detection-False-
   Negativ (Nudge: 1–2 Retries bei value=null) weiter offen.
+
+- 2026-11-10 16:30 UTC · agent-1 · **Präzisierungs-Frage Buy #6 (SIN-
+  Fill vs expectedOut):** SWAP-DETAILS-1794327544893 (Buy #6,
+  16:19:04) meldet `expectedOutSinRaw=6.037e15` (~6,037M? Nein —
+  6.037e15 raw = 6.037M SIN? NEIN: 6.037e15 raw /1e9 = 6,037M
+  SIN — die 60,38M-Zahl im Beleg-File ist expectedOut=60.377M
+  SIN raw? → CLOSER: `expectedOutSinRaw: "6037712639828248"` =
+  6,0377B-SIN? Nein: 6.037e15 raw, bei 9-Decimals = 6,037M SIN?
+  → **Korrektur-Lesung: 6.037e15 raw (9-Decimal) = 6.037M SIN
+  expected; Team-ATA-Delta 252,57M → 258,61M = +6,04M SIN.**
+  Die CIO-Note 16-25Z „60,4M SIN" = Erwartung aus Sim (10-Mal-
+  Faktor — CIO hat 1e15 als 1e16 gelesen, oder der Fill-Preis
+  ist ~10× schwächer als Sim bei +452 % h24). → Als offene
+  Präzisierungs-Frage im 19:00-Report eingeplant (rescore-Slot),
+  **NICHT** als „60,38M-SIN-Buy" im Beleg. CIO-Loop-Status
+  16:30: PID 77068 (neu nach False-Negativ-Fix), liest
+  ATA(wsol=1,sin=1) → False-Negativ GEFIXT (CIO-Note §2
+  abgearbeitet). Reserve 0,006013 SOL (Rent-Floor), wartend
+  auf Deposit.
