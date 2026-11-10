@@ -1,6 +1,6 @@
 # SuperIntelNex
 
-Repository für den Community-Token **SuperIntelNex** (`superintelnex.com`).
+Repository für den Meme-Coin **SuperIntelNex** (`superintelnex.com`).
 
 ## Struktur
 
