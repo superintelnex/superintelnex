@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="SuperIntelNex (SIN) Whitepaper — bilingual (EN/DE) technical and planning document. Draft v1.1, 09 Nov 2026: standard SPL token, fixed 10^14 supply, revoked authorities, Devnet prototype, roadmap.">
 <meta property="og:title" content="SuperIntelNex (SIN) — Whitepaper">
-<meta property="og:description" content="A transparent, fully auditable community token: standard SPL on Solana, fixed supply, revoked authorities. EN/DE.">
+<meta property="og:description" content="A transparent, fully auditable meme coin: standard SPL on Solana, fixed supply, revoked authorities. EN/DE.">
 <meta property="og:image" content="https://superintelnex.com/og-image.png">
 <meta property="og:url" content="https://superintelnex.com/whitepaper.html">
 <title>SuperIntelNex (SIN) — Whitepaper</title>
@@ -232,16 +232,16 @@
   <div class="wrap">
     <div>
       <span class="kicker">
-        <span class="t-en">Community token · Solana</span>
-        <span class="t-de">Community-Token · Solana</span>
+        <span class="t-en">Meme coin · Solana</span>
+        <span class="t-de">Meme-Coin · Solana</span>
       </span>
       <h1>
         <span class="t-en">SuperIntelNex <em>(SIN)</em><br>The Whitepaper</span>
         <span class="t-de">SuperIntelNex <em>(SIN)</em><br>Das Whitepaper</span>
       </h1>
       <p class="lede">
-        <span class="t-en">A transparent, fully auditable community token built on Solana: a standard SPL token with a fixed supply of 100 trillion, administration rights revoked irreversibly — no custom program, no hidden fees, no freeze or blacklist logic. This document explains every design decision in plain language, shows the audited Devnet prototype, and maps the roadmap to mainnet.</span>
-        <span class="t-de">Ein transparenter, vollständig nachvollziehbarer Community-Token auf Solana: ein Standard-SPL-Token mit fixer Gesamtmenge von 100 Billion, unwiderruflich entzogenen Verwaltungsrechten — kein eigenes Programm, keine versteckten Gebühren, keine Freeze- oder Blacklist-Logik. Dieses Dokument erklärt jede Design-Entscheidung in verständlicher Sprache, zeigt den geprüften Devnet-Prototypen und skizziert den Weg zum Mainnet.</span>
+        <span class="t-en">A transparent, fully auditable meme coin built on Solana: a standard SPL token with a fixed supply of 100 trillion, administration rights revoked irreversibly — no custom program, no hidden fees, no freeze or blacklist logic. This document explains every design decision in plain language, shows the audited Devnet prototype, and maps the roadmap to mainnet.</span>
+        <span class="t-de">Ein transparenter, vollständig nachvollziehbarer Meme-Coin auf Solana: ein Standard-SPL-Token mit fixer Gesamtmenge von 100 Billion, unwiderruflich entzogenen Verwaltungsrechten — kein eigenes Programm, keine versteckten Gebühren, keine Freeze- oder Blacklist-Logik. Dieses Dokument erklärt jede Design-Entscheidung in verständlicher Sprache, zeigt den geprüften Devnet-Prototypen und skizziert den Weg zum Mainnet.</span>
       </p>
       <div class="meta">
         <span class="hot"><span class="t-en">Draft · v1.1</span><span class="t-de">Entwurf · v1.1</span></span>
@@ -271,8 +271,8 @@
   <div class="note" role="alert">
     <span class="tag"><span class="t-en">Important notice — please read first</span><span class="t-de">Wichtiger Hinweis — bitte zuerst lesen</span></span>
     <p>
-      <span class="t-en">SuperIntelNex is a community token project <strong>in development</strong>. There is no mainnet launch, no sale and no live token with real value — the token that currently exists is a <strong>Devnet test token</strong> on Solana's test network, with zero economic value. This document is not investment, tax or legal advice and makes no promises about prices, yields or gains. All parameters are confirmed for the Devnet test token only; they apply to a mainnet launch solely after re-confirmation (see the <a href="#roadmap">Roadmap</a>).</span>
-      <span class="t-de">SuperIntelNex ist ein Community-Token-Projekt <strong>im Aufbau</strong>. Es gibt keinen Mainnet-Start, keinen Verkauf und keinen Live-Token mit echtem Wert — der aktuell existierende Token ist ein <strong>reiner Devnet-Testtoken</strong> auf dem Solana-Testnetz ohne wirtschaftlichen Wert. Dieses Dokument ist keine Anlage-, Steuer- oder Rechtsberatung und stellt keine Kurse, Erträge oder Gewinne in Aussicht. Alle Parameter sind nur für den Devnet-Testtoken bestätigt und gelten für einen Mainnet-Launch erst nach erneuter Bestätigung (siehe <a href="#roadmap">Roadmap</a>).</span>
+      <span class="t-en">SuperIntelNex is a meme coin project <strong>in development</strong>. There is no mainnet launch, no sale and no live token with real value — the token that currently exists is a <strong>Devnet test token</strong> on Solana's test network, with zero economic value. This document is not investment, tax or legal advice and makes no promises about prices, yields or gains. All parameters are confirmed for the Devnet test token only; they apply to a mainnet launch solely after re-confirmation (see the <a href="#roadmap">Roadmap</a>).</span>
+      <span class="t-de">SuperIntelNex ist ein Meme-Coin-Projekt <strong>im Aufbau</strong>. Es gibt keinen Mainnet-Start, keinen Verkauf und keinen Live-Token mit echtem Wert — der aktuell existierende Token ist ein <strong>reiner Devnet-Testtoken</strong> auf dem Solana-Testnetz ohne wirtschaftlichen Wert. Dieses Dokument ist keine Anlage-, Steuer- oder Rechtsberatung und stellt keine Kurse, Erträge oder Gewinne in Aussicht. Alle Parameter sind nur für den Devnet-Testtoken bestätigt und gelten für einen Mainnet-Launch erst nach erneuter Bestätigung (siehe <a href="#roadmap">Roadmap</a>).</span>
     </p>
   </div>
 
@@ -282,8 +282,8 @@
       <h2><span class="t-en">Summary</span><span class="t-de">Zusammenfassung</span></h2>
     </div>
     <p class="lead">
-      <span class="t-en">SuperIntelNex (<strong>SIN</strong>) is a community token project with a long-term vision for <strong>AI, superintelligence and digital payments</strong>. It is developed in the open: every token parameter, script, test and transaction record is published in the public project repository, and every on-chain step of the Devnet run can be verified by anyone in the Solana Explorer.</span>
-      <span class="t-de">SuperIntelNex (<strong>SIN</strong>) ist ein Community-Token-Projekt mit einer langfristigen Vision für <strong>KI, Superintelligenz und digitale Zahlungen</strong>. Es wird offen entwickelt: Jeder Token-Parameter, jedes Skript, jeder Test und jedes Transaktionsprotokoll liegt öffentlich im Projektrepository, und jeder On-Chain-Schritt des Devnet-Laufs kann von jedem im Solana-Explorer geprüft werden.</span>
+      <span class="t-en">SuperIntelNex (<strong>SIN</strong>) is a meme coin project with a long-term vision for <strong>AI, superintelligence and digital payments</strong>. It is developed in the open: every token parameter, script, test and transaction record is published in the public project repository, and every on-chain step of the Devnet run can be verified by anyone in the Solana Explorer.</span>
+      <span class="t-de">SuperIntelNex (<strong>SIN</strong>) ist ein Meme-Coin-Projekt mit einer langfristigen Vision für <strong>KI, Superintelligenz und digitale Zahlungen</strong>. Es wird offen entwickelt: Jeder Token-Parameter, jedes Skript, jeder Test und jedes Transaktionsprotokoll liegt öffentlich im Projektrepository, und jeder On-Chain-Schritt des Devnet-Laufs kann von jedem im Solana-Explorer geprüft werden.</span>
     </p>
 
     <h3><span class="n">A</span><span class="t-en">What exists today (09 Nov 2026)</span><span class="t-de">Was heute existiert (09.11.2026)</span></h3>
@@ -769,8 +769,8 @@
   <div class="wrap">
     <div class="foot">
       <span>
-        <span class="t-en">SuperIntelNex — community token project in development · not investment advice</span>
-        <span class="t-de">SuperIntelNex — Community-Token-Projekt im Aufbau · keine Anlageberatung</span>
+        <span class="t-en">SuperIntelNex — meme coin project in development · not investment advice</span>
+        <span class="t-de">SuperIntelNex — Meme-Coin-Projekt im Aufbau · keine Anlageberatung</span>
       </span>
       <span>
         <a href="index.html"><span class="t-en">Homepage</span><span class="t-de">Startseite</span></a> ·
