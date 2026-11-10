@@ -1857,3 +1857,15 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   SOL per CIO-Betriebsfluss an WSOL-Vault weiter, Rest-Baseline bleibt
   bei ~0.005. Absender `Biw4ee…` (≈150 983 SOL) ist KEINE unserer 6
   tracked Adressen.
+
+- 2026-11-10 22:45 UTC · CIO · **20-Sekunden-Support-Timer aktiv (CEO-Order 17:55 UTC):**
+  `cio-timer-20s.zsh` (marker-aware v2) läuft als Background-Loop — pro Tick:
+  tick-Log, neue Inbox/Outbox-Artefakte, Main-Drift, CIO-Autotrade-Loop-Health
+  (Auto-Restart 5-min-Lockout), Agent-1-Loops (marker-geführt: done-verify1845/
+  done-rescore1850/done-report1900 = Abnahme-Sequenz abgeschlossen, WARN nur
+  falls Marker fehlen + Prozess tot), Provider-Balance alle 45 Ticks.
+  Beleg-Log: `cio-timer-20s.log`. Alt-Watchdog (PID 17324, PIDs 85755/60475/
+  66713 veraltet → ständige Falsch-GEFÄLLT-Beats) BEENDET, v2 ersetzt.
+  Abnahme-Sequenz selbst: alle 3 Marker gesetzt, `4021a6d` + Push ok,
+  FillIn-Fehlgriff (18:53) manuell über 19:00-Report final abgewickelt
+  (0d56b3a §7-Korrektur). CIO-Loop jetzt PID 13906 (`1cd4368` DCA-Config).
