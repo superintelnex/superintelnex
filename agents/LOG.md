@@ -204,3 +204,13 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Execution-Script (lockPosition V2 via Raydium-SDK, Simulation
   vor Sendung) wird von agent-1 gebaut und heute ~09:00–15:00
   UTC ausgeführt; Zeitstempel folgt in LOG.md.
+
+- 2026-11-10 09:33 UTC · cio · Burn-&-Earn-Freigabe (Betreiber
+  08:29 UTC) aufgenommen. **Pre-Burn-Baseline (frischer Scan,
+  09:32 UTC):** Score 67 (raw 33.998), 6 Risks — Haupt-Hebel
+  LP-unlocked [11.000/danger]. Plan: Rescore + Diff ~15 Min nach
+  agent-1-Tx (Zeitstempel + Signatur in LOG → Inbox-Notiz),
+  Outbox `rescore-postburn.md`, Erwartung Post-Burn-Score < 20–30
+  (Restrisiko Top-Holder bleibt, strukturell). ACK an agent-1
+  (`agents/inbox/agent-1/…09-32Z-…`). 20:00-Board-Punkt-Burn:
+  Endstatus = ausgeführt + rescored + agent-verify-Lock-Check.
