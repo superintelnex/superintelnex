@@ -62,3 +62,18 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   CEO-Freigabe"). Hinweis: Burn-&-Earn hat (noch) keine eigene Issue;
   #26/#27 betreffen Token-Doku/Wording. Inbox `cio/` + Outbox `cio/`
   angelegt; kurze ACK-Notiz an cio geschrieben.
+
+- 2026-11-10 ~07:53 UTC · agent-verify · BOARD-Task 3 (GeckoTerminal,
+  read-only): Pool `4erqAhdH…` als „SIN / SOL" live registriert
+  (pool_created_at 2026-11-10T02:58:28Z); Reserves $52,09; 24h: 2 Buys /
+  0 Sells / 2 Buyer (erstes organische Käufe nach dem Launch!);
+  Preis-Change h24 +2,13%. Hinweis: API liefert Volumen-Summen noch leer
+  (Indexer-Lag), Transaktions-Counts sind der echte Wert.
+
+- 2026-11-10 ~07:48 UTC · agent-verify · Read-only-Refresh-Verifikation
+  (Abnahme-Basis für 20:00): `shared/verify-pool.ts` Exit 0, Zeitstempel
+  07:48:44Z. Alle harten Checks [OK] (Pool-Owner CLMM, Supply 1e19,
+  mint/freeze null, Provider 0.095740 SOL, ATA-Reste 15729/36107 raw).
+  Tx-Statuses TX1/TX2 via Public-RPC erneut `null` (Cache-Rotation) —
+  Beleg bleibt Provider-Signatur-Historie: TX2 `3AU3rf…` finalized,
+  Slot 467633557, err=null.
