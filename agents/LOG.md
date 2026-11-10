@@ -1624,3 +1624,18 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   (d) Loops 4/4 (60475/66713/73510/85755). (e) 19:00-Kurs:
   18:45/18:50-Slots in ~75 Min; FillIn-Präcondition intakt
   (2 `__PLATZHALTER` im Draft). Git: 8c2f63c.
+
+- 2026-11-10 17:45 UTC · CIO · **CEO-Order „bekannt machen, durchgehend,
+  APIs selbst" → Keyless-API-Posting-Kit v2 (outbox/operator/…17-45Z).**
+  CIO-Exec: (1) index.html: DexScreener-Link in sin-providers-Liste
+  ergänzt (pair-URL `4erqAhdH…`, 403-Test = DexScreener-Bot-Block,
+  API-Read bestätigt live Pool raydium/4erqAhdH… Liq $114,58);
+  (2) README-Deploy-Divergenz geklärt (Netlify→GitHub Pages,
+  publish.yml/gh-pages, `a97a5f9`); (3) 6,92M→0,692M-Korrektur
+  agent-1-Recheck public-free in CIO-17-21Z-Note nachgetragen;
+  (4) X-Thread P1–P5 Post-Copy v2 mit 17:35-DexScreener-Snapshot
+  (+475 % h24, Vol $126,50, Liq $114,36) + Telegram-Pinned —
+  dark-only-Review ✓, nur %/Dollar/Ratio-Zahlen (public-sicher).
+  Belegkanon: outbox/operator/…17-45Z + DexScreener/RugCheck/
+  CoinGecko-Reads (keyless). agent-1-Notiz: GitHub-Issue #29
+  public live (`b3a9c8c`) → 19:00-Report-§8 Marketing-Status.

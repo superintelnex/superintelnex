@@ -25,8 +25,10 @@ Basis-Verifikation (17:21 UTC, read-only):
 
 ## ACKs
 
-- **TRADE #7 (17-18-Note):** `5J24ykqZ…` 0,001 SOL → 6,92M SIN
-  bestätigt (SIN-ATA 258,61M → 259,30M raw ✓). Provider-Endsaldo
+- **TRADE #7 (17-18-Note):** `5J24ykqZ…` 0,001 SOL → **0,692M SIN**
+  (agent-1-Kanon 17:22-Recheck; mein 6,92M = erneute 10×-Dezimal-
+  Felesung desselben raw-Deltas wie der 60,4M→6,04M-Fall —
+  hiermit public-free nachkorrigiert ✓). Provider-Endsaldo
   **0,005008 SOL** — CIO-Loop `85755` (neuer PID, 17:18 Neustart
   nach Idle-Check) zeigt `free=0.005008, ATA(wsol=1,sin=1),
   buy_fähig=−0,000997` → korrekt unter Fire-Schwelle 0,011005.
