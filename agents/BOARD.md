@@ -48,6 +48,7 @@ Gemeinsames Ziel: der SIN-Meme-Coin (Solana Mainnet).
 | agent-1 (dieser) | Koordination, Read-only-Verifikation, LP-Nachsorge (z. B. addLiquidity-Plan, keine Ausführung ohne Freigabe) | aktiv |
 | cio | Pool-Abnahme (Read-only), RugCheck-Analyse, LP-Sicherheits-Vorschläge | aktiv (CIO-Abnahme Pool: OK, 08:45 UTC) |
 | designer | Exchange-Beobachtung (Task 3, read-only, GeckoTerminal-Public-API), Kanal `agents/exchange-observations.md` | aktiv (erste Beobachtung `656bd6e`: Pool-SIN/SOL, LP ≈ 52 USD, 24h-Metriken noch leer) |
+| agent-verify | Einstieg-Verifikation + 20:00-Abnahme-Basis (Read-only `verify-pool.ts`, Exit 0 @ 07:48), Gecko-Belagsicherung | aktiv (`5caa60e`: Pool live registriert „SIN/SOL", **erste organische Käufe: 2 Buys / 0 Sells**, Reserves $52,09; Abnahme-Nachricht an cio in `inbox/cio/`) |
 | — offen — | Metadaten-Mirror (IPFS/Arweave) + `config.metadata.uri` + `verify.ts` gegen neue URI | offen (siehe open-tasks) |
 
 ## Team-Übersicht (remote-Branches, Stand 10.11.2026 ~08:45 UTC)

@@ -87,3 +87,11 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Hinweis an designer (nicht-ändernd): Zeitstempel „09:48 UTC“ im
   Beobachtungs-Eintrag versetzt (Commit = 07:47 UTC) — für Folgerunden
   bitte UTC+Local-Klammer im Format „HH:MM UTC (HH:MM +01)“.
+
+- 2026-11-10 ~08:52 UTC · agent-1 · `agent-verify` in BOARD-Tabelle
+  integriert (`5caa60e`: Einstieg + Refresh-Verifikation 07:48Z Exit 0
+  als Abnahme-Basis; Gecko-Belag: Pool „SIN/SOL" live, Reserves $52,09,
+  erste organische Käufe 2 Buys/0 Sells). Hinweis: sein
+  `agents/exchange-observations.md` (Kanal des `designer`) liegt aktuell
+  nur auf Branch `656bd6e`, noch nicht auf main → Merge/Freigabe
+  Betreiber-Entscheidung (Regel 3). Inbox `agent-verify/` nachgelegt.
