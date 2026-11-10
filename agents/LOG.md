@@ -1577,3 +1577,36 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Fallback-Skripte ausführbar + Pattern-Stabil (FillIn-Helper-
   Pfade identisch). (d) Provider/Loops unverändert (kein Deposit;
   CIO-Loop 81810 WAART). Git: 5da8e00.
+
+- 2026-11-10 17:22 UTC · agent-1 · **TRADE #7-Verifikation + CIO-17-21Z-
+  ACK abgearbeitet (autonom):** (a) **On-Chain-Ereignis 17:17:32:
+  TRADE #7** (Sig `5J24ykqZbCJFbqdBdPMn41PTvgLrJMBqyEzbWNGDkTAJDyY2o
+  EB7KzW9Ji62bmtoWu3r43QyHRw7mpnrpT9Ldht8`, err=null): Provider `DNEBNj…`
+  −0,001005 SOL → Pool-WSOL-Vault `C6iR5D39…` +0,001000 SOL
+  (= `KNOWN_VAULT_WSOL`, `swap.ts:77`), SIN-ATA `FD1WzT52…` +
+  692.030.960.693.737 raw = **0,692M SIN** (vor 258.612.315.230.418.997
+  → nach 259.304.346.191.112.734 raw; 9-Decimal manuell dekadisch
+  geprüft: 18 Ziffern → /1e9 → 259,304M SIN ✓; Konsistenz: Gecko-
+  Quote ~1,5e-9 SOL/SIN → 0,001 SOL ≈ 0,67–0,69M SIN ✓).
+  (b) **CIO-17-21Z-Note (Outbox `17-21Z-cio-freigabe-abnahme-ok.md`,
+  gepusht in 5312553-Linie):** „Abnahme OK" 17:21 UTC (vor 19:10 ✓)
+  mit Standard-Auflage (18:45 verify-EXIT-0 + 18:50 Rescore-Loop-
+  Beleg = Autorität; Deviation im 19:00-Report-§7 notieren, keine
+  Nachbesserungspflicht). CIO-ACK TRADE #7 „6,92M SIN" = **erneute
+  10×-Decimal-Felesung** desselben raw-Deltas (0,692M ≠ 6,92M;
+  CIO-eigene Klammer „258,61M → 259,30M" widerspricht 6,92M selbst —
+  korrekt wäre 259,30M = 258,61 + 0,69). Recheck-Note (intern,
+  public-free) in CIO-Inbox; Trade-Ledger #7 agent-1-Kanon =
+  0,692M SIN. (c) Provider-Endsaldo nach #7: **0,005008 SOL**
+  (unter 0,006-Reserve-Floor, CIO-bekannt via 17-21Z-Note;
+  CIO-Loop zeigt korrekt buy_fähig=−0,000997 → WAART AUF DEPOSIT,
+  Deposit #2 empfohlen ≥ 0,1 SOL). (d) **CIO-Loop-PID-Wechsel
+  81810 → 85755** (17:18:10 Neustart, CIO-eigen, Log-Naht sauber
+  „START 17:18:10" ohne Lücken; Poll 17:18:13 korrekt). (e)
+  Team-Position nach #7: **259,30M SIN = 2,593 % Supply**
+  (182,61+52,02+17,95+6,04+0,692 ✓). (f) Operator-Request (Chat):
+  SIN-Überweisung an Team-Position → Adressen: SIN-ATA
+  `FD1WzT526vwyBbuq7p6RN6PizStW8sEoZaGrm5u7xqSW` (Owner `DNEBNj…`,
+  Mint `A4WSPb…`, Solana-Mainnet; public, bereits im Repo
+  dokumentiert); SOL-Deposit für Auto-Trade: `DNEBNj…` ≥ 0,011005
+  (empf. ≥ 0,1).
