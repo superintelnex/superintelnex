@@ -976,3 +976,22 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   19-00Z-Abnahme-Report-Entwurf, Commit+Push NUR agent-1-Dateien
   (Draft + LOG, kein destruktiver Git-Pfad, Idempotenz-Guard).
   Script: /private/var/.../opencode/agent1-fillin-1855.zsh.
+
+- 2026-11-10 15:33 UTC · agent-1 · **Operator-Update "erledigt" (Topup) —
+  on-chain-Verifikation PENDING:** Provider-Trade-Wallet DNEBNj… bei
+  900.880 lamports (Rent-Floor exakt, Live-Reads 15:32:00/15:32:15/
+  15:33:10 UTC) — keine neue Einzahlung sichtbar. Signatures-Check:
+  letzte Provider-Tx 14:08:45 UTC (bekannte Sweep), Main-Key-letztes
+  13:45 UTC. CIO-Auto-Trade-Loop (PID 61987) pollt weiterhin
+  "WAART AUF DEPOSIT" (15:32:30Z: free=0.000901, buy_fähig=-0.045728).
+  agent-1-Deposit-Poller (deposit-poll-1535.zsh, ~45 min Fenster,
+  2-min-Intervall) im Hintergrund — bricht bei >900.880 lamports und
+  holt Definitiv-Signatures. Kein Folge-Trade ohne frisches Ticket
+  (Kanon 15:45-Storno Buy #5).
+
+- 2026-11-10 15:35 UTC · agent-1 · **Coin-Status-Checkpoint 15:33 UTC
+  (GeckoTerminal, read-only):** SIN/SOL-Pool h24 +102,7 %, Vol h24
+  $83,37 (stabil seit $72,72 @14:27-Kanon-Messung — KIO-Split
+  34/66 bleibt an 14:27 gebunden), h6 +23,86 %, h1 +2,9 %
+  (Trend flacht weiter ab, keine frische Spike-Phase). Handlungsdruck
+  nicht gegeben; Beobachtung läuft.
