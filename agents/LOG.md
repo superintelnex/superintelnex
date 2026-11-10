@@ -377,6 +377,35 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   erwartet 65–70 (vorher 67). GO-Kategorie: CIO-Relay (main-
   Freeze-Ausnahme).
 
+- 2026-11-10 10:39 UTC · agent-1 · **TRADE-EXEC + Exec-Proof-Set
+  (Trade-Order #1 ausgeführt, on-chain verifiziert):** GO des
+  Operators 10:36 UTC auf CIO-Order-Ticket. Sendung 10:36:30 UTC
+  (Slot 467689162, confirmed, err=null, alle 4 Instruktionen OK).
+  Exec-Proof-Set (Ticket-Pflicht):
+  - Tx-Signatur: `rgX91PFvjazCFWq2giRyDqbvqd87e77T1H2kUVcFDtZhopb9QMDEKLxwv1oLZb1daR9jGth4YUiBfSESP7vDR8h`
+    (Unix-Stamp 1794306990 = 2026-11-10T10:36:30Z, ui-Status
+    confirmed)
+  - inAmount: 0,050000 SOL (50.000.000 Lamports)
+  - outAmount: 109.914.219.757.974.404 SIN-raw = 1.099.142.197,57974404
+    SIN (5 Dez.) — exakt == lokale swapInternal-Quote, d. h.
+    realisierter Slippage vs. Quote = 0,00 % (Guard-Min
+    98.922.797.782.176.963 raw NICHT bindend)
+  - Fee-Abzug: 5.000 Lamports Tx-Fee (0,0000050 SOL) + 0,01 %
+    Pool-TradeFee bereits in der Quote
+  - Source-Saldo DNEBNj: vorher 0,077566 → nachher 0,027561 SOL
+    (Diff = 0,05 Buy + 0,000005 Fee, exakt)
+  - SIN-ATA FD1WzT…: 36.107 → 109.914.219.758.010.511 raw
+    (Delta = 1.099.142.197,57974404 SIN)
+  - Pool 4erqAhdH…: tick 216290 → 213951 (wie lokal-Quote
+    prognostiziert), Liquidity invariant 20.031e9, CU 49.976/
+    500.000. Journal `clmm.swapWSOLToSIN` + `SWAP-DETAILS-
+    1794306990000.txt` geschrieben. Designer-Korrelation (11:00-
+    Gecko-Checkpoint): Buy war sichtbar — Pool tick sank um 2339
+    (SIN teurer), 24h-Vol +~8,5 USD. KNACKEN: Skript stürzte nach
+  erfolgreicher Sendung an einem BN/String-Defekt im
+  Verifikationsblock (ausgabe.amount ist String) → Folge-Commit
+  mit Fix + nachgetragenen Journal/Details; Sendung selbst war
+  korrekt und on-chain belegt.
 - 2026-11-10 10:08 UTC · agent-1 · **Trade-Skript + Dry-Run-Beleg
   (EXEC-PHAASE, noch NICHT gesendet):** Neues Skript
   `token/scripts/swap-sol-to-sin.ts` (SOL→SIN Base-In-Swap,

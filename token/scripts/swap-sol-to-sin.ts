@@ -360,9 +360,11 @@ if (sendMode) {
   console.log("Signature    :", sig);
   // Ergebnis-Verifikation (SIN-ATA nach Bestaetigung):
   const sinAtaAfter = await spl.getAccount(c, sinAta);
-  const delta = sinAtaAfter.amount.sub(sinAtaBefore ? sinAtaBefore.amount : new BN(0));
-  console.log("SIN-ATA vor/nach:", (sinAtaBefore ? sinAtaBefore.amount.toString() : "0"),
-    "→", sinAtaAfter.amount.toString(), "(Delta " + delta.toString() + " raw = " +
+  // spl-Token: account.amount ist ein STRING (uiTokenAccount-Convention),
+  // kein BN — Delta per String->BN umrechnen.
+  const delta = new BN(sinAtaAfter.amount).sub(sinAtaBefore ? new BN(sinAtaBefore.amount) : new BN(0));
+  console.log("SIN-ATA vor/nach:", (sinAtaBefore ? sinAtaBefore.amount : "0"),
+    "→", sinAtaAfter.amount, "(Delta " + delta.toString() + " raw = " +
     delta.divn(100_000).toString() + " SIN)");
   // Journal + Details (wiederholbar: kein One-Shot-Guard wie beim Burn):
   const details = {
