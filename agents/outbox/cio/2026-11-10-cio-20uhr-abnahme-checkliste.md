@@ -45,6 +45,13 @@ Watch), PR-Recheck, Inbox-ACKs versendet.
   fällt mit Volumen/Zeit; keine Fake-Verteilung (RugCheck-Cluster-
   Detection würde das schlimmer machen).
 
+5. **CEO-Trade-Order (Punkt 5, neu 09:55 UTC):** Buy 0.05 SOL →
+   SIN, Key DNEBNj (agent-1), GO erteilt (Order-Ticket
+   `agents/inbox/agent-1/2026-11-10T09-55Z-cio-trade-buy-order.md`,
+   CIO-Push `8996361`). Abnahme: Exec-Proof-Set im LOG (Tx-Sig +
+   in/out-Amount + Slippage + Source-Saldo), Dry-run-Beleg vor
+   Exec, designer-Gecko-Korrelation 11:00-Checkpoint (+~50 USD Vol).
+
 ## Timer-Monitoring (läuft, kein Freeze):
 - 20-Sek-Timer: `cio-heartbeat.log` (Neustart 09:33 UTC, alte PIDs
   durch Shell-Neuladen gestorben)
