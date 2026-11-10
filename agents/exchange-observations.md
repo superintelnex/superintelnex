@@ -72,3 +72,49 @@ Bezug: Gecko-Terminal-Pool-API + On-chain-Saldo-Scan (Betreiber-GO
 Keine On-Chain-Tx von designer (Regel 6; GO-Fenster wird per
 Relay 14-57Z an agent-1 + CIO kommuniziert, Ausführung =
 CIO-Ticket → agent-1).
+
+## Checkpoint ~17:22 UTC · Mid-Window (GO bis 19:00 UTC, ~78 Min verbleiben)
+
+Zeit: 2026-11-10 ~17:22 UTC (18:22 +01) · designer (Task 3, Read-only)
+Bezug: Gecko-Terminal-Pool-API + CIO-Loop-Log + On-chain-Saldo-Scan.
+
+### Gecko-Snapshot (Pool `4erqAhdH…`, ~17:22 UTC)
+- Preis SIN ≈ 1.19e-11 USD (~1.46e-11 SOL-Footprint, Rohwerte ohne
+  Kursaussage), FDV ≈ 1186.40 USD
+- Volumen: m5 ≈ m15 ≈ 0.082 USD · h1 ≈ 6.95 USD · h6 ≈ 79.69 USD ·
+  h24 ≈ 118.32 USD (Hochstand, deckt agent-1-17:03/17:06-Monitoring
+  „Gecko 118.24 Hochstand“)
+- Transaktionen: h1 = 1 Buy / 3 Sells · h6 = 35B/10S · h24 = 53B/15S
+  (Buyer h24: 24, Seller h24: 15)
+- LP `reserve_in_usd` ≈ 103.39 USD
+
+### Trading-Attribution GO-Fenster (15:35–17:20 UTC, Beleg-Neutral)
+- **Team-Trades (Exec-Proofs im Team-LOG `agents/LOG.md` + Outbox):**
+  Deposit #1 16:05 UTC (~0.107 SOL, externe Fluss ab Revolut-SIN→USDC)
+  → AUTO-1 `5y6eNMok…` 16:05:23Z (0.15 SOL → 1.826.062.407,15 SIN) +
+  AUTO-2 `62J7GgKx…` 16:06:37Z (0.060582 SOL → 520.176.803,46 SIN);
+  Buy #6 `3aooc4R4…` 16:19:04Z (6.04M SIN); **Trade #7** `5J24ykqZ…`
+  17:18 UTC (Kleinbetrags-Buy 0.001 SOL → 6.92M SIN, CIO-DCA).
+  Team-SIN-Position ≈ 265.5M SIN (258.61M nach #6 + 6.92M #7).
+- **h1-Fenster (16:22–17:22):** Vol ≈ 6.95 USD, 1B/3S — Buy = Trade #7
+  (17:18), 3 Sells organischer Markt. **h6-Fenster:** Mix aus den 4
+  Team-Buys + organischer Zufluss (h24 +357.1 % laut agent-1-17:03-Log).
+- **Kein Anomaly:** alle Volumen-Sprünge im Fenster korrelieren mit den
+  oben belegten Team-Exec-Events + organischem Basisfluss. Keine
+  unbekannte Wallet (Audit-Flag #003 16:26 UTC geschlossen:
+  `C6iR5D39…` = pool-eigenes WSOL-Vault).
+
+### Loop-Status (read-only, Team-Territorium)
+- CIO-Auto-Trade-Loop neu gestartet 17:18:10Z (PID 85755, `agents/
+  shared/cio-autotrade.zsh`): 60-s-Poll, CAP 0.15 SOL, MIN-Buy 0.005 SOL.
+  Letzte Polls 17:18–17:20Z: `free=0.005008, ATA(wsol=1,sin=1),
+  buy_fähig=-0.000997 — WAART AUF DEPOSIT`. **Nächster autonomer
+  Trade erfordert frisches Deposit** (Schwelle ≥0.011005 SOL).
+
+### On-chain-Saldo-Scan (RPC, 17:21 UTC)
+- Provider `DNEBNj…` = 0.005008 SOL · Main `9kT5Ew…` = 0.000894 SOL ·
+  `FXw41…` = 0.000650 SOL · Operator-Revolut `F9Sj9a…` = 0.372365 SOL
+  (unverändert seit 14:44 UTC → kein Kapitalanlauf beim Operator-Key).
+
+Keine On-Chain-Tx von designer (Regel 6). Nächster designer-Checkpoint:
+18:30 UTC (Kollisions-Fenster 18:45–19:00 für Abnahme, dann GO-Schluss).

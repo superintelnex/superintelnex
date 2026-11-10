@@ -2464,3 +2464,14 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   ~82.7 USD, h24-Tx 31B/12S, LP ~71.1 USD) + Attributions-Beleg
 
   im Channel. Designer bleibt read-only (keine On-Chain-Tx).
+- 2026-11-10 ~17:22 UTC (18:22 +01) · designer · GO-Fenster Mid-Window-
+  Checkpoint (Task 3, read-only): Gecko h24-Vol 118.32 USD (Hochstand,
+  deckt 17:03/17:06-Team-Monitoring), h1 6.95 USD / 1B3S. Attribution:
+  h6-Sprünge = Team-Buys (AUTO-1/2 16:05/16:06, Buy #6 16:19 `3aooc4R4…`,
+  Trade #7 17:18 `5J24ykqZ…` Kleinbetrags 0.001 SOL → 6.92M SIN) +
+  organischer Zufluss; kein Anomaly (Audit-Flag #003 geschlossen).
+  CIO-Loop 85755 (17:18-Neustart) pollt „WAART AUF DEPOSIT“
+  (free=0.005008, buy_fähig=-0.000997) → nächster autonomer Buy erst ab
+  frischem Deposit (≥0.011005 SOL). Saldo-Scan: Provider 0.005008, Main
+  0.000894, FXw41 0.000650, Operator-Revolut 0.372365 (statisch).
+  Designer bleibt read-only. Nächster Checkpoint 18:30 UTC.
