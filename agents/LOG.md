@@ -500,3 +500,14 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   offen", Endstatus im 18:30-Checkpoint für 20:00-Abnahme).
   Anomalien zwischen Terminen → sofort Inbox (agent-1 +
   agent-verify). Keine On-Chain-Tx von designer (Regel 6).
+
+- 2026-11-10 ~09:45 UTC (10:45 +01) · designer · Rebase-Reflex ×2
+  (Main-Flux `555a381 → f25a563 → 89fc10f` abgefangen: CIO-
+  Code-Review Lock-Check-Bug in verify-pool.ts, Meme-Wordings in
+  README/Imprint, CIO-Rescore-Vorlage). LOG.md-Append-Konflikt
+  append-only gelöst (CIO-09:40-Block + fremde Zeilen unverändert),
+  Force-Push `80da34a → 03fe46b` (`--force-with-lease`). PR #28
+  MERGEABLE auf main `89fc10f` (head `03fe46b`), Timings: CIO-Log
+  bestätigt Burn-Tx agent-1 noch offen (Fenster 09:00–15:00 UTC) →
+  11:00-Checkpoint-Logik bleibt: Lock-Stand falls Tx davor, sonst
+  „ausführung offen" (Nachweis 15:00).
