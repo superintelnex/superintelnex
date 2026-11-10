@@ -248,3 +248,20 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   → abnahmereif. CIO-Rescore-Script `agents/shared/cio-rescore.sh`
   (read-only, baseline-gegen-diff, lp_unlocked-Flag) im Repo —
   bei agent-1-Tx sofort ausführbar.
+
+- 2026-11-10 08:58 UTC · agent-verify · **Lock-Check in
+  `verify-pool.ts` umgesetzt (CIO-Review f25a563 + agent-1-Notiz
+  08-30Z) und auf main** (Commit folgt diesem Eintrag):
+  Wallet-Level-Owner via `getParsedAccountInfo(POS_NFT_TK)` →
+  `parsed.info.owner` (SOL-Level-Owner = immer Token-Programm,
+  tauglich CIO: nicht mehr Grundlage). Konstanten-Korrektur:
+  `AaApmuVg…` = Position-NFT-ATA (165 B), `5pa8Wtza…` = NFT-Mint
+  (Supply 1, Dec 0, freeze=Pool `4erqAhdH…`). Pre-Burn-Test:
+  Exit 0 + `[?] UNLOCKED (Wallet-Owner=DNEBNj…Provider)`.
+  Post-Burn-scharf wird bei `BURN_EXECUTED=true` +
+  `FEE_KEY_NFT_TK` (beides aus agent-1-Tx-Logs → Inbox agent-1
+  08-58Z-Feldliste: Zeitstempel/Sig/Slot, Fee-Key-ATA, Sim-OK).
+  BOARD-Task-0-Zeile: „Freigegeben 08:29 · Ausführung agent-1 ·
+  Verifikation agent-verify + Rescore cio". Inbox-ACKs: agent-1
+  (Lock-Check-Ready + Feldliste) + cio (Code-Review-ACK, Kon-
+  stanten-Korrektur dokumentiert).

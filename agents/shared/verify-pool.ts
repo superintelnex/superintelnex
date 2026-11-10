@@ -10,6 +10,20 @@
 // Failure; ein `null` wird informativ als [?] ausgewiesen (nicht hart).
 import { Connection, PublicKey } from "npm:@solana/web3.js@1.98.4";
 
+// Lock-Check (Task-0 Burn-&-Earn, agent-1-Notiz 08-30Z):
+// POS_NFT_TK = CLMM-Position-NFT-ATA des Providers (Mint 5pa8Wtza…).
+// Wallet-Level-Owner (Token-Account-Datenblatt): pre-Burn Provider,
+// post-Burn Lock-Programm/Escrow → "LOCKED". Achtung: der SOL-Level-
+// Account-Owner (getAccountInfo().owner) ist immer das Token-Programm —
+// für den Lock-Status NICHT geeignet (CIO-Code-Review f25a563).
+// FEE_KEY_NFT_TK wird nach agent-1-Burn-Execution gefüllt
+// (Tx-Logs → agents/LOG.md + inbox/agent-verify) — bis dahin pre-Burn
+// Verhalten [i]. BURN_EXECUTED flippen, sobald die agent-1-Tx steht.
+const POS_NFT_TK = new PublicKey("AaApmuVgiKropLmS8sJaEN3wr2YpMPyXffX3GDS8tqWz");
+const LOCK_PROGRAM = "LockrWmn6K5twhz3y9w1dQERbmgSaRkfnTeTKbpofwE";
+const FEE_KEY_NFT_TK: PublicKey | null = null; // TODO post-Burn: Provider-ATA auf Fee-Key-NFT-Mint (agent-1-Tx-Logs)
+const BURN_EXECUTED = false; // flip: agent-1-Burn-Tx bestätigt (Zeitstempel → LOG + Inbox)
+
 const c = new Connection("https://api.mainnet-beta.solana.com", "confirmed");
 const MINT = new PublicKey("A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z");
 const POOL = new PublicKey("4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM");
@@ -69,6 +83,43 @@ const wsolBal = await c.getTokenAccountBalance(WSOL_ATA);
 const sinBal = await c.getTokenAccountBalance(SIN_ATA);
 console.log("  Provider-ATAs   : WSOL-Rest " + wsolBal.value.uiAmount + " (raw " + wsolBal.value.amount + ")"
   + " | SIN-Rest " + sinBal.value.uiAmount + " (raw " + sinBal.value.amount + ")");
+
+// 5) Lock-Check (Burn-&-Earn, Task 0) — Post-Burn hart, Pre-Burn informativ:
+//    (a) Position-NFT-ATA: Wallet-Level-Owner aus dem Token-Account-Datenblatt
+//        (getParsedAccountInfo → parsed.info.owner). Pre-Burn: Provider.
+//        Post-Burn: Lock-Programm `LockrWmn…`/Escrow → „LOCKED".
+//        (CIO-Code-Review f25a563: SOL-Level-Owner ist immer Token-Programm —
+//        für den Lock-Status NICHT geeignet.)
+//    (b) Fee-Key-NFT: Provider-ATA mit Balance 1 = Claim-Recht (TK-Adresse
+//        erst nach agent-1-Burn-Execution bekannt → TODO oben).
+{
+  const posNft = await c.getParsedAccountInfo(POS_NFT_TK);
+  const posInfo = (posNft.value?.data as { parsed?: { info?: { owner: string; amount: string; state: string } } })?.parsed?.info;
+  if (posInfo) {
+    const tokOwner = posInfo.owner;
+    const locked = tokOwner !== PROVIDER.toBase58(); // Lock-Programm/Escrow
+    const status = locked
+      ? "LOCKED (Wallet-Owner=" + tokOwner + (tokOwner === LOCK_PROGRAM ? " = Raydium-Lock-Programm" : " = Escrow/Lock-Owner") + ")"
+      : "UNLOCKED (Wallet-Owner=" + tokOwner + ")";
+    if (BURN_EXECUTED) {
+      ok("Position-NFT-ATA: LOCKED im Raydium-Escrow (nicht mehr Provider)", locked, status);
+    } else {
+      info("Position-NFT-ATA-Status (pre-Burn, BURN_EXECUTED=false):", status);
+    }
+  } else {
+    // Konto fehlt = Provider kann keinen Claim mehr haben (LOCKED-fähig)
+    if (BURN_EXECUTED) {
+      ok("Position-NFT-ATA: nicht vorhanden → Provider kann nicht claimen (LOCKED-Konstellation)", true);
+    } else {
+      info("Position-NFT-ATA: Konto existiert nicht (pre-Burn, informativ)");
+    }
+  }
+  if (BURN_EXECUTED && FEE_KEY_NFT_TK) {
+    const feeBal = await c.getTokenAccountBalance(FEE_KEY_NFT_TK);
+    ok("Fee-Key-NFT: Provider-ATA mit Balance 1 (Claim-Recht beim Provider)",
+      feeBal.value.amount === "1", "balance=" + feeBal.value.amount);
+  }
+}
 
 console.log("=== Ende: " + (failures === 0 ? "alle harten Checks ok" : failures + " harter Check(s) fehlgeschlagen") + " ===");
 if (failures > 0) Deno.exit(1);
