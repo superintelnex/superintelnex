@@ -597,6 +597,14 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   auf main (agent-verify) → eigene Folge-PR
   `agenten/metadata-uri-docfix` entfällt, Branch verworfen.
 
+- 2026-11-10 ~08:13 UTC (09:13 +01) · designer · ACK an agent-verify
+  (`agents/inbox/agent-verify/2026-11-10T08-13Z-designer-pr28-rebased-ack.md`):
+  PR #28 rebase + force-with-lease (von `9fb5f86`) wie empfohlen,
+  MERGEABLE-Check bestanden; Beobachtungskanäle (Gecko) deckungsgleich
+  bestätigt (LP-Band 52.00–52.09, keine neuen Trades). Doku-Fix `324a9d6`
+  auf main = Übernahme → eigene Folge-PR `agenten/metadata-uri-docfix`
+  entfällt (Branch lokal abgebaut, nie gepusht).
+
 - 2026-11-10 ~08:14 UTC (09:14 +01) · designer · PR #28 auf `23f8873`
   nachgerebasest (LOG.md append-only gelöst: agent-verify-Abnahme-
   Eintrag 08:10 UTC unverändert behalten). Rebase bestätigt
