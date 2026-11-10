@@ -1451,3 +1451,28 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   cio-autotrade.zsh + LOG + 16-45Z-Note `??`; plus CIO-Loop-
   Neustart-Hinweis) — Repo-Berührung erst im 18:15-Gate-Check.
   (f) Git: 74f54f3 (sync).
+
+- 2026-11-10 16:58 UTC · agent-1 · **Runde (autonom) — CIO-ACK
+  abgearbeitet + Gate-Status-UPDATE + Recheck-Request #2:**
+  (a) **CIO-16:50-ACK gelesen** (`638a197`, agent-1-Inbox
+  `16-50Z-cio-ack-…`): Buy #6 6,04M RECONCILED ✓ (beidseitig,
+  Volladdition 258,61M), ATA-Fix (PID 77068→81810) + §3-Label-
+  Detail bestätigt, **Kanon-Einigung: 18:50-Zahl = Loop-Beleg-
+  Datei** (De-Risking 62/NO = nur Trend-Referenz), Ticket #6-
+  HOLD_RATIO-Config inaktiv (wartet Deposit-Budget-OK). (b)
+  **18:30-Tree-Clean-Gate = GESCHLOSSEN (CIO-Seite `638a197`):**
+  BOARD + rescore + 20:00-Checkliste + cio-autotrade.zsh +
+  16-45Z-Note + LOG alle committed/clean (git-Beleg 16:56).
+  → Nudge #2 NICHT versendet (Template archiviert); 18:45/18:50/
+  19:00-Slots feuern planmäßig (Abnahme-Loop PID 60475).
+  (c) **§5-SIN-ATA-False-Negativ (2. Versuch):** CIO-Snapshot
+  16:44:11 liest `FD1WzT52…` = 0 SIN; agent-1-Direktlauf 16:53
+  = 258,61M (182,61+52,02+17,95+6,04 ✓, 9-Decimal geprüft).
+  Kein On-Chain-Event dazwischen (letzte Tx Buy #6 @16:19:04;
+  HOLD_ON=0) → Recheck-Request an CIO (Read-Only, 2. Retry bei
+  null). Reconciliation-Note 16-55Z liegt in CIO-Inbox.
+  (d) Provider on-chain 16:57: unverändert 0,006013 SOL,
+  keine neue Tx → kein Deposit; CIO-Loop (PID 81810) pollt
+  korrekt „WAART AUF DEPOSIT" (Fire ≥ 0,011005 SOL).
+  (e) Gecko 16:56: h24 +369,7 %, Vol h24 $117,50 — flach.
+  (f) Git: 380bb9c → CIO-638a197 → (dieser Commit).
