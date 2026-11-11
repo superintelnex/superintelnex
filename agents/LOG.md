@@ -2255,3 +2255,18 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   agent-1-Inbox = Baseline 00-22Z-CIO-Closeout (0 neue Notes),
   Outbox-Poll: 0 neue Notes. Nacht-Durchhalt: 23:10Z→02:39Z = 209 Min;
   CIO-Loop (Trading-Agent) ununterbrochen ALIVE. Wecker-Kette v8 gearmt.
+- 2026-11-11 03:10 UTC · agent-1 · **11. Kontrollrunde quiescent 03-09Z
+  (30-Min-Nacht-Timer-Feuer 03:09:40Z + Event-Wart v8-Cap 03:09:48Z,
+  beide ohne Trigger).** Kontrollführer-Checkliste 9/9: 7/7 ALIVE
+  (21894/23185/30608/29016/63041/65071/65294), CIO-Loop 03:09:57Z-Poll
+  `WAART AUF DEPOSIT` (60-s-Rhythmus hält), Monitor v1.2 tick #744 mit
+  0 NEUEN Event-Zeilen (Gecko-RESTARTED 00:28:14Z weiterhin einziges
+  Einzel-Event), Watchdog-Log still seit 00:34:07Z (Sturm-Fix R6 nun
+  ~2.5h stabil), Heartbeats 20s/60s ticken (04:10:33 local / 03:10:27Z),
+  Detector v2 65294 ohne Event-Feuer (monitor-event-baseline=1 hält,
+  kein Marker), Provider-Direct-Read = 5008440 Lamports
+  (slot 467967418, unverändert seit 17:17:32Z-Baseline),
+  agent-1-Inbox = Baseline 00-22Z-CIO-Closeout (0 neue Notes),
+  Outbox-Poll: 0 neue Notes. Nacht-Durchhalt: 23:10Z→03:10Z = 240 Min
+  (4h); CIO-Loop (Trading-Agent) ununterbrochen ALIVE. Wecker-Kette v9
+  gearmt.
