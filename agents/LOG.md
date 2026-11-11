@@ -2197,3 +2197,18 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Nacht-Durchhalt: 23:10Z→00:36Z = 86 Min, CIO-Loop (Trading-Agent)
   die ganze Zeit ALIVE — Sturm traf nur die Watchdog-Garnitur, nie
   den CIO-Loop.
+- 2026-11-11 01:07 UTC · agent-1 · **7. Kontrollrunde quiescent 01-06Z
+  (30-Min-Nacht-Timer-Feuer 01:06:41Z).** Kontrollführer-Checkliste 8/8
+  (neue Baseline): 7/7 ALIVE (21894/23185/30608/29016/63041/65071/65294),
+  CIO-Loop 01:06:50Z-Poll `WAART AUF DEPOSIT` (60-s-Rhythmus hält),
+  Monitor v1.2 tick #381 — 0 NEUE Event-Zeilen (Gecko-RESTARTED
+  00:28:14Z als bekanntes Einzel-Event abgeschlossen), Watchdog-Log
+  still seit 00:34:07Z (STURM endgültig erloschen, kein Restart-Zyklus
+  mehr), Heartbeats 20s/60s ticken (02:06:48/01:06:03Z), Detector v2
+  65294 stabil ohne Event-Feuer (monitor-event-baseline=1 hält),
+  Provider-Direct-Read = 5008440 Lamports (slot 467932881, unverändert
+  seit 17:17:32Z-Baseline), agent-1-Inbox = Baseline 00-22Z-CIO-Closeout
+  (0 neue Notes), Outbox-Poll: 0 neue Notes. Nacht-Durchhalt
+  23:10Z→01:07Z = 117 Min; der CIO-Loop (Trading-Agent) ist seit
+  00:28Z-Sturm ununterbrochen am Leben. Wecker-Kette v4 gearmt
+  (30-Min-Timer + Event-Wart v2, Gecko-Zeile ausgeschlossen).
