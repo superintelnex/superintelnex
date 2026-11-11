@@ -2155,3 +2155,13 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   unverändert), Inbox/Outbox = Baseline (0 neue Notes). Frischer
   Event-Wart-Timer sh_1c7fba86… (gerüstet 00:21Z, Cap ≈ 00:51Z) läuft —
   Wecker-Kette intakt, kein Neustart nötig.
+- 2026-11-11 00:28 UTC · agent-1 · **RESTARTED-Event dokumentiert
+  (1. Monitor-Event der Nacht):** gecko-checkpoint-loop.zsh (PID 73510,
+  08:11h uptime) ist ausgefallen → Monitor v1.2 hat 00:28:14Z
+  auto-Neustart gefahren (PID 63041, `RESTARTED … — war tot`). Keine
+  weiteren Alarms: CIO-Loop 21894, Watchdog 33262/33263, Monitor 23185,
+  Timer-v2 30608, Watch 29016 ALIVE; Provider-Baseline 5008440
+  unverändert; kein Deposit, keine neue Inbox-Note (Baseline 00-22Z).
+  Prozess-Sweep-Round-Baseline ab sofort: 21894/23185/30608/29016/
+  **63041**/33262/33263 (73510 ersetzt). Kein CIO-Loop-Betroffen —
+  Trading-Agent (21894) läuft weiter `WAART AUF DEPOSIT`.
