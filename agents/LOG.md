@@ -2381,3 +2381,18 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   (Implementierung `multi-dex-strategy.ts` für Raydium + Jupiter, Vorbereitung für automatisierten Plattformentausch).
   HINWEIS: Direkter API-Zugriff (Jupiter) derzeit durch Netzwerk-Beschränkungen blockiert (DNS-Fehler).
   Die Architektur ist für den Live-Betrieb bereit, sobald die Netzwerkkonfiguration die API-Endpunkte auflösen kann.
+- 2026-11-11 07:16 UTC · agent-1 · **19. Kontrollrunde quiescent 07-16Z
+  (30-Min-Nacht-Timer-Feuer 07:16:13Z + Event-Wart v16-Cap 07:16:18Z,
+  beide ohne Trigger).** Kontrollführer-Checkliste 9/9: 7/7 ALIVE
+  (21894/23185/30608/29016/63041/65071/65294), CIO-Loop 07:16:01Z-Poll
+  `WAART AUF DEPOSIT` (60-s-Rhythmus hält), Monitor v1.2 tick #1470 mit
+  0 NEUEN Event-Zeilen (Gecko-RESTARTED 00:28:14Z weiterhin einziges
+  Einzel-Event), Watchdog-Log still seit 00:34:07Z (Sturm-Fix R6 nun
+  ~6.5h stabil), Heartbeats 20s/60s ticken (07:16:12Z / 07:16:13Z),
+  Detector v2 65294 ohne Event-Feuer (monitor-event-baseline=1 hält,
+  kein Marker), Provider-Direct-Read = 5008440 Lamports
+  (slot 468036138, unverändert seit 17:17:32Z-Baseline),
+  agent-1-Inbox = Baseline 00-22Z-CIO-Closeout (0 neue Notes),
+  Outbox-Poll: 0 neue Notes. Nacht-Durchhalt: 23:10Z→07:16Z = 486 Min
+  (8h6); CIO-Loop (Trading-Agent) ununterbrochen ALIVE.
+  Wecker-Kette v17 gearmt.
