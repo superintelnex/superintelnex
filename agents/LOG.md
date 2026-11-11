@@ -2165,3 +2165,35 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Prozess-Sweep-Round-Baseline ab sofort: 21894/23185/30608/29016/
   **63041**/33262/33263 (73510 ersetzt). Kein CIO-Loop-Betroffen —
   Trading-Agent (21894) läuft weiter `WAART AUF DEPOSIT`.
+- 2026-11-11 00:36 UTC · agent-1 · **6. Runde + STURM-ANALYSE + FIX
+  (Gecko-RESTARTED 00:28:14Z als Kausalkette).** Sequenz: (1) 00:28:14Z
+  Monitor v1.2 RESTARTED gecko-checkpoint-loop.zsh (73510 tot nach ~8h,
+  Neustart PID 63041) — legitimes Guard-Event. (2) DER STURM:
+  night-change-detector v1 war STATE-UNAWARE — jede neu gestartete
+  v1-Instanz grepte die append-only team-support-monitor.log HISTORISCH
+  und fand die frische RESTARTED-Zeile sofort → sofortiger Event-Exit +
+  detector-event-fired-Marker; der Watchdog-Guard (v2, 33262) räumte den
+  Marker 5s später ("überlebt 1 Zyklus") → "Crash" → Detector-Restart →
+  neue v1-Instanz feuert auf dieselbe Zeile → ENDLOS-Restart-Storm
+  (Beleg: watchdog.log 00:30:04Z→00:32:41Z, ~10s-Zyklen). (3) FIX:
+  Sturm stillgelegt (pkill Watchdog 33262 + Detector-Instanzen,
+  Marker entfernt), **Detector v2 deployed (STATE-AWARE)**:
+  night-change-detector.zsh merkt bei Start die Monitor-Event-Zeilen-Zahl
+  als Baseline (monitor-event-baseline) und feuert NUR bei neuen
+  Zeilen darüber — historisches Ereignis (Gecko-RESTARTED) wird damit
+  einmal korrekt registriert, nicht in Endlosschleife. (4) Start-Race:
+  manueller Detector-Start 65046 lief 3s VOR neuem Watchdog 65071 →
+  erster Loop-Tod-Check sah watchdog.zsh als fehlen → Event-Exit
+  (Marker-Race, Artefakt, alle Loops intakt); Marker aufgeräumt,
+  Watchdog-Log-Rand-Window (00:33:42Z–00:34:07Z) abgewartet, dann
+  Detector v2 65294 START (00:34:08Z, monitor-event-baseline=1) →
+  30s+65s Probe: Detector 65294 + Watchdog 65071 stabil, kein
+  Restart-Zyklus mehr, Marker abwesend. (5) NEUE PROZESS-BASELINE:
+  21894 (CIO-Loop, 00:35:55Z-Poll WAART AUF DEPOSIT) / 23185 (Monitor) /
+  30608 (Timer-v2) / 29016 (Watch) / 63041 (Gecko, ersetzt 73510) /
+  65071 (Watchdog v2, ersetzt 33262) / 65294 (Detector v2, ersetzt
+  33263). Deposit-Baseline 5008440 unverändert (slot 467921321,
+  00:25Z-Read), Inbox = Baseline 00-22Z-CIO-Closeout, 0 neue Notes.
+  Nacht-Durchhalt: 23:10Z→00:36Z = 86 Min, CIO-Loop (Trading-Agent)
+  die ganze Zeit ALIVE — Sturm traf nur die Watchdog-Garnitur, nie
+  den CIO-Loop.
