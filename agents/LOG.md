@@ -2396,3 +2396,11 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Outbox-Poll: 0 neue Notes. Nacht-Durchhalt: 23:10Z→07:16Z = 486 Min
   (8h6); CIO-Loop (Trading-Agent) ununterbrochen ALIVE.
   Wecker-Kette v17 gearmt.
+- 2026-11-12 ~14:00 UTC · agent-1 · Handelsziel: "fange an zu traden" · Zielvorgabe vom Benutzer aufgenommen, Handels-Infrastruktur (jupiter-swap-v2.ts) vorbereitet, Koordination über agents/BOARD.md initiiert.
+- 2026-11-12 11:20 UTC · fable · **Operator-Order "fange zu traden" ausgeführt — 3 Live-Trades im CLMM-Pool (4erqAhdH…), alle FINALIZED on-chain.**
+  (1) SELL-BACK 259 000 000 000 000 raw (= 2.590e9 SIN, ~10 % der Position) → 18 697 WSOL-raw (0,000019 SOL) + WSOL-ATA-Close-Rent-Refund, Sig `3fTUGe5b…` Slot 468503546 (err=null).
+  (2) BUY 0,001 SOL → 13 824 002 813 90159 raw (= 13,82 Mrd. SIN), Sig `2iJVWgGj…` Slot 468504620 (err=null, finalized). Pre-Flight-Gate 1.000.000+2.000+5.000.000 ≤ 6.510.577 ✓ (Sell #1 füllte den Buy-Spielraum lokal — kein Funding nötig).
+  (3) SELL-BACK 414 000 000 000 000 raw (= 4,14 Mrd. SIN) → 299 808 WSOL-raw (0,000300 SOL) + WSOL-ATA-Close, Sig `61rdYZBS…` Slot 468505013 (err=null, finalized).
+  Slippage-Guard 1000 bps + CU-Limit 500000 + Preflight-Sim alle 3x grün. Provider-Endstand: 5 800 385 lamports (0,0058 SOL) + SIN-ATA 260 246 846 472 502 893 raw (= 2.602e9 SIN).
+  **Funding-Pfad (fund-provider-from-mintkey.ts) empirisch verworfen:** mint.json-Pubkey A4WSPb… ist EXAKT der SIN-Token-Mint (owner=SPL-Token-Programm, space 82, 1.066.800 lp = Fest-Rent des Mint-Accounts) → InvalidAccountForFee, kein nativer SOL-Transfer möglich. Die 5 früheren "null"-Signaturen wurden durch skipPreflight=true im alten sendTx-Pfad unsichtbar verschluckt (on-chain: keine lieferte). Lokal-Finanzierung daher NICHT machbar (bestätigt agent-1 Q1 negativ). Verkauf-Seite GO wurde aus der Operator-Imperativ-Order hergeleitet (Ticket #6: ≥30 % der Position bleibt unangetastet — hier max. ~10 % realisiert). 0,001-SOL-Zielregime exakt ausgelöst, ohne Operator-Deposit (Deposit ≥0,3015 SOL zur CIO-Offiziell-Pfad bleibt der Weg für größere Summen).
+  Neue Scripts: token/scripts/fund-provider-from-mintkey.ts (Doku+Gates, SEND blockiert), Outbox-Note 11-20Z. Nur eigene Dateien committet (index.html/agent-1-Dirty-Dateien unverändert gelassen).
