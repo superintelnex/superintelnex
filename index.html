@@ -139,8 +139,12 @@
   }
   @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 
-  .trade-notice{margin:14px 0 0;font:13px/1.5 var(--mono)}
-  .trade-notice a{color:var(--ink);text-underline-offset:.2em}
+  .market-cta{color:var(--bg);background:var(--ink);text-shadow:none}
+  .market-cta:hover{background:#fff}
+  .market-links{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;max-width:510px;margin:9px 0 0;font:11px/1.35 var(--mono);color:var(--muted)}
+  .market-links a{display:inline-flex;align-items:center;min-height:24px;color:var(--ink);text-underline-offset:.22em;text-decoration-color:#ffffff65}
+  .market-links a:hover{text-decoration-color:currentColor}
+  .market-links .market-note{flex-basis:100%}
   .sin-platforms{margin-top:clamp(14px,2.5vh,26px);font:13px/1.4 var(--mono);color:var(--ink)}
   .sin-platforms h2{font:inherit;font-weight:700;margin:0 0 7px;letter-spacing:normal}
   .sin-providers{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
@@ -182,10 +186,18 @@
         <p class="eyebrow" data-de="01 / Meme-Coin &amp; Whitepaper-Projekt im Aufbau">01 / Meme Coin &amp; Whitepaper project in development</p>
         <h1 id="title-1"><span data-de="Wo Intelligenz">Where intelligence</span><br><span class="headline-accent" data-de="Währung wird.">becomes currency.</span></h1>
         <p class="desc" data-de="SuperIntelNex verbindet einen Meme-Coin mit Whitepaper und der Vision intelligenter Zahlungen.">SuperIntelNex combines a meme coin with a whitepaper and a vision of intelligent payments.</p>
-        <p class="trade-notice"><a href="https://raydium.io/swap/?inputMint=sol&amp;outputMint=A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span data-de="SIN/SOL jetzt auf Raydium handelbar">SIN/SOL now trading on Raydium</span> <span aria-hidden="true">↗</span></a></p>
         <div class="actions">
+          <a class="pill market-cta" href="https://raydium.io/swap/?inputMint=sol&amp;outputMint=A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span data-de="SIN/SOL auf Raydium">SIN/SOL on Raydium</span> <span aria-hidden="true">↗</span></a>
           <button class="pill primary" type="button" data-go="1"><span data-de="Vision entdecken">Explore the vision</span> <span class="pill-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M10 4H6M10 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-          <button class="pill secondary" type="button" data-go="2" data-de="SIN-Plattformen">SIN platforms</button>
+        </div>
+        <div class="market-links" role="group" aria-label="SIN markets and charts" data-de-label="SIN-Handel und Charts">
+          <a href="https://jup.ag/tokens/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span data-de="Jupiter (über Raydium)">Jupiter (via Raydium)</span></a>
+          <span aria-hidden="true">·</span>
+          <span data-de="Charts:">Charts:</span>
+          <a href="https://dexscreener.com/solana/4erqahdh1yx9fzfpstjrau8sgvpkerahncggqnsevdem">DEX Screener</a>
+          <a href="https://www.geckoterminal.com/solana/pools/4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM">GeckoTerminal</a>
+          <a href="https://dex.coinmarketcap.com/token/solana/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z/">CoinMarketCap DEX</a>
+          <span class="market-note" data-de="Solana · Geringe Liquidität im SIN/SOL-Pool">Solana · Low liquidity in the SIN/SOL pool</span>
         </div>
       </section>
       <section class="scene" id="vision" aria-labelledby="title-2" hidden>
@@ -209,15 +221,16 @@
           <div><dt data-de="Projektangaben">Project details</dt><dd data-de="Partnerschaften, Audits und Teamangaben sind (noch) nicht bestätigt. Offizielle Kanäle: X @superintelnex und Discord (Links unten).">Partnerships, audits, and team details are not yet confirmed. Official channels: X @superintelnex and Discord (links below).</dd></div>
         </dl>
         <aside class="sin-platforms" id="sin-platforms" aria-labelledby="sin-platforms-title">
-          <h2 id="sin-platforms-title" data-de="SIN auf Solana Mainnet">SIN on Solana Mainnet</h2>
+          <h2 id="sin-platforms-title" data-de="SIN: Handel und Marktdaten">SIN: trading and market data</h2>
           <ul class="sin-providers">
-            <li><a href="https://explorer.solana.com/address/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span aria-hidden="true">↗</span> Solana Explorer</a><small data-de="Mint bestätigt">Mint confirmed</small></li>
-            <li><a href="https://jup.ag/tokens/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span aria-hidden="true">↗</span> Jupiter</a><small data-de="Swap über Raydium">Swap routed through Raydium</small></li>
-            <li><a href="https://www.geckoterminal.com/solana/pools/4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM"><span aria-hidden="true">↗</span> GeckoTerminal</a><small data-de="SIN/SOL · Chart und Handelsdaten">SIN/SOL · chart and market data</small></li>
-            <li><a href="https://raydium.io/swap/?inputMint=sol&amp;outputMint=A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span aria-hidden="true">↗</span> Raydium CLMM</a><small data-de="SIN/SOL · Handelspaar">SIN/SOL · trading pair</small></li>
-            <li><a href="https://dexscreener.com/solana/4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM"><span aria-hidden="true">↗</span> DexScreener</a><small data-de="SIN/SOL · Chart und Marktdaten">SIN/SOL · chart and market data</small></li>
+            <li><a href="https://raydium.io/swap/?inputMint=sol&amp;outputMint=A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span aria-hidden="true">↗</span> Raydium CLMM</a><small data-de="Handelsplatz · SIN/SOL">Trading venue · SIN/SOL</small></li>
+            <li><a href="https://jup.ag/tokens/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span aria-hidden="true">↗</span> Jupiter</a><small data-de="Swap über den Raydium-Pool">Swap via the Raydium pool</small></li>
+            <li><a href="https://dexscreener.com/solana/4erqahdh1yx9fzfpstjrau8sgvpkerahncggqnsevdem"><span aria-hidden="true">↗</span> DEX Screener</a><small data-de="Chart und Handelsdaten">Chart and trading data</small></li>
+            <li><a href="https://www.geckoterminal.com/solana/pools/4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM"><span aria-hidden="true">↗</span> GeckoTerminal</a><small data-de="Chart und Handelsdaten">Chart and trading data</small></li>
+            <li><a href="https://dex.coinmarketcap.com/token/solana/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z/"><span aria-hidden="true">↗</span> CoinMarketCap DEX</a><small data-de="On-Chain-Daten">On-chain market data</small></li>
+            <li><a href="https://explorer.solana.com/address/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span aria-hidden="true">↗</span> Solana Explorer</a><small data-de="Mint-Adresse prüfen">Check mint address</small></li>
           </ul>
-          <p data-de="Weitere Listings sind derzeit nicht bestätigt.">Further listings are currently unconfirmed.</p>
+          <p data-de="GeckoTerminal und CoinMarketCap DEX zeigen On-Chain-Daten. Ein reguläres Listing bei CoinGecko, CoinMarketCap oder einer zentralen Börse ist nicht bestätigt.">GeckoTerminal and CoinMarketCap DEX show on-chain data. A regular listing on CoinGecko, CoinMarketCap or a centralized exchange is unconfirmed.</p>
         </aside>
         <div class="actions">
           <button class="pill secondary" type="button" data-go="0"><span data-de="Zur Startseite">Back to home</span> <span class="pill-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M10 10L4 4M4 4H8M4 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
