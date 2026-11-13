@@ -2764,3 +2764,11 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   10-Min-Timer (Begründung: Session-Reaktivierung ohne Operator-Chat-Ping) überwacht
   Night-Coord + Team-Pass; Wache-Snapshot-Skript agents/timers/fable-supervisor-snapshot.sh
   (erstverifikation 20:49Z: alle 10 PIDs OK, Deposit ausstehend, Akku 53 % CHARGING).
+- 2026-11-13 ~20:53 UTC · fable · Night-Coord-Loop v2.1 (15 s-Takt,
+  PID 41198): Operator-Wecker eingebaut — bei CRITICAL-Events
+  (cio-regime, deposit-frühwarnung, akku-warnung, loop-tot:*) spawnt
+  die Loop eine frische Agent-Instanz via `opencode run --archived
+  --auto` (headless, Brief = Event-Tape + Kanon), Out-Log
+  $TDIR/fable-wake-agent.log. Chat-Trigger ab jetzt nur noch für
+  Urteilsfragen (z. B. Issue #35). Hardware: Akku 54 % charging —
+  läuft die ganze Nacht (Operator: MacBook am Ladegerät).
