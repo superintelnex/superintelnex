@@ -43,7 +43,7 @@
     "wake_reasons": [],
     "wake_prompt": "",
     "cooldown_s": 3600,
-    "_liveness_override": "lock-pid:/private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/.cio-autotrade.lockd/pid"
+    "_liveness_override": "/private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/.cio-autotrade.lockd/pid"
   },
   "fable-loop": {
     "_note": "Fable-Trade-Loop (Trigger MIN_BAL 5,5e6 lp). Eigener Watchdog fable-loop-watchdog.sh laeuft parallel (doppelte Sicherheit). Kein Wake.",

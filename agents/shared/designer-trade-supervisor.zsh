@@ -18,12 +18,18 @@
 #             getrennt je Pattern + Logfile).
 #   Alerts:
 #     DEPOSIT    Saldo-Anstieg über Fable-MIN (5.5e6 lp).
-#     CONFLICT   Trade-Events beider Agenten < 90 s auseinander
-#                (gemeinsame Wallet → Doppel-Spend-Risiko, wichtigster Alert).
+#     CONFLICT   Trade-Event + das ANDERE System lebend (Konkordat-16:08Z:
+#                CIO-Live-Guard = Fable feuert NUR bei totem CIO; Einzel-
+#                Writer-Verletzung = Doppel-Spend-Risiko).
+#                CIO-tot/Fable-tot-Solo = erwartet, nur Event-Zeile.
 #     FLAP       >= 3 Fable-Loop-STARTs innerhalb 10 min (Instabilitaet).
+#     FABLE-STOP Fable-eigenes STOP-Flag (agents/trade-loop/STOP): aktiv
+#                → Fable-Loop/-WD-Ausfall = ERWARTET (kein GAP-Alarm),
+#                nur Event-Zeile + Herzschlag-Label; Flag weg → State-Reset.
+#                (0-byte-Flag ~16:02 UTC, Herkunft ungeklaert → inbox-Note.)
 #     GAP        CIO-Loop ODER mein Watchdog-v2 tot (mein Revive-Bereich);
 #                Fable-Loop/-WD tot: ALERT nur (Team-Territorium,
-#                inbox-Note an agent-1/fable).
+#                inbox-Note an agent-1/fable) — NUR ohne aktives FABLE-STOP.
 #   STOP: …/opencode/trade-watchdog-stop.flag (= Operator "stop",
 #         einheitliche Stop-Mechanik: beende CIO-Loop + meine Watchdogs).
 #
@@ -49,9 +55,52 @@ ts(){ date -u '+%Y-%m-%dT%H:%M:%SZ'; }
 log(){ echo "[$(ts)] $*" >> $HB; }
 epoch(){ date -u +%s; }
 
-# PID-Datei (CEO-Regen-Verwaltung: agents/timers/agent-watchdog.sh pflegt
-# die Instanz, solange kein .stop-designer-supervisor da ist):
-echo $$ > $VAR/designer-supervisor.pid
+# --- Unique-Guard (Regen-Duplex-Schutz, Fix 16:09Z): die CEO-Registry
+# (agents/timers/agent-watchdog.sh, watchdog-reg.json Eintrag
+# "designer-supervisor") pflegt die Instanz ebenfalls — ohne Guard
+# liefen Registry-Neustarts und manuelle Instanzen parallel (Beleg:
+# 16:05/16:08Z zwei PIDs + zweifacher SUPERVISOR-v2-START im Log).
+# PID-Datei: designer-supervisor.pid (= Registry-Liveness-Override).
+GUARDF=$VAR/designer-supervisor.pid
+if [ -f "$GUARDF" ]; then
+  oldpid=$(cat $GUARDF 2>/dev/null)
+  if [ -n "$oldpid" ] && kill -0 "$oldpid" 2>/dev/null; then
+    exit 0   # lebende Instanz (PID in der Datei) -> nicht duplizieren
+  fi
+fi
+echo $$ > $GUARDF
+
+# --- Unique-Guard (CEO 13.11): CIO-Trade-Watchdog + CEO-Agenten-Watchdog
+# koennen die Instanz gleichzeitig neu starten -> mkdir-Lock (race-safe).
+SUPLOCKD=$VAR/.designer-supervisor.lockd
+if mkdir $SUPLOCKD 2>/dev/null; then
+  echo $$ > $SUPLOCKD/pid
+else
+  OLD=$(cat $SUPLOCKD/pid 2>/dev/null)
+  if [ -z "$OLD" ]; then
+    log "GUARD: Lock-Kontention (PID noch nicht geschrieben) -> diese exitet (Fail-Safe)"
+    exit 0
+  fi
+  if [ "$OLD" != "$$" ] && kill -0 $OLD 2>/dev/null; then
+    log "GUARD: andere Instanz (PID $OLD) laeuft -> diese exitet"
+    exit 0
+  fi
+  # Stale-Lock (PID tot): uebernehmen, aber ATOMAR nur wenn die Totpruefung
+  # jetzt soeben bestaetigt wurde; Doppel-UEbernahme-Rescue:
+  rm -rf $SUPLOCKD 2>/dev/null
+  if ! mkdir $SUPLOCKD 2>/dev/null; then
+    if [ -z "$(cat $SUPLOCKD/pid 2>/dev/null)" ]; then
+      log "GUARD: Lock-Contention -> exit"
+      exit 0
+    fi
+    # Lock uebernommen, aber noch ohne PID -> sofort neu anlegen:
+    rm -rf $SUPLOCKD 2>/dev/null
+    mkdir $SUPLOCKD 2>/dev/null || { log "GUARD: Lock-Contention -> exit"; exit 0; }
+  fi
+  echo $$ > $SUPLOCKD/pid
+  log "GUARD: Stale-Lock uebernommen (alte PID ${OLD:-?})"
+fi
+trap 'rm -rf $SUPLOCKD 2>/dev/null; rm -f $VAR/designer-supervisor.pid 2>/dev/null; exit 0' EXIT INT TERM
 
 # --- Historie-Init: frische Seen-Dateien springen ueber das Vorhandene ---
 init_seen(){ # $1=seenfile $2=logfile
@@ -95,13 +144,39 @@ while :; do
   cw=$(pgrep -f 'zsh agents/shared/trade-watchdog.zsh' | head -1)
   alive="Fable-Loop=${fp:-TOT} Fable-WD=${fw:-TOT} CIO-Loop=${cp:-TOT} CIO-WD=${cw:-TOT}"
 
+  # Fable-STOP-Flag (0-byte-Datei, ungeklaerte Herkunft 16:02 UTC):
+  # aktiv -> Fable-Loop/-WD-Ausfall ist ERWARTET (kein GAP-Alarm mehr),
+  # sondern dokumentierter Zustand. Flag weg -> State-Reset (Fable-Site
+  # aktiv => GAP-Logik wieder voll, FLAP-Zaehler neu).
+  fst=""
+  if [ -f "$FALESTOP" ]; then
+    fst="$(stat -f '%Sm' -t '%H:%M:%S' "$FALESTOP" 2>/dev/null)"
+    if [ "$FALESTOP_MTIME" != "$fst" ]; then
+      FALESTOP_MTIME="$fst"
+      FALESTOP_STATE="STOP"
+      FLAP_T0=0; FLAP_N=0; FLAP_ALERTED=0
+      log "EVENT: Fable-STOP-Flag AKTIV (mtime ${fst}) — Fable-Loop/-WD-Ausfall erwartet (kein GAP-Alarm); 0-byte-Herkunft ungeklaert (s. inbox-Note fable/agent-1)"
+    fi
+  else
+    if [ "$FALESTOP_STATE" = "STOP" ]; then
+      FALESTOP_STATE=""
+      FLAP_T0=0; FLAP_N=0; FLAP_ALERTED=0
+      log "EVENT: Fable-STOP-Flag ENTfernt — Fable-Site wieder aktiv (GAP-/FLAP-Logik voll, FLAP-Zaehler reset)"
+    fi
+  fi
+  if [ "$FALESTOP_STATE" = "STOP" ]; then fst_active=1; else fst_active=0; fi
+
   now=$(epoch)
   [ -z "$cp" ] && log "ALERT GAP: CIO-Loop tot (mein Watchdog-v2 ${cw:-TOT} soll revive — naechster Puls pruefen)"
   [ -z "$cw" ] && log "ALERT GAP: mein Trade-Watchdog-v2 tot (CIO-Loop ${cp:-TOT})"
-  if [ -z "$fp" ] && [ -z "$fw" ]; then
-    log "ALERT GAP: Fable-Loop UND Fable-Watchdog tot (Team-Territorium → inbox-Note)"
-  elif [ -n "$fp" ] && [ -z "$fw" ]; then
-    log "ALERT: Fable-Loop OHNE Watchdog (nur Loop-PID $fp, Fable-eigene Keep-Alive laeckt)"
+  if $fst_active; then
+    :   # Fable-STOP-Flag: Ausfall dokumentiert, kein Alarm
+  else
+    if [ -z "$fp" ] && [ -z "$fw" ]; then
+      log "ALERT GAP: Fable-Loop UND Fable-Watchdog tot (Team-Territorium → inbox-Note)"
+    elif [ -n "$fp" ] && [ -z "$fw" ]; then
+      log "ALERT: Fable-Loop OHNE Watchdog (nur Loop-PID $fp, Fable-eigene Keep-Alive laeckt)"
+    fi
   fi
 
   # --- 2) Provider-Saldo (RPC-Rotation) ---
@@ -123,12 +198,18 @@ except Exception: print(0)" 2>/dev/null)
   [ "$bal" -gt 0 ] && LAST_BAL=$bal
 
   # --- 3) Neue Trade-/Restart-Events (getrennte Seen-Listen) ---
+  # Konkordat-16:08Z-Regel (Fable-Team-Trading-Konkordat): CIO-Live-Guard
+  # = Fable feuert NUR wenn CIO tot (Takeover). Alert-Bedingung ist daher:
+  # Trade-Event + das ANDERE System war ZU DEM ZEITPUNKT LEBEND (beide
+  # gleichzeitig → Guard-Verletzung/Doppel-Spend-Risiko, egal aus
+  # welcher Richtung). Reine CIO-tot-Takeover = dokumentiert, kein Alarm.
   ft=$(new_lines $FALELOG $SEEN_FT | grep -cE "(TRADE-TRIGGER|ZYKLUS-ABSCHLUSS|BUY .*rc=0|SELL-BACK rc=0)")
   [ "${ft:-0}" -gt 0 ] && {
     LAST_TRADE_FABLE=$now
-    log "EVENT: Fable-TRADE (${ft} neue Log-zeile[n])"
-    if [ $((now - LAST_TRADE_CIO)) -lt 90 ]; then
-      log "ALERT CONFLICT: Fable-Trade ${now} vs CIO-Trade ${LAST_TRADE_CIO} (< 90 s, gemeinsame Wallet DNEBNj… — Doppel-Spend-Risiko)"
+    if [ -n "$cp" ]; then
+      log "ALERT CONFLICT: Fable-Trade ${now} — CIO-Loop WAR LEBEND ($cp) → Konkordat-16:08Z-CIO-Live-Guard verletzt (Doppel-Spend-Risiko, Wallet DNEBNj…)"
+    else
+      log "EVENT: Fable-TRADE (${ft} neue Log-zeile[n]) — CIO tot → Takeover gem. Konkordat (erwartet, kein Alarm)"
     fi
   }
   fr=$(new_lines $FALELOG $SEEN_FR | grep -cE "LOOP-START")
@@ -143,13 +224,16 @@ except Exception: print(0)" 2>/dev/null)
   ct=$(new_lines $CIOLOG $SEEN_CT | grep -cE "TRADE OK:")
   [ "${ct:-0}" -gt 0 ] && {
     LAST_TRADE_CIO=$now
-    log "EVENT: CIO-TRADE (${ct} neue Log-zeile[n])"
-    if [ $((now - LAST_TRADE_FABLE)) -lt 90 ]; then
-      log "ALERT CONFLICT: CIO-Trade ${now} vs Fable-Trade ${LAST_TRADE_FABLE} (< 90 s, gemeinsame Wallet DNEBNj… — Doppel-Spend-Risiko)"
+    if [ -n "$fp" ]; then
+      log "ALERT CONFLICT: CIO-Trade ${now} — Fable-Loop WAR LEBEND ($fp) → Konkordat-16:08Z-Einzel-Writer verletzt (Fable-CIO-Live-Guard muss Fable vom Feuern abhalten, Doppel-Spend-Risiko, Wallet DNEBNj…)"
+    else
+      log "EVENT: CIO-TRADE (${ct} neue Log-zeile[n]) — Fable tot → CIO-Solo gem. Konkordat (erwartet, kein Alarm)"
     fi
   }
 
   # --- 4) Herzschlag ---
-  log "OK: $alive | Provider ${LAST_BAL} lp | CIO-letzte-Trade ${LAST_TRADE_CIO:-keiner} Fable-letzte-Trade ${LAST_TRADE_FABLE:-keiner}"
+  fst_label="fable-stop=${FALESTOP_STATE:-aus}"
+  [ "$fst_active" = "1" ] && fst_label="fable-stop=AKTIV(mtime ${FALESTOP_MTIME})"
+  log "OK: $alive | ${fst_label} | Provider ${LAST_BAL} lp | CIO-letzte-Trade ${LAST_TRADE_CIO:-keiner} Fable-letzte-Trade ${LAST_TRADE_FABLE:-keiner}"
   sleep $POLL
 done
