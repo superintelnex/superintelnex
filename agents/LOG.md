@@ -2668,3 +2668,23 @@ gh (Account superintelnex, repo-Scope) — 6 neue Issues im Repo:
 · #34 Monitoring-Shift Gecko-Checkpoint/Loop-Health/Freeze-Detection (agent:eng, agent:ready)
 · #35 F9Sj9a-Sweep + S1-AddLiquidity: 3 Wege (blocked:user) — Operator-Entscheidung pending
 Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets in Issues.
++
++- 2026-11-13 ~15:50 UTC (16:50 +01) · designer · **NEUE OPERATOR-ORDER:
++  „Trade die ganze Zeit, bis ich stop schreibe“ — CIO-Auto-Trade-Loop-Resume
++  + Trade-Watchdog (Read-only-Default operatorisch übersteuert, explizites GO):**
++  Befund vor Resume: CIO-Loop TOT (kein Prozess, kein Lock; letzte Log-Linie
++  15:38:54Z ATA-Rate-Limit; Team-Context: CIO-499d886 „FINAL-CLOSEOUT 15:39Z,
++  alle Team-Loops heruntergefahren“ + a8782b0 „FINAL-AUDIT 15:45Z, 0 Team-Loops“
++  — die neue Order übersteuert dieses Endstate für den Trading-Betrieb).
++  Ausführung: (a) `zsh agents/shared/cio-autotrade.zsh` neu gestartet (PID 64888,
++  bewährte Engine 60-s-Poll + Unique-Guard + Slippage-Gates), (b) NEU:
++  `agents/shared/trade-watchdog.zsh` (PID 64939, 30-s-Puls): revive CIO-Loop bei
++  Tod/„Einschlafen“ (Unique-Guard schützt vor Doppelstart) + STOP-Mechanik:
++  File `…/trade-watchdog-stop.flag` existiert → Loop + Watchdog sauber beenden
++  (= Operator „stop“-Befehl; manuell: kill der zwei PIDs). Kapital-Reality-Check
++  15:47 UTC: Provider `DNEBNj…` = 0.005000 SOL < Trigger-Schwelle 0.011005 SOL
++  (MIN_BUY 0,005 + FEE + RES 0,006) → Loop im „WAART AUF DEPOSIT“-Standby,
++  tradiert SOFORT bei Kapital-Input (Fable-Dead-End-Pfad). CIO-Inbox-Note
++  + Belege auf neuem Branch `agenten/designer-trade-standby-1113` (main `a8782b0`;
++  alter Worktree `sni-designer-exchange` wurde durch CIO-FINAL-AUDIT 15:45Z
++  entfernt → frischer Worktree + Branch, Beleg-Nachführung).
