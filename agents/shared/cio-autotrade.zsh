@@ -73,7 +73,7 @@ else
   echo $$ > $LOCKD/pid
   log "GUARD: Stale-Lock übernommen (alte PID ${OLDPID:-?} tot)"
 fi
-trap 'rm -rf $LOCKD 2>/dev/null' EXIT INT TERM
+trap 'rm -rf $LOCKD 2>/dev/null; exit 0' EXIT INT TERM
 
 jsonq() { # $1=method $2=params(JSON)
   curl -s --max-time 25 $RPC -X POST -H "Content-Type: application/json" \
@@ -111,6 +111,14 @@ def check(ata):
                 headers={'Content-Type':'application/json'})
             d=json.loads(urllib.request.urlopen(req,timeout=25).read())
             if 'error' in d:
+                err=d.get('error') or {}
+                # -32602 'could not find account' = definitive: ATA does not
+                # exist on-chain (e.g. after Fable-Zyklus-6 WSOL-ATA-Close)
+                # -> treat as clean 0 (absent, needs rent), NOT '?' false-
+                # negative-skip. Only ambiguous RPC errors (rate-limit,
+                # timeout, -32005/-32603) remain '?' (poll skipped).
+                if err.get('code')==-32602 or 'could not find account' in err.get('message','').lower():
+                    clean_zero=True; time.sleep(2); continue
                 clean_zero=False; time.sleep(3); continue
             v=(d.get('result') or {}).get('value')
             if v is not None:

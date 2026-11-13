@@ -2688,3 +2688,31 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
 +  + Belege auf neuem Branch `agenten/designer-trade-standby-1113` (main `a8782b0`;
 +  alter Worktree `sni-designer-exchange` wurde durch CIO-FINAL-AUDIT 15:45Z
 +  entfernt → frischer Worktree + Branch, Beleg-Nachführung).
++
++- 2026-11-13 ~15:57 UTC (16:57 +01) · designer · **Diagnose „eingeschlafen“:
++  CIO-Loop-ATA-False-Negative-Bug FIX + Watchdog v2 (Lock-PID-Liveness) +
++  Loop-Re-Arm (Read-only-Default weiter operatorisch übersteuert,
++  Order „trade bis stop“):**
++  Befund: CIO-Loop seit 15:31 UTC in jedem Poll blockiert auf
++  „ATA-Check Fehler/Rate-Limit, Poll überspringen“ — Ursache: Fable-Zyklus-6
++  hatte WSOL-ATA `4eA5…` CLOSED; public RPC liefert für die fehlende ATA
++  „Invalid param: could not find account“ (code -32602), den der
++  False-Negativ-Schutz fälschlich als „unklar → Poll skip“ statt als
++  „ATA fehlt, sauber 0“ interpretierte (Beleg: WSOL-ATA NICHT-DA,
++  SIN-ATA existiert mit 2.612.679.447 UI-SIN ≈ 2,613 Trd; Loop-Log-
++  Sequenz wsol=?,sin=1). Fix 1 (cio-autotrade.zsh): RPC-Error -32602 /
++  „could not find account“ = saubere Null (ATA fehlt, Rent wird in
++  der Buy-Formel verrechnet; ATA-Heilung läuft im bewährten
++  Swap-Skript via createAssociatedTokenAccount, Beleg Zeile 292).
++  Fix 2 (cio-autotrade.zsh): TERM/INT-Trap ergänzt um `exit 0` (alte Trap
++  räumte nur den Lock, Prozess lief lock-frei weiter → Doppelstart-
++  Risiko). Fix 3 (trade-watchdog v2): Liveness-Basis von pgrep -f (zählte
++  fremde Shells, E2E-Fall 15:53: Loop per kill -9 tot, v1 meldete
++  „alive“ an Test-Shell-PID) → Lock-PID + kill -0; STOP-Flag-Semantik
++  unverändert. Nach Re-Arm (15:55 UTC): CIO-Loop PID 67648 (Lock konsistent,
++  exakt 1 Instanz), Watchdog v2 PID 67724 (30-s-Puls, Revive-OK-Beleg).
++  Loop-Lesebild nach Fix: „poll: free=0.005000 SOL, ATA(wsol=0,sin=1),
++  buy_fähig=-0.021317 — WAART AUF DEPOSIT“ (Trigger ≈ 0.011005 SOL —
++  Kapital-Input-Realität unverändert, s. Fable-Dead-End). Keine
++  On-Chain-Tx von designer (Regel 6; Fixes = Loop-/Watchdog-Engine-Code,
++  path-scoped).
