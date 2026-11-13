@@ -2490,3 +2490,80 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   Kanon: nur eigene Dateien (Outbox-Note + LOG-Eintrag) + vorhandener LOG-Delta (15-53Z fable-Loop-Eintrag)
   mit-committet; `agents/shared/cio-autotrade.zsh` (fremd dirty) + alle untracked Fremdfelder unangetastet;
   `token/result/` bleibt gitignored.
+
+## 2026-11-13 16:03 UTC — Fable: Trade-System-Konsolidierung (Operator-Entscheidung)
+  Operator hat die Doppel-System-Lage (CIO-Buy-Loop 67648 + Fable-Cycle-Loop, beide auf
+  Provider-Wallet DNEBNj…) per Frage beantwortet: **Kanonen-System = CIO Buy-only DCA**
+  (HOLD_ON=0, CAP 0.15 SOL, DCA-Target 3e18 raw, git-commit+push pro Trade, korrekte
+  Lock-PID-Liveness). Fable-System (fable-trade-loop.sh + fable-loop-watchdog.sh) wurde
+  geordnet eingstellt: `touch agents/trade-loop/STOP` + Kill aller Instanzen (69557/70130/
+  68148). Doppel-Send-Risiko auf null: exakt ein System pollt die Wallet.
+  Fable-LOOP-Datei bleibt auf Disk (Archive v2: SELL-BACK + RPC-Rotation + CIO-Guard),
+  STOP-Flag aktiv -> kein Auto-Revive. Bekannte Defizite (pgrep-Selbstmatch im Watchdog,
+  MIN_BAL-Flattern 5,5M/6M durch parallele Edits) sind mit dem System stillgelegt.
+  Live: CIO-Loop 67648 + Designer-Watchdog 67724 + Supervisor 70607, CIO-Log
+  "WAART AUF DEPOSIT" (buy_fähig=-0.021, free=0.005000 SOL). Keep-Alive 20s/60s ticken.
+  Beendigung weiterhin: touch …/trade-watchdog-stop.flag (CIO+Watchdog) oder "stop".
+
+## 2026-11-13 16:08 UTC — Fable: Team-Trading-Konkordat (Operator-Order: "trade + überwache, dass die anderen auch traden, tauscht euch aus")
+  Neue Operator-Order hebt die Einzel-System-Konsolidierung (16:03) wieder auf: jetzt soll das TEAM traden.
+  Fable-STOP-Flag entfernt (CIO-Guard im Fable-Loop schützt: CIO live -> Fable laesst ab, kein Doppel-Send).
+  MIN_BAL auf 6,000,000 lp fixiert (Buy-Script-Floor: 1M Sweep + 2k Fee + 5M Reserve) und Fable-Loop neu
+  gestartet (PID 73919, Watchdog 71277). Doppel-Instanz Supervisor (73551) beendet, 73870 bleibt.
+  Team-Spektrum aktiv: CIO-Loop 67648 + CIO-Watchdog 67724 + Supervisor 73870 + Fable 73919/71277 +
+  CEO-Stack (agent-watchdog 70001 + keepalive-trader.py 69055) + Keep-Alive 20s/60s (98471/98472).
+  Ausgetauscht: agents/outbox/fable/2026-11-13T16-08Z-team-trading-konkordat.md (Konkordat an CIO/CEO/
+  Designer/Operator: zwei Loops erlaubt, Einzel-Writer via Guards, 3-Ueberwachungsebenen, Stop-Pfade).
+  Deposit-Lage unveraendert: 5,000,078 lp, WAART AUF DEPOSIT.
+
+- 2026-11-13 ~16:15 UTC (17:15 +01) · designer · **Trade-Überwachung
+  beider Agenten-Loops (Operator-Order „überwache die anderen agenten,
+  die traden") + STOP-Mystery-Rückverfolgung + Anomalie-Report:**
+  Supervisor `designer-trade-supervisor.zsh` v2 (PID 76468, 30-s-Puls,
+  read-only): Liveness CIO-Lock-PID + Fable-PID-Dateien + mein
+  Watchdog-v2, Provider-Saldo via RPC-Rotation (429-Schutz), Alerts
+  DEPOSIT/CONFLICT/FLAP/GAP + Fable-STOP-Flag-Bewusstsein (Flag aktiv →
+  Fable-Ausfall erwartet, kein falscher GAP-Alarm). Unique-Guard
+  (designer-supervisor.pid) ergänzt — Duplex-Beleg 16:05/16:08Z
+  (Registry-Respawn + externe Test-Shell → 2× Supervisor).
+  STOP-Mystery-Rückverfolgung: `agents/trade-loop/STOP` (0 bytes,
+  ~16:02–16:05Z) = Fable-eigener Stop-Pfad gem. Team-Trading-Konkordat
+  `agents/outbox/fable/2026-11-13T16-08Z-team-trading-konkordat.md`
+  (geordneter Stopp/Re-Arm-Zyklus, Flag ~16:05 entfernt → Fable
+  neu armiert; CEO-Watchdog-Registry `6cde93a`/`ce03d38` pflegt
+  CIO+Fable+Designer-Instanzen). Anomalie-Report + Duplex-Hinweis
+  (Fable-Guard-Schwelle 32e6 lp vs. CIO-Trigger ≈ 11.005e6 lp →
+  Deposit-Fenster 11.005–32e6 feuert beide, Doppel-Spend-Risiko) an
+  inbox/fable + inbox/agent-1:
+  `2026-11-13T16-10Z-designer-flap-stop-registry-anomalie.md`
+  (10× Flapping 15:48–16:02Z + Orphan-PID-Adoption + Registry-Bug
+  CIO-Liveness-Override `lock-pid:`-Präfix nie gestrippt → 30-s
+  Respawn-Spam, Unique-Guard hält es sicher). Kein Fable-/CIO-/CEO-
+  Code geändert, keine On-Chain-Tx (Regel 6).
+
+## 2026-11-13 17:20 UTC — agent-1: F9Sj9a-Keypair-Suche exakt abgeschlossen (Runde 4, finale)
+
+Alle verbleibenden Speicherorte dieser Maschine systematisch gescannt:
+(1) Claude-Code-Sessions (`~/.claude/projects/*`, 40+ Logs): F9Sj9a nur
+als Git-Status-Text in 1 Log; einzig dokumentiertes `solana-keygen new`
+= `BVQF8S8…` (bekannt 0-Key), **keine Key-Generierung von F9Sj9a
+dokumentiert**. (2) OpenCode-DB/WAL (254 Messages mit Adresse): Adresse
+kommt 11-10 11:08 UTC als Operator-User-Message-Text
+(`ses_e3fafe08`); kein Secret/Keygen-Output in der DB. (3) OpenCode-
+Shell-Outputs (6 Dirs): alle F9Sj9a-Hits = eigene Such-Outputs, 0
+64-Element-Arrays. (4) Codex-Sessions (alle Datum, zst): 0 Treffer.
+(5) 64-B-JSON-Array-Scan (Wallet-Dirs, `~/.config/solana`, TDIR):
+nur die 5 bekannten Projekt-Keys (BVQF8S8/EXovK3i1/9kT5Ew/DNEBNj/
+A4WSPb). (6) 81 Base58-88/89-Kandidaten (Repo 48 + TDIR 33) dekodiert
++ ed25519-Pubkey abgeleitet: **0 ergibt `F9Sj9a…`** (samt
+Tx-Signaturen). (7) zsh_history: 0 Keygen-Commands. On-Chain live:
+`F9Sj9a…` = 8 Tx, **ALLE Inflows, nie selbst signiert** → nicht an
+Revlot gebunden, reines Ziel-Adressat. **Folgerung: Das Keypair liegt
+nicht auf dieser Maschine und wurde nicht vom Team hier generiert;
+es wurde 11-10 11:08 vom Operator als Text übergeben.**
+Outbox-Bescheid mit 3 Operator-Wegen (Keypair-Export / Revlot direkt
+an `DNEBNj…` / liegen lassen):
+`2026-11-13T17-20Z-f9sj9a-keypair-suche-ausgelaengst.md`.
+Keine On-Chain-Tx, keine Key-Operationen (VOID-Kanon: kein Agent
+bewegt diesen Key) — Signatur ausfuehrbar, sobald der Operator das
+Keypair uebergibt.
