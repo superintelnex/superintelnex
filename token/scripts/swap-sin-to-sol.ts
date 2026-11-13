@@ -225,6 +225,15 @@ try {
     ComputeBudgetProgram.setComputeUnitLimit({ units: CU_LIMIT }),
     // NUR die Swap-Instruction (keine Close), damit WSOL-Gewinn isoliert lesbar ist:
   );
+  // FIX (CEO 13.11, Round-Trip-Diagnose): Wenn die WSOL-ATA fehlt (z. B.
+  // nach Vollausstieg/ATA-Close), ist sie im fbTx-Plan NICHT angelegt —
+  // swapV2 prüft aber die Output-ATA und scheitert dann mit Custom-Error
+  // (obs. InstructionError [1,Custom:3012] = uninitialisierte Token-Account).
+  // ATA-CREATE-Vorstelle (Rent 1.488.440 lp, in der Sim nur virtuell) macht
+  // die Quote-Exaktheit wieder lesbar; der Hauptplan (unten) legt sie
+  // ohnehin an.
+  if (!(await c.getAccountInfo(wsolAta)))
+    fbTx.add(spl.createAssociatedTokenAccountInstruction(PROVIDER, wsolAta, PROVIDER, WSOL_MINT));
   const fbSwap = ClmmInstrument.makeSwapBaseInInstructions({
     poolInfo: {
       id: POOL_ID.toString(),
@@ -296,6 +305,12 @@ if (expectedOut.isZero())
 const tx = new Transaction().add(
   ComputeBudgetProgram.setComputeUnitLimit({ units: CU_LIMIT }),
 );
+// WSOL-ATA auto-Anlage, falls nach Vollausstieg/ATA-Close fehlt (sonst
+// scheitert die Swap-Output-ATA + Close am fehlenden Account). Close am
+// Ende der Tx gibt die Rent sofort zurück — netto kein Rent-Verlust.
+const wsolAtaExists = !!(await c.getAccountInfo(wsolAta));
+if (!wsolAtaExists)
+  tx.add(spl.createAssociatedTokenAccountInstruction(PROVIDER, wsolAta, PROVIDER, WSOL_MINT));
 // Swap: SIN-ATA → WSOL-ATA. ACHTUNG: ownerInfo ist IMMER statisch:
 // tokenAccountA = ATA von mintA (WSOL), tokenAccountB = ATA von mintB (SIN).
 // Der SDK-Build erkennt inputMint=SIN und swappt Vault/Mint-Slots intern.
