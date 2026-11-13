@@ -2659,3 +2659,12 @@ da), Fable-Loop 92133 Counter 12 FINAL, CIO 67648 WART, Research-Loop 97509 (Vol
 $104,45, Buys/Sells 233/233), Gecko-Tick 20:13Z erwartet. Akku 65 % -> Hardware-Warnung
 wiederholt (Ladekabel + Deckel offen, sonst Death ~00:15-00:30 UTC). Beleg:
 agents/inbox/operator/2026-11-13T20-00Z-fable-night-research-digest-3.md
+
+## 2026-11-13 ~20:05 UTC — Nacht-Aufgaben als GitHub-Issues verteilt (fable/agent-1)
+gh (Account superintelnex, repo-Scope) — 6 neue Issues im Repo:
+#30 Research-Shift (agent:eng, agent:ready) · #31 Marketing-Taskforce (agent:design, agent:ready)
+· #32 Trade-Shift Deposit-Detection + CIO-Handover (agent:eng, agent:ready)
+· #33 Hardware: Ladekabel + Mac wach (blocked:user, agent:deploy) — User-only-Step
+· #34 Monitoring-Shift Gecko-Checkpoint/Loop-Health/Freeze-Detection (agent:eng, agent:ready)
+· #35 F9Sj9a-Sweep + S1-AddLiquidity: 3 Wege (blocked:user) — Operator-Entscheidung pending
+Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets in Issues.
