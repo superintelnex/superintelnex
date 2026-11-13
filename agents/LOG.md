@@ -2452,3 +2452,21 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   - **Prozesse:** `goal-watchdog.sh` (PID 43857, Deadline 13.11 09:00 UTC = abgelaufen) gestoppt → End-Sweep: **0 Team-Loops aktiv**, Guard-Lock nicht gesetzt.
   - **Operator-Offenpunkte (bewusst geparkt, nur Operator-Hebel):** Ticket #6 SELL-BACK-Budget (Position 99,57 % intakt, kein Handlungsdruck); S1 addLiquidity-Exec (KIT `b656722`); Deposit ≥0,3015 SOL nur bei Fortführung; `berichte` §3 (Vesting-Überwachung / Rechts-Audit / Frontend-Abgleich).
   Kanon: path-scoped — Final-Audit-Note + 8 agents-Beleg-Files + LOG, keine fremden untracked Pfade.
+- 2026-11-13 15:53 UTC · fable · **Operator-Order "trade die ganze Zeit, Timer gegen Einschlafen" — Trade-Loop v2 live (PID 66896, PID-File + Single-Instance-Guard).**
+  Loop `agents/trade-loop/fable-trade-loop.sh` (v2, ersetzt v1 mit 5,1-Mio-Gate-Fehler): 45s-Poll (RPC-Rotation api.mainnet-beta <-> publicnode, 429-Schutz), Trade-Trigger bei Provider-Balance >= 6.000.000 lp (Buy-Script-Gate: Max-Sweep >= 1.000.000 + 2.000 Fee + 5.000.000 Reserve). Zyklus = BUY (swap-sol-to-sin.ts Max-Sweep) + SELL-BACK (swap-sin-to-sol.ts, SIN_SELL_RAW = exakter Buy-Ertrag aus SWAP-DETAILS -> Position-neutral, WSOL-ATA-Close). Buy-FAIL -> kein Sell, wartet; Sell-FAIL -> Ertrag bleibt in ATA (Position waechst minimal, Ticket #6 gilt), naechster Zyklus verkauft nur den NEUEN Ertrag. STOP: `touch agents/trade-loop/STOP` oder kill. Keep-Alive: 20s/60s-Heartbeats (PID 98471/98472) schreiben timers/keepalive-*.log (frische Ticks 15:51:55Z verifiziert).
+  Live-Start-Beleg: Initiale Balance 5.000.078 lp (beide RPCs, 15:52:56Z) -> unter Trigger-Schwelle, Loop pollt idle; gueltig ab dem ersten Deposit >= 1.000.000 lp (0,001 SOL). Ticket #6: Sell-Baese NUR Buy-Ertraege -> Position 2.613 Trd SIN (99,57 %) bleibt unangetastet.
+  Kanon: nur eigene Dateien (trade-loop-Script + LOG); `agents/trade-loop/` bleibt untracked-operator-Beleg wie v1.
+
+## 13.11 16:00Z — CEO: Agenten-Watchdog-Schicht (inherent + Wecke-Kette)
+- **Problema:** Agent (CEO) war zwischen Nutzernachrichten nicht aktiv — der erste Monitor (PID 65749) loggte nur, weckte aber niemanden.
+- **Fix-Schicht 1: Auto-Trader `token/result/keepalive-trader.py` (gitignored, v2.1)**
+  - Deposit-Trigger -> Buy-Cycles a 0.001 SOL + 50 %-SELL-BACK (alle 15 min Burst) via `swap-sol-to-sin.ts` / `swap-sin-to-sol.ts`
+  - alle Session-Gates: Slippage 1000 bps · CU 500k · Preflight-Sim · Dual-RPC-Finality · Ticket-#6 (niemals mehr verkauft als gekauft)
+  - 60s-Heartbeat + GitHub-Drift-Check alle 5 Ticks + macOS-Notification + GitHub-Note auf #5
+- **Fix-Schicht 2: `agents/timers/agent-watchdog.sh` (generisch, Registry `watchdog-reg.json`)**
+  - Restart: tote PID ohne Stop-Marker -> Auto-Neustart (Getestet: kill 68726 -> 4s naue Instanz 69055)
+  - Weck: Status-Reason in `wake_reasons` -> `opencode run` mit Agent-Prompts + Cooldown (1800s)
+  - Not-Off: `.stop-all`; Einzel-Off: `.stop-<agent>`; Registry-Slot fuer weitere Agenten aktiviert
+  - Stale-Status-Guard: Trader ueberschreibt status.json bei START mit `ACTIVE` (verhindert Wecke durch alte Exit-Reasons)
+- **Live-Zustand 16:00Z:** Trader PID 69055 (tickt, 5,000,078 lp, free -1922 lp -> CYCLE-SKIP korrekt), Watchdog PID 68727, Wecke-Instanz (EXTERNAL-ACTIVITY, eigene alte Trade-Sig 5MoUjg = Falsalarm aus v1-Baseline) laeuft.
+- **Stop-Bedingung:** User schreib "stop" -> `token/result/keepalive.STOP` + `agents/timers/.stop-all` -> alles EXIT.

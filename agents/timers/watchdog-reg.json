@@ -1,0 +1,26 @@
+{
+  "ceo-trader": {
+    "enabled": true,
+    "cmd": "python3 token/result/keepalive-trader.py",
+    "workdir": "/Users/haqmal/Desktop/Projekte/SuperIntelNex",
+    "pidfile": "token/result/keepalive.pid",
+    "stopmarker": "token/result/keepalive.STOP",
+    "statusfile": "token/result/keepalive.status.json",
+    "logfile": "token/result/keepalive.nohup.log",
+    "wake_reasons": ["DEPOSIT-DETECTED", "DEPOSIT-PARTIAL", "EXTERNAL-ACTIVITY", "GH-DRIFT", "FATAL"],
+    "wake_prompt": "CEO-WAKEKEEP: Der Agenten-Watchdog meldet ein Signal. Lies token/result/keepalive.status.json und agents/timers/watchdog.log (letzten 30 Zeilen), pruefe on-chain den Provider DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo (Saldo + neue Sigs auf beiden RPCs), auditier ggf. den neuen main-Tipp gegen die Legal-/P5-Invarianten, handle Deposit-Cycles nach Session-Gates (Slippage 1000 bps, CU 500k, Preflight, Dual-RPC-Finality, Ticket-#6-Halt >=30 %). Poste einen Status auf Issue #5. Stop-Bedingung: nur wenn agents/timers/.stop-all oder token/result/keepalive.STOP existiert.",
+    "cooldown_s": 1800
+  },
+  "_beispiel-anderer-agent": {
+    "enabled": false,
+    "cmd": "python3 token/result/example-agent.py",
+    "workdir": "/Users/haqmal/Desktop/Projekte/SuperIntelNex",
+    "pidfile": "token/result/example-agent.pid",
+    "stopmarker": "token/result/example-agent.STOP",
+    "statusfile": "token/result/example-agent.status.json",
+    "logfile": "token/result/example-agent.nohup.log",
+    "wake_reasons": ["SIGNAL-NAME"],
+    "wake_prompt": "<Agent-spezifischer Wake-Prompt>",
+    "cooldown_s": 3600
+  }
+}
