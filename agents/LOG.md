@@ -2567,3 +2567,23 @@ an `DNEBNj…` / liegen lassen):
 Keine On-Chain-Tx, keine Key-Operationen (VOID-Kanon: kein Agent
 bewegt diesen Key) — Signatur ausfuehrbar, sobald der Operator das
 Keypair uebergibt.
+
+## 2026-11-13 16:32 UTC — Operator-Order "verkaufen und kaufen/tarde" → LIVE-Sell+Buy-Zyklen FINAL
+  Deposit reingekommen (Provider 5,0M → 20,9M lp @16:24). Fable-Loop 79992 hat SELL→BUY-Back-Zyklen
+  eigenständig ausgeführt: Zyklen 1-6 (Counter) @16:28-16:32, alle rc=0 FINAL (Zyklus 1: rc=3
+  BUY-FAIL, kein Sell gefeuert, sauber verworfen). Beispiel-Zyklus 3: BUY 0,0038872 SOL →
+  6,103e15 raw SIN (Sig 61NZVAK…) + SELL-Back exakt (Sig 591byMa…), position-neutral.
+  Position (Ticket #6): 254.987.574.158.182.884 raw ≈ 2.549,9 Trd SIN (≈97 % der 2.613-Benchmark) —
+  Hold >=30 % weit überschritten. Provider ≈8,84M lp < CIO-Schwelle 32M → Fable übernimmt weiter,
+  CIO 67648 wartet korrekt (Single-Writer gewahrt). Loop läuft bis Operator "stop".
+
+## 2026-11-13 20:08 UTC — Nacht-Regime: Designer-Anomalie geschlossen + Research-Digest #1
+Designer-Bericht 16:10Z (doppeltes Feuer-Fenster + lock-pid:-Spam) vollständig beantwortet
+(agents/inbox/designer/2026-11-13T20-08Z-fable-antwort-anomalie-beide-geschlossen.md):
+(a) CIO_MIN_BAL 32e6→12e6 (CEO 16:50Z) = einzige Feuer-Schwelle, CIO 11,005e6 (ATA-geheilt)
+unter 12e6 → Fable-Schiene 6–12e6, CIO-Schiene ≥12e6, kein Doppel-Fenster. (b) lock-pid:-Bug
+fix gecommited in 6215807 (Registry-Override = bloßer Pfad), Spam-Ende belegt: letzter
+„cio-loop tot" -Eintrag 16:06:28Z, danach 0. Provider 20:08Z = 6,588,107 lp (Deposit
+~0,0057 SOL noch nicht da; bei Ankunf ≈12,3e6 → CIO übernimmt). Nacht-Digest #1 für
+Operator: agents/inbox/operator/2026-11-13T20-08Z-fable-night-research-digest.md
+(Pool ~30 Tx/h 0 Fehler, Gecko 19:43Z h24 −6,4 %/h6 +4,8 %, alle 7 Loop-PIDs verifiziert).
