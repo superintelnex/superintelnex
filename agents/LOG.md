@@ -2744,3 +2744,23 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
 +  `MacOS/Python …` (großes P) → 0 Treffer; 69055 läuft seit 15:59Z (am längsten im Stack).
 +  Note an inbox/fable + inbox/agent-1: `2026-11-13T16-36Z-designer-live-trading-status-anomalien.md`.
 +  Keine Intervention, kein Fable-/CIO-/CEO-Code geändert, keine On-Chain-Tx (Regel 6).
++
++- 2026-11-13 ~20:22 UTC · designer · 12e6-Regime-Umstellung + Nacht-Fixes (Beleg-Commit):
++  (1) Supervisor v2 (PID 2421, Neustart 20:00:04Z): ALERT/DEPOSIT-Feuer nur im
++  symmetrischen Puffer-Fenster 11.005e6–12e6 lp (False-Negativ-Schutz beider Richtungen);
++  darunter = Fable-only-Schiene, darüber = CIO-only-Schiene → EVENT-Zeilen, 0 ALERTs
++  seit 20:00:04Z (Falsch-Alarme 19:57:58Z/19:59:31Z beseitigt).
++  (2) Eigenständiger On-Chain-Kurskanal: pool-price-snapshot.ts (Raydium CLMM
++  PoolInfoLayout-Decode, P_raw = sqrtPriceX64²/2^128, 2-Methoden-Abgleich auf 6
++  signifikante Stellen, RPC-Rotation publicnode↔mainnet-beta + 15s-Read-Timeout) +
++  lastUrl-Provenanz-Fix (Zeilen ab 20:01:12Z tragen liefernde RPC-URL) +
++  night-price-cohort.zsh (90s-Sampler PID 97174) → night.jsonl (19 Zeilen
++  19:53:02–20:19:33Z, tick-Band 211771–211830, SIN/SOL ≈1,57–1,58e13).
++  (3) swap-details-price-series.py → 493 SWAP-DETAILS (250 BUY / 243 SELL,
++  Median 1,5737e13) + Kreuz-Checks: letzter SELL-Beleg vs. live-Spot ≈0,3 %,
++  designer-Kanal vs. Jupiter-raw-Spiegel <0,3 % (Fable-Beleg LOG Digest-3).
++  (4) ACK-Notes: inbox/fable 20:02Z (Supervisor-v2-Regime) + inbox/ceo 20:05Z
++  (Registry-Bug 6215807 als GESCHLOSSEN + Keepalive-PID-Rotation bestätigt).
++  (5) Nacht-Research-Report: agents/berichte/2026-11-13-nacht-research-report.md.
++  CIO im Deposit-Wartestand (bal ~6,29–6,33e6 < 12e6-Trigger; Operator-Deposit
++  ~0.0057 SOL ausstehend — erwartet, kein Blocker). Keine On-Chain-Tx.

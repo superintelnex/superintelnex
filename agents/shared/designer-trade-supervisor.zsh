@@ -18,10 +18,16 @@
 #             getrennt je Pattern + Logfile).
 #   Alerts:
 #     DEPOSIT    Saldo-Anstieg über Fable-MIN (5.5e6 lp).
+#                Regime 19:55Z (CIO_MIN_BAL 32e6→12e6): >=12e6 = CIO-only,
+#                6–12e6 = Fable-only, Puffer-Fenster nur 11.005e6–12e6.
 #     CONFLICT   Trade-Event + das ANDERE System lebend (Konkordat-16:08Z:
 #                CIO-Live-Guard = Fable feuert NUR bei totem CIO; Einzel-
 #                Writer-Verletzung = Doppel-Spend-Risiko).
 #                CIO-tot/Fable-tot-Solo = erwartet, nur Event-Zeile.
+#                Regime 19:55Z (CIO_MIN_BAL 32e6→12e6): CONFLICT-Alarm NUR im
+#                Puffer-Fenster 11.005e6–12e6 (einziger Doppel-Feuer-Spielraum);
+#                darunter = Fable-only-Schiene, darueber = CIO-only-Schiene
+#                (CIO-Process-lebend ist keine Kollision, nur Event-Zeile).
 #     FLAP       >= 3 Fable-Loop-STARTs innerhalb 10 min (Instabilitaet).
 #     FABLE-STOP Fable-eigenes STOP-Flag (agents/trade-loop/STOP): aktiv
 #                → Fable-Loop/-WD-Ausfall = ERWARTET (kein GAP-Alarm),
@@ -49,7 +55,13 @@ SEEN_FT=$VAR/designer-supe-seen-fable-trade.txt   # Fable-Log / Trade-Zeilen
 SEEN_FR=$VAR/designer-supe-seen-fable-restart.txt # Fable-Log / LOOP-START
 SEEN_CT=$VAR/designer-supe-seen-cio-trade.txt     # CIO-Log / TRADE-OK
 POLL=30
-FALE_MIN=5500000   # Fable-Loop-Trigger (MIN_BAL v2)
+FALE_MIN=6000000   # Fable-Loop-Trigger (MIN_BAL v2 = 0.006 SOL)
+# Regime-Fix 19:55Z (fable-trade-loop.sh: CEO-Entscheid ~16:50Z, CIO_MIN_BAL 32e6→12e6):
+#   6–12e6 lp  = Fable-only (CIO inaktiv)
+#   >=12e6 lp  = CIO-only (Fable raeumt ab)
+#   Puffer-Fenster 11.005e6–12e6 = einziger theoretischer Doppel-Feuer-Spielraum.
+CIO_MIN_BAL=12000000
+CIO_FIRE_MIN=11005000  # CIO-Trigger (ATA-geheilt, fable-Note 19:55Z): CIO-Feuer erwaet ab 11.005e6
 
 ts(){ date -u '+%Y-%m-%dT%H:%M:%SZ'; }
 log(){ echo "[$(ts)] $*" >> $HB; }
@@ -190,7 +202,16 @@ except Exception: print(0)" 2>/dev/null)
   bal=${bal:-0}
   if [ "$LAST_BAL" -gt 0 ] 2>/dev/null && [ "$bal" -gt "$LAST_BAL" ]; then
     if [ "$bal" -ge "$FALE_MIN" ]; then
-      log "ALERT DEPOSIT: Provider ${LAST_BAL}→${bal} lp (>= Fable-MIN ${FALE_MIN}) — BEIDE Loops feuern erwaet (CIO-Trigger ~11,005,000 lp), CONFLICT-Fenster 90s"
+      # Regime-Fix 19:55Z (fable-Note / CIO_MIN_BAL 32e6→12e6):
+      #   6–12e6 lp  -> Fable-only (CIO inactiv),
+      #   >=12e6 lp   -> CIO-only (Fable raeumt ab, CIO_MIN_BAL=12e6),
+      #   nur 11.005e6–12e6 = theoretisches Puffer-Fenster (False-Negativ-Schutz).
+      # Escalation-Alarm nur im Ueberlappungs-Fenster + bei CONFLICT-Events.
+      if [ "$bal" -ge "$CIO_MIN_BAL" ]; then
+        log "ALERT DEPOSIT: Provider ${LAST_BAL}→${bal} lp (>= ${CIO_MIN_BAL}lp, CIO-Regime 19:55Z) — CIO-Feuer erwartet (Fable raeumt ab), CONFLICT-Fenster 90s"
+      else
+        log "ALERT DEPOSIT: Provider ${LAST_BAL}→${bal} lp (>= Fable-MIN ${FALE_MIN}, < ${CIO_MIN_BAL}) — Fable-Feuer erwartet (CIO inaktiv); nur im Puffer-Fenster 11.005e6–12e6 = erwaetetes Doppel-Feuer-Risiko"
+      fi
     else
       log "SALDO-ANSTIEG: ${LAST_BAL}→${bal} lp (< Fable-MIN ${FALE_MIN}, noch kein Trade-Trigger)"
     fi
@@ -207,7 +228,15 @@ except Exception: print(0)" 2>/dev/null)
   [ "${ft:-0}" -gt 0 ] && {
     LAST_TRADE_FABLE=$now
     if [ -n "$cp" ]; then
-      log "ALERT CONFLICT: Fable-Trade ${now} — CIO-Loop WAR LEBEND ($cp) → Konkordat-16:08Z-CIO-Live-Guard verletzt (Doppel-Spend-Risiko, Wallet DNEBNj…)"
+      # Regime-Fix 19:55Z (CIO_MIN_BAL 12e6): CONFLICT-Alarm NUR im
+      # Puffer-Fenster 11.005e6–12e6 (einziger Doppel-Feuer-Spielraum).
+      # Darunter = Fable-only-Schiene (CIO-Prozess lebt, feuert aber
+      # nicht), darueber = CIO-only-Schiene → nur Event-Zeile.
+      if [ "${LAST_BAL:-0}" -ge "$CIO_FIRE_MIN" ] && [ "${LAST_BAL:-0}" -lt "$CIO_MIN_BAL" ]; then
+        log "ALERT CONFLICT: Fable-Trade ${now} — CIO-Loop LEBEND ($cp) + bal ${LAST_BAL}lp IM PUFFER-FENSTER ${CIO_FIRE_MIN}–${CIO_MIN_BAL}lp → CIO-Live-Guard verletzt (Doppel-Spend-Risiko, Wallet DNEBNj…)"
+      else
+        log "EVENT: Fable-TRADE (${ft} neue Log-zeile[n]) — CIO-Prozess lebt ($cp), bal ${LAST_BAL}lp = Fable-only-Schiene (< ${CIO_FIRE_MIN}lp) bzw. CIO-only-Schiene (>= ${CIO_MIN_BAL}lp) → kein Doppel-Feuer-Risiko (Regime 19:55Z)"
+      fi
     else
       log "EVENT: Fable-TRADE (${ft} neue Log-zeile[n]) — CIO tot → Takeover gem. Konkordat (erwartet, kein Alarm)"
     fi
@@ -225,7 +254,13 @@ except Exception: print(0)" 2>/dev/null)
   [ "${ct:-0}" -gt 0 ] && {
     LAST_TRADE_CIO=$now
     if [ -n "$fp" ]; then
-      log "ALERT CONFLICT: CIO-Trade ${now} — Fable-Loop WAR LEBEND ($fp) → Konkordat-16:08Z-Einzel-Writer verletzt (Fable-CIO-Live-Guard muss Fable vom Feuern abhalten, Doppel-Spend-Risiko, Wallet DNEBNj…)"
+      # Symmetrisch (Regime 19:55Z): Alarm NUR im Puffer-Fenster
+      # 11.005e6–12e6; sonsten Schienen-Solo → nur Event-Zeile.
+      if [ "${LAST_BAL:-0}" -ge "$CIO_FIRE_MIN" ] && [ "${LAST_BAL:-0}" -lt "$CIO_MIN_BAL" ]; then
+        log "ALERT CONFLICT: CIO-Trade ${now} — Fable-Loop LEBEND ($fp) + bal ${LAST_BAL}lp IM PUFFER-FENSTER ${CIO_FIRE_MIN}–${CIO_MIN_BAL}lp → Einzel-Writer-Regel verletzt (Doppel-Spend-Risiko, Wallet DNEBNj…)"
+      else
+        log "EVENT: CIO-TRADE (${ct} neue Log-zeile[n]) — Fable-Prozess lebt ($fp), bal ${LAST_BAL}lp = CIO-only-Schiene (>= ${CIO_MIN_BAL}lp) bzw. Fable-only-Schiene (< ${CIO_FIRE_MIN}lp) → kein Doppel-Feuer-Risiko (Regime 19:55Z)"
+      fi
     else
       log "EVENT: CIO-TRADE (${ct} neue Log-zeile[n]) — Fable tot → CIO-Solo gem. Konkordat (erwartet, kein Alarm)"
     fi
