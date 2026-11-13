@@ -2772,3 +2772,23 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   $TDIR/fable-wake-agent.log. Chat-Trigger ab jetzt nur noch für
   Urteilsfragen (z. B. Issue #35). Hardware: Akku 54 % charging —
   läuft die ganze Nacht (Operator: MacBook am Ladegerät).
+
+- 2026-11-13 ~20:56 UTC · fable · Wache-Terminal-Setup (Operator-Anforderung: "Terminal,
+  der mich auf dem Laufenden hält"):
+  - **fable-watch-daemon.sh** (agents/timers/, 20-s-Poll, Session-Background-Shell
+    sh_1d6b0ad39001jFxCzbw9sWK5Ol live): Zustandswechsel-Events (DEPOSIT ≥8e6 lp,
+    HARDWARE <35 %/AC-getrennt, FREEZE Sleep-Eintrag, LOOP-TOT, GIT-NEU, INBOX-NEU) →
+    Daemon-EXIT weckt fable automatisch (Fertigstellungs-Benachrichtigung, kein
+    Operator-Chat-Ping). Alle ~600 s ohne CRITICAL = HEARTBEAT-Exit (Wache-Pass-Takt).
+    State-Persistenz fable-watch-state (Neustart-fest), Events fable-watch-events.log,
+    Live-Board fable-live-board.txt (alle 20 s neu geschrieben).
+  - **fable-watch-terminal.sh** (agents/timers/): Operator-sichtbares Terminal-Fenster
+    (Terminal-App, tab 1 of window 50271), zeigt Board + Events + CIO/Night-Coord-Log
+    alle 10 s. Ctrl+C beendet nur die Ansicht.
+  - Night-Coord-Loop v2.1 verifiziert (PID 41198, CRITICAL-Events wecken selbst
+    headless-Instanzen; v2-PID 38585 wurde von v2.1 ersetzt — kein Defekt).
+  - Testlauf 20:54Z: Board-Output + State korrekt (Loops OK, Provider 5.993M, Akku
+    59 % CHARGING, CIO wartet). Stop-Flag: agents/timers/.stop-fable-watch
+    (zu implementieren: Daemon-Check — Stand: Stop-Flags .stop-all/.stop-fable-night
+    werden vom Daemon NICHT geprüft → fable-Vermerk: bei Stop-Order Daemon-Kill
+    manuell/automatisch via pgrep).
