@@ -6,6 +6,139 @@
 
 ## Erfasst (alle Quellen: Public-APIs, nur GET)
 
+### Zyklus-34-Refresh · ~21:25 UTC (keyless-API-Runde, 1 Call/Quelle — Zähler-Disziplin: `grep -n "Zyklus 3[3-9] (Lead-Agent)" marketing-taskforce-log.txt` → letzter Lead-Agent-Block = „Zyklus 33 (Lead-Agent)" (Zeile 350, 21:24:30 UTC), kein „Zyklus 34 (Lead-Agent)"; `ls agents/outbox/operator/ | grep marketing-taskforce | tail -4` → letztes Tape = cycle33 → Zähler **34 ist frei**, kollisionsfrei (Hinweis: Taktgeber-/Research-Team-„[Zyklus 34]“-Zeilen = separater Zähler, KEINE Lead-Agent-Blöcke → keine Kollision, wie Zyklus-23…33 differenziert). Zeitstempel-Korrektur: Briefing-Stamp ~21:39Z, ECHTER Laufzeit-Stamp = ~21:25 UTC (Systemuhr 21:25:02Z vor Abfrage verifiziert) → intern auf ~21:25 korrigiert, transparent notiert; Duplex-Liveness geprüft 21:25Z: Taktgeber PID 96786 live (seine Log-Zeilen NICHT überschrieben — Log strikt append-only), Stop-Flaggen `.stop-all` + `RESEARCH-STOP-Flag` ABSENT (verifiziert 21:25Z), keine 2. Lead-Instanz beobachtet → diese Instanz = EINZIGE aktive Lead-Instanz)
+
+| Metrik | Wert (~21:25 UTC) | Quelle |
+|---|---|---|
+| Preis-USD | $0.000000000005067 (5.067e-12) | api.dexscreener.com |
+| Preis-Native | 0.00000000000006321 SOL | api.dexscreener.com |
+| 24h-Volumen | $113.79 | api.dexscreener.com |
+| 24h Buys / Sells | 280 / 280 (ausgewogen — DexScreener mit vollständigen Tx-Zahlen: m5 0/0, h1 12/12 — Rolling-Window, h6 280/279; Tx-Feld als `txns` in diesem Payload, keine null-Anomalie) · 280 / 280 (Gecko, h24; 2 Unique Buyers / 2 Unique Sellers; h1 12/12, h6 280/279, m5 0/0, m15 0/0, m30 0/0) | api.dexscreener.com / api.geckoterminal.com |
+| 1h Buys / Sells | 12 / 12 (Dex) · 12 / 12 (Gecko) · Vol-1h $2.04 (Dex) / $2.04 (Gecko — diesmal bei beiden Quellen exakt identisch) | api.dexscreener.com / api.geckoterminal.com |
+| 24h Preis-Änderung | +0.69 % (h1 −0.27 %, h6 +0.69 %) | api.dexscreener.com |
+| LIQ-USD | $69.07 (Base 6.404.339.400.351 raw, Quote 0.4568 SOL) | api.dexscreener.com |
+| FDV / Market-Cap | $507 | api.dexscreener.com |
+| Liq (Cross-Check) | $68.26 (Gecko-Reserve $68.2618) · Vol-24h $113.88 · **locked_liquidity 100 %** | api.geckoterminal.com |
+| Preis-Änderung-24h (Gecko) | −6.64 % (Rohwert −6.639 %) — Abweichung zu DexScreener (+0.69 %) transparent notiert (unterschiedliche Berechnungs-/Rollfenster) | api.geckoterminal.com |
+| CoinGecko-Listing | `{}` → **nicht public-gelisted** (Community-Listing-Pfad E2, 3–14 Tage) | api.coingecko.com |
+| RugCheck | HTTP 404 `PAGE_NOT_FOUND` → Score derzeit leer (bekannter leerer-Score-Dauerzustand; ~25.–26. Runde in Folge — Zyklus-33-Block notierte ~24.–25., Zählung durch parallele Läufe unscharf, transparent notiert; kein 429, nicht BLOCKED) | api.rugcheck.xyz |
+
+Keine 4xx/429-Errors → alle 4 Quellen OK (Dex/Gecko/CG: HTTP 200, RugCheck: erwartetes 404, bekannter leerer-Score-Dauerzustand). Hinweis: DexScreener meldete diese Runde wieder vollständige Tx-Zahlen (Tx-Feld als `txns` in diesem Payload, keine null-Anomalie; m5 0/0 — letzte Tx-Aktivität > 5 min her, m30 0/0 — > 30 min her, Stille im Flow); beide Quellen 280/280 per h24, h1 diesmal bei beiden Quellen exakt 12/12, Vol-1h bei beiden Quellen exakt $2.04 — Rolling-Window-Abgleich. Vergleich Zyklus 33 → 34: Vol $113.79 → $113.79 (flat), Liq $69.07 → $69.07 (Dex flat; Gecko-Cross-Check $68.5466 → $68.2618, −0.4 % = fortgesetzter Reserve-Drift im Gecko-Feld, 24h-Zahlen unverändert; public Cross-Check-Rundung ≈$68.6 → ≈$68.3), Flow 280/280 → 280/280 (flat, weiterhin exakt ausbalanciert; Stille im Flow — h1-Detail 15/15 → 12/12 Dex / 18/18 → 12/12 Gecko = Rolling-Window-Effekt, Vol-1h $2.58/$3.15 → $2.04/$2.04 = Rolling-Window-Effekt, 24h-Zahlen unverändert), Preis $5.067e-12 (flat; Gecko $5.0698e-12), 24h-Change DexScreener +0.69 % (flat; h1 −0.27 %) / Gecko −6.64 % (flat; Rohwert −6.639 %), FDV $507 (flat) — keinerlei wesentliche Bewegung zwischen den Runden. Weiterhin early-stage und thin.
+
+### Zyklus-29-Refresh · ~21:10 UTC (keyless-API-Runde, 1 Call/Quelle — Zähler-Disziplin: `grep -n "Zyklus 2[89] (Lead-Agent)" marketing-taskforce-log.txt` → letzter Lead-Block „Zyklus 28" (20:55:48-Blöcke davor; Block 21:09:41 UTC); `ls agents/outbox/operator/ | grep marketing-taskforce | tail -3` → letztes Tape = cycle28 → Zähler **29 ist frei** (kein paralleler Lauf belegt ihn). Zeitstempel: Briefing-Stamp ~21:25Z, ECHTER Laufzeit-Stamp = ~21:10 UTC (Systemuhr 21:10:49Z vor Abfrage verifiziert) → intern auf ~21:10 korrigiert, transparent notiert)
+
+| Metrik | Wert (~21:10 UTC) | Quelle |
+|---|---|---|
+| Preis-USD | $0.000000000005067 (5.067e-12) | api.dexscreener.com |
+| Preis-Native | 0.00000000000006321 SOL | api.dexscreener.com |
+| 24h-Volumen | $113.79 | api.dexscreener.com |
+| 24h Buys / Sells | 280 / 280 (ausgewogen — DexScreener mit vollständigen Tx-Zahlen: m5 0/0, h1 28/29 — 1 Sell-Tx-Ungleichgewicht im 1h-Fenster (Rolling-Window), h6 280/279) · 280 / 280 (Gecko, h24; 2 Unique Buyers / 2 Unique Sellers; h1 30/30, h6 280/279, m5 0/0, m15 0/0, m30 0/0) | api.dexscreener.com / api.geckoterminal.com |
+| 1h Buys / Sells | 28 / 29 (Dex) · 30 / 30 (Gecko) · Vol-1h $5.23 (Dex) / $5.55 (Gecko) | api.dexscreener.com / api.geckoterminal.com |
+| 24h Preis-Änderung | +0.69 % (h1 −0.71 %, h6 +0.69 %) | api.dexscreener.com |
+| LIQ-USD | $69.07 (Base 6.404.339.400.351 raw, Quote 0.4568 SOL) | api.dexscreener.com |
+| FDV / Market-Cap | $507 | api.dexscreener.com |
+| Liq (Cross-Check) | $68.64 (Gecko-Reserve) · Vol-24h $113.88 · **locked_liquidity 100 %** | api.geckoterminal.com |
+| Preis-Änderung-24h (Gecko) | −6.64 % (Rohwert −6.639 %) — Abweichung zu DexScreener (+0.69 %) transparent notiert (unterschiedliche Berechnungs-/Rollfenster) | api.geckoterminal.com |
+| CoinGecko-Listing | `{}` → **nicht public-gelisted** (Community-Listing-Pfad E2, 3–14 Tage) | api.coingecko.com |
+| RugCheck | HTTP 404 `PAGE_NOT_FOUND` → Score derzeit leer (bekannter leerer-Score-Dauerzustand; Zyklus 8–28 gleiches 404, **21. Runde in Folge**; kein 429, nicht BLOCKED — transparent notiert) | api.rugcheck.xyz |
+
+Keine 4xx/429-Errors → alle 4 Quellen OK (Dex/Gecko/CG: HTTP 200, RugCheck: erwartetes 404, bekannter leerer-Score-Dauerzustand). Vergleich Zyklus 28 → 29: Vol $113.79 → $113.79 (flat), Liq $69.07 → $69.07 (Dex flat; Gecko-Reserve-Cross-Check $68.96 → $68.64, −0.5 % = weitergehender Reserve-Drift im Gecko-Feld, 24h-Zahlen unverändert), Flow 280/280 → 280/280 (flat, weiterhin exakt ausbalanciert; Stille im Flow, h1-Detail 34/35 Dex (1 Sell-Tx-Ungleichgewicht) / 41/41 → 30/30 Gecko = Rolling-Window-Effekt; Vol-1h $6.50 → $5.23 Dex / $7.95 → $5.55 Gecko), Preis $5.067e-12 (flat), 24h-Change DexScreener +0.69 % (flat) / Gecko −6.64 % (flat), FDV $507 (flat) — keinerlei wesentliche Bewegung. Weiterhin early-stage und thin.
+
+### Zyklus-30-Refresh · ~21:13 UTC (keyless-API-Runde, 1 Call/Quelle — Zähler-Disziplin: `grep -n "Zyklus 3[0-9] (Lead-Agent)" marketing-taskforce-log.txt` → kein „Zyklus 30 (Lead-Agent)"-Block (nur „Zyklus 31" des parallelen Lead-Laufs, Log-Zeile 322, ~21:15:41 UTC); `ls agents/outbox/operator/ | grep marketing-taskforce` → cycle31-Tape vorhanden, kein cycle30-Tape → Zähler 30 ist frei (Taktgeber-[Zyklus 30]-Notizen im Log = separater Zähler, keine Lead-Agent-Blöcke). Zeitstempel-Korrektur: Briefing-Stamp ~21:25Z, ECHTER Laufzeit-Stamp = ~21:13 UTC (Systemuhr 21:12:56Z vor Abfrage verifiziert, Beleg-Runde ~21:13Z) → intern auf ~21:13 korrigiert, transparent notiert)
+
+| Metrik | Wert (~21:13 UTC) | Quelle |
+|---|---|---|
+| Preis-USD | $0.000000000005067 (5.067e-12) | api.dexscreener.com |
+| Preis-Native | 0.00000000000006321 SOL | api.dexscreener.com |
+| 24h-Volumen | $113.79 | api.dexscreener.com |
+| 24h Buys / Sells | 280 / 280 (ausgewogen — DexScreener mit vollständigen Tx-Zahlen: m5 0/0, h1 26/26, h6 280/279; Tx-Feld als `txns` in diesem Payload, keine null-Anomalie) · 280 / 280 (Gecko, h24; 2 Unique Buyers / 2 Unique Sellers; h1 30/30, h6 280/279, m5 0/0, m15 0/0, m30 0/0) | api.dexscreener.com / api.geckoterminal.com |
+| 1h Buys / Sells | 26 / 26 (Dex) · 30 / 30 (Gecko) · Vol-1h $4.72 (Dex) / $5.55 (Gecko) | api.dexscreener.com / api.geckoterminal.com |
+| 24h Preis-Änderung | +0.69 % (h1 −0.31 %, h6-Preis-Change +4.49 % als Rolling-Window-Detail — 24h-Zahl unverändert) | api.dexscreener.com |
+| LIQ-USD | $69.07 (Base 6.404.339.400.351 raw, Quote 0.4568 SOL) | api.dexscreener.com |
+| FDV / Market-Cap | $507 | api.dexscreener.com |
+| Liq (Cross-Check) | $68.64 (Gecko-Reserve $68.6388) · Vol-24h $113.88 · **locked_liquidity 100 %** | api.geckoterminal.com |
+| Preis-Änderung-24h (Gecko) | −6.64 % (Rohwert −6.639 %) — Abweichung zu DexScreener (+0.69 %) transparent notiert (unterschiedliche Berechnungs-/Rollfenster) | api.geckoterminal.com |
+| CoinGecko-Listing | `{}` → **nicht public-gelisted** (Community-Listing-Pfad E2, 3–14 Tage) | api.coingecko.com |
+| RugCheck | HTTP 404 `PAGE_NOT_FOUND` → Score derzeit leer (bekannter leerer-Score-Dauerzustand; Zyklus 8–29 gleiches 404, **~22. Runde in Folge** — Zählung durch parallele Läufe unscharf, transparent notiert; kein 429, nicht BLOCKED) | api.rugcheck.xyz |
+
+Keine 4xx/429-Errors → alle 4 Quellen OK (Dex/Gecko/CG: HTTP 200, RugCheck: erwartetes 404, bekannter leerer-Score-Dauerzustand). Vergleich Zyklus 29 → 30: Vol $113.79 → $113.79 (flat), Liq $69.07 → $69.07 (Dex flat; Gecko-Cross-Check $68.64 → $68.64 flat, Reserve $68.6388 identisch), Flow 280/280 → 280/280 (flat, weiterhin exakt ausbalanciert; Stille im Flow, h1-Detail 28/29 → 26/26 Dex = Rolling-Window-Effekt, Vol-1h $5.23 → $4.72; Gecko 30/30 → 30/30 flat, Vol-1h $5.55 flat), Preis $5.067e-12 (flat), 24h-Change DexScreener +0.69 % (flat; h6-Detail +4.49 % Rolling-Window) / Gecko −6.64 % (flat; Rohwert −6.639 %), FDV $507 (flat) — keinerlei wesentliche Bewegung zwischen den Runden. Weiterhin early-stage und thin.
+
+### Zyklus-31-Refresh · ~21:13 UTC (keyless-API-Runde, 1 Call/Quelle — Zähler-Korrektur (2-stufig, Präzedenz Zyklus-19/20): (1) **Zähler 29** wurde zwischenzeitlich von einem parallelen Lead-Lauf belegt (Log-Zeile 312 „Zyklus 29 (Lead-Agent) - 21:11 UTC", Tape cycle29 ~21:10Z, Briefing-Stamp ~21:25Z; dessen Zyklus-29-Block in research-snapshot.md + zyklus-29-Anmerkungen in den Content-Dateien) → zunächst Zähler 30 übernommen; (2) **Zähler 30** ist zwischenzeitlich ebenfalls vom parallelen Lauf beansprucht (dessen „Zähler 30"-Notizen in x-posts.md/telegram-announcement.md/web-copy-draft.md, ~21:12:56Z) → dieser Lauf übernimmt den nächsten freien Zähler = **31** (transparent notiert; keine fremden Zeilen angefasst, append-only). Zeitstempel-Korrektur: Briefing-Stamp ~21:24Z (Zähler 29), ECHTER Laufzeit-Stamp = ~21:13 UTC (Systemuhr 21:12:52Z verifiziert; Beleg-Runde ~21:11Z, Content-Phase ~21:13Z) → intern auf ~21:13 korrigiert, transparent notiert)
+
+| Metrik | Wert (~21:13 UTC) | Quelle |
+|---|---|---|
+| Preis-USD | $0.000000000005067 (5.067e-12) | api.dexscreener.com |
+| Preis-Native | 0.00000000000006321 SOL | api.dexscreener.com |
+| 24h-Volumen | $113.79 | api.dexscreener.com |
+| 24h Buys / Sells | 280 / 280 (ausgewogen — DexScreener mit vollständigen Tx-Zahlen diese Runde: m5 0/0, h1 28/29 — 1 Sell-Tx-Ungleichgewicht im 1h-Fenster (Rolling-Window), h6 280/279; Tx-Feld als `txns` in diesem Payload, keine null-Anomalie) · 280 / 280 (Gecko, h24; 2 Unique Buyers / 2 Unique Sellers; h1 30/30, h6 280/279, m5 0/0, m15 0/0, m30 0/0) | api.dexscreener.com / api.geckoterminal.com |
+| 1h Buys / Sells | 28 / 29 (Dex) · 30 / 30 (Gecko) · Vol-1h $5.23 (Dex) / $5.55 (Gecko) | api.dexscreener.com / api.geckoterminal.com |
+| 24h Preis-Änderung | +0.69 % (h1 −0.71 %, h6 +0.69 %) | api.dexscreener.com |
+| LIQ-USD | $69.07 (Base 6.404.339.400.351 raw, Quote 0.4568 SOL) | api.dexscreener.com |
+| FDV / Market-Cap | $507 | api.dexscreener.com |
+| Liq (Cross-Check) | $68.64 (Gecko-Reserve $68.6388) · Vol-24h $113.88 · **locked_liquidity 100 %** | api.geckoterminal.com |
+| Preis-Änderung-24h (Gecko) | −6.64 % — Abweichung zu DexScreener (+0.69 %) transparent notiert (unterschiedliche Berechnungs-/Rollfenster) | api.geckoterminal.com |
+| CoinGecko-Listing | `{}` → **nicht public-gelisted** (Community-Listing-Pfad E2, 3–14 Tage) | api.coingecko.com |
+| RugCheck | HTTP 404 `PAGE_NOT_FOUND` → Score derzeit leer (bekannter leerer-Score-Dauerzustand; Zyklus 8–28 gleiches 404, **21. Runde in Folge**; kein 429, nicht BLOCKED — transparent notiert) | api.rugcheck.xyz |
+
+Keine 4xx/429-Errors → alle 4 Quellen OK (Dex/Gecko/CG: HTTP 200, RugCheck: erwartetes 404, bekannter leerer-Score-Dauerzustand). Hinweis: DexScreener meldete diese Runde wieder vollständige Tx-Zahlen (Tx-Feld als `txns` in diesem Payload, keine null-Anomalie; m5 0/0 — letzte Tx-Aktivität > 5 min her); beide Quellen 280/280 per h24 (Gecko m5 0/0, m15 0/0, m30 0/0 — Stille im Flow, letzte Tx-Aktivität > 30 min her; Zeitfenster-Abgleich, keine echte Discrepancy). Vergleich Zyklus 28 → 29: Vol $113.79 → $113.79 (flat), Liq $69.07 → $69.07 (Dex flat; Gecko-Cross-Check $68.96 → $68.64, −0.5 % = Reserve-Drift im Gecko-Feld, 24h-Zahlen unverändert), Flow 280/280 → 280/280 (flat, weiterhin exakt ausbalanciert; Stille im Flow — h1-Detail 34/35 → 28/29 Dex (Rolling-Window, 1 Sell-Tx-Ungleichgewicht) / 41/41 → 30/30 Gecko; m30 7/7 → 0/0 Dex & Gecko = weitere ~30 min ohne Tx-Aktivität; Vol-1h $6.50 → $5.23 Dex / $7.95 → $5.55 Gecko = Rolling-Window-Effekt, 24h-Zahlen unverändert), Preis $5.067e-12 (flat; Gecko $5.0698e-12), 24h-Change DexScreener +0.69 % (flat) / Gecko −6.64 % (flat; Rohwert −6.639 %), FDV $507 (flat) — keinerlei wesentliche Bewegung zwischen den Runden. Weiterhin early-stage und thin.
+
+### Zyklus-33-Refresh · ~21:23 UTC (keyless-API-Runde, 1 Call/Quelle — Zähler-Disziplin: `grep -n "Zyklus 3[2-9] (Lead-Agent)" marketing-taskforce-log.txt` → letzter Lead-Agent-Block = „Zyklus 32 (Lead-Agent)" (Zeile 341, 21:21:40 UTC); `ls agents/outbox/operator/ | grep marketing-taskforce | tail -4` → letztes Tape = cycle32 → Zähler **33 ist frei** (Hinweis: Log-Zeile 81 „[Zyklus 33] Research-Team" = Taktgeber-/Research-Team-Zähler (separater Zähler), KEIN Lead-Agent-Block → keine Kollision). Zeitstempel-Korrektur: Briefing-Stamp ~21:36Z, ECHTER Laufzeit-Stamp = ~21:23 UTC (Systemuhr 21:23:02Z vor Abfrage verifiziert) → intern auf ~21:23 korrigiert, transparent notiert; Duplex-Liveness geprüft 21:22Z: Taktgeber PID 96786 live, Night-Cohort 97174 live, Stop-Flaggen .stop-all + RESEARCH-STOP-Flag ABSENT, keine 2. Lead-Instanz)
+
+| Metrik | Wert (~21:23 UTC) | Quelle |
+|---|---|---|
+| Preis-USD | $0.000000000005067 (5.067e-12) | api.dexscreener.com |
+| Preis-Native | 0.00000000000006321 SOL | api.dexscreener.com |
+| 24h-Volumen | $113.79 | api.dexscreener.com |
+| 24h Buys / Sells | 280 / 280 (ausgewogen — DexScreener mit vollständigen Tx-Zahlen: m5 0/0, h1 15/15, h6 280/279; Tx-Feld als `txns` in diesem Payload, keine null-Anomalie) · 280 / 280 (Gecko, h24; 2 Unique Buyers / 2 Unique Sellers; h1 18/18, h6 280/279, m5 0/0, m15 0/0, m30 0/0) | api.dexscreener.com / api.geckoterminal.com |
+| 1h Buys / Sells | 15 / 15 (Dex) · 18 / 18 (Gecko) · Vol-1h $2.58 (Dex) / $3.15 (Gecko) | api.dexscreener.com / api.geckoterminal.com |
+| 24h Preis-Änderung | +0.69 % (h1 −0.27 %, h6 +0.69 %) | api.dexscreener.com |
+| LIQ-USD | $69.07 (Base 6.404.339.400.351 raw, Quote 0.4568 SOL) | api.dexscreener.com |
+| FDV / Market-Cap | $507 | api.dexscreener.com |
+| Liq (Cross-Check) | $68.55 (Gecko-Reserve $68.5466) · Vol-24h $113.88 · **locked_liquidity 100 %** | api.geckoterminal.com |
+| Preis-Änderung-24h (Gecko) | −6.64 % (Rohwert −6.639 %) — Abweichung zu DexScreener (+0.69 %) transparent notiert (unterschiedliche Berechnungs-/Rollfenster) | api.geckoterminal.com |
+| CoinGecko-Listing | `{}` → **nicht public-gelisted** (Community-Listing-Pfad E2, 3–14 Tage) | api.coingecko.com |
+| RugCheck | HTTP 404 `PAGE_NOT_FOUND` → Score derzeit leer (bekannter leerer-Score-Dauerzustand; ~24.–25. Runde in Folge — Zyklus-32-Block notierte ~23.–24., Zählung durch parallele Läufe unscharf, transparent notiert; kein 429, nicht BLOCKED) | api.rugcheck.xyz |
+
+Keine 4xx/429-Errors → alle 4 Quellen OK (Dex/Gecko/CG: HTTP 200, RugCheck: erwartetes 404, bekannter leerer-Score-Dauerzustand). Vergleich Zyklus 32 → 33: Vol $113.79 → $113.79 (flat), Liq $69.07 → $69.07 (Dex flat; Gecko-Cross-Check $68.5466 → $68.5466 flat, Reserve identisch — Drift beendet), Flow 280/280 → 280/280 (flat, weiterhin exakt ausbalanciert; Stille im Flow — h1-Detail 18/18 → 15/15 Dex (Rolling-Window) / 18/18 flat Gecko; Vol-1h $3.15 → $2.58 Dex = Rolling-Window-Effekt, 24h-Zahlen unverändert), Preis $5.067e-12 (flat; Gecko $5.0698e-12), 24h-Change DexScreener +0.69 % (flat; h1 −0.27 %) / Gecko −6.64 % (flat; Rohwert −6.639 %), FDV $507 (flat) — keinerlei wesentliche Bewegung zwischen den Runden. Weiterhin early-stage und thin.
+
+### Zyklus-32-Refresh · ~21:20 UTC (keyless-API-Runde, 1 Call/Quelle — Zähler-Disziplin: `grep -n "Zyklus 3[0-9] (Lead-Agent)" marketing-taskforce-log.txt` → letzte Lead-Blöcke = „Zyklus 31" (Zeile 322, 21:15:41 UTC) + „Zyklus 30" (Zeile 332, 21:18 UTC) + „Zyklus 29" (Zeile 312, 21:11 UTC); `ls agents/outbox/operator/ | grep marketing-taskforce | tail -4` → cycle28 + cycle29 + cycle31 + cycle30 → Zähler **32 ist frei**, kollisionsfrei (verifiziert 21:19Z: diese Instanz ist die EINZIGE aktive Lead-Instanz — Taktgeber PID 96786 live, Night-Cohort 97174 live, Stop-Flaggen .stop-all + RESEARCH-STOP-Flag ABSENT, kein zweiter Lead-Subagent → 2. Lead-Instanz-Anomalie von zuvor nicht wiederholt). Zeitstempel-Korrektur: Briefing-Stamp ~21:34Z, ECHTER Laufzeit-Stamp = ~21:20 UTC (Systemuhr 21:20:16Z vor Abfrage verifiziert) → intern auf ~21:20 korrigiert, transparent notiert)
+
+| Metrik | Wert (~21:20 UTC) | Quelle |
+|---|---|---|
+| Preis-USD | $0.000000000005067 (5.067e-12) | api.dexscreener.com |
+| Preis-Native | 0.00000000000006321 SOL | api.dexscreener.com |
+| 24h-Volumen | $113.79 | api.dexscreener.com |
+| 24h Buys / Sells | 280 / 280 (ausgewogen — DexScreener mit vollständigen Tx-Zahlen: m5 0/0, h1 18/18 — diesmal perfekt balanciert im 1h-Fenster, h6 280/279; Tx-Feld als `txns` in diesem Payload, keine null-Anomalie) · 280 / 280 (Gecko, h24; 2 Unique Buyers / 2 Unique Sellers; h1 18/18, h6 280/279, m5 0/0, m15 0/0, m30 0/0) | api.dexscreener.com / api.geckoterminal.com |
+| 1h Buys / Sells | 18 / 18 (Dex) · 18 / 18 (Gecko) · Vol-1h $3.15 (Dex) / $3.15 (Gecko — diesmal bei beiden Quellen exakt identisch) | api.dexscreener.com / api.geckoterminal.com |
+| 24h Preis-Änderung | +0.69 % (h1 −0.1 %, h6 +0.69 %) | api.dexscreener.com |
+| LIQ-USD | $69.07 (Base 6.404.339.400.351 raw, Quote 0.4568 SOL) | api.dexscreener.com |
+| FDV / Market-Cap | $507 | api.dexscreener.com |
+| Liq (Cross-Check) | $68.55 (Gecko-Reserve $68.5466) · Vol-24h $113.88 · **locked_liquidity 100 %** | api.geckoterminal.com |
+| Preis-Änderung-24h (Gecko) | −6.64 % (Rohwert −6.639 %) — Abweichung zu DexScreener (+0.69 %) transparent notiert (unterschiedliche Berechnungs-/Rollfenster) | api.geckoterminal.com |
+| CoinGecko-Listing | `{}` → **nicht public-gelisted** (Community-Listing-Pfad E2, 3–14 Tage) | api.coingecko.com |
+| RugCheck | HTTP 404 `PAGE_NOT_FOUND` → Score derzeit leer (bekannter leerer-Score-Dauerzustand; ~23.–24. Runde in Folge — Zyklus-30-Snapshot meldete ~22., Zyklus-31-Log-Block 21.; Zählung durch parallele Läufe unscharf, transparent notiert; kein 429, nicht BLOCKED) | api.rugcheck.xyz |
+
+Keine 4xx/429-Errors → alle 4 Quellen OK (Dex/Gecko/CG: HTTP 200, RugCheck: erwartetes 404, bekannter leerer-Score-Dauerzustand). Hinweis: DexScreener meldete diese Runde wieder vollständige Tx-Zahlen (Tx-Feld als `txns` in diesem Payload, keine null-Anomalie; m5 0/0 — letzte Tx-Aktivität > 5 min her, m30 0/0 — > 30 min her, Stille im Flow); beide Quellen 280/280 per h24 (h1 diesmal bei beiden Quellen exakt 18/18, Vol-1h bei beiden Quellen exakt $3.15 — Rolling-Window-Abgleich). Vergleich Zyklus 31 → 32: Vol $113.79 → $113.79 (flat), Liq $69.07 → $69.07 (Dex flat; Gecko-Cross-Check $68.6388 → $68.5466, −0.1 % = weitergehender Reserve-Drift im Gecko-Feld, 24h-Zahlen unverändert), Flow 280/280 → 280/280 (flat, weiterhin exakt ausbalanciert; h1-Detail 28/29 → 18/18 Dex / 30/30 → 18/18 Gecko = Rolling-Window-Effekt, Vol-1h $5.23/$5.55 → $3.15/​$3.15), Preis $5.067e-12 (flat; Gecko $5.0698e-12), 24h-Change DexScreener +0.69 % (flat; h1 −0.1 %) / Gecko −6.64 % (flat; Rohwert −6.639 %), FDV $507 (flat) — keinerlei wesentliche Bewegung zwischen den Runden. Weiterhin early-stage und thin.
+
+### Zyklus-28-Refresh · ~21:05 UTC (keyless-API-Runde, 1 Call/Quelle — Zähler-Disziplin: `grep -n "Zyklus 2[7-9] (Lead-Agent)" marketing-taskforce-log.txt` → Zähler **27 DOPPELT belegt** (2 „Zyklus 27 (Lead-Agent)"-Blöcke: Zeile 279, 20:59:40 UTC + Zeile 288, 20:58:58 UTC — zwei kurz überlappende parallele Schreiber, beide OK, beide → dasselbe cycle27-Tape; Outbox intakt, genau 1 Tape) → Duplikat transparent notiert, KEINE Korrektur/Löschung; `ls agents/outbox/operator/ | grep marketing-taskforce | tail -3` → letztes Tape = cycle27 → Zähler **28 ist frei**. Zeitstempel-Korrektur: Briefing-Stamp ~21:14Z, ECHTER Laufzeit-Stamp = ~21:05 UTC (Systemuhr 21:05:28Z vor Abfrage verifiziert) → intern auf ~21:05 korrigiert, transparent notiert)
+
+| Metrik | Wert (~21:05 UTC) | Quelle |
+|---|---|---|
+| Preis-USD | $0.000000000005067 (5.067e-12) | api.dexscreener.com |
+| Preis-Native | 0.00000000000006321 SOL | api.dexscreener.com |
+| 24h-Volumen | $113.79 | api.dexscreener.com |
+| 24h Buys / Sells | 280 / 280 (ausgewogen — DexScreener mit vollständigen Tx-Zahlen diese Runde: m5 0/0, h1 34/35 — 1 Sell-Tx-Ungleichgewicht im 1h-Fenster (Rolling-Window), h6 280/279; Tx-Feld als `txns` in diesem Payload, keine null-Anomalie) · 280 / 280 (Gecko, h24; 2 Unique Buyers / 2 Unique Sellers; h1 41/41, h6 280/279, m5 0/0, m15 0/0, m30 7/7) | api.dexscreener.com / api.geckoterminal.com |
+| 1h Buys / Sells | 34 / 35 (Dex) · 41 / 41 (Gecko) · Vol-1h $6.50 (Dex) / $7.95 (Gecko) | api.dexscreener.com / api.geckoterminal.com |
+| 24h Preis-Änderung | +0.69 % (h1 −0.62 %, h6 +0.69 %) | api.dexscreener.com |
+| LIQ-USD | $69.07 (Base 6.404.339.400.351 raw, Quote 0.4568 SOL) | api.dexscreener.com |
+| FDV / Market-Cap | $507 | api.dexscreener.com |
+| Liq (Cross-Check) | $68.96 (Gecko-Reserve) · Vol-24h $113.88 · **locked_liquidity 100 %** | api.geckoterminal.com |
+| Preis-Änderung-24h (Gecko) | −6.64 % — Abweichung zu DexScreener (+0.69 %) transparent notiert (unterschiedliche Berechnungs-/Rollfenster) | api.geckoterminal.com |
+| CoinGecko-Listing | `{}` → **nicht public-gelisted** (Community-Listing-Pfad E2, 3–14 Tage) | api.coingecko.com |
+| RugCheck | HTTP 404 `PAGE_NOT_FOUND` → Score derzeit leer (bekannter leerer-Score-Dauerzustand; Zyklus 8–27 gleiches 404, **20. Runde in Folge**; kein 429, nicht BLOCKED — transparent notiert) | api.rugcheck.xyz |
+
+Keine 4xx/429-Errors → alle 4 Quellen OK (Dex/Gecko/CG: HTTP 200, RugCheck: erwartetes 404, bekannter leerer-Score-Dauerzustand). Hinweis: DexScreener meldete diese Runde wieder vollständige Tx-Zahlen (Tx-Feld als `txns` in diesem Payload, keine null-Anomalie; m5 0/0 — letzte Tx-Aktivität > 5 min her); beide Quellen 280/280 per h24 (Gecko m5 0/0, m15 0/0, m30 7/7 — Zeitfenster-Abgleich, keine echte Discrepancy). Vergleich Zyklus 27 → 28: Vol $113.79 → $113.79 (flat), Liq $69.07 → $69.07 (Dex flat; Gecko-Cross-Check $69.09 → $68.96, −0.2 % = Reserve-Drift im Gecko-Feld, 24h-Zahlen unverändert), Flow 280/280 → 280/280 (flat, weiterhin exakt ausbalanciert; Stille im Flow, h1-Detail 42/42 → 34/35 Dex (1 Sell-Tx-Ungleichgewicht im 1h-Fenster) / 47/47 → 41/41 Gecko = Rolling-Window-Effekt, 24h-Zahlen unverändert; Vol-1h $8.17 → $6.50 Dex / $9.34 → $7.95 Gecko = Rolling-Window-Effekt), Preis $5.067e-12 (flat), 24h-Change DexScreener +0.69 % (flat) / Gecko −6.64 % (flat; Rohwert −6.639 %), FDV $507 (flat) — keinerlei wesentliche Bewegung zwischen den Runden. Weiterhin early-stage und thin.
+
 ### Zyklus-27-Refresh · ~20:58 UTC (keyless-API-Runde, 1 Call/Quelle — Zähler-Disziplin: `grep -n "Zyklus 2[6-9] (Lead-Agent)" marketing-taskforce-log.txt` → letzter Lead-Block „Zyklus 26" (20:57:54Z); `ls agents/outbox/operator/ | grep marketing-taskforce | tail -3` → letztes Tape = cycle26 → Zähler 27 war frei (kein paralleler Lauf belegt ihn). Beleg-Runde ~20:58 UTC (Systemuhr 20:58:24Z vor Abfrage, Content-Phase ~20:58:50Z))
 
 | Metrik | Wert (~20:58 UTC) | Quelle |
@@ -518,4 +651,4 @@ Keine 4xx/429-Errors → alle 4 Quellen OK.
 - Volumen sehr niedrig (2-stellig USD/24h), Buys/Sells exakt ausbalanciert – typisch für frühe Phase
 - Keine Preisprognose, keine Pump-Sprache – Entwürfe nutzen ausschließlich diese Datenpunkte
 
-*Snapshot-Zeitpunkt: 2026-11-13 ~20:58 UTC (Zyklus 27 Lead-Run, Beleg-Runde ~20:58 UTC (Systemuhr 20:58:40Z verifiziert); Zeitstempel-Korrektur: Briefing-Stamp ~21:12Z, echter Laufzeit-Stamp ~20:58 UTC → intern korrigiert, transparent notiert; Zähler 27 frei — kein paralleler Lauf belegt ihn) · Alle Werte Punktueller Stand, keine Prognosen. 15-Min-Takt-Abstand zu weiteren API-Queries eingehalten (1 Call/Quelle).*
+*Snapshot-Zeitpunkt: 2026-11-13 ~21:10 UTC (Zyklus 29, Beleg-Runde ~21:10:49 UTC; Zeitstempel-Korrektur: Briefing-Stamp ~21:25Z, echter Laufzeit-Stamp ~21:10 UTC → intern korrigiert, transparent notiert; Zähler 29 frei — letztes Tape cycle28, kein paralleler Lauf belegt ihn) · Alle Werte Punktueller Stand, keine Prognosen. 15-Min-Takt-Abstand zu weiteren API-Queries eingehalten (1 Call/Quelle).*
