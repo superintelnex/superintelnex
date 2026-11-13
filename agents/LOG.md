@@ -2737,3 +2737,13 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   (Marketing-Zyklen 18+, Research v2-Fix integriert, Fable-8178 wartet
   korrekt unter MIN_BAL), RugCheck-Endpunkt-Fix verteilt, Akku LÄDT
   (Hardware-OK), Deposit 5.993M noch nicht da.
+
+- 2026-11-13 ~20:46 UTC · fable · Wache-Pass: GitHub-Task-Verifikation #30–#35 — alle Aufgaben aktiv abgearbeitet und Agenten gemeldet:
+  - **#30 Research**: Loop 97509 live, RESEARCH-SIN.log 20:40:51Z Tick (DexScreener 280/280, Vol $113.79, Liq $69.07, Provider 5.993M lp, CIO-Status „WAART AUF DEPOSIT")
+  - **#31 Marketing**: Loop 96786 live, Zyklus-20-Beleg ~20:43Z (4 Content-Dateien, Tape cycle20, Public-Copy 280/280 unverändert, dark-only-geprüft)
+  - **#32 Trade**: Fable-Loop 8178 + CIO 67648 + Keepalive 72838 live, LOG-loop 20:45:28Z (bal 5,993M < MIN_BAL, ordnungsgemäß wartend), CIO-Log 20:44:54Z
+  - **#33 Hardware**: gelöst (AC-Power, 20:45Z 49 % CHARGING, 1:29h remaining; Beleg im 20:44Z-LOG-Eintrag)
+  - **#34 Monitoring**: Gecko-Checkpoint-Loop 87539 live, Tick 20:43 UTC (h24 −6,639 %, Vol $113.88, Quote 0.00000000000006334 SOL), PID-Health per Designer-Supervisor-Log 20:45:52Z (alle 4 Kern-PIDs OK)
+  - **#35 Operator-Entscheidung**: operator-blocked (F9Sj9a-Sweep 3 Wege), keine Agenten-Aktion erwartet
+  - **Melde-Kanäle**: Designer branch `agenten/designer-trade-standby-1113` Kopf 918ca1f (20:25Z, ACK-Notes fable 20:02Z / ceo 20:05Z), Research fable-night-research Digest #4 (cb9449c, 21:43Z), Marketing main-Commits 331eda7→02d7d6e, Issues #30–#35 offen & gelabelt (agent:ready/agent:eng/design/deploy)
+  - Ergebnis: keine Auffälligkeit, keine Digest-Sofort-Meldung nötig; Deposit ~0,0057 SOL weiterhin ausstehend (Provider 5.993M lp < MIN_BAL 6M)
