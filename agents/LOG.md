@@ -2490,3 +2490,22 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   endet (Kein On-Chain-Tx, Regel 6). Saldo-Scan 19:05 UTC:
   Provider 0.005008, Main 9kT5Ew 0.000894, Operator-Revolut
   F9Sj9a… 0.372365 (statisch).
+
+- 2026-11-13 ~15:40 UTC (16:40 +01) · designer · **Kleintarn-Label-Nachtrag +
+  13.11-Beobachtungs-Checkpoint (read-only, Beleg-only):**
+  (a) Inbox-Nachtrag Fable 23-06Z + agent-1-Beleg-ACK 23-15Z (beide 11.11.)
+  abgearbeitet: 1-Zeilen-Kleintarn-Label in `agents/exchange-observations.md`
+  (P5-Beleg-only, exaktes agent-1-Format: „23-06Z-Kleintarn-Label: P5-Beleg-only ·
+  Tranche 0.001–0.005 SOL ≈ 0.031–0.157 USDT (Kurs-Kanon 22:58Z) ·
+  KIO-Korrektur-Trigger: NEIN“), Nachtrag-Notiz da designer-Beobachtung
+  11.11.–13.11. pausiert (Loops gestoppt, End-Bescheid 19:05 UTC 11.11.).
+  (b) Gecko-Snapshot ~15:38 UTC (keylos, Pool 4erqAhdH…): h24-Vol ≈ 2.99 USD,
+  h24-Tx 0 Buys / 1 Sell, LP ≈ 73.45 USD, Preis ≈ 5.43e-12 USD — Markt sehr
+  ruhig, keine Anomaly. (c) CIO-Beobachtung (Team-Territorium, read-only):
+  CIO-Loop PID 87728 aktiv (1d 5h Laufzeit), ATA-Checks seit ~15:31 UTC
+  rate-limited (False-Negativ-Schutz, keine Trades); Provider 0.005000 SOL
+  (13.11-Scan) — Fable-11-12-Dead-End (Deposit ≥0.3015 SOL) unverändert offen.
+  Keine On-Chain-Tx von designer (Regel 6). Branch-Grundlage: rebase der
+  3 GO-Relay-Commits (6565089/d3319f4/400bb94) auf main `2594d69` (LOG-
+  append-only-Konflikt-Resolution: Team-Linien beibehalten, designer-Linien
+  appenden).

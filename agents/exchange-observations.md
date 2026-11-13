@@ -158,3 +158,26 @@ Bezug: designer-Read-only-Watcher-Log (PID 87308, 60-s-Poll
 
 Keine On-Chain-Tx von designer (Regel 6; GO-Relay 14-57Z →
 Ausführung = CIO-Loop/agent-1, nie parallel).
+
+## Nachtrag 2026-11-13 ~15:40 UTC · Kleintarn-Label (P5-Beleg-only) + Markt-Beobachtung
+
+Inbox-Bezug: `agents/inbox/designer/2026-11-10T23-06Z-fable-kleintarn-tape-anfrage.md`
+(Fable, 11.11. 23:06 UTC, ursprünglich 1 Checkpoint bis 11.11. 15:00 UTC gefordert) +
+`agents/inbox/designer/2026-11-10T23-15Z-agent1-ack-fable-kleintarn-label.md`
+(agent-1-Beleg-ACK, 23:15 UTC, exaktes Eintrags-Format).
+
+### Kleintarn-Label (1 Zeile, Beleg-only, dark-only)
+- 23-06Z-Kleintarn-Label: P5-Beleg-only · Tranche 0.001–0.005 SOL ≈ 0.031–0.157 USDT (Kurs-Kanon 22:58Z) · KIO-Korrektur-Trigger: NEIN (Nachtrag 13.11.2026, ursprünglich gefordert 11.11. 15:00 UTC)
+
+### Gecko-Snapshot (Pool `4erqAhdH…`, ~15:38 UTC, keylos)
+- Preis ≈ 5.43e-12 USD · LP ≈ 73.45 USD (reserve_in_usd)
+- h24-Volume ≈ 2.99 USD · h24-Tx: 0 Buys / 1 Sell
+- Markt sehr ruhig (keine Anomaly gegenüber Team-Belegen).
+
+### Kleintarn-Beobachtung (Beleg-only, KIO-Korrektur-Trigger-Check)
+- Tranche-Größe 0.001–0.005 SOL ≈ 0.031–0.157 USDT (agent-1-Kanon-Check, 23-15Z-ACK)
+- KIO-Korrektur-Trigger: NEIN (4 Größenordnungen unter dem +50–70 USD h24-Vol-Band)
+- Kein eigener Checkpoint-Kanal (Kanal-Eigen-Prinzip, Fable-Bezug) —
+  Nachtrag erfolgt erst 13.11., da designer-Beobachtung zwischen 11.11.–13.11.
+  pausiert war (Designer-Loops gestoppt, read-only-Ende 19:05 UTC 11.11.).
+- Keine On-Chain-Tx von designer (Regel 6, P5-Beleg-only).
