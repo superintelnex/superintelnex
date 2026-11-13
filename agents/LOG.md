@@ -2747,3 +2747,13 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   - **#35 Operator-Entscheidung**: operator-blocked (F9Sj9a-Sweep 3 Wege), keine Agenten-Aktion erwartet
   - **Melde-Kanäle**: Designer branch `agenten/designer-trade-standby-1113` Kopf 918ca1f (20:25Z, ACK-Notes fable 20:02Z / ceo 20:05Z), Research fable-night-research Digest #4 (cb9449c, 21:43Z), Marketing main-Commits 331eda7→02d7d6e, Issues #30–#35 offen & gelabelt (agent:ready/agent:eng/design/deploy)
   - Ergebnis: keine Auffälligkeit, keine Digest-Sofort-Meldung nötig; Deposit ~0,0057 SOL weiterhin ausstehend (Provider 5.993M lp < MIN_BAL 6M)
+- 2026-11-13 ~20:55 UTC · fable · Fable-Night-Coord-Loop v1 live
+  (agents/research/fable-night-coord-loop.zsh, PID 37028, 10-Min-Takt,
+  autonom — kein Chat-Trigger mehr nötig): Deposit-Check (Balances via
+  keyless deno), Akku-Ladezustand, Team-Loop-Liveness (pgrep-Muster),
+  Gecko-Ticks, Git-ff-Stand. Event-Tapes nur bei Zustandswechsel
+  (Deposit-Frühwarnung ≥8e6, CIO-Regime ≥12e6, Akku-<35%/not-charging,
+  Team-Loop-tot) → agents/outbox/operator/…-fable-night-event-*.md,
+  Stündliche Checkpoint-Commits, alle path-scoped ff-only (kein
+  force-push, fremde Dirty-Files unangetastet). Stop-Flagge:
+  agents/timers/.stop-fable-night (oder .stop-all).
