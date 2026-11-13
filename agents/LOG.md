@@ -2732,3 +2732,8 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   Hardware: AC angegeschlossen, Akku jetzt CHARGING (vorher „not charging") —
   Hardware-Blocker #33 gelöst. Provider 5,993M lp < MIN_BAL → Fable-Loop 8178
   wartet ordnungsgemäß (TRADES 33).
+- 2026-11-13 ~20:46 UTC · fable · Digest #4 an Operator (Outbox
+  2026-11-13T20-46Z-fable-night-research-digest-4.md): Team-Status
+  (Marketing-Zyklen 18+, Research v2-Fix integriert, Fable-8178 wartet
+  korrekt unter MIN_BAL), RugCheck-Endpunkt-Fix verteilt, Akku LÄDT
+  (Hardware-OK), Deposit 5.993M noch nicht da.
