@@ -2792,3 +2792,27 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
     (zu implementieren: Daemon-Check — Stand: Stop-Flags .stop-all/.stop-fable-night
     werden vom Daemon NICHT geprüft → fable-Vermerk: bei Stop-Order Daemon-Kill
     manuell/automatisch via pgrep).
+- 2026-11-13 ~20:55 UTC · fable · Provider unter Fable-MIN_BAL gefallen:
+  5,993,044 lp (< 6.000.000) — Fable-Trade-Loop (8178) steht seit
+  ~20:53:46Z im Wart-Modus ("kein Deposit, waert"), keine Zyklen
+  mehr möglich (Fable-Lane war 5,5–12e6; unter 6e6 = tot). Nächster
+  Pfad = externer Deposit ~0,0057 SOL (Provider → ~12,3e6 = CIO-Lane).
+  CIO-Log-Zusatzbefund: seit 20:37:32Z **8+ identische Polls**
+  (free=0.005993, wsol=0, buy_fähig=-0.020324 unverändert) → CIO
+  liest seit ~18 min eine gefrorene/stale-RPC-Quelle, nicht mehr
+  live. Beides stützt den 2-RPC-AND-Fix-Vorschlag.
+- 2026-11-13 ~21:52 UTC · fable · Site-Optimierung index.html (Operator-
+  Auftrag „Seite über MCP verbessern/optimieren", MCP-Server = read-only
+  Tools zum Lesen — Änderungen lokal path-scoped):
+  · Opaque-Canvas: getContext('2d', {alpha:false}) + pro-Frame-
+    Background-Fill (#0A0A0A) statt clearRect → spart per-Frame-
+    Alpha-Compositing.
+  · Preconnect-Hints (crossorigin) für jup.ag / raydium.io / dexscreener.com
+    (die 3 CTA-/Tracking-Ziele) → frühe TCP+TLS-Verbindung beim Klick.
+  Verifikation (Playwright, determinist. reduzierte Bewegung, Szene 1):
+  · 0/1.024.000 Pixel >8 Abweichung (max 1) — visuell identisch.
+  · 0 pageerrors; 60 FPS desktop + mobile (vorher/nachher identisch).
+  · gate-local.py: alle index.html-Checks GRÜN (pageerror/Links/Overflow
+    #dust). Einzige ROT = superintelnex-sn-anthrazit.svg 404 = PRE-EXISTING
+    (Gate-Script prüft Asset, das 72a089b bewusst löschte) → QA-Note
+    agents/inbox/all/2026-11-13T21-52Z-fable-qa-gate-local-entferntes-asset-prueft-rot.md

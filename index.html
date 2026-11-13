@@ -13,6 +13,9 @@
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://superintelnex.com/">
+<link rel="preconnect" href="https://jup.ag" crossorigin>
+<link rel="preconnect" href="https://raydium.io" crossorigin>
+<link rel="preconnect" href="https://dexscreener.com" crossorigin>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://superintelnex.com/">
 <meta property="og:title" content="SuperIntelNex — Meme-Coin & Whitepaper-Projekt im Aufbau">
@@ -256,7 +259,9 @@
   'use strict';
   const site = document.querySelector('.site');
   const canvas = document.querySelector('#dust');
-  const ctx = canvas.getContext('2d', { alpha: true });
+  // Opaque-Canvas: spart per-Frame-Alpha-Compositing (Canvas liegt flächig auf
+  // dunklem Body #0A0A0A; Gradient-Overlay .art::after bleibt oberhalb).
+  const ctx = canvas.getContext('2d', { alpha: false });
   const scenes = [...document.querySelectorAll('.scene')];
   const nav = [...document.querySelectorAll('nav [data-go]')];
   const prev = document.querySelector('#prev');
@@ -1045,7 +1050,8 @@
 
   function draw() {
     if (!particlesReady || !width || !height) return;
-    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = '#0A0A0A';
+    ctx.fillRect(0, 0, width, height);
     for (const path of paths) path.length = 0;
     const t = morph * morph * (3 - 2 * morph);
     const spin = time * .16;
