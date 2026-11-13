@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Fable Night-Coord-Loop v1 · POLL=600s · autonom (kein Chat-Trigger)
+# Fable Night-Coord-Loop v2 · POLL=15s (10–20s-Takt, Operator-Feedback 20:57Z) · autonom (kein Chat-Trigger)
 # Stop-Flaggen: agents/timers/.stop-all | agents/timers/.stop-fable-night
 # Log: agents/research/FABLE-NIGHT-COORD.log (append-only, im Repo)
 # Event-Tapes: agents/outbox/operator/<ts>-fable-night-event-<typ>.md
@@ -7,7 +7,7 @@
 #       keine Secrets in Log/Tapes/Commits, fremde Dirty-Files unangetastet.
 setopt null_glob
 cd /Users/haqmal/Desktop/Projekte/SuperIntelNex || exit 1
-POLL=600
+POLL=15
 LOG=agents/research/FABLE-NIGHT-COORD.log
 TDIR=/private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode
 MY_TAIL=$TDIR/fable-my-log-tail.txt      # meine LOG-Blöcke seit letztem origin-Push
