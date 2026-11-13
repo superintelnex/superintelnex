@@ -2647,3 +2647,15 @@ agents/outbox/operator/…lead-agent-halt, marketing-taskforce-log.txt (Live-Sta
 LOG.md-Append (19:52-Block). Reflog-Sicherung: TDIR/reflog-backup-main.txt. Die alten lokalen
 Commits 1a3b206/63fc2b2 bleiben im Reflog (keine Löschung). Fremde dirty Dateien (TASK_LOG.md
 usw.) unverrückt im Haupt-Worktree gelassen.
+
+## 2026-11-13 20:00 UTC — Nacht-Digest #3: Marketing-Taskforce live + Git-Reconciliation + Deposit-Stand
+Marketing-Taskforce aktiv: Lead-Agent-Setup abgeschlossen (Loop marketing-taskforce-loop.zsh
+PID 96786, 15-Min-Takt, Dreier-Rollen Research/Content/Operator-Kanal, dark-only-geprüft,
+Morgen-Read-out = marketing-taskforce-log.txt, zuletzt Zyklus 32). Git-Divergenz (kein
+Merge-Base lokal vs origin) path-scoped gelöst, KEIN Force: Reconciliation-Worktree auf
+origin/main → Push 71a5cca, danach LOG.md-Merge (Team-Block erhalten) → Push 96bc332
+(= origin/main-Tipp jetzt). Provider 20:00Z = 6,423,262 lp (Deposit ~0,0057 SOL noch nicht
+da), Fable-Loop 92133 Counter 12 FINAL, CIO 67648 WART, Research-Loop 97509 (Vol-24h
+$104,45, Buys/Sells 233/233), Gecko-Tick 20:13Z erwartet. Akku 65 % -> Hardware-Warnung
+wiederholt (Ladekabel + Deckel offen, sonst Death ~00:15-00:30 UTC). Beleg:
+agents/inbox/operator/2026-11-13T20-00Z-fable-night-research-digest-3.md
