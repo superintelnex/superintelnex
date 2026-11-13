@@ -7,7 +7,13 @@
     "stopmarker": "token/result/keepalive.STOP",
     "statusfile": "token/result/keepalive.status.json",
     "logfile": "token/result/keepalive.nohup.log",
-    "wake_reasons": ["DEPOSIT-DETECTED", "DEPOSIT-PARTIAL", "EXTERNAL-ACTIVITY", "GH-DRIFT", "FATAL"],
+    "wake_reasons": [
+      "DEPOSIT-DETECTED",
+      "DEPOSIT-PARTIAL",
+      "EXTERNAL-ACTIVITY",
+      "GH-DRIFT",
+      "FATAL"
+    ],
     "wake_prompt": "CEO-WAKEKEEP: Der Agenten-Watchdog meldet ein Signal. Lies token/result/keepalive.status.json und agents/timers/watchdog.log (letzten 30 Zeilen), pruefe on-chain den Provider DNEBNjtWfCK52TekKi17yxTnJDiJYqcric25p7ksm9bo (Saldo + neue Sigs auf beiden RPCs), auditier ggf. den neuen main-Tipp gegen die Legal-/P5-Invarianten, handle Deposit-Cycles nach Session-Gates (Slippage 1000 bps, CU 500k, Preflight, Dual-RPC-Finality, Ticket-#6-Halt >=30 %). Poste einen Status auf Issue #5. Stop-Bedingung: nur wenn agents/timers/.stop-all oder token/result/keepalive.STOP existiert.",
     "cooldown_s": 1800
   },
@@ -19,8 +25,51 @@
     "stopmarker": "token/result/example-agent.STOP",
     "statusfile": "token/result/example-agent.status.json",
     "logfile": "token/result/example-agent.nohup.log",
-    "wake_reasons": ["SIGNAL-NAME"],
+    "wake_reasons": [
+      "SIGNAL-NAME"
+    ],
     "wake_prompt": "<Agent-spezifischer Wake-Prompt>",
     "cooldown_s": 3600
+  },
+  "cio-loop": {
+    "_note": "CIO-Auto-Trade-Loop (CEO-Order 13.11: ueberwache die anderen, die traden). Liveness = Lock-PID (Unique-Guard im Loop selbst). Kein Wake: der Designer-Supervisor + ceo-trader melden Events.",
+    "enabled": true,
+    "cmd": "zsh agents/shared/cio-autotrade.zsh",
+    "workdir": "/Users/haqmal/Desktop/Projekte/SuperIntelNex",
+    "pidfile": "token/result/cio-loop.pid",
+    "stopmarker": "agents/timers/.stop-cio-loop",
+    "statusfile": "token/result/keepalive.status.json",
+    "logfile": "agents/timers/.restart-cio-loop.log",
+    "wake_reasons": [],
+    "wake_prompt": "",
+    "cooldown_s": 3600,
+    "_liveness_override": "lock-pid:/private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/.cio-autotrade.lockd/pid"
+  },
+  "fable-loop": {
+    "_note": "Fable-Trade-Loop (Trigger MIN_BAL 5,5e6 lp). Eigener Watchdog fable-loop-watchdog.sh laeuft parallel (doppelte Sicherheit). Kein Wake.",
+    "enabled": true,
+    "cmd": "zsh agents/trade-loop/fable-trade-loop.sh",
+    "workdir": "/Users/haqmal/Desktop/Projekte/SuperIntelNex",
+    "pidfile": "agents/trade-loop/trade-loop.pid",
+    "stopmarker": "agents/timers/.stop-fable-loop",
+    "statusfile": "token/result/keepalive.status.json",
+    "logfile": "agents/timers/.restart-fable-loop.log",
+    "wake_reasons": [],
+    "wake_prompt": "",
+    "cooldown_s": 3600
+  },
+  "designer-supervisor": {
+    "_note": "Designer-Supervisor: read-only-Kollisions-Beobachter beider Trade-Loops (DEPOSIT/CONFLICT/FLAP/GAP-Alerts). Kein Wake.",
+    "enabled": true,
+    "cmd": "zsh agents/shared/designer-trade-supervisor.zsh",
+    "workdir": "/Users/haqmal/Desktop/Projekte/SuperIntelNex",
+    "pidfile": "placeholder",
+    "stopmarker": "agents/timers/.stop-designer-supervisor",
+    "statusfile": "token/result/keepalive.status.json",
+    "logfile": "agents/timers/.restart-designer-supervisor.log",
+    "wake_reasons": [],
+    "wake_prompt": "",
+    "cooldown_s": 3600,
+    "_liveness_override": "/private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/designer-supervisor.pid"
   }
 }
