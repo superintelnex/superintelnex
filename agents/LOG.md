@@ -2577,6 +2577,31 @@ Keypair uebergibt.
   Hold >=30 % weit überschritten. Provider ≈8,84M lp < CIO-Schwelle 32M → Fable übernimmt weiter,
   CIO 67648 wartet korrekt (Single-Writer gewahrt). Loop läuft bis Operator "stop".
 
+- 2026-11-13 ~19:55 UTC · agent-1 (Fable) · Nacht-Research-Setup (Order:
+  "die ganze nacht an diesen coin forschen und weiter mit anderen
+  agenten arbeiten"):
+  1) `agents/research/pool-state.ts` fertig + getestet (beide RPCs):
+     Liquidity 20.031.261.577.933, tickCurrent 211.830, TickArrays
+     [178800,259200], 1-SOL-Quote 529.8535e15 raw-SIN (String-Fix:
+     53-Bit-Number-Limit). Local-Sell-Quote (SIN→SOL) = SDK-Direktions-
+     Bug (tickNext<=tick, amount-unabhängig) → Approx-Feld +
+     RPC-Sim-Pfad für exakte Quotes.
+  2) `fable-research-loop.sh` (5-min-Takt, DexScreener+Jupiter+CLMM+
+     Provider+Team-Kanal) in Watchdog-Registry `research-loop`
+     aufgenommen (PID-Datei + Stop-Marker `.stop-research-loop`),
+     PID 90888 live, `price-series.csv` + `RESEARCH-SIN.log` laufen.
+  3) `fable-trade-loop.sh`: CIO_MIN_BAL 32e6 → 12e6 (Designer-Bug-
+     Note 16:10Z + CEO-Entscheid), Fable-Loop-Restart PID 88347 →
+     92133 (Registry-Watchdog). Keine Doppel-Spends mehr: CIO feuert
+     ab 11,005e6 (ATA-geheilt), Fable räumt ab 12e6.
+  4) Inbox-Notizen: cio (Nacht-Abstimmung CIO_MIN_BAL + Research-
+     Loop), designer (umgesetzte 16:10Z-Notes + Nacht-Status).
+     Outbox: `2026-11-13T19-55Z-nacht-research-aktives-system.md` +
+     Research-Report `RESEARCH-SIN-report-2026-11-13-19-50Z.md`.
+  5) Trade-Gates unverändert: Slippage 1000 bps, CU 500k,
+     Preflight-Sim, Dual-RPC-Finality, Ticket #6 Hold ≥30 % (aktuell
+     ~97,6 % intakt = 2,550 Trd SIN).
+
 ## 2026-11-13 20:08 UTC — Nacht-Regime: Designer-Anomalie geschlossen + Research-Digest #1
 Designer-Bericht 16:10Z (doppeltes Feuer-Fenster + lock-pid:-Spam) vollständig beantwortet
 (agents/inbox/designer/2026-11-13T20-08Z-fable-antwort-anomalie-beide-geschlossen.md):
@@ -2587,6 +2612,7 @@ fix gecommited in 6215807 (Registry-Override = bloßer Pfad), Spam-Ende belegt: 
 ~0,0057 SOL noch nicht da; bei Ankunf ≈12,3e6 → CIO übernimmt). Nacht-Digest #1 für
 Operator: agents/inbox/operator/2026-11-13T20-08Z-fable-night-research-digest.md
 (Pool ~30 Tx/h 0 Fehler, Gecko 19:43Z h24 −6,4 %/h6 +4,8 %, alle 7 Loop-PIDs verifiziert).
+
 ## 2026-11-13 19:52 UTC — Nacht-Digest #2: Hardware-Warnung + Team-Research-Schiene
 **Operator-Aktion:** Mac auf Akku (69 %, 2:28 verbleibend, kein Ladekabel) + Clamshell-
 Sleep 18:33-19:47 UTC hat alle Loops ~75 min eingefroren. `caffeinate -s -i -d` (PID 93637)
@@ -2602,6 +2628,16 @@ ATA wsol=0), Keepalive 72838 (19:48:32Z DEPOSIT-DETECTED = eigenes SELL, externe
 ~0,0057-SOL-Deposit NOCH NICHT da, Provider 6,515,923 lp). **Beleg:**
 agents/inbox/operator/2026-11-13T19-52Z-fable-night-research-digest-2.md
 
+- 2026-11-13 ~19:56 UTC · fable · Research-Loop v2: `pool_state()` in
+  `agents/research/fable-research-loop.sh` von Raw-Offset-Dekodierung
+  (140/144/152/160 — landeten in den CLMM-Pubkey-Feldern, lieferten
+  Mueckwerte wie tick=1669000146) auf `agents/research/pool-state.ts`
+  (Deno + @raydium-sdk-v2-Layouts, ~0.7 s, read-only) umgestellt.
+  Beleg 19:55:06Z: tick=211830, liqRaw=20031261577933,
+  quote 1SOL→529851390072120666 raw-SIN, 10Mio-SIN→18873 lp (approx).
+  Alt-PID 95520 geordnet beendet, Registry revivt PID 97509 (v2-Code).
+  Syntax `zsh -n` OK. CIO-Bug (designer 16:10Z) bereits 6215807 fix;
+  CIO_MIN_BAL=12e6 laeuft (PID 92133), Spams-Ende in watchdog.log belegt.
 ## 2026-11-13 ~20:05 UTC — Git-Reconciliation (fable/agent-1): 2 Commits auf origin/main-Basis neu
 Lokale main (1a3b206 + 63fc2b2) und origin/main hatten **keinen Merge-Base** (Team hatte
 lokale Historie neu aufgesetzt, remote +406 Commits voraus). Kein Force-Push (Kanon).
