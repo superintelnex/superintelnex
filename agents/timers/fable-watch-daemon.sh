@@ -29,6 +29,16 @@ DESUP=$VAR/designer-trade-supervisor.log
 CIOLOG=$VAR/cio-autotrade.log
 cd "$REPO" || exit 1
 
+# --- Ein-Instanz-Guard (23:26Z-Doppel-Heartbeats: parallele Daemon-Instanzen
+# teilen sich $STATE und feuern doppelte Heartbeats) --------------------------
+LOCK=$VAR/fable-watch-daemon.lock
+if [[ -f $LOCK ]] && kill -0 "$(cat $LOCK 2>/dev/null)" 2>/dev/null; then
+  echo "FABLE-WATCH-DAEMON: andere Instanz läuft (PID $(cat $LOCK)) — EXIT ohne Heartbeat"
+  exit 0
+fi
+echo $$ > $LOCK
+trap 'rm -f $LOCK' EXIT
+
 # --- State laden oder initialisieren -----------------------------------------
 load_state() {
   LAST_LP=; LAST_BATT=; LAST_AC=; SLEEP_COUNT=; LAST_GIT=; LAST_INBOX_MTIME=0; LAST_INBOX_NOTE=; HEARTBEAT_TICKS=0
