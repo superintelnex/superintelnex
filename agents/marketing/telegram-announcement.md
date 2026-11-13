@@ -13,8 +13,8 @@
 Gemeinde, hier der ehrliche Stand:
 
 **Markt (Read-Only-Snapshot, 24h)**
-• Buys / Sells: 243 / 243 — ausbalancierter Flow
-• Volumen 24h: ≈ $106,7
+• Buys / Sells: 245 / 245 — ausbalancierter Flow
+• Volumen 24h: ≈ $107,2
 • Pool-Liquidity: ≈ $69,1 (Raydium CLMM, SIN/wSOL) · **100 % LP locked** (public-API-Check, GeckoTerminal)
 • Preisänderung 24h: +0,78 % (DexScreener; GeckoTerminal meldet −6,41 % — Abweichung zwischen den Quellen transparent notiert)
 
