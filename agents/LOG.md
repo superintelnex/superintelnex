@@ -2727,3 +2727,20 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
 +    11.005–32e6 lp = **20,995e6 lp (breit, dauerhaft)** = reales Doppel-Spend-Risiko.
 +  Fable-Guard `CIO_MIN_BAL=32,000,000 lp` (Fable-Code Zeile 100) bestätigt. Note an
 +  inbox/fable + inbox/agent-1 synchronisiert. Keine On-Chain-Tx (Regel 6).
++
++- 2026-11-13 ~16:36 UTC (17:36 +01) · designer · **Live-Trade-Status + Anomalien-Report
++  (erstes echtes Trade-Event der Session; bisher nur Deposit-Wartestand):** Deposit
++  Provider 5,0M → ~8,8M lp (16:25–16:36Z) → Fable-Loop 10 Buy+Sell-Back-Zyklen
++  (16:28:09–16:36:08Z, ~51 s/Zyklus, TRADES=10, SIN-Position intakt); CIO-Loop korrekt
++  im Standby (8,8M < CIO-Trigger 11,005M → `WAART AUF DEPOSIT`, 0 CIO-Trades).
++  **Beurteilung: kein echtes Doppel-Spend** (Einzel-Writer = Fable-Solo, Konkordat-Erwartung).
++  Supervisor-`ALERT CONFLICT` ×14 = konservative Über-Alarmierung (Alert-Logik saldo-unabhängig
++  „Fable-Trade + CIO-Prozess lebend"); ESCALATION-Schwelle: bal in 11,005e6–32e6 (breit)
++  oder 31,317e6–32e6 (schmal) → echtes CONFLICT-Fenster → Evidenz-Report.
++  CIO-ATA-Flapping dokumentiert (wsol=0/1 pro Poll alternierend, Fable-Zyklen schließen
++  WSOL-ATA je Sell-Back; breites Fenster flattert dadurch zwischen 11,005e6 und 31,317e6).
++  Fable-Snapshot „keepalive TOT" = Falschnegativ: Fable-Prüfer (Zeile 188)
++  `pgrep -f 'python.*keepalive-trader.py'` case-sensitive, Real-Prozess 69055 läuft als
++  `MacOS/Python …` (großes P) → 0 Treffer; 69055 läuft seit 15:59Z (am längsten im Stack).
++  Note an inbox/fable + inbox/agent-1: `2026-11-13T16-36Z-designer-live-trading-status-anomalien.md`.
++  Keine Intervention, kein Fable-/CIO-/CEO-Code geändert, keine On-Chain-Tx (Regel 6).
