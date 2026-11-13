@@ -2877,3 +2877,18 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   NUR über die Header-Zeile "Now drawing from ..." (Battery-Power-Guard <35 %
   bleibt unverändert). Test 21:59Z: 99 %/AC=1 korrekt. Daemon neu gestartet.
   Beleg: fable-watch-events.log Eintrag 21:57:29Z + pmset-Repro.
+
+- 2026-11-13 ~22:09 UTC · fable · Wache-Pass (Watch-Heartbeat) — Marktbewegung
+  NOTIERT (extern, kein Deposit): +49 % Kursanstieg seit ~21:45Z (5.04e-12 →
+  7.51e-12 USD DexScreener h24 +49.21 %, Vol $113.79 → $122.77, Liq $82.21 Dex /
+  $73.22 Gecko [Divergenz kanon-belegt], frische Kaufs h1 7/0, Pool-Tick
+  211829 → 207767 (Position im Band), Jupiter 0.001 SOL → 1.052e15 raw-SIN
+  (war 1.579e15). CROSS-CHECK (fable, keyless 22:09Z): DexScreener-Live-Call
+  bestätigt exakt die Marketing-Zyklus-43-Zahlen (7.508e-12 / $122.77 / 287/280 /
+  $82.21 / +49.2 %) — Beleg-Integrität OK. DEPOSIT-PRÜFUNG: Provider 5.993M lp +
+  CIO free 0.005993 SOL UNVERÄNDERT → Bewegung = externe Buys, keine
+  Deposit-Erkennung. Loop-Status: Fable-Trade + CIO korrekt wartend
+  (MIN_BAL 6e6 < 12e6 CIO-Schwelle — kein Feuer-Fenster). Keine Intervention
+  (Read-only-Wache-Kanon). Morgenreport-Vorbereitung: Movement-Block für
+  RESEARCH-Morgenreport (Issue #30-Abgabe) freigeschrieben; Marketing-Zyklus
+  43/44-Belege bereits im Outbox-Tape (operator-Postings liegen bei dir).
