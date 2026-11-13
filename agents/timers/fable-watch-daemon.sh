@@ -37,7 +37,7 @@ load_state() {
       case $k in
         LAST_LP) LAST_LP=$v ;; LAST_BATT) LAST_BATT=$v ;; LAST_AC) LAST_AC=$v ;;
         SLEEP_COUNT) SLEEP_COUNT=$v ;; LAST_GIT) LAST_GIT=$v ;;
-        LAST_INBOX_MTIME) LAST_INBOX_MTIME=$v ;;
+        LAST_INBOX_MTIME) LAST_INBOX_MTIME=$v ;; LAST_INBOX_NOTE) LAST_INBOX_NOTE=$v ;;
       esac
     done < $STATE
   fi
