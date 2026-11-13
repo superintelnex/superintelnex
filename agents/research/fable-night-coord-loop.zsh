@@ -92,6 +92,20 @@ event() { # $1=typ $2=Belegtext
   } > "$tape"
   log "EVENT[$1]: Tape $tape"
   add_and_commit "Event $1"
+  # CRITICAL → frische Agent-Instanz aufwecken (headless opencode, archiviert = taucht nicht in Session-Liste auf)
+  #   kritische Typen: cio-regime / deposit-frühwarnung / akku-warnung / loop-tot:*
+  if [[ $1 == cio-regime || $1 == deposit-frühwarnung || $1 == akku-warnung || $1 == loop-tot:* ]]; then
+    wake_agent "$1" "$tape"
+  fi
+}
+
+wake_agent() { # $1=typ $2=tape
+  local brief
+  brief="Kritisches Event aus der Fable-Night-Coord-Loop ($1). Lies das Event-Tape: ${2}. Prüfe den aktuellen Zustand (Deposit-Balance via /tmp/bal-check.ts, Akku via pmset, Team-Loops via pgrep, git origin/main) und triff die nächste Maßnahme im Kanon (path-scoped ff-only Commits, keine Secrets, fremde Dirty-Files unangetastet). Event-Tape + Log: agents/research/FABLE-NIGHT-COORD.log."
+  log "WAKE-AGENT: spawn frische Instanz für Event '$1'"
+  nohup opencode run --archived --auto "$brief" \
+    >> $TDIR/fable-wake-agent.log 2>&1 &
+  log "WAKE-AGENT: PID $! (out: $TDIR/fable-wake-agent.log)"
 }
 
 rotate_log() {
