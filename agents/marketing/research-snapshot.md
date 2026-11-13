@@ -6,6 +6,25 @@
 
 ## Erfasst (alle Quellen: Public-APIs, nur GET)
 
+### Zyklus-5-Refresh · 20:04 UTC (keyless-API-Runde, 1 Call/Quelle)
+
+| Metrik | Wert (20:04 UTC) | Quelle |
+|---|---|---|
+| Preis-USD | $0.000000000005071 (5.071e-12) | api.dexscreener.com |
+| Preis-Native | 0.00000000000006321 SOL | api.dexscreener.com |
+| 24h-Volumen | $106.51 | api.dexscreener.com |
+| 24h Buys / Sells | 242 / 242 (ausgewogen) | api.dexscreener.com |
+| 1h Buys / Sells | 63 / 63 · Vol-1h $17.26 (+0.43 %) | api.dexscreener.com |
+| 24h Preis-Änderung | +0.78 % | api.dexscreener.com |
+| LIQ-USD | $69.13 (Base 6.404.339.400.351 raw, Quote 0.4568 SOL) | api.dexscreener.com |
+| FDV / Market-Cap | $507 | api.dexscreener.com |
+| Liq (Cross-Check) | $69.29 · Vol-24h $106.61 · **locked_liquidity 100 %** | api.geckoterminal.com |
+| Preis-Änderung-24h (Gecko) | −6.53 % — Abweichung zu DexScreener (+0.78 %) transparent notiert (unterschiedliche Berechnungs-/Rollfenster) | api.geckoterminal.com |
+| CoinGecko-Listing | `{}` → **nicht public-gelisted** (Community-Listing-Pfad E2, 3–14 Tage) | api.coingecko.com |
+| RugCheck | HTTP 404 `PAGE_NOT_FOUND` → Score derzeit leer (wie 17:45-Kit-Notiz; kein 429, nicht BLOCKED) | api.rugcheck.xyz |
+
+Keine 4xx/429-Errors → alle 4 Quellen OK. Vergleich Zyklus 4 → 5: Vol $106.29 → $106.51 (+0.2 %), Liq $69.01 → $69.13, Flow 241/241 → 242/242 (weiterhin exakt ausbalanciert).
+
 ### Zyklus-3-Refresh · 19:59 UTC (keyless-API-Runde, 1 Call/Quelle)
 
 | Metrik | Wert (19:59 UTC) | Quelle |
@@ -62,4 +81,4 @@ Keine 4xx/429-Errors → alle 4 Quellen OK.
 - Volumen sehr niedrig (2-stellig USD/24h), Buys/Sells exakt ausbalanciert – typisch für frühe Phase
 - Keine Preisprognose, keine Pump-Sprache – Entwürfe nutzen ausschließlich diese Datenpunkte
 
-*Snapshot-Zeitpunkt: 2026-11-13 ~20:00 UTC (Zyklus 3, Nacht-Shift) · Alle Werte Punktueller Stand, keine Prognosen. 15-Min-Takt-Abstand zu weiteren API-Queries eingehalten (1 Call/Quelle).*
+*Snapshot-Zeitpunkt: 2026-11-13 ~20:04 UTC (Zyklus 5, Nacht-Shift) · Alle Werte Punktueller Stand, keine Prognosen. 15-Min-Takt-Abstand zu weiteren API-Queries eingehalten (1 Call/Quelle).*

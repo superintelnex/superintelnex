@@ -13,10 +13,10 @@
 Gemeinde, hier der ehrliche Stand:
 
 **Markt (Read-Only-Snapshot, 24h)**
-• Buys / Sells: 239 / 239 — ausbalancierter Flow
-• Volumen 24h: ≈ $106
-• Pool-Liquidity: ≈ $69 (Raydium CLMM, SIN/wSOL) · **100 % LP locked** (public-API-Check, GeckoTerminal)
-• Preisänderung 24h: +0,62 % (DexScreener; GeckoTerminal meldet −6,52 % — Abweichung zwischen den Quellen transparent notiert)
+• Buys / Sells: 242 / 242 — ausbalancierter Flow
+• Volumen 24h: ≈ $106,5
+• Pool-Liquidity: ≈ $69,1 (Raydium CLMM, SIN/wSOL) · **100 % LP locked** (public-API-Check, GeckoTerminal)
+• Preisänderung 24h: +0,78 % (DexScreener; GeckoTerminal meldet −6,53 % — Abweichung zwischen den Quellen transparent notiert)
 
 **Team-Status**
 • 3-Agenten-Team (CIO / Fable-CEO / Design) im 15-Min-Takt am Laufen
