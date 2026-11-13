@@ -1,23 +1,23 @@
 #!/bin/zsh
-# Fable Night-Coord-Loop v2 · POLL=15s (10–20s-Takt, Operator-Feedback 20:57Z) · autonom (kein Chat-Trigger)
+# Fable Night-Coord-Loop v2 · POLL=15s (10–20s-Takt, Operator-Feedback 20:57Z) · autonom
 # Stop-Flaggen: agents/timers/.stop-all | agents/timers/.stop-fable-night
-# Log: agents/research/FABLE-NIGHT-COORD.log (append-only, im Repo)
-# Event-Tapes: agents/outbox/operator/<ts>-fable-night-event-<typ>.md
-# Kanon: path-scoped Commits (nur eigene Files), ff-only, NIEMALS force-push,
-#       keine Secrets in Log/Tapes/Commits, fremde Dirty-Files unangetastet.
+# Log: agents/research/FABLE-NIGHT-COORD.log (rotation: >5000 Zeilen → TDIR-Archiv, mein Lane-File)
+# Event-Tapes: agents/outbox/operator/<ts>-fable-night-event-<typ>.md (nur bei Zustandswechsel + Hysteresen)
+# Kanon: path-scoped Commits (nur eigene Files), ff-only, NIEMALS force-push, keine Secrets.
+#       Git-fetch nur bei Commits (Events/Stunden-Checkpoint), NICHT im 15s-Zyklus (Rate-Limit-Schonung).
 setopt null_glob
 cd /Users/haqmal/Desktop/Projekte/SuperIntelNex || exit 1
 POLL=15
 LOG=agents/research/FABLE-NIGHT-COORD.log
 TDIR=/private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode
-MY_TAIL=$TDIR/fable-my-log-tail.txt      # meine LOG-Blöcke seit letztem origin-Push
+MY_TAIL=$TDIR/fable-my-log-tail.txt
 DENO=/Users/haqmal/.deno/bin/deno
 BAL=/tmp/bal-check.ts
 GECKO=$TDIR/gecko-checkpoint.log
 DEPOSIT_WARN=8000000
 CIO_REGIME=12000000
 BATT_WARN=35
-# path-scoped eigene Dateien (glob null_glob)
+LOG_MAX=5000
 MY_FILES=(
   "agents/research/fable-night-coord-loop.zsh"
   "agents/research/fable-night-coord.pid"
@@ -29,7 +29,7 @@ echo $$ > agents/research/fable-night-coord.pid
 
 log()  { local m="$(date -u +%Y-%m-%dT%H:%M:%SZ) $*"; echo "$m" >> $LOG; echo "$m" >> $MY_TAIL; }
 
-pre_sync() { # ff-only-Pull; bei un-pusheten eigenen Commits → Recovery
+pre_sync() { # ff-only; bei un-pusheten eigenen Commits → Recovery
   git fetch -q origin 2>/dev/null
   if (( $(git rev-list origin/main..main --count 2>/dev/null) > 0 )); then
     push_fail_recovery
@@ -37,24 +37,24 @@ pre_sync() { # ff-only-Pull; bei un-pusheten eigenen Commits → Recovery
   fi
   if (( $(git rev-list main..origin/main --count 2>/dev/null) > 0 )); then
     if ! git pull --ff-only -q origin main 2>/dev/null; then
-      log "PRE-SYNC: ff-only-Pull blockiert (fremde dirty Files?) — Commit dieser Zyklus verzögert, Retry nächste Runde (kein force)"
+      log "PRE-SYNC: ff-only-Pull blockiert (fremde dirty Files?) — Commit verzögert, Retry (kein force)"
       return 1
     fi
   fi
   return 0
 }
 
-push_fail_recovery() { # Push-Race: HEAD logisch zurück, fremde Worktree-Files bleiben unangetastet,
-                      # LOG aus origin + meine eigenen Blöcke neu zusammensetzen, path-scoped Re-Commit
+push_fail_recovery() { # Push-Race: fremde Worktree-Files unangetastet, LOG aus origin + meine Blöcke
   git fetch -q origin 2>/dev/null || return 1
-  local om=$(git rev-parse origin/main 2>/dev/null) || return 1
+  local om
+  om=$(git rev-parse origin/main 2>/dev/null) || return 1
   git reset --mixed -q $om 2>/dev/null || { log "RECOVERY-FAIL: mixed-reset"; return 1; }
   git checkout -q origin/main -- agents/LOG.md 2>/dev/null
   [[ -f $MY_TAIL ]] && cat $MY_TAIL >> agents/LOG.md
   git add ${MY_FILES} 2>/dev/null
   git commit -q -m "fable-night-coord: Recovery-Commit (Push-Race ff-only, $(date -u +%H:%M:%SZ))" 2>/dev/null || { log "RECOVERY-FAIL: commit"; return 1; }
   if ! git push -q origin main 2>/dev/null; then
-    log "RECOVERY-PUSH-FAIL: origin lieferte weiter, Retry nächsten Zyklus (kein force)"
+    log "RECOVERY-PUSH-FAIL: origin lieferte weiter, Retry (kein force)"
     return 1
   fi
   : > $MY_TAIL
@@ -62,7 +62,7 @@ push_fail_recovery() { # Push-Race: HEAD logisch zurück, fremde Worktree-Files 
   return 0
 }
 
-add_and_commit() { # $1=Meldung; pre-synced Aufruf erwartet (außer Recovery)
+add_and_commit() { # $1=Meldung
   pre_sync || return 1
   git add ${MY_FILES} 2>/dev/null
   if git diff --cached --quiet 2>/dev/null; then
@@ -78,7 +78,7 @@ add_and_commit() { # $1=Meldung; pre-synced Aufruf erwartet (außer Recovery)
   fi
 }
 
-event() { # $1=typ $2=Belegtext (eigenes Tape → Outbox, path-scoped Commit)
+event() { # $1=typ $2=Belegtext
   local ts tape
   ts=$(date -u +%Y-%m-%dT%H-%MZ)
   tape="agents/outbox/operator/${ts}-fable-night-event-$1.md"
@@ -88,21 +88,35 @@ event() { # $1=typ $2=Belegtext (eigenes Tape → Outbox, path-scoped Commit)
     echo "$2"
     echo
     echo "## Letzter Log-Kontext"
-    tail -14 $LOG
+    tail -20 $LOG
   } > "$tape"
   log "EVENT[$1]: Tape $tape"
   add_and_commit "Event $1"
 }
 
+rotate_log() {
+  local lines
+  lines=$(wc -l < $LOG 2>/dev/null || echo 0)
+  if (( lines > LOG_MAX )); then
+    mv $LOG $TDIR/fable-night-coord-archive-$(date -u +%Y%m%dT%H%MZ).log
+    : > $LOG
+    log "LOG-ROTATION: Archiv $TDIR/fable-night-coord-archive-* (mein Lane-File, nicht append-only-Team-LOG)"
+  fi
+}
+
+# Hysteresen-Zustände
 last_lp=""
-batt_warned=""
-dead_seen=""
-log "LOOP-START v1 (POLL=600s, PID=$$)"
-add_and_commit "Loop-Start (autonomer 10-Min-Takt, kein Chat-Trigger)"
+st_dep=0      # 0 = nicht gewarnt; 1 = Deposit-Frühwarnung aktiv (Clear erst unter 7.2e6 = 0.9*WARN)
+st_cio=0      # 1-shot: CIO-Regime erkannt
+st_batt=0     # 0 = Akku-OK-Status; 1 = gewarnt
+batt_good_strikes=0
+
+log "LOOP-START v2 (POLL=15s, PID=$$)"
+add_and_commit "Loop-Start v2 (15s-Takt)"
 
 while true; do
   if [[ -f agents/timers/.stop-all || -f agents/timers/.stop-fable-night ]]; then
-    log "STOP-FLAG erkannt → Loop beende sauber (Flagge NICHT entfernt, Operator-Entscheidung)"
+    log "STOP-FLAG erkannt → Loop beende sauber (Flagge NICHT entfernt)"
     rm -f agents/research/fable-night-coord.pid
     add_and_commit "Loop-End (Stop-Flag)"
     break
@@ -114,13 +128,14 @@ while true; do
   batt=""
   dead_now=""
 
+  # Zyklus-Block: billige Lokale (kein git-fetch im 15s-Zyklus)
   {
     echo "=== CYCLE $n · $ts ==="
     if [[ -f $BAL ]]; then
       lp=$($DENO run --allow-read --allow-net $BAL 2>/dev/null | grep '^DNEBNjtW' | sed 's/.*: *\([0-9]*\) lp.*/\1/' | head -1)
       echo "Provider-LP: ${lp:-FALL (deno/RPC)}"
     else
-      echo "Provider-LP: FALL (bal-check.ts fehlt, Reboot?)"
+      echo "Provider-LP: FALL (bal-check.ts fehlt?)"
     fi
     batt=$(pmset -g batt 2>/dev/null | sed -n '2p')
     echo "Battery: ${batt:-unbekannt}"
@@ -129,31 +144,45 @@ while true; do
       if [[ -n $p ]]; then echo "  ${pat%%.*}: LIVE($p)"; else echo "  ${pat%%.*}: TOT"; dead_now="$dead_now ${pat}"; fi
     done
     [[ -f $GECKO ]] && echo "Gecko-letzte: $(tail -1 $GECKO)"
-    echo "Git: origin/main $(git rev-list main..origin/main --count 2>/dev/null) Commits vor main (ff-erhältlich)"
     echo
   } >> $LOG
 
-  # Events (nur bei Zustandswechsel)
+  # --- Events (nur Zustandswechsel, mit Hysteresen gegen Flapping) ---
   if [[ -n $lp ]]; then
-    if (( lp >= CIO_REGIME )) && (( ${last_lp:-0} < CIO_REGIME )); then
+    # Deposit-Frühwarnung: Feuer bei Übergang nach oben; Clear erst unter 7.2e6
+    if (( lp >= DEPOSIT_WARN )) && (( st_dep == 0 )); then
+      st_dep=1
+      event "deposit-frühwarnung" "Provider $lp lp ≥ $DEPOSIT_WARN → Deposit-Ankunft wahrscheinlich (CIO-Regime-Ziel $CIO_REGIME lp)."
+    elif (( lp < DEPOSIT_WARN * 0.9 )) && (( st_dep == 1 )); then
+      st_dep=0; last_lp=""
+    fi
+    # CIO-Regime: 1-shot
+    if (( lp >= CIO_REGIME )) && (( st_cio == 0 )); then
+      st_cio=1
       event "cio-regime" "Provider $lp lp ≥ $CIO_REGIME → CIO-Regime: CIO übernimmt ab 12e6, Fable-Trade-Loop räumt die Bühne (Single-Writer-Kanon)."
-    elif (( lp >= DEPOSIT_WARN )) && (( ${last_lp:-0} < DEPOSIT_WARN )); then
-      event "deposit-frühwarnung" "Provider $lp lp ≥ $DEPOSIT_WARN → Deposit-Ankunft wahrscheinlich (Ziel-Regime $CIO_REGIME lp)."
     fi
     last_lp=$lp
   fi
-  local pct
+  # Akku: Warnung = (pct < 35) UND NICHT (AC-attached + aktiv ladend)
   pct=$(echo "$batt" | grep -o '[0-9]*%' | head -1 | grep -o '[0-9]*')
-  if [[ $batt == *"not charging"* || ( -n $pct && $pct -lt $BATT_WARN ) ]] && [[ $batt_warned != "$batt" ]]; then
-    event "akku-warnung" "pmset: $batt — nicht ladeend oder unter ${BATT_WARN}%, Hardware-Blocker-Risiko (Freeze/Reboot) prüfen."
-    batt_warned=$batt
-  elif [[ $batt != *"not charging"* && -n $batt_warned ]]; then
-    batt_warned=""
+  charging_now=0
+  [[ $batt == *"AC attached; charging"* ]] && charging_now=1
+  if [[ -n $pct && $pct -lt $BATT_WARN && $charging_now -eq 0 ]]; then
+    if (( st_batt == 0 )); then
+      st_batt=1
+      event "akku-warnung" "pmset: $batt — unter ${BATT_WARN}% und nicht aktiv ladend → Hardware-Risiko (Freeze/Reboot) prüfen."
+    fi
+    batt_good_strikes=0
+  else
+    if (( st_batt == 1 )); then
+      batt_good_strikes=$((batt_good_strikes+1))
+      if (( batt_good_strikes >= 3 )); then st_batt=0; batt_good_strikes=0; fi
+    fi
   fi
-  # Zustandwechsel: erst bei neuer Toter-Entität feuern; wiederlebende aus Sichteliste streichen
+  # Team-Loop-tot: erst bei neuer Entität; wiederlebende aus Sichteliste streichen
   for d in ${=dead_now}; do
     if [[ " $dead_seen " != *" $d "* ]]; then
-      event "loop-tot:$d" "Team-Loop '${d%%.*}' nicht mehr erreichbar (pgrep-Muster leer). Watchdog-Check: agents/timers/watchdog.log."
+      event "loop-tot:$d" "Team-Loop '${d%%.*}' nicht mehr erreichbar (pgrep-Muster leer). Watchdog: agents/timers/watchdog.log."
       dead_seen="$dead_seen $d"
     fi
   done
@@ -161,10 +190,11 @@ while true; do
     [[ " $dead_now " == *" $d "* ]] || dead_seen="${dead_seen// $d/}"
   done
 
-  # Stündlicher Checkpoint-Commit (eigene Dateien, path-scoped)
-  if (( n % 6 == 0 )); then
+  # Stunden-Checkpoint-Commit (git-fetch erst hier, 240 Zyklen × 15s = 1h)
+  if (( n % 240 == 0 )); then
     add_and_commit "Zyklus-Checkpoint ($n)"
   fi
+  rotate_log
   sleep $POLL
 done
 log "LOOP-END $(date -u)"
