@@ -121,10 +121,10 @@
 
   .market-cta{color:var(--ink);background:transparent;border-color:#ffffff99}
   .market-cta:hover{background:#ffffff14;border-color:var(--ink)}
-  .market-links{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;max-width:510px;margin:9px 0 0;font:11px/1.35 var(--mono);color:var(--muted)}
+  .market-links{display:grid;gap:3px;max-width:510px;margin:9px 0 0;font:11px/1.35 var(--mono);color:var(--muted)}
+  .market-row{display:flex;flex-wrap:wrap;align-items:center;gap:0 12px}
   .market-links a{display:inline-flex;align-items:center;min-height:24px;color:var(--ink);text-underline-offset:.22em;text-decoration-color:#ffffff65}
   .market-links a:hover{text-decoration-color:currentColor}
-  .market-links .market-note{flex-basis:100%}
   .mobile-markets,.mobile-market-note{display:none}
   .sin-providers .pill-arrow svg{width:12px;height:12px}
   .sin-platforms{margin-top:clamp(14px,2.5vh,26px);font:13px/1.4 var(--mono);color:var(--ink)}
@@ -284,14 +284,20 @@
           <button class="mobile-markets" type="button" data-go="2" data-de="Märkte und Charts">Markets and charts</button>
         </div>
         <div class="market-links" role="group" aria-label="SIN markets and charts" data-de-label="SIN-Handel und Charts">
-          <span data-de="Weitere Märkte:">Other markets:</span>
-          <a href="https://raydium.io/swap/?inputMint=sol&amp;outputMint=A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z">Raydium</a>
-          <span aria-hidden="true">·</span>
-          <span data-de="Charts:">Charts:</span>
-          <a href="https://dexscreener.com/solana/4erqahdh1yx9fzfpstjrau8sgvpkerahncggqnsevdem">DEX Screener</a>
-          <a href="https://www.geckoterminal.com/solana/pools/4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM">GeckoTerminal</a>
-          <a href="https://dex.coinmarketcap.com/token/solana/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z/">CoinMarketCap DEX</a>
-          <span class="market-note" data-de="Solana · Geringe Liquidität im SIN/SOL-Pool">Solana · Low liquidity in the SIN/SOL pool</span>
+          <div class="market-row">
+            <span data-de="Weitere Märkte:">Other markets:</span>
+            <a href="https://raydium.io/swap/?inputMint=sol&amp;outputMint=A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z">Raydium</a>
+            <a href="https://web3.okx.com/token/solana/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z">OKX Wallet</a>
+            <a href="https://web3.bitget.com/en/swap/sol/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z">Bitget Wallet</a>
+          </div>
+          <div class="market-row">
+            <span data-de="Charts:">Charts:</span>
+            <a href="https://dexscreener.com/solana/4erqahdh1yx9fzfpstjrau8sgvpkerahncggqnsevdem">DEX Screener</a>
+            <a href="https://www.geckoterminal.com/solana/pools/4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM">GeckoTerminal</a>
+            <a href="https://dex.coinmarketcap.com/token/solana/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z/">CoinMarketCap DEX</a>
+            <a href="https://www.dexview.com/solana/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z">DexView</a>
+          </div>
+          <span data-de="Solana · Geringe Liquidität im SIN/SOL-Pool">Solana · Low liquidity in the SIN/SOL pool</span>
         </div>
       </section>
       <section class="scene" id="vision" aria-labelledby="title-2" hidden>
@@ -319,12 +325,15 @@
           <ul class="sin-providers">
             <li><a href="https://raydium.io/swap/?inputMint=sol&amp;outputMint=A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span class="pill-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M10 4H6M10 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Raydium CLMM</a><small data-de="Handelsplatz · SIN/SOL">Trading venue · SIN/SOL</small></li>
             <li><a href="https://jup.ag/tokens/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span class="pill-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M10 4H6M10 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Jupiter</a><small data-de="Swap über den Raydium-Pool">Swap via the Raydium pool</small></li>
+            <li><a href="https://web3.okx.com/token/solana/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span class="pill-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M10 4H6M10 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> OKX Wallet</a><small data-de="On-Chain-Tokenansicht">On-chain token page</small></li>
+            <li><a href="https://web3.bitget.com/en/swap/sol/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span class="pill-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M10 4H6M10 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Bitget Wallet</a><small data-de="On-Chain-Swap und Kursdaten">On-chain swap and price data</small></li>
             <li><a href="https://dexscreener.com/solana/4erqahdh1yx9fzfpstjrau8sgvpkerahncggqnsevdem"><span class="pill-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M10 4H6M10 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> DEX Screener</a><small data-de="Chart und Handelsdaten">Chart and trading data</small></li>
             <li><a href="https://www.geckoterminal.com/solana/pools/4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM"><span class="pill-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M10 4H6M10 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> GeckoTerminal</a><small data-de="Chart und Handelsdaten">Chart and trading data</small></li>
             <li><a href="https://dex.coinmarketcap.com/token/solana/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z/"><span class="pill-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M10 4H6M10 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> CoinMarketCap DEX</a><small data-de="On-Chain-Daten">On-chain market data</small></li>
+            <li><a href="https://www.dexview.com/solana/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span class="pill-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M10 4H6M10 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> DexView</a><small data-de="Raydium-Chart · SIN/SOL">Raydium chart · SIN/SOL</small></li>
             <li><a href="https://explorer.solana.com/address/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z"><span class="pill-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M10 4H6M10 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Solana Explorer</a><small data-de="Mint-Adresse prüfen">Check mint address</small></li>
           </ul>
-          <p data-de="GeckoTerminal und CoinMarketCap DEX zeigen On-Chain-Daten. Ein reguläres Listing bei CoinGecko, CoinMarketCap oder einer zentralen Börse ist nicht bestätigt.">GeckoTerminal and CoinMarketCap DEX show on-chain data. A regular listing on CoinGecko, CoinMarketCap or a centralized exchange is unconfirmed.</p>
+          <p data-de="Wallets und Charts zeigen SIN auf Solana. Ein reguläres Listing bei CoinGecko, CoinMarketCap oder einer zentralen Börse ist nicht bestätigt.">Wallets and charts show SIN on Solana. A regular listing on CoinGecko, CoinMarketCap or a centralized exchange is unconfirmed.</p>
         </aside>
         <div class="actions">
           <button class="pill secondary" type="button" data-go="0"><span data-de="Zur Startseite">Back to home</span> <span class="pill-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M10 10L4 4M4 4H8M4 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
