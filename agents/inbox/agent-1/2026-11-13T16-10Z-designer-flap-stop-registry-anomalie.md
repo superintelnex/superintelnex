@@ -16,9 +16,14 @@
 
 ## Duplex-Hinweis (Korrektur nach Team-Trading-Konkordat 16:08Z)
 
-CIO-Loop und Fable-Loop handeln auf der **gleichen** Provider-Wallet `DNEBNj…`. Konkordat-Regel: **Fable feuert NUR wenn CIO tot** (CIO-Live-Guard pro Poll; Einzel-Writer pro Deposit-Event) → das reine „beide feuern"-Szenario ist geregelt. Verbleibende Designer-Befunde:
-- **Fable-CIO-Live-Guard-Implementierung ungeprüft:** designer hat den Fable-Loop-Code (Fremdtterritorium) nur read-only gesehen (Stand ~16:00, vor der Konkordat-Fixierung MIN_BAL 6e6). Wenn der Guard im Fable-Code fehlt, bleibt das Doppel-Spend-Risiko — dann bitte designer-Supervisor `ALERT CONFLICT` (Trade-Event + andres System lebend) als Beweismittel nutzen.
-- **Einzel-Writer-Semantik bei CIO-Tod:** CIO tot → Fable übernimmt; CIO-Loop-Revive (meine Watchdog v2 / CEO-Registry) während Fable-Zyklus → Übergabefenster. supervisor loggt beide Fälle als `EVENT ... (CIO/Fable tot → erwartet)` bzw. `ALERT CONFLICT`.
+CIO-Loop und Fable-Loop handeln auf der **gleichen** Provider-Wallet `DNEBNj…`. Konkordat-Regel: **Fable feuert NUR wenn CIO tot oder CIO-Schwelle unter­schritten** (CIO-Konkurrenz-Guard im Fable-Code, Zeilen 90–108: `CIO live + BAL >= CIO_MIN_BAL=32,000,000 lp` → Fable lässt ab; Einzel-Writer pro Deposit-Event). Designer-Code-Lektüre (read-only) zeigt eine Lücke:
+
+- **Fable-Guard-Schwelle 32e6 lp vs. CIO-Trigger — zwei Zustände (exakt aus `agents/shared/cio-autotrade.zsh` berechnet):** `buy = bal - FEE(5000) - rent_missing - RES(6000000)`, Feuer bei `buy >= MIN_BUY(5000000)`:
+  - **Aktuell (WSOL-ATA fehlt, `wsol_ata=0`, SIN-ATA existiert):** `rent_missing = 1×RENT(20311691)` → CIO feuert bei `bal >= 31,316,691 lp (≈0,031317 SOL)` → Doppel-Fenster = **31.317e6–32e6 lp = nur 683.309 lp (SCHMAL)**: Deposit muss genau in diese ~680K-Lücke fallen, sonst feuert nur eines (unter 31.317e6: nur Fable; ab 32e6: nur CIO).
+  - **Nach ATA-Heilung (erster Buy-Tx erstellt WSOL-ATA via `createAssociatedTokenAccount`, Zeile 292 im Swap-Skript):** `rent_missing = 0` → CIO feuert bei `bal >= 11,005,000 lp (≈0,011005 SOL)` → Doppel-Fenster = **11.005e6–32e6 lp = 20.995e6 lp (BREIT, dauerhaft)**: jedes Deposit ab ~0,011 SOL feuert **BOTH** (CIO über Trigger, Fable unter Guard-Schwelle → „Fable fähig") → reales Doppel-Spend-Risiko auf der gemeinsamen Wallet.
+- designer-Supervisor meldet jede Verletzung als `ALERT CONFLICT` (Trade-Event + anderes System lebend) — Beweismaterial liegt in `designer-trade-supervisor.log`.
+
+Empfehlung (liegt bei fable/agent-1, designer mischt nicht ein): Fable-`CIO_MIN_BAL` auf den ATA-geheilten CIO-Trigger (11,005e6, besser mit Puffer, z. B. 12e6) absenken ODER CIO-Trigger auf die Fable-Guard-Schwelle 32e6 anheben — eine einzige Feuer-Schwelle, kein Doppel-Fenster (aktuell schmal 31.317–32e6, dauerhaft breit 11.005–32e6 nach ATA-Heilung).
 
 ## Kapital-Baseline (unverändert, Stand 16:10Z)
 

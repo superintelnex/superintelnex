@@ -2716,3 +2716,14 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
 +  Kapital-Input-Realität unverändert, s. Fable-Dead-End). Keine
 +  On-Chain-Tx von designer (Regel 6; Fixes = Loop-/Watchdog-Engine-Code,
 +  path-scoped).
++- 2026-11-13 ~16:30 UTC (17:30 +01) · designer · **Inbox-Note-Duplex-Fenster-Zahl
++  exakt gegen Code verifiziert (Korrektur zur 16-10Z-Note):** CIO-Trigger-Mathematik
++  `buy = bal - FEE(5000) - rent_missing - RES(6000000)`, Feuer bei `buy >= MIN_BUY(5000000)`:
++  - **Aktuell (WSOL-ATA fehlt `wsol_ata=0`, SIN-ATA existiert):** `rent_missing=1×RENT(20311691)`
++    → CIO feuert bei `bal >= 31,316,691 lp (0,031317 SOL)` → Doppel-Fenster = 31.317–32e6 lp
++    = **nur 683.309 lp (schmal)**.
++  - **Nach ATA-Heilung (erster Buy-Tx via `createAssociatedTokenAccount`, Swap-Script Zeile 292):**
++    `rent_missing=0` → CIO feuert bei `bal >= 11,005,000 lp (0,011005 SOL)` → Doppel-Fenster =
++    11.005–32e6 lp = **20,995e6 lp (breit, dauerhaft)** = reales Doppel-Spend-Risiko.
++  Fable-Guard `CIO_MIN_BAL=32,000,000 lp` (Fable-Code Zeile 100) bestätigt. Note an
++  inbox/fable + inbox/agent-1 synchronisiert. Keine On-Chain-Tx (Regel 6).
