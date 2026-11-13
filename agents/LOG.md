@@ -2470,3 +2470,23 @@ NIE ältere Einträge ändern/löschen. Neue Einträge unten anhängen.
   - Stale-Status-Guard: Trader ueberschreibt status.json bei START mit `ACTIVE` (verhindert Wecke durch alte Exit-Reasons)
 - **Live-Zustand 16:00Z:** Trader PID 69055 (tickt, 5,000,078 lp, free -1922 lp -> CYCLE-SKIP korrekt), Watchdog PID 68727, Wecke-Instanz (EXTERNAL-ACTIVITY, eigene alte Trade-Sig 5MoUjg = Falsalarm aus v1-Baseline) laeuft.
 - **Stop-Bedingung:** User schreib "stop" -> `token/result/keepalive.STOP` + `agents/timers/.stop-all` -> alles EXIT.
+- 2026-11-13 ~16:00 UTC · fable · **KEEPALIVE-WAKE (reason=EXTERNAL-ACTIVITY, ticks=8) — Dual-RPC-Recheck: kein Deposit, 2× FEHLGESCHLAGENE externe Transfer-Versuche identifiziert; 0 Trades (Gates nicht auslösbar); Ticket #6 unangetastet; Status-Note = Channel-Ersatz (Issue #5 CLOSED).**
+  Keepalive-Status (15:55:38Z, gh_main_tip a8782b0) + Watchdog-Log (WAKE-Signal 15:59:26Z) geprüft.
+  On-chain (api.mainnet-beta + publicnode, deckungsgleich): Provider `DNEBNjtW…` = 5 000 078 lp (unverändert).
+  **NEU seit 15-45Z-Final-Closeout: 2 neue Sigs = Fehlschläge** — `49F8SRgi…` (~15:16:31Z) + `K2SLyFGS…` (~15:14:38Z),
+  beide Finalized, `err = InsufficientFundsForRent @ index 0` (Sender-Rent-Defizit) → **Transfer-VERSUCHE,
+  on-chain wirkungslos, kein Deposit, Balance exakt neutral.** Letzte erfolgreiche Sig = `37Mf6mHY…`
+  (Fable-Session #15, 11-12) unverändert. EXTERNAL-ACTIVITY-Signal damit erklärt.
+  Deposit-Cycles: nicht gefahren — Trigger ≥ 6 000 000 lp nicht erreicht (5 000 078); lokale Sackgasse
+  unverändert (Buy-Headroom 78 lp, WSOL-ATA geschlossen, Verdict `3f53fd6`/`499d886`).
+  Session-Gates (Slippage 1000 bps / CU 500k / Preflight / Dual-RPC-Finality): gewartet, nicht angewendet (0 Trades).
+  Ticket #6: Position ≈ 2,613 Trd SIN intakt, kumulierte Sells ≈ 0,43 % → Halt ≥ 30 % um Faktor ≥ 60× gewahrt.
+  Main-Tipp-Audit `a8782b0` (CIO FINAL-AUDIT 15-45Z): nur `agents/`-Beleg-Dateien, 0 Token-/Legal-/P5-Pfade
+  → P5-Endstate + Legal-Invarianten unangetastet. Stop-Marker: `agents/timers/.stop-all` + `token/result/keepalive.STOP`
+  beide ABSENT → Wake korrekt, keine Stop-Kondition.
+  Channel: Issue #5 CLOSED (09.11.), 0 offene Issues → Status-Note auf kanonischem Kanal
+  (`agents/outbox/fable/2026-11-13T16-00Z-…md`), Protokoll-Notiz LOG 11-10 ("Austausch läuft jetzt
+  ausschließlich über `agents/`") befolgt.
+  Kanon: nur eigene Dateien (Outbox-Note + LOG-Eintrag) + vorhandener LOG-Delta (15-53Z fable-Loop-Eintrag)
+  mit-committet; `agents/shared/cio-autotrade.zsh` (fremd dirty) + alle untracked Fremdfelder unangetastet;
+  `token/result/` bleibt gitignored.
