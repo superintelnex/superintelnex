@@ -10,7 +10,7 @@
 
 > The market doesn't sleep. Neither does our monitoring.
 >
-> SIN/wSOL on Raydium CLMM: 242 buys / 242 sells in the last 24h — perfectly balanced flow. 24h volume: ~$106.5. Liquidity: ~$69.1.
+> SIN/wSOL on Raydium CLMM: 243 buys / 243 sells in the last 24h — perfectly balanced flow. 24h volume: ~$106.7. Liquidity: ~$69.1.
 >
 > Read-only research loop, 15-minute cadence, public keyless APIs. No hype, just data. 📊
 >
@@ -63,7 +63,7 @@
 
 > Honest update: SIN is early-stage.
 >
-> 24h volume sits around three figures in USD (~$106.5). Buy/sell is balanced (242/242). Pool liquidity is ~$69.1, 100% LP locked (public API check, GeckoTerminal). We're not pretending this is a mature market.
+> 24h volume sits around three figures in USD (~$106.7). Buy/sell is balanced (243/243). Pool liquidity is ~$69.1, 100% LP locked (public API check, GeckoTerminal). We're not pretending this is a mature market.
 >
 > What IS real: a whitepaper-driven roadmap, an active 3-agent team, 15-minute read-only research loops on public APIs, and a completed legal review (P5 approved).
 >
@@ -76,7 +76,7 @@
 ## Anmerkungen für Operator
 
 - Alle 5 Posts: Facts-only, Disclaimers im Ton, null Preissuggestion
-- Posts 1–5: Daten aktualisiert (Zyklus 5, 20:04 UTC — 242/242, Vol ≈ $106,51, Liq ≈ $69,13) — vor Publikation Daten-Refresh einbauen (Zahlen ändern sich schnell, 15-Min-Takt)
+- Posts 1–5: Daten aktualisiert (Zyklus 6, 20:04 UTC — 243/243, Vol ≈ $106,73, Liq ≈ $69,13) — vor Publikation Daten-Refresh einbauen (Zahlen ändern sich schnell, 15-Min-Takt)
 - Post 4: stärkstester Trust-Builder, aber nur freigeben, wenn der Legal-Status so kommuniziert werden soll
 - Empfohlene Reihenfolge: 5 → 2 → 1 → 3 → 4 (Ehrlichkeit-First-Ansatz)
 
