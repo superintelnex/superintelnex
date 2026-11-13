@@ -2829,3 +2829,51 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   Deposit ausstehend). Commits abgeglichen: Website-Typografie/Mobile-Refinements
   (57cfaaf/c8bdc82) + Marketing-Tape-Nachzieh-Commit 20–26/28–29 (60f842d,
   Morgen-Review-Vollständigkeit — keine Anomalie). Kein Digest nötig. Daemon-Neustart.
+- 2026-11-13 ~21:20 UTC · fable · Neue Team-Einheit beobachtet: Marketing-Taskforce
+  (Lead-Koordinator) postet Tapes in agents/outbox/operator/ (Cycle 27–29,
+  20:58–21:10Z). Cycle-29-Tape: public-ready Copy (Landing index.market-update
+  Szene 04), Dark-only-Check bestanden (keine Agenten-Namen/Secrets),
+  Trigger-Entscheide nur notiert (DEXTools-Boost erst nach CoinGecko-Listing,
+  Airdrops erst ab 200+ TG-Mitglieder, Kollabs erst nach Phase-2-Belegen).
+  Zahlen-Kreuzcheck: Tape $113.79 Vol / $69.07 Liq = exakt meine
+  DexScreener-Werte 21:11:08Z → beide Kanäle konsistent.
+  Eigenes Team weiter unverändert: Provider 5,993e6 < MIN_BAL (Wart-Modus),
+  CIO-Frost seit 20:37:32Z ~43 min, Research-Kadenz 300s pünktlich.
+- 2026-11-13 ~21:35 UTC · fable · Operator-Addendum zu Digest #4
+  (inbox/operator/2026-11-13T21-35Z-fable-hardware-aus-addendum-digest4.md):
+  (1) Hardware-Risiko GELÖST: pmset zeigt AC Power (Akku 91% ladend) —
+  Clamshell-Sleep-Warnung entfällt, Nacht läuft durch.
+  (2) Korrektur zu Digest #4: ~0,0057-SOL-Deposit bringt Provider auf
+  ~6,1e6 lp = Fable-Lane startet WIEDER (>= MIN_BAL 6e6); CIO-Lane
+  braucht ~0,06–0,07 SOL (>= 12e6 / 11,005e6 ATA-geheilt). Digest #4
+  hatte "bleibt Fable-Lane tot" gesagt — rechnerisch falsch, korrigiert.
+- 2026-11-13 ~21:53 UTC · fable · Digest #5 + CIO-Final-Befund:
+  (1) PREISPULS 21:44–21:51Z (zweikanalig bestätigt, REAL):
+  tick 211829 → 211750 → 207767, USD 5,067e-12 → 7,508e-12 (+48 %),
+  Jupiter 1,5786e15 → 1,052e15 SIN/0,001 SOL, Liq 69,07 → 82,21 USD,
+  Vol +8,9 USD in 5 min. Designer-Kanal (night.jsonl) zeigt identischen
+  zweistufigen Tick-Sprung (21:44:25Z/21:46:11Z) → diesmal keine
+  Stale-Quote (Kontext: 19:49Z/20:15Z-Events waren bestandslos).
+  (2) WSOL-ATA = HIGH-CONFIDENCE FEHLT: meine eigenen 3×
+  getTokenAccountBalance-Lectures (mainnet-beta, 21:46Z) →
+  "could not find account" (= CIOs eigene clean-zero-Klassifikation).
+  CIO-Feuer-Trigger = 31,317e6 lamports (0,031317 SOL free),
+  nicht 11,005e6. Puffer-Fenster 11,005–12e6 nur gültig wenn
+  ATA existiert.
+  (3) KORREKTUR zu meinem "CIO-Log-frost"-Frame: 0,005993 ist
+  LIVE-Value (mein eigener getBalance = 5.993.044 lamports identisch);
+  der stale-Wert war der 0,003507-Sprung 20:34:54Z, nicht 0,005993.
+  (4) Deposit-Sizing überarbeitet: ≥0,0001 SOL Fable-Lane, 0,0057
+  (Plan) = 11,69e6 Fable-only, TOB-Band 12–31,317e6 (CIO-kein-Feuer),
+  ≈0,026–0,03 SOL = CIO-Lane robust (deckt beide ATA-Fälle).
+
+- 2026-11-13 ~21:57 UTC · fable · Watch-Daemon Falschalarm + Fix: CRITICAL-Exit
+  "HARDWARE AC getrennt (21:57:29Z)" = **Falschalarm** — Repro: Akku-Zustand
+  "99 %; finishing charge" enthält weder "AC Power" noch "charging" in der
+  Akku-Zeile → Daemon-AC-Detector (grep auf Akku-Zeile) tippte fälschlich AC=0.
+  Live-Befund 21:57:36Z: Header "Now drawing from 'AC Power'", Akku 99 %
+  (finishing charge), alle 6 Loops LIVE, Caffeinate 93637 aktiv → Hardware OK,
+  kein Death-Fenster, kein Operator-Digest nötig. FIX: AC-Erkennung läuft jetzt
+  NUR über die Header-Zeile "Now drawing from ..." (Battery-Power-Guard <35 %
+  bleibt unverändert). Test 21:59Z: 99 %/AC=1 korrekt. Daemon neu gestartet.
+  Beleg: fable-watch-events.log Eintrag 21:57:29Z + pmset-Repro.

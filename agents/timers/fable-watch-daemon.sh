@@ -63,10 +63,13 @@ while :; do
   LP=$(tail -5 "$DESUP" 2>/dev/null | grep -oE "Provider [0-9]+ lp" | grep -oE "[0-9]+" | tail -1)
   [[ -n $LP ]] && LAST_LP=$LP
 
-  # Akku
-  BATTLINE=$(pmset -g batt 2>/dev/null | tail -1)
+  # Akku (AC-Detektion NUR aus Header-Zeile 'Now drawing from ...' —
+  # 21:57Z-Falschalarm: 'finishing charge'-Zustand hat 'charging' nicht
+  # in der Akku-Zeile → falsch AC=0; Guard <35 % bleibt unverändert)
+  BATTOUT=$(pmset -g batt 2>/dev/null)
+  BATTLINE=$(echo "$BATTOUT" | tail -1)
   BATT=$(echo "$BATTLINE" | grep -oE "[0-9]+%" | head -1 | grep -oE "[0-9]+")
-  AC=$(echo "$BATTLINE" | grep -q "AC Power\|charging" && echo 1 || echo 0)
+  AC=$(echo "$BATTOUT" | head -1 | grep -q "AC Power" && echo 1 || echo 0)
 
   # Freeze
   SLEEPC=$(pmset -g log 2>/dev/null | grep -c "Entering Sleep")
