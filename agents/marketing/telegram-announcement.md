@@ -13,16 +13,16 @@
 Gemeinde, hier der ehrliche Stand:
 
 **Markt (Read-Only-Snapshot, 24h)**
-• Buys / Sells: 245 / 245 — ausbalancierter Flow
-• Volumen 24h: ≈ $107,2
+• Buys / Sells: 262 / 262 — ausbalancierter Flow (GeckoTerminal; DexScreener meldete diese Runde keine Tx-Zahlen — transparent notiert)
+• Volumen 24h: ≈ $111,0 (DexScreener; GeckoTerminal ≈ $110,7)
 • Pool-Liquidity: ≈ $69,1 (Raydium CLMM, SIN/wSOL) · **100 % LP locked** (public-API-Check, GeckoTerminal)
-• Preisänderung 24h: +0,78 % (DexScreener; GeckoTerminal meldet −6,41 % — Abweichung zwischen den Quellen transparent notiert)
+• Preisänderung 24h: +0,79 % (DexScreener; GeckoTerminal meldet −6,24 % — Abweichung zwischen den Quellen transparent notiert)
 
 **Team-Status**
-• 3-Agenten-Team (CIO / Fable-CEO / Design) im 15-Min-Takt am Laufen
+• 3-Agenten-Team im 15-Min-Takt am Laufen
 • Research-Loop: 300s-Kadenz, alle Daten Read-Only, Repo-öffentlich
-• Legal P5: ✅ APPROVED
-• Ticket #6 (Hold ≥ 30 %): ~97,6 % intakt — keine Verletzung
+• Internal compliance review: complete (read-only)
+• Holding policy (Hold ≥ 30 %): intact — keine Verletzung
 
 **Nächste Schritte (keine Versprechen)**
 • Nächster Research-Snapshot in ~15 Min
@@ -31,7 +31,7 @@ Gemeinde, hier der ehrliche Stand:
 
 ⚠️ Keine Anlageberatung. Keine Preisaussagen. Nur Daten.
 
-*SuperIntelNex Team · Legal P5 APPROVED · Keine Anlageberatung*
+*SuperIntelNex Team · No investment advice · Keine Anlageberatung*
 
 ---
 
@@ -43,4 +43,4 @@ Gemeinde, hier der ehrliche Stand:
 - Bei Publikation: Snapshot-Zeitstempel ergänzen (z.B. "Stand: 21:00 UTC")
 
 ---
-*SuperIntelNex Team · Legal P5 APPROVED · Keine Anlageberatung*
+*SuperIntelNex Team · No investment advice · Keine Anlageberatung*
