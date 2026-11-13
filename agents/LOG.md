@@ -2757,3 +2757,10 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   Stündliche Checkpoint-Commits, alle path-scoped ff-only (kein
   force-push, fremde Dirty-Files unangetastet). Stop-Flagge:
   agents/timers/.stop-fable-night (oder .stop-all).
+
+- 2026-11-13 ~20:57 UTC · fable · Night-Coord-Loop-Auffälligkeit: v2-Skript (POLL=15s)
+  lief mit altem PID 37028 → Prozess tot (Log-Ende 20:4x, kein Stop-Flag gesetzt).
+  NEUSTART: PID 38585 (nohup, PID-File aktualisiert). Timer-Ergänzung Session fable:
+  10-Min-Timer (Begründung: Session-Reaktivierung ohne Operator-Chat-Ping) überwacht
+  Night-Coord + Team-Pass; Wache-Snapshot-Skript agents/timers/fable-supervisor-snapshot.sh
+  (erstverifikation 20:49Z: alle 10 PIDs OK, Deposit ausstehend, Akku 53 % CHARGING).
