@@ -2587,3 +2587,27 @@ fix gecommited in 6215807 (Registry-Override = bloßer Pfad), Spam-Ende belegt: 
 ~0,0057 SOL noch nicht da; bei Ankunf ≈12,3e6 → CIO übernimmt). Nacht-Digest #1 für
 Operator: agents/inbox/operator/2026-11-13T20-08Z-fable-night-research-digest.md
 (Pool ~30 Tx/h 0 Fehler, Gecko 19:43Z h24 −6,4 %/h6 +4,8 %, alle 7 Loop-PIDs verifiziert).
+## 2026-11-13 19:52 UTC — Nacht-Digest #2: Hardware-Warnung + Team-Research-Schiene
+**Operator-Aktion:** Mac auf Akku (69 %, 2:28 verbleibend, kein Ladekabel) + Clamshell-
+Sleep 18:33-19:47 UTC hat alle Loops ~75 min eingefroren. `caffeinate -s -i -d` (PID 93637)
+blockiert Idle-/Display-Sleep, aber CLAMSHELL-Sleep (Deckel) ist auf Akku NICHT blockierbar
+-> ohne Ladekabel stirbt die Maschine ~00:15-00:30 UTC. Bitte: Strom + wach halten.
+**Team-Research:** dediziert-Research-Loop (Registry "research-loop", 300-s-Takt, Read-Only)
+laeuft (PID 93871 nach Syntax-Iteration; Beleg: watchdog.log research-loop-Neustarts
+19:49:03/19:50:09Z). Erste Lieferung RESEARCH-SIN-report-2026-11-13-19-50Z.md:
+Preis $5,05e-12, Vol-24h $102,5, Buys/Sells 225/225, Liq $68,84, Jupiter 0,001 SOL ->
+1,578693e15 raw-SIN, CLMM tick 211.830 + feeRate 0,01 %, Ticket #6 = 97,6 % intakt.
+**Trade-Schiene:** Fable-Loop 92133 (Counter 2, FINAL), CIO 67648 WART (0,006537 SOL,
+ATA wsol=0), Keepalive 72838 (19:48:32Z DEPOSIT-DETECTED = eigenes SELL, externer
+~0,0057-SOL-Deposit NOCH NICHT da, Provider 6,515,923 lp). **Beleg:**
+agents/inbox/operator/2026-11-13T19-52Z-fable-night-research-digest-2.md
+
+## 2026-11-13 ~20:05 UTC — Git-Reconciliation (fable/agent-1): 2 Commits auf origin/main-Basis neu
+Lokale main (1a3b206 + 63fc2b2) und origin/main hatten **keinen Merge-Base** (Team hatte
+lokale Historie neu aufgesetzt, remote +406 Commits voraus). Kein Force-Push (Kanon).
+Lösung: Worktree auf origin/main (1811551), eigene Dateien path-scoped neu committen:
+agents/inbox/operator/…digest-2, agents/marketing/{lead-agent-briefing,marketing-taskforce-loop.zsh},
+agents/outbox/operator/…lead-agent-halt, marketing-taskforce-log.txt (Live-Stand 74 Zeilen) +
+LOG.md-Append (19:52-Block). Reflog-Sicherung: TDIR/reflog-backup-main.txt. Die alten lokalen
+Commits 1a3b206/63fc2b2 bleiben im Reflog (keine Löschung). Fremde dirty Dateien (TASK_LOG.md
+usw.) unverrückt im Haupt-Worktree gelassen.
