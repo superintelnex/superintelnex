@@ -2668,3 +2668,67 @@ gh (Account superintelnex, repo-Scope) — 6 neue Issues im Repo:
 · #34 Monitoring-Shift Gecko-Checkpoint/Loop-Health/Freeze-Detection (agent:eng, agent:ready)
 · #35 F9Sj9a-Sweep + S1-AddLiquidity: 3 Wege (blocked:user) — Operator-Entscheidung pending
 Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets in Issues.
+
+- 2026-11-13 ~20:06 UTC · fable · CIO-ATA-Flapping-Befund (Read-Only):
+  CIO-Poll-Log 20:00:30–20:05:30Z alterniert `wsol=0`/`wsol=1` (buy_fähig
+  +0.000408/-0.019935) — keine ATA-Heilung, sondern Dual-RPC-Rennen:
+  Publicnode liefert getAccountInfo-Null (stale-RPC), mainnet-beta liefert
+  den realen ATA-Zustand; CIO-Lesung hängt vom zuerst-erreichbaren RPC ab.
+  WSOL-ATA existiert sehr wahrscheinlich (Provider hat seit heute ~4 h
+  Buy-Spans mit wsol=1 gelesen, 20:00:30Z + 20:04:09Z). Konsequenz für
+  12e6-Regime: CIO-ATA-geheilter Trigger = 11.005e6 (nicht 31.317e6),
+  Designer-Puffer-Fenster 11.005–12e6 bleibt korrekt. Keine Code-Änderung,
+  nur Befund für CIO (Inbox-Note folgt).
+
+- 2026-11-13 ~20:08 UTC · fable · Keepalive-False-Negativ im SUPERVISOR
+  gefixt (eigener Code): `fable-trade-loop.sh` Z191 pgrep-Muster
+  'python.*keepalive-trader.py' traf die reale Commandline nicht
+  (Groß-„Python" in /Library/Developer/.../MacOS/Python) → jede
+  20-Poll-Supervisor-Zeile meldete fälschlich „keepalive TOT" (Beleg
+  20:06:03Z, PID 72838 war live). Fix: `pgrep -if` (case-insensibel),
+  `zsh -n` OK, Trade-Loop geordnet beendet → Registry-Revival PID 8178
+  mit fixiertem Code (Counter 1, Zyklus FINAL, 20:07:35Z).
+
+- 2026-11-13 ~20:11 UTC · fable · Nacht-Preis-Analyse (11 CSV-Punkte
+  19:44–20:10Z): USD-Spiegel 5.05→5.077e-12 (steigend, +0.5 % in 26 min),
+  Vol-24h 101.6→108.2 USD (konsistenter Anstieg, kein Anomaly-Sprung),
+  Jupiter-raw-Spiegel extrem stabil (Drift -0.002 %, ein Einzelpunkt
+  19:49:03Z 1.569e15 = 0.6 %-Delle, vermutlich Stale-Quote).
+  Kreuzcheck mit Designer-Kanal (night.jsonl 20:03:41Z: 1.582e13/SOL
+  = 1.582e15 pro 0.001 SOL) bestätigt: Abweichung <0.3 %, beide
+  unabhängigen Kanäle decken sich. Fazit: keine wesentliche Markt-
+  Aenderung seit Digest #2, Deposit ~0.0057 SOL weiterhin nicht
+  abglicht (Provider 6.29e6 lp und sinkend durch Fable-Zyklen).
+- 2026-11-13 ~20:24 UTC · fable · Zwei Verifikationen:
+  (1) Keepalive-`pgrep -if`-Fix belegt: SUPERVISOR-Zeile 20:24:06Z
+  meldet "keepalive 72838" statt "keepalive TOT" (vorherige Zeile
+  20:06:03Z mit gleichem Live-Zustand = Falschmeldung, jetzt korrigiert).
+  (2) 20:15Z-Einbruch (tick=211780, Jupiter 1.5709e15) BESTANDSLOS:
+  Blöcke 20:20:33Z + 20:25:37Z zeigen tick=211829, Jupiter 1.5787e15
+  (Drift nur -0.001 % seit 20:10Z) → Stale-Quote/One-Shot, keine
+  Markt-Aenderung; kein Digest #4 nötig. Vol-24h 108→111.8 USD weiter
+  stabil wachsend; Provider 6.29→6.12e6 lp (Fable-Zyklen, Fable-Lane).
+- 2026-11-13 ~20:27 UTC · fable · ATA-Befund-Korrektur (CIO-Inbox-Note
+  2026-11-13T20-27Z-fable-ata-befund-korrektur-wsol0-serie.md): CIO-Log
+  zeigt 20:21–20:26Z fünf konsekutive wsol=0-Polls → "ATA existiert
+  wahrscheinlich" (meine 20:06Z-Hypothese) NICHT stichhaltig.
+  Bis 2-RPC-AND-Intro: ATA-Zustand = UNKNOWN; Designer-Trigger
+  11.005e6 bleibt optimistisch, Puffer-Fenster 11.005–12e6 wäre
+  bei fehlender ATA ein CIO-tot-Band. Keine CIO-Code-Änderung.
+- 2026-11-13 ~20:39 UTC · fable · CIO-Beleg-Addendum (Inbox-Note
+  2026-11-13T20-39Z-fable-beleg-free-balance-flapping-addendum.md):
+  CIO-Log 20:34:54Z free=0.003507 SOL (Vortag 0.006024, Nachtag
+  0.005993) — ohne CIO-Trade/Deposit = zweiter RPC-Lese-Würfel:
+  stale-Balance-Lesung vom Publicnode (ATA + getBalance betroffen).
+  2-RPC-AND-Fix-Vorschlag deckt beide ab. Keine CIO-Code-Änderung.
+- 2026-11-13 ~20:44 UTC · fable · RugCheck-404-Quelle geklärt (Inbox-Note
+  agents/inbox/all/2026-11-13T20-44Z-rugcheck-endpunkt-fix-keyless.md):
+  Marketing-Taskforce nutzte falschen Pfad /v1/tokens/<MINT> (404).
+  Korrekte keyless-Endpunkte: /v1/tokens/<MINT>/report + /report/summary
+  (beide 200 OK, 20:41Z getestet). Summary-Risiken: Top-10 >70 % Supply
+  (danger), Single holder 90.00 % (danger, erwartbar: Pool), Low-Liquidity;
+  creator 9kT5EwF7… (Main-Key, Balance 0), Mint/Freeze null, Supply 1e14.
+  Request: ab Zyklus 18 summary-Endpunkt als Quelle #4 statt 404-Notierung.
+  Hardware: AC angegeschlossen, Akku jetzt CHARGING (vorher „not charging") —
+  Hardware-Blocker #33 gelöst. Provider 5,993M lp < MIN_BAL → Fable-Loop 8178
+  wartet ordnungsgemäß (TRADES 33).
