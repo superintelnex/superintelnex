@@ -63,3 +63,28 @@ Deno.test("Market Health: Raydium CLMM Pool Range & Tick Coverage", async () => 
   assert(result.tickCurrent >= 179280 && result.tickCurrent <= 259280, "Current tick must be within active LP range [179280, 259280]");
   assert(BigInt(result.liquidity) > 0n, "CLMM pool liquidity must be greater than zero");
 });
+
+Deno.test("Market Health: Solana Mainnet Mint Invariant & Revoked Authorities", async () => {
+  const res = await fetch("https://api.mainnet-beta.solana.com", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      jsonrpc: "2.0",
+      id: 1,
+      method: "getAccountInfo",
+      params: [TOKEN_MINT, { encoding: "jsonParsed" }],
+    }),
+  });
+  assertEquals(res.status, 200, "Solana Mainnet RPC must return HTTP 200");
+  
+  const data = await res.json();
+  assert(data.result && data.result.value, "Mint account info must exist on mainnet");
+  
+  const info = data.result.value.data.parsed.info;
+  assertEquals(info.decimals, 5, "SIN decimals must equal exactly 5");
+  assertEquals(info.supply, "10000000000000000000", "SIN supply must equal exactly 10^14 tokens with 5 decimals (10^19 raw units)");
+  assertEquals(info.mintAuthority, null, "Mint authority must be permanently revoked (null)");
+  assertEquals(info.freezeAuthority, null, "Freeze authority must be permanently revoked (null)");
+  assertEquals(info.isInitialized, true, "Mint must be initialized");
+  assertEquals(data.result.value.owner, "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA", "Owner must be standard SPL Token program");
+});
