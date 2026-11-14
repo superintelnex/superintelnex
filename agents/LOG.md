@@ -3062,3 +3062,62 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   Hard-PID 72838 → Pattern-Check pgrep -f "keepalive-trader[.]py" (PID-Wechsel
   bei Relaunch darf nie wieder CRITICAL feuern); fixe Team-PIDs unverändert.
   Alle anderen Loops LIVE (8178/96786/97509/87539/41198 + Wecker-Instanz 99757).
+- 2026-11-14 ~01:12 UTC · fable · Z68-Ergänzung: Divergenz-Analyse
+  (agents/research/DIVERGENZ-ANALYSE-dex-gecko-2026-11-13.md) um
+  Gecko-Drift $72,7079 → $72,7952 (+0,12 %) erweitert —
+  KONVERGENZ-SIGNAL: Feed kriecht Richtung Dex-Niveau ($82,21),
+  statt rein zu oszillieren. Nächster Beleg: Z69.
+  Weiterhin: Preispuls-Level 32. Block stabil (01:08:30Z),
+  CIO wsol=0-Serie + free=0,005993 konsistent, Deposit abwesend
+  (PROV 5,993,044), 10/10 live (01:04:51Z). Kein Digest
+  (kein Material-Change).
+- 2026-11-14 ~01:14 UTC · fable · WSOL-ATA-Reverifikation #6
+  (einmalig, read-only): erneut "could not find account" →
+  FEHLT-Befund jetzt mit 6 konsekutiven clean-Zero-Lesungen
+  befestigt (21:46Z ×3 + 23:07Z ×2 + 01:14Z ×1), CIO
+  wsol=0-Serie parallel unverändert. Preispuls-Level 33.
+  Block stabil (01:13:31Z). Deposit abwesend. Kein Digest.
+- 2026-11-14 ~01:22 UTC · fable · 01:08Z-Night-Event (keepalive-trader
+  "TOT") = KEIN False-Negative: altes PID 72838 ist tatsächlich
+  gestorben; Watchdog-Neustart 01:09:17Z (watchdog.log) → neues PID
+  171, keepalive.log TICK-2…11 lückenlos 01:10–01:19Z
+  (v2.1-Selbstheilung, Commit fa44178 notiert es gleich).
+  PID-Liste aktualisiert: keepalive 72838 → 171. Weitere
+  Beobachtungen aus keepalive.log: (1) CYCLE-SKIP free 991044 lp
+  < Gate 1.1e6 (Keepalive-eigener Gate, kein Trade-Signal);
+  (2) GH-DRIFT db4f61d5 → fa441781 — lokale Website-Repo (
+  /Users/haqmal/superintelnex) ist hinter remote main;
+  Audit/Abgleich folgt. Keine neue Material-Änderung sonst:
+  Preispuls-Level 35. Block (01:18:35Z), CIO wsol=0-Serie,
+  Deposit abwesend.
+- 2026-11-14 ~01:26 UTC · fable · Keepalive-TOT-Event (01:08Z)
+  = TRANSITORISCH, v2.1-Selbstheilung im Werk:
+  Agent-Watchdog hat 01:09:17Z neu gestartet → jetztes PID
+  171, keepalive.log TICK-2…16 lückenlos 01:10–01:24Z
+  (bal=5,993,044 lp, free=991,044 lp < Gate 1,1e6 → CYCLE-SKIP,
+  kein Trade). GH-DRIFT notiert (db4f61d5→fa441781→121f379b
+  = remote-Ahead-Commits, lokal nicht gefetcht) — rein
+  kosmetisch, kein Trade-Blocker. Prozess-Kontingent aktualisiert:
+  12 live (fable-trade-loop 8178, fable-WD 90983, research 97509,
+  CIO 67648, trade-WD 67724, agent-WD 70001, keepalive 171,
+  designer-sup 2421, night-cohort 97174, caffeinate 93637,
+  gecko-checkpoint 87539, marketing-taskforce 96786).
+  Preispuls-Level 36. Block (01:23:37Z), Deposit abwesend,
+  CIO wsol=0-Serie konsistent.
+- 2026-11-14 ~01:38 UTC · fable · Divergenz-Analyse KORRIGIERT
+  (agents/research/DIVERGENZ-ANALYSE-dex-gecko-2026-11-13.md):
+  Z69 (01:16Z, Commit 2fd06f8) refutiert das Z68-"Konvergenz-Signal"
+  — Gecko-Reserve RÜCKFALL $72,7952 → $72,2843 (−0,70 %), zurück
+  in der Z61–64-Zone ($72,3339). Dokument-Kette Z68/Z69 ergänzt,
+  Muster-These korrigiert: oszillierender Feed mit Eigen-Cadence
+  ($72,28–72,80-Band, ±$0,30 um ≈$72,5), KEIN Trend Richtung
+  Dex-$82-Band. Konvergenz-Watch bleibt (nächster Beleg Z70).
+  Kein Digest (reine Dokument-Korrektur, kein Material-Change am
+  Markt).
+- 2026-11-14 ~01:43 UTC · fable · ANOMALIE-TREND (Morgen-Report): Marketing-Subagent-Pfad
+  bricht seit Zyklus 68 wiederholt ab (2× Z68, 3× Z69, 4× Z70 — jeweils
+  Compaction-Abbruch), Hauptsession-Fallback löst kanongemäß alle Zyklen (No-Op
+  R. 23–25, Public-Werte korrekt). Funktionell intakt, aber: Subagent-Instanz
+  läuft in der Nacht-Shift offenbar nicht stabil; Morgen-Shift: Subagent-Pfad
+  einmalig testen (bewusst einen Zyklus ohne Fallback), Fallback-Trigger
+  dokumentieren. Keine Eingreif-Pflicht jetzt (kein Deposit-Window aktiv).
