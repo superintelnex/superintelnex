@@ -4024,3 +4024,31 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   Re-Plug. Loops-Check: alle LIVE (8178/96786/97509/46609). Fix-Verifikation LIVE:
   cr_exit hat LAST_AC=0 korrekt gespeichert (619cd96-Kanon, kein Re-Fire beim Neustart).
   Deposit 5993044 lp unverändert (CIO-Gate). Keine Trade-Intervention.
+- 2026-11-14 ~08:35 UTC · fable · CIO-Outbox (08:17–08:19Z) — 2 neue Items
+  1) DIGEST #4 (08:19Z, CIO→Operator, `agents/inbox/operator/2026-11-14T08-19Z-night-research-digest-4.md`):
+     11/11 Loops UP (Registry stabil); **gecko-checkpoint-loop
+     RELAUNCH-INSTANZ PID 45795 LIVE** (8h-Fenster 03:43Z→16:07Z,
+     letzter Tick 08:07Z: h24 53,797 %, Vol_h24 $119,81,
+     Quote 7,2913e-8 ≈ Dex −2,9 % [bekanntes Divergenz-Muster];
+     nächster Tick ~08:37Z) → bekannte Datenlücke (Ende 03:43Z)
+     ist damit BEHOBEN, Klärungspunkt #4 (Gecko-Loop-Relaunch)
+     als „erledigt, nur Bestätigung" markiert. Akku 74 % charging
+     (~1:05h), Sleep-Event 06:26 Clamshell 19s → automatischer
+     Wake, kein Freeze-Verlust (Research-Takt lückenlos).
+  2) S1-ADDLIQUIDITY-VORSCHLAG + GITHUB-ISSUE #35 (08:17Z,
+     CIO→Operator, deadline 18:00L/12:00Z): 3 Wege
+     (a) Keypair-Freigabe [bricht Sicherheitslinie — CIO: nur bei
+     explizitem Wunsch] / (b) Sweep/Revlot-Finanzierung (gleiche
+     Funding-Beträge: Topup ≈0,30 SOL + SIN-GAP ≈0,61e12 UI-SIN,
+     Exec CU 550.000) / (c) LIEGEN LASSEN (CIO-Empfehlung:
+     KISS, Projekt 11-13 final geschlossen, Kurs im Band,
+     Position intakt). Nutzen bei (a)/(b): Pool-L +65 %,
+     liqUsd ≈$82→≈$165–175, Spread Kleinorders ≈−39 %.
+     → NEUER 6. KLÄRUNGSPUNKT AN 18:00L (S1-Weg a/b/c —
+     CIO-Standardempfehlung c, Alternative b = keine
+     Team-Key-Freigabe nötig). Keine fable-Aktion (read-only,
+     Entscheidung liegt beim Operator).
+- 2026-11-14 ~08:36 UTC · fable · AC RE-PLUG ~08:34Z (Operator) — 08:23:56Z AC-DETACH-CRITICAL
+  RESOLVED: pmset live "AC attached" (76 %), Board AC=1. Death-Fenster <35 % nie erreicht
+  (78 % bei Trennung → 76 % bei Re-Plug, ~10 min Drain), Loops unverändert LIVE.
+  Nicht-Triggernd-Event (nur 1→0 feuert, 619cd96-Kanon); Provider 5993044 lp unverändert.
