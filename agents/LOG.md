@@ -4055,4 +4055,7 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
 
 ## 2026-11-14 08:38 UTC — Fable
 
-- #38 CPMM-Depth-Simulation: exakter CPMM (y0=0.617 SOL, x0=6.5e9 SIN, Residuen<1e-6
+- #38 CPMM-Depth-Simulation: exakter CPMM (y0=0.617 SOL, x0=6.5e9 SIN, Residuen<1e-6% auf 4 Jupiter-Punkten); +200% LP empfohlen (0.1-SOL-Slippage auf 5.1%, via #35-Freigabe)
+- #37 Listing-Datensatz (CoinGecko/CMC, dark-only, copy-paste-fertig) → operator-Outbox
+- Gemini/Antigravity-Handoff: agents/inbox/all/2026-11-14T08-38Z-fable-handoff-antigravity.md
+- Fable-Schichten: Monitor 65289 (60s-Herzschlag + 15min-Gecko), Cron b3d2f0c2 (30min-Tick), Watchdog byp9bh4c2 aktiv
