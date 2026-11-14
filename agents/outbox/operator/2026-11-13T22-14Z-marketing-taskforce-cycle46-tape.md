@@ -75,3 +75,21 @@
 > 24h: $122.77 vol · 287/280 tx
 > Liquidity: $82.21 · 100 % LP locked (GeckoTerminal cross-check: $72.94 — divergence noted)
 > Snapshot: 2026-11-13 ~22:14 UTC · Sources: api.dexscreener.com · api.geckoterminal.com
+
+---
+
+## Dark-only-Check (von Lead-Koordinator, ~22:14 UTC)
+
+✓ keine internen Agenten-Namen (fable/agent-1/CIO/designer/CEO) · ✓ keine Secrets/Keys · ✓ keine Repo-/Github-Pfade in public-ready Copy · ✓ alle Zahlen mit keyless-API-Quelle · ✓ nur public-entdeckbare Adressen/Links (Mint + Pool + Provider-Position als %) · ✓ P3 generische Rollen + P4 neutrale Compliance-Wortung (Zyklus-10-Remediation) unverändert beibehalten · (Grep-Befind: 0 Treffer für interne Namen/Secrets/Keys/Repo-Pfade in public-ready Copy — Treffer ausschließlich in internen Anmerkungs-/Snapshot-Notiz-Blöcken [x-posts.md, telegram-announcement.md, web-copy-draft.md Anmerkungs-Blöcke inkl. Zähler-46/-45-Anmerkungen, research-snapshot.md interne Notizen] — interne Dateien, KEIN public-ready Copy; Präzedenz Zyklen 18–45)
+
+## Trigger-Entscheide (NUR notiert, nie ausgeführt — Operator-Only)
+
+- DEXTools-Boost (50–100 $) — erst nach CoinGecko-Listing (CoinGecko-Check ~22:14Z: `{}` nicht gelisted → Trigger nicht erfüllt)
+- Airdrops (max 1 % Supply) — erst ab 200+ Telegram-Mitgliedern (Trigger nicht erfüllt)
+- Kollab-Pitches — erst nach Phase-2-Belegen (Trigger nicht erfüllt)
+
+## Briefing-Drift (transparent notiert, NUR notiert — keine Ausführung)
+
+Briefing-Stamp ~22:13Z vs echter Laufzeit-Stamp ~22:14 UTC (Beleg-Runde ~22:14Z, Systemuhr 22:14:36Z verifiziert) → Abweichung intern korrigiert + transparent notiert (Tape-Dateiname = 22-14Z, Präzedenz Zyklus-13…45). P2-Tick-Referenz „211830" im Briefing = **STALE** — letzter bekannter On-Chain-Stand: tickCurrent **207767** (stabil über 5 Snapshots bis 22:09:01Z, sqrtPriceX64 unverändert; diese Beleg-Runde ohne frische on-chain-night.jsonl-Lesung) → P2 public textlich unverändert, Operator MUSS tickCurrent vor P2-Publishing read-only on-chain verifizieren. Keine Eskalation, keine Ausführung — nur Notiz für die Operator-Entscheidung.
+
+*— Marketing-Taskforce · Lead-Coordinator · Zyklus 46 · 2026-11-13 ~22:14 UTC · Keine Anlageberatung*
