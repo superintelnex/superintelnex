@@ -3776,3 +3776,10 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   unverändert seit 04-11Z), Akku 100 % AC, alle 9 Team-Loops LIVE, HEAD=origin/main=3ece7de Drift 0/0.
   Decision: kein Relaunch, kein Deposit-Handeln; path-scoped ff-Commit (04-15Z+04-16Z-Tapes + agents/LOG.md).
   Watch-Condition aktiv.
+- 2026-11-14 ~04:18 UTC · fable · EVENT-RESOLUTION 04-18Z (14. gecko-checkpoint End-Rauschen-Tape):
+  pgrep-FP = opencode-Wake-Agent 86001 (PPID 41198 = live fable-night-coord-loop),
+  echter Loop 87539 planmäßig tot 03:43Z; zyklisches LIVE→TOT-Flattern = PgGrep-Muster (Morgen-Shift-Fix, kein Live-Edit).
+  Frisch-Scan: Deposit DNEBNjtW 5993044 lp = CIO-Gate-Schwellwert (F9Sj9aUa 372364773, 9kT5EwF7 854081,
+  unverändert seit 04-11Z), Akku 100 % AC geladen, alle 9 Team-Loops LIVE + Night-Coord 41198, HEAD=origin/main=08a80ae Drift 0/0.
+  Decision: kein Relaunch, kein Deposit-Handeln; path-scoped ff-Commit (04-18Z-Tape + agents/LOG.md).
+  Watch-Condition aktiv.
