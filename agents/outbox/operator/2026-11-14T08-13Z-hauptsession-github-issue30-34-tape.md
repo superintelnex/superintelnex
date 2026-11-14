@@ -8,7 +8,7 @@
 |---|---|---|---|
 | #30 | CLMM-Deep-Research | `2026-11-14-issue30-research-clmm-depth.md` | **Slippage <1,5 % bis 0,01 SOL (Impact 1,435 %); Sweet Spot 0,005 SOL (0,643 %)**; 100 % Sole-LP On-Chain bestätigt (Liquidity 20031261577933 = liqRaw); Fees = 0; Supply = 1e14 (Mint-Read) |
 | #31 | Whitepaper v1.1 Rollout-Kit | `2026-11-14-issue31-marketing-whitepaper-kit.md` | Whitepaper **live (HTTP 200)**, Tokenomics verifiziert 81/10/5/4; X/Telegram-Drafts + CG/CMC-Listing-Kit + DexScreener-Asset-Liste (alle Operator-Freigabe) |
-| #32 | Deposit-Reaktion & Gates | `2026-11-14-issue32-trade-deposit-gates.md` | Provider **5.993e6 Lamports** → CIO korrekt `WAART AUF DEPOSIT` (Trigger 12e6 nicht erreichbar, gap ≈5,012e6); Slippage-Gate ✅ (1000 bps); **CU-Limit/Preflight = Beleg-Lücke**; Fees = 0 |
+| #32 | Deposit-Reaktion & Gates | `2026-11-14-issue32-trade-deposit-gates.md` | Provider **5.993e6 Lamports** → CIO korrekt `WAART AUF DEPOSIT` (Trigger 12e6 nicht erreichbar, gap ≈5,012e6); Slippage-Gate ✅ (1000 bps); **CU-Limit 500k + Preflight ✅ BELEGT (08:15Z-Korrektur: token/scripts/swap-sol-to-sin.ts L.105 CU_LIMIT=500_000 + simulateTransaction L.339/349 vor Send — Beleg-Lücke des 1. Checks geschlossen)**; Fees = 0 |
 | #34 | Monitoring-Shift-Verifikation | `2026-11-14-issue34-monitoring-verification.md` | **7/7 Daemons alive**; Gecko-Loop-Tot = Known-State (fable-night-coord 08-13Z-Resolve, letzter Beleg 08:07Z); **keine Freeze** (pmset: nur Sleep-Prevention via caffeinate); nightstop-Plist Hour 18 present |
 
 ## ⚠️ Klärungs-Punkte für 18:00L (nur Operator-entscheidbar)

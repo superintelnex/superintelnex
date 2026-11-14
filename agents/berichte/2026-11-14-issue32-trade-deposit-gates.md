@@ -14,8 +14,8 @@
 | Gate | Soll (#32) | Beleg | Status |
 |---|---|---|---|
 | Max Slippage | 1.000 bps | `SIN_SLIPPAGE_BPS=1000` (Buy **und** Sell, cio-autotrade.zsh L.159/179) | ✅ exakt konform |
-| Compute-Unit-Limit | 500.000 | in `agents/trade-loop/`-Script/Config **nicht auffindbar** (Grep leer; 500000-Treffer = Lamports-Beträge, keine CU-Limits) | ⚠️ **Beleg-Lücke — Operator: CU-Limit-Beleg nachreichen oder Gate-Annahme bestätigen** |
-| Preflight-Simulation | aktiv | in den Skripten nicht explizit nachweisbar (nur in `token/node_modules`-SDK-Lib) | ⚠️ wie oben |
+| Compute-Unit-Limit | 500.000 | **GESCHLOSSEN (08:15Z-Recherche):** `token/scripts/swap-sol-to-sin.ts` L.105 `CU_LIMIT = 500_000` („CU-Puffer für swapV2 + Wrap-Sequenz") + `swap-sin-to-sol.ts` L.78 `CU_LIMIT = 500_000` — CIO-Buy/Sell-Schiene feuert genau diese Scripts (cio-autotrade.zsh L.161/181, `deno run … swap-sol-to-sin.ts`) → **exakt 500k konform** | ✅ (Beleg-Lücke vom 08:13Z-Check geschlossen — 1. Suche hatte `agents/trade-loop/` statt `token/scripts/`) |
+| Preflight-Simulation | aktiv | **GESCHLOSSEN:** `swap-sol-to-sin.ts` L.339 `c.simulateTransaction(tx, [providerKp])` **vor** Send mit CU-Überprüfung (L.349: CU-Gebrauch > CU_LIMIT → `fail()`) · `swap-sin-to-sol.ts` L.264–366 identisches Pre-Trade-Sim- + CU-Gate (FB-Varientx L.270 + Haupt-Tx L.356) | ✅ (Beleg-Lücke vom 08:13Z-Check geschlossen) |
 | Holding-Invariante | ≥30 % SIN | ATA = 2,549875741581,8286 ui-SIN (5 Dez. fable-Beleg = 2,5499e12) · 30 % = 7,6496e11 · `wsol=0, sin=1` (komplette Position = SIN) → **kein Verkaufsdruck, Invariante erfüllt** | ✅ (siehe ⚠️-Korrektur unten) |
 
 **⚠️ Transparente Korrektur (read-only, Issue #32-Body betrifft):** „~97,6 % = 2,549 Bio. SIN" ist intern nicht konsistent: 2,549e12 SIN = **≈2,55 % der Gesamt-Supply** (On-Chain-Mint-Read 08:10Z: totalSupply 1e14 @5 Dez.) und ≈100 % der ATA (kein wsol). Vermutet: „97,6 %" = ein älterer **Position-Anteils-Wert** (z. B. % der Trade-Wallet-Gesamtposition, Zeitpunkt unklar) — **nicht** verifizierbar aus den vorliegenden Belegen. → **Operator-Verifikation empfohlen** (Bezugsmaßstab klären). Die operative Invariante (≥30 % SIN, kein Sell-Druck) ist unabhängig davon **erfüllt**.
@@ -34,6 +34,6 @@ RPC-Read 08:09Z (getAccountInfo, read-only):
 `fable-trade-loop 8178` · `cio-autotrade 67648` · `keepalive-trader 75432` · `trade-watchdog 67724` · `agent-watchdog 70001` · `fable-loop-watchdog 90983` · `marketing-taskforce-loop 96786` · `night-price-cohort 97174` · `research-loop 97509` · `caffeinate -s -i -d 93637` → **alle alive** (7/7 Daemons + Taskforce + Research). `gecko-checkpoint-loop` = ABSENT (bekannt: Loop-Tot-Handling läuft via fable-night-coord-Events, kein Neustart ohne Operator).
 
 ## ZUSAMMENFASSUNG (für die 18:00-Zeit)
-Deposit-Reaktion: **scharf, wartet korrekt** (12e6-Trigger). Gates: Slippage ✅ / CU-Limit + Preflight = **Beleg-Lücke** (Punkt ⚠️). Invariante ✅ (97,6 %-Figur klärungsbedürftig). Fees = 0. Loops = 7/7 +. Keine Intervention nötig, kein Handlungsbedarf vor Deposit.
+Deposit-Reaktion: **scharf, wartet korrekt** (12e6-Trigger). Gates: Slippage ✅ · **CU-Limit ✅ (500k, Beleg 08:15Z: token/scripts L.78/105)** · **Preflight ✅ (simulateTransaction vor Send + CU-Fail-Gate, L.339/349)** — beide Beleg-Lücken vom 08:13Z-Check **geschlossen**. Invariante ✅ (97,6 %-Figur klärungsbedürftig). Fees = 0. Loops = 7/7 +. Keine Intervention nötig, kein Handlungsbedarf vor Deposit.
 
 *— Read-only-Artefakt · Hauptsession-Kolaboration · 2026-11-14 08:13 UTC*
