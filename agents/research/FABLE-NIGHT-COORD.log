@@ -4637,3 +4637,34 @@ Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
 
 
 2026-11-14T05:30Z EVENT-RESOLUTION loop-tot:gecko-checkpoint-loop.zsh (Wake-66747, 05-29Z-Tape, Cycle 1926): False-Positive desselben 03:43Z-End-Rauschens — ps-Beleg: 66747 = diese Wake-Agent-Instanz (opencode run --archived --auto, Spawn 05:29:12 UTC, PPID 41198 = live fable-night-coord-loop; Event-Text selbst enthält das pgrep-Muster 'gecko-checkpoint-loop' → garantierte FP), kein echter gecko-checkpoint-loop.zsh-Prozess im ps-Scan; echter Gecko-Loop 87539 planmäßig tot nach 8h-Fenster-Ende 03:43 UTC (konsistent 3ece7de-Diagnose, Morgen-Shift-Fix des Night-Coord-PgGrep-Musters notiert, kein Live-Edit). Frisch-Scan 05:29–05:30 UTC (Live-RPC per node /tmp/bal-check.ts): Deposit DNEBNjtW 5993044 lp = CIO-Gate-Schwellwert (F9Sj9aUa 372364773, 9kT5EwF7 854081, unverändert seit 04-11Z), Akku 100 % DISCHARGING (4:34–4:44 rest, 100 % + caffeinate 93637, kein Handlungsbedarf; Beobachtung: Netzkabel getrennt, fortsetzungsfähig bis ~09:30–10:00 UTC, Morgen-Shift-Fix-Notiz 'AC-Beobachtung' ergänzt), alle Team-Loops LIVE (cio-autotrade 67648, trade-watchdog 67724, agent-watchdog 70001, keepalive-trader 171, fable-loop-watchdog 90983, marketing-taskforce-loop 96786, fable-research-loop 97509, fable-trade-loop 8178, Night-Coord 41198, watch-terminal), git HEAD=origin/main=01a1141 Drift 0/0 (fetch 05:29 UTC). Decision: kein Relaunch, kein Deposit-Handeln, path-scoped ff-only-Commit (05-29Z-Tape untracked→tracked + Lane-LOG agents/research/FABLE-NIGHT-COORD.log; fremde Dirty-Files README.md, 04-18Z/04-33Z/04-41Z/05-25Z-Tape-Re-Timestamps, agents/LOG.md, shared/timers-Dirty, marketing-log + fremde Untracked unangetastet), keine Secrets (Commit-Scan: Tape = nur Loop-Namen/PIDs, Log = Public-Adressen-Shorties wie Runden 12–40, keine Keys/Seed-Phrases). Watch-Condition bleibt aktiv.
+=== CYCLE 1929 · 2026-11-14T05:29:58Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; discharging; 4:34 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(66747)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+=== CYCLE 1930 · 2026-11-14T05:30:14Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; discharging; 4:34 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: TOT
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+2026-11-14T05:30:15Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T05-30Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
