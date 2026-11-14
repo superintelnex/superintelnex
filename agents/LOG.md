@@ -3807,3 +3807,27 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
 - 2026-11-14 ~04:24 UTC · fable · EVENT-RESOLUTION 04-23Z Cycle 1687 (19. gecko-checkpoint End-Rauschen-Tape desselben Ereignisses): Frisch-Sweep — Deposit DNEBNjtW 5993044 lp = CIO-Gate-Schwellwert (F9Sj9aUa 372364773, 9kT5EwF7 854081; unverändert seit 04-11Z, Live-RPC-Recheck: /tmp/bal-check.ts via node, da deno/bun nicht startbar), Akku 100 % AC geladen (caffeinate 93637), alle 9 Team-Loops LIVE (67648/67724/70001/171/90983/93637/96786/97509/8178 + Night-Coord 41198); PgGrep 04:23Z zeigt gecko-checkpoint-loop: TOT = konsistent mit planmäßigem Ende 8h-Fenster 03:43Z (87539), kein Flattern in diesem Scan. Git: HEAD=origin/main=f0ff3f9 Drift 0/0 (FF-OK). Decision: kein Relaunch, kein Deposit-Handeln; path-scoped ff-only-Commit (04-23Z-Tape + agents/LOG.md), fremde Dirty-Files unangetastet, keine Secrets. Watch-Condition aktiv, Morgen-Shift-PgGrep-Fix (Muster-Check bedingt + Wake-Agent-Selbsttreffer ausschließen) weiter offen.
 - 2026-11-14 ~04:27 UTC · fable · EVENT-RESOLUTION 04-26Z Cycle 1700 (22. gecko-checkpoint End-Rauschen-Tape desselben 03:43Z-Ereignisses): Frisch-Sweep — Deposit DNEBNjtW 5993044 lp = CIO-Gate-Schwellwert (F9Sj9aUa 372364773, 9kT5EwF7 854081; unverändert seit 04-11Z, Live-RPC per node /tmp/bal-check.ts, Adressen im Skript nicht im Commit), Akku 100 % AC geladen (caffeinate 93637), alle Team-Loops LIVE (67648/67724/70001/171/90983/93637/96786/97509/8178 + Night-Coord 41198); Ps-Beleg: gecko-checkpoint-loop: TOT im Scan = Wake-Agent-Selbsttreffer desselben pgrep-Musters (PPID 41198), echter Gecko-Loop 87539 planmäßig tot nach 8h-Fenster-Ende 03:43Z → kein Flattern des Live-Systems, nur Muster-FP (konsistent 3ece7de-Diagnose, Morgen-Shift-Fix des Night-Coord-PgGrep-Musters weiter offen, kein Live-Edit). Git: HEAD=origin/main=2ba95e9 Drift 0/0 (merge-base --is-ancestor FF-OK). Decision: kein Relaunch, kein Deposit-Handeln, path-scoped ff-only-Commit (04-26Z-Tape + agents/LOG.md), 04-18Z-Tape-Re-Timestamping + README.md + shared/timers-Dirty-Files + übrige Untracked unangetastet, keine Secrets. Watch-Condition bleibt aktiv.
 - 2026-11-14 ~04:27 UTC · fable · COMMIT/PUSH: (path-scoped, 2 Dateien: agents/outbox/operator/2026-11-14T04-26Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md + agents/LOG.md; ff-Semantik manuell verifiziert via merge-base --is-ancestor origin/main HEAD = OK; push 2ba95e9..<new>, Drift 0/0, keine Secrets, fremde Dirty-Files unangetastet)
+- 2026-11-14 ~04:28 UTC · fable · TXN-KONZENTRATION-Note um zwei
+  Nachträge erweitert (Puls-Akteur + Burst-Grenze, RPC read-only):
+  (1) PULS-AKTEUR: alle 5 Burst-Sigs (21:44:39–21:46:16Z) geparst
+  per rohem HTTP-RPC getTransaction encoding=json v1 (SDK-Struct-
+  Bug umgangen) → FeePayer = DowS6zeBgUKQo13boj8j32dDQ21tWsxCYbQhCjFhTnLa
+  (Fremd-Wallet, NICHT Provider DNEB…). 0,11139 SOL (≈$8,8) = +50,1 %
+  Kurs (Pool-Liq ≈$82). Alle 5 = SwapToc mit order_id + engem
+  Slippage-Limit (1,3–2,4 %, eine 10 %) → Off-Chain-Restorder-
+  Execution (Maker-/Bot-Fills). Akteurs-SIN-Endsaldo 1,4644e12 ui
+  (≈1,46 Trd) = ≈57 % der Provider-Position. Upgrade: „Bot-/Wash-
+  Muster möglich, Adress-Level nicht belegbar" → BELEGT: DowS6ze…
+  = 1 der 3 Unique h24-Buyer.
+  (2) BURST-GRANZE: limit-12-Scan → komplettes Burst-Fenster
+  21:43:57–21:46:16Z = 7 Pool-Tx (2 Probes à 0,000995 wSOL/15,7e9
+  SIN + 5 Burst-Swaps). DowS6ze…-Wallet: exakt 8 Sigs (inkl.
+  21:42:38Z Fee-Budget-Prep), seither still. GAP-Struktur:
+  letzter Pre-Puls-Cluster 20:33:53–20:35:39Z (5 Tx), GAP 68 min,
+  dann Burst → Pool-Inaktivität seit 21:46:16Z = 7 h 52 min.
+  Timeline-Hypothese (nicht belegt): 20:33–20:35Z-Cluster fällt
+  in das CIO-wsol=1-Fenster (20:34:54Z/20:36:13Z). Beleg-Local:
+  /tmp/ptx-1..5.json, /tmp/dows-pre-1..3.json, /tmp/dows-sigs.json,
+  /tmp/pool-sig12.json. Kein Digest (Recherche-Neuheit, für
+  Digest #6 reserviert).
+- 2026-11-14 ~04:28 UTC · fable · EVENT-RESOLUTION 04-27Z Cycle 1703 (23. gecko-checkpoint End-Rauschen-Tape desselben 03:43Z-Ereignisses): Frisch-Sweep — Deposit DNEBNjtW 5993044 lp = CIO-Gate-Schwellwert (F9Sj9aUa 372364773, 9kT5EwF7 854081; unverändert seit 04-11Z, Live-RPC per node /tmp/bal-check.ts, Adressen im Skript nicht im Commit), Akku 100 % AC geladen (caffeinate 93637), alle Team-Loops LIVE (67648/67724/70001/171/90983/93637/96786/97509/8178 + Night-Coord 41198 + watch-terminal 43658); Ps-Beleg: 96861 = Wake-Agent-eigene opencode-cmdline (Event-Text enthält das pgrep-Muster selbst → garantierte FP), echter Gecko-Loop 87539 planmäßig tot nach 8h-Fenster-Ende 03:43Z → kein Flattern des Live-Systems, nur Muster-FP (konsistent 3ece7de-Diagnose, Morgen-Shift-Fix des Night-Coord-PgGrep-Musters weiter offen, kein Live-Edit). Git: HEAD=origin/main=f441024 Drift 0/0 (merge-base --is-ancestor FF-OK). Decision: kein Relaunch, kein Deposit-Handeln, path-scoped ff-only-Commit (04-27Z-Tape + Lane-LOG + agents/LOG.md); TXN-KONZENTRATION-Note (Research-Lane) + 04-18Z-Tape-Re-Timestamp + README.md + shared/timers-Dirty + übrige Untracked unangetastet, keine Secrets. Watch-Condition bleibt aktiv.
