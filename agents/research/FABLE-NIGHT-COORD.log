@@ -2174,3 +2174,20 @@ Battery:  -InternalBattery-0 (id=21430371)	40%; discharging; 1:19 remaining pres
   fable-trade-loop: LIVE(8178)
 Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
 
+2026-11-14T07:37:04Z COMMIT+PUSH OK: Zyklus-Checkpoint (2400)
+=== CYCLE 2401 · 2026-11-14T07:37:19Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	40%; discharging; 1:19 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: TOT
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+2026-11-14T07:37:20Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T07-37Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
