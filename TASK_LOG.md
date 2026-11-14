@@ -6,6 +6,7 @@ Operational progress and task coordination ledger for SuperIntelNex.
 
 ## Active & Continuous Day-Shift Tasks (Until 18:00 Local)
 
+<<<<<<< Updated upstream
 | ID | Task | Owner | Status | Current Context |
 |---|---|---|---|---|
 | **#30** | Raydium CLMM Live Market Research | Research Agent / Fable | Delivered 08:15Z | Morgenreport `RESEARCH-SIN-report-2026-11-14-08-15Z.md` abgelegt (Empfehlung: HALTEN). 300s-Loop weiter aktiv. |
@@ -13,6 +14,17 @@ Operational progress and task coordination ledger for SuperIntelNex.
 | **#32** | Trade-Shift & Deposit Detection | CIO Agent + Fable-Monitor | Active (Read-Only) | Deposit nicht erkannt (08:13Z, ~5.993e6 lp / Schwelle 12e6). Fable-Monitor (15-Min-Takt, PID 53257) + Keepalive-Deposit-Watcher (60s) beobachten bis 18:00. Single-Writer respektiert. |
 | **#34** | Daemon Uptime & Watchdog Supervision | Operator / Supervisor | Active | 7/7 Loops alive (08:13Z). Gecko-8h-Fenster (bis 03:43 UTC) geschlossen; Trend-Beleg Vol $119.81 · 287/279. Freeze-Detection: kein Sleep-Eintrag. |
 | **#35** | F9Sj9a-Sweep & S1 AddLiquidity | Operator | Blocked: User | Awaiting operator instruction regarding keypair or manual sweep. |
+=======
+| ID | Task | Owner | Status | Current Context | Deadline |
+|---|---|---|---|---|---|
+| **P1/P3 Socials** | Designer: Social-Posts P1 & P3 fertigstellen | Designer | Läuft | 15-Minuten-Zyklen (`marketing-taskforce-log.txt`), fertige Socials für den Morgen. | 09:30 UTC |
+| **S1-Status + #35-Vorschlag** | CIO: S1-Status-Update + #35-Entscheidungsvorschlag (Sweep / S1-AddLiquidity) | CIO | Läuft | #35 bleibt selbst Operator-blockiert (blocked:user); Vorschlag liegt in der Outbox. | Operator-Rückkehr + #35-Entscheidung 18:00 MESZ |
+| **Research-Audit + Report-Skelett** | Research: Pool-Audit (Slippage-Kurve, Divergenz-Monitoring) + Morgenreport-Skelett | Research | Läuft | 300s-Polling (`RESEARCH-SIN.log`), read-only, Report-Basis vor Abgabe an Operator. | — |
+| **Docs-Sync + GitHub-Progress** | Docs: Marketing-Asset-Abgleich + Whitepaper-Rollout-Check + Issue-Progress-Kommentare | Docs | Diese Aufgabe (abgeschlossen 08:17 UTC) | Alle 4 Assets aktuell (14.11.-Datenbasis), keine Updates nötig; Progress-Kommentare auf #30/#31/#32/#34 gepostet, #35/#33 unbeleibt (Operator-blockiert). Protokolle: `agents/outbox/docs/2026-11-14T08-17Z-whitepaper-rollout-check.md`, `agents/outbox/github/2026-11-14T08-17Z-issue-status-protokoll.md`. | — |
+| **Digest #4** | Monitor: Tages-Digest #4 (Status-Übersicht) | Monitor | Läuft | Regelmäßige Digest-Zyklen, Loop-Health 7/7 nominal. | — |
+
+Issue-Referenz (offen, 08:15 UTC): #30/#31/#32/#34 aktiv (agent:ready) · #35 + #33 blocked:user (Operator-Entscheidung bzw. Hardware/Ladekabel). Keine offenen PRs.
+>>>>>>> Stashed changes
 
 ---
 

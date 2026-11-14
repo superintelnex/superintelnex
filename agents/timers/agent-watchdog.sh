@@ -75,6 +75,9 @@ print(json.dumps(json.load(open('$REG'))['$name']))")
 
     pidfile="$BASE/$relpid"
     statusfile="$BASE/$relstatus"
+    # Optionales Liveness-Override (z.B. CIO-Loop: PID liegt im Lock-Verzeichnis):
+    override=$(cfgget _liveness_override)
+    [[ -n "$override" ]] && pidfile="$override"
 
     # --- 1) RESTART-Check ---
     if ! pid_alive "$pidfile"; then

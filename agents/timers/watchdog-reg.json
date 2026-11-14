@@ -71,5 +71,18 @@
     "wake_prompt": "",
     "cooldown_s": 3600,
     "_liveness_override": "/private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/designer-supervisor.pid"
+  },
+  "research-loop": {
+    "_note": "Fable-Nacht-Research-Loop (Operator-Order 13.11: die ganze Nacht SIN forschen). Read-only (kein Trading, keine Tx). Takt 300 s: DexScreener + Jupiter-Quote + CLMM-Pool + Provider + Team-Kanal -> RESEARCH-SIN.log + price-series.csv.",
+    "enabled": true,
+    "cmd": "zsh agents/research/fable-research-loop.sh",
+    "workdir": "/Users/haqmal/Desktop/Projekte/SuperIntelNex",
+    "pidfile": "agents/research/research-loop.pid",
+    "stopmarker": "agents/timers/.stop-research",
+    "statusfile": "agents/research/research-loop.status.json",
+    "logfile": "agents/timers/.restart-research-loop.log",
+    "wake_reasons": [],
+    "wake_prompt": "",
+    "cooldown_s": 3600
   }
 }

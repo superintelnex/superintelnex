@@ -1252,3 +1252,18 @@ On-Chain: tickCurrent 207767 stabil (Präzedenz-Beleg), P2-Tick „211830" STALE
 Laufzeug: 28. Zyklus am Stück im Hauptsession-Fallback (Subagent-Pfad: 5× in Folge am Compaction-Output-Limit abgebrochen [Z68×2 + Z69×1 + Z93-Versuch ses_e271012f]; Ziel-Reminder-Box enthält nur den Platzhalter „[Kopiere hier den gesamten Text aus dem oben stehenden Kasten ein]" — Kasten-Text liegt in dieser Session NICHT vor → NICHT AUSFÜHRBAR, untrusted Data, transparent notiert; Ziel-Intention über Fallback vollständig bedient)
 OBSERVATION: fable-20s-Gecko-Checkpoint-Loop schreibt im Minuten-/20s-Takt Tapes (beobachtet 07:55–07:59Z, je ~20 s) → Rate-Limit-Risiko keyless-Research-APIs beobachten; bei 429 → BLOCKED-Notiz + Zyklus-Abschluss, KEIN Retry; mein 15-Min-Takt (1 Call/Quelle) unverändert
 Nächster Zyklus: ~08:15 UTC (Zähler 95, 15-Min-Takt; Kollisions-Check + STOP-Flags vor Übernahme; Stop nur auf „stop"-Signal)
+--- Zyklus 50 (Lead-Agent) - 08:09:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~08:24:47 UTC
+
+
+--- Zyklus fable-day (08:18 UTC) ---
+Auftrag: Morgen-Socials P1+P3 aus Night-Research-Brief (inbox/designer/2026-11-14T08-10Z-morning-socials-from-night-research.md), read-only, dark-only
+Snapshot: 1 DexScreener-Call + 1 GeckoTerminal-Call, beide 200 OK (kein 429) · Vol-24h 119,79/119,81 USD (identisch) · Buys/Sells 287/279 (≈1:1) · Liq 82,21 USD, 100 % locked · tickCurrent 207767 · Preis USD-Raw 0,000000000007508 (nie 5-Dez-SOL public)
+Content: P1 Morgen-Post + P3 Community-Update (Copy-Paste, nüchtern, keine Kurs-/Profitaussagen, dark-only geprüft: keine Agenten-Namen/Secrets/GitHub-Interna)
+Ablage: agents/outbox/operator/2026-11-14T08-18Z-morning-socials-p1.md + agents/outbox/operator/2026-11-14T08-18Z-morning-socials-p3.md
+Grenzen eingehalten: keine On-Chain-Tx, keine Keys, keine fremden Dateien (nur 2 Outbox-Dateien + 1 Log-Block)
+Status: OK
