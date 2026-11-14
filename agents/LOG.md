@@ -3457,3 +3457,84 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   gecommitted). Nacht-Lane bleibt abgeschlossen;
   Morgen-Shift-Pending unverändert (4-Quellen-Puls + Relaunch-Kontrolle).
   Kein Digest (read-only-Abschluss + LOG/Tape-Commit).
+2026-11-13T20:52:07Z COMMIT+PUSH OK: Loop-Start v2 (15s-Takt)
+2026-11-13T21:56:37Z COMMIT-SPRING: Zyklus-Checkpoint (240) (keine Änderungen)
+2026-11-13T22:17:59Z LOG-ROTATION: Archiv /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-night-coord-archive-* (mein Lane-File, nicht append-only-Team-LOG)
+2026-11-13T23:00:56Z COMMIT-SPRING: Zyklus-Checkpoint (480) (keine Änderungen)
+2026-11-13T23:47:43Z LOG-ROTATION: Archiv /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-night-coord-archive-* (mein Lane-File, nicht append-only-Team-LOG)
+2026-11-14T00:06:04Z COMMIT-SPRING: Zyklus-Checkpoint (720) (keine Änderungen)
+2026-11-14T01:08:56Z EVENT[loop-tot:keepalive-trader.py]: Tape agents/outbox/operator/2026-11-14T01-08Z-fable-night-event-loop-tot:keepalive-trader.py.md
+2026-11-14T01:08:57Z COMMIT-SPRING: Event loop-tot:keepalive-trader.py (keine Änderungen)
+2026-11-14T01:08:57Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:keepalive-trader.py'
+2026-11-14T01:08:57Z WAKE-AGENT: PID 99757 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T01:10:31Z COMMIT-SPRING: Zyklus-Checkpoint (960) (keine Änderungen)
+2026-11-14T01:17:58Z LOG-ROTATION: Archiv /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-night-coord-archive-* (mein Lane-File, nicht append-only-Team-LOG)
+2026-11-14T02:13:48Z COMMIT-SPRING: Zyklus-Checkpoint (1200) (keine Änderungen)
+2026-11-14T02:46:33Z LOG-ROTATION: Archiv /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-night-coord-archive-* (mein Lane-File, nicht append-only-Team-LOG)
+2026-11-14T03:17:39Z COMMIT-SPRING: Zyklus-Checkpoint (1440) (keine Änderungen)
+2026-11-14T03:43:43Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T03-43Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T03:43:43Z COMMIT-SPRING: Event loop-tot:gecko-checkpoint-loop.zsh (keine Änderungen)
+2026-11-14T03:43:43Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T03:43:43Z WAKE-AGENT: PID 48854 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T03:44:30Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T03-44Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T03:44:30Z COMMIT-SPRING: Event loop-tot:gecko-checkpoint-loop.zsh (keine Änderungen)
+2026-11-14T03:44:30Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T03:44:30Z WAKE-AGENT: PID 49676 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T03:45:17Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T03-45Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T03:45:17Z COMMIT-SPRING: Event loop-tot:gecko-checkpoint-loop.zsh (keine Änderungen)
+2026-11-14T03:45:17Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T03:45:17Z WAKE-AGENT: PID 50681 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T03:45:49Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T03-45Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T03:45:49Z COMMIT-SPRING: Event loop-tot:gecko-checkpoint-loop.zsh (keine Änderungen)
+2026-11-14T03:45:49Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T03:45:49Z WAKE-AGENT: PID 51301 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T03:47:24Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T03-47Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T03:47:25Z COMMIT-SPRING: Event loop-tot:gecko-checkpoint-loop.zsh (keine Änderungen)
+2026-11-14T03:47:25Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T03:47:25Z WAKE-AGENT: PID 52987 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T03:49:00Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T03-49Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T03:49:01Z COMMIT-SPRING: Event loop-tot:gecko-checkpoint-loop.zsh (keine Änderungen)
+2026-11-14T03:49:01Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T03:49:01Z WAKE-AGENT: PID 54692 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T03:50:53Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T03-50Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T03:50:54Z RECOVERY-FAIL: commit
+2026-11-14T03:50:54Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T03:50:54Z WAKE-AGENT: PID 56614 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T03:53:18Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T03-53Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T03:53:19Z COMMIT-SPRING: Event loop-tot:gecko-checkpoint-loop.zsh (keine Änderungen)
+2026-11-14T03:53:19Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T03:53:19Z WAKE-AGENT: PID 59298 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T03:54:21Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T03-54Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T03:54:21Z COMMIT-SPRING: Event loop-tot:gecko-checkpoint-loop.zsh (keine Änderungen)
+2026-11-14T03:54:21Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T03:54:21Z WAKE-AGENT: PID 60513 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T03:55:26Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T03-55Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T03:55:26Z COMMIT-SPRING: Event loop-tot:gecko-checkpoint-loop.zsh (keine Änderungen)
+2026-11-14T03:55:26Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T03:55:26Z WAKE-AGENT: PID 61759 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T03:56:40Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T03-56Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T03:56:41Z RECOVERY-FAIL: commit
+2026-11-14T03:56:41Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T03:56:41Z WAKE-AGENT: PID 62945 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T03:57:16Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T03-57Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T03:57:16Z COMMIT-SPRING: Event loop-tot:gecko-checkpoint-loop.zsh (keine Änderungen)
+2026-11-14T03:57:16Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T03:57:16Z WAKE-AGENT: PID 63638 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T03:59:59Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T03-59Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+- 2026-11-14 ~04:01 UTC · fable · EVENT-Resolution 03-59Z (loop-tot:gecko-checkpoint-loop.zsh, Tape 03-59Z, Cycle 1599)
+  + 4. Tape desselben dokumentierten End-Rauschens (03-43…03-59Z),
+  identisch zu 03-53Z/03-54Z-Resolutions (b159df6/86798e7):
+  Gecko-8-h-Fenster planmäßig beendet 03:43 UTC (f76621e/221e840),
+  Watch-Condition auf 87539 aktiv → Morgen-Relaunch übernimmt
+  automatisch; KEIN Relaunch, KEIN Deposit-Handeln. Frischer
+  pgrep-False-Positive 66475 (opencode wake-agent dieser Instanz,
+  Kommandozeile enthält Literal 'gecko-checkpoint-loop', Ppid-Kette
+  zu opencode-Harness; ps -o pid,lstart,command verifiziert),
+  ECHTER Gecko-Loop 87539 verifiziert planmäßig tot. Zustand-Scan
+  03-59Z: Deposit DNEBNjtW… 5993044 lp = CIO-Gate-Schwellwert
+  (node /tmp/bal-check.ts; F9Sj9aUa… 372364773 lp,
+  9kT5EwF7… 854081 lp), Akku 100 % AC Power, Team-Loops alle LIVE,
+  HEAD = origin/main (86798e7, 0/0, Tape 03-54Z bereits
+  gecommitted). Nacht-Lane bleibt abgeschlossen;
+  Morgen-Shift-Pending unverändert (4-Quellen-Puls + Relaunch-Kontrolle).
+  Kein Digest (read-only-Abschluss + LOG/Tape-Commit).
