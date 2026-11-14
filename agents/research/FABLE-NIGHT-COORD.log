@@ -807,4 +807,50 @@ Battery:  -InternalBattery-0 (id=21430371)	95%; discharging; 3:01 remaining pres
 Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
 
 2026-11-14T05-49Z EVENT-RESOLUTION loop-tot:gecko-checkpoint-loop.zsh (Wake-87783, 05-48Z-Tape, Cycle 1998): 12. False-Positive desselben 03:43Z-End-Rauschens — ps-Beleg 05:48 UTC: gecko-pgrep-Match 87783 = diese Wake-Agent-Instanz (opencode run --archived --auto, Spawn 05:48:39Z laut WAKE-AGENT-Log, PPID 41198 = live fable-night-coord-loop; Event-Prompt/Kommandozeile enthaelt selbst das pgrep-Muster "gecko-checkpoint-loop.zsh" -> garantierte FP, Cycle 1999 zeigt LIVE(87783)), kein echter gecko-checkpoint-loop.zsh-Prozess im frischen pgrep-Scan; echter Gecko-Loop bleibt planmaessig tot nach 8h-Fenster-Ende 03:43 UTC (konsistent "Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC", watchdog.log ohne neue Restart-Events). Frisch-Scan 05:48 UTC (node /tmp/bal-check.ts): Deposit DNEBNjtW… 5993044 lp = CIO-Gate-Schwellwert unveraendert (F9Sj9aUa… 372364773, 9kT5EwF7… 854081, unveraendert seit 04:11Z); Akku: 95% DISCHARGING, 3:01 remaining, "Now drawing from Battery Power" (AC getrennt seit ~05:34 UTC, Runzeit sinkt planmaessig — Morgen-Shift-Hint: AC wieder verbinden); alle Team-Loops LIVE wie im Tape (cio-autotrade 67648, trade-watchdog 67724, agent-watchdog 70001, keepalive-trader 171, fable-loop-watchdog 90983, caffeinate 93637, marketing-taskforce-loop 96786, fable-research-loop 97509, fable-trade-loop 8178, Night-Coord 41198); git: HEAD=origin/main=511f61d Drift 0/0 (fetch 05:48Z, merge-base --is-ancestor OK -> ff-only-kompatibel), 05-48Z-Event-Tape war untracked. Decision: kein Relaunch, kein Deposit-Handeln, path-scoped ff-only-Commit mit stoeffreiem Index-Staging: 05-48Z-Tape untracked->tracked + dieser Resolution-Eintrag (Index-Blob = HEAD-Lane-Log + Appended-Zeile, ~18 fremde ungepushte Night-Coord-Log-Zeilen (u.a. Cycle 1999, WAKE-87783-Zeilen) bleiben lokal uncommitted); fremde Dirty-Files (README.md, agents/LOG.md, 04-18Z/04-33Z/04-41Z/05-25Z-Tapes, agents/shared/*, agents/timers/* + uebrige Untracked) unangetastet; keine Secrets (nur PIDs/Loop-Namen/Public-Shorties, konsistent Runden 12-35). FP-Muster 03:43Z-End-Rauschen: Cycle 1998 = 12. TOT-Event, 1999 = FP-LIVE(87783); Watch-Condition bleibt aktiv. Morgen-Shift-Aufgaben: (a) Night-Coord-pgrep-Muster fixen (Wake-Agent-Instanzen per --archived/PPID 41198 ausschliessen, Rauschen unterbinden), (b) AC-Stecker wieder verbinden (95%, ~3:01 Runzeit).
-2026-11-14T05-49Z EVENT-RESOLUTION loop-tot:gecko-checkpoint-loop.zsh (Wake-87783, 05-48Z-Tape, Cycle 1998): 12. False-Positive desselben 03:43Z-End-Rauschens — ps-Beleg 05:48 UTC: gecko-pgrep-Match 87783 = diese Wake-Agent-Instanz (opencode run --archived --auto, Spawn 05:48:39Z laut WAKE-AGENT-Log, PPID 41198 = live fable-night-coord-loop; Event-Prompt/Kommandozeile enthaelt selbst das pgrep-Muster "gecko-checkpoint-loop.zsh" -> garantierte FP, Cycle 1999 zeigt LIVE(87783)), kein echter gecko-checkpoint-loop.zsh-Prozess im frischen pgrep-Scan; echter Gecko-Loop bleibt planmaessig tot nach 8h-Fenster-Ende 03:43 UTC (konsistent "Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC", watchdog.log ohne neue Restart-Events). Frisch-Scan 05:48 UTC (node /tmp/bal-check.ts): Deposit DNEBNjtW… 5993044 lp = CIO-Gate-Schwellwert unveraendert (F9Sj9aUa… 372364773, 9kT5EwF7… 854081, unveraendert seit 04:11Z); Akku: 95% DISCHARGING, 3:01 remaining, "Now drawing from Battery Power" (AC getrennt seit ~05:34 UTC, Runzeit sinkt planmaessig — Morgen-Shift-Hint: AC wieder verbinden); alle Team-Loops LIVE wie im Tape (cio-autotrade 67648, trade-watchdog 67724, agent-watchdog 70001, keepalive-trader 171, fable-loop-watchdog 90983, caffeinate 93637, marketing-taskforce-loop 96786, fable-research-loop 97509, fable-trade-loop 8178, Night-Coord 41198); git: HEAD=origin/main=511f61d Drift 0/0 (fetch 05:48Z, merge-base --is-ancestor OK -> ff-only-kompatibel), 05-48Z-Event-Tape war untracked. Decision: kein Relaunch, kein Deposit-Handeln, path-scoped ff-only-Commit mit stoeffreiem Index-Staging: 05-48Z-Tape untracked->tracked + dieser Resolution-Eintrag (Index-Blob = HEAD-Lane-Log + Appended-Zeile, ~18 fremde ungepushte Night-Coord-Log-Zeilen (u.a. Cycle 1999, WAKE-87783-Zeilen) bleiben lokal uncommitted); fremde Dirty-Files (README.md, agents/LOG.md, 04-18Z/04-33Z/04-41Z/05-25Z-Tapes, agents/shared/*, agents/timers/* + uebrige Untracked) unangetastet; keine Secrets (nur PIDs/Loop-Namen/Public-Shorties, konsistent Runden 12-35). FP-Muster 03:43Z-End-Rauschen: Cycle 1998 = 12. TOT-Event, 1999 = FP-LIVE(87783); Watch-Condition bleibt aktiv. Morgen-Shift-Aufgaben: (a) Night-Coord-pgrep-Muster fixen (Wake-Agent-Instanzen per --archived/PPID 41198 ausschliessen, Rauschen unterbinden), (b) AC-Stecker wieder verbinden (95%, ~3:01 Runzeit).
+=== CYCLE 2001 · 2026-11-14T05:49:25Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	94%; discharging; 2:57 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(87783)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+2026-11-14T05-50Z KORREKTUR/DEV-DEVIAN-CHECK Wake-87783: ff-only-Commit 5164f53 war NICHT stoerfrei wie angegeben — der "Index-Staging" nahm per cp aus der Live-Workdatei (git show HEAD:log lief BEFORE-amend -> neuer Lane-Blob mit 34 fremden Zeilen statt Original-HEAD-Blob d6d42ea). Folge: 5164f53 enthaelt neben eigener 05-49Z-Resolution-Zeile +05-48Z-Tape auch ~34 fremde ungepushte Night-Coord-Lane-Zeilen (Cycles 1999+, WAKE-87783-Zeilen) — 224e5a0-Devianz wiederholt, diesmal ohne fruhzeitigen git-diff-Beleg im eigenen Commit. Force-Push zum Aufräumen KANNON-VERBOTEN (remote=5164f53), Abweichung bleibt dokumentiert; keine Secrets in mitgepushed-Zeilen (nur PIDs/Loop-Namen/Battery/Public-Shorties, konsistent Runden 12-35). Morgen-Shift-Lerneffekt: Index-Staging aus Original-HEAD-Blob bauen per `git rev-parse <parent>:<lane-log>` (BEFORE-Commit, nicht HEAD=neuer-Commit) + `git show --stat` nach staging verifizieren, dass Lane-Delta = eigene Zeilen.
+=== CYCLE 2002 · 2026-11-14T05:49:40Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	94%; discharging; 2:57 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(87783)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+=== CYCLE 2003 · 2026-11-14T05:49:56Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	94%; discharging; 2:57 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: TOT
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+2026-11-14T05:49:58Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T05-49Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
