@@ -2241,3 +2241,64 @@ Battery:  -InternalBattery-0 (id=21430371)	40%; discharging; 1:18 remaining pres
   fable-trade-loop: LIVE(8178)
 Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
 
+=== CYCLE 2405 · 2026-11-14T07:38:25Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	40%; discharging; 1:18 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(9691)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+=== CYCLE 2406 · 2026-11-14T07:38:40Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	40%; discharging; 1:18 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(9691)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+=== CYCLE 2407 · 2026-11-14T07:38:56Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	39%; discharging; 1:17 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(9691)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+=== CYCLE 2408 · 2026-11-14T07:39:12Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	39%; discharging; 1:17 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(9691)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+COMMIT+PUSH OK: 368e737 (ff-verified, HEAD=origin/main) — 24. Folge-FP finalisiert; Anmerkung: CYCLE 2405 meldet „gecko-checkpoint-loop: LIVE(9691)“ — dies ist der pgrep-Self-Match dieses Wake (opencode-run-argv enthält das Pattern), kein echter Loop; Night-Coord 41198 läuft weiter.
