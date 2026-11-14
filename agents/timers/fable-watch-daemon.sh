@@ -67,7 +67,14 @@ while :; do
   PIDS_OK=() PIDS_TOT=()
   # Team-Loops (Keepalive: PID wechselt bei Relaunch → Pattern-Check statt
   # Hard-PID 72838; 01:08Z-Loop-Tot-Event → Nacht-Wecker-Relaunch PID 171)
-  for pid in 8178 96786 97509 87539 $(cat agents/research/fable-night-coord.pid 2>/dev/null); do
+  # Gecko-Checkpoint 87539: nur monitorieren, WÄHREND er live ist (8-h-Fenster,
+  # planmäßiges END 03:43Z → 03:44Z-LOG f76621e: KEIN Relaunch bis Morgen).
+  # Statische Hard-PID im Fix-Liste würde jeden Pass erneut LOOP-TOT feuern;
+  # Condition-Check: tot = aus der Watchliste, Morgen-Relaunch (neue PID) = neu
+  # in die Watchliste aufgenommen (kein Falsch-Alarm, kein blinder Fleck).
+  LIVE_PIDS="8178 96786 97509 $(cat agents/research/fable-night-coord.pid 2>/dev/null)"
+  ps -p 87539 >/dev/null 2>&1 && LIVE_PIDS+=" 87539"
+  for pid in $LIVE_PIDS; do
     (( ${#pid} > 2 )) && { ps -p "$pid" > /dev/null 2>&1 && PIDS_OK+=("$pid") || PIDS_TOT+=("$pid"); }
   done
 
