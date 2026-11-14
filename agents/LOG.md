@@ -3992,3 +3992,35 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   - agent-1: agents/inbox/agent-1/2026-11-14T08-10Z-research-loop-until-1800-morgenreport.md (price-series.csv + Morgenreport)
   - Template agents/research/price-series.csv ge-seed (1st Row 08:09Z)
   Push: path-scoped ff-only (BOARD-Regel 3), keine fremden Dateien.
+- 2026-11-14 ~08:20 UTC · fable · Divergenz-Kette um Z95 (08:15Z) — ERSTER
+  sichtbarer Rundungswechsel der abwärts-Kette
+  AUFLÖSUNG: RÜCKFALL −0,16 % → $70,1292 (STAB R.1 Z94 GEBROCHEN).
+  Z95-Beobachtung exakt getroffen: Kante ≈$70,25 + TIER-KANTE
+  ≈$70,15 beidseitig unterschritten → SICHTBARER SWITCH
+  ≈$70,2/≈$70.2 → ≈$70,1/≈$70.1 (4 public-Body-Edits, ERSTER
+  sichtbarer Schalt seit Z79, No-Op-Counter-Reset → 0).
+  ZUSAMMENFALL-BEFUND: Wert < ≈$70,18 UND < ≈$70,15 in EINEM
+  Zyklus → Drift-Phasen 2+3 zusammenfallend (Z94-Beleg „beides
+  zusammenfallend" exakt bestätigt), neues Tief-Band ≈$70,1
+  (Tier-Kante ≈$70,15 vorläufige untere Kante). KURS-NEUTRAL
+  (tick=207767 + Dex $7,508e-12 + Jupiter invariant, 08:15Z-Block)
+  → Feed-Rückfall, kein Markt-Ereignis. Präzisionswert ≈$70,13
+  (neu); Gecko-Gap ≈$12,1 (geändert von ≈$12,0); Rolling-Blindwerte
+  konform (Doppel-Cross-Proof Dex+Gecko 287/279); 26. DexClean,
+  87. RugCheck-404-Runde. Z96-Beobachtung: Stab = Konsolidierung
+  am neuen Tief (≥2 Stabs = „Tief-Plateau-Phase 2/3"); RISE
+  >≈$70,15 = Tier-Verlust; RISE >≈$70,25 = Kante-Verlust; RISE
+  >$70,70 = Re-Capture; RÜCKFALL <≈$70,05 = NÄCHSTER SICHTBARER
+  SWITCH ≈$70,1→≈$70,0 (Regelwerk-Ende). Doku abgeschlossen
+  (Tabellenzeile 65 + Auflösung + Z96-Beobachtung Zeile 455).
+- 2026-11-14 ~08:20 UTC · fable · Night-Coord-Loop PID-Wechsel
+  41198 → 46609 (fable-night-coord-loop.zsh, Wecker-Relaunch,
+  funktionsgleich: führt Gecko-Checkpoint weiter + FP-Resolution;
+  Liveness 11/11 inkl. neuer Liste: 75432 2421 8178 67648 67724
+  70001 90983 93637 96786 97174 97509 + Coord 46609)
+- 2026-11-14 ~08:24 UTC · fable · AC-DETACH 08:23:56Z CRITICAL (genuine, war 1→jetzt 0) —
+  Operator hat Stecker ~08:23Z gezogen; Akku 78 % discharging (war 73 % charging 08:18Z).
+  <35 %-Death-Fenster läuft — bei ~6-7 %/10 min Drain CRITICAL-Exit ~08:50Z, falls kein
+  Re-Plug. Loops-Check: alle LIVE (8178/96786/97509/46609). Fix-Verifikation LIVE:
+  cr_exit hat LAST_AC=0 korrekt gespeichert (619cd96-Kanon, kein Re-Fire beim Neustart).
+  Deposit 5993044 lp unverändert (CIO-Gate). Keine Trade-Intervention.
