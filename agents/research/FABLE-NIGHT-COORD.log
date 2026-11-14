@@ -4389,3 +4389,23 @@ Battery:  -InternalBattery-0 (id=21430371)	64%; discharging; 2:12 remaining pres
 Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
 
 2026-11-14T06:50:11Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T06-50Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T06:50:13Z COMMIT+PUSH OK: Event loop-tot:gecko-checkpoint-loop.zsh
+2026-11-14T06:50:13Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T06:50:13Z WAKE-AGENT: PID 54631 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+=== CYCLE 2229 · 2026-11-14T06:50:28Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	64%; discharging; 2:12 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(54631)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+
+2026-11-14T06-50Z EVENT-RESOLUTION loop-tot:gecko-checkpoint-loop.zsh (Wake-54631, 06-50Z-Tape, Cycle 2228): 19. False-Positive desselben 03:43Z-End-Rauschens — ps-Beleg 06:50 UTC: gecko-pgrep-Match 54631 = diese Wake-Agent-Instanz (opencode run --archived --auto, Spawn 06:50:13Z laut Lane-Log, PPID = live fable-night-coord-loop 41198; Event-Prompt enthaelt selbst das pgrep-Muster "gecko-checkpoint-loop.zsh" -> garantierte FP, Cycle 2229 zeigt LIVE(54631)), kein echter gecko-checkpoint-loop.zsh-Prozess im frischen ps-Scan; echter Gecko-Loop bleibt planmaessig tot nach 8h-Fenster-Ende 03:43 UTC (konsistent "Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC"). Frisch-Scan 06:50 UTC (Live-RPC per node /tmp/bal-check.ts): Deposit DNEBNjtW… 5993044 lp = CIO-Gate-Schwellwert unveraendert (F9Sj9aUa… 372364773, 9kT5EwF7… 854081, unveraendert seit 04:11Z); Akku: 64% DISCHARGING, 2:12 remaining, "Now drawing from 'Battery Power'" (Morgen-Shift-Hint bleibt: AC wieder verbinden); alle Team-Loops LIVE wie im Tape (cio-autotrade 67648+50338, trade-watchdog 67724, agent-watchdog 70001, keepalive-trader 171, fable-loop-watchdog 90983, caffeinate 93637, marketing-taskforce-loop 96786, fable-research-loop 97509, fable-trade-loop 8178, Night-Coord 41198, Wake 54631); git: HEAD=origin/main drift 0/0 (fetch 06:50Z, merge-base --is-ancestor OK -> ff-only-kompatibel). Decision: kein Relaunch, kein Deposit-Handeln; path-scoped ff-only-Commit: Lane-Log 06-50Z-Zeilen (per git diff --stat/preview vor Staging geprueft — 18 Zeilen = eigene 06:50:11Z-Event-Zeile + Commit/Push/Wake-Spawn-Protokoll + Cycle 2229, keine fremden Inhalte); fremde Dirty-Files (README.md, agents/LOG.md, 04-18Z/04-33Z/04-41Z/05-25Z-Tapes, agents/marketing/*, agents/shared/*, agents/timers/*, marketing-taskforce-log.txt + uebrige Untracked) unangetastet; keine Secrets (nur PIDs/Loop-Namen/Public-Shorties wie die Runden davor). FP-Muster 03:43Z-End-Rauschen: Cycle 2228 = 19. TOT-Event; Watch-Condition bleibt aktiv. Morgen-Shift-Aufgaben: (a) Night-Coord-pgrep-Muster fixen (Wake-Agent-Instanzen ausschliessen, z.B. per --archived-PPID-Erkennung 41198), (b) AC-Stecker wieder verbinden, (c) vor path-scoped Commits immer git diff --stat <lane-log> pruefen (224e5a0-Lerneffekt).
