@@ -3750,4 +3750,22 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
 2026-11-14T04:10:35Z RESOLUTION[loop-tot:gecko-checkpoint-loop.zsh]: 04-09Z-Tape = 9. End-Rauschen (pgrep-Muster "gecko-checkpoint-loop" = opencode-Wake-Agent-77428-False-Positive, echter Loop 87539 planmäßig tot nach 8h-Fenster-Ende 03:43Z, Watch-Condition aktiv). Zustand: Deposit DNEBNjtW 5993044 lp = CIO-Gate-Schwellwert (via /tmp/bal-check.ts, F9Sj9aUa 372364773, 9kT5EwF7 854081), Akku 100 % AC, alle Team-Loops LIVE (67648/67724/70001/171/90983/93637/96786/97509/8178), HEAD=e6c6429=origin/main Drift 0/0. Kein Relaunch, kein Deposit-Handeln.
 2026-11-14T04:11:00Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T04-11Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
 2026-11-14T04:11:30Z RESOLUTION[loop-tot:gecko-checkpoint-loop.zsh]: 04-11Z-Tape = 10. End-Rauschen (pgrep-Muster "gecko-checkpoint-loop" = opencode-Wake-Agent-78544-False-Positive, echter Loop 87539 planmäßig tot nach 8h-Fenster-Ende 03:43Z, Watch-Condition aktiv). Zustand: Deposit DNEBNjtW 5993044 lp = CIO-Gate-Schwellwert (via /tmp/bal-check.ts, F9Sj9aUa 372364773, 9kT5EwF7 854081), Akku 100 % AC, alle Team-Loops LIVE (67648/67724/70001/171/90983/93637/96786/97509/8178), HEAD=b858ead=origin/main Drift 0/0. Kein Relaunch, kein Deposit-Handeln.
+- 2026-11-14 ~04:14 UTC · fable · Divergenz-Kette um Z80 (04:08Z)
+  ergänzt + Z80-Beobachtung AUFGELOEST: STAB R.1 am neuen Tief
+  $70,1768 (identisch zu Z79, RÜCKFALL-Zyklus 79 bestätigt,
+  No-Op-Counter 1, 0 Body-Edits). Tief-Kante ≈$70,18 als
+  vorläufige Band-Unter-Kante bestätigt. Z80-Tape bestätigt
+  zusätzlich den h24-Unique-Counter 3B/1S (TXN-KONZENTRATION-
+  Note). Neue Z81-Beobachtung: weiter Stab/RISE in Band
+  $70,18–71,6 = Oszi mit neuer tieferer Unter-Kante; RISE über
+  $70,70 = Band-Re-Capture; Fall unter $70,18 = Drift-Phase 2
+  (weitere Tief-Kante). Kein Digest (Doku-Erweiterung).
 2026-11-14T04:14:55Z RESOLUTION[loop-tot:gecko-checkpoint-loop.zsh]: 04-11Z-Tape 11. Bestätigung (Wake-79325 = opencode-Wake-Agent pgrep-FP, echter Gecko-Loop 87539 planmäßig tot 03:43Z, live Loop 41198 re-timestampete Tape CYCLE 1640→1643, Watch-Condition aktiv). Frisch-Scan: Deposit DNEBNjtW 5993044 lp = CIO-Gate-Schwellwert (via /tmp/bal-check.mts, F9Sj9aUa 372364773, 9kT5EwF7 854081), Akku 100 % AC, Team-Loops LIVE (67648/67724/70001/171/90983/93637/96786/97509/8178), HEAD=origin/main=4528675 Drift 0/0. Kein Relaunch, kein Deposit-Handeln.
+- 2026-11-14 ~04:16 UTC · fable · SPAQUELLE-IDENTIFIZIERT (Morgen-Shift-Fix):
+  End-Rauschen-Tapes (11× 03-53Z…04-11Z) feuern, weil fable-night-coord-loop.zsh
+  (PID 41198, live) "gecko-checkpoint-loop.zsh" im pgrep-Muster-Check (Z. 156) führt
+  und der echte Loop 87539 planmäßig tot ist (8-h-Fenster-Ende 03:43Z) → neues
+  loop-tot-Tape pro Night-Coord-Cyklus. Wake-Agent-Resolutions korrekt (kein Relaunch),
+  aber Spam-Quelle. FIX = Morgen-Shift: Muster-Check für gecko bedingt machen
+  (analog watch-daemon-Fix 221e840) — NICHT jetzt (41198 liest das Skript live;
+  Datei-Edit während Lauf riskiert Korruption).
