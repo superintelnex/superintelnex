@@ -1795,3 +1795,22 @@ Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
 
 2026-11-14T04:41:56Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T04-41Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
 2026-11-14T04:41:59Z RECOVERY-OK: ff-only-Recommit, fremde Dateien unangetastet
+2026-11-14T04:42:00Z COMMIT+PUSH OK: Event loop-tot:gecko-checkpoint-loop.zsh
+2026-11-14T04:42:00Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T04:42:00Z WAKE-AGENT: PID 14089 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+=== CYCLE 1757 · 2026-11-14T04:42:15Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(14089)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+2026-11-14T04:42:30Z WAKE-AGENT-14089 VERIFIED: 04-41Z-Event (Wake-13364→14089) re-geprüft — Deposit DNEBNjtW 5993044 lp = CIO-Gate-Schwellwert unverändert (F9Sj9aUa 372364773, 9kT5EwF7 854081; Live-RPC per /tmp/bal-check.ts), Akku 100 % AC geladen (caffeinate 93637), Team-Loops alle LIVE (trade-watchdog 67724, agent-watchdog 70001, keepalive-trader 171, marketing-taskforce-loop 96786, fable-research-loop 97509, fable-trade-loop 8178, Night-Coord 41198), gecko-checkpoint-loop planmäßig tot (8h-Fenster-Ende 03:43 UTC); pgrep-Eintrag 'gecko: LIVE(14089)' = Wake-Agent-eigene opencode-cmdline (PPID 41198), FP konsistent mit 3ece7de-Diagnose (Morgen-Shift-Fix des Night-Coord-PgGrep-Musters notiert, kein Live-Edit); git HEAD=origin/main=ef3114a Drift 0/0 (fetch). Decision: kein Relaunch, kein Deposit-Handeln, keine Secrets; fremde Dirty-Files (README, agents/LOG.md, marketing, timers, outbox-Alt-Tapes u.v.m.) unangetastet. Watch-Condition bleibt aktiv.
