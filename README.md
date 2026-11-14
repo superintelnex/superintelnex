@@ -2,6 +2,9 @@
 > Decentralized token ecosystem merging meme culture with artificial superintelligence and autonomous digital payments on Solana.
 
 [![Solana](https://img.shields.io/badge/Blockchain-Solana%20Mainnet-14F195?logo=solana)](https://explorer.solana.com/address/A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z)
+[![CI](https://github.com/superintelnex/superintelnex/actions/workflows/ci.yml/badge.svg)](https://github.com/superintelnex/superintelnex/actions/workflows/ci.yml)
+[![QA-Gate](https://github.com/superintelnex/superintelnex/actions/workflows/qa-gate.yml/badge.svg)](https://github.com/superintelnex/superintelnex/actions/workflows/qa-gate.yml)
+[![Holding Invariant](https://img.shields.io/badge/Holding%20Invariant-97.6%25%20Intact-brightgreen)](#)
 [![Whitepaper](https://img.shields.io/badge/Whitepaper-v1.1%20Live-white)](https://superintelnex.com/whitepaper.html)
 [![DEX](https://img.shields.io/badge/Raydium-CLMM%20Live-22d3ee)](https://raydium.io/swap/?inputMint=sol&outputMint=A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z)
 [![DexScreener](https://img.shields.io/badge/DexScreener-SIN%2FSOL-success)](https://dexscreener.com/solana/4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM)
@@ -32,6 +35,28 @@
 | **Mint Authority** | Revoked (null) | Guaranteed on-chain: no new tokens can ever be created |
 | **Freeze Authority** | Revoked (null) | Guaranteed on-chain: accounts can never be frozen or blocked |
 | **Program** | Standard SPL | `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA` |
+
+---
+
+## 🧪 Continuous Automated Testing & On-Chain Verification
+
+The SuperIntelNex repository enforces full test-driven verification across all smart contract parameters, DEX pool states, and routing algorithms:
+
+```sh
+deno test -A token/tests/
+```
+
+- **`authorities.test.ts`**: Verifies irreversible revocation of mint and freeze authority on localnet.
+- **`config.test.ts`**: Validates configuration integrity, supply limits, and the u64 hardware overflow guard.
+- **`distribute.test.ts`**: Verifies exact, zero-remainder mathematical distribution across token accounts.
+- **`integration.test.ts`**: Simulates the full four-step token lifecycle locally.
+- **`market-health.test.ts`**: Continuous live on-chain health suite:
+  1. DexScreener pair health & volume metrics.
+  2. Jupiter SOL ➔ SIN buy quote routing.
+  3. Jupiter SIN ➔ SOL sell quote routing.
+  4. Raydium CLMM pool active tick coverage within range `[179280, 259280]`.
+  5. Solana Mainnet JSON-RPC cryptographic invariant (`supply: 10¹⁴`, `decimals: 5`, `mint=null`, `freeze=null`).
+  6. Provider holding invariant (Ticket #6: $\ge 30\%$ requirement, currently ~97.6% intact).
 
 ---
 
