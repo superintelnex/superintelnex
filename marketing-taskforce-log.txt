@@ -1331,3 +1331,108 @@ Laufzeug: 31. Zyklus am Stück im Hauptsession-Fallback (Subagent-Pfad: 5× in F
 GIT-LANDING-PRÄZEDENZ: Zähler-94 `f11c7ea` → Zähler-95 `858999e` [13. Kette; fable-Commit `45a2448` absorbierte 4 Z95-Content-Dateien → fable-Race-Variante] → Zähler-96 `c4e7643` [14. Kette; Re-Land: Plain-Push ANCESTRY-MISS [fable-Race `70f719c`] + Plain-Rebase fehlgeschlagen [2 unstaged fable-Dateien `FABLE-NIGHT-COORD.log` + `price-series.csv`] → `git pull --rebase --autostash origin main` [Autostash `aae7522` schützt fable-Dateien, gibt sie zurück, nie fable-Content berührt] → ANCESTRY-OK; **PROTOKOLL-UPDATE: `--autostash`-Rebase bei unstaged-fable-Working-Tree-Dateien = korrekter Weg, dokumentiert**] → Zähler 97 = 15. Kette angestrebt. **Atomare Kette: `git add` [NUR die 6 eigenen Dateien: x-posts.md, telegram-announcement.md, web-copy-draft.md, research-snapshot.md, cycle97-tape, marketing-taskforce-log.txt] → `git commit` → `git pull --rebase --autostash origin main` [bei unstaged fable-Dateien] + `git push` → `git fetch` → `git merge-base --is-ancestor $NEW origin/main`**; bei ANCESTRY-MISS → Re-Land-Kette wiederholen (Content liegt im Working Tree) · KEIN FORCE-PUSH · fable-WIP-Dateien NIE committen (untracked: `agents/marketing/{README,community-update,investor-pitch,listing-blurb,sIN-overview}.md`)
 OBSERVATION: fable-Gecko-Checkpoint-Loop RESOLVE 08:13Z → LIVE(45795), 8h-Fenster 08:07→~16:07 UTC, NOMINAL; 20s-Keep-Awake-Regime (KEEP-AWAKE-PROTOCOL.md `68b56bc`, Issue #34) aktiv bis 18:00 UTC → keyless-Rate-Limit-Risiko aktuell entlastet, 15-Min-Takt (1 Call/Quelle) unverändert; bei 429 → BLOCKED-Notiz + Zyklus-Abschluss, KEIN Retry
 Nächster Zyklus: ~09:05 UTC (Zähler 98, 15-Min-Takt; Kollisions-Check + STOP-Flags vor Übernahme; Sleep ~780 s, expliziter timeout; Stop nur auf „stop"-Signal)
+--- Zyklus 56 (Lead-Agent) - 09:39:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~09:54:47 UTC
+
+--- Zyklus 57 (Lead-Agent) - 09:54:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~10:09:47 UTC
+
+--- Zyklus 58 (Lead-Agent) - 10:09:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~10:24:47 UTC
+
+--- Zyklus 59 (Lead-Agent) - 10:24:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~10:39:47 UTC
+
+--- Zyklus 60 (Lead-Agent) - 10:39:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~10:54:47 UTC
+
+--- Zyklus 61 (Lead-Agent) - 10:54:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~11:09:47 UTC
+
+--- Zyklus 62 (Lead-Agent) - 11:09:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~11:24:47 UTC
+
+--- Zyklus 63 (Lead-Agent) - 11:24:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~11:39:47 UTC
+
+--- Zyklus 64 (Lead-Agent) - 11:39:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~11:54:47 UTC
+
+--- Zyklus 65 (Lead-Agent) - 11:54:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~12:09:47 UTC
+
+--- Zyklus 66 (Lead-Agent) - 12:09:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~12:24:47 UTC
+
+--- Zyklus 67 (Lead-Agent) - 12:24:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~12:39:47 UTC
+
+--- Zyklus 68 (Lead-Agent) - 12:39:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~12:54:47 UTC
+
+--- Zyklus 69 (Lead-Agent) - 12:54:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~13:09:47 UTC
+
+--- Zyklus 70 (Lead-Agent) - 13:09:47 UTC ---
+Research-Agent : wartet frische Beleg-Runde (keyless-APIs, 1 Call/Quelle/Zyklus)
+Content-Agent  : wartet Content-Update P1–P5 auf frischem Snapshot (dark-only-geprüft: ja)
+Operator-Kanal : naechster Output → agents/outbox/operator/
+Status         : OK (Stop-Flaggen: fehlen)
+Nächster Zyklus: ~13:24:47 UTC
+
