@@ -2717,3 +2717,6 @@ Battery:  -InternalBattery-0 (id=21430371)	36%; discharging; 1:13 remaining pres
 Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
 
 2026-11-14T07:46:01Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T07-46Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T07:46:03Z COMMIT+PUSH OK: Event loop-tot:gecko-checkpoint-loop.zsh
+2026-11-14T07:46:03Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T07:46:03Z WAKE-AGENT: PID 20968 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
