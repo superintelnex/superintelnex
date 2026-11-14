@@ -44,8 +44,8 @@
   .brand span{position:relative;top:-.5px}
   .brand-mark{width:40px;height:40px;flex:none;display:block;transform:translateY(-.5px)}
   nav{display:flex;gap:clamp(13px,3vw,42px);align-items:center}
-  nav button{background:none;border:0;padding:12px 0;color:var(--muted);font-size:13px;white-space:nowrap}
-  nav button:hover,nav button[aria-current]{color:var(--ink)}
+  nav button,nav a.nav-item{background:none;border:0;padding:12px 0;color:var(--muted);font-size:13px;white-space:nowrap;text-decoration:none;cursor:pointer;display:inline-block}
+  nav button:hover,nav button[aria-current],nav a.nav-item:hover{color:var(--ink)}
   nav button[aria-current]::after{content:"";display:block;width:100%;height:1px;background:var(--ink);transform:translateY(8px)}
   .languages{display:flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:99px}
   .languages button{border:0;border-radius:99px;background:transparent;color:var(--muted);padding:5px 8px;font:11px var(--mono)}
@@ -265,6 +265,7 @@
       <button type="button" data-go="0" aria-current="page" data-de="Start">Home</button>
       <button type="button" data-go="1">Vision</button>
       <button type="button" data-go="2" data-de="Projektstatus">Project status</button>
+      <a href="whitepaper.html" class="nav-item" data-de="Whitepaper">Whitepaper</a>
     </nav>
     <div class="languages" role="group" aria-label="Language" data-de-label="Sprache">
       <button type="button" lang="en" data-lang="en" aria-label="English" aria-pressed="true">EN</button>
