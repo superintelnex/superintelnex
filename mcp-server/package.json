@@ -1,0 +1,26 @@
+{
+  "name": "@superintelnex/mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server for the SuperIntelNex website repo — read site files, repo info and recent commits (local checkout or GitHub API)",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "sin-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test:smoke": "node dist/index.js --smoke"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "^5.8.0"
+  }
+}
