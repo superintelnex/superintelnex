@@ -2338,3 +2338,34 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
 Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
 
 2026-11-14T04:58Z ADDENDUM: git (Apple Git 2.50.1) akzeptiert kein --ff-only fuer push -> stattdessen merge-base --is-ancestor origin/main HEAD als FF-Pruefung + plain push; ok (ddd84a1..98734b5).
+=== CYCLE 1789 · 2026-11-14T04:51:07Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(24029)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+=== CYCLE 1790 · 2026-11-14T04:51:23Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(24968)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: TOT
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+2026-11-14T04:51:23Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T04-51Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
