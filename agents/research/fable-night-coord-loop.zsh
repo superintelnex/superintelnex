@@ -153,8 +153,18 @@ while true; do
     fi
     batt=$(pmset -g batt 2>/dev/null | sed -n '2p')
     echo "Battery: ${batt:-unbekannt}"
+    # Self-Referenz-Schutz (FP#17–25): Unsere Wake-Agents (opencode run) tragen den
+    # Event-Namen (z. B. "loop-tot:gecko-checkpoint-loop.zsh") in der Kommandozeile →
+    # pgrep -f false-positiv → Flap-Tode. opencode-Prozesse gelten NICHT als Live-Loop.
     for pat in "cio-autotrade.zsh" "trade-watchdog.zsh" "agent-watchdog.sh" "keepalive-trader.py" "gecko-checkpoint-loop.zsh" "fable-loop-watchdog.sh" "caffeinate" "marketing-taskforce-loop.zsh" "fable-research-loop.sh" "fable-trade-loop.sh"; do
-      p=$(pgrep -f "$pat" 2>/dev/null | head -1)
+      p=""
+      for pid in $(pgrep -f "$pat" 2>/dev/null); do
+        case "$(ps -o command= -p $pid 2>/dev/null)" in
+          *opencode*) continue ;;
+        esac
+        p=$pid
+        break
+      done
       if [[ -n $p ]]; then echo "  ${pat%%.*}: LIVE($p)"; else echo "  ${pat%%.*}: TOT"; dead_now="$dead_now ${pat}"; fi
     done
     [[ -f $GECKO ]] && echo "Gecko-letzte: $(tail -1 $GECKO)"
@@ -193,6 +203,18 @@ while true; do
       if (( batt_good_strikes >= 3 )); then st_batt=0; batt_good_strikes=0; fi
     fi
   fi
+  # Gecko 8h-Fenster: sauberes "CHECKPOINT-LOOP END" im Log = erwarteter Fenster-Ende,
+  # KEIN Alarm → auto-Relaunch frischer 8h-Instanz (stoppt die FP-Tape-Flut).
+  # Abnormales Ende (Log-Ende ≠ END) fällt durch → Event + Wake-Agent wie gehabt.
+  if [[ $dead_now == *"gecko-checkpoint-loop.zsh"* ]]; then
+    gtail=$(tail -1 $GECKO 2>/dev/null || echo "")
+    if [[ $gtail == *"CHECKPOINT-LOOP END"* && -f $TDIR/gecko-checkpoint-loop.zsh ]]; then
+      nohup zsh $TDIR/gecko-checkpoint-loop.zsh >/dev/null 2>&1 &
+      log "GECKO-RELAUNCH: 8h-Fenster sauber beendet ('$(echo $gtail)') → frische Instanz PID $! (Ende ~+8h)"
+      dead_now=${dead_now//gecko-checkpoint-loop.zsh/}
+    fi
+  fi
+
   # Team-Loop-tot: erst bei neuer Entität; wiederlebende aus Sichteliste streichen
   for d in ${=dead_now}; do
     if [[ " $dead_seen " != *" $d "* ]]; then
