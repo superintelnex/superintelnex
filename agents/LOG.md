@@ -3121,3 +3121,122 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   läuft in der Nacht-Shift offenbar nicht stabil; Morgen-Shift: Subagent-Pfad
   einmalig testen (bewusst einen Zyklus ohne Fallback), Fallback-Trigger
   dokumentieren. Keine Eingreif-Pflicht jetzt (kein Deposit-Window aktiv).
+- 2026-11-14 ~01:56 UTC · fable · Impact-Analyse (NACHTRAG) +
+  Divergenz-Kette Z70:
+  (1) IMPACT-ANALYSE-2026-11-14.md um SELL-SEITE ergänzt
+  (read-only Jupiter-Quotes SIN->SOL, 4 Größen): 1 Tranche
+  (0,0057-SOL-Äquivalent = 5,996e15 raw) −1,1 % | 0,01-SOL
+  9,823e-3 (−1,8 %) | 0,026-SOL 2,491e-2 (−4,2 %) | 0,05-SOL
+  4,617e-2 (−7,7 %). Befund: SELL-SEITE degradiert SPÄTER/STÄRKER
+  als BUY-SEITE (dünne SOL-Randreserve des CLMM-Intervalls) →
+  SELL-BACK-Tranchen ≤ 0,01-SOL-Äquivalent empfohlen (0,05-SOL nur
+  im Stopp-Modus). Korrigierte erste Messung (falsche Größen-
+  Basis) überschrieben.
+  (2) Divergenz-ANALYSE-Kette bis Z70 (01:34Z) aktualisiert:
+  STABILISIERUNG R.1 am Rückfall-Niveau $72,2843 — Muster-Oszillation
+  bestätigt (kein Konvergenz-Trend).
+  Liveness 12/12 (01:45:10Z). Deposit abwesend (PROV 5,993,044).
+  CIO wsol=0-Serie + free=0,005993 konsistent. Kein Digest.
+- 2026-11-14 ~02:10 UTC · fable · Research-Lieferable #4:
+  agents/research/CLMM-RANGE-CHECK-2026-11-14.md (1× read-only
+  Ausführung von agents/research/pool-range-check.ts):
+  (1) Spot-Kreuzverifikation: On-Chain sqrtX64-Decode 1,05384e9
+  raw-SIN/Lamport-SOL = night.jsonl 1,0538e9 auf 0,004 % (3.
+  unabhängiger Kurs-Kanal, alle <0,2 % gegeneinander).
+  (2) tickSpacing 10, tickCurrent 207767, Coverage-Arrays
+  178800–260720 + 259200–341120 (lückenlos, 1520-Overlap).
+  Asymmetrie: Sell-Seite (unten) nur 28967 Units Coverage-Abstand,
+  Buy-Seite 133353 — nächstes Objekt bei Kurs-Abwärtstrend =
+  unterer Array-Start.
+  (3) OFFEN (honest flag, kein Trading-Input): initializedTicks=0
+  in beiden Arrays = vermutlich mein Decode-Feldname-Annahme
+  (liqRaw ≠ 0 beweist existierende Positionen) + Tick→USD-
+  Exponent (Voll- vs. Halb) unkalibriert. Beide read-only
+  auflösbar (Task #5).
+  Liveness 12/12 (02:00:39Z). Deposit abwesend (PROV 5,993,044).
+  CIO wsol=0-Serie konsistent (02:00Z). Kein Digest.
+- 2026-11-14 ~02:20 UTC · fable · CLMM-Range-Check V2 (Korrektur der
+  Version 1, agents/research/CLMM-RANGE-CHECK-2026-11-14.md):
+  (1) Decode-Bug V1 behoben (Feldname .initialized statt
+  initializedTickCount; falsche tickStart-Annahme; ungeprüfter
+  Voll-Exponent) — jetzt echte Position-Daten.
+  (2) KERN-FINDING: WIR SIND DIE EINZIGE LP-POSITION IM POOL
+  (Array 1: 1 aktiver Tick 179280, Array 2: 1 aktiver Tick 259280;
+  grossLiqSumRaw pro Array = exakt Pool-liqRaw 20031261577933).
+  (3) Range asymmetrisch: tickUpper 259280 → SIN-Kurs ≈5,79 % Spot
+  (−94,2 %, nähere Kante), tickLower 179280 → ≈17,27× Spot
+  (+1627 %). Out-of-range nur bei −94 % Crash oder ×17-Event.
+  (4) Exponent KALIBRIERT (Pre/Post-Puls-Beleg): 1,0001e-4 pro
+  Tick-Unit, Preis = e^(1e-4·tick).
+  (5) P2-Tick-Offenpunkt "211830 STALE" read-only AUFGELOEST:
+  211830 = gerundetes Pre-Puls-tickCurrent 211829 (Log 21:36/21:41Z);
+  der 21:44Z-Puls verschob tick um −4062 auf 207767. Beleg-Kette
+  fertig — Operator-Digest #6 (bei Event) trägt die Auflösung.
+  Kein Deposit (PROV 5,993,044), CIO wsol=0-Serie läuft.
+- 2026-11-14 ~02:15 UTC · fable · Divergenz-Kette um Z71/Z72 ergänzt:
+  ZWEI RÜCKFÄLLE IN FOLGE brechen die Z70-Stabilisierung:
+  $72,2843 → $72,0161 (−0,37 %, Z71 01:51Z) → $71,8478 (−0,23 %, Z72
+  02:06Z). Oszillations-Band erodiert abwärts (neue Unterkante
+  ≈$71,85). Beide Runden mit echtem Public-Rundungs-Impact
+  (≈$72,3 → ≈$72,0 → ≈$71,8 DE/EN, No-Op-Kette 2× gebrochen).
+  On-Chain invariant (tick/sqrtX64 unverändert) — Eigen-Cadence
+  intakt, KEINE Konvergenz zum Dex-$82-Band. Richtungs-Lesung:
+  mildes Abwärts-Drift innerhalb der Oszillation. Nächster Beleg:
+  Z73. Kein Digest (Muster-Erweiterung, kein Market-Change).
+- 2026-11-14 ~02:22 UTC · fable · Divergenz-Kette um Z73 (02:21Z) ergänzt
+  + Muster-Lesung KORRIGIERT: DREI RÜCKFÄLLE IN FOLGE brechen die
+  Z70-Stabilisierung: $72,2843 → $72,0161 (−0,37 %) → $71,8478
+  (−0,23 %) → $71,5838 (−0,37 %). Neue Band-Unterkante ≈$71,58;
+  Public-Rundung ≈$72,3 → ≈$72,0 → ≈$71,8 → ≈$71,6 DE/EN
+  (No-Op-Kette 3× gebrochen). On-Chain invariant (tick 207767 /
+  sqrtX64 unverändert). Kette: 3 aufeinanderfolgende Abwärts-Zyklen
+  = mildes Abwärts-Drift, GEP-DEVIATION WÄCHST (≈$82,2 vs ≈$71,6,
+  Gap ≈$10,6). Beobachtung für Z74: Rebound = Oszi mit sinkendem
+  Band-Mittelpunkt, erneuter Rückfall = abwärtsgerichtete
+  Eigen-Cadence. Deposit abwesend (PROV 5,993,044), CIO
+  wsol=0-Serie läuft. Liveness 12/12 (02:11:49Z). Kein Digest
+  (Muster-Erweiterung, kein Market-Change).
+- 2026-11-14 ~02:28 UTC · fable · CLMM-Doc um LP-Ertrags-Schaetzung
+  ergaenzt (read-only ClmmConfig-Read, agents/research/
+  CLMM-RANGE-CHECK-2026-11-14.md Nachtrag): tradeFeeRate 100
+  (= 1,00 % pro Swap), protocolFeeRate 12 %, fundFeeRate 40 %
+  → LP-Anteil ≈ 48 %. Bei Vol-24h $122,77: ≈$0,59/Tag LP-Ertrag
+  (wir 100 % der Position, da einzige LP). Befund: Yield
+  NEGLIGIBLE — Position ist Ticket, kein Ertrags-Vehicle;
+  rechtfertigt kein Halten-Argument fuer Ticket #6 (Sell-Back).
+  Kein Trigger, kein Deposit (PROV 5,993,044). CIO wsol=0-Serie
+  laeuft. Z74-Watch (Divergenz: Rebound = Oszi mit sinkendem
+  Band, Rueckfall = abwaertsgerichtete Eigen-Cadence).
+- 2026-11-14 ~02:40 UTC · fable · Operator-Kurz-Notiz geschrieben
+  (agents/inbox/operator/2026-11-14T02-38Z-fable-p2-tick-211830-aufgelöst-sole-lp-befund.md):
+  (1) P2-Tick-Offenpunkt endgültig beantwortet: "211830" =
+  Pre-Puls-Snapshot 211829 (Log 21:36/21:41Z), gültig = 207767
+  (Puls −4062, jetzt ≈4,7 h invariante). Marketing kann P2-
+  Publishing mit 207767 abgleichen (Sperre read-only aufgehoben,
+  keine neue Tx — Board-Rule 6).
+  (2) sole-LP-Befund + Range-Geometrie (179280/259280, −94,2 %
+  Crash / ×17,3 Moon) + LP-Fee negligible ≈$0,59/Tag →
+  Sell-Back-Planung Ticket #6 (Tranchen ≤0,01-SOL-Äquivalent).
+  (3) Kein Deposit (PROV 5,993,044), CIO wsol=0-Serie läuft,
+  Z74-Tape + Replies ausständig. Kein Digest (Kurz-Notiz reicht,
+  Digest #6 bleibt Deposit-Event-Trigger).
+- 2026-11-14 ~02:44 UTC · fable · Divergenz-Kette um Z74 (02:36Z)
+  ergänzt + Muster-Lesung KORRIGIERT: VIER RÜCKFÄLLE IN FOLGE
+  (71–74) brechen die Z70-Stabilisierung: $72,2843 → $72,0161
+  (−0,37 %) → $71,8478 (−0,23 %) → $71,5838 (−0,37 %) → $70,7022
+  (−1,23 %, größter Einzel-Rückfall der Serie). Neue
+  Band-Unterkante ≈$70,70; GEP-Deviations-Lücke WÄCHST auf
+  ≈$11,5 (≈$82,2 Dex vs ≈$70,7 Gecko). On-Chain invariant
+  (tick 207767 / sqrtX64 unverändert). Muster-Lesung bestätigt:
+  die Z70-"Oszillation" ist eine abwärtsgerichtete
+  Eigen-Cadence-Phase (analog Z58–64 Drift 22:00–23:30Z).
+  Z75-Beobachtung: Rebound = Oszi-Drift, Rückfall = durch-
+  gehender Feed-Trend. Kein Digest (Dokument-Korrektur).
+- 2026-11-14 ~02:48 UTC · fable · TREND-ESKALATION (Morgen-Report, Ergänzung zu ~01:43-Eintrag):
+  Gecko-Reserve-Seite driftet seit Zyklus 71 am Stück abwärts (4 Public-Change-Zyklen
+  in Folge: −0,37 % → −0,23 % → −0,37 % → −1,23 %, $72,7 → $70,7), Rutsch beschleunigt.
+  Dex-Level (7,508e-12, +49 %) und LP-Spalten unverrückt — nur Gecko-Reserve-Signal;
+  Taskforce schaltet korrekt (Public-Rundung folgt, Body-Impacts kanongemäß).
+  Morgen-Shift: 2 Fragen klären: (a) ist die Reserve-Abwanderung Gecko-seitig
+  (externes Datenfeed) oder echte LP-Veränderung (→ dann CIO-Fokus); (b) Subagent-Pfad
+  (8. Fallback-Zyklus in Folge) — beide Punkte in einen Report-Baukasten zusammenfassen.
