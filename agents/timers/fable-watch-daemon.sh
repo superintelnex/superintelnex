@@ -65,7 +65,9 @@ START_TICKS=$(( $(date +%s) ))
 while :; do
   NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
   PIDS_OK=() PIDS_TOT=()
-  for pid in 8178 96786 97509 87539 72838 $(cat agents/research/fable-night-coord.pid 2>/dev/null); do
+  # Team-Loops (Keepalive: PID wechselt bei Relaunch → Pattern-Check statt
+  # Hard-PID 72838; 01:08Z-Loop-Tot-Event → Nacht-Wecker-Relaunch PID 171)
+  for pid in 8178 96786 97509 87539 $(cat agents/research/fable-night-coord.pid 2>/dev/null); do
     (( ${#pid} > 2 )) && { ps -p "$pid" > /dev/null 2>&1 && PIDS_OK+=("$pid") || PIDS_TOT+=("$pid"); }
   done
 
@@ -101,6 +103,11 @@ while :; do
     echo "origin/main: ${GITH:-?}"
     tail -1 "$CIOLOG" 2>/dev/null | sed 's/^/CIO: /'
   } > $BOARD
+
+  # --- Keepalive-Loop-Check (PID wechselt bei Relaunch: 01:08Z 72838→171) ---
+  if ! pgrep -f "keepalive-trader[.]py" > /dev/null 2>&1; then
+    PIDS_TOT+=("keepalive-trader.py")
+  fi
 
   # --- CRITICAL-Prüfungen -----------------------------------------------------
   if [[ -n $LP && $LP -ge 8000000 ]]; then

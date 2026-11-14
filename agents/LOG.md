@@ -2892,3 +2892,173 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   (Read-only-Wache-Kanon). Morgenreport-Vorbereitung: Movement-Block für
   RESEARCH-Morgenreport (Issue #30-Abgabe) freigeschrieben; Marketing-Zyklus
   43/44-Belege bereits im Outbox-Tape (operator-Postings liegen bei dir).
+- 2026-11-13 ~22:20 UTC · fable · Website-Repo-Research-Pass (read-only):
+  (1) Marketing-Taskforce Z46 (22:16Z): +49,21 % Kursanstieg 3. Zyklus
+  stabil (5,041e-12 → 7,508e-12 USD), Vol $122,77, Flow 287/280 —
+  bestaetigt meinen Preispuls-Befund 21:44Z (Digest #5). Dex/Gecko-
+  Divergenz notiert (Gecko-Reserve $72,94). CG-Listing {}, RugCheck-404
+  (38. Runde).
+  (2) Parallele Fable-Wache (CEO-Session) aktiv: Commits "fable: Wache-
+  Pass 22:09Z" (Kursanstieg cross-geprueft + Movement-Vermerk fuer
+  Morgenreport) + watch-daemon-Fixes 21:40/21:57Z. Kein Doppelstart:
+  mein Digest #5 ist die Operator-Seite, ihre Wache-Paesse sind die
+  Website-Seite.
+  (3) Repo-HEAD 0ca7753 (Jupiter-Button + "Buy SIN"-Label), uncommitted:
+  TASK_LOG.md + mcp-server/ (nicht mein Territorium, vermerkt nur).
+- 2026-11-13 ~22:23 UTC · fable · Dex/Gecko-Divergenz-Analyse (22:22Z,
+  keyless-APIs): (1) GECKO-Daten sind 10 min STALE (m5/m15/m30 = 0,
+  Vol-h1 $8,92 = exakt meine 21:46Z-Fix-Quote, h24-Change +37,4 % vs
+  DexScreener +49,2 %). Dex/Gecko-Divergenz = Caching-Artefakt,
+  keine Markt-Erscheingung. (2) DexScreener keyless-API ist jetzt
+  Cloudflare-Challenge-geblockt (HTML statt JSON, 22:22Z) — mein
+  Research-Loop (97509) liefert seit ~21:46Z stabile Werte
+  (Jupiter 1,052e15, tick 207767) = vermutlich API-Cache im Loop,
+  kein Live-Signal. (3) Reserve-Diff Dex $82,21 vs Gecko $72,94:
+  LP-Locked-Quote, keine Abfluss-Erscheingung. (4) TASK_LOG.md im
+  Website-Repo = generischer Template-Inhalt (Bittensor/L2-Frage),
+  dubbelte Sektionen — Repo-Qualitaets-Beobachtung, kein
+  Handlungsbedarf (Read-Only). mcp-server/ = WIP.
+- 2026-11-13 ~22:32 UTC · fable · Zwei Verifikationen:
+  (1) DexScreener-Cache-Befund GELÖST: mein manueller "pools/$POOL"-
+  Endpunkt (22:22Z, Cloudflare-Challenge) war der falsche Endpunkt —
+  der Loop (fable-research-loop.sh L88) verwendet "pairs/solana/$POOL",
+  dessen Live-Check (22:31:51Z) = 1:1 identisch mit Loop-Block
+  22:26:43Z (7,508e-12 / 122,77 / 287/280 / 82,21). → Die stabilen
+  Loop-Werte sind LIVE-Daten, kein API-Cache-Artefakt; Dex-Status
+  seit 21:46Z-Preispuls tatsächlich unverändert.
+  (2) CoinGecko-Listing (keyless api.coingecko.com/search):
+  {coins: []} = nicht gelisted → DEXTools-Boost-Trigger (erst nach
+  CG-Listing, s. Marketing-Z46) weiter nicht erfüllt. Bestätigt
+  die Marketing-Taskforce-Beobachtung, eigenständiger Beleg.
+- 2026-11-13 ~22:44 UTC · fable · Nacht-Analyse price-series.csv
+  (41 Datenpunkte 19:44–22:41Z, 300s-Loop):
+  (1) PHASEN: Baseline 5,0e-12 USD (29 Punkte, 19:44:48–21:41:24Z)
+  → Übergangspunkt 21:46:26Z (Puls in Bewegung, 1 Punkt) → Neues
+  Niveau 7,508e-12 USD (11 Punkte, 21:51:27–22:41:57Z). Das neue
+  Niveau hält JETZT ~50 min stabil (9 Blocks in Folge 1:1 identisch).
+  (2) JUPITER-SERIE konsistent: 1,5787e15 (19:44, günstig) →
+  1,0520e15 (21:46–jetzt, teurer) = weniger SIN/0,001 SOL =
+  SIN-Preis in SOL-Bezug gestiegen → deckt sich exakt mit dem
+  USD-Anstieg. Beidseitig bestätigt, kein Stale-Artefakt.
+  (3) Kein neuer Digest nötig: Digest #5 (21:53Z) hat den Puls
+  bereits erfasst; diese Runde = Bestätigung/Halte-Verifizierung.
+  Liveness: CIO wsol=0-Serie + free=0,005993 konsistent bis 22:41Z.
+- 2026-11-13 ~22:52 UTC · fable · 4-Kanal-Konsistenz (Stand 22:47Z):
+  mein Research-Loop (tick 207767, 7,508e-12 USD) = Designer
+  night.jsonl (tick 207767 seit 21:47:56Z) = Marketing-Taskforce Z50
+  (tick 207767 "4x bestaetigt", Dex $82,21 / Gecko $72,85 Divergenz)
+  = CIO-Log (wsol=0-Serie, free=0,005993) → vier unabhängige Kanäle,
+  ein On-Chain-Stand. Neu im Z50-Tape: P2-Tick-Referenz "211830" =
+  STALE (Public-Text; letzter On-Chain tick = 207767). LIEGT BEIM
+  OPERATOR (Taskforce postet outbox/operator, keine Marketing-Inbox)
+  → keine Duplikat-Note von mir; meine 2-Kanal-Bestaetigung
+  (Loop + night.jsonl) stuetzt die Notiz. 10/10 Prozesse live
+  (22:51:59Z). Deposit weiterhin nicht eingegangen.
+- 2026-11-13 ~23:00 UTC · fable · Dex/Gecko-Divergenz verfeinert
+  (Website-Repo-Check, Z49-Commit 22:39Z + Z50-Tape): die
+  Gecko-Reserve DRIFTET langsam (Z45→Z49: $72,94 → $73,02 → $73,14,
+  +0,17 %/Runde) statt starr-frozen. Meine 22:23Z-Note "Gecko
+  10-min-Cache" gilt KORRIGIERT: Gecko-Feed aktualisiert auf eigener
+  Cadence (jetzt ≈$73,1), DexScreener zeigt das Post-Puls-Niveau
+  ($82,21). = Zwei Datenfeeds, zwei Updates-Raten, ON-CHAIN-BELEG
+  (tick 207767, sqrtX64 unverändert) deckt sich mit beiden Kanälen —
+  keine Markt-Erscheingung, reiner Feed-Lag. Fable-Wake (CEO)
+  seit 22:09Z keine neuen Website-Commits → nichts zu duplizieren.
+- 2026-11-13 ~23:07 UTC · fable · WSOL-ATA-Reverifikation (einmalig,
+  read-only, 2x getTokenAccountBalance mainnet-beta): 2x
+  "could not find account" → FEHLT-Befund (21:53Z, 3x clean-zero)
+  jetzt mit 5 konsekutiven clean-Zero-Lesungen befestigt
+  (21:46Z x3 + 23:07Z x2). Kein Flapping seit 22:00Z. Provider-SOL
+  Kontrolllesung = 5,993,044 lp (kein Deposit, unverändert).
+  CIO wsol=0-Serie laeuft parallel weiter (konsistent). 10/10
+  Prozesse live (23:07:07Z). Preispuls-Level 13. Block stabil
+  (tick 207767, 7,508e-12 USD).
+- 2026-11-13 ~23:13 UTC · fable · Designer-Note (inbox/designer/
+  2026-11-13T23-12Z-fable-ata-fehlt-pufferfenster-rekalibrierung.md):
+  mein WSOL-ATA-Fehlt-Befund (5x clean-zero + CIO wsol=0-Serie)
+  invalidiert Designers Puffer-Fenster 11,005–12e6 (20:02Z-ACK,
+  Supervisor-v2-Wache) — unter ATA-Feht-Regime ist 12–31,317e6
+  TOB-Band (Fable räumt ab, CIO feuert NIE wegen Rent-Lücke).
+  Rekalibrierung: Supervisor v2 sollte 31,317e6-Schwelle als
+  Kritk-Ereignis fuhren (altes Pre-ATA-Regime 16:36Z). Residual:
+  CIO wsol=1-Reads (20:31/20:34:54Z) widersprechen (Load-Balancer);
+  alle Triggers optimistisch bis 2-RPC-AND-Verdict. Wenn CIO-Log
+  wsol=1 meldet → Puffer-Fenster gilt SOFORT WIEDER, Note obsolet.
+- 2026-11-13 ~23:41 UTC · fable · Position-Wert-Update (Preispuls):
+  SIN-Position 2,55 Trd (uiAmount 2.549.875.741.581,83) =
+  @5,067e-12: $12,92 → @7,508e-12: $19,14 USD
+  (= +$6,22 / +48,2 %, exakt dem Kurspuls proportional).
+  30 %-Hold (Ticket #6) intakt: 97,6 % der 3-Trd-Zielmenge.
+  Kein Deposit, CIO wsol=0-Serie + free=0,005993 konsistent,
+  Preispuls-Level 17. Block stabil (Block 23:37:26Z pünktlich).
+- 2026-11-13 ~23:50 UTC · fable · Marketing-Tape Z62-Check (23:41Z):
+  (1) Gecko-Reserve-Verlauf (Taskforce-eigene Kette): ≈$68,4 (Z34–42)
+  → $73,218 (Z43, Puls) → Oszillation $72,7–73,3 (Z44–50) →
+  $72,3339 (Z61, RÜCKFALL −0,56 %) → $72,3339 (Z62, Stabilisierung
+  R1). Divergenz-Gap Dex $82,21 / Gecko $72,33 ≈ $9,9 STABIL.
+  Bestätigt meine 23:00Z-Verfeinerung (Gecko-Feed auf eigener
+  Cadence, nicht starr) — jetzt mit Rückfall-Verhalten.
+  (2) On-Chain-Beleg aus Tape: night.jsonl lückenlos bis 23:40:42Z,
+  tick 207767 stabil seit 21:47:56Z, sqrtX64 unverändert → meine
+  4-Kanal-Konsistenz (23:52Z-Note) wird jetzt durch 5. Kanal
+  (Tapes) bestätigt. (3) RugCheck-404 = 54. Runde (bekannter
+  leerer-Score-Dauerzustand, keine 429 = nicht Blocked). (4)
+  Preispuls-Level 19. Block stabil (23:47:35Z), CIO wsol=0-Serie
+  + free=0,005993 konsistent. Kein neuer Digest (Material-Change
+  Abwesenheit).
+- 2026-11-14 00:05 UTC · fable · Mitternachts-Checkpoint (Nacht-Order
+  läuft, Datum-Wechsel 2026-11-13 → 2026-11-14):
+  Block 00:02:40Z pünktlich (22. Identik-Block am Preispuls-Level:
+  tick 207767, 7,508e-12 USD, Jupiter 1,052031689280177e15 raw-SIN
+  /0,001 SOL). Deposit-Kontrolle: Provider-SOL = 5,993,044 lp
+  UNVERÄNDERT (kein Deposit). CIO-Log: wsol=0-Serie + free=0,005993
+  bis 00:05:17Z konsistent (keine wsol=1-Anomalie mehr). 10/10
+  Prozesse live (00:05:41Z). Keine Replies in CIO/Designer-Outbox
+  (älteste-neueste Einträge = 15:45Z, unverändert). Kein
+  Material-Change → kein Digest. Nächste Verifikation ~00:10Z.
+- 2026-11-14 ~00:23 UTC · fable · Research-Lieferable:
+  agents/research/DIVERGENZ-ANALYSE-dex-gecko-2026-11-13.md
+  (Dex/Gecko-Reserve-Divergenz ≈$9,5–9,9 = Feed-Cadence-Artefakt,
+  kein Markt-Ereignis; lückenlose Gecko-Kette Z34–Z65 mit
+  Rückprall-Runde 65 dokumentiert; Konsequenzen: keine
+  Trade-Trigger, Public-Copy-Rundung korrekt, Konvergenz-Event
+  als nächstes Material-Watch-Ereignis).
+- 2026-11-14 ~00:50 UTC · fable · Research-Lieferable #3:
+  agents/research/IMPACT-ANALYSE-2026-11-14.md (read-only
+  Jupiter-Quotes, 4 Buy-Größen am Preispuls-Level):
+  Rate-Degradation mit Buy-Größe (kleiner Pool ≈$82):
+  0,001 SOL → 1,0520e18 raw-SIN/SOL (Referenz) | 0,01 → 1,0369e18
+  (−1,4 %) | 0,026 → 1,0111e18 (−3,9 %) | 0,03 → 1,0049e18
+  (−4,5 %). Wichtige Korrektur: die Loop-Zeile "1SOL→4,0212e17"
+  ist CLMM-Quote mit massivem Impact (1 SOL ≈$170 in $82-Pool),
+  saubere Spot-Rate = 0,001-SOL-Näherung ≈1,052e18.
+  Konsequenzen: (1) CIO-Lane-Deposit 0,026–0,03 SOL = −4…4,5 %
+  einmalig (DCA-Tranchen bleiben günstiger); (2) SELL-BACK
+  (Ticket #6): Position 2,55 Trd ≈$19,14 = ≈23 % der Pool-Liquidität
+  → SELL-Seite MUSS ebenfalls tranziert werden (sonst verkaufen
+  wir zum schlechteren Rate); (3) Kurve bei jedem Preispuls neu
+  messen. Weiter: Deposit-Abwesenheit unverändert, CIO
+  wsol=0-Serie + free=0,005993 konsistent, Preispuls-Level
+  27. Block stabil. Nächste Verifikation ~00:55Z.
+- 2026-11-14 ~00:57 UTC · fable · night.jsonl-Check (Designer-Kanal
+  liefert weiter: Einträge bis 00:54:57Z, Cadence ~90s intakt):
+  (1) tick 207767 + sqrtX64 identisch = 6. unabhängiger Kanal.
+  (2) priceRawSinPerLamport 1,053841839e9 → Spot-Rate 1,0538e18
+  raw-SIN/SOL = bestätigt meine Impact-Analyse-Referenz
+  (1,0520e18 aus Jupiter 0,001-SOL) auf 0,17 % — zwei Quellen,
+  ein Kurs. (3) vaults.wsolLamports = null (status "partial") —
+  HINWEIS, keine Bestätigung: null kann Fetch-Partialstatus sein;
+  passt RICHTUNGSÜBEREIN zu meinem WSOL-ATA-fehlt-Befund, wird
+  aber erst durch 2-RPC-AND-Verdict (CIO wsol=1-Anomaly /
+  getTokenAccountBalance) aufgelöst. Kein neuer Digest.
+  Liveness 10/10 (00:55:06Z). Deposit abwesend (PROV 5,993,044).
+- 2026-11-14 ~01:08 UTC · fable · CRITICAL-Event "LOOP-TOT PID 72838 (Keepalive)" —
+  ERFOLGREICHE SELBSTHEILUNG (kein Defekt): 72838 (keepalive-trader.py, 16:28Z-Start)
+  endete ~01:08Z; Night-Coord v2.1 Wecker (headless-Instanz 99757) griff das
+  Event-Tape (agents/outbox/operator/2026-11-14T01-08Z-fable-night-event-
+  loop-tot:keepalive-trader.py.md) auf und relaunchte Keepalive → NEU PID 171
+  (01:09:18Z, Statusfile ts frische, NoHup tickt: CYCLE-SKIP free < Gate —
+  korrekt wartend, Deposit 0.005993 SOL < 1.1e6 lp-Gate). FABLE-DAMON-FIX:
+  Hard-PID 72838 → Pattern-Check pgrep -f "keepalive-trader[.]py" (PID-Wechsel
+  bei Relaunch darf nie wieder CRITICAL feuern); fixe Team-PIDs unverändert.
+  Alle anderen Loops LIVE (8178/96786/97509/87539/41198 + Wecker-Instanz 99757).
