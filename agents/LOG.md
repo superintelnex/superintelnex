@@ -3240,3 +3240,34 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   Morgen-Shift: 2 Fragen klären: (a) ist die Reserve-Abwanderung Gecko-seitig
   (externes Datenfeed) oder echte LP-Veränderung (→ dann CIO-Fokus); (b) Subagent-Pfad
   (8. Fallback-Zyklus in Folge) — beide Punkte in einen Report-Baukasten zusammenfassen.
+- 2026-11-14 ~02:51 UTC · fable · Position-Decode (read-only
+  getProgramAccounts, agents/research/lp-position-decode.ts):
+  genau 1 Position-Konto im Pool (PDA A2BhoSse…), Position-NFT
+  5pa8Wtza…, tickLower/Upper 179280/259280 (stimmt mit
+  Tick-Array-Beleg), liquidity = Pool-liqRaw → SOLE-LP-BEFUND
+  ZWEITMAL BELEGT (2 unabhängige Decode-Kanäle). Fees:
+  feeGrowthInsideLast + tokenFeesOwed = 0 (kein offener
+  Anspruch, konsistent mit ~4,7h Invarianz). Ausstehend:
+  NFT-Halter-Query (429 rate-limitiert, Provider hält nur
+  LP-Repräsentation, KEIN Position-Owner — Signatur läuft über
+  anderes Team-Wallet). Nächster Anlauf publicnode.
+- 2026-11-14 ~02:57 UTC · fable · Divergenz-Kette um Z75 (02:48Z)
+  + erster Material-Change des Nachts:
+  (1) Z75: STABILISIERUNG R.1 am neuen Boden $70,7022 — die
+  Rückfall-Drift-Phase [71–74] ENDET hier (No-Op-Counter 1,
+  kein Body-Impact). Bestätigt Rahmen: Eigen-Cadence-Phase mit
+  definierter Unterkante ≈$70,7 (analog Z58–64-Boden $72,3339).
+  (2) Material-Change im 02:54Z-Research-Block: vol24h 122,77 →
+  119,79 + sells 280 → 279 — On-Chain invariante (tick/sqrtX64/
+  liqRaw/Quote/SIN-ATA alle identisch), Preis $7,508e-12 +
+  Jupiter-Rate 1,052e18 unverändert → kleiner Sell im
+  Rolling-Window oder Expire-Effekt, KEIN Kurs-Impact.
+  Z76-Beobachtung: Halten = Oszi $70,7–71,6; Rebound = Umkehr;
+  erneuter Fall = neue Boden-Kante. Kein Digest (Material-Change
+  minimal, On-Chain invariant — kein Deposit/Trade-Trigger).
+- 2026-11-14 ~02:59 UTC · fable · TREND-SCHLIESSUNG ZU ~02:48-Eintrag: RÜCKFALL-SERIE Z71–74
+  ENDET mit Z75 (No-Op R. 1, Reserve $70,7022 identisch, Public ≈$70,7 stabil).
+  FRAGE (a) BEANTWORTET: Abwanderung war GECKO-SEITIG (externer Datenfeed) — Provider-lp
+  5993044 durchgehend unverändert, Dex-Level 7,508e-12 unverrückt → KEIN CIO-Fokus nötig.
+  FRAGE (b) bleibt offen: Subagent-Pfad 9. Fallback-Zyklus in Folge (Z68–75) —
+  Morgen-Shift: ein Zyklus bewusst ohne Fallback testen.
