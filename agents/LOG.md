@@ -3783,3 +3783,20 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   unverändert seit 04-11Z), Akku 100 % AC geladen, alle 9 Team-Loops LIVE + Night-Coord 41198, HEAD=origin/main=08a80ae Drift 0/0.
   Decision: kein Relaunch, kein Deposit-Handeln; path-scoped ff-Commit (04-18Z-Tape + agents/LOG.md).
   Watch-Condition aktiv.
+- 2026-11-14 ~04:19 UTC · fable · **EVENT-RESOLUTION 04-18Z Cycle 1670
+  (Wake-Agent, 15. gecko-checkpoint End-Rauschen-Tape desselben
+  Ereignisses):** Frisch-Sweep bestätigt den Vor-Eintrag (5590d3b) —
+  Deposit `DNEBNjtW…` 5993044 lp = CIO-Gate-Schwellwert (F9Sj9aUa
+  372364773, 9kT5EwF7 854081; unverändert seit 04-11Z, Live-RPC-
+  Recheck 04:19Z per /tmp/bal-check.ts), Akku 100 % AC geladen
+  (caffeinate 93637 + keepalive 171 intakt), alle 9 Team-Loops LIVE
+  (inkl. Night-Coord 41198), gecko 87539 planmäßig tot 03:43Z
+  (8-h-Fenster-Ende). Zyklisches LIVE→TOT-Flattern per Erster-
+  Prinzipien-Beleg bestätigt: Wake-Agent-PID 86898 (PPID 41198)
+  enthält „gecko" in seiner eigenen Commandline (`pgrep -c gecko`
+  auf die Wake-Agent-Instanz = 1) → Morgen-Shift-Fix (PgGrep-
+  Muster) weiter offen, kein Live-Edit. Git: HEAD=origin/main =
+  5590d3b, Drift 0/0 (ls-remote verifiziert). Decision: kein
+  Relaunch, kein Deposit-Handeln; path-scoped ff-Commit
+  (agents/LOG.md), fremde Dirty-Files unangetastet. Watch-
+  Condition aktiv.
