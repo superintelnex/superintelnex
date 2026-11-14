@@ -1,1255 +1,9 @@
-2026-11-14T13:16:10Z LOG-ROTATION: Archiv /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-night-coord-archive-* (mein Lane-File, nicht append-only-Team-LOG)
-=== CYCLE 1161 · 2026-11-14T13:16:25Z ===
+2026-11-14T14:44:38Z LOG-ROTATION: Archiv /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-night-coord-archive-* (mein Lane-File, nicht append-only-Team-LOG)
+=== CYCLE 1495 · 2026-11-14T14:44:53Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
   trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(4511)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1162 · 2026-11-14T13:16:40Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1163 · 2026-11-14T13:16:56Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1164 · 2026-11-14T13:17:12Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1165 · 2026-11-14T13:17:27Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1166 · 2026-11-14T13:17:43Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1167 · 2026-11-14T13:17:58Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1168 · 2026-11-14T13:18:14Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1169 · 2026-11-14T13:18:29Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1170 · 2026-11-14T13:18:45Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1171 · 2026-11-14T13:19:00Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1172 · 2026-11-14T13:19:16Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1173 · 2026-11-14T13:19:32Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1174 · 2026-11-14T13:19:48Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1175 · 2026-11-14T13:20:03Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1176 · 2026-11-14T13:20:20Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1177 · 2026-11-14T13:20:37Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1178 · 2026-11-14T13:20:53Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(7952)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1179 · 2026-11-14T13:21:11Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1180 · 2026-11-14T13:21:28Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1181 · 2026-11-14T13:21:44Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(8652)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1182 · 2026-11-14T13:22:00Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1183 · 2026-11-14T13:22:15Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1184 · 2026-11-14T13:22:32Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1185 · 2026-11-14T13:22:48Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(9424)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1186 · 2026-11-14T13:23:03Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1187 · 2026-11-14T13:23:19Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(9784)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1188 · 2026-11-14T13:23:35Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1189 · 2026-11-14T13:23:51Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(10127)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1190 · 2026-11-14T13:24:06Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1191 · 2026-11-14T13:24:22Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1192 · 2026-11-14T13:24:38Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1193 · 2026-11-14T13:24:53Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1194 · 2026-11-14T13:25:09Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1195 · 2026-11-14T13:25:25Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1196 · 2026-11-14T13:25:40Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1197 · 2026-11-14T13:25:56Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1198 · 2026-11-14T13:26:12Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1199 · 2026-11-14T13:26:27Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1200 · 2026-11-14T13:26:44Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-2026-11-14T13:26:47Z COMMIT+PUSH OK: Zyklus-Checkpoint (1200)
-=== CYCLE 1201 · 2026-11-14T13:27:02Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(12641)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1202 · 2026-11-14T13:27:18Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1203 · 2026-11-14T13:27:34Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(13021)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1204 · 2026-11-14T13:27:49Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1205 · 2026-11-14T13:28:05Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(13367)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1206 · 2026-11-14T13:28:21Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1207 · 2026-11-14T13:28:37Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1208 · 2026-11-14T13:28:52Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1209 · 2026-11-14T13:29:08Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1210 · 2026-11-14T13:29:24Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1211 · 2026-11-14T13:29:39Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1212 · 2026-11-14T13:29:55Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1213 · 2026-11-14T13:30:11Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1214 · 2026-11-14T13:30:27Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1215 · 2026-11-14T13:30:42Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1216 · 2026-11-14T13:30:58Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1217 · 2026-11-14T13:31:13Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1218 · 2026-11-14T13:31:29Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1219 · 2026-11-14T13:31:45Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1220 · 2026-11-14T13:32:01Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1221 · 2026-11-14T13:32:17Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1222 · 2026-11-14T13:32:32Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1223 · 2026-11-14T13:32:48Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1224 · 2026-11-14T13:33:04Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1225 · 2026-11-14T13:33:19Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1226 · 2026-11-14T13:33:35Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1227 · 2026-11-14T13:33:50Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1228 · 2026-11-14T13:34:06Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1229 · 2026-11-14T13:34:22Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1230 · 2026-11-14T13:34:37Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1231 · 2026-11-14T13:34:53Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1232 · 2026-11-14T13:35:08Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1233 · 2026-11-14T13:35:24Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1234 · 2026-11-14T13:35:40Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1235 · 2026-11-14T13:35:56Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1236 · 2026-11-14T13:36:11Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1237 · 2026-11-14T13:36:27Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1238 · 2026-11-14T13:36:42Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1239 · 2026-11-14T13:36:58Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1240 · 2026-11-14T13:37:13Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1241 · 2026-11-14T13:37:29Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1242 · 2026-11-14T13:37:45Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1243 · 2026-11-14T13:38:00Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1244 · 2026-11-14T13:38:16Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
   agent-watchdog: LIVE(70001)
   keepalive-trader: LIVE(99139)
   gecko-checkpoint-loop: LIVE(45795)
@@ -1258,9 +12,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1245 · 2026-11-14T13:38:31Z ===
+=== CYCLE 1496 · 2026-11-14T14:45:09Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1273,9 +27,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1246 · 2026-11-14T13:38:47Z ===
+=== CYCLE 1497 · 2026-11-14T14:45:25Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1288,9 +42,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1247 · 2026-11-14T13:39:02Z ===
+=== CYCLE 1498 · 2026-11-14T14:45:40Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1303,9 +57,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1248 · 2026-11-14T13:39:18Z ===
+=== CYCLE 1499 · 2026-11-14T14:45:56Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1317,25 +71,10 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   caffeinate: LIVE(93637)
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1249 · 2026-11-14T13:39:33Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(22115)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1250 · 2026-11-14T13:39:49Z ===
+=== CYCLE 1500 · 2026-11-14T14:46:11Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1348,9 +87,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1251 · 2026-11-14T13:40:05Z ===
+=== CYCLE 1501 · 2026-11-14T14:46:27Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1363,9 +102,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1252 · 2026-11-14T13:40:20Z ===
+=== CYCLE 1502 · 2026-11-14T14:46:42Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1378,9 +117,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1253 · 2026-11-14T13:40:36Z ===
+=== CYCLE 1503 · 2026-11-14T14:46:58Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1393,9 +132,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1254 · 2026-11-14T13:40:52Z ===
+=== CYCLE 1504 · 2026-11-14T14:47:14Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1408,9 +147,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1255 · 2026-11-14T13:41:07Z ===
+=== CYCLE 1505 · 2026-11-14T14:47:29Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1423,9 +162,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1256 · 2026-11-14T13:41:23Z ===
+=== CYCLE 1506 · 2026-11-14T14:47:45Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1438,9 +177,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1257 · 2026-11-14T13:41:39Z ===
+=== CYCLE 1507 · 2026-11-14T14:48:01Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1453,9 +192,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1258 · 2026-11-14T13:41:55Z ===
+=== CYCLE 1508 · 2026-11-14T14:48:17Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1468,9 +207,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1259 · 2026-11-14T13:42:12Z ===
+=== CYCLE 1509 · 2026-11-14T14:48:33Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1483,9 +222,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1260 · 2026-11-14T13:42:27Z ===
+=== CYCLE 1510 · 2026-11-14T14:48:49Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1498,29 +237,14 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1261 · 2026-11-14T13:42:43Z ===
+=== CYCLE 1511 · 2026-11-14T14:49:05Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
   trade-watchdog: LIVE(67724)
   agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1262 · 2026-11-14T13:42:58Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(24815)
   keepalive-trader: LIVE(99139)
   gecko-checkpoint-loop: LIVE(45795)
   fable-loop-watchdog: LIVE(90983)
@@ -1528,9 +252,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1263 · 2026-11-14T13:43:14Z ===
+=== CYCLE 1512 · 2026-11-14T14:49:21Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1543,9 +267,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1264 · 2026-11-14T13:43:30Z ===
+=== CYCLE 1513 · 2026-11-14T14:49:37Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1558,29 +282,14 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1265 · 2026-11-14T13:43:45Z ===
+=== CYCLE 1514 · 2026-11-14T14:49:53Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
   trade-watchdog: LIVE(67724)
   agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1266 · 2026-11-14T13:44:01Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(25531)
   keepalive-trader: LIVE(99139)
   gecko-checkpoint-loop: LIVE(45795)
   fable-loop-watchdog: LIVE(90983)
@@ -1588,9 +297,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1267 · 2026-11-14T13:44:17Z ===
+=== CYCLE 1515 · 2026-11-14T14:50:09Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1603,9 +312,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1268 · 2026-11-14T13:44:32Z ===
+=== CYCLE 1516 · 2026-11-14T14:50:25Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1618,9 +327,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1269 · 2026-11-14T13:44:48Z ===
+=== CYCLE 1517 · 2026-11-14T14:50:40Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1633,9 +342,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1270 · 2026-11-14T13:45:04Z ===
+=== CYCLE 1518 · 2026-11-14T14:50:57Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1648,9 +357,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1271 · 2026-11-14T13:45:19Z ===
+=== CYCLE 1519 · 2026-11-14T14:51:12Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1663,9 +372,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1272 · 2026-11-14T13:45:35Z ===
+=== CYCLE 1520 · 2026-11-14T14:51:28Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1678,9 +387,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1273 · 2026-11-14T13:45:50Z ===
+=== CYCLE 1521 · 2026-11-14T14:51:44Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1693,9 +402,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1274 · 2026-11-14T13:46:06Z ===
+=== CYCLE 1522 · 2026-11-14T14:51:59Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1708,9 +417,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1275 · 2026-11-14T13:46:22Z ===
+=== CYCLE 1523 · 2026-11-14T14:52:15Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1723,9 +432,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1276 · 2026-11-14T13:46:37Z ===
+=== CYCLE 1524 · 2026-11-14T14:52:30Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1738,9 +447,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1277 · 2026-11-14T13:46:53Z ===
+=== CYCLE 1525 · 2026-11-14T14:52:46Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1753,9 +462,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1278 · 2026-11-14T13:47:08Z ===
+=== CYCLE 1526 · 2026-11-14T14:53:01Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1768,9 +477,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1279 · 2026-11-14T13:47:24Z ===
+=== CYCLE 1527 · 2026-11-14T14:53:17Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1783,9 +492,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1280 · 2026-11-14T13:47:39Z ===
+=== CYCLE 1528 · 2026-11-14T14:53:33Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1798,9 +507,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1281 · 2026-11-14T13:47:55Z ===
+=== CYCLE 1529 · 2026-11-14T14:53:48Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1813,9 +522,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1282 · 2026-11-14T13:48:11Z ===
+=== CYCLE 1530 · 2026-11-14T14:54:04Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1828,9 +537,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1283 · 2026-11-14T13:48:26Z ===
+=== CYCLE 1531 · 2026-11-14T14:54:19Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1843,9 +552,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1284 · 2026-11-14T13:48:44Z ===
+=== CYCLE 1532 · 2026-11-14T14:54:35Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1858,9 +567,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1285 · 2026-11-14T13:49:01Z ===
+=== CYCLE 1533 · 2026-11-14T14:54:50Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1873,9 +582,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1286 · 2026-11-14T13:49:18Z ===
+=== CYCLE 1534 · 2026-11-14T14:55:06Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1888,9 +597,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1287 · 2026-11-14T13:49:35Z ===
+=== CYCLE 1535 · 2026-11-14T14:55:21Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1903,27 +612,12 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1288 · 2026-11-14T13:49:51Z ===
+=== CYCLE 1536 · 2026-11-14T14:55:37Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(30181)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1289 · 2026-11-14T13:50:07Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(30382)
   trade-watchdog: LIVE(67724)
   agent-watchdog: LIVE(70001)
   keepalive-trader: LIVE(99139)
@@ -1933,9 +627,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1290 · 2026-11-14T13:50:25Z ===
+=== CYCLE 1537 · 2026-11-14T14:55:53Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1948,9 +642,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1291 · 2026-11-14T13:50:42Z ===
+=== CYCLE 1538 · 2026-11-14T14:56:08Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1963,9 +657,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1292 · 2026-11-14T13:50:59Z ===
+=== CYCLE 1539 · 2026-11-14T14:56:24Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1978,9 +672,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1293 · 2026-11-14T13:51:16Z ===
+=== CYCLE 1540 · 2026-11-14T14:56:40Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -1993,9 +687,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1294 · 2026-11-14T13:51:33Z ===
+=== CYCLE 1541 · 2026-11-14T14:56:56Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2008,9 +702,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1295 · 2026-11-14T13:51:50Z ===
+=== CYCLE 1542 · 2026-11-14T14:57:12Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2023,9 +717,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1296 · 2026-11-14T13:52:06Z ===
+=== CYCLE 1543 · 2026-11-14T14:57:27Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2038,9 +732,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1297 · 2026-11-14T13:52:23Z ===
+=== CYCLE 1544 · 2026-11-14T14:57:43Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2053,9 +747,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1298 · 2026-11-14T13:52:39Z ===
+=== CYCLE 1545 · 2026-11-14T14:57:58Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2068,9 +762,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1299 · 2026-11-14T13:52:56Z ===
+=== CYCLE 1546 · 2026-11-14T14:58:14Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2083,9 +777,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1300 · 2026-11-14T13:53:13Z ===
+=== CYCLE 1547 · 2026-11-14T14:58:30Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2098,9 +792,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1301 · 2026-11-14T13:53:30Z ===
+=== CYCLE 1548 · 2026-11-14T14:58:45Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2113,9 +807,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1302 · 2026-11-14T13:53:47Z ===
+=== CYCLE 1549 · 2026-11-14T14:59:01Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2128,9 +822,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1303 · 2026-11-14T13:54:02Z ===
+=== CYCLE 1550 · 2026-11-14T14:59:17Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2143,9 +837,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1304 · 2026-11-14T13:54:19Z ===
+=== CYCLE 1551 · 2026-11-14T14:59:32Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2158,9 +852,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1305 · 2026-11-14T13:54:35Z ===
+=== CYCLE 1552 · 2026-11-14T14:59:48Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2173,9 +867,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1306 · 2026-11-14T13:54:50Z ===
+=== CYCLE 1553 · 2026-11-14T15:00:04Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2188,9 +882,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1307 · 2026-11-14T13:55:06Z ===
+=== CYCLE 1554 · 2026-11-14T15:00:21Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2203,9 +897,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1308 · 2026-11-14T13:55:21Z ===
+=== CYCLE 1555 · 2026-11-14T15:00:37Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2218,9 +912,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1309 · 2026-11-14T13:55:37Z ===
+=== CYCLE 1556 · 2026-11-14T15:00:53Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2233,9 +927,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1310 · 2026-11-14T13:55:52Z ===
+=== CYCLE 1557 · 2026-11-14T15:01:09Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2248,9 +942,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1311 · 2026-11-14T13:56:08Z ===
+=== CYCLE 1558 · 2026-11-14T15:01:24Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2263,9 +957,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1312 · 2026-11-14T13:56:23Z ===
+=== CYCLE 1559 · 2026-11-14T15:01:40Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2278,9 +972,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1313 · 2026-11-14T13:56:39Z ===
+=== CYCLE 1560 · 2026-11-14T15:01:55Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2293,9 +987,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1314 · 2026-11-14T13:56:54Z ===
+=== CYCLE 1561 · 2026-11-14T15:02:11Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2308,9 +1002,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1315 · 2026-11-14T13:57:10Z ===
+=== CYCLE 1562 · 2026-11-14T15:02:26Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2323,9 +1017,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1316 · 2026-11-14T13:57:26Z ===
+=== CYCLE 1563 · 2026-11-14T15:02:42Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2338,9 +1032,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1317 · 2026-11-14T13:57:41Z ===
+=== CYCLE 1564 · 2026-11-14T15:02:57Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2353,9 +1047,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1318 · 2026-11-14T13:57:57Z ===
+=== CYCLE 1565 · 2026-11-14T15:03:13Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2368,9 +1062,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1319 · 2026-11-14T13:58:13Z ===
+=== CYCLE 1566 · 2026-11-14T15:03:29Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2383,9 +1077,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1320 · 2026-11-14T13:58:28Z ===
+=== CYCLE 1567 · 2026-11-14T15:03:45Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2398,9 +1092,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1321 · 2026-11-14T13:58:44Z ===
+=== CYCLE 1568 · 2026-11-14T15:04:00Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2413,9 +1107,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1322 · 2026-11-14T13:58:59Z ===
+=== CYCLE 1569 · 2026-11-14T15:04:16Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2428,9 +1122,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1323 · 2026-11-14T13:59:15Z ===
+=== CYCLE 1570 · 2026-11-14T15:04:32Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2443,9 +1137,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1324 · 2026-11-14T13:59:31Z ===
+=== CYCLE 1571 · 2026-11-14T15:04:47Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2458,9 +1152,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1325 · 2026-11-14T13:59:46Z ===
+=== CYCLE 1572 · 2026-11-14T15:05:03Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2473,9 +1167,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1326 · 2026-11-14T14:00:02Z ===
+=== CYCLE 1573 · 2026-11-14T15:05:19Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2488,9 +1182,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1327 · 2026-11-14T14:00:18Z ===
+=== CYCLE 1574 · 2026-11-14T15:05:35Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2503,9 +1197,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1328 · 2026-11-14T14:00:33Z ===
+=== CYCLE 1575 · 2026-11-14T15:05:51Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2518,9 +1212,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1329 · 2026-11-14T14:00:49Z ===
+=== CYCLE 1576 · 2026-11-14T15:06:07Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2533,9 +1227,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1330 · 2026-11-14T14:01:04Z ===
+=== CYCLE 1577 · 2026-11-14T15:06:22Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2548,9 +1242,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1331 · 2026-11-14T14:01:20Z ===
+=== CYCLE 1578 · 2026-11-14T15:06:38Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2563,9 +1257,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1332 · 2026-11-14T14:01:36Z ===
+=== CYCLE 1579 · 2026-11-14T15:06:54Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2578,9 +1272,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1333 · 2026-11-14T14:01:51Z ===
+=== CYCLE 1580 · 2026-11-14T15:07:09Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2593,9 +1287,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1334 · 2026-11-14T14:02:07Z ===
+=== CYCLE 1581 · 2026-11-14T15:07:25Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2608,9 +1302,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 14:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1335 · 2026-11-14T14:02:23Z ===
+=== CYCLE 1582 · 2026-11-14T15:07:41Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2623,9 +1317,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1336 · 2026-11-14T14:02:38Z ===
+=== CYCLE 1583 · 2026-11-14T15:07:56Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2638,9 +1332,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1337 · 2026-11-14T14:02:54Z ===
+=== CYCLE 1584 · 2026-11-14T15:08:12Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2653,9 +1347,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1338 · 2026-11-14T14:03:09Z ===
+=== CYCLE 1585 · 2026-11-14T15:08:28Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2668,9 +1362,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1339 · 2026-11-14T14:03:25Z ===
+=== CYCLE 1586 · 2026-11-14T15:08:44Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2683,9 +1377,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1340 · 2026-11-14T14:03:41Z ===
+=== CYCLE 1587 · 2026-11-14T15:09:00Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2698,29 +1392,14 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1341 · 2026-11-14T14:03:56Z ===
+=== CYCLE 1588 · 2026-11-14T15:09:15Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
   trade-watchdog: LIVE(67724)
   agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1342 · 2026-11-14T14:04:12Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(40983)
   keepalive-trader: LIVE(99139)
   gecko-checkpoint-loop: LIVE(45795)
   fable-loop-watchdog: LIVE(90983)
@@ -2728,9 +1407,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1343 · 2026-11-14T14:04:28Z ===
+=== CYCLE 1589 · 2026-11-14T15:09:31Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2742,25 +1421,10 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   caffeinate: LIVE(93637)
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1344 · 2026-11-14T14:04:44Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(41345)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(41369)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1345 · 2026-11-14T14:04:59Z ===
+=== CYCLE 1590 · 2026-11-14T15:09:47Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2773,9 +1437,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1346 · 2026-11-14T14:05:15Z ===
+=== CYCLE 1591 · 2026-11-14T15:10:02Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2788,9 +1452,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1347 · 2026-11-14T14:05:31Z ===
+=== CYCLE 1592 · 2026-11-14T15:10:18Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2801,11 +1465,11 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   fable-loop-watchdog: LIVE(90983)
   caffeinate: LIVE(93637)
   marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
+  fable-research-loop: LIVE(91535)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1348 · 2026-11-14T14:05:47Z ===
+=== CYCLE 1593 · 2026-11-14T15:10:35Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2818,9 +1482,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1349 · 2026-11-14T14:06:02Z ===
+=== CYCLE 1594 · 2026-11-14T15:10:53Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2833,9 +1497,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1350 · 2026-11-14T14:06:18Z ===
+=== CYCLE 1595 · 2026-11-14T15:11:09Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2848,9 +1512,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1351 · 2026-11-14T14:06:34Z ===
+=== CYCLE 1596 · 2026-11-14T15:11:27Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2863,9 +1527,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1352 · 2026-11-14T14:06:50Z ===
+=== CYCLE 1597 · 2026-11-14T15:11:44Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2878,9 +1542,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1353 · 2026-11-14T14:07:06Z ===
+=== CYCLE 1598 · 2026-11-14T15:12:00Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2893,9 +1557,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1354 · 2026-11-14T14:07:22Z ===
+=== CYCLE 1599 · 2026-11-14T15:12:17Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -2908,29 +1572,14 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 13:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1355 · 2026-11-14T14:07:38Z ===
+=== CYCLE 1600 · 2026-11-14T15:12:34Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
   trade-watchdog: LIVE(67724)
   agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1356 · 2026-11-14T14:07:54Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(43754)
   keepalive-trader: LIVE(99139)
   gecko-checkpoint-loop: LIVE(45795)
   fable-loop-watchdog: LIVE(90983)
@@ -2938,29 +1587,14 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1357 · 2026-11-14T14:08:10Z ===
+=== CYCLE 1601 · 2026-11-14T15:12:51Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
   trade-watchdog: LIVE(67724)
   agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1358 · 2026-11-14T14:08:27Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(44245)
   keepalive-trader: LIVE(99139)
   gecko-checkpoint-loop: LIVE(45795)
   fable-loop-watchdog: LIVE(90983)
@@ -2968,29 +1602,14 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1359 · 2026-11-14T14:08:43Z ===
+=== CYCLE 1602 · 2026-11-14T15:13:07Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
   trade-watchdog: LIVE(67724)
   agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1360 · 2026-11-14T14:08:58Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(44553)
   keepalive-trader: LIVE(99139)
   gecko-checkpoint-loop: LIVE(45795)
   fable-loop-watchdog: LIVE(90983)
@@ -2998,9 +1617,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1361 · 2026-11-14T14:09:14Z ===
+=== CYCLE 1603 · 2026-11-14T15:13:22Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3013,9 +1632,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1362 · 2026-11-14T14:09:30Z ===
+=== CYCLE 1604 · 2026-11-14T15:13:38Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3028,9 +1647,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1363 · 2026-11-14T14:09:45Z ===
+=== CYCLE 1605 · 2026-11-14T15:13:54Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3043,9 +1662,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1364 · 2026-11-14T14:10:01Z ===
+=== CYCLE 1606 · 2026-11-14T15:14:09Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3058,9 +1677,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1365 · 2026-11-14T14:10:17Z ===
+=== CYCLE 1607 · 2026-11-14T15:14:25Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3073,9 +1692,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1366 · 2026-11-14T14:10:32Z ===
+=== CYCLE 1608 · 2026-11-14T15:14:40Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3088,9 +1707,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1367 · 2026-11-14T14:10:48Z ===
+=== CYCLE 1609 · 2026-11-14T15:14:56Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3103,9 +1722,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1368 · 2026-11-14T14:11:03Z ===
+=== CYCLE 1610 · 2026-11-14T15:15:11Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3118,9 +1737,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1369 · 2026-11-14T14:11:19Z ===
+=== CYCLE 1611 · 2026-11-14T15:15:27Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3133,9 +1752,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1370 · 2026-11-14T14:11:36Z ===
+=== CYCLE 1612 · 2026-11-14T15:15:44Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3148,9 +1767,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1371 · 2026-11-14T14:11:52Z ===
+=== CYCLE 1613 · 2026-11-14T15:16:00Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3163,9 +1782,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1372 · 2026-11-14T14:12:07Z ===
+=== CYCLE 1614 · 2026-11-14T15:16:15Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3178,9 +1797,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1373 · 2026-11-14T14:12:23Z ===
+=== CYCLE 1615 · 2026-11-14T15:16:32Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3193,9 +1812,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1374 · 2026-11-14T14:12:39Z ===
+=== CYCLE 1616 · 2026-11-14T15:16:48Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3208,9 +1827,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1375 · 2026-11-14T14:12:55Z ===
+=== CYCLE 1617 · 2026-11-14T15:17:03Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3223,9 +1842,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1376 · 2026-11-14T14:13:11Z ===
+=== CYCLE 1618 · 2026-11-14T15:17:20Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3238,9 +1857,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1377 · 2026-11-14T14:13:27Z ===
+=== CYCLE 1619 · 2026-11-14T15:17:36Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3253,9 +1872,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1378 · 2026-11-14T14:13:43Z ===
+=== CYCLE 1620 · 2026-11-14T15:17:53Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3268,9 +1887,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1379 · 2026-11-14T14:13:59Z ===
+=== CYCLE 1621 · 2026-11-14T15:18:09Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3283,9 +1902,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1380 · 2026-11-14T14:14:15Z ===
+=== CYCLE 1622 · 2026-11-14T15:18:25Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3298,9 +1917,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1381 · 2026-11-14T14:14:31Z ===
+=== CYCLE 1623 · 2026-11-14T15:18:40Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3313,9 +1932,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1382 · 2026-11-14T14:14:47Z ===
+=== CYCLE 1624 · 2026-11-14T15:18:56Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3328,9 +1947,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1383 · 2026-11-14T14:15:02Z ===
+=== CYCLE 1625 · 2026-11-14T15:19:12Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3343,9 +1962,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1384 · 2026-11-14T14:15:18Z ===
+=== CYCLE 1626 · 2026-11-14T15:19:28Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3358,9 +1977,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1385 · 2026-11-14T14:15:34Z ===
+=== CYCLE 1627 · 2026-11-14T15:19:43Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3373,9 +1992,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1386 · 2026-11-14T14:15:50Z ===
+=== CYCLE 1628 · 2026-11-14T15:19:59Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3388,9 +2007,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1387 · 2026-11-14T14:16:05Z ===
+=== CYCLE 1629 · 2026-11-14T15:20:15Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3403,9 +2022,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1388 · 2026-11-14T14:16:21Z ===
+=== CYCLE 1630 · 2026-11-14T15:20:30Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3418,9 +2037,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1389 · 2026-11-14T14:16:36Z ===
+=== CYCLE 1631 · 2026-11-14T15:20:46Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3433,9 +2052,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1390 · 2026-11-14T14:16:52Z ===
+=== CYCLE 1632 · 2026-11-14T15:21:02Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3448,9 +2067,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1391 · 2026-11-14T14:17:08Z ===
+=== CYCLE 1633 · 2026-11-14T15:21:17Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3463,9 +2082,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1392 · 2026-11-14T14:17:24Z ===
+=== CYCLE 1634 · 2026-11-14T15:21:33Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3478,9 +2097,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1393 · 2026-11-14T14:17:40Z ===
+=== CYCLE 1635 · 2026-11-14T15:21:49Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3493,9 +2112,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1394 · 2026-11-14T14:17:56Z ===
+=== CYCLE 1636 · 2026-11-14T15:22:05Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3508,9 +2127,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1395 · 2026-11-14T14:18:12Z ===
+=== CYCLE 1637 · 2026-11-14T15:22:21Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3523,9 +2142,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1396 · 2026-11-14T14:18:27Z ===
+=== CYCLE 1638 · 2026-11-14T15:22:37Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3538,9 +2157,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1397 · 2026-11-14T14:18:43Z ===
+=== CYCLE 1639 · 2026-11-14T15:22:53Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3553,9 +2172,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1398 · 2026-11-14T14:18:58Z ===
+=== CYCLE 1640 · 2026-11-14T15:23:09Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3568,9 +2187,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1399 · 2026-11-14T14:19:14Z ===
+=== CYCLE 1641 · 2026-11-14T15:23:26Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3583,9 +2202,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1400 · 2026-11-14T14:19:30Z ===
+=== CYCLE 1642 · 2026-11-14T15:23:42Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3598,9 +2217,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1401 · 2026-11-14T14:19:45Z ===
+=== CYCLE 1643 · 2026-11-14T15:23:58Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3613,9 +2232,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1402 · 2026-11-14T14:20:01Z ===
+=== CYCLE 1644 · 2026-11-14T15:24:14Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3628,9 +2247,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1403 · 2026-11-14T14:20:18Z ===
+=== CYCLE 1645 · 2026-11-14T15:24:30Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3643,9 +2262,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1404 · 2026-11-14T14:20:34Z ===
+=== CYCLE 1646 · 2026-11-14T15:24:46Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3658,9 +2277,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1405 · 2026-11-14T14:20:50Z ===
+=== CYCLE 1647 · 2026-11-14T15:25:02Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3673,9 +2292,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1406 · 2026-11-14T14:21:07Z ===
+=== CYCLE 1648 · 2026-11-14T15:25:18Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3688,9 +2307,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1407 · 2026-11-14T14:21:24Z ===
+=== CYCLE 1649 · 2026-11-14T15:25:34Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3703,9 +2322,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1408 · 2026-11-14T14:21:40Z ===
+=== CYCLE 1650 · 2026-11-14T15:25:50Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3718,29 +2337,14 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1409 · 2026-11-14T14:21:57Z ===
+=== CYCLE 1651 · 2026-11-14T15:26:06Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
   trade-watchdog: LIVE(67724)
   agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1410 · 2026-11-14T14:22:14Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(54884)
   keepalive-trader: LIVE(99139)
   gecko-checkpoint-loop: LIVE(45795)
   fable-loop-watchdog: LIVE(90983)
@@ -3748,29 +2352,14 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1411 · 2026-11-14T14:22:30Z ===
+=== CYCLE 1652 · 2026-11-14T15:26:22Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
   trade-watchdog: LIVE(67724)
   agent-watchdog: LIVE(70001)
-  keepalive-trader: LIVE(99139)
-  gecko-checkpoint-loop: LIVE(45795)
-  fable-loop-watchdog: LIVE(90983)
-  caffeinate: LIVE(93637)
-  marketing-taskforce-loop: LIVE(96786)
-  fable-research-loop: LIVE(97509)
-  fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
-
-=== CYCLE 1412 · 2026-11-14T14:22:46Z ===
-Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
-  cio-autotrade: LIVE(67648)
-  trade-watchdog: LIVE(67724)
-  agent-watchdog: LIVE(55201)
   keepalive-trader: LIVE(99139)
   gecko-checkpoint-loop: LIVE(45795)
   fable-loop-watchdog: LIVE(90983)
@@ -3778,9 +2367,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1413 · 2026-11-14T14:23:02Z ===
+=== CYCLE 1653 · 2026-11-14T15:26:38Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3793,9 +2382,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1414 · 2026-11-14T14:23:18Z ===
+=== CYCLE 1654 · 2026-11-14T15:26:54Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3808,9 +2397,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1415 · 2026-11-14T14:23:33Z ===
+=== CYCLE 1655 · 2026-11-14T15:27:10Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3823,9 +2412,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1416 · 2026-11-14T14:23:49Z ===
+=== CYCLE 1656 · 2026-11-14T15:27:26Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3838,9 +2427,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1417 · 2026-11-14T14:24:04Z ===
+=== CYCLE 1657 · 2026-11-14T15:27:41Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3853,9 +2442,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1418 · 2026-11-14T14:24:21Z ===
+=== CYCLE 1658 · 2026-11-14T15:27:57Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3868,9 +2457,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1419 · 2026-11-14T14:24:37Z ===
+=== CYCLE 1659 · 2026-11-14T15:28:12Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3883,9 +2472,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1420 · 2026-11-14T14:24:52Z ===
+=== CYCLE 1660 · 2026-11-14T15:28:28Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3898,9 +2487,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1421 · 2026-11-14T14:25:08Z ===
+=== CYCLE 1661 · 2026-11-14T15:28:44Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3913,9 +2502,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1422 · 2026-11-14T14:25:24Z ===
+=== CYCLE 1662 · 2026-11-14T15:28:59Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3928,9 +2517,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1423 · 2026-11-14T14:25:40Z ===
+=== CYCLE 1663 · 2026-11-14T15:29:15Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3943,9 +2532,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1424 · 2026-11-14T14:25:56Z ===
+=== CYCLE 1664 · 2026-11-14T15:29:31Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3958,9 +2547,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1425 · 2026-11-14T14:26:11Z ===
+=== CYCLE 1665 · 2026-11-14T15:29:46Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3973,9 +2562,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1426 · 2026-11-14T14:26:27Z ===
+=== CYCLE 1666 · 2026-11-14T15:30:02Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -3988,9 +2577,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1427 · 2026-11-14T14:26:43Z ===
+=== CYCLE 1667 · 2026-11-14T15:30:17Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -4003,9 +2592,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1428 · 2026-11-14T14:26:59Z ===
+=== CYCLE 1668 · 2026-11-14T15:30:33Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -4018,9 +2607,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1429 · 2026-11-14T14:27:15Z ===
+=== CYCLE 1669 · 2026-11-14T15:30:49Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -4033,9 +2622,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1430 · 2026-11-14T14:27:33Z ===
+=== CYCLE 1670 · 2026-11-14T15:31:04Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -4048,9 +2637,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1431 · 2026-11-14T14:27:48Z ===
+=== CYCLE 1671 · 2026-11-14T15:31:20Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -4063,9 +2652,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1432 · 2026-11-14T14:28:04Z ===
+=== CYCLE 1672 · 2026-11-14T15:31:36Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -4078,9 +2667,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1433 · 2026-11-14T14:28:20Z ===
+=== CYCLE 1673 · 2026-11-14T15:31:52Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -4093,9 +2682,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1434 · 2026-11-14T14:28:36Z ===
+=== CYCLE 1674 · 2026-11-14T15:32:08Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -4108,9 +2697,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1435 · 2026-11-14T14:28:52Z ===
+=== CYCLE 1675 · 2026-11-14T15:32:23Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -4123,9 +2712,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1436 · 2026-11-14T14:29:08Z ===
+=== CYCLE 1676 · 2026-11-14T15:32:39Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -4138,9 +2727,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1437 · 2026-11-14T14:29:24Z ===
+=== CYCLE 1677 · 2026-11-14T15:32:55Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -4153,9 +2742,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1438 · 2026-11-14T14:29:40Z ===
+=== CYCLE 1678 · 2026-11-14T15:33:10Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -4168,9 +2757,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1439 · 2026-11-14T14:29:55Z ===
+=== CYCLE 1679 · 2026-11-14T15:33:26Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -4183,9 +2772,9 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
-=== CYCLE 1440 · 2026-11-14T14:30:11Z ===
+=== CYCLE 1680 · 2026-11-14T15:33:42Z ===
 Provider-LP: 5993044
 Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
   cio-autotrade: LIVE(67648)
@@ -4198,5 +2787,5 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   marketing-taskforce-loop: LIVE(96786)
   fable-research-loop: LIVE(97509)
   fable-trade-loop: LIVE(8178)
-Gecko-letzte: 14:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+Gecko-letzte: 15:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
