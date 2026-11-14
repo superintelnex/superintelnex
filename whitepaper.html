@@ -665,10 +665,14 @@
     border-radius: 4px;
     padding: 2px 6px;
     color: #F1F1F5;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
   .mono {
     font-family: var(--mono);
     font-size: 13px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
   .nowrap {
     white-space: nowrap;
@@ -1126,12 +1130,20 @@
     .metrics-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 680px) {
+    .topbar-wrap { padding: 0 12px; gap: 8px; }
+    .live-pill { display: none; }
+    .topbar-actions button.btn-ghost { display: none; }
+    .topbar-actions { gap: 6px; }
+    .layout-wrap { padding: 24px 16px 60px; }
+    .card { padding: 18px 16px; min-width: 0; }
+    .phase-card { grid-template-columns: 1fr; gap: 12px; padding: 18px 16px; min-width: 0; }
+    .phase-body { min-width: 0; overflow-wrap: anywhere; }
+    .phase-num { width: 36px; height: 36px; font-size: 14px; }
     .grid2, .grid3 { grid-template-columns: 1fr; }
     .metrics-grid { grid-template-columns: 1fr; }
-    .phase-card { grid-template-columns: 1fr; gap: 12px; }
-    .phase-num { width: 36px; height: 36px; font-size: 14px; }
     .contract-header { flex-direction: column; align-items: flex-start; }
     .contract-address-box { flex-direction: column; align-items: stretch; }
+    .nowrap { white-space: normal; word-break: break-all; }
   }
 
   /* High-Contrast Print Stylesheet */
