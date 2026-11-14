@@ -165,3 +165,22 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; discharging; 3:22 remaining pre
 Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
 
 2026-11-14T05:38:24Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T05-38Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T05:38:26Z COMMIT+PUSH OK: Event loop-tot:gecko-checkpoint-loop.zsh
+2026-11-14T05:38:26Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T05:38:26Z WAKE-AGENT: PID 76906 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+=== CYCLE 1961 · 2026-11-14T05:38:41Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; discharging; 3:18 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(76906)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+2026-11-14T05:39Z EVENT-RESOLUTION loop-tot:gecko-checkpoint-loop.zsh (Wake-76906, 05-38Z-Tape, Cycle 1960): 5. False-Positive desselben 03:43Z-End-Rauschens — ps-Beleg: gecko-pgrep-Match 76906 = diese Wake-Agent-Instanz (opencode run --archived --auto, Spawn 05:38:26Z laut WAKE-AGENT-Log, PPID 41198 = live fable-night-coord-loop; Event-Prompt enthält selbst das pgrep-Muster "gecko-checkpoint-loop.zsh" → garantierte FP), kein echter gecko-checkpoint-loop.zsh-Prozess im ps-Scan; echter Gecko-Loop 87539 bleibt planmäßig tot nach 8h-Fenster-Ende 03:43 UTC (konsistent "Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC"). Frisch-Scan 05:38–05:39 UTC (Live-RPC per node /tmp/bal-check.ts): Deposit DNEBNjtW 5993044 lp = CIO-Gate-Schwellwert unverändert (F9Sj9aUa 372364773, 9kT5EwF7 854081, unverändert seit 04-11Z); Akku: 100% DISCHARGING, 3:18 remaining, "Now drawing from Battery Power" (AC getrennt seit ~05:34 UTC, Runzeit-Schätzung sinkt planmäßig — Morgen-Shift-Hint: AC wieder verbinden); alle Team-Loops LIVE wie im Tape (cio-autotrade 67648, trade-watchdog 67724, agent-watchdog 70001, keepalive-trader 171, fable-loop-watchdog 90983, caffeinate 93637, marketing-taskforce-loop 96786, fable-research-loop 97509, fable-trade-loop 8178, Night-Coord 41198); git: HEAD=origin/main=f49bb46 Drift 0/0 (fetch 05:38Z, merge-base --is-ancestor OK → ff-only-kompatibel), 05-38Z-Event-Tape war untracked. Decision: kein Relaunch, kein Deposit-Handeln, path-scoped ff-only-Commit (05-38Z-Tape untracked→tracked + dieser Lane-LOG-Eintrag, 2 Dateien; fremde Dirty-Files README.md, agents/LOG.md, 04-18Z/04-33Z/04-41Z/05-25Z-Tapes, agents/shared/*, agents/timers/* + übrige Untracked unangetastet), keine Secrets (nur PIDs/Loop-Namen/Public-Shorties wie Runden davor). FP-Muster 03:43Z-End-Rauschen: Cycles 1960/1957/1953 = TOT-Events, 1958/1959 = FP-LIVE — 5. FP-Runde; Watch-Condition bleibt aktiv, Morgen-Shift-Aufgaben: (a) Night-Coord-PgGrep-Muster fixen (Wake-Agent-Instanzen per --archived-PPID 41198/Prompt-Inhaltscheck ausschließen) und (b) AC-Stecker zurück; kein Live-Edit in dieser Runde.
