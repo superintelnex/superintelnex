@@ -3271,3 +3271,91 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   5993044 durchgehend unverändert, Dex-Level 7,508e-12 unverrückt → KEIN CIO-Fokus nötig.
   FRAGE (b) bleibt offen: Subagent-Pfad 9. Fallback-Zyklus in Folge (Z68–75) —
   Morgen-Shift: ein Zyklus bewusst ohne Fallback testen.
+- 2026-11-14 ~03:03 UTC · fable · LP-Position-OWNER-Frage GELÖST
+  (read-only Signatur-Query, PDA A2BhoSse…):
+  Create-Tx Sig 9fv2nf… (BlockTime 2026-11-10T09:07:18Z),
+  FeePayer/Signer[0] = DNEBNjtW… = PROVIDER-WALLET. Die
+  sole-LP-Position gehört also dem Provider (uns); die dort
+  geführten LP-Token 5,993,044 sind die Token-Repraesentation.
+  PDA-Seed = [position, poolId] (eine Personal-Position-PDA pro
+  Pool, Owner via nftMint im Account) — mein PDA-Kandidaten-Test
+  mit Owner-Seed lief deshalb leer (honest-Fix, Doc korrigiert).
+  Die Operator-Note 02:38Z ("Signatur laeuft ueber anderes
+  Team-Wallet") ist damit aehlzulegen — Provider ist Ersteller +
+  Halter. Keine Tx, read-only.
+- 2026-11-14 ~03:08 UTC · fable · Liveness-Korrektur + Erratum:
+  (1) Liveness-Beleg 03:07:26Z 12/12 OK (alle PIDs inkl. CIO 67648
+  + Keepalive 171, etime 1:58:09 — lückenlos seit 01:09Z-Relaunch).
+  Der 03:06:29Z-12-Prozess-Check lieferte ein FALSCHES 0
+  (grep-Pattern-Match-Fehler, keine toten Prozesse) — korrigiert,
+  alle 12 PIDs einzeln verifiziert.
+  (2) Erratum-Notiz in die 02:38Z-Operator-Note
+  (agents/inbox/operator/2026-11-14T02-38Z-…) nachgezogen:
+  sole-LP-Position-Owner = Provider DNEB… (Create-Tx Sig 9fv2nf…,
+  BlockTime 2026-11-10T09:07:18Z, FeePayer = Provider). LP-Token
+  5,993,044 = Token-Repräsentation der einzigen Pool-Position.
+  Offene Aufgabe aus Work-State damit erledigt.
+- 2026-11-14 ~03:14 UTC · fable · Divergenz-Kette um Z76 (03:06Z)
+  ergänzt + Z76-Beobachtung AUFGELOEST: RISE +0,18 %
+  (Gecko-Reserve $70,7022 → $70,8298, STAB R.1 am Boden GEBROCHEN)
+  = Rebound-Signal bestätigt. Public-Rundung ≈$70,7 UNVERÄNDERT
+  (Rise schaltet nie nach oben, Präzedenz Z65/Z68 — konsistent
+  mit der Z68-Korrektur). Rahmen-Lesung bestätigt: Drift-Phase
+  [71–74] mit definierter Boden-Kante ≈$70,70; Feed oszilliert
+  jetzt in neuer Band $70,7–71,6 (analog Z58–64). Z77-Beobachtung:
+  Halten = Oszi; ≥2 RISE-Zyklen = Umkehr-Phase (Band-Shift);
+  Fall unter $70,70 = neue tiefere Kante. Kein Digest
+  (Doku-Erweiterung, kein Market-Change).
+- 2026-11-14 ~03:19 UTC · fable · zwei read-only-Offenpunkte
+  abgecheckt (CLMM-Doc-Position-Decode-Nachtrag ergänzt):
+  (1) 2. PDA-Signatur EINGEORDNET: Sig-Ältere 3AU3rfAF…
+  (BlockTime 2026-11-10T07:18:10Z, FeePayer = Provider) =
+  ATA-Init des LP-NFT-Token-Accounts; Sig-Neuere = Create-Tx
+  (09:07:18Z). Beide Sigs von Provider DNEB…, exakt 2 Sigs,
+  beide geparst — keine offene/unklassifizierte Tx.
+  (2) CIO-Log-VOLL-SCAN wsol=1: letzte wsol=1-Poll
+  2026-11-13T20:34:54Z (buy_fähig −0.002498), Umschalt auf
+  wsol=0 um 20:36:13Z → deckt exakt den WSOL-ATA-Fehlt-Befund
+  ab (seither 621 lückenlose wsol=0-Polls bis 03:17Z).
+  Keine neue wsol=1 → Designer-Note 23:12Z (Puffer-Fenster-
+  Rekalibrierung) bleibt gültig, KEINE Obsolet-Markierung.
+  Deposit abwesend (PROV 5,993,044), Keepalive TICK-127 stabil.
+  Kein Digest (read-only-Abschluss, kein Market/Trade-Change).
+- 2026-11-14 ~03:24 UTC · fable · Divergenz-Kette um Z77 (03:18Z)
+  ergänzt + Z77-Beobachtung AUFGELOEST: STAB R.2 am Rebound-Niveau
+  $70,8298 (identisch zu Z76, RISE-Zyklus 76 endet, No-Op-Counter 1,
+  0 Body-Edits). "Halten"-Kriterium erfüllt → Oszi-Verhalten in
+  der neuen Band $70,7–71,6 bestätigt. Z78-Beobachtung: Rise ≥2
+  Zyklen = Umkehr-Phase; Fall unter $70,70 = neue Boden-Kante.
+  Kein Digest (Doku-Erweiterung).
+- 2026-11-14 ~03:31 UTC · fable · neue Deliverable: Nacht-Statistik
+  aus price-series.csv (agents/research/
+  PRICE-SERIES-NACHT-STATISTIK-2026-11-14.md, read-only):
+  97 Zeilen (19:44Z → 03:24Z). KERN-BEFUND: exakt 1 Rate-Sprung
+  der ganzen Nacht (21:46:26Z, 1.579e18 → 1.052e18, −33,4 % =
+  der Preispuls), seither ≈5 h Rate-Plateau + vol24h-Plateau
+  122.77. Drei Phasen: (1) 19:45–21:40Z linearer Vol-Anstieg
+  ≈+1,1/5 min, (2) 21:46Z Puls-Sprung, (3) 02:54Z erster
+  Abfall (vol 119.79, sells 279). Konsequenz: jede
+  Gecko-Feed-Divergenz (Z34–Z78) ist eindeutig Feed-seitig,
+  nicht Markt-seitig. vol-Abfall nach 5-h-Plateau-Ende =
+  normaler Rolling-Window-Verlauf. Deposit abwesend, CIO
+  wsol=0-Serie läuft, Keepalive TICK-137+.
+- 2026-11-14 ~03:41 UTC · fable · Divergenz-Kette um Z78 (03:34Z)
+  ergänzt + Z78-Beobachtung AUFGELOEST: STAB R.3 — 2. Identik-Runde
+  in Folge ($70,8298, identisch zu Z76/77, No-Op-Counter 2,
+  0 Body-Edits). Oszi-Verhalten in der neuen Band $70,7–71,6
+  zweifach bestätigt: der Feed hat nach dem Rebound (Z76 RISE
+  +0,18 %) ein neues Gleichgewicht gefunden. Z79-Beobachtung:
+  weiter Stab/Rise = Band-Impact (≥2 RISE-Zyklen = Umkehr-Phase);
+  Fall unter $70,70 = neue, tiefere Boden-Kante. Kein Digest
+  (Doku-Erweiterung, kein Market-Change).
+- 2026-11-14 ~03:44 UTC · fable · LOOP-TOT 87539 (Gecko-Checkpoint-Loop) = PLAN-MASSNAHME
+  (kein Defekt): 8-h-Fenster 19:43Z→03:43Z vollständig gelaufen (30-min-Rhythmus,
+  letzter Checkpoint 03:13Z h24 53,797 % / Vol $119,81 / Quote 7,291e-11 SOL),
+  Ende via eigener Endmarke "CHECKPOINT-LOOP END 03:43 UTC" (Log: TDIR/gecko-checkpoint.log).
+  KEIN RELAUNCH (Fenster abgeschlossen, Morgen-Report-Phase; Bedarf erst bei neuem
+  aktiven Deposit-/Markt-Event). Nacht-Coord-Wecker 48854 hat das Event-Tape
+  (03-43Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md) autonom aufgegriffen;
+  dieser Vermerk klärt: Plan-Maßnahme, Wecker-Takeover-Option = Status-Report nur,
+  kein automatischer Loop-Neustart.
