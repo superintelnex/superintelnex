@@ -2267,3 +2267,23 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
 Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
 
 2026-11-14T04:49:45Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T04-49Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T04:49:47Z COMMIT+PUSH OK: Event loop-tot:gecko-checkpoint-loop.zsh
+2026-11-14T04:49:47Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T04:49:47Z WAKE-AGENT: PID 23118 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+=== CYCLE 1785 · 2026-11-14T04:50:02Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(23118)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+
+2026-11-14T04:55Z EVENT-RESOLUTION loop-tot:gecko-checkpoint-loop.zsh (Wake-23118, 04-49Z-Tape, Cycle 1784): False-Positive desselben 03:43Z-End-Rauschens — pgrep-Beleg 23118 = diese Wake-Agent-Instanz (opencode run, Event-Text enthält das gecko-Muster selbst), echter Gecko-Loop 87539 bleibt planmäßig tot nach 8h-Fenster-Ende 03:43 UTC (konsistent mit Runden 12–24 und 3ece7de-Diagnose; Morgen-Shift-Fix des PgGrep-Musters notiert, kein Live-Edit). Frisch-Scan 04:50–04:55 UTC (Live-RPC per node /tmp/bal-check.ts): Deposit DNEBNjtW 5993044 lp = CIO-Gate-Schwellwert (F9Sj9aUa 372364773, 9kT5EwF7 854081, unverändert seit 04-11Z), Akku 100 % AC geladen (caffeinate 93637), alle Team-Loops LIVE (cio-autotrade 67648, trade-watchdog 67724, agent-watchdog 70001, keepalive-trader 171, fable-loop-watchdog 90983, marketing-taskforce-loop 96786, fable-research-loop 97509, fable-trade-loop 8178, Night-Coord 41198), git Drift origin/main…HEAD 0/0 (FF-OK, fetch 04:55 UTC). Decision: kein Relaunch, kein Deposit-Handeln, path-scoped ff-only-Commit (04-49Z-Tape + Lane-LOG; fremde Dirty-Files README.md, agents/LOG.md, 04-18Z/04-33Z/04-41Z-Tapes, agents/shared/*, agents/timers/* und alle Untracked unangetastet), keine Secrets (Tape = nur Loop-Namen/PIDs, Log = Public-Adressen wie Runden 12–24). Watch-Condition bleibt aktiv.
