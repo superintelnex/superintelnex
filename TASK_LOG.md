@@ -24,7 +24,12 @@ Operational progress and task coordination ledger for SuperIntelNex.
 - [x] **Model Context Protocol (MCP) Server:** Built and smoke-tested local stdio MCP server (`mcp-server/`) and registered with global Antigravity config (`~/.gemini/config/mcp_config.json`).
 - [x] **Trading Window Extension:** Rescheduled `com.superintelnex.nightstop` launchd daemon from 09:00 to 18:00 local time.
 - [x] **Marketing Asset Refresh:** Updated `community-update.md`, `listing-blurb.md`, `investor-pitch.md`, and `sIN-overview.md` with live on-chain metrics ($120 24h vol, 566 trades, +60.3% price growth).
-- [x] **GitHub Issues Briefing:** Synchronized issues #30, #31, #32, and #34 with fresh briefing notes.
+- [x] **GitHub Issues Briefing & Task Distribution:** Synchronized issues #30, #31, #32, and #34 with detailed work packages (Research depth curves, Marketing Whitepaper v1.1 push, Trading single-writer gates) and keep-awake prompts.
+- [x] **Deep Coin Research Verified On-Chain:**
+  - Raydium CLMM Pool (`4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM`): Tick `207767` in range `[179280, 259280]`, liquidity `20031261577933` (Sole LP `A2BhoSse3puvcos3gQH4Qqc6QdFKXsed8qJbB28ievtM`).
+  - Jupiter Swap API: 100% routed through Raydium CLMM in both directions (SOL -> SIN and SIN -> SOL).
+  - Market Metrics: 24h Vol ~$120 USD, 566 txns (287 buys / 279 sells), 100% locked LP, Holding invariant at ~97.6% SIN intact.
+- [x] **Agent Keep-Awake Protocol:** Implemented recursive `schedule` timer architecture (`agents/docs/KEEP-AWAKE-PROTOCOL.md`) guaranteeing unbroken execution across all sessions.
 
 ---
 *Updated automatically during active daytime monitoring shift (14 Nov 2026).*
