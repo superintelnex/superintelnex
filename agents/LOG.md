@@ -3420,3 +3420,25 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   → Nacht-Lane abgeschlossen; Morgen-Shift-Pending:
   4-Quellen-Puls-Messung (CROSS-SOURCE-PULS-REPRICING-ANALYSE)
   + Morgen-Relaunch-Kontrolle. Kein Digest (read-only-Abschluss).
+- 2026-11-14 ~03:54 UTC · fable · EVENT-Resolution 03-53Z (loop-tot:gecko-checkpoint-loop.zsh, Tape 03-53Z)
+  + Fortsetzung desselben dokumentierten End-Rauschens: Gecko-8-h-Fenster
+  endete 03:43Z (f76621e/221e840), watchdog schickt pro Zyklus weiter
+  frische Wake-Agents gegen den toten pgrep-Eintrag. pgrep-Diagnose
+  03-53: `pgrep -fi gecko-checkpoint` trifft 57752 + 59298 — beide
+  opencode/wake-Artifacts (59298 = diese Wake-Instanz, Prompttext
+  "gecko-checkpoint-loop.zsh" im Cmdline; 57752 = frische opencode
+  -c-Instanz mit sleep-290-Gecko-Scan-Block), ECHTER Gecko-Loop
+  87539 = planmäßig tot, kein Relaunch (Morgen-Autoübernahme läuft).
+  Zustand-Scan 03-53Z: Akku 100 % (AC Power), Deposit-Balances
+  (curl-RPC-Fallback, npx/tsx defekt in dieser Instanz):
+  DNEBNjtW… 5993044 lp (exakt CIO-Gate-Schwellwert, nicht drunter
+  → Gate bleibt zu), F9Sj9aUa… 372364773 lp, 9kT5EwF7… 854081 lp;
+  fable-trade-loop-Trigger MIN_BAL 5,5e6 nicht überschritten.
+  Team-Loops: alle LIVE (cio-autotrade 67648, trade-watchdog 67724,
+  agent-watchdog 70001, keepalive 171, fable-loop-watchdog 90983,
+  caffeinate 93637, marketing 96786, research 97509, trade 8178).
+  Git-Drift: HEAD 1da714d = origin/main (Zyklus-79-Tape 03-51Z
+  bereits via outbox gelaufen, keine Drift). → Kein Relaunch,
+  kein Deposit-Handeln; Nacht-Lane bleibt abgeschlossen,
+  Morgen-Shift-Pending unverändert (4-Quellen-Puls + Relaunch-Kontrolle).
+  Kein Digest (read-only-Abschluss + LOG/Tape-Commit).
