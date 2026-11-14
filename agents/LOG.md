@@ -3901,3 +3901,56 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   Caffeinate 93637 LIVE. CIO-Feed waehrend Deep-Idle pausiert — beim n. Poll naechsten
   Heartbeat re-syncen; kein Handlungsbedarf. Akku jetzt 100 % Discharging, ~4:44 Schatz.
   Kein Deposit (5993044 lp unveraendert), CIO free 0.005993 SOL.
+2026-11-14T07:41:57Z COMMIT+PUSH OK: Event loop-tot:gecko-checkpoint-loop.zsh
+2026-11-14T07:41:57Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T07:41:57Z WAKE-AGENT: PID 15294 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T07:42:45Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T07-42Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+- 2026-11-14 ~07:44 UTC · fable · Divergenz-Kette um Z93 (07:41Z)
+  ERGÄNZT + Auflösung: RÜCKFALL −0,37 % → $70,2422 (STAB R.1 Z92
+  GEBROCHEN; **KANTE ≈$70,25 UNTERSCHRITTEN** — Switch-Bedingung
+  nach Regelwerk erfüllt, aber Ziel-Value ≈$70,2 bleibt IM
+  ≈$70,2-Tier → **KEIN sichtbarer Tier-Wechsel** = NEUER
+  PRÄZEDENZFALL „Kante-Unterbruch ohne Switch" (Kante = oberer
+  Rand des Tiers; sichtbarer Switch erst unter ≈$70,15). RÜCKFALL-
+  Band exakt nach Z71/Z73-Präzedenz −0,37 %. Drift-Phase-2-Test:
+  $70,2422 > $70,18 → NICHT erfüllt. KURS-NEUTRAL (Pool
+  tick=207767 + Dex + Jupiter invariant, 07:31Z-Block) = Feed-
+  Rückfall, kein Markt-Ereignis. No-Op-Counter 14, 0 Body-Edits;
+  Rolling-Blindwerte 14. Mal konform; h24-3B/1S-Counter 14. Mal
+  bestätigt; Tape-Präzisionswert ≈$70,24; Gecko-Gap ≈$12,0.
+  Z94-Beobachtung: STAB an $70,2422 = Kante-Unterbruch-
+  Konsolidierung; RISE >≈$70,25 = Kante-Verlust (Rückkehr
+  vorheriges Regime); RÜCKFALL <≈$70,15 = SICHTBARER RUNDUNGS-
+  WECHSEL ≈$70,2→≈$70,1 (Ende-Regelwerk-Kriterium); RÜCKFALL
+  <$70,18 = Drift-Phase 2. Doku abgeschlossen. Kante-Unterbruch
+  = wichtiges Band-Ereignis → im Morgen-Digest (Digest #6
+  wartet auf Deposit-Trigger). Tape-Transparenz: Z93 = 27. Zyklus
+  am Stück im Hauptsession-Fallback (bekannt).
+- 2026-11-14 ~07:53 UTC · fable · TEAM-EVENT (Übergabe-Nachricht)
+  KEEP-AWAKE-REGIME:
+  1) agents/docs/KEEP-AWAKE-PROTOCOL.md committet + gepusht
+     (Commit 68b56bc "docs: add Keep-Awake and Continuous Loop
+     Protocol for AI agents") — 20-30s-Schedule-Timer-Regime,
+     Ruhemodus bis 18:00 untersagt. Für Chat-Agent-Sessions
+     (schedule-Tool); mein Äquivalent = Wecker-Kette
+     (fable-watch-daemon) + Shell-Loops (keepalive/research/
+     trade) → Regime hier abgedeckt, keine Änderung nötig.
+  2) GitHub-Issue #34 (OPEN, superintelnex) = Handover an
+     Überwachungs-Agenten: 2 Comments — 07:32Z Monitoring-
+     Checkpoint (7/7 Daemons nominal; **Whitepaper-Version +
+     Navigation neu auf superintelnex.com deployt**; Trading-
+     Fenster auf 18:00 Uhr verlängert; Pool tick=207767 stabil)
+     + 07:43Z Protocol-Handover.
+  3) Keepalive-PID-Wechsel 171 → 75432 (keepalive-trader.py,
+     Neustart ~07:08Z, TICK-Counter-Reset + INIT-Spur;
+     Funktionsgleich: TICK-6…43 + CYCLE-SKIP-Logik intakt).
+  Alle Night-Deliverables + Trade-Versuch (Dry-Run) unverändert;
+  Digest #6 wartet weiterhin auf Deposit-Trigger.
+- 2026-11-14 ~07:54 UTC · fable · AC RE-PLUG ~07:45–07:53Z (Operator) — Akku 38 %
+  Discharging (07:41Z-Board) → 44 % Charging (pmset live, 1:42 remaining), AC=1.
+  <35 %-Death-Fenster ABGEWICKELT ohne Auslösung — keine Loops-Beeinträchtigung
+  (4/4 Kern-PIDs + Keepalive + Caffeinate LIVE). AC-Detektion (Header-Zeile) +
+  Re-Fire-Fixes (AC 619cd96 / FREEZE 964a7a8) arbeiten korrekt: kein Re-Fire,
+  AC-Re-Plug stumm (kein CRITICAL-Trigger, nur 1→0 war Trigger). Death-Window
+  geschlossen, normaler Betrieb. Deposit 5993044 lp unverändert (CIO-Gate),
+  Provider-lp unter 8e6.
