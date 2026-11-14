@@ -7,6 +7,8 @@ import { assertEquals, assert } from "jsr:@std/assert@1.0.8";
 const POOL_ID = "4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM";
 const TOKEN_MINT = "A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z";
 const WSOL_MINT = "So11111111111111111111111111111111111111112";
+const PROVIDER_SIN_ATA = "FD1WzT526vwyBbuq7p6RN6PizStW8sEoZaGrm5u7xqSW";
+const MIN_HOLDING_UI = 780_000_000_000; // 30% of ~2.6 Trillion initial baseline
 
 Deno.test("Market Health: DexScreener Pair Health & Metrics", async () => {
   const res = await fetch(`https://api.dexscreener.com/latest/dex/pairs/solana/${POOL_ID}`);
@@ -87,4 +89,25 @@ Deno.test("Market Health: Solana Mainnet Mint Invariant & Revoked Authorities", 
   assertEquals(info.freezeAuthority, null, "Freeze authority must be permanently revoked (null)");
   assertEquals(info.isInitialized, true, "Mint must be initialized");
   assertEquals(data.result.value.owner, "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA", "Owner must be standard SPL Token program");
+});
+
+Deno.test("Market Health: Provider Holding Invariant (Ticket #6 >= 30% Intact)", async () => {
+  const res = await fetch("https://api.mainnet-beta.solana.com", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      jsonrpc: "2.0",
+      id: 1,
+      method: "getTokenAccountBalance",
+      params: [PROVIDER_SIN_ATA],
+    }),
+  });
+  assertEquals(res.status, 200, "Solana Mainnet RPC must return HTTP 200");
+  
+  const data = await res.json();
+  assert(data.result && data.result.value, "Token balance data must exist");
+  
+  const uiAmount = data.result.value.uiAmount;
+  assert(uiAmount >= MIN_HOLDING_UI, `Holding invariant violated: current=${uiAmount} < min=${MIN_HOLDING_UI}`);
+  assert(uiAmount > 2_500_000_000_000, "Current holding must be ~97.6% intact (> 2.5 Trillion SIN)");
 });
