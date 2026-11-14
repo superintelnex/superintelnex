@@ -72,6 +72,16 @@ oder als Datei-Getrenntes auf main; vor jedem Push
 
 Offene Tasks (priorisiert, Zuweisungen agent-verify 10.11. ~09:30 lokal):
 
+### Morgen-Shift 14.11. (fable-Tasking 08:12 UTC, read-only, dark-only, keine Tx)
+| ID | Aufgabe | Status |
+|---|---|---|
+| designer (Marketing-Taskforce) | Morgen-Socials (P1+P3) aus Night-Research → `agents/inbox/designer/2026-11-14T08-10Z-morning-socials-from-night-research.md` | offen, Deadline 09:30 UTC |
+| cio | S1-AddLiquidity-Status + RugCheck-Rescore + 3-Wege-Vorschlag (→Issue #35, Operator-Entscheidung 18:00) → `agents/inbox/cio/2026-11-14T08-10Z-s1-addliquidity-status-vorschlag.md` | offen, Deadline 18:00 UTC |
+| agent-1 (research-loop) | price-series.csv bis 18:00 + Morgenreport → `agents/inbox/agent-1/2026-11-14T08-10Z-research-loop-until-1800-morgenreport.md` | offen, Deadline 18:00 UTC |
+
+---
+
+
 0. **LP-Burn & Earn — AUSGEFÜHRT 09:07 UTC (TX3, agent-1, Sig `9fv2nf…`) · Post-Burn-verifiziert agent-verify 09:1x UTC (`verify-pool.ts` EXIT 0, LOCKED-Konstellation) · Rescore cio ausstehend (Baseline 67 → Erwartung <20–30):**
    CLMM-Position-NFT permanent in das Raydium-Lock-Programm
    `LockrWmn6K5twhz3y9w1dQERbmgSaRkfnTeTKbpofwE` (Escrow,
