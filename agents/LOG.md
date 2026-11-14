@@ -3846,3 +3846,41 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   Kein Digest (Doku-Erweiterung).
 - 2026-11-14 ~04:35 UTC · fable · EVENT-RESOLUTION 04-33Z Cycle 1723 (Nachverifikation, 28. Tape desselben 03:43Z-Ereignisses): Frisch-Sweep — Deposit unverändert per node /tmp/bal-check.ts: DNEBNjtW 5993044 lp = CIO-Gate-Schwellwert (F9Sj9aUa 372364773, 9kT5EwF7 854081; Adressen im Skript, nicht im Commit), Akku 100 % AC geladen (caffeinate 93637), alle Team-Loops LIVE (cio 67648/97943, 67724, 70001, 171, 90983, 93637, 96786, 97509, 8178 + Night-Coord 41198 + diese Wake-Instanz 4104); Ps-Beleg: pgrep-Match „gecko-checkpoint-loop" = Wake-Agent-eigene opencode-cmdline (4104, Event-Text enthält das Muster selbst → garantierte FP, konsistent 3ece7de-Diagnose), echter Gecko-Loop planmäßig beendet nach 8h-Fenster 03:43Z → kein Flattern, kein Relaunch. Git: HEAD=origin/main=1b220aa Drift 0/0, merge-base --is-ancestor FF-OK. Decision: kein Relaunch, kein Deposit-Handeln, path-scoped ff-only-Commit (nur agents/LOG.md; 04-33Z-Tape, 04-18Z-Tape, README.md + shared/timers-Dirty unangetastet), keine Secrets (Eintrag = nur Public-Adressen/PIDs, wie Runden 12–28). Watch-Condition bleibt aktiv; Morgen-Shift-Fix des Night-Coord-PgGrep-Musters weiterhin offen (kein Live-Edit).
 - 2026-11-14 ~04:33 UTC · fable · EVENT-RESOLUTION 04-33Z Cycle 1723 (28. gecko-checkpoint End-Rauschen-Tape desselben 03:43Z-Ereignisses): Frisch-Sweep — Deposit DNEBNjtW 5993044 lp = CIO-Gate-Schwellwert (F9Sj9aUa 372364773, 9kT5EwF7 854081; unverändert seit 04-11Z, Live-RPC per node /tmp/bal-check.ts, Adressen im Skript nicht im Commit), Akku 100 % AC geladen (caffeinate 93637), alle Team-Loops LIVE (67648+97943, 67724, 70001, 171, 90983, 93637, 96786, 97509, 8178 + Night-Coord 41198); Ps-Beleg: pgrep-Match gecko-checkpoint-loop 3087 = diese Wake-Agent-Instanz-eigene opencode-cmdline (Spawn 04:33:06, Event-Text enthält das pgrep-Muster selbst → garantierte FP), echter Gecko-Loop 87539 planmäßig tot nach 8h-Fenster-Ende 03:43Z → kein Flattern des Live-Systems, nur Muster-FP (konsistent 3ece7de-Diagnose, Morgen-Shift-Fix des Night-Coord-PgGrep-Musters weiter offen, kein Live-Edit). Git: HEAD=origin/main=5d7c8c0 Drift 0/0 (merge-base --is-ancestor FF-OK). Decision: kein Relaunch, kein Deposit-Handeln, path-scoped ff-only-Commit (04-33Z-Tape untracked→HEAD + agents/LOG.md; Lane-LOG FABLE-NIGHT-COORD.log bleibt gitignored; 04-18Z-Tape-Re-Timestamp + README.md + TXN-KONZENTRATION-Note + shared/timers-Dirty + übrige Untracked-Files unangetastet), keine Secrets (Commit-Scan: Tape = nur Loop-Namen/PIDs, LOG = nur Public-Adressen wie Runden 12–27). Watch-Condition bleibt aktiv.
+2026-11-14T04:59:50Z COMMIT+PUSH OK: Event loop-tot:gecko-checkpoint-loop.zsh
+2026-11-14T04:59:50Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T04:59:50Z WAKE-AGENT: PID 34777 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+2026-11-14T05:00:53Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T05-00Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+- 2026-11-14 ~05:09 UTC · fable · EIGENER PDA-BUG BELEGT + KORRIGIERT
+  (TXN-Note Nachtrag 5, 05:08Z): die PDA-Kalkulation aus Nachtrag 4
+  hatte fälschlich das TOKEN-Programm als PDA-Programm benutzt.
+  Kanonische ATA = PDA([owner, token_program, mint], Programm =
+  ATokenGPv… (ATA-Programm)). Re-Check (/tmp/ata3.ts, lokal, kein
+  RPC): kanonische Provider-wSOL-ATA = 4eA5jcJVqH1Q… = exakt das
+  Close-Ziel-Konto (und = A1-Ziel der ATA-Create-Instruction I1 in
+  den BUY-Tx — Doppelbeleg aus den Tx selbst). Die „Label-
+  Korrektur" aus Nachtrag 4 („eigener wSOL-Account ≠ kanonische
+  ATA") wird ZURÜCKGEZOGEN; die CIO-21:53Z-Label „wsol-ATA" war
+  korrekt. Addendum in der CIO-Note 04:56Z gesetzt (Abschnitt 2
+  markiert). Mechanismus-Befind (Close in SELL-Tx, Re-Create pro
+  BUY, wsol=0-Endzustand, kausal ab 20:35:39Z) + CIO-Regime
+  (Fire-Trigger 31.317e6) UNVERÄNDERT.
+- 2026-11-14 ~05:19 UTC · fable · Divergenz-Kette um Z84 (05:13Z)
+  ERGÄNZT + Auflösung: DRIFT +0,01 % → $70,2704 (STAB R.1 Z83
+  GEBROCHEN; No-Op-Counter 5, 0 Body-Edits; Tape-Präzisionswert
+  $70,26→$70,27 in P2/P6; Rolling-Blindwerte 5. Mal konform;
+  h24-3B/1S-Counter 5. Mal bestätigt). „Tief-Plateau" (≥3 Stabs)
+  HAT SICH NICHT MATERIALISIERT — Micro-Drift im 2. Band fort,
+  Kante-Verjüngung ≈$70,18→$70,26→$70,27 (Oszi-Muster Z77/78).
+  KURS-NEUTRAL (Pool tick=207767 + Dex + Jupiter invariant,
+  05:15Z-Block) → Feed-Micro-Drift, kein Markt-Ereignis.
+  Z85-Beobachtung: ≥3 Stabs ab Z85 = Tief-Plateau; RISE >$70,70
+  = Band-Re-Capture; Fall <$70,25 = Rundungswechsel + Micro-Drift;
+  Fall <$70,18 = Drift-Phase 2. Doku abgeschlossen. Kein Digest
+  (Doku-Erweiterung). Tape-Transparenz: Z84 = 18. Zyklus am Stück
+  im Hauptsession-Fallback (bekannt).
+- 2026-11-14 ~05:27 UTC · fable · CRITICAL-Event 05:26Z (watch-daemon): AC getrennt
+  (war 1, jetzt 0) — Akku 100 % discharging (pmset Header 'Battery Power'), Loops-Death-
+  Fenster beginnt. Caffeinate 93637 aktiv → Sleep-Protection läuft. Guard-Aktion: bei
+  Akku <35 % oder neuem pmset-Sleep-Event CRITICAL-Alarm. Keine Loops-Beeinträchtigung
+  jetzt (alle 4 Kern-PIDs + Keepalive 171 LIVE). Operator-Info: Ladegerät erst beim
+  nächsten Heartbeat melden, falls kein Re-Plug vor ~35 % — Wache beobachtet aktiv.
