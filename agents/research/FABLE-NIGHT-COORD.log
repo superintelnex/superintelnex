@@ -3996,3 +3996,22 @@ Battery:  -InternalBattery-0 (id=21430371)	61%; charging; 1:13 remaining present
 Gecko-letzte: 08:07 UTC h24=53.797% h1=0% Vol_h24=$119.81 Vol_h1=$0.00 Quote_SOL=0.00000000000007291328298
 
 2026-11-14T08:07:41Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T08-07Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T08:07:44Z COMMIT+PUSH OK: Event loop-tot:gecko-checkpoint-loop.zsh
+2026-11-14T08:07:44Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T08:07:44Z WAKE-AGENT: PID 46037 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+=== CYCLE 3 · 2026-11-14T08:07:59Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	62%; charging; 1:15 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: TOT
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 08:07 UTC h24=53.797% h1=0% Vol_h24=$119.81 Vol_h1=$0.00 Quote_SOL=0.00000000000007291328298
+
+2026-11-14T08:08:08Z LOOP-START v2 (POLL=15s, PID=46609)

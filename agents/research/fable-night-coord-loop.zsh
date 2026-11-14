@@ -160,7 +160,7 @@ while true; do
       p=""
       for pid in $(pgrep -f "$pat" 2>/dev/null); do
         case "$(ps -o command= -p $pid 2>/dev/null)" in
-          *opencode*) continue ;;
+          *opencode\ run*) continue ;;   # NUR Wake-Agent-CLI ausschließen (kein /T/opencode/-Pfad!)
         esac
         p=$pid
         break
