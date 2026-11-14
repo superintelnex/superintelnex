@@ -4181,3 +4181,51 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
 Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
 
 2026-11-14T05:21:42Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T05-21Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T05:21:44Z COMMIT+PUSH OK: Event loop-tot:gecko-checkpoint-loop.zsh
+2026-11-14T05:21:44Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T05:21:44Z WAKE-AGENT: PID 58914 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+=== CYCLE 1901 · 2026-11-14T05:21:59Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(58914)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+=== CYCLE 1902 · 2026-11-14T05:22:15Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(58914)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+=== CYCLE 1903 · 2026-11-14T05:22:32Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(58914)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
