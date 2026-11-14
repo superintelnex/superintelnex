@@ -2369,3 +2369,22 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
 Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
 
 2026-11-14T04:51:23Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T04-51Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
+2026-11-14T04:51:26Z COMMIT+PUSH OK: Event loop-tot:gecko-checkpoint-loop.zsh
+2026-11-14T04:51:26Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T04:51:26Z WAKE-AGENT: PID 25165 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+=== CYCLE 1791 · 2026-11-14T04:51:41Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(25165)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+2026-11-14T05:52Z EVENT-RESOLUTION loop-tot:gecko-checkpoint-loop.zsh (Wake-25165, 04-51Z-Tape, Cycle 1790): False-Positive-Runde desselben 03:43Z-End-Rauschens — ps-Beleg: 25165 = diese Wake-Agent-Instanz (opencode run, PPID 41198 = live fable-night-coord-loop), echter Gecko-Loop 87539 bleibt planmäßig tot nach 8h-Fenster-Ende 03:43 UTC; Night-Coord 41198 liest das Skript live, nur das PgGrep-Muster flattert (konsistent 3ece7de-Diagnose, Morgen-Shift-Fix notiert, kein Live-Edit). Frisch-Scan 05:51–05:52 UTC (Live-RPC per node /tmp/bal-check.ts): Deposit DNEBNjtW 5993044 lp = CIO-Gate-Schwellwert (F9Sj9aUa 372364773, 9kT5EwF7 854081, unverändert seit 04-11Z), Akku 100 % AC geladen (caffeinate 93637), alle Team-Loops LIVE (cio-autotrade 67648, trade-watchdog 67724, agent-watchdog 70001, keepalive-trader 171, fable-loop-watchdog 90983, marketing-taskforce-loop 96786, fable-research-loop 97509, fable-trade-loop 8178, Night-Coord 41198), git HEAD=origin/main=b913664 Drift 0/0 (fetch 05:51 UTC). Decision: kein Relaunch, kein Deposit-Handeln, path-scoped ff-only-Commit (04-51Z-Tape untracked→tracked + Lane-LOG; README.md, agents/LOG.md, 04-18Z/04-33Z/04-41Z-Tapes, shared/*, timers/* und übrige Untracked fremd = unangetastet), keine Secrets (Commit-Scan: Tape = nur Loop-Namen/PIDs, Log-Appendix = Status-Appends Public-Adressen wie Runden 24–25). Watch-Condition bleibt aktiv.
