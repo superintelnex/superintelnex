@@ -90,3 +90,31 @@
 - **Airdrop-Gedanken**: erst nach CoinGecko-Listing — nicht erfüllt.
 
 *Zyklus-20-Stamp: 08:13 UTC · Taktgeber: Operator-Order (Marketing selbst ausführen, Coin bekannter machen). Log-Block Zyklus 20 wird in marketing-taskforce-log.txt nachgeführt.*
+
+---
+
+## P7 — Slippage-Proof (EN, neu 08:26 UTC, read-only Jupiter-Quote)
+
+> Transparency, not hype. Here's our own live slippage curve (SOL→SIN, Raydium CLMM), read-only:
+> • 0.001 SOL → ~10.5M SIN
+> • 0.01 SOL → ~103.7M SIN (≈ linear)
+> • 0.1 SOL → ~906.8M SIN
+> • 1.0 SOL → ~4.02B SIN
+> Past ~0.1 SOL the curve bends — that's concentrated liquidity working as designed.
+> We publish our own numbers instead of making promises. No investment advice. DYOR.
+
+## P8 — Balanced-Flow (EN)
+
+> 287 buys / 279 sells in 24h — a balanced tape, not a one-sided pump.
+> 100% of pool liquidity is locked on-chain and verifiable.
+> SuperIntelNex Team · No guarantees, ever.
+
+## P9 — Verify-First (EN)
+
+> Verify it yourself:
+> • Pool: 4erqAhdH1Yx9fZfPSTjrAu8SgvPKeRAHNCgGqnsevdeM (Raydium CLMM)
+> • Mint: A4WSPbHPGuixyAZhtJmUHjpPqq9CnAmEQ1MWQks4A44Z (supply fixed, mint & freeze authorities revoked)
+> • 24h data via public keyless APIs
+> All reproducible. No investment advice.
+
+*P7–P9 ergänzt 08:30 UTC (Fable, Campaign 'bekannt machen' — `agents/marketing/2026-11-14-campaign-known.md` + `agents/research/RESEARCH-Live-2026-11-14-08-26Z.md`). Empfehlung: P1 + P7 + P5-Telegram posten; P6/P9 für Listing-Mentions & DEX-Tracker-Comments.*
