@@ -27,7 +27,7 @@ Dark-only-geprüft: ja. Alle Felder on-chain/API-belegt, keyless. Keine Kurs-/Pr
 
 ## C. Long Description (EN, CoinGecko/CMC)
 
-> SuperIntelNex (SIN) is a fixed-supply (100B units, 5 decimals) community token on Solana. At launch, both the mint and freeze authorities were permanently revoked on-chain, making the supply immutable and the token un-freezable by design. SIN trades on a Raydium CLMM concentrated-liquidity pool (SIN/wSOL); 100% of the pool's liquidity is locked in the Raydium lock program. The team maintains a read-only market-research cadence — public keyless APIs (DexScreener, GeckoTerminal, Jupiter) — and publishes its own market data (volume, balanced flow, slippage curves) alongside every update. No price targets, no profit guarantees; all figures are independently verifiable. This is not investment advice. DYOR.
+> SuperIntelNex (SIN) is a fixed-supply (100 trillion units, 5 decimals; 10¹⁴) community token on Solana. At launch, both the mint and freeze authorities were permanently revoked on-chain, making the supply immutable and the token un-freezable by design. SIN trades on a Raydium CLMM concentrated-liquidity pool (SIN/wSOL); 100% of the pool's liquidity is locked in the Raydium lock program. The team maintains a read-only market-research cadence — public keyless APIs (DexScreener, GeckoTerminal, Jupiter) — and publishes its own market data (volume, balanced flow, slippage curves) alongside every update. No price targets, no profit guarantees; all figures are independently verifiable. This is not investment advice. DYOR.
 
 ## D. Socials (nachdem Operator sie anlegt → zurückmelden, dann dieses Ticket aktualisieren)
 
