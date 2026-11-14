@@ -131,8 +131,14 @@ while :; do
   if [[ $AC == 0 && ${#LAST_AC_PREV:-} > 0 && $LAST_AC_PREV == 1 ]]; then
     cr_exit "HARDWARE AC getrennt (war 1, jetzt 0) — Akku-Drain läuft, Loops-Death-Fenster beginnt"
   fi
-  if [[ -n $SLEEPC && -n $SLEEP_COUNT && $SLEEPC -gt $SLEEP_COUNT ]]; then
-    cr_exit "FREEZE neuer Sleep-Eintrag (count $SLEEP_COUNT→$SLEEPC) — alle Loops eingefroren, Window loggen + Digest (Issue #34-Kanon)"
+  # FREEZE-Wechsel: alten SLEEP_COUNT capturen, dann AKTUALISIEREN (vor cr_exit/save_state),
+  # damit ein FREEZE-CRITICAL-Exit den aktuellen Wert speichert und kein Re-Fire beim
+  # Neustart (05:28:31Z-Exit haelt 168 fest; live SLEEPC=169 → sofortige Wiederauslösung;
+  # analog AC-Re-Fire-Fix LAST_AC_PREV 05:26Z).
+  SLEEP_COUNT_PREV=$SLEEP_COUNT
+  SLEEP_COUNT=$SLEEPC
+  if [[ -n $SLEEP_COUNT_PREV && -n $SLEEPC && $SLEEPC -gt $SLEEP_COUNT_PREV ]]; then
+    cr_exit "FREEZE neuer Sleep-Eintrag (count $SLEEP_COUNT_PREV→$SLEEPC) — alle Loops eingefroren, Window loggen + Digest (Issue #34-Kanon)"
   fi
   (( ${#PIDS_TOT} > 0 )) && cr_exit "LOOP-TOT PIDs [${(j:,:)PIDS_TOT}] nicht mehr da — Watchdog-Relaunch-Check + LOG-Vermerk"
   LAST_AC=$AC; SLEEP_COUNT=$SLEEPC; LAST_GIT=$GITH

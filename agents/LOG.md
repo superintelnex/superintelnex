@@ -3889,3 +3889,15 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   den CRITICAL-Checks) → jeder Neustart feuerte das AC-Event sofort neu. Fix: LAST_AC_PREV
   capture + LAST_AC=$AC vor der AC-CRITICAL-Prüfung (Bedingung LAST_AC_PREV==1) + State
   manuell auf LAST_AC=0 repariert. zsh -n OK, Daemon-Neustart folgt.
+- 2026-11-14 ~05:31 UTC · fable · FREEZE-Event 05:28:31Z RESOLVED + BUGFIX #2:
+  (a) FREEZE-Re-Fire-Bug analog AC-Bug: cr_exit→save_state haelt STALE SLEEP_COUNT=168
+  (Update lag nach der FREEZE-Pruefung) → jeder Neustart wuerde FREEZE 168→169 sofort
+  neu feuern. Fix: SLEEP_COUNT_PREV capture + SLEEP_COUNT=$SLEEPC VOR der FREEZE-Pruefung
+  (Bedingung SLEEPC > SLEEP_COUNT_PREV) + State manuell auf SLEEP_COUNT=169 repariert,
+  zsh -n OK. Path-scoped Commit (fable-watch-daemon.sh + dieses LOG).
+  (b) Event-Selbst: Deep-Idle-Window 05:26Z (pmset: Entering Sleep #169 → Wake from
+  Deep Idle 05:26:28Z, UserActivity/lid-SMC, Akku 100 % BATT) KURZ NACH AC-Trennung
+  05:26Z. Alle Loops Ueberlebt: PIDs 4/4 (8178/96786/97509/41198) + Keepalive 171 +
+  Caffeinate 93637 LIVE. CIO-Feed waehrend Deep-Idle pausiert — beim n. Poll naechsten
+  Heartbeat re-syncen; kein Handlungsbedarf. Akku jetzt 100 % Discharging, ~4:44 Schatz.
+  Kein Deposit (5993044 lp unveraendert), CIO free 0.005993 SOL.
