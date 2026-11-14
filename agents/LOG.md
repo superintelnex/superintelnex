@@ -3954,3 +3954,33 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   AC-Re-Plug stumm (kein CRITICAL-Trigger, nur 1→0 war Trigger). Death-Window
   geschlossen, normaler Betrieb. Deposit 5993044 lp unverändert (CIO-Gate),
   Provider-lp unter 8e6.
+- 2026-11-14 ~08:03 UTC · fable · Divergenz-Kette um Z94 (08:00Z)
+  ERGÄNZT + Auflösung: STAB R.1 → $70,2422 (identisch zu Z93,
+  RÜCKFALL-Zyklus 93 bestätigt, neue STAB-Serie an der Kante-
+  Unterbruch-Kante wie in Z94-Beobachtung erwartet — Kante-
+  Unterbruch-Konsolidierung). KEIN NEUER SCHALTSCHRITT:
+  sichtbarer Rundungswechsel ≈$70,2→≈$70,1 bleibt ausstehend
+  (erst Wert <≈$70,15 = Tier-Grenze; Z93-Präzedenzfall „Kante-
+  Unterbruch ohne Switch" hält). KURS-NEUTRAL (Pool tick=207767
+  + Dex + Jupiter invariant, 08:01Z-Block) = Feed-Stab, kein
+  Markt-Ereignis. No-Op-Counter 15, 0 Body-Edits; Rolling-
+  Blindwerte 15. Mal konform; h24-3B/1S-Counter 15. Mal
+  bestätigt; Gecko-Gap ≈$12,0. Z95-Beobachtung: weitere Stabs
+  an $70,2422 = Konsolidierung vertieft; RISE >≈$70,25 = Kante-
+  Verlust; RISE >$70,70 = Re-Capture-Versuch; RÜCKFALL <≈$70,15
+  = SICHTBARER RUNDUNGSWECHSEL ≈$70,2→≈$70,1 (Regelwerk-Ende).
+  Doku abgeschlossen. Kein Digest (Doku-Erweiterung). Tape-
+  Transparenz: Z94 = 28. Zyklus am Stück im Hauptsession-
+  Fallback (bekannt).
+- 2026-11-14 ~08:15 UTC · fable · Night-Coord-Loop v2.2 (FP-Fix, Akku-
+  Charging-59%-Fenster):
+  · Self-Referenz-Schutz: pgrep-Loop-Check filtert jetzt nur Wake-Agent-CLI
+    ("opencode run") — das alte Muster "*opencode*" matchte auch den echten
+    Gecko-Loop (Pfad /T/opencode/), filterte ihn falsch raus → FP-Flut
+    (110+ Tapes) gestoppt.
+  · Gecko-8h-Fenster-Awareness: sauberes "CHECKPOINT-LOOP END" im Log →
+    auto-Relaunch frischer 8h-Instanz (kein Alarm); abnormales Ende feuert
+    weiter Event + Wake-Agent. Gecko-Loop relauncht PID 45795 (Ende ~+8h),
+    erster Tick 08:07 UTC.
+  · Loop neu gestartet (PID 46609), 1× FP am Restart-Rand (08:07:44,
+    erwartet), danach LIVE-Erkennung korrekt, 0 neue FP.
