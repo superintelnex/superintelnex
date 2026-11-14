@@ -1994,3 +1994,2645 @@ Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present
   fable-trade-loop: LIVE(8178)
 Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
 
+2026-11-14T12:23:16Z COMMIT+PUSH OK: Zyklus-Checkpoint (960)
+=== CYCLE 961 · 2026-11-14T12:23:31Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 962 · 2026-11-14T12:23:47Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 963 · 2026-11-14T12:24:04Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 964 · 2026-11-14T12:24:21Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 965 · 2026-11-14T12:24:38Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 966 · 2026-11-14T12:24:56Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 967 · 2026-11-14T12:25:12Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 968 · 2026-11-14T12:25:29Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 969 · 2026-11-14T12:25:47Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 970 · 2026-11-14T12:26:05Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 971 · 2026-11-14T12:26:22Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 972 · 2026-11-14T12:26:39Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 973 · 2026-11-14T12:26:57Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 974 · 2026-11-14T12:27:13Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 975 · 2026-11-14T12:27:30Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 976 · 2026-11-14T12:27:46Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 977 · 2026-11-14T12:28:02Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 978 · 2026-11-14T12:28:19Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 979 · 2026-11-14T12:28:35Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 980 · 2026-11-14T12:28:51Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 981 · 2026-11-14T12:29:07Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(67644)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 982 · 2026-11-14T12:29:23Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 983 · 2026-11-14T12:29:39Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 984 · 2026-11-14T12:29:55Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 985 · 2026-11-14T12:30:12Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 986 · 2026-11-14T12:30:28Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 987 · 2026-11-14T12:30:44Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(68980)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 988 · 2026-11-14T12:31:01Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 989 · 2026-11-14T12:31:17Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 990 · 2026-11-14T12:31:33Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 991 · 2026-11-14T12:31:50Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(69830)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 992 · 2026-11-14T12:32:05Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 993 · 2026-11-14T12:32:21Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 994 · 2026-11-14T12:32:37Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 995 · 2026-11-14T12:32:52Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 996 · 2026-11-14T12:33:08Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 997 · 2026-11-14T12:33:24Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 998 · 2026-11-14T12:33:39Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 999 · 2026-11-14T12:33:55Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1000 · 2026-11-14T12:34:11Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1001 · 2026-11-14T12:34:27Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1002 · 2026-11-14T12:34:43Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1003 · 2026-11-14T12:34:59Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1004 · 2026-11-14T12:35:15Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1005 · 2026-11-14T12:35:31Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1006 · 2026-11-14T12:35:47Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1007 · 2026-11-14T12:36:02Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1008 · 2026-11-14T12:36:18Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1009 · 2026-11-14T12:36:34Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1010 · 2026-11-14T12:36:49Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1011 · 2026-11-14T12:37:05Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1012 · 2026-11-14T12:37:20Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1013 · 2026-11-14T12:37:36Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1014 · 2026-11-14T12:37:51Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1015 · 2026-11-14T12:38:07Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1016 · 2026-11-14T12:38:23Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1017 · 2026-11-14T12:38:38Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1018 · 2026-11-14T12:38:54Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1019 · 2026-11-14T12:39:09Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1020 · 2026-11-14T12:39:25Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1021 · 2026-11-14T12:39:40Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1022 · 2026-11-14T12:39:56Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1023 · 2026-11-14T12:40:11Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1024 · 2026-11-14T12:40:27Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1025 · 2026-11-14T12:40:43Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1026 · 2026-11-14T12:40:59Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1027 · 2026-11-14T12:41:15Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1028 · 2026-11-14T12:41:31Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1029 · 2026-11-14T12:41:48Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1030 · 2026-11-14T12:42:04Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1031 · 2026-11-14T12:42:20Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1032 · 2026-11-14T12:42:37Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1033 · 2026-11-14T12:42:53Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1034 · 2026-11-14T12:43:09Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1035 · 2026-11-14T12:43:24Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1036 · 2026-11-14T12:43:40Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1037 · 2026-11-14T12:43:56Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1038 · 2026-11-14T12:44:11Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1039 · 2026-11-14T12:44:27Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1040 · 2026-11-14T12:44:42Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1041 · 2026-11-14T12:44:58Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1042 · 2026-11-14T12:45:14Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1043 · 2026-11-14T12:45:30Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1044 · 2026-11-14T12:45:46Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1045 · 2026-11-14T12:46:02Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1046 · 2026-11-14T12:46:18Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1047 · 2026-11-14T12:46:34Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1048 · 2026-11-14T12:46:50Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1049 · 2026-11-14T12:47:05Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1050 · 2026-11-14T12:47:22Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1051 · 2026-11-14T12:47:37Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1052 · 2026-11-14T12:47:53Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1053 · 2026-11-14T12:48:09Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1054 · 2026-11-14T12:48:24Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1055 · 2026-11-14T12:48:40Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1056 · 2026-11-14T12:48:55Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1057 · 2026-11-14T12:49:11Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1058 · 2026-11-14T12:49:27Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1059 · 2026-11-14T12:49:42Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1060 · 2026-11-14T12:49:58Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1061 · 2026-11-14T12:50:13Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1062 · 2026-11-14T12:50:29Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1063 · 2026-11-14T12:50:44Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1064 · 2026-11-14T12:51:00Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1065 · 2026-11-14T12:51:15Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1066 · 2026-11-14T12:51:31Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1067 · 2026-11-14T12:51:46Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1068 · 2026-11-14T12:52:02Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1069 · 2026-11-14T12:52:18Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1070 · 2026-11-14T12:52:33Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1071 · 2026-11-14T12:52:49Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1072 · 2026-11-14T12:53:04Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1073 · 2026-11-14T12:53:20Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1074 · 2026-11-14T12:53:36Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1075 · 2026-11-14T12:53:51Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1076 · 2026-11-14T12:54:07Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1077 · 2026-11-14T12:54:23Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1078 · 2026-11-14T12:54:38Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1079 · 2026-11-14T12:54:54Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1080 · 2026-11-14T12:55:09Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1081 · 2026-11-14T12:55:25Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1082 · 2026-11-14T12:55:40Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1083 · 2026-11-14T12:55:56Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1084 · 2026-11-14T12:56:11Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1085 · 2026-11-14T12:56:27Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1086 · 2026-11-14T12:56:43Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1087 · 2026-11-14T12:56:58Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1088 · 2026-11-14T12:57:14Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1089 · 2026-11-14T12:57:29Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1090 · 2026-11-14T12:57:45Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1091 · 2026-11-14T12:58:01Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1092 · 2026-11-14T12:58:17Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1093 · 2026-11-14T12:58:33Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1094 · 2026-11-14T12:58:50Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1095 · 2026-11-14T12:59:05Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1096 · 2026-11-14T12:59:21Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1097 · 2026-11-14T12:59:37Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1098 · 2026-11-14T12:59:52Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1099 · 2026-11-14T13:00:08Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1100 · 2026-11-14T13:00:24Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1101 · 2026-11-14T13:00:39Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1102 · 2026-11-14T13:00:55Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1103 · 2026-11-14T13:01:10Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1104 · 2026-11-14T13:01:26Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1105 · 2026-11-14T13:01:42Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1106 · 2026-11-14T13:01:58Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1107 · 2026-11-14T13:02:13Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1108 · 2026-11-14T13:02:30Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1109 · 2026-11-14T13:02:46Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1110 · 2026-11-14T13:03:03Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1111 · 2026-11-14T13:03:19Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1112 · 2026-11-14T13:03:35Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1113 · 2026-11-14T13:03:51Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1114 · 2026-11-14T13:04:07Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1115 · 2026-11-14T13:04:23Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1116 · 2026-11-14T13:04:38Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1117 · 2026-11-14T13:04:54Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1118 · 2026-11-14T13:05:10Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1119 · 2026-11-14T13:05:25Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1120 · 2026-11-14T13:05:41Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1121 · 2026-11-14T13:05:57Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1122 · 2026-11-14T13:06:12Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1123 · 2026-11-14T13:06:28Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1124 · 2026-11-14T13:06:43Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1125 · 2026-11-14T13:06:59Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1126 · 2026-11-14T13:07:14Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1127 · 2026-11-14T13:07:30Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 12:37 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1128 · 2026-11-14T13:07:46Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1129 · 2026-11-14T13:08:01Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1130 · 2026-11-14T13:08:18Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1131 · 2026-11-14T13:08:33Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1132 · 2026-11-14T13:08:49Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1133 · 2026-11-14T13:09:05Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1134 · 2026-11-14T13:09:21Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1135 · 2026-11-14T13:09:36Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(75432)
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+=== CYCLE 1136 · 2026-11-14T13:09:52Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	100%; charged; 0:00 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: TOT
+  gecko-checkpoint-loop: LIVE(45795)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: 13:07 UTC h24=20.535% h1=0% Vol_h24=$136.91 Vol_h1=$0.00 Quote_SOL=0.00000000000007744289115
+
+2026-11-14T13:09:52Z EVENT[loop-tot:keepalive-trader.py]: Tape agents/outbox/operator/2026-11-14T13-09Z-fable-night-event-loop-tot:keepalive-trader.py.md
