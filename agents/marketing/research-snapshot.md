@@ -1,5 +1,22 @@
 # SIN Research-Snapshot · Nacht-Shift 2026-11-13/14 (DATUMSUMBRUCH)
 
+## Zähler-67-Refresh · ~00:28 UTC (keyless-API-Runde, 1 Call/Quelle — Zähler 67 = freier Zähler, übernommen: verifiziert 00:28Z: `grep "^--- Zyklus" marketing-taskforce-log.txt | grep -oE "Zyklus [0-9]+" | sort -t' ' -k2 -n | tail -3` → höchster = 66; letztes Tape = cycle66 [00-15Z] → kollisionsfrei, append-only. Stop-Flaggen `.stop-all` + `RESEARCH-STOP-Flag` ABSENT (verifiziert 00:28Z → kein Abbruch). **EINZIGER Zyklus dieses Laufs (Zähler 67), danach HALT (kein Endlos-Loop). Tape-Datum = 2026-11-14 (DATUMSUMBRUCH fortgesetzt).**
+
+| Metrik | Wert (~00:28 UTC) | Quelle |
+|---|---|---|
+| Preis-USD | $0.000000000007508 (7.508e-12) unverändert | api.dexscreener.com |
+| Preis-Native | 0.00000000000009489 SOL (Base 4.939.913.223.575 raw) unverändert | api.dexscreener.com |
+| 24h-Volumen | $122.77 unverändert (Vol-6h $47.89 [Rolling: war $54.82 im Zähler-66-Beleg, abfallend durch Call-Zeitpunkt-Drift], Vol-1h $0 [Fenster-Abroll]) | api.dexscreener.com |
+| 24h Buys / Sells | **287 / 280 unverändert (DexScreener `txns` vollständig: m5 0/0, h1 0/0, h6 148/141 [Rolling: war 165/158 im Zähler-66-Beleg], h24 287/280; h6 +48.46 %, h24 +49.21 %)** · 287 / 280 (3 Unique B / 2 Unique S) unverändert · Vol-6h $61.31 (Gecko) unverändert | api.dexscreener.com / api.geckoterminal.com |
+| 24h Preis-Änderung | +49.21 % Dex (h6 +48.46 %) / +37.42 % Gecko (Rohwert +37.421 %) unverändert | api.dexscreener.com / api.geckoterminal.com |
+| LIQ-USD | $82.21 unverändert (Base 4.939.913.223.575 raw, Quote 0.5702 SOL — Divergenz: Dex $82.21 vs Gecko-Reserve $72.7079; Gap ≈$9.5 stabil) | api.dexscreener.com |
+| FDV / Market-Cap | $751 (mcap $751) unverändert | api.dexscreener.com |
+| Liq (Cross-Check) | **$72.71 (Gecko-Reserve $72.7079 = IDENTISCH mit Zähler 65/66 → STABILISIERUNG AM RÜCKPRALL-NIVEAU, RUNDE 2: PUBLIC-RUNDUNG ≈$72,7 (DE) + ≈$72.7 (EN) BLEIBT UNVERÄNDERT; kein Rückfall nach $72.3339, keine Ausdehnung Richtung $72.742-Plateau)** · Vol-24h $122.80 · **locked_liquidity 100 %** · Preis $7.4624e-12 · FDV $746.24 | api.geckoterminal.com |
+| CoinGecko-Listing | `{}` → **nicht public-gelisted** (Trigger „Listing → DEXTools-Boost" NICHT erfüllt) | api.coingecko.com |
+| RugCheck | HTTP 404 `PAGE_NOT_FOUND` → Score derzeit leer (bekannter leerer-Score-Dauerzustand; exakt: **59 Runden in Folge seit Zyklus 8** — Zähler-66-Beleg exakt 58, +1 = 59 [Zähler-Selbstzählung, transparent notiert]; kein 429, nicht BLOCKED, kein Retry) | api.rugcheck.xyz |
+
+**VERGLEICH ZÄHLER 66 → 67: NO-OP auf allen Public-Werten (22. Runde nahezu-No-Op in Folge, 2. Runde stabil am Rückprall-Niveau $72.7079, +49 %-Impuls (Zähler 43) stabilisiert)** — Kurs $7.508e-12 unverändert · Vol-24h $122.77/$122.80 unverändert · Flow h24 287/280 unverändert (h6-Rollings 165/158 → 148/141 [Dex, Call-Zeitpunkt-Drift, Vol-6h $54.82 → $47.89]; h6 +48.46 % / h24 +49.21 %; Gecko h24 +37.421 %) · FDV $751/$746.24 unverändert · Dex-Liq $82.21 unverändert · **GECKO-RESERVE $72.7079 IDENTISCH mit Zähler 65/66 → STABILISIERUNG AM RÜCKPRALL-NIVEAU, RUNDE 2: PUBLIC-RUNDUNG ≈$72,7 (DE) / ≈$72.7 (EN) UNVERÄNDERT** (RÜCKPRALL +0,52 % vs $72.3339 aus Zähler 61–64 behält sich; Gesamtverlauf: … → $72.7079 (65, RÜCKPRALL +0,52 %) → $72.7079 (66, STABILISIERUNG R. 1) → $72.7079 (67, STABILISIERUNG R. 2)). On-Chain: tickCurrent 207767 stabil (seit 21:47:56Z), P2-Tick „211830" weiter STALE (read-only, unverändert lassen, Operator-Verifizierung vor P2-Publishing notiert). **TRIGGER: NUR notiert, nie ausgeführt** — DEXTools-Boost (erst nach CoinGecko-Listing [{} — NICHT erfüllt]) · Airdrops/Kollab-Pitches (NICHT erfüllt). Keine 4xx/429 auf Markt-Quellen (RugCheck-404 = bekannter leerer-Score-Dauerzustand, kein BLOCKED, kein Retry), keine Eskalation. **Alle 4 API-Calls dieser Runde konsumiert — keine Re-Calls (Takt-Regel: max. 1 Call/Quelle/Zyklus).**
+
 ## Zähler-66-Refresh · ~00:13 UTC (keyless-API-Runde, 1 Call/Quelle — Zähler 66 = freier Zähler, übernommen: verifiziert 00:13:16Z: `grep "^--- Zyklus" marketing-taskforce-log.txt | grep -oE "Zyklus [0-9]+" | sort -t' ' -k2 -n | tail -3` → höchster = 65; letztes Tape = cycle65 [23-59Z] → kollisionsfrei, append-only. Stop-Flaggen `.stop-all` + `RESEARCH-STOP-Flag` ABSENT (verifiziert 00:13:16Z → kein Abbruch). **EINZIGER Zyklus dieses Laufs (Zähler 66), danach HALT (kein Endlos-Loop). Tape-Datum = 2026-11-14 (DATUMSUMBRUCH erreicht, unlike Zähler 65).**
 
 | Metrik | Wert (~00:13 UTC) | Quelle |
