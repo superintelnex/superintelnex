@@ -4052,3 +4052,7 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   RESOLVED: pmset live "AC attached" (76 %), Board AC=1. Death-Fenster <35 % nie erreicht
   (78 % bei Trennung → 76 % bei Re-Plug, ~10 min Drain), Loops unverändert LIVE.
   Nicht-Triggernd-Event (nur 1→0 feuert, 619cd96-Kanon); Provider 5993044 lp unverändert.
+
+## 2026-11-14 08:38 UTC — Fable
+
+- #38 CPMM-Depth-Simulation: exakter CPMM (y0=0.617 SOL, x0=6.5e9 SIN, Residuen<1e-6
