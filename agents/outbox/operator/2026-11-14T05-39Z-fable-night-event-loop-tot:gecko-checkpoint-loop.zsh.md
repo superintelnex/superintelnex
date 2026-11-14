@@ -1,4 +1,4 @@
-# Fable Night-Coord · Event: loop-tot:gecko-checkpoint-loop.zsh · Sat Nov 14 05:39:13 UTC 2026
+# Fable Night-Coord · Event: loop-tot:gecko-checkpoint-loop.zsh · Sat Nov 14 05:39:46 UTC 2026
 
 Team-Loop 'gecko-checkpoint-loop' nicht mehr erreichbar (pgrep-Muster leer). Watchdog: agents/timers/watchdog.log.
 
@@ -8,9 +8,9 @@ Team-Loop 'gecko-checkpoint-loop' nicht mehr erreichbar (pgrep-Muster leer). Wat
   fable-trade-loop: LIVE(8178)
 Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
 
-=== CYCLE 1963 · 2026-11-14T05:39:12Z ===
+=== CYCLE 1965 · 2026-11-14T05:39:46Z ===
 Provider-LP: 5993044
-Battery:  -InternalBattery-0 (id=21430371)	100%; discharging; 3:18 remaining present: true
+Battery:  -InternalBattery-0 (id=21430371)	100%; discharging; 3:16 remaining present: true
   cio-autotrade: LIVE(67648)
   trade-watchdog: LIVE(67724)
   agent-watchdog: LIVE(70001)
