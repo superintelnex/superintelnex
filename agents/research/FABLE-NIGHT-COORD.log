@@ -2296,4 +2296,82 @@ Battery:  -InternalBattery-0 (id=21430371)	81%; discharging; 2:46 remaining pres
 Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
 
 2026-11-14T06:14:26Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T06-14Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
-2026-11-14T06:15Z fable-night-coord Wake-16445: FP#29 (14. in Folge, self-referentiell: pgrep-Muster gecko-checkpoint-loop trifft Wake-Kommandozeile PID 16445, echter Gecko-Loop 0 Treffer, planmaessig 8h-Fenster-Ende 03:43 UTC); Befund: Deposit DNEBNjtW... 5993044 lp unveraendert (CIO-Gate; F9Sj9aUa 372364773 / 9kT5EwF7 854081 lp stabil), Akku 81 percent DISCHARGING 2:46 (>35 percent Schwelle), alle Team-Loops LIVE, git HEAD=origin/main=5b5a1c9 Drift 0/0 ff-only; Eskalation bereits FP#17 (5d49ff7) + Morgen-Shift-Handoff 05-55Z -> kein Duplikat, kein Relaunch; 06-14Z-Tape untracked->tracked + Lane-Log +1 eigene Zeile stoeffrei (update-index --cacheinfo auf HEAD-Blob, Commit OHNE Path-Argumente); fremde Dirty-Files unangetastet; keine Secrets
+2026-11-14T06:14:28Z COMMIT+PUSH OK: Event loop-tot:gecko-checkpoint-loop.zsh
+2026-11-14T06:14:28Z WAKE-AGENT: spawn frische Instanz für Event 'loop-tot:gecko-checkpoint-loop.zsh'
+2026-11-14T06:14:28Z WAKE-AGENT: PID 16445 (out: /private/var/folders/fk/8vfwh6wn09v38hf7btnh55h40000gn/T/opencode/fable-wake-agent.log)
+=== CYCLE 2095 · 2026-11-14T06:14:43Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	81%; discharging; 2:52 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(16445)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+=== CYCLE 2096 · 2026-11-14T06:14:59Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	81%; discharging; 2:47 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(16445)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+=== CYCLE 2097 · 2026-11-14T06:15:15Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	81%; discharging; 2:47 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(16445)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+=== CYCLE 2098 · 2026-11-14T06:15:30Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	81%; discharging; 2:47 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: LIVE(16445)
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+=== CYCLE 2099 · 2026-11-14T06:15:46Z ===
+Provider-LP: 5993044
+Battery:  -InternalBattery-0 (id=21430371)	81%; discharging; 2:47 remaining present: true
+  cio-autotrade: LIVE(67648)
+  trade-watchdog: LIVE(67724)
+  agent-watchdog: LIVE(70001)
+  keepalive-trader: LIVE(171)
+  gecko-checkpoint-loop: TOT
+  fable-loop-watchdog: LIVE(90983)
+  caffeinate: LIVE(93637)
+  marketing-taskforce-loop: LIVE(96786)
+  fable-research-loop: LIVE(97509)
+  fable-trade-loop: LIVE(8178)
+Gecko-letzte: CHECKPOINT-LOOP END 03:43 UTC
+
+2026-11-14T06:15:46Z EVENT[loop-tot:gecko-checkpoint-loop.zsh]: Tape agents/outbox/operator/2026-11-14T06-15Z-fable-night-event-loop-tot:gecko-checkpoint-loop.zsh.md
