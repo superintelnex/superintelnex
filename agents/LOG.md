@@ -3884,3 +3884,8 @@ Kanon eingehalten: [Präfix]-Titel, agent:*/blocked:user-Labels, keine Secrets i
   Akku <35 % oder neuem pmset-Sleep-Event CRITICAL-Alarm. Keine Loops-Beeinträchtigung
   jetzt (alle 4 Kern-PIDs + Keepalive 171 LIVE). Operator-Info: Ladegerät erst beim
   nächsten Heartbeat melden, falls kein Re-Plug vor ~35 % — Wache beobachtet aktiv.
+- 2026-11-14 ~05:29 UTC · fable · BUGFIX watch-daemon: AC-CRITICAL-Re-Fire (Doppel-Event
+  05:26:32Z + 05:26:57Z) — cr_exit→save_state speicherte STALE LAST_AC=1 (Update lag nach
+  den CRITICAL-Checks) → jeder Neustart feuerte das AC-Event sofort neu. Fix: LAST_AC_PREV
+  capture + LAST_AC=$AC vor der AC-CRITICAL-Prüfung (Bedingung LAST_AC_PREV==1) + State
+  manuell auf LAST_AC=0 repariert. zsh -n OK, Daemon-Neustart folgt.

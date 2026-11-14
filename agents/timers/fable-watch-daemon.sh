@@ -123,7 +123,12 @@ while :; do
   if [[ -n $BATT && $BATT -lt 35 ]]; then
     cr_exit "HARDWARE Akku ${BATT}% (<35%) — Issue #33: Laden prüfen (AC=$AC), ansonsten Digest + Operator-Alert"
   fi
-  if [[ $AC == 0 && ${#LAST_AC:-} > 0 && $LAST_AC == 1 ]]; then
+  # AC-Wechsel: altes LAST_AC capturen, dann AKTUALISIEREN (vor cr_exit/save_state),
+  # damit ein AC-CRITICAL-Exit den aktuellen Wert speichert und kein Re-Fire beim
+  # Neustart (05:26/05:26Z-Doppel-Event: LAST_AC=1 blieb stehen → sofortige Wiederauslösung).
+  LAST_AC_PREV=$LAST_AC
+  LAST_AC=$AC
+  if [[ $AC == 0 && ${#LAST_AC_PREV:-} > 0 && $LAST_AC_PREV == 1 ]]; then
     cr_exit "HARDWARE AC getrennt (war 1, jetzt 0) — Akku-Drain läuft, Loops-Death-Fenster beginnt"
   fi
   if [[ -n $SLEEPC && -n $SLEEP_COUNT && $SLEEPC -gt $SLEEP_COUNT ]]; then
